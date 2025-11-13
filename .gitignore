@@ -57,3 +57,8 @@ __pypackages__/
 # Ignore Python package manager files
 poetry.lock
 Pipfile.lock
+
+#ignore the lisa sheets
+
+lisa_sheets.csv
+lisa_sheets/
