@@ -62,3 +62,4 @@ Pipfile.lock
 
 lisa_sheets.csv
 lisa_sheets/
+data/lisa_sheets.csv
