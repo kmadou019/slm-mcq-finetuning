@@ -1,65 +1,50 @@
-# Evaluating Small and Medium Language Models for High-Quality Multi-Choice Question Generation
+# Student Comment Classification with LLMs
 
-## Project Structure
+## Project Overview
+This project aims to **evaluate and track students' progress** using a QCM-based platform. Instead of just assessing their performance, we incorporate a **meta-cognitive layer** by asking students to:
+1. **Evaluate their level of certainty** about their answers.
+2. **Provide self-assessment comments** after reviewing the correct answers.
+
+The goal is to **automatically classify these comments** using **Large Language Models (LLMs)** to enhance feedback and learning insights.
+
+## Problem Statement
+Given a set of inputs:
+```json
+{student, test, result, comment}
 ```
-raiforukraine-MARIA/
-├── data/                   # Data: lisa sheets, generated mcqs
-├── notebooks/              # Jupyter notebooks
-├── src/                    
-│   ├── eval/               # Evaluation criterion
-│   ├── ollama/             # Inference and convertion with Ollama
-│   ├── prepare_data/       # Data preparation
-│   ├── __init__.py         
-│   ├── dpo_training_runner.py  # Direct Preference Optimization training script
-│   ├── inference.py        # Model inference
-│   ├── main.py             # Main application entry point
-│   └── rag.py              # Retrieval-Augmented Generation
-├── LICENSE                 # Project license
-├── README.md               # Project documentation
-├── requirements.txt        # Python dependencies
-└── run_dpo.sh              # Shell script to run DPO training
+The model **M** must classify the student’s comment into a predefined category set:
+```json
+{C1, C2, ..., Cn}
 ```
-
-## Dataset
-The Lisa sheets are available at ```data\lisa_sheets```.
-
-They were split into folders, and this is available in ```data\train_test_split```.
-You can determine whether a file is for training or testing by the folder name.
-
-## Installation
-
-### Prerequisites
+producing an **enriched output**:
+```json
+{student, test, result, comment, C}
 ```
-Python =< 3.10
-```
+where **C** includes:
+- **Global-Comment-Category**
+- **Per-question classifications**: `{question, question-categories}`
 
-### Setup
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Its-OP/raiforukraine-MARIA.git
-   cd raiforukraine-MARIA
-   ```
+## Approaches Considered
 
-2. Create and activate a virtual environment:
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   ```
+### 1️⃣ One-Shot LLM (RAG-Based)
+- Uses a single **LLM with Retrieval-Augmented Generation (RAG)** to classify comments in one pass.
 
-3. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+### 2️⃣ Orchestrator LLM
+- Multiple specialized LLMs, each handling a **specific task**:
+  - **Comment segmentation** into meaning units.
+  - **Category assignment**.
+  - **Evaluation and refinement**.
+- An **Orchestrator LLM** manages communication between them to **ensure coherence**.
 
-4. Configure environment variables:
-   - Create a `.env` file in the project root directory
-   - Add the following required variables:
-     ```
-     OPENAI_API_KEY=Your_open_ai_key
-     LISA_SHEETS_PATH=path_to_lisa_sheet_csv
-     MODEL_MCQ_PATH=path_to_generated_mcqs_csv
-     MODEL_MCQ_EVAL_EXPORT_PATH=path_to_export_csv
-     ```
+### 3️⃣ Debate LLMs
+- Similar to the **Orchestrator LLM**, but instead of relying on strict orchestration, the LLMs **debate** among themselves to **agree on the best classification**.
 
-## License
-This project is licensed under the terms of the LICENSE file included in the repository.
+### 4️⃣ Qvalue ... *(To be defined, blurred concept)*
+
+## Next Steps
+- Experiment with different architectures.
+- Evaluate classification accuracy.
+- Optimize feedback for students.
+
+---
+
