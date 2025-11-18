@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-cd lisa_sheets
-echo "dossier,id,contenu_brut,rubrique"
+cd ../data/lisa_sheets
+echo "folder,id,content_raw,rubric"
 for dir in $(ls);
 do
     if test -d "${dir}"; then
