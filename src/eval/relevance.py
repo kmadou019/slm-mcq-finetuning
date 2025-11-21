@@ -1,7 +1,7 @@
 import pandas as pd
 import torch.nn.functional as F
 
-from src.eval.utils import load_model, generate_embedding
+from eval.utils import load_model, generate_embedding
 
 
 def calculate_relevance_for_df(df: pd.DataFrame,

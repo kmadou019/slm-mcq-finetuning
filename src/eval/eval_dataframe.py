@@ -1,15 +1,16 @@
 import pandas as pd
 
-from src.eval.ambiguity import calculate_ambiguity_for_df
-from src.eval.answerability import compute_answerability_for_df
-from src.eval.disclosure import compute_disclosure_for_df
-from src.eval.distractors_quality import compute_distractor_quality_for_df
-from src.eval.negation import starts_with_negation
-from src.eval.originality import calculate_originality_for_df
-from src.eval.question_check import is_question
-from src.eval.readability import calculate_readability_for_df
-from src.eval.relevance import calculate_relevance_for_df
-from src.eval.difficulty import compute_difficulty_for_df
+from eval.ambiguity import calculate_ambiguity_for_df
+from eval.answerability import compute_answerability_for_df
+from eval.disclosure import compute_disclosure_for_df
+from eval.distractors_quality import compute_distractor_quality_for_df
+from eval.negation import starts_with_negation
+from eval.originality import calculate_originality_for_df
+from eval.question_check import is_question
+from eval.readability import calculate_readability_for_df
+from eval.relevance import calculate_relevance_for_df
+from eval.difficulty import compute_difficulty_for_df
+from time import sleep
 
 from concurrent.futures import ProcessPoolExecutor
 from tqdm import tqdm
@@ -20,7 +21,7 @@ import math
 def eval_dataframe(df_merged: pd.DataFrame,
                    # openai params
                    openai_key: str,
-                   temp=0.5,
+                   temp=0.1,
                    max_completion_tokens=1,
                    output_file_path='./mcqs_eval.csv',
                    # answerability params

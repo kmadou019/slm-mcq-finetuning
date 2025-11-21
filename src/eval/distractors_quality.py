@@ -1,9 +1,9 @@
 import json
-
+from time import sleep
 import pandas as pd
 from openai import OpenAI
 
-from src.eval.llm_evaluation import generate_prompt_for_question, call_openai_api #, create_client
+from eval.llm_evaluation import generate_prompt_for_question, call_openai_api #, create_client
 
 
 def compute_distractor_quality_for_df(df: pd.DataFrame,
@@ -23,6 +23,7 @@ def compute_distractor_quality_for_df(df: pd.DataFrame,
     client = OpenAI(api_key = api_key)
     
     def distractor_quality_applicable(row):
+        sleep(10)
         user_prompt = generate_prompt_for_question(row,
                                                    question_col=question_col,
                                                    correct_option=correct_option_col,

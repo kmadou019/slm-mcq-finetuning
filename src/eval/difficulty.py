@@ -3,7 +3,7 @@ import json
 import pandas as pd
 from openai import OpenAI
 
-from src.eval.llm_evaluation import generate_prompt_for_question, call_openai_api
+from eval.llm_evaluation import generate_prompt_for_question, call_openai_api
 
 
 def compute_difficulty_for_df(df: pd.DataFrame,

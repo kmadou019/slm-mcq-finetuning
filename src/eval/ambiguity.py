@@ -1,6 +1,6 @@
 import pandas as pd
 import torch.nn.functional as F
-from src.eval.utils import generate_embedding, load_model
+from eval.utils import generate_embedding, load_model
 
 
 def calculate_ambiguity_for_df(df: pd.DataFrame,

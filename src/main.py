@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+from sys import argv
 import os
 import json
 import pandas as pd
@@ -16,19 +18,29 @@ nltk.download('stopwords')
 nltk.download('punkt_tab')
 nltk.download('wordnet')
 
-from src.eval.eval_dataframe import eval_dataframe_parallel
+from eval.eval_dataframe import eval_dataframe_parallel
 from dotenv import load_dotenv
+
+if len(argv) >= 2 :
+    if argv[1] not in ["llama3_1_8b", "openbiollm_8b", "gemma2_9b", "medGemma_4b", "medGemma_27b"]:
+        print("Please provide a valid model name: llama3_1_8b, openbiollm_8b, gemma2_9b, medGemma_4b, medGemma_27b")
+        exit(1)
+    generated_qcm_file = argv[1] + ".csv"
+else :
+    print("Please provide the path to the generated QCM file.")
+    exit(1)
 
 def main():
     load_dotenv()
     OPENAI_KEY = os.environ.get("OPENAI_API_KEY")
 
-    with open('src/eval/prompts.json', 'r') as file:
+    with open('eval/prompts.json', 'r') as file:
         # Load the JSON data from the file
         system_prompts = json.load(file)
 
-    df_mcq = pd.read_csv(os.environ.get('MODEL_MCQ_PATH'))
+    df_mcq = pd.read_csv(os.environ.get('MODEL_MCQ_PATH') + "/" + generated_qcm_file)
     df_lisa_sheets = pd.read_csv(os.environ.get('LISA_SHEETS_PATH'))
+
     
     # test small subset
     # common_ids = df_mcq['id'].isin(df_lisa_sheets['id'])
@@ -41,7 +53,7 @@ def main():
                                       openai_key=OPENAI_KEY,
                                       num_workers=10,
                                       lisa_sheet_id_col='id',
-                                      lisa_sheet_col='content_gpt',
+                                      lisa_sheet_col='content_raw',
                                       compute_answerability=False,
                                       compute_originality=False,
                                       compute_readability=False,
@@ -57,7 +69,7 @@ def main():
                                       merge=False # set to True if your dataframe does not have the Lisa Sheet content
                                       )
 
-    df_eval.to_csv(os.environ.get('MODEL_MCQ_EVAL_EXPORT_PATH'), index=False)
+    df_eval.to_csv(os.environ.get('MODEL_MCQ_EVAL_EXPORT_PATH') + "/" + generated_qcm_file, index=False)
 
 if __name__ == '__main__':
     main()
