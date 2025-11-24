@@ -1,12 +1,25 @@
 #!/usr/bin/env python3
 from sys import argv
+
+if len(argv) >= 2 :
+    if argv[1] not in ["llama3_1_8b", "openbiollm_8b", "gemma2_9b", "medGemma_4b", "medGemma_27b"]:
+        print("Please provide a valid model name: llama3_1_8b, openbiollm_8b, gemma2_9b, medGemma_4b, medGemma_27b")
+        exit(1)
+    generated_qcm_file = argv[1] + ".csv"
+else :
+    print("Please provide the path to the generated QCM file.")
+    exit(1)
+from dotenv import load_dotenv
+# disable SSL check to download nltk pakages on MacOS
+
+
 import os
 import json
 import pandas as pd
-
+from eval.eval_dataframe import eval_dataframe_parallel
 import nltk
 import ssl
-# disable SSL check to download nltk pakages on MacOS
+
 try:
     _create_unverified_https_context = ssl._create_unverified_context
 except AttributeError:
@@ -18,17 +31,7 @@ nltk.download('stopwords')
 nltk.download('punkt_tab')
 nltk.download('wordnet')
 
-from eval.eval_dataframe import eval_dataframe_parallel
-from dotenv import load_dotenv
 
-if len(argv) >= 2 :
-    if argv[1] not in ["llama3_1_8b", "openbiollm_8b", "gemma2_9b", "medGemma_4b", "medGemma_27b"]:
-        print("Please provide a valid model name: llama3_1_8b, openbiollm_8b, gemma2_9b, medGemma_4b, medGemma_27b")
-        exit(1)
-    generated_qcm_file = argv[1] + ".csv"
-else :
-    print("Please provide the path to the generated QCM file.")
-    exit(1)
 
 def main():
     load_dotenv()

@@ -1,0 +1,1801 @@
+id,chosen,rejected,chosen_source,rejected_source
+OIC-132-10-A,"Question: Quels sont les éléments à prendre en compte pour protéger un patient avec trouble neuro-cognitif ?
+a) Seulement la gestion administrative et financière.
+b) Tous les éléments mentionnés dans le texte (risques liés à l’environnement, capacités du patient à gérer les médicaments, conduite automobile, gestion administrative et financière, relations avec son entourage, état de santé physique et psychologique de l’aidant).
+c) Seulement la conduite automobile.
+d) Seulement les relations du patient avec son entourage.","Question: Connaître la prise en charge psycho-sociale d’un patient avec trouble neuro-cognitif
+a) Adapter les aides en fonction de l'indépendance fonctionnelle du patient.
+b) Protéger le patient des risques liés à son environnement et assurer sa sécurité.
+c) Prise en charge des aidants pour mieux supporter leur rôle.
+d) Proposer des thérapies non médicamenteuses adaptées au stade des troubles neurocognitifs.",llama3_1_8b,openbiollm_8b
+OIC-302-06-B,"Question: Quels sont les facteurs de mauvais pronostic des carcinomes épidermoïdes (CE) ?
+a) La taille de la lésion > 2 cm, localisation sur tempe, oreille ou lèvre, faible niveau de différenciation en histologie et épaisseur tumorale en histologie > 3 mm.
+b) L'immunodépression, le sexe masculin et la présence d'une tumeur métastatique.
+c) La taille de la lésion < 2 cm, localisation sur poignet ou pied, faible niveau de différenciation en histologie et épaisseur tumorale en histologie > 5 mm.
+d) L'âge avancé, le sexe féminin et la présence d'une tumeur métastatique.","Question: Quels sont les facteurs de mauvais pronostic des carcinomes épidermoïdes?
+a) La taille de la lésion >2cm
+b) Localisation sur tempe, oreille ou lèvre
+c) Un faible niveau de différenciation en histologie
+d) Une épaisseur tumorale en histologie>3mm",llama3_1_8b,openbiollm_8b
+OIC-267-21-A,"Question: Quelle est la principale cause d'hypokaliémie liée à une perte rénale sans hypertension artérielle (HTA)?
+a) Hyperaldostéronisme II
+b) Diurétiques thiazidiques et de l’anse
+c) Sténose de l'artère rénale
+d) Syndromes adrénogénitaux","Question: Quelle est la principale cause d'hypokaliémie due à des pertes extra-rénales ?
+a) Un transfert exagéré du compartiment extracellulaire vers le compartiment intracellulaire.
+b) Un excès de pertes rénales.
+c) Une carence d'apport en potassium.
+d) Une combinaison de carence d'apport et de transfert exagéré.",gemma2_9b,medGemma_4b
+OIC-186-17-A,"Question: 
+a) 
+b) 
+c) 
+d) ","Question: Selon les données de la cohorte ELFE, quel est l'allergène alimentaire le plus fréquemment retrouvé chez les enfants entre la naissance et 5,5 ans ?
+a) L'arachide
+b) Le poisson
+c) Le lait
+d) Les fruits exotiques",gpt-4o,gemma2_9b
+OIC-076-06-A,"Question: Quel est le seuil de consommation qui fait faire un bilan addictologique pour dépistage du mésusage d'alcool ?
+a) Consommation inférieure à 2 verres standards par jour
+b) Consommation supérieure ou égale à 4 verres standards en une occasion
+c) Score AUDIT-C supérieur ou égal à 3 chez l'homme et à 2 chez la femme
+d) Tout nouveau patient aux urgences","Question: Quelle est la fréquence de votre consommation d’alcool ?
+a) Jamais
+b) Une fois par mois ou moins
+c) 2 à 4 fois par mois
+d) 2 à 3 fois par semaine",llama3_1_8b,openbiollm_8b
+OIC-347-06-A,"Question: Quelle est la principale différence clinique permettant de distinguer la rétention aiguë d'urine de l'anurie ?
+a) La rétention aiguë d'urine est caractérisée par une absence totale de production d'urine, tandis que l'anurie implique une difficulté à vider la vessie.
+b) La rétention aiguë d'urine est caractérisée par la présence de douleur, d'envie d'uriner et d'un globe vésical, alors que l'anurie est une absence de production d'urine par les reins.
+c) La rétention aiguë d'urine est caractérisée par une production normale d'urine, mais l'incapacité de la vider, tandis que l'anurie est une absence de production d'urine.
+d) La rétention aiguë d'urine et l'anurie sont cliniquement identiques, la seule différence étant l'origine du problème (vessie vs. reins).","Question: Quels sont les signes cliniques permettant de distinguer la rétention aigue d'urine de l'anurie?
+a) Douleur lors de la miction
+b) Envie d'uriner
+c) Globe vésical visible
+d) Absence de douleur, envie d'uriner et globe vésical",medGemma_27b,openbiollm_8b
+OIC-051-06-A,"Question: Selon le texte, quel est le principal élément pour établir le diagnostic positif d'énurésie primaire ?
+a) L'imagerie médicale est nécessaire.
+b) L'interrogatoire et l'examen physique sont suffisants.
+c) La mesure de l'osmolarité urinaire nocturne est obligatoire.
+d) L'évaluation de la capacité vésicale théorique est primordiale.","Question: Quel est le diagnostic clinique d'une énurésie primaire isolée?
+a) L'enfant a moins de deux nuits par mois avec une osmolarité urinaire normale
+b) L'enfant a plus de deux nuits par mois avec une osmolarité urinaire normale
+c) L'enfant a moins de deux nuits par mois avec une osmolarité urinaire élevée
+d) L'enfant a plus de deux nuits par mois avec une osmolarité urinaire élevée",medGemma_27b,openbiollm_8b
+OIC-010-03-B,"Question: Selon le texte, quelle est la principale différence entre le corps-objet et le corps-sujet ?
+a) Le corps-objet est physique tandis que le corps-sujet est mental.
+b) Le corps-objet est étudié par les médecins tandis que le corps-sujet est vécu par le patient.
+c) Le corps-objet est impersonnel et régi par des lois naturelles, tandis que le corps-sujet est subjectif et lié à l’expérience individuelle.
+d) Le corps-objet est observable à travers des techniques médicales, tandis que le corps-sujet ne peut être observé qu'à travers les paroles du patient.","Question: Quelle est la différence entre le corps-objet et le corps-sujet dans le contexte de la santé?
+a) Le corps-objet est le corps considéré comme un simple objet, dépourvu de caractéristiques spécifiquement humaines, tandis que le corps-sujet inclut le corps subjectif vécu par l'individu et la dimension du sujet dans son action.
+b) Le corps-objet est régi par des lois naturelles, tandis que le corps-sujet est influencé par les facteurs sociaux et culturels.
+c) Le corps-objet est l'ensemble de tous les organes du corps humain, alors que le corps-sujet inclut également la psychologie et les expériences individuelles.
+d) Le corps-objet est ce qui est observé par les soignants, tandis que le corps-sujet est ce qui est vécu par le patient.",gemma2_9b,openbiollm_8b
+OIC-332-01-A,"Question: Selon le texte, sur quoi repose principalement le diagnostic clinique de l'état de choc ?
+a) Uniquement sur l'hypotension artérielle (PAS<90 mmHg ou PAM<65 mmHg).
+b) Sur l'hypotension artérielle ET les signes cliniques d'hypoperfusion périphérique.
+c) Uniquement sur les signes cliniques d'hypoperfusion périphérique (polypnée, marbrures, confusion, oligurie).
+d) Sur la lactatémie élevée (>2 mmol/L) seule.","Question: Quel est le principal facteur déclencheur de l'état de choc ?
+a) Une infection sévère
+b) Un manque d'apport en oxygène aux cellules
+c) Une augmentation du rythme cardiaque
+d) Une diminution de la pression artérielle",medGemma_27b,gemma2_9b
+OIC-302-15-B,"Question: Quelle caractéristique est la plus typique d'un carcinome basocellulaire nodulaire ?
+a) Plaque érythématosquameuse
+b) Bordure perlée
+c) Nodule translucide recouvert de télangiectasies
+d) Aspect lisse et uniforme","Question: Quel est le type de carcinome basocellulaire représenté dans la photographie A ?
+a) Carcinome basocellulaire superficiel
+b) Carcinome basocellulaire nodulaire
+c) Carcinome basocellulaire infiltratif
+d) Carcinome basocellulaire ulceré",gemma2_9b,llama3_1_8b
+OIC-325-10-A,"Question: Qui est tenu de déclarer un effet indésirable suspecté d'être dû à un médicament, en particulier s'il est grave ou inattendu ?
+a) Uniquement les entreprises pharmaceutiques.
+b) Uniquement les patients.
+c) Les professionnels de santé, les entreprises, les patients et les associations de patients.
+d) Uniquement les associations agréées de patients.","Question: Qui est le premier à déclarer un effet indésirable suspecté d'être dû à un médicament ?
+a) Les patients et les associations agréées de patients
+b) Les entreprises ou organisations exploitant les médicaments
+c) Les professionnels de santé
+d) Les patients et les associations agréées de patients et les professionnels de santé",medGemma_27b,medGemma_4b
+OIC-005-05-A,"Question: Selon le texte, quelle est la nature principale de la responsabilité disciplinaire pour un médecin ?
+a) Une sanction pénale infligée par les tribunaux.
+b) Une sanction civile résultant d'un préjudice causé à un patient.
+c) Une sanction administrative imposée par l'État.
+d) Une sanction prononcée par les instances de l'Ordre des médecins pour manquement aux règles de déontologie.","Question: Quelle est la principale différence entre le Code de déontologie médicale et le Code pénal ?
+a) Le Code de déontologie médicale énumère des comportements prohibés par la société, tandis que le Code pénal énumère des principes fondamentaux.
+b) Le Code de déontologie médicale est élaboré par le Conseil national de l’Ordre, tandis que le Code pénal est élaboré par le Conseil d’Etat.
+c) Le Code de déontologie médicale est une liste de comportements prohibés, tandis que le Code pénal énumère des principes fondamentaux qu’il renferme.
+d) Le Code de déontologie médicale est un texte plus récent que le Code pénal.",medGemma_27b,medGemma_4b
+OIC-032-08-B,"Question: 
+a) 
+b) 
+c) 
+d) ","Question: Quelle est la fréquence approximative de la fente labio-palatine ?
+a) 1/1000 naissances
+b) 1/2000 naissances
+c) 1/500 naissances
+d) 1/10000 naissances",gpt-4o,medGemma_4b
+OIC-227-10-B,"Question: Quels sont les principes de prise en charge thérapeutiques de l’insuffisance veineuse chronique (IVC) ?
+a) La compression élastique est le seul traitement efficace pour l'IVC.
+b) Les modifications du mode de vie, la compression élastique et les traitements médicamenteux sont utilisés en fonction des stades de l’insuffisance veineuse.
+c) La chirurgie est le premier traitement à envisager pour l'IVC.
+d) Les traitements thermiques endoveineuses ne sont pas indiqués dans les formes étendues et tortueuses de l’insuffisance veineuse.","Question: Quels sont les principaux traitements de l'insuffisance veineuse chronique ?
+a) Compression élastique
+b) Traitement médicamenteux
+c) Sclérothérapie, techniques thermiques endoveineuses et chirurgie
+d) Crénothérapie ou cure thermale",llama3_1_8b,openbiollm_8b
+OIC-208-07-A,"Question: Selon le texte, quels sont les principaux signes de gravité d'une décompensation de l'insuffisance respiratoire chronique (IRC) à évaluer via les gaz du sang ?
+a) Une PaO2 > 60 mmHg et un pH > 7.35
+b) Une PaO2 < 60 mmHg et une acidose respiratoire non compensée (pH < 7.35 avec PaCO2 > 45 mmHg)
+c) Une PaO2 > 60 mmHg et une PaCO2 < 45 mmHg
+d) Une PaO2 < 60 mmHg et une PaCO2 < 45 mmHg","Question: Quelle est la caractéristique clinique qui indique une décompensation grave d'insuffisance rénale chronique (IRC) ?
+a) Une augmentation de la fréquence cardiaque
+b) Une hypoxémie sévère (PaO2 < 60 mmHg)
+c) Une fièvre élevée
+d) Un gain de poids important",medGemma_27b,gemma2_9b
+OIC-326-01-A,"Question: Quel professionnel de santé est habilité à prescrire des médicaments aux femmes et nouveau-nés dans une liste restrictive définie par arrêté ministériel ?
+a) Chirurgien-dentiste
+b) Médecin généraliste
+c) Sage-femme
+d) Pharmacien d'officine","Question: Selon le texte, quelle est la durée maximale pendant laquelle un pharmacien peut délivrer un médicament prescrit, sauf cas particuliers ?
+a) Un an
+b) Trois mois
+c) Quatre semaines
+d) Six mois",gemma2_9b,medGemma_27b
+OIC-247-01-A,"Question: Quel critère est utilisé pour définir le diabète selon les études épidémiologiques mentionnées ?
+a) Une glycémie à jeun supérieure à 1 g/l
+b) Un taux d'HbA1c supérieur à 6,5%
+c) La présence de symptômes comme la soif excessive et la fatigue
+d) Une glycémie à jeun supérieure à 1,26 g/l","Question: Le diabète comprend des pathologies caractérisées par une hyperglycémie chronique.
+a) Une maladie infectieuse
+b) Une maladie auto-immune
+c) Une maladie héréditaire
+d) Une maladie liée à l'environnement",gemma2_9b,openbiollm_8b
+OIC-075-20-A,"Question: Selon les critères CIM-10, quel est le nombre minimum de critères nécessaires pour diagnostiquer une dépendance au tabac ?
+a) Un seul critère.
+b) Deux critères.
+c) Trois critères.
+d) Quatre critères.","Question: Quels sont les critères du DSM-5 pour le diagnostic d'une dépendance au tabac?
+a) Usage de tabac nocif pour la santé sans les critères de la dépendance
+b) Dépendance au tabac (critères CIM-10)
+c) La nicotine est le principal agent responsable de la dépendance
+d) Connaître les modalités de diagnostic de la dépendance",medGemma_27b,openbiollm_8b
+OIC-112-07-B,"Question: Quelle est la caractéristique principale d'une pemphigoïde bulleuse, comme illustrée dans l'image?
+a) Des bulles remplies de liquide clair et sans contenu.
+b) Des bulles remplies de liquide clair ou hémorragique, et des croûtes rondes sur peau urticarienne.
+c) Des bulles remplies de liquide rouge et des croûtes épaisses.
+d) Des bulles remplies de liquide jaune et des croûtes irrégulières.","Question: La photographie représente une pemphigoïde bulleuse.
+a) Une dermatose infectieuse
+b) Un type de leishmaniasis cutanée
+c) Une forme de pemphigus
+d) Une éruption urticarienne",medGemma_4b,openbiollm_8b
+OIC-245-09-A,"Question: Quelle est la cause la plus fréquente d'insuffisance corticotrope ?
+a) Une infection virale
+b) Un régime alimentaire pauvre en vitamines
+c) L'arrêt brusque d'une corticothérapie prolongée
+d) Une tumeur de la région hypothalamo-hypophysaire","Question: Quelle est la cause la plus fréquente d'insuffisance corticotrope selon le texte fourni ?
+a) Tumeurs hypothalamo-hypophysaires
+b) Interruption d'une corticothérapie prolongée
+c) Maladies auto-immunes de la glande surrénale
+d) Infections des glandes surrénales",gemma2_9b,medGemma_27b
+OIC-332-03-B,"Question: Dans le choc cardiogénique, quel est le principal mécanisme physiopathologique qui contribue à la diminution du débit cardiaque ?
+a) Une augmentation de la précharge cardiaque due à une vasodilatation.
+b) Une augmentation de la postcharge cardiaque due à une vasoconstriction.
+c) Une défaillance cardiaque responsable d'une diminution du débit cardiaque.
+d) Une augmentation de la précharge cardiaque due à une vasoconstriction.","Question: Quel est le type d'état de choc caractérisé par une augmentation de la post-charge cardiaque/résistances vasculaires systèmeiques ?
+a) Cardiogénique
+b) Hypovolémique
+c) Distributif
+d) Obstructif",medGemma_4b,llama3_1_8b
+OIC-162-11-B,"Question: Quels sont les signes cliniques communs à la fois à la salpingite et à l'endométrite chez la femme ?
+a) Fièvre, douleurs pelviennes, écoulement du col.
+b) Douleurs pelviennes, métrorragies, inflammation endocol.
+c) Fièvre, douleurs pelviennes, métrorragies.
+d) Douleur au toucher vaginal, inflammation endocol, écoulement du col.","Question: Quel est le symptôme **principal** différenciant une endométrite d'une salpingite chez la femme ?
+a) Douleur pelvienne
+b) Fièvre
+c) Leucorrhée
+d) Douleur au toucher vaginal",medGemma_27b,gemma2_9b
+OIC-364-08-B,"Question: Quels sont les principes thérapeutiques des fractures de l’enfant ?
+a) Immobilisation plâtrée et ostéosynthèse, avec surveillance médicale régulière.
+b) Traitement chirurgical uniquement, sans immobilisation plâtrée.
+c) Immobilisation plâtrée seule, sans prise en compte de l'ostéosynthèse.
+d) Ostéosynthèse uniquement, avec ou sans immobilisation plâtrée.","Question: Quelle est la principale préoccupation concernant l'immobilisation plâtrée chez l'enfant après une fracture ?
+a) La kinésithérapie est nécessaire pour prévenir la perte musculaire.
+b) La plaque de croissance doit être rigoureusement préservée.
+c) L'immobilisation plâtrée est bien tolérée et utilisée après une ostéosynthèse.
+d) La kinésithérapie est nécessaire pour prévenir la perte musculaire.",llama3_1_8b,medGemma_4b
+OIC-162-09-B,"Question: Parmi les causes d'urétrite chez l'homme, laquelle est spécifiquement associée à un écoulement urétral purulent dans la majorité des cas ?
+a) Chlamydiose
+b) Gonococcie
+c) Trichomonose
+d) Urétrite non vénérienne (ex: Escherichia)","Question: Quelle est la cause la plus fréquente d'urétrite chez l'homme, selon le texte fourni ?
+a) Chlamydiose
+b) Gonococcie
+c) Trichomonose
+d) Infection bactérienne non spécifique",medGemma_27b,medGemma_4b
+OIC-134-06-A,"Question: Quel est l'objectif principal de l'évaluation de la douleur chez un patient adulte selon le contenu éducatif ?
+a) Identifier la cause exacte de la douleur.
+b) Déterminer l'intensité et les caractéristiques de la douleur pour guider le traitement.
+c) Évaluer uniquement la douleur aiguë, car la douleur chronique est rarement traitable.
+d) Utiliser des échelles comportementales uniquement pour les patients incapables de communiquer verbalement.","Question: Quelle est l'échelle d'auto-évaluation de la douleur reconnue pour être la plus utilisée chez les patients adultes communicants?
+a) L’Échelle Visuelle Analogique (EVA)
+b) L’Échelle numérique (EN)
+c) L’échelle Verbale Simple (EVS) (ou échelle catégorielle)
+d) Toutes les précédentes",gemma2_9b,openbiollm_8b
+OIC-108-06-A,"Question: Quel est le premier objectif dans la prise en charge thérapeutique d'un patient confus ?
+a) Rechercher immédiatement la cause de la confusion
+b) Évaluer les constantes vitales et traiter les troubles vitaux
+c) Prescrire des médicaments psychotropes sans précautions
+d) Hospitaliser le patient sans évaluation préalable","Question: Quelle est la première étape cruciale dans la prise en charge d'un patient confus ?
+a) Administrer immédiatement des médicaments psychotropes pour calmer le patient.
+b) Identifier et traiter les troubles vitaux immédiats, tels que l'hypothermie ou l'état de choc.
+c) Évaluer la cause sous-jacente de la confusion, car le traitement de l'épisode confusionnel ne peut être envisagé indépendamment de sa cause.
+d) Mettre en place une contention physique pour contrôler le patient.",llama3_1_8b,medGemma_4b
+OIC-027-45-B,"Question: Quel est l'effet le plus significatif de l'irradiation fœtale sur le développement du système nerveux central ?
+a) Une augmentation de la taille du cerveau.
+b) Une diminution du quotient intellectuel (QI) avec un risque accru de retard mental.
+c) Une amélioration de la mémoire et des capacités cognitives.
+d) Une protection accrue contre les maladies neurodégénératives.","Question: Selon le texte, quels sont les deux principaux mécanismes d'action de l'irradiation sur le fœtus ?
+a) Augmentation du risque de leucémie et mort cellulaire.
+b) Lésions de l'ADN et diminution du QI.
+c) Mort cellulaire et lésions de l'ADN.
+d) Microcéphalie et augmentation du risque de leucémie.",medGemma_4b,medGemma_27b
+OIC-310-03-A,"Question: Quel facteur ne constitue PAS un risque connu pour le développement du cancer de la prostate ?
+a) L'âge
+b) Une ascendance africaine
+c) Le tabagisme passif
+d) Le syndrome métabolique","Question: Quels sont les principaux facteurs de risque connus pour le cancer de la prostate?
+a) L'âge, l'incidence du cancer augmente avec l'âge
+b) Les facteurs génétiques, on suspecte une forme héréditaire lorsqu'il existe des cas chez les apparentés du 1er ou 2è degrés
+c) L'origine ethnique notamment une ascendance originaire africaine augmente le risque de cancer de prostate
+d) Les facteurs environnementaux tels que les pesticides, la pollution au chlordécone reconnue comme un facteur de risque possible de cancer de la prostate",gemma2_9b,openbiollm_8b
+OIC-156-01-A,"Question: Quelle est la définition générale des Infections Ostéo-Articulaires (IOA) ?
+a) Multiplication d'un agent infectieux au sein du tissu osseux et/ou articulaire.
+b) Infection des tissus synoviaux puis des structures péri-articulaires.
+c) Infection d'un disque intervertébral (discite) et des corps vertébraux adjacents (spondylite).
+d) Forme aiguë hématogène d'ostéite, la plus fréquente chez l'enfant.","Question: Quelles sont les entités cliniques d'infections ostéo articulaires (IOA) ?
+a) Arthrite septique, ostéite chronique, spondylodiscite et ostéomyélite aiguë
+b) Ostéite chronique, arthrite septique, spondylodiscite et ostéomyélite aiguë
+c) Arthrite septique, ostéite chronique, ostéomyélite aiguë et spondylodiscite
+d) Ostéite chronique, arthrite septique, ostéomyélite aiguë et spondylodiscite",llama3_1_8b,openbiollm_8b
+OIC-161-19-A,"Question: Selon le texte, quel est le traitement initial recommandé pour une pyélonéphrite aiguë chez un enfant de 6 mois présentant de la fièvre et des signes d'infection urinaire, sans facteurs de complications ni signes de sévérité, et pour lequel une surveillance à domicile est possible et adaptée ?
+a) Traitement oral immédiat par céfixime.
+b) Traitement IV initial par ceftriaxone ou cefotaxime, suivi d'un relais oral.
+c) Traitement IV initial par ceftriaxone ou cefotaxime + amikacine, suivi d'un relais oral.
+d) Traitement oral immédiat par cotrimoxazole.","Question: Le traitement d'une infection urinaire aiguë chez l'enfant consiste en
+a) Un ECBU et un traitement antibiotique oral par cefixime
+b) Un ECBU suivi de deux jours d'antibiotiques intraveineux puis relai oral
+c) Un ECBU suivi d'un traitement IV par amoxicilline avec gentamicine en cas de sepsis
+d) Un ECBU suivi d'un traitement IV par ceftriaxone ou cefotaxime puis relai oral selon l'antibiogramme",medGemma_27b,openbiollm_8b
+OIC-288-16-B,"Question: Quand un traitement chirurgical des hémorroïdes est-il indiqué ?
+a) Toujours, car c'est la solution la plus efficace.
+b) Uniquement en cas de saignements importants et récurrents.
+c) Lorsque les symptômes sont légers et gênants au quotidien.
+d) Après avoir essayé toutes les options conservatrices sans succès.","Question: Quelles sont les indications du traitement chirurgical en pathologie hémorroïdaire?
+a) Les hémorroïdes de 3ème degré
+b) Les hémorroïdes de 2ème degré avec prolapsus
+c) Les hémorroïdes de 1ère degré avec prolapsus
+d) Les hémorroïdes de 4ème degré",gemma2_9b,openbiollm_8b
+OIC-049-03-B,"Question: Quelle est la valeur moyenne de la croissance pubertaire chez les filles ?
+a) 25-30 cm
+b) 20-25 cm
+c) 30-35 cm
+d) 40-45 cm","Question: Quelle est la valeur moyenne du pic de croissance pubertaire chez les garçons ?
+a) 10-15 cm
+b) 15-20 cm
+c) 25-30 cm
+d) 30-35 cm",medGemma_4b,medGemma_27b
+OIC-288-16-B,"Question: Quelles sont les indications du traitement chirurgical en cas de pathologie hémorroïdaire ?
+a) Lorsque la douleur est insupportable
+b) Lorsqu'il y a des saignements importants
+c) Lorsque les autres traitements ont échoué
+d) Lorsque l'on souhaite une intervention rapide","Question: Quelles sont les indications du traitement chirurgical en pathologie hémorroïdaire?
+a) Les hémorroïdes de 3ème degré
+b) Les hémorroïdes de 2ème degré avec prolapsus
+c) Les hémorroïdes de 1ère degré avec prolapsus
+d) Les hémorroïdes de 4ème degré",llama3_1_8b,openbiollm_8b
+OIC-082-07-A,"Question: Face à une baisse d'acuité visuelle brutale avec un œil blanc et indolore, quelle est la première étape cruciale si le fond d'œil n'est pas visible ou mal visible ?
+a) Rechercher une occlusion de l'artère centrale de la rétine.
+b) Réaliser une échographie B pour éliminer un décollement de la rétine.
+c) Initier un traitement par injections intra-vitréennes d'anti-VEGF.
+d) Rechercher une maladie de Horton.","Question: Devant une baisse d'acuité visuelle avec œil blanc et indolore, quel est le diagnostic le plus probable en fonction de l'examen du fond d'œil?
+a) Hémorragie intravitréenne
+b) Occlusion de l'artère centrale de la rétine
+c) Névrite optique rétrobulbaire
+d) Atteintes des voies optiques chiasmatiques et rétrochiasmatiques",medGemma_27b,medGemma_4b
+OIC-342-03-A,"Question: 
+a) 
+b) 
+c) 
+d) ","Question: Quel est le critère diagnostique majeur pour distinguer une syncope/lipothymie d'une crise d'épilepsie généralisée, selon le texte ?
+a) La présence de mouvements anormaux.
+b) La durée de la perte de connaissance.
+c) La présence de prodromes.
+d) Les circonstances de survenue.",gpt-4o,medGemma_27b
+OIC-039-03-A,"Question: Lequel des éléments suivants est une étape commune aux techniques d'Insémination Intra-Utérine (IIU) et de Fécondation In Vitro (FIV) classique ou ICSI ?
+a) Ponction folliculaire
+b) Micro-injection intra-cytoplasmique d'un spermatozoïde (ICSI)
+c) Préparation des spermatozoïdes à partir d'un prélèvement de sperme
+d) Culture embryonnaire","Question: Parmi les techniques d'AMP, il y a :
+a) La fécondation in vitro classique (FIVc) avec microinjection intra-cytoplasmique d'un spermatozoïde (ICSI)
+b) La fécondation in vitro classique (FIVc) avec mise en contact des ovocytes récupérés avec des spermatozoïdes préparés.
+c) La fécondation in vitro classique (FIVc) avec mise en contact des ovocytes récupérés avec des spermatozoïdes préparés et la culture et le transfert embryonnaire.
+d) La fécondation in vitro classique (FIVc) avec mise en contact des ovocytes récupérés avec des spermatozoïdes préparés, la culture et le transfert embryonnaire et la congélation embryonnaire.",medGemma_27b,medGemma_4b
+OIC-099-12-A,"Question: Selon le texte, quels sont les principaux facteurs de risque modifiables qui peuvent contribuer au passage d'une migraine épisodique à une migraine chronique ?
+a) Sexe féminin, faibles revenus, traumatismes passés.
+b) Fréquence élevée des céphalées, dépression, surconsommation de traitements de crise.
+c) Changements climatiques, modifications des repas, stress.
+d) Sédentarité, caféine, troubles du sommeil.","Question: Quels sont les facteurs favorisants éventuels d'une migraine ?
+a) Les déclencheurs sont des facteurs qui provoquent les crises chez un patient migraineux.
+b) Les règles hygiéno-diététiques peuvent guérir la migraine.
+c) Les comportements d'évitement inutiles de déclencheurs réels ou supposés peuvent diminuer la qualité de vie et même contribuer à augmenter la sensibilité aux déclencheurs et ainsi aggraver la migraine.
+d) La fréquence élevée des céphalées à la base est un facteur de risque modifiable de passage en migraine chronique.",medGemma_27b,llama3_1_8b
+OIC-179-11-A,"Question: Quelle mesure préventive est la plus importante à mettre en place en cas de suspicion de toxino-infection alimentaire (TIAC) ?
+a) La surveillance médicale du personnel et l'éviction de certains agents en fonction du risque.
+b) La surveillance médicale du personnel et l'éviction de certains agents en fonction du risque.
+c) La suspension des activités de restauration d’un établissement en attendant les résultats de l’enquête.
+d) La consignation des denrées suspectes et l'éviction de la source dès qu'elle est identifiée.","Question: Quelles sont les mesures préventives à prendre en cas de TIAC ?
+a) Consignation des denrées suspectes, éviction de la source dès qu'elle est identifiée et suspension des activités de restauration d'un établissement
+b) Surveillance médicale du personnel et prélèvements microbiologiques de routine dans la restauration collective
+c) Application de règles d'hygiène scrupuleuses durant toute la chaîne de préparation alimentaire
+d) Éviction de certains agents en fonction du risque",medGemma_4b,llama3_1_8b
+OIC-024-25-A,"Question: Quelle est la prise en charge initiale recommandée pour une fièvre survenant pendant la grossesse, en dehors d'une orientation spécifique ?
+a) Traitement spécifique ciblant la pyélonéphrite.
+b) Antibiothérapie empirique contre Listeria et antipyrétique.
+c) Antipyrétique et surveillance étroite.
+d) Antibiothérapie parentérale associant C3G et aminosides.","Question: Connaître la prise en charge d’une fièvre au cours de la grossesse
+a) Traitement initial en cas de fièvre puis selon l'orientation spécifique.
+b) Antibiothérapie préventive active sur Listeria : amoxicilline 3 g/j (ou érythromycine si allergie).
+c) Antipyrétique ; surveillance étroite. 
+d) Traitement spécifique selon l'orientation spécifique.",medGemma_27b,openbiollm_8b
+OIC-302-08-A,"Question: Quel facteur n'est PAS mentionné comme contribuant au développement des nævus ?
+a) Exposition solaire
+b) Origine ethnique
+c) Consommation de café
+d) Statut immunologique","Question: Quels sont les principaux facteurs responsables du développement des nævi?
+a) Facteurs intrinsèques
+b) Facteurs extrinsèques
+c) Les deux
+d) Aucun",gemma2_9b,openbiollm_8b
+OIC-109-01-A,"Question: Lors de l'interrogatoire d'un patient présentant des troubles de la marche et de l'équilibre, quel élément est crucial à évaluer pour comprendre l'impact du trouble dans la vie quotidienne ?
+a) La date exacte du premier trouble de la marche.
+b) La liste complète des médicaments pris par le patient.
+c) La sévérité du trouble en termes de chutes, d'autonomie et de conséquences.
+d) Les capacités cognitives du patient.","Question: Quels sont les éléments essentiels à prendre en compte lors d'un interrogatoire pour un trouble de la marche?
+a) La date de début des troubles, leur mode d'installation et le type de la plainte principale
+b) L'évaluation de la sévérité du trouble dans la vie quotidienne
+c) Évaluer la capacité du sujet à monter ou descendre un escalier
+d) Connaitre la liste complète des médicaments pris par le patient",medGemma_27b,openbiollm_8b
+OIC-261-02-A,"Question: Quel est le syndrome glomérulaire caractérisé par une insuffisance rénale rapidement progressive, une protéinurie et une hématurie ?
+a) Syndrome d’hématurie macroscopique récidivante
+b) Syndrome de glomérulonéphrite chronique
+c) Syndrome néphrotique
+d) Syndrome de glomérulonéphrite rapidement progressive","Question: Quels sont les différents types de syndromes glomérulaires?
+a) Syndrome d’hématurie macroscopique récidivante
+b) Syndrome de glomérulonéphrite chronique
+c) Syndrome néphrotique
+d) Syndrome néphritique aigu",llama3_1_8b,openbiollm_8b
+OIC-302-12-B,"Question: Quels sont les principaux facteurs de mauvais pronostic pour un mélanome au stade IV ?
+a) Un taux de LDH élevé, une masse tumorale élevée et des métastases cérébrales symptomatiques.
+b) Le nombre et la taille des ganglions envahis, ainsi que le taux de LDH élevé.
+c) L'ulcération, l'indice de Breslow et le nombre de métastases hépatiques.
+d) La présence d'une masse tumorale élevée et des métastases cérébrales symptomatiques uniquement.","Question: Quels sont les différents types histologiques du mélanome?
+a) Le mélanome à extension superficielle
+b) Le mélanome nodulaire
+c) Le mélanome acral lentigineux
+d) Le mélanome de Dubreuilh",llama3_1_8b,openbiollm_8b
+OIC-347-03-A,"Question: Quelle est la cause la plus fréquente de rétention aiguë d'urine chez l'homme ?
+a) Prolapsus génital sévère
+b) Hypertrophie bénigne de la prostate
+c) Sclérose en plaques
+d) Syndrome de la queue de cheval","Question: Quelles sont les principales causes de rétention aiguë d'urine?
+a) Obstruction mécanique
+b) Anomalie de contraction détrusorienne ou sphinctérienne
+c) Iatrogène
+d) Autres",medGemma_4b,openbiollm_8b
+OIC-075-06-A,"Question: Selon les informations fournies, quel est le principal facteur de risque lié au tabagisme en termes de développement de cancer ?
+a) L'âge de début du tabagisme.
+b) La quantité de cigarettes fumées quotidiennement.
+c) La durée de l'intoxication tabagique.
+d) Le sexe du fumeur (homme ou femme).","Question: Quel pourcentage de personnes âgées de 18 à 75 ans sont fumeuses en France?
+a) 26,5%
+b) 49%
+c) 34,6%
+d) 30,4%",medGemma_27b,openbiollm_8b
+OIC-019-01-A,"Question: Quelle est la définition de la protection sociale ?
+a) L'ensemble des mécanismes de protection accordés par une société à ses membres pour leur permettre de faire face aux risques sociaux de l'existence et à leurs conséquences financières.
+b) Un système de sécurité sociale qui couvre uniquement les dépenses médicales.
+c) Une forme d'aide sociale réservée aux personnes en situation de pauvreté.
+d) Un programme de prévoyance individuelle pour les risques sociaux.","Question: Selon le texte, quelle est la principale caractéristique de la logique d'assistance sociale en matière de protection sociale ?
+a) Elle est financée par des cotisations sociales et réservée aux cotisants.
+b) Elle vise à garantir un revenu minimum et ne couvre pas forcément un risque spécifique.
+c) Elle couvre certaines dépenses pour tous les individus, sans condition de ressources.
+d) Elle repose sur l'épargne individuelle ou l'assurance privée.",llama3_1_8b,medGemma_27b
+OIC-234-04-A,"Question: Quelle est la définition du choc cardiogénique?
+a) Défaillance aiguë et sévère de la fonction cardiaque entraînant une altération profonde de la perfusion périphérique et une anoxie tissulaire
+b) Un état d'hypotension artérielle avec un débit urinaire inférieur à 30 mL/h
+c) Une chute du débit cardiaque entraînant une hypoperfusion et une anoxie tissulaire
+d) Le choc cardiogénique est causé par l'infarctus du myocarde","Question: Quelle est la définition du choc cardiogénique ?
+a) Défaillance aiguë et sévère de la fonction cardiaque entraînant une altération profonde de la perfusion périphérique et une anoxie tissulaire.
+b) Incapacité cardiaque à générer un débit sanguin suffisant permettant de répondre aux besoins métaboliques des organes périphériques.
+c) Baisse du débit cardiaque entraînant une hypoperfusion et une anoxie tissulaire et induisant une défaillance des organes périphériques concernés (rein, foie, cerveau).
+d) Tous les choix sont corrects.",openbiollm_8b,llama3_1_8b
+OIC-179-06-A,"Question: Quel est le principal risque lié à la consommation de poisson mal conservé ?
+a) Troubles gastro-intestinaux
+b) Éruption cutanée
+c) Syndrome histaminique
+d) Atteinte neurologique","Question: Quel est un risque sanitaire lié à l'alimentation, selon le contenu éducatif fourni ?
+a) Perturbation endocrinienne
+b) Cancer
+c) Atteinte hépatique
+d) Troubles gastro-intestinaux",gemma2_9b,medGemma_4b
+OIC-201-09-B,"Question: Quels sont les critères utilisés pour déterminer la mort encéphalique ?
+a) Critères cliniques et paracliniques
+b) Seulement des critères cliniques
+c) Seulement des critères paracliniques
+d) Les deux critères sont facultatifs","Question: Quelles sont les particularités diagnostiques de la mort encéphalique?
+a) Critères cliniques et électro-encéphalogrammes nuls
+b) Critères cliniques et angiographie cérébrale
+c) Critères cliniques et électrocardiogramme aréactif
+d) Critères cliniques et absence de ventilation spontanée",llama3_1_8b,openbiollm_8b
+OIC-245-24-B,"Question: Quel test biologique est systématiquement effectué chez tous les nouveaux-nés en France depuis 1995 pour le dépistage de l'insuffisance surrénale congénitale due à un bloc en 21 hydroxylase ?
+a) Dosage des acides gras à longue chaîne
+b) Dosage de la 17-hydroxyprogestérone sur papier buvard
+c) Dosage de l'ACTH
+d) Dosage du cortisol","Question: Dans le cadre du dépistage néonatal systématique de l'insuffisance surrénale, quel est le principal test biologique réalisé chez les nouveaux-nés ?
+a) Dosage de la 17-OH progestérone
+b) Dosage de l'ACTH
+c) Dosage de la cortisol
+d) Dosage de la 17-OH progestérone et des acides gras à longue chaîne",medGemma_27b,medGemma_4b
+OIC-260-05-B,"Question: Quel examen est systématiquement recommandé en première intention pour évaluer une hématurie ?
+a) Numération-formule sanguine
+b) Échographie réno-vésicale
+c) Cytologie urinaire
+d) Fibroscopie urétro-vésicale","Question: Quel est le premier examen d'imagerie à réaliser dans le cadre d'une enquête étiologique d'une hématurie macroscopique isolée ?
+a) Uro-scanner
+b) Fibroscopie urétro-vésicale
+c) Cytologie urinaire
+d) Ponction-biopsie rénale",gemma2_9b,medGemma_4b
+OIC-039-11-B,"Question: Quel est l'objectif principal d'une exploration clinico-biologique avant une AMP ?
+a) Déterminer le sexe du futur bébé.
+b) Identifier les causes d'infertilité et évaluer les risques de la procédure.
+c) Choisir la technique d'AMP la plus appropriée en fonction des antécédents médicaux du couple.
+d) S'assurer que le couple est prêt psychologiquement à entreprendre une AMP.","Question: Selon le texte, quelle est la principale raison de réaliser une exploration clinico-biologique avant de recourir à l'Assistance Médicale à la Procréation (AMP)?
+a) Déterminer la technique d'AMP la plus appropriée.
+b) Évaluer la balance bénéfice-risque de l'AMP pour le couple.
+c) Effectuer une évaluation psychologique obligatoire du couple.
+d) Vérifier l'absence de contre-indications obstétricales.",gemma2_9b,medGemma_27b
+OIC-302-11-A,"Question: Quelles sont les caractéristiques cliniques du mélanome ?
+a) Une tumeur noire
+b) Une tumeur asymétrique avec des bords irréguliers, une couleur inhomogène et un diamètre supérieur à 6 mm ou évolutivité
+c) Une tumeur symétrique avec des bords réguliers, une couleur homogène et un diamètre inférieur à 6 mm ou stable
+d) Une tumeur qui n'a ni les caractéristiques ABCDE ni le mélanin","Question: Une lésion cutanée est suspecte pour un mélanome si elle présente une ou plusieurs des caractéristiques suivantes, selon la règle ABCDE :
+a) Asymétrie
+b) Bords irréguliers
+c) Couleur homogène
+d) Diamètre inférieur à 6 mm",openbiollm_8b,medGemma_4b
+OIC-027-31-A,"Question: Quel médicament est connu pour être à risque lors de la grossesse et qui est utilisé pour traiter les maladies auto-immunes ?
+a) Mycophénolate (Cellcept<sup>®</sup>, Myfortic<sup>®</sup>)
+b) Lithium (Téralithe<sup>®</sup>)
+c) Warfarine (Coumadine<sup>®</sup>)
+d) Valproate de sodium (Dépakine<sup>®</sup>)","Question: Quel est le principal risque pour la santé lié à l'exposition à des médicaments?
+a) Cancer
+b) Malformations congénitales
+c) Autres effets indésirables
+d) Toutes les réponses sont correctes",llama3_1_8b,openbiollm_8b
+OIC-162-04-A,"Question: Quelle mesure est **obligatoire** à proposer systématiquement aux partenaires d'une personne infectée par une IST ?
+a) Un traitement antibiotique probabiliste
+b) Une vaccination contre l'hépatite A
+c) Un dépistage sérologique du VIH
+d) Un test de grossesse","Question: Quels sont les principes de prise en charge du ou des partenaires contaminés ou contaminateurs dans le contexte d'infections sexuellement transmissibles (IST) ?
+a) Proposer un dépistage, un diagnostic et/ou un traitement probabiliste pour identifier le ou les partenaire(s) contaminé(s) ou contaminateur(s)
+b) Insister uniquement sur l'éducation des partenaires sur les risques de recontamination
+c) Proposer systématiquement une sérologie VIH, un test tréponémique et une sérologie d'hépatite B, ainsi que des tests PCR pour ''Neisseria gonorrhoeae'' et ''Chlamydia trachomatis''
+d) Envisager uniquement un traitement de type PrEP (Prophylaxie Pré-Exposition) contre le VIH en cas de prise de risque trop régulière",gemma2_9b,llama3_1_8b
+OIC-082-11-A,"Question: Quelle est la caractéristique principale d'une aura migraineuse visuelle ?
+a) Une perte de vision complète et permanente.
+b) Des flashs colorés et un scotome scintillant qui disparaissent en 15 à 20 minutes, souvent suivis d'une céphalée.
+c) Une vision double persistante et irréversible.
+d) Une augmentation soudaine de la sensibilité à la lumière et au bruit.","Question: Quel est le principal symptôme d'une migraine ophtalmique ou aura migraineuse visuelle?
+a) Scotome scintillant bilatéral
+b) Flashs colorés dans un hémichamp visuel
+c) Vision floue dans le champ visuel contralateral
+d) Tous les symptômes mentionnés précédemment",medGemma_4b,openbiollm_8b
+OIC-145-05-B,"Question: Quelle est la définition de la sensibilité dans le contexte des examens diagnostiques ?
+a) Proportion de sujets classés malades parmi l’ensemble des sujets réellement atteints de la maladie
+b) Proportion de sujets classés non malades parmi l’ensemble des sujets non atteints par la maladie
+c) Proportion de sujets malades parmi les sujets classés malades (dont le résultat du test est positif)
+d) Proportion de sujets non malades parmi les sujets classés non malades (dont le résultat du test est négatif)","Question: Quelle est la définition de la sensibilité d'un examen diagnostique ?
+a) La proportion de sujets réellement atteints de la maladie parmi ceux classés malades.
+b) La proportion de sujets non malades parmi ceux classés non malades.
+c) La proportion de sujets malades parmi ceux classés malades.
+d) La proportion de sujets non malades parmi ceux classés non malades.",llama3_1_8b,medGemma_4b
+OIC-112-06-A,"Question: Quelle caractéristique décrit une lésion bulleuse ?
+a) Une plaie ouverte et saignante
+b) Une zone rouge et chaude au toucher
+c) Une poche remplie de liquide, tendue sur la peau
+d) Un grain de peau dur et épais","Question: Quelle est la caractéristique principale de la lésion représentée ?
+a) Une croûte épaisse et sèche.
+b) Une collection de liquide tendue sous la peau.
+c) Une zone de peau rouge et enflée.
+d) Une perte de substance de la peau.",gemma2_9b,medGemma_27b
+OIC-198-12-B,"Question: Outre l'accès goutteux initial, quelles manifestations articulaires peuvent survenir chez un patient atteint de goutte ?
+a) Atteinte exclusive des membres inférieurs.
+b) Atteinte des membres supérieurs, du rachis, de la hanche et de l'épaule.
+c) Atteinte uniquement des petites articulations des mains et des pieds.
+d) Atteinte exclusivement des articulations sacro-iliaques.","Question: Quelles manifestations cliniques peuvent être observées chez un patient atteint de goutte ? 
+a) Oligoarthritis
+b) Polyarthritis
+c) Tendinitis
+d) Tenosynovitis",medGemma_27b,openbiollm_8b
+OIC-342-07-A,"Question: Quelles sont les causes cardiovasculaires et non cardiovasculaires des syncopes/lipothymies ?
+a) Seulement la cause cardiaque
+b) Toutes les causes, y compris la cause cardiaque et non cardiaque
+c) Aucune cause cardiaque
+d) La cause cardiaque est la plus fréquente","Question: Quelle est la cause la plus fréquente des syncopes/lipothymies ?
+a) Une crise cardiaque
+b) Une hypotension sévère
+c) Une réaction de réflexe
+d) Une cause cardiovasculaire",llama3_1_8b,medGemma_4b
+OIC-022-01-A,"Question: Quelle est la définition d'une maladie rare selon le Règlement européen sur les médicaments orphelins ?
+a) Une maladie qui affecte plus de 100 000 personnes dans l'Union Européenne.
+b) Une maladie qui atteint moins d'une personne sur 2 000 en population générale.
+c) Une maladie qui est causée par un virus.
+d) Une maladie qui est incurable.","Question: Quelle est la définition d'une maladie rare ?
+a) Une maladie qui touche moins de 1 personne sur 1000.
+b) Une maladie dont le nombre de cas est inférieur à celui des habitants d'une ville moyenne.
+c) Une maladie qui affecte moins de 5% de la population générale.
+d) Une maladie rare est celle dont la prévalence est inférieure à 1/2000.",medGemma_4b,openbiollm_8b
+OIC-267-09-B,"Question: Quelle est la principale stratégie de traitement pour les troubles acido-basiques aigus sévères, selon le texte fourni ?
+a) Administration systématique de bicarbonate de sodium.
+b) Traitement de la cause sous-jacente.
+c) Ventilation artificielle pour éliminer le CO2.
+d) Épuration extrarénale en cas d'insuffisance rénale.","Question: Dans le traitement des acidoses acutes sévères, l'alcalinisation est-elle généralement recommandée ?
+a) Toujours, quel que soit le type d'acidose.
+b) Uniquement dans les acidoses hyperchlorémiques ou associées à certaines intoxications.
+c) Uniquement dans les acidoses lactiques.
+d) Jamais, sauf en cas de surcharge hydro-sodée et/ou d'hypokaliémie et/ou d'hypocalcémie.",medGemma_27b,medGemma_4b
+OIC-233-08-B,"Question: Dans le traitement chirurgical de l'insuffisance mitrale, quelle est la stratégie de première intention si possible?
+a) Remplacement valvulaire mitrale par prothèse biologique.
+b) Remplacement valvulaire mitrale par prothèse mécanique.
+c) Plastie mitrale.
+d) Remplacement de l'aorte ascendante.","Question: Quel est le traitement recommandé pour l'insuffisance aortique ?
+a) Plastie valvulaire
+b) Remplacement valvulaire aortique par prothèse mécanique ou biologique
+c) Intervention de Bentall associant remplacement valvulaire et de l'aorte ascendante dans un tube valvé avec réimplantation des coronaires
+d) Traitement médicamenteux uniquement",medGemma_4b,llama3_1_8b
+OIC-047-04-A,"Question: Quel est le moment recommandé pour effectuer un bilan visuel systématique chez un enfant ?
+a) À l'âge de 10 ans.
+b) À la naissance.
+c) Entre 9 et 24 mois.
+d) À l'âge de 5 ans.","Question: Selon les recommandations, à quels âges le dépistage systématique des troubles visuels est-il effectué chez l'enfant ?
+a) À la naissance, 6 mois, 1 an, 3 ans, 5 ans.
+b) À la naissance, 2 mois, 4 mois, entre 9 et 24 mois, 2-3 ans, 5 ans.
+c) À 1 an, 3 ans, 5 ans, 7 ans, 9 ans.
+d) À 6 mois, 1 an, 2 ans, 4 ans, 6 ans.",medGemma_4b,medGemma_27b
+OIC-076-08-A,"Question: Quels sont les signes d'une intoxication alcoolique aiguë à faible dose ?
+a) Perte de conscience et convulsions
+b) Haleine caractéristique, injection des conjonctives, jovialité ou tristesse, logorrhée, désinhibition, agressivité
+c) Fevere et douleurs abdominales
+d) Tachycardie et hypertension artérielle","Question: Quel est le diagnostic différentiel principal à éliminer lors d'un coma éthylique ?
+a) Hypoglycémie
+b) Hémorragie cérébrale
+c) Ischémie cérébrale
+d) Acidocétose alcoolique",llama3_1_8b,gemma2_9b
+OIC-020-12-B,"Question: Quelle est la définition de l'inférence en recherche en santé?
+a) L'inférence en recherche en santé correspond à une estimation du taux d'une caractéristique chez une population.
+b) L'inférence en recherche en santé correspond à une extrapolation des résultats observés sur un échantillon à la population dont il est issu.
+c) L'inférence en recherche en santé correspond à une interprétation statistique des données recueillies dans une étude.
+d) L'inférence en recherche en santé correspond à une analyse déductive de l'effet d'un traitement sur un groupe de patients.","Question: Dans le contexte de la recherche en santé, quel est le principal objectif d'une étude biomédicale ?
+a) Déterminer la valeur biologique d'un biomarqueur spécifique.
+b) Déterminer la valeur biologique d'un biomarqueur spécifique.
+c) Réaliser une observation sur échantillon de critères biomédicaux.
+d) Déterminer la valeur biologique d'un biomarqueur spécifique.",openbiollm_8b,medGemma_4b
+OIC-267-09-B,"Question: Quelle est la principale stratégie de traitement pour les troubles acido-basiques aigus sévères, selon le texte fourni ?
+a) Administration systématique de bicarbonate de sodium.
+b) Traitement de la cause sous-jacente.
+c) Ventilation artificielle pour éliminer le CO2.
+d) Épuration extrarénale en cas d'insuffisance rénale.","Question: Dans quel cas l'alcalinisation est-elle **indispensable** lors du traitement d'un trouble acido-basique aigu sévère ?
+a) Acidose lactique
+b) Acidocétose
+c) Acidose hyperchlorémique
+d) Surcharge hydro-sodée",medGemma_27b,gemma2_9b
+OIC-045-06-B,"Question: Quel signe échographique est **principal** au premier trimestre pour le dépistage d'une trisomie 21 ?
+a) Cardiopathie
+b) Fémurs courts
+c) Nuque supérieure à 3,5 mm
+d) Hypoplasie des os du nez","Question: Quels sont les principaux signes de la trisomie 21 détectés par le suivi échographique ?
+a) Nuque supérieure à 3,5 mm uniquement
+b) Cardiopathie, hypoplasie ou aplasie des os propres du nez, fémurs courts, signes indirects de sténose duodénale…
+c) Retard de croissance intra utérin sans cause placentaire uniquement
+d) Tous les signes mentionnés ci-dessus",gemma2_9b,llama3_1_8b
+OIC-100-08-A,"Question: En cas de céphalée aiguë brutale, quelle est la première mesure à prendre selon les recommandations du texte ?
+a) Effectuer une IRM cérébrale complète
+b) Réaliser un scanner cérébral sans injection puis avec injection
+c) Demander l'avis d'un spécialiste pour explorer d'autres causes
+d) Effectuer un scanner cérébral en urgence à la recherche d'une HSA","Question: Une céphalée brutale est explorée comme une HSA anévrysmale, quelle est la justification de cette approche ?
+a) Toute céphalée brutale est explorée comme une HSA anévrysmale.
+b) Toute céphalée progressive est explorée comme une HTIC.
+c) Toute céphalée fébrile est explorée comme une méningite.
+d) Les explorations sont réalisées aux urgences, parfois après transfert du patient dans un centre disposant des capacités d’imagerie nécessaires (angioscanner) .",gemma2_9b,medGemma_4b
+OIC-049-16-A,"Question: Quel est le critère pour définir le retard pubertaire chez les filles et les garçons ?
+a) Absence de croissance des cheveux après l'âge de 13 ans
+b) Augmentation du volume testiculaire après l'âge de 14 ans chez un garçon ou absence de développement mammaire après l'âge de 13 ans chez une fille
+c) Apparition des poils pubiens avant l'âge de 10 ans
+d) Développement des dents permanentes avant l'âge de 12 ans","Question: Quel âge définit le retard pubertaire chez une fille ?
+a) 12 ans
+b) 13 ans
+c) 14 ans
+d) 15 ans",llama3_1_8b,gemma2_9b
+OIC-099-05-A,"Question: Selon les critères diagnostiques ICHD-3, quelle caractéristique est essentielle pour diagnostiquer l'algie vasculaire de la face (AVF) ?
+a) La douleur doit durer plus de 3 heures.
+b) La douleur doit être strictement unilatérale et accompagnée de signes dysautonomiques du même côté.
+c) La fréquence des crises doit être inférieure à une crise tous les deux jours.
+d) La présence de signes migraineux (nausées, vomissements, photophobie) est suffisante pour le diagnostic.","Question: Quel est le critère diagnostique le plus important pour l'algie vasculaire de la face (AVF) selon l'ICHD-3 ?
+a) Au moins cinq crises répondant aux critères B-D
+b) Douleur sévère à très sévère, unilatérale, orbitaire, sus-orbitaire et/ou temporale durant 15 à 180 minutes (sans traitement)
+c) L'un des éléments suivants ou les deux : a) injection conjonctivale et/ou larmoiement, b) congestion nasale et/ou rhinorrhée, c) œdème palpébral, d) transpiration du front et/ou de la face, e) myosis et/ou ptose
+d) Fréquence crises = 1 tous les 2 jours à 8/jour en période active",medGemma_27b,medGemma_4b
+OIC-039-13-B,"Question: Quelle est la complication la plus fréquente associée aux techniques d'Assistance Médicale à la Procréation (AMP) ?
+a) La torsion d'annexe
+b) Le syndrome d'hyperstimulation ovarienne
+c) La transmission d'une anomalie génétique
+d) La fausse couche spontanée","Question: Quelles sont les principales complications liées à l'assistance médicale à la procréation (AMP) ?
+a) Le risque allergique est le principal risque lié à la stimulation ovarienne.
+b) La torsion d'annexe est une complication exceptionnelle liée à l'augmentation du volume ovarien en cours de stimulation ovarienne.
+c) Les complications liées à la ponction ovarienne sont extrêmement rares.
+d) Les complications de début grossesse par AMP sont les mêmes que lors d'une grossesse spontanée.",medGemma_4b,openbiollm_8b
+OIC-187-16-A,"Question: Quels sont les quatre principaux sources d'allergènes responsables d'un eczéma de contact ?
+a) Les aliments, les médicaments oraux et les produits chimiques industriels.
+b) Les cosmétiques, les médicaments à application cutanée, les produits vestimentaires et les allergènes professionnels.
+c) Les végétaux, les animaux de compagnie et les produits d'entretien ménager.
+d) Les vaccins, les médicaments génériques et les suppléments alimentaires.","Question: Quels sont les quatre principaux allergènes responsables dans un eczéma de contact ?
+a) Produits vestimentaires, cosmétiques, médicaments à application cutanée et allergènes professionnels.
+b) Vêtements teints, shampoings, crèmes anti-inflammatoires et produits du métier.
+c) Produits de la maison, cosmétiques, médicaments topiques et substances professionnelles.
+d) Produits vestimentaires en cuir, cosmétiques, médicaments à application cutanée et allergènes professionnels.",llama3_1_8b,openbiollm_8b
+OIC-247-26-B,"Question: Quels sont les principes du traitement néphroprotecteur chez le diabétique ?
+a) Seul le contrôle de la glycémie est essentiel
+b) Le contrôle de la glycémie, de la pression artérielle et l'utilisation d'inhibiteurs de l'enzyme de conversion ou d'antagonistes des récepteurs de type 1 de l'angiotensine II sont essentiels
+c) Seul le régime hypoprotidique est efficace
+d) Le contrôle de la glycémie et de la pression artérielle sont les seuls principes du traitement néphroprotecteur","Question: Quelle est la principale préoccupation en matière de prise en charge néphroprotectrice chez le diabétique ?
+a) Eviter les situations à risque d'accélération de la progression de la néphropathie.
+b) Assurer une bonne maîtrise des facteurs de risque associés.
+c) Gérer l'hypertension artérielle et le tabagisme.
+d) Contrôler les niveaux de glycémie.",llama3_1_8b,openbiollm_8b
+OIC-302-06-B,"Question: Quel est le principal facteur de risque d'évolution péjorative des carcinomes basocellulaires et épidermoïdes (CBC) ?
+a) La taille de la lésion
+b) La localisation sur tempe, oreille ou lèvre
+c) Un faible niveau de différenciation en histologie
+d) L’immunodépression","Question: Quels sont les facteurs de mauvais pronostic des carcinomes épidermoïdes?
+a) La taille de la lésion >2cm
+b) Localisation sur tempe, oreille ou lèvre
+c) Un faible niveau de différenciation en histologie
+d) Une épaisseur tumorale en histologie>3mm",medGemma_4b,openbiollm_8b
+OIC-027-38-B,"Question: Les atteintes fœtales sont proportionnelles à la quantité d'alcool ingérée.
+a) Les atteintes fœtales ne dépendent pas de la quantité d'alcool ingérée.
+b) Les atteintes fœtales augmentent avec l'augmentation de la consommation d'alcool.
+c) Les atteintes fœtales ne sont pas affectées par la quantité d'alcool ingérée.
+d) Les atteintes fœtales diminuent avec l'augmentation de la consommation d'alcool.","Question: Quelle est la relation entre la quantité d'alcool consommée et les atteintes fœtales, selon le contenu éducatif fourni ?
+a) La quantité d'alcool ingérée est directement proportionnelle au risque de malformations fœtales.
+b) La quantité d'alcool ingérée n'a aucun impact sur le développement fœtal.
+c) La quantité d'alcool ingérée est proportionnelle au risque de troubles cognitifs et comportementaux à long terme.
+d) La quantité d'alcool ingérée est proportionnelle au risque de troubles cognitifs et comportementaux à long terme, mais seulement en cas de consommation importante.",openbiollm_8b,medGemma_4b
+OIC-191-09-B,"Question: Quel est le traitement antibiotique initial recommandé pour une neutropénie fébrile profonde ?
+a) Amoxicilline/acide clavulanique + ciprofloxacine
+b) Piperacilline/tazobactam ou céfépime
+c) Vancomycine
+d) Streptomycine","Question: Quelle est la thérapeutique recommandée pour une neutropénie fébrile profonde ?
+a) Piperacilline/tazobactam et céfépime
+b) Amoxicilline/acide clavulanique et ciprofloxacine
+c) Vancomycine
+d) Ceftriaxone et metronidazole",gemma2_9b,openbiollm_8b
+OIC-245-02-A,"Question: Quelle est la principale différence sémiologique entre l'insuffisance surrénale primaire et secondaire concernant la pigmentation de la peau ?
+a) L'insuffisance primaire est associée à une pâleur, tandis que l'insuffisance secondaire est associée à une hyperpigmentation.
+b) L'insuffisance primaire est associée à une hyperpigmentation, tandis que l'insuffisance secondaire est associée à une pâleur.
+c) Les deux types d'insuffisance surrénale sont associés à une pâleur.
+d) Les deux types d'insuffisance surrénale sont associés à une hyperpigmentation.","Question: Quelle est la principale différence entre l'insuffisance surrénale primaire (périphérique) et secondaire (centrale) en termes de signes cliniques?
+a) L'insuffisance surrénale primaire se caractérise par une hyperpigmentation, tandis que l'insuffisance surrénale secondaire se caractérise par une pâleur.
+b) L'insuffisance surrénale primaire se caractérise par une hyperkaliémie, tandis que l'insuffisance surrénale secondaire se caractérise par une hypokaliémie.
+c) L'insuffisance surrénale primaire se caractérise par une hypoglycémie, tandis que l'insuffisance surrénale secondaire se caractérise par une hyperglycémie.
+d) L'insuffisance surrénale primaire se caractérise par une hypotension orthostatique, tandis que l'insuffisance surrénale secondaire se caractérise par une hypertension.",medGemma_27b,medGemma_4b
+OIC-038-06-B,"Question: Chez la femme, quel symptôme clinique associé à l'interrogatoire est fortement suggestif d'une origine d'infertilité liée à l'endométriose ?
+a) Troubles du cycle menstruel (spanioménorrhée, aménorrhée)
+b) Dysménorrhée et dyspareunie
+c) Galactorrhée spontanée ou provoquée
+d) Sécheresse cutanéo-muqueuse","Question: Quelle est l'origine possible de l'infertilité chez un couple présentant une aménorrhée primaire ? 
+a) Pathologie utérine
+b) Pathologie cervicale
+c) Troubles du cycle menstruel
+d) Obstruction tubaire",medGemma_27b,openbiollm_8b
+OIC-328-02-A,"Question: Selon la définition donnée, quel est le principal critère de distinction entre un dispositif médical et un simple instrument ?
+a) L'utilisation du dispositif est uniquement pour des fins esthétiques.
+b) L'action principale du dispositif est obtenue par des moyens pharmacologiques.
+c) L'action principale du dispositif est obtenue par des moyens non pharmacologiques.
+d) Le dispositif est fabriqué à partir de matériaux organiques.","Question: Quelle est la définition d'un dispositif médical selon la nouvelle réglementation européenne ? 
+a) Tout instrument, appareil ou équipement utilisé à des fins médicales chez l'homme.
+b) Un produit dont l'action principale voulue n'est pas obtenue par des moyens pharmacologiques, immunologiques ou métaboliques.
+c) Un dispositif médical est un instrument, appareil, équipement, matière ou produit utilisé à des fins médicales chez l'homme et dont l'action principale voulue n'est pas obtenue par des moyens pharmacologiques, immunologiques ou métaboliques.
+d) Un dispositif médical est un instrument, appareil, équipement, matière ou produit utilisé à des fins médicales chez l'homme et dont l'action principale voulue n'est pas obtenue par des moyens pharmacologiques, immunologiques ou métaboliques, sans en règlementer les prix et les remboursements par les organismes sociaux.",medGemma_4b,openbiollm_8b
+OIC-082-16-B,"Question: Quel facteur favorise la survenue d'un décollement de rétine (DR) ?
+a) L'âge
+b) La myopie forte
+c) Un traumatisme
+d) Tous les facteurs mentionnés","Question: Quels sont les facteurs de risque d'un décollement de rétine rhegmatogène?
+a) Myopie forte
+b) Traumatisme oculaire
+c) Uvéeite
+d) Chirurgie de la cataracte",llama3_1_8b,openbiollm_8b
+OIC-179-10-B,"Question: Quels sont les premiers pas à suivre lors d'une suspicion de Toxi-infections alimentaires (TIAC) dans un établissement de soins ?
+a) Effectuer immédiatement des prélèvements de selles et vomissements chez les malades.
+b) Prévenir le médecin responsable/équipe opérationnelle d'hygiène de l'établissement, identifier les malades ayant des signes cliniques, établir une liste des symptômes et des repas des trois derniers jours.
+c) Effectuer un signalement de la suspicion de TIAC au médecin inspecteur de l’ARS sans prendre d’autres mesures préliminaires.
+d) Conserver les restes des matières premières et des denrées servies à la collectivité au cours des 3 derniers jours sans établir une liste des symptômes.","Question: Quelles sont les premières mesures à prendre pour préparer une investigation de toxi-infection alimentaire collective (TIAC)?
+a) Identifier les malades ayant eu des signes cliniques
+b) Effectuer des prélèvements de selles et éventuellement de vomissements chez les malades
+c) Préparer une liste des menus des repas des trois derniers jours
+d) Conserver les restes des matières premières et des denrées servies à la collectivité au cours des 3 derniers jours",llama3_1_8b,openbiollm_8b
+OIC-100-09-A,"Question: Quel est le principal objectif des traitements de crise dans la prise en charge des céphalées primaires ?
+a) Prévenir toutes les futures crises.
+b) Soulager la crise actuelle.
+c) Traiter la cause sous-jacente de la céphalée.
+d) Réduire la fréquence des crises à long terme (traitement de fond).","Question: Quelle est la prise en charge des céphalées primaires?
+a) Consultation item 99
+b) Traitement de crise spécifique à chaque type de céphalée primaire
+c) Traitement de fond pour réduire le nombre de crises
+d) Toutes les options sont correctes",medGemma_27b,openbiollm_8b
+OIC-235-01-A,"Question: Quelle est la définition d'une péricardite aiguë ?
+a) Inflammation chronique des feuillets du péricarde
+b) Accompagnée d'un épanchement péricardique ou non, et si associée à une élévation de la troponine = myo-péricardite
+c) Infection aiguë des feuillets du péricarde
+d) Accompagnée d'un épanchement péricardique uniquement","Question: Quelle est la définition d'une péricardite aiguë ?
+a) Inflammation aiguë des feuillets du péricarde
+b) Accompagnée d'un épanchement péricardique ou non (« péricardite sèche »)
+c) Si associée à une élévation de la troponine = myo-péricardite
+d) Une affection caractérisée par une inflammation chronique du péricarde.",llama3_1_8b,medGemma_4b
+OIC-302-02-A,"Question: Quelle est la caractéristique clinique principale des verrues plantaires myrméciformes (HPV1) ?
+a) Lésions superficielles, non douloureuses, en plaques kératosiques.
+b) Petites papules jaunes, lisses, sur le visage.
+c) Lésions profondes, douloureuses à la pression, avec des points noirs.
+d) Lésions exophytiques, hérissées de saillies villeuses, sur le dos des mains.","Question: Quelle est la présentation clinique des tumeurs épithéliales bénignes à HPV?
+a) Verrues plantaires
+b) Verrues vulgaires communes
+c) Verrues planes communes
+d) Tous les types de verrues mentionnés",medGemma_27b,openbiollm_8b
+OIC-336-13-A,"Question: Quel est l'élément **principal** qui différencie un coma non traumatique d'un coma traumatique ?
+a) La présence ou l'absence de lésions cérébrales visibles
+b) L'origine du coma, soit une blessure physique ou une cause médicale
+c) Le niveau de conscience du patient avant le coma
+d) La durée du coma et sa progression","Question: Selon le texte, quelles sont les deux grandes catégories de causes de coma non traumatique chez l'adulte et l'enfant ?
+a) Traumatiques et non traumatiques
+b) Lésionnelles et fonctionnelles
+c) Vasculaires et infectieuses
+d) Lésionnelles et non lésionnelles",gemma2_9b,medGemma_27b
+OIC-288-16-B,"Question: Quelles sont les indications principales pour le traitement chirurgical des hémorroïdes ?
+a) Hémorroïdes internes de grade I et II.
+b) Hémorroïdes externes thrombosées symptomatiques.
+c) Hémorroïdes internes de grade III et IV, ou symptômes sévères malgré traitement conservateur.
+d) Hémorroïdes externes non thrombosées.","Question: Quelles sont les indications du traitement chirurgical en pathologie hémorroïdaire?
+a) Les hémorroïdes de 3ème degré
+b) Les hémorroïdes de 2ème degré avec prolapsus
+c) Les hémorroïdes de 1ère degré avec prolapsus
+d) Les hémorroïdes de 4ème degré",medGemma_27b,openbiollm_8b
+OIC-225-07-A,"Question: Quel est le critère ultime de gravité de l'ischémie aiguë ?
+a) La douleur intense
+b) L'atteinte sensitivo-motrice
+c) La paralysie
+d) La rigidité musculaire","Question: Selon le texte, quel est le critère de gravité ultime de l'ischémie aiguë?
+a) La pâleur du membre
+b) L'absence de pouls périphériques
+c) La paralysie
+d) La douleur intense",llama3_1_8b,medGemma_27b
+OIC-094-07-A,"Question: Un patient présente une rachialgie. Quel est le principal argument en faveur d'une rachialgie secondaire justifiant la réalisation d'examens complémentaires, comme une IRM rachidienne ?
+a) La présence de douleurs thoraciques.
+b) La présence de paresthésies au niveau du pubis.
+c) La présence de douleurs de type non mécanique, de symptômes neurologiques étendus, de perte de poids inexpliquée, d'un traumatisme important, d'un usage prolongé de corticoïdes, d'une déformation structurale importante de la colonne ou d'un âge d'apparition < 20 ans ou > 55 ans.
+d) La présence de douleurs thoraciques.","Question: Une personne âgée de plus de 55 ans présentant une douleur dorsale atroce avec paresthésie au niveau du pubis doit être soumise à une IRM rachidienne en urgence. La raison principale est la recherche d'une hernie discale.
+a) La personne âgée de plus de 55 ans présentant une douleur dorsale atroce avec paresthésie au niveau du pubis doit être soumise à une IRM rachidienne en urgence pour rechercher une hernie discale.
+b) La personne âgée de plus de 55 ans présentant une douleur dorsale atroce avec paresthésie au niveau du pubis doit être soumise à une IRM rachidienne en urgence pour rechercher une fracture vertébrale.
+c) La personne âgée de plus de 55 ans présentant une douleur dorsale atroce avec paresthésie au niveau du pubis doit être soumise à une IRM rachidienne en urgence pour rechercher une infection tuberculeuse.
+d) La personne âgée de plus de 55 ans présentant une douleur dorsale atroce avec paresthésie au niveau du pubis doit être soumise à une IRM rachidienne en urgence pour rechercher une ostéopathie fragilisante.",medGemma_4b,openbiollm_8b
+OIC-225-16-A,"Question: Quelle est la principale cause de l'ischémie intestinale chronique ?
+a) Une occlusion soudaine de l'artère mésentérique supérieure.
+b) Une embolie dans l'artère mésentérique inférieure.
+c) Une insuffisance cardiaque.
+d) Une insuffisance de perfusion artérielle liée à un obstacle chronique (le plus souvent d'origine athéromateuse) des artères digestives.","Question: Quelle est la définition de l'ischémie intestinale aiguë et chronique?
+a) L’ischémie digestive correspond à une insuffisance de perfusion artérielle liée à un obstacle chronique (le plus souvent d’origine athéromateuse) ou aigu (par embolie, thrombose in situ ou dissection) des artères digestives.
+b) L'ischémie intestinale aiguë correspond à une insuffisance de perfusion artérielle liée à un obstacle aigu des artères digestives.
+c) L’ischémie digestive est une insuffisance de perfusion artérielle chronique des artères digestives.
+d) L'ischémie intestinale aiguë correspond à une insuffisance de perfusion artérielle liée à un obstacle aigu ou chronique des artères digestives.",medGemma_4b,openbiollm_8b
+OIC-049-14-B,"Question: Quels sont les processus intracraniens qui peuvent entraîner des pubertés précoces centrales ?
+a) Tumoral : gliome du chiasma (NF1 ou non), hamartome et Non tumoral : hydrocéphalie, kyste arachnoïdien
+b) Séquellaire : méningite ou encéphalite et Irradiation crânienne
+c) Idiopathique : diagnostic d'élimination
+d) Ovarienne/testiculaire : McCune-Albright, kyste ovarien, tumeur de la granulosa","Question: Quelle est la cause la plus fréquente de puberté précoce centrale ?
+a) Une tumeur du chiasme optique (NF1 ou non).
+b) Une infection virale.
+c) Une exposition prolongée à des produits chimiques environnementaux.
+d) Une cause génétique inconnue.",llama3_1_8b,medGemma_4b
+OIC-245-14-B,"Question: Quelle est la méthode principale utilisée pour surveiller l'efficacité du traitement de l'insuffisance surrénale ?
+a) Dosage sanguin régulier de cortisol et d'ACTH
+b) Mesure de la pression artérielle et observation des symptômes cliniques
+c) Analyse des marqueurs métaboliques tels que le glucose et les lipides
+d) Imagerie osseuse pour détecter les signes d'ostéoporose","Question: La surveillance du traitement de l'insuffisance surrénale est essentiellement clinique. Quels sont les signes de sous-dosage et de surdosage en hydrocortisone et/ou fludrocortisone ?
+a) fatigue, hypotension orthostatique, gonflement et rougeur du visage, œdème des membres inférieurs, prise de poids, HTA
+b) hypertension, tachycardie, diabète sucré, hyperkaliémie, œdème des membres supérieurs, amaigrissement
+c) hyperglycémie, hypokaliémie, asthénie, hypotension orthostatique, gonflement et rougeur du visage, œdème des membres inférieurs
+d) hypertension, tachycardie, diabète sucré, hyperkaliémie, amaigrissement, œdème des membres supérieurs",gemma2_9b,openbiollm_8b
+OIC-094-05-B,"Question: Selon le texte, quels sont les facteurs de risque associés à la rachialgie (lombalgie et cervicalgie communes) ?
+a) Uniquement les traumatismes et la sédentarité.
+b) Traumatismes, sédentarité, obésité (pour lombalgie), troubles de la statique, tabagisme et antécédents familiaux.
+c) Principalement les déformations rachidiennes et le tabagisme.
+d) Seulement les facteurs liés au travail et aux loisirs.","Question: Quels sont les facteurs associés à la lombalgie commune et cervicalgie commune ?
+a) Seulement les troubles de la statique rachidienne
+b) Tous les facteurs mentionnés dans le texte, sauf l'obésité
+c) Les traumatismes ou microtraumatismes répétés et la sédentarité uniquement
+d) Aucun des facteurs mentionnés n'est associé à la lombalgie commune et cervicalgie commune",medGemma_27b,llama3_1_8b
+OIC-108-02-A,"Question: Quelle est la principale différence entre la confusion (syndrome confusionnel) et la démence, selon le texte fourni ?
+a) La confusion est chronique et la démence est aiguë.
+b) La confusion implique une altération de l'autonomie dans la vie quotidienne, contrairement à la démence.
+c) La confusion est caractérisée par une altération aiguë ou subaiguë de l'attention et de la vigilance, tandis que la démence est une altération durable des fonctions cognitives.
+d) La confusion est toujours associée à des hallucinations et des idées délirantes, ce qui n'est pas le cas de la démence.","Question: Quelle est la principale différence entre la confusion et la démence ?
+a) La confusion est toujours temporaire, tandis que la démence est permanente.
+b) La confusion est un trouble de l'attention, tandis que la démence est une altération durable de la cognition.
+c) La confusion est toujours causée par un trouble psychiatrique, tandis que la démence n'est pas.
+d) La confusion est un trouble de l'attention, tandis que la démence est une altération durable de la cognition.",medGemma_27b,medGemma_4b
+OIC-332-09-A,"Question: Quelle est la première étape essentielle dans la prise en charge d'un choc hémorragique ?
+a) Transfusion sanguine avec un ratio culot globulaire/plasma frais congelé de 1/1 à 1/2
+b) Correction des troubles de l'hémostase avec du Vit K et des facteurs de coagulation
+c) Identifier la cause de l'hémorragie et contrôler le saignement par compression, garrots ou suture
+d) Prévenir et corriger une hypothermie en administrant des couvertures chaudes et des boissons chaudes","Question: Quels sont les principes de prise en charge d'un choc hémorragique?
+a) Mise en condition surveillance et voies veineuses
+b) Identification de la cause de l'hémorragie et contrôle du saignement
+c) Premières mesures symptomatiques
+d) Correction des troubles de l'hémostase",gemma2_9b,openbiollm_8b
+OIC-009-09-B,"Question: Quelle est l'une des deux acceptions majeures de la vulnérabilité en sciences humaines et sociales ?
+a) La vulnérabilité comme dépendante de contextes historiques et sociaux particuliers.
+b) La vulnérabilité comme constitutive de l'existence humaine, universellement partagée.
+c) La vulnérabilité comme un problème à résoudre par la médecine.
+d) La vulnérabilité comme une condition négative qui empêche l'autonomie.","Question: Quelle est la principale idée exprimée dans le texte concernant la vulnérabilité ?
+a) La vulnérabilité est une condition négative qui empêche l'autonomie.
+b) La vulnérabilité est une notion universelle et constitutive de l'existence humaine, souvent associée à la fragilité anthropologique et biologique.
+c) La vulnérabilité est uniquement liée à la maladie et à la dépendance, et ne concerne pas les individus en bonne santé.
+d) La vulnérabilité est une simple question de précarité économique, sans lien avec les aspects humains et psychiques.",llama3_1_8b,medGemma_4b
+OIC-188-07-B,"Question: Quel métier présente un risque accru d'asthme professionnel lié à l'exposition aux isocyanates ?
+a) Boulanger
+b) Coiffeur
+c) Peintre
+d) Agent d'entretien","Question: Quels sont les principaux métiers à risque d'asthme professionnel?
+a) Boulanger, pâtissier (allergène = blé, acarien de farine)
+b) Professionnels de santé (latex, aldéhydes, ammoniums)
+c) Coiffeurs (persulfates)
+d) Peintres (isocyanates)",gemma2_9b,openbiollm_8b
+OIC-191-05-A,"Question: Quelles sont les trois principales portes d'entrée infectieuses chez un patient neutropénique ?
+a) Tube digestif, peau, œil
+b) Poumon, cœur, cerveau
+c) Tube digestif, peau (KT), poumon
+d) Peau, système nerveux, foie","Question: Quels sont les trois principales portes d'entrée de la fièvre chez un patient immunodéprimé ?
+a) Respiratoire, tube digestif, peau
+b) Peau, poumon, tube digestif
+c) Poumon, peau, abords veineux
+d) Abords veineux, respiratoire, poumon",gemma2_9b,llama3_1_8b
+OIC-049-16-A,"Question: Selon la définition donnée, quel est le critère principal pour diagnostiquer le retard pubertaire chez une fille ?
+a) Absence de développement mammaire après l'âge de 13 ans.
+b) Augmentation du volume testiculaire après l'âge de 14 ans.
+c) Développement de la voix grave après l'âge de 13 ans.
+d) Présence de puberté précoce après l'âge de 10 ans.","Question: Quel âge définit le retard pubertaire chez une fille ?
+a) 12 ans
+b) 13 ans
+c) 14 ans
+d) 15 ans",medGemma_4b,gemma2_9b
+OIC-050-01-A,"Question: Quel diagnostic est le plus probable devant une augmentation douloureuse du volume des bourses chez un jeune garçon ?
+a) Hernie inguinale
+b) Hydrocèle
+c) Torsion du cordon spermatique
+d) Cancer du testicule","Question: Quelles sont les modalités du diagnostic à partir de l'interrogatoire et de l'examen clinique des principales pathologies génito- scrotales ?
+a) Une torsion du cordon spermatique
+b) Une orchi-épididymite
+c) Un traumatisme scrotal
+d) Une hernie inguinale ou inguino-scrotale",gemma2_9b,openbiollm_8b
+OIC-190-03-A,"Question: Lors de l'enquête étiologique d'une fièvre prolongée, quelle est l'étape essentielle mentionnée dans le texte ?
+a) L'analyse des antécédents familiaux uniquement.
+b) L'examen clinique complet.
+c) La réalisation systématique d'une intradermo-réaction à la tuberculine.
+d) L'interrogation exclusive sur les voyages récents.","Question: Quelle est l'importance du examen clinique dans le contexte d'une fièvre prolongée?
+a) Il n'est pas nécessaire.
+b) Il est utile pour confirmer le diagnostic.
+c) Il est essentiel pour établir un diagnostic différentiel.
+d) Toutes les réponses précédentes sont correctes.",medGemma_27b,openbiollm_8b
+OIC-302-12-B,"Question: Quel est le principal facteur de mauvais pronostic au stade IV du mélanome ?
+a) Un taux de LDH élevé.
+b) Une masse tumorale élevée (plus de 3 organes atteints par les métastases ; plus de 3 métastases hépatiques).
+c) Des métastases cérébrales symptomatiques et/ou plus de 3 métastases cérébrales.
+d) Un indice de Breslow élevé.","Question: Quels sont les différents types histologiques du mélanome?
+a) Le mélanome à extension superficielle
+b) Le mélanome nodulaire
+c) Le mélanome acral lentigineux
+d) Le mélanome de Dubreuilh",medGemma_4b,openbiollm_8b
+OIC-027-36-B,"Question: Quel est l'objectif principal de la prise en charge d'une femme enceinte fumeuse ?
+a) Lui prescrire uniquement des patchs nicotiniques.
+b) L'encourager à arrêter de fumer, quel que soit le stade de sa grossesse.
+c) La rassurer sur les effets positifs du tabac pendant la grossesse.
+d) Lui proposer une thérapie cognitivo-comportementale uniquement si elle est dépendante au nicotine.","Question: Quelle est l'étape recommandée pour adapter la posologie d'une substitution nicotinique chez une femme enceinte ?
+a) Évaluer la dépendance avant la grossesse à l'aide du questionnaire de Fagerström.
+b) Utiliser uniquement le taux de CO expiré (analyseur de CO) pour objectiver le niveau d'intoxication.
+c) N'adapter aucune posologie, car les principes généraux du sevrage sont les mêmes qu'en dehors de la grossesse.
+d) Effectuer une analyse complète des habitudes de fumage avant toute adaptation de la posologie.",gemma2_9b,llama3_1_8b
+OIC-288-03-B,"Question: Quelle est la physiopathologie des hémorroïdes?
+a) La maladie hémorroïdaire est due à une fragilisation du tissu de soutien ou matériel d'ancrage des hémorroïdes internes.
+b) Les hémorroïdes sont des veines insuffisantes sans valvules conniventes.
+c) La maladie hémorroïdaire est due à une inflammation du tissu hémorroïdaire.
+d) La maladie hémorroïdaire n'est pas encore bien comprise.","Question: Quelle est la principale cause de la pathogénie de la maladie hémorroïdaire selon le texte?
+a) Une insuffisance veineuse chronique.
+b) Un long temps passé à la selle et des efforts de poussée.
+c) Une fragilisation du tissu de soutien des hémorroïdes internes.
+d) Une modification de la consistance des selles.",openbiollm_8b,medGemma_4b
+OIC-037-11-B,"Question: Lorsqu'une contraception est proposée après une IVG, quels facteurs doivent être pris en compte pour le choix de la méthode ?
+a) Uniquement l'efficacité et le coût.
+b) L'efficacité, les effets secondaires, les contraintes d'utilisation, le coût et les souhaits de la patiente.
+c) Seulement les effets secondaires et les contraintes d'utilisation.
+d) Uniquement l'échec de la précédente contraception et l'âge de la patiente.","Question: Quels sont les critères retenus pour le choix d'une contraception après interruption volontaire de grossesse (IVG) ?
+a) Efficacité et coût
+b) Effets secondaires, contre-indications et contraintes d'utilisation
+c) Souhaits de la patiente et échec de la précédente contraception
+d) Toutes les patientes doivent avoir une contraception proposée après IVG",medGemma_27b,openbiollm_8b
+OIC-157-10-B,"Question: En cas de bactériémie due à *Candida*, quel examen complémentaire est systématiquement prescrit ?
+a) Radiographie de thorax
+b) Imagerie abdominale
+c) Échocardiographie et fond d'œil
+d) ECBU","Question: En fonction de l’identification microbienne, les examens complémentaires pour une bactériémie/ fongémie incluent :
+a) Échocardiographie systématique pour Staphylococcus aureus
+b) Échocardiographie et fond d’œil systématiques pour Candida
+c) ECBU +/- imagerie abdominale pour entérobactéries, entérocoques
+d) Imagerie abdominale pour anaérobies",gemma2_9b,openbiollm_8b
+OIC-108-01-B,"Question: Selon le contenu éducatif, quel est le principal mécanisme physiopathologique de la confusion mentale ?
+a) Une altération de la vigilance entraîne une désorganisation majeure et globale de la pensée cohérente.
+b) La confusion mentale est causée directement par des troubles neurosensoriels.
+c) La confusion mentale est principalement due à des troubles de l'attention, qui sont eux-mêmes consécutifs à l'altération de la vigilance.
+d) La confusion mentale est causée directement par des pathologies psychiatriques chroniques.","Question: Quel facteur n'est PAS considéré comme un facteur de risque pour le développement d'une confusion mentale ?
+a) Anomalie visuelle
+b) Consommation excessive de caféine
+c) Consultation de suivi d'un patient polymorbide
+d) Trouble psychiatrique chronique",medGemma_4b,gemma2_9b
+OIC-330-09-A,"Question: Quel est le principal mécanisme d'action des benzodiazépines ?
+a) Stimulation du système nerveux central
+b) Inhibition de la recapture de la dopamine
+c) Augmentation de l'activité GABAergique
+d) Blocage des récepteurs histaminiques","Question: Concernant les benzodiazépines, quel est l'objectif principal de connaissance attendu selon le contenu fourni?
+a) Identifier les interactions médicamenteuses spécifiques.
+b) Comprendre les mécanismes d'action, indications, effets secondaires, interactions, surveillance et causes d'échec.
+c) Connaître les principales causes d'échec thérapeutique.
+d) Maîtriser les modalités de surveillance post-prescription.",gemma2_9b,medGemma_27b
+OIC-198-03-B,"Question: Quelle est la principale cause de formation de cristaux d'urate de sodium dans le corps humain ?
+a) Une production excessive d'acide urique
+b) Un pH urinaire alcalin (supérieur à 6)
+c) Une hyperuricémie chronique supérieure à 360 µmol/l
+d) La consommation excessive de protéines animales","Question: Quels sont les deux mécanismes principaux qui mènent à l'hyperuricémie?
+a) Un défaut d'excrétion rénale
+b) Un excès de production d'acide urique
+c) Les deux précédents
+d) Aucun des deux",gemma2_9b,openbiollm_8b
+OIC-215-07-B,"Question: En dehors d'une urgence, quel examen biologique est **prioritaire** à prescrire devant un purpura vasculaire ?
+a) Hémogramme complet
+b) Dosage de la vitamine D
+c) Anticorps anti-cytoplasme des polynucléaires neutrophiles (ANCA)
+d) Analyse urinaire","Question: Dans le cadre d'une prescription de première intention pour un purpura vasculaire en dehors d'une urgence, quel examen biologique est généralement prescrit en priorité ?
+a) Dosage de la créatine kinase (CK)
+b) Dosage de l'anticorps anti-cytoplasme des polynucléaires neutrophiles (ANCA)
+c) Dosage de la créatinine
+d) Dosage de l'albumine",gemma2_9b,medGemma_4b
+OIC-099-03-A,"Question: Selon le texte, quelle est la première étape cruciale dans le diagnostic d'une céphalée primaire, avant de procéder à une caractérisation détaillée ?
+a) Effectuer un examen clinique approfondi pour rechercher des signes neurologiques.
+b) Écarter la possibilité d'une céphalée secondaire, notamment en cas de premier épisode, de céphalée aiguë, récente ou inhabituelle.
+c) Caractériser précisément la céphalée en termes de durée, fréquence, topographie, intensité et facteurs déclencheurs.
+d) Identifier les signes accompagnateurs tels que nausées, vomissements, photo-/phonophobie ou symptômes trigémino-autonomiques.","Question: Selon le texte, quel critère est essentiel pour différencier une céphalée primaire d'une céphalée secondaire ?
+a) La présence de nausées ou de vomissements
+b) L’intensité et la durée des douleurs
+c) Le nombre de jours de céphalée par mois
+d) L'histoire et la fréquence des épisodes douloureux",medGemma_27b,gemma2_9b
+OIC-226-06-A,"Question: Quelle est la valeur prédictive des D-dimères dans le diagnostic de thrombose veineuse profonde (TVP) et d&#39;embolie pulmonaire (EP)?
+a) Faible valeur prédictive positive
+b) Fortes valeurs prédictives positives et négatives
+c) Valeur prédictive négative forte mais non spécifique
+d) Pas de valeur prédictive","Question: Les D-dimères sont : A) Produits de dégradation de la fibrine, B) Non spécifiques, C) Mais forte valeur prédictive négative. S'ils sont inférieurs au seuil diagnostique, ils permettent d'él...
+a) Produits de dégradation de la fibrine
+b) Non spécifiques
+c) Mais forte valeur prédictive négative
+d) Toutes les réponses sont correctes",llama3_1_8b,openbiollm_8b
+OIC-265-02-B,"Question: Quelle est la principale raison pour laquelle l'incidence des lithiases urinaires varie selon les pays ?
+a) La prévalence des lithiases urinaires est de 1% à 20% dans le monde.
+b) Le sex ratio est de 2 hommes pour 1 femme.
+c) Elle dépend de facteurs géographiques, climatiques, ethniques, diététiques et génétiques.
+d) La prévalence des lithiases urinaires est de 1% à 20% dans le monde.","Question: Quelle est la prévalence estimée des calculs rénaux en France ?
+a) 1% 
+b) 5%
+c) 10%
+d) 20%",medGemma_4b,gemma2_9b
+OIC-186-13-B,"Question: Quel type de réaction allergique est exploré par les patch tests et quel est le délai de lecture ?
+a) Réaction immédiate (type I), lecture à 15 minutes.
+b) Réaction retardée (type IV), lecture à 48 heures.
+c) Réaction immédiate (type I), lecture à 48 heures.
+d) Réaction retardée (type IV), lecture à 15 minutes.","Question: Quelle est la principale différence entre les tests cutanés à prick et les patch tests ?
+a) Les tests à prick explorent les réactions immédiates, tandis que les patch tests explorent les réactions retardées.
+b) Les tests à prick sont réalisés sur la face antérieure de l’avant bras, tandis que les patch tests sont réalisés dans le dos du patient.
+c) Les tests à prick sont réalisés en 15 minutes, tandis que les patch tests sont réalisés en 48 heures.
+d) Les tests à prick explorent les réactions immédiates, tandis que les patch tests explorent les réactions immédiates.",medGemma_27b,medGemma_4b
+OIC-108-01-B,"Question: Selon le contenu éducatif, quel est le principal mécanisme physiopathologique de la confusion mentale ?
+a) Une altération de la vigilance entraîne une désorganisation majeure et globale de la pensée cohérente.
+b) La confusion mentale est causée directement par des troubles neurosensoriels.
+c) La confusion mentale est principalement due à des troubles de l'attention, qui sont eux-mêmes consécutifs à l'altération de la vigilance.
+d) La confusion mentale est causée directement par des pathologies psychiatriques chroniques.","Question: Quels sont les principaux facteurs de risque et déclencheurs de la confusion mentale ?
+a) Troubles neurosensoriels (anomalie de la vision ; baisse de l'audition/surdité)
+b) Pathologies psychiatriques chroniques (consultation de suivi et traitement de fond d'un patient souffrant d'un trouble psychiatrique chronique (hors dépression) ; consultation de suivi et traitement de fond d'un patient dépressif)
+c) Consommation d’alcool et de psychotropes (prévention des risques liés à l'alcool)
+d) Immobilisation (hospitalisation, réanimation, phase de réveil post-opératoire ; prise en charge d’un patient en décubitus prolongé)",medGemma_4b,openbiollm_8b
+OIC-074-19-A,"Question: Quelle est la durée maximale recommandée pour la prescription d'hypnotiques ?
+a) 4 semaines
+b) 6 semaines
+c) 8 semaines
+d) 12 semaines","Question: Quelles sont les règles à respecter lors de la prescription d'hypnotiques?
+a) Prescrire un hypnotique en fonction du besoin immédiat du patient.
+b) Ne pas prescrire plus de 4 semaines d'un traitement hypnose
+c) Adapter les posologies chez les sujets âgés.
+d) Informe le patient du risque de potentialisation par la consommation d'alcool et du risque de somnolence.",llama3_1_8b,openbiollm_8b
+OIC-256-03-B,"Question: Quelle est la principale raison pour laquelle une consultation médicale pour délivrer un certificat d'absence de contre-indication à la pratique sportive doit inclure un interrogatoire approfondi sur les antécédents personnels et familiaux?
+a) Pour évaluer la performance sportive du patient.
+b) Pour identifier les facteurs de risque cardiovasculaires et les traitements médicamenteux qui pourraient influencer la sécurité de la pratique sportive.
+c) Pour déterminer le niveau de compétition du patient.
+d) Pour évaluer l'IMC du patient.","Question: Quels sont les éléments essentiels d&#39;un examen médical pour délivrer un certificat médical d&#39;absence de contre-indication à la pratique sportive ?
+a) Un interrogatoire, des mesures anthropométriques et un examen physique général.
+b) Un ECG de repos, une auscultation pulmonaire et un dépistage de l&#39;acuité visuelle.
+c) Une analyse du passé sportif, des symptômes évocateurs de pathologie cardiovasculaire à l&#39;exercice et des conditions de la pratique sportive.
+d) Un examen cardiovasculaire complet, un examen pulmonaire et un dépistage de l&#39;acuité visuelle.",medGemma_4b,llama3_1_8b
+OIC-201-01-A,"Question: Selon le texte, quelles sont les trois catégories principales de donneurs d'organes ?
+a) Donneurs décédés, donneurs vivants, donneurs en attente.
+b) Donneurs en mort encéphalique, donneurs décédés après arrêt circulatoire (DDAC), donneurs vivants.
+c) Donneurs cardiaques, donneurs rénaux, donneurs hépatiques.
+d) Donneurs volontaires, donneurs familiaux, donneurs anonymes.","Question: Quelle est la définition d'un donneur d'organe ?
+a) Les personnes décédées après arrêt circulatoire (DDAC).
+b) Les personnes décédées après arrêt circulatoire (DDAC) et les donneurs en état de mort encéphalique.
+c) Les personnes décédées après arrêt circulatoire (DDAC) et les donneurs en état de mort encéphalique, et les donneurs vivants.
+d) Les personnes décédées après arrêt circulatoire (DDAC) et les donneurs en état de mort encéphalique.",medGemma_27b,medGemma_4b
+OIC-162-24-B,"Question: Quelles sont les formes cliniques de syphilis tertiaire ?
+a) Syphilis gommeuse et syphilis osseuse
+b) Syphilis cardiovasculaire (aortite, sténose des coronaires, …) et neurosyphilis tertiaire
+c) Tabés et syphilis cardiovasculaire (aortite, sténose des coronaires, …)
+d) Neurosyphilis tertiaire et syphilis osseuse","Question: Quelles sont les formes cliniques de la syphilis tardive?
+a) Syphilis gommeuse
+b) Syphilis osseuse
+c) Syphilis cardiovasculaire
+d) Neurosyphilis tertiaire",llama3_1_8b,openbiollm_8b
+OIC-049-21-B,"Question: Quelle est la caractéristique principale d'une prématurée thélarche typique chez les filles de moins de 2 ans ?
+a) Elle se développe rapidement après l'âge de 2 ans
+b) Elle débute en période périnatale et évolue peu par la suite
+c) Elle est accompagnée d'autres signes de puberté
+d) Elle n'est pas détectable par une échographie pelvienne","Question: Quelle est la cause principale de la prématurité thélarque chez les filles?
+a) Hypothyroïdisme congénital
+b) Hyperthyroïdisme congénital
+c) Malnutrition pédiatrique
+d) Exposition à des substances chimiques",llama3_1_8b,openbiollm_8b
+OIC-024-13-B,"Question: Quels sont les objectifs du traitement antihypertenseur chez une femme enceinte ?
+a) Réduire la pression artérielle à 120/80 mmHg.
+b) Éviter les à-coups hypertensifs et limiter les complications maternelles.
+c) Utiliser des diurétiques pour réduire l'eau dans le corps.
+d) Prescrire un régime sans sel pour réduire la pression artérielle.","Question: Quelle est la principale indication pour la prescription d'un traitement antihypertenseur chez une femme enceinte ?
+a) Pour contrôler la tension artérielle de manière stricte et continue, sans interruption.
+b) Pour contrôler la tension artérielle de manière stricte et continue, sans interruption.
+c) Pour contrôler la tension artérielle de manière stricte et continue, sans interruption.
+d) Pour contrôler la tension artérielle de manière stricte et continue, sans interruption.",llama3_1_8b,medGemma_4b
+OIC-108-17-B,"Question: Quelles sont les indications des examens de médecine nucléaire dans les démences ?
+a) Seule la maladie d'Alzheimer nécessite une scintigraphie de perfusion ou un TEP-FDG.
+b) Toutes les formes de diagnostic difficile, notamment les patients vus au stade débutant de TNC mineur, le profil clinique atypique et la démence à début précoce.
+c) La scintigraphie des transporteurs de la Dopamine est indiquée pour diagnostiquer uniquement la maladie d'Alzheimer.
+d) Seule la scintigraphie des transporteurs de la Dopamine est indiquée dans les troubles neurocognitifs.","Question: Les indications des examens de médecine nucléaire dans les démences sont : toutes les formes de diagnostic difficile, patients vus au stade débutant de TNC mineur, profil clinique atypique, démence à début précoce. 
+a) La scintigraphie de perfusion cérébrale
+b) La scintigraphie des transporteurs de la Dopamine
+c) La Tomographie par Emission de Positons au FluoroDéoxyGlucose (TEP-FDG)
+d) Toutes les trois options précédentes",llama3_1_8b,openbiollm_8b
+OIC-109-06-A,"Question: Quelle est la caractéristique principale de l'astasie-abasie ?
+a) Incapacité physique à marcher.
+b) Peur panique de marcher, accompagnée d'agrippement.
+c) Perte d'équilibre due à des problèmes vestibulaires.
+d) Difficulté à initier le mouvement de la marche.","Question: Quelle est la définition de l’astasie-abasie ?
+a) Trouble du mouvement
+b) Peur panique de marcher
+c) Problème d’équilibre
+d) Maladie neurologique",medGemma_27b,llama3_1_8b
+OIC-254-03-B,"Question: Quel est l'objectif principal de la complémentation en acide folique pendant la grossesse ?
+a) Augmenter la production d'énergie
+b) Prévenir les naissances prématurées
+c) Réduire le risque de spina-bifida
+d) Améliorer la vision du fœtus","Question: Quelle vitamine est recommandée pour prévenir le spina-bifida?
+a) Vitamine A
+b) Vitamine C
+c) Vitamine D
+d) Vitamine E",gemma2_9b,openbiollm_8b
+OIC-049-08-B,"Question: Lequel des facteurs suivants n'a PAS d'influence sur le déclenchement de la puberté ?
+a) L'état nutritionnel
+b) La couleur des yeux
+c) Les facteurs génétiques
+d) Le niveau de leptine dans le sang","Question: Selon le texte, quels facteurs influencent le déclenchement de la puberté ?
+a) Uniquement les facteurs génétiques.
+b) Uniquement l'état nutritionnel.
+c) Les facteurs génétiques, ethniques, l'état nutritionnel, et la leptine.
+d) Uniquement les hormones sexuelles (œstrogènes et testostérone).",gemma2_9b,medGemma_27b
+OIC-215-04-A,"Question: Lequel des symptômes suivants est **obligatoire** pour évoquer le diagnostic de purpura fulminans ?
+a) Fièvre
+b) Hypotension artérielle
+c) Syndrome méningé
+d) Purpura nécrotique et/ou ecchymotique","Question: Quels sont les signes qui doivent faire évoquer le diagnostic de purpura fulminans ?
+a) Fièvre
+b) Signes neurologiques
+c) Purpura nécrotique et/ou ecchymotique et/ou extensif
+d) Tous les signes mentionnés",gemma2_9b,llama3_1_8b
+OIC-099-05-A,"Question: Lequel des éléments suivants n'est PAS un critère diagnostique de l'algie vasculaire de la face (AVF) selon les critères ICHD3 ?
+a) Douleur sévère à très sévère, unilatérale, orbitaire, sus-orbitaire et/ou temporale durant 15 à 180 minutes
+b) Présence de signes migrainiformes comme les nausées et la photophobie
+c) Au moins cinq crises répondant aux critères B-D
+d) Fréquence des crises = 1 tous les 2 jours à 8/jour en période active","Question: Quels sont les critères diagnostiques de l'algie vasculaire de la face selon l'ICHD3 ?
+a) Au moins cinq crises répondant aux critères B-D
+b) Douleur sévère à très sévère, unilatérale, orbitaire, sus-orbitaire et/ou temporale durant 15 à 180 minutes (sans traitement)
+c) L'un des éléments suivants ou les deux : injection conjonctivale et/ou larmoiement, congestion nasale et/ou rhinorrhée, œdème palpébral, transpiration du front et/ou de la face, myosis et/ou ptosis, une impression d'impatience ou une agitation
+d) Fréquence crises = 1 tous les 2 jours à 8/jour en période active",gemma2_9b,llama3_1_8b
+OIC-315-06-A,"Question: Quels sont les signes évocateurs du diagnostic de LA sur l’hémogramme ?
+a) Anémie arégénérative normo- ou macrocytaire
+b) Thrombopénie, neutropénie et blastes circulants
+c) Leucocytose aiguë
+d) Eosinophilie","Question: Quels sont les signes évocateurs du diagnostic de la leucémie aiguë (LA) sur l'hémogramme?
+a) Anémie arégénérative normo- ou macrocytaire
+b) Thrombopénie
+c) Neutropénie
+d) Blastes circulants",llama3_1_8b,openbiollm_8b
+OIC-330-09-A,"Question: Quel est le principal mécanisme d'action des benzodiazépines ?
+a) Stimulation du système nerveux central
+b) Inhibition de la recapture de la dopamine
+c) Augmentation de l'activité GABAergique
+d) Blocage des récepteurs histaminiques","Question: Quel est le principal mécanisme d'action des benzodiazépines ?
+a) Augmentation de la neurotransmission dopaminergique
+b) Réduction de la neurotransmission GABAergique
+c) Augmentation de la neurotransmission sérotoninergique
+d) Inhibition de la neurotransmission glutamatergique",gemma2_9b,medGemma_4b
+OIC-186-15-A,"Question: Quel est le principal élément clinique permettant de différencier une conjonctivite allergique d'une conjonctivite infectieuse ?
+a) La présence de pus.
+b) La douleur intense.
+c) Le caractère indolore et les démangeaisons.
+d) La sensibilité à la lumière.","Question: Quels sont les critères pour le diagnostic de conjonctivite allergique?
+a) Présence de signes cliniques, sensibilisation démontrée par des prick tests positifs ou présence d'IgE spécifiques d'allergènes et test de provocation conjonctival positive.
+b) Signes cliniques et présence d'IgE spécifiques d'allergènes.
+c) Présence de signes cliniques et test de provocation conjonctival positif.
+d) Prick tests positifs ou détection d'IgE spécifiques d'allergènes.",medGemma_27b,openbiollm_8b
+OIC-237-03-A,"Question: Quel type d'enregistrement ECG est considéré comme le seul moyen d'obtenir un diagnostic de certitude concernant les palpitations ?
+a) ECG inter critique
+b) Holter ECG
+c) ECG per critique
+d) ECG ambulatoire de longue durée","Question: Quel type d'enregistrement ECG permet d'établir une corrélation électro-clinique avec les palpitations ?
+a) ECG intercritique
+b) ECG percritique
+c) Holter ECG
+d) ECG ambulatoire de longue durée",medGemma_27b,llama3_1_8b
+OIC-027-05-A,"Question: Dans le contexte de la surveillance de la toxoplasmose chez une femme enceinte, quelle est la raison principale de la surveillance sérologique mensuelle ?
+a) Déterminer la présence d'anticorps spécifiques contre le parasite.
+b) Évaluer l'efficacité des vaccins contre la toxoplasmose.
+c) Identifier les femmes enceintes atteintes de toxoplasmose congénitale.
+d) Détecter les femmes enceintes séronégatives pour la toxoplasmose.","Question: La surveillance d’une femme enceinte pour la toxoplasmose est réalisée par dépistage sérologique mensuel : la recherche d’IgG et IgM de la toxoplasmose est obligatoire à la déclaration de grossesse (sauf immunité maternelle antérieure documentée). Chez les femmes non immunisées, la sérologie sera répétée mensuellement jusqu’à l’accouchement du fait de la fréquence élevée des formes inapparentes de toxoplasmose maternelle (80%). La conduite à tenir en cas de sérologie positive maternelle est la suivante.
+a) La surveillance se fait par dépistage sérologique tous les 3 mois
+b) La recherche d’IgG et IgM n’est pas obligatoire à la déclaration de grossesse
+c) La sérologie est répétée mensuellement jusqu’à l’accouchement chez toutes les femmes enceintes
+d) La conduite à tenir en cas de sérologie positive maternelle n’est pas la même que celle décrite dans le contenu éducatif",medGemma_4b,openbiollm_8b
+OIC-208-03-A,"Question: Quelle est la définition de l'hypertension pulmonaire (HTP) chez l'adulte selon le contenu éducatif ?
+a) Une pression artérielle systolique (PAPS) supérieure à 35 mmHg.
+b) Une résistance artérielle pulmonaire supérieure à 3 UW mesurée lors d'un cathétérisme cardiaque droit.
+c) Une pression artérielle moyenne pulmonaire supérieure à 20 mmHg et des résistances supérieures à 3 UW, confirmée par un cathétérisme cardiaque droit.
+d) Une insuffisance rénale chronique (IRC) accompagnée d'une augmentation de la pression artérielle pulmonaire.","Question: Which of the following is NOT a feature of chronic obstructive pulmonary disease (COPD)?
+a) Increased residual volume
+b) Decreased 1 second forced expiratory volume
+c) Air trapping
+d) Reduced FEV1/FVC ratio",gemma2_9b,openbiollm_8b
+OIC-112-05-B,"Question: Quelles sont les causes possibles d'une maladie bulleuse **en dehors** des dermatoses bulleuses spécifiques ?
+a) Une infection bactérienne
+b) Un traumatisme physique
+c) Une réaction allergique à un médicament
+d) Une exposition à une substance chimique ou au soleil","Question: Quelles sont les autres étiologies des maladies bulleuses?
+a) Toxidermie bulleuse
+b) Érythème polymorphe bulleux
+c) Bulles d’origine thermique
+d) Bulles d’origine caustique",gemma2_9b,openbiollm_8b
+OIC-288-17-B,"Question: Quel est l'évolution spontanée de la thrombose hémorroïdaire externe ?
+a) La thrombose se complique toujours.
+b) Les caillots se dissolvent rapidement et ne laissent pas de cicatrice.
+c) La résorption est lente, laissant parfois une cicatrice en relief.
+d) Les complications suppuratives sont fréquentes.","Question: Concerning external thrombosis of the hemorrhoidal plexus, which of the following statements is true?
+a) It can lead to serious complications.
+b) The affected area may become swollen due to an inflammatory reaction.
+c) It usually resolves on its own within a few days without leaving any marks.
+d) Recurrent episodes are possible, including on the same site.",llama3_1_8b,openbiollm_8b
+OIC-256-04-B,"Question: Quels sont les éléments à prendre en compte lors d'une consultation médicale pour délivrer un certificat d'absence de contre-indication à la pratique sportive chez un enfant ?
+a) L'examen clinique se limite à l'évaluation des troubles respiratoires.
+b) Il faut tenir compte de la quantité globale hebdomadaire d'activité physique, du retentissement sur les conditions de vie et d'apprentissages scolaires, du temps de sommeil moyen, de la qualité de l'alimentation et de la consommation de compléments alimentaires.
+c) L'examen clinique se concentre uniquement sur l'évaluation des troubles musculo-squelettiques.
+d) La consultation ne nécessite pas d'appréciation du stade pubertaire et des vaccinations.","Question: La consultation pour délivrance du certificat médical d'absence de contre-indication à la pratique sportive chez un patient mineur se déroule globalement de la même façon que pour un patient majeur.
+a) L'examen clinique porte une attention particulière sur la statique rachidienne.
+b) La quantité hebdomadaire d'activité physique est évaluée en tenant compte des pratiques sportives scolaires et associatives.
+c) Le temps de sommeil moyen, les conditions de vie et l'alimentation sont pris en considération.
+d) La consultation est vue comme une consultation de prévention.",llama3_1_8b,openbiollm_8b
+OIC-045-15-A,"Question: Quelle manifestation est la plus fréquente chez les nourrissons atteints de mucoviscidose ?
+a) Toux chronique
+b) Diarrhée grasse et fétide
+c) Difficulté à procréer
+d) Hépatomégalie","Question: Quelle est la fréquence d'apparition de la mucoviscidose chez les nouveau-nés ?
+a) 10 à 20 % 
+b) 80 % 
+c) 90 % 
+d) 100 % ",gemma2_9b,llama3_1_8b
+OIC-229-03-A,"Question: Quelle est l&#39;objectif principal de la vidéo sur la pose d&#39;une VVP (Voie Veineuse Périphérique) ?
+a) Montrer les différentes techniques de pose de VVP
+b) Expliquer les complications possibles lors de la pose d'une VVP
+c) Connaître la technique d&#39;insertion d&#39;une voie veineuse périphérique
+d) Présenter les différents types de VVP disponibles sur le marché","Question: Quel est l'objectif principal de la vidéo référencée (OIC-229-03-A) ?
+a) Décrire les complications possibles des voies veineuses périphériques.
+b) Expliquer la technique d'insertion d'une voie veineuse périphérique.
+c) Présenter les différents types de cathéters veineux périphériques.
+d) Détailler les procédures de surveillance post-insertion d'une VVP.",llama3_1_8b,medGemma_27b
+OIC-351-12-A,"Question: Selon le contenu éducatif, quelle est une indication pour l'hospitalisation libre et sans consentement en raison de l'agitation et du délire aigu ?
+a) Le patient a des antécédents de troubles mentaux chroniques.
+b) Le patient présente une agitation et un délire aigu, et il est impossible de le maintenir en sécurité à domicile.
+c) Le patient a des antécédents de consommation excessive d'alcool.
+d) Le patient a des antécédents de problèmes cardiaques.","Question: Quelles sont les indications de l'hospitalisation libre et sans consentement selon l'âge ?
+a) Pour les personnes âgées de plus de 65 ans souffrant d'un trouble psychiatrique aigu.
+b) Pour les mineurs de moins de 18 ans qui présentent un danger pour eux-mêmes ou pour autrui.
+c) Pour les adultes en état de détresse psychique grave nécessitant une hospitalisation immédiate.
+d) Pour les personnes souffrant d'un trouble psychiatrique chronique sans crise aiguë.",medGemma_4b,llama3_1_8b
+OIC-082-02-A,"Question: Quelle est la définition d'une amaurose fugace ?
+a) Une altération aiguë et transitoire de la vision
+b) Un trouble de la vision permanent et irréversible
+c) Une perte totale et permanente de la vue
+d) Une diminution progressive de la vision","Question: Une amaurose fugace est caractérisée par la disparition totale de la vision, d'apparition aiguë, d'une durée de quelques minutes et qui se résout spontanément. Elle correspond à un accident ischémique rétinien transitoire. Cette condition constitue une urgence diagnostique en raison du risque de survenue d'une occlusion artérielle rétinienne constituée ou d'un AVC ischémique. Il est important de rechercher une athérome carotidien ou une cardiopathie emboligène, ainsi qu'une maladie de Horton qui doit aussi être systématiquement évoquée.
+a) Une amaurose fugace correspond à un accident ischémique rétinien transitoire.
+b) Une amaurose fugace est une condition oculaire rare et grave qui nécessite une urgence diagnostique.
+c) Une amaurose fugace est caractérisée par la disparition totale de la vision, d'apparition aiguë, d'une durée de quelques minutes et qui se résout spontanément.
+d) Une amaurose fugace est une condition oculaire rare et grave qui nécessite une urgence diagnostique et doit faire rechercher une athérome carotidien ou une cardiopathie emboligène, ainsi qu'une maladie de Horton.",llama3_1_8b,openbiollm_8b
+OIC-050-11-B,"Question: Quand une imagerie est-elle indiquée chez un adulte présentant un testicule non descendu ?
+a) Toujours, car l'imagerie est la seule méthode fiable pour diagnostiquer la cryptorchidie.
+b) Uniquement si le testicule n'est pas palpable à l'examen clinique et qu'une exploration laparoscopique est impossible.
+c) En cas de suspicion de cancer du testicule, car la cryptorchidie est un facteur de risque important.
+d) Jamais, car le diagnostic de la cryptorchidie chez l'adulte est toujours clinique.","Question: Quelle est l'indication d'imagerie dans le cas d'un testicule non descendu chez l'enfant ?
+a) L'examen clinique n'est pas suffisant, il faut recourir à l'imagerie.
+b) Une exploration laparoscopique est indiquée en l'absence de palpation sous anesthésie générale.
+c) La surveillance par imagerie est recommandée pour un testicule non palpé car la cryptorchidie est un facteur de risque important de cancer du testicule.
+d) L'imagerie n'est pas nécessaire, le diagnostic clinique suffit.",gemma2_9b,llama3_1_8b
+OIC-197-13-A,"Question: Quels sont les principaux traitements non pharmacologiques recommandés pour la spondyloarthrite ?
+a) Arrêt du tabagisme, activité physique régulière et kinésithérapie
+b) Kinésithérapie et appareillage par corset uniquement si déformation rachidienne évolutive
+c) Chirurgie : remplacement prothétique articulaire (coxite) et ostéotomie rachidienne de correction des cyphoses dorsales majeures
+d) Prise en charge à 100 % (ALD) pour les formes sévères ou invalidantes","Question: Quelle est la première étape recommandée dans la prise en charge d'un patient souffrant de spondyloarthrite ?
+a) Chirurgie
+b) Kinésithérapie
+c) Prescription d'anti-inflammatoires non stéroïdiens
+d) Coordination thérapeutique par le rhumatologue et le médecin généraliste",llama3_1_8b,gemma2_9b
+OIC-247-26-B,"Question: Quel est l'objectif principal du traitement néphroprotecteur chez les patients diabétiques présentant une microalbuminurie ?
+a) Maintenir une HbA1c < 8 % et une pression artérielle < 130 mmHg.
+b) Ramener le débit de protéinurie en dessous de 0,5 g/24 h.
+c) Contrôler la glycémie (HbA1c < 7 %), la pression artérielle (< 140/85 mmHg) et utiliser des IEC ou des sartans.
+d) Adapter les posologies de la metformine et utiliser uniquement l'insuline.","Question: Quelle est la principale préoccupation en matière de prise en charge néphroprotectrice chez le diabétique ?
+a) Eviter les situations à risque d'accélération de la progression de la néphropathie.
+b) Assurer une bonne maîtrise des facteurs de risque associés.
+c) Gérer l'hypertension artérielle et le tabagisme.
+d) Contrôler les niveaux de glycémie.",medGemma_27b,openbiollm_8b
+OIC-124-17-A,"Question: Selon le texte, quels sont les éléments clés pour poser un diagnostic positif d'andropause (SDT) ?
+a) Présence de troubles de la sexualité, neuropsychologiques et vasomoteurs, confirmés par une testostérone totale > 2,3 ng/ml.
+b) Présence de troubles de la sexualité, neuropsychologiques et vasomoteurs, confirmés par une testostérone biodisponible > 0,7 ng/ml.
+c) Présence de troubles de la sexualité, neuropsychologiques et vasomoteurs, confirmés par une testostérone totale < 2,3 ng/ml OU une testostérone totale entre 2,3 et 3,5 ng/ml ET une testostérone biodisponible < 0,7 ng/ml.
+d) Présence de troubles de la sexualité, neuropsychologiques et vasomoteurs, confirmés par une testostérone libre calculée > 0,07 ng/ml.","Question: Quels sont les éléments cliniques positifs et/ou biologiques qui permettent de poser le diagnostic d’andropause?
+a) Aucun des symptômes ou signes précédents n'est spécifique à l'andropause.
+b) Les symptômes et signes cliniques positifs pour un diagnostic d'andropause sont: troubles de la sexualité, troubles neuropsychologiques, troubles vasomoteurs, obésité, syndrome métabolique, augmentation de la graisse viscérale, diminution de la pilosité avec atrophie cutanée et apparition d'une gynécomastie non douloureuse, signes en faveur d'une sarcopénie (fonte musculaire, diminution de la force musculaire), signes en faveur d'une diminution de la densité minérale osseuse (fracture récente, perte de taille etc.), une testostérone totale < 2,3 ng/ml OU une testostérone totale entre 2,3 et 3,5 ng/ml ET une testostérone biodisponible < 0,7 ng/ml ET une testostérone libre calculée < 0,07 ng/ml.
+c) Les symptômes et signes cliniques positifs pour un diagnostic d'andropause sont: troubles de la sexualité, troubles neuropsychologiques, troubles vasomoteurs, obésité, syndrome métabolique, augmentation de la graisse viscérale, diminution de la pilosité avec atrophie cutanée et apparition d'une gynécomastie non douloureuse, signes en faveur d'une sarcopénie (fonte musculaire, diminution de la force musculaire), signes en faveur d'une diminution de la densité minérale osseuse (fracture récente, perte de taille etc.), une testostérone totale < 2,3 ng/ml OU une testostérone totale entre 2,3 et 3,5 ng/ml ET une testostérone biodisponible < 0,7 ng/ml ET une testostérone libre calculée < 0,07 ng/ml.
+d) Les symptômes et signes cliniques positifs pour un diagnostic d'andropause sont: troubles de la sexualité, troubles neuropsychologiques, troubles vasomoteurs, obésité, syndrome métabolique, augmentation de la graisse viscérale, diminution de la pilosité avec atrophie cutanée et apparition d'une gynécomastie non douloureuse, signes en faveur d'une sarcopénie (fonte musculaire, diminution de la force musculaire), signes en faveur d'une diminution de la densité minérale osseuse (fracture récente, perte de taille etc.), une testostérone totale < 2,3 ng/ml OU une testostérone totale entre 2,3 et 3,5 ng/ml ET une testostérone biodisponible < 0,7 ng/ml ET une testostérone libre calculée < 0,07 ng/ml.",medGemma_27b,openbiollm_8b
+OIC-364-03-B,"Question: Quel est le rôle principal du périoste dans la consolidation des fractures chez l'enfant ?
+a) Il fournit le calcium nécessaire à la formation du cal osseux.
+b) Il assure une stabilité précoce en formant un cal périosté et participe au remodelage.
+c) Il inhibe la formation de l'hématome fracturaire.
+d) Il est uniquement impliqué dans la croissance osseuse et non dans la réparation des fractures.","Question: Le périoste joue un rôle dans la croissance osseuse chez l'enfant.
+a) Oui, il contribue au remodelage osseux.
+b) Non, il n'a pas de rôle dans la croissance osseuse.
+c) Seulement dans les fractures complètes.
+d) Il ne joue aucun rôle dans la croissance ou le remodelage osseux.",medGemma_27b,openbiollm_8b
+OIC-325-12-A,"Question: Selon le texte, qui est légalement tenu de déclarer un cas grave de pharmacodépendance ou d'abus de substances psychoactives (hors alcool et tabac) ?
+a) Tout professionnel de santé
+b) Seulement les CEIP (Centres d’Evaluation et d’Information sur la pharmacodépendance)
+c) Médecins, chirurgiens-dentistes, sages-femmes et pharmaciens
+d) Uniquement les patients concernés ou leurs familles","Question: Qui doit déclarer un cas de pharmacodépendance grave ou d’abus grave d’une substance, plante, médicament ou autre produit ?
+a) Seul le médecin peut déclarer un cas de pharmacodépendance grave ou d’abus grave d’une substance, plante, médicament ou autre produit.
+b) Tous les professionnels de santé doivent déclarer un cas de pharmacodépendance grave ou d’abus grave d’une substance, plante, médicament ou autre produit.
+c) Seul le médecin doit déclarer un cas de pharmacodépendance grave ou d’abus grave d’une substance, plante, médicament ou autre produit, mais les autres professionnels de santé peuvent également le faire.
+d) Tout le monde peut déclarer un cas de pharmacodépendance grave ou d’abus grave d’une substance, plante, médicament ou autre produit.",medGemma_27b,llama3_1_8b
+OIC-265-02-B,"Question: Selon le texte, quel est le sex ratio typique de la lithiase urinaire ?
+a) 1 homme pour 1 femme
+b) 2 hommes pour 1 femme
+c) 1 homme pour 2 femmes
+d) Également répartie entre les sexes","Question: Quelle est l'épidémiologie des lithiases urinaires ?
+a) La prévalence mondiale des lithiases varie de 5% à 20%, avec une incidence plus élevée chez les hommes.
+b) Les facteurs géographiques, climatiques, ethniques, diététiques et génétiques influencent l'incidence des lithiases urinaires.
+c) La prévalence en France est de 5% et le sex ratio est de 1 homme pour 2 femmes.
+d) Les lithiases urinaires sont plus fréquentes chez les femmes que chez les hommes.",medGemma_27b,openbiollm_8b
+OIC-024-11-A,"Question: Quelle est la principale complication maternelle potentiellement mortelle associée à l'hypertension gravidique (HTAg) mentionnée dans le texte ?
+a) RCIU (Retard de Croissance Intra-Utérin)
+b) Prématurité
+c) Éclampsie
+d) Protéinurie","Question: Quelles sont les complications maternelles de la prééclampsie ?
+a) Crise d'éclampsie, HELLP syndrome et hématome rétroplacentaire
+b) Coagulation intravasculaire disséminée et insuffisance rénale aiguë
+c) Hémorragie cérébroméningée et rétinopathie hypertensive
+d) Toutes les options ci-dessus sont correctes",medGemma_27b,llama3_1_8b
+OIC-229-01-A,"Question: Quel est le principal objectif de la surveillance des abords veineux ?
+a) Identifier les types de dispositifs de surveillance.
+b) Déterminer le site d'insertion optimal.
+c) Détecter et gérer les complications potentielles.
+d) Choisir le type de dispositif de surveillance le plus approprié.","Question: Selon le contenu fourni, quels sont les deux principaux types d'abords veineux mentionnés ?
+a) Artériels et veineux
+b) Centraux et périphériques
+c) Supérieurs et inférieurs
+d) Tunnélisés et implantables",medGemma_4b,medGemma_27b
+OIC-261-18-B,"Question: Quel est le traitement principal recommandé pour les Glomérulopathies à Nécrose et Prolifération (GNRP) ?
+a) Traitement symptomatique uniquement
+b) Corticoïdes et immunosuppresseurs
+c) Antibiotiques à fortes doses
+d) Échanges plasmatiques uniquement","Question: Quel est le traitement des principales néphropathies glomérulaires (autres que le SNLGM) ?
+a) Traitement symptomatique et anti-protéinurique
+b) Corticoïdes et immunosuppresseurs
+c) Traitement spécifique selon la cause
+d) Traitement symptomatique",gemma2_9b,openbiollm_8b
+OIC-187-03-A,"Question: Quelles sont les caractéristiques majeures de la papule oedèmateuse au cours d'une urticaire superficielle ?
+a) Fugace, migrateur et non prurigineux
+b) Purigineux, fugace et migrateur
+c) Fermes, non prurigineux avec sensation de tension ou de douleur
+d) Purigineux, transitoire et associé à l'urticaire profonde","Question: Quelle proportion d'individus présentent une urticaire superficielle isolée ?
+a) 10%
+b) 40%
+c) 50%
+d) 90%",llama3_1_8b,gemma2_9b
+OIC-235-03-A,"Question: Lequel des ensembles de signes suivants est le plus évocateur d'une urgence potentielle, comme une tamponnade cardiaque, chez un patient atteint de péricardite aiguë ?
+a) Turgescence jugulaire, reflux hépatojugulaire, fièvre > 38°C
+b) Tachycardie, PAS < 90 mmHg, pouls paradoxal
+c) Élévation de la troponine, microvoltage, troubles du rythme ventriculaire
+d) Épanchement > 20 mm, compression des cavités droites, fièvre > 38°C","Question: Quels sont les signes évoquant une tamponnade ou une myocardite associée à une péricardite aiguë ?
+a) Turgescence jugulaire, Reflux hépato-jugulaire
+b) Pouls paradoxal, élévation de la troponine
+c) Marbrures, extrémités froides
+d) Microvoltage et alternance électrique sur l'ECG",medGemma_27b,llama3_1_8b
+OIC-207-11-B,"Question: Selon le texte, quel examen est généralement privilégié en deuxième intention pour l'évaluation d'une masse médiastinale chez l'enfant, en particulier pour des raisons liées à l'irradiation ?
+a) Radiographie thoracique de face
+b) Échographie
+c) Scanner thoracique
+d) IRM","Question: Quel examen est généralement préféré pour diagnostiquer une anomalie médiastinale chez un nourrisson en raison des risques liés à l'irradiation ?
+a) Radiographie thoracique
+b) Échographie
+c) Scanner thoracique
+d) IRM thoracique",medGemma_27b,gemma2_9b
+OIC-045-17-A,"Question: Quel est l'indication des examens d'imagerie pour le suivi d'une mucoviscidose ?
+a) Radiographie pulmonaire et échodoppler abdominal tous les 6 mois.
+b) Radiographie pulmonaire annuelle, échodoppler abdominal annuel et scanner thoracique en cas de symptôme nouveau ou aggravation.
+c) IRM pulmonaire et angio-scan pour tous les patients.
+d) Scanner thoracique uniquement en cas d'urgence.","Question: Quel examen d'imagerie est recommandé pour le suivi annuel de la fonction digestive chez un patient atteint de mucoviscidose ?
+a) Radiographie pulmonaire
+b) Scanner thoracique
+c) Échodoppler hépatique et digestif
+d) IRM pulmonaire",llama3_1_8b,medGemma_27b
+OIC-284-07-B,"Question: Quel est le principal objectif du bilan biologique recommandé pour un patient consultant pour un syndrome de l'intestin irritable (SII) selon le texte ?
+a) Confirmer le diagnostic de SII.
+b) Identifier la cause exacte du SII.
+c) Éliminer d'autres pathologies organiques pouvant simuler le SII.
+d) Évaluer la sévérité des symptômes du SII.","Question: Quels sont les principaux diagnostics différentiels et les examens complémentaires à réaliser pour éliminer une pathologie organique chez un patient consultant pour un syndrome d'irritation intestinale (SII) ?
+a) Les principaux diagnostics différentiels sont les maladies inflammatoires de l'intestin, la maladie cœliaque et les colites microscopiques. Les examens complémentaires à réaliser pour éliminer une pathologie organique incluent un bilan biologique, une NFS, une CRP, dosages de TSH et anticorps anti-transglutaminase de type IgA, ainsi qu'un examen parasitologique des selles.
+b) Les principaux diagnostics différentiels sont les maladies inflammatoires de l'intestin, la maladie cœliaque et les colites microscopiques. Les examens complémentaires à réaliser pour éliminer une pathologie organique incluent un bilan biologique, une NFS, une CRP, dosages de TSH et anticorps anti-transglutaminase de type IgA.
+c) Les principaux diagnostics différentiels sont les maladies inflammatoires de l'intestin, la maladie cœliaque et les colites microscopiques. Les examens complémentaires à réaliser pour éliminer une pathologie organique incluent un bilan biologique, une NFS, une CRP et dosages de TSH.
+d) Les principaux diagnostics différentiels sont les maladies inflammatoires de l'intestin, la maladie cœliaque et les colites microscopiques. Les examens complémentaires à réaliser pour éliminer une pathologie organique incluent un bilan biologique, une NFS, une CRP et dosages de TSH, mais pas d'examen parasitologique des selles.",medGemma_27b,openbiollm_8b
+OIC-257-03-B,"Question: Quel facteur n'est PAS directement impliqué dans la physiopathologie des œdèmes généralisés ?
+a) Augmentation de la pression hydrostatique capillaire
+b) Diminution de la pression oncotique plasmatique
+c) Hypertension artérielle pulmonaire
+d) Augmentation de la perméabilité capillaire","Question: Quelle est la principale cause de l'hypovolémie efficace observée dans la cirrhose hépatique ?
+a) Une augmentation de la pression hydrostatique capillaire.
+b) Une diminution de la pression oncotique plasmatique.
+c) Une diminution du débit cardiaque.
+d) Une augmentation de la perméabilité capillaire.",gemma2_9b,medGemma_4b
+OIC-020-17-A,"Question: Quelle est la différence principale entre une population cible et une population source dans le contexte d'une recherche scientifique ?
+a) La population cible est plus petite que la population source.
+b) La population cible est celle à laquelle on souhaite extrapoler les résultats, tandis que la population source est celle à partir de laquelle l'étude se déroule concrètement.
+c) La population cible est définie par le chercheur, tandis que la population source est déterminée par des critères statistiques.
+d) La population cible est toujours accessible aux chercheurs, tandis que la population source peut être difficile à atteindre.","Question: Dans le contexte de la recherche en santé, quelle est la relation entre la population cible, la population source et l'échantillon ?
+a) La population cible est un sous-ensemble de la population source, et l'échantillon est un sous-ensemble de la population cible.
+b) La population source est celle à laquelle on souhaite généraliser les résultats, l'échantillon est sélectionné dans la population cible, et la population cible est un sous-ensemble de la population source.
+c) La population cible est celle à partir de laquelle l'échantillon est sélectionné, la population source est celle à laquelle on souhaite généraliser les résultats, et l'échantillon est un sous-ensemble de la population cible.
+d) La population cible est celle à partir de laquelle l'échantillon est sélectionné, la population source est celle à laquelle on souhaite généraliser les résultats, et l'échantillon est un sous-ensemble de la population source.",gemma2_9b,medGemma_27b
+OIC-299-06-B,"Question: Quel examen complémentaire est le plus performant pour le diagnostic et le bilan préopératoire d'une tumeur intracrânienne chez l'adulte?
+a) Scanner cérébral sans et avec injection
+b) IRM sans et avec injection
+c) TDM (Tomographie par émission de positrons) avec injection de tritium marké
+d) Angiographie digitale","Question: Dans le contexte d'une urgence neurologique suspectant une tumeur intracrânienne, quel est l'examen initial privilégié ?
+a) IRM cérébral sans injection
+b) Scanner cérébral sans injection +++
+c) Scanner cérébral avec injection +++
+d) IRM cérébral avec injection +++",openbiollm_8b,medGemma_4b
+OIC-047-07-A,"Question: Selon le texte, dans quel cas un enfant doit-il être adressé à un ophtalmologiste en urgence ?
+a) Antécédents familiaux de problèmes de vue.
+b) Doute lors d'un test de dépistage de la vue.
+c) Leucocorie (pupille blanche).
+d) Strabisme d'apparition lente.","Question: À quelle fréquence un enfant doit-il être adressé à un ophtalmologiste, même en l'absence de signes d'appel, en raison d'antécédents familiaux de facteurs de risque ?
+a) Tous les 6 mois
+b) Entre 3 et 12 mois
+c) Une fois par an
+d) Seulement en cas de signes d'appel",medGemma_27b,medGemma_4b
+OIC-049-13-B,"Question: Quels sont les grands cadres étiologiques des pubertés précoces ?
+a) Origines hypothalamo-hypophysaire, ovariennes et surrénaliennes
+b) Origines hypothalamo-hypophysaire, ovariennes, surrénaliennes ou exogènes/environnementales
+c) Origines ovariennes, surrénaliennes et génétiques
+d) Origines hypothalamo-hypophysaire, testiculaire et corticosurrénalienne","Question: Quelle est la cause **centrale** d'une puberté précoce selon le texte ?
+a) Une tumeur ovarienne
+b) Un kyste arachnoïdien
+c) Une hyperandrogénie sans activation gonadotrope
+d) La testotoxicose",llama3_1_8b,gemma2_9b
+OIC-102-03-B,"Question: Lequel des tests suivants est utilisé pour évaluer la fonction des muscles oculomoteurs individuels et conjoints ?
+a) Examen au verre rouge
+b) Test de Hess-Lancaster
+c) Inspection visuelle
+d) Reflet cornéen","Question: Quel est le but principal du test de Hess-Lancaster ou test de Lancaster ?
+a) Diagnostiquer la paralysie oculomotrice
+b) Déterminer les muscles paralysés
+c) Suivre l'évolution de la paralysie
+d) Tout cela est vrai",gemma2_9b,llama3_1_8b
+OIC-256-03-B,"Question: Quel est l'élément central de l'interrogatoire lors d'un examen médical pour l'absence de contre-indication à la pratique sportive chez l'adulte, selon le texte ?
+a) L'évaluation détaillée de l'historique sportif passé et futur.
+b) L'identification des antécédents personnels et familiaux, notamment les facteurs de risque cardiovasculaire, les traitements médicamenteux et les symptômes évocateurs de pathologie cardiovasculaire à l'exercice.
+c) La réalisation d'examens paracliniques approfondis, comme l'échocardiographie, pour évaluer la fonction cardiaque.
+d) La vérification de la conformité aux règles anti-dopage et l'évaluation de la performance sportive attendue.","Question: La consultation pour délivrance du certificat médical d'absence de contre-indication à la pratique sportive doit comprendre :
+a) Un interrogatoire faisant préciser les antécédents personnels et familiaux, notamment les facteurs de risque cardiovasculaire.
+b) Des mesures anthropométriques : taille, masse corporelle, IMC.
+c) Un examen physique général et des examens paracliniques comportant notamment un examen cardiovasculaire (auscultation, palpation des pouls distaux, recherche d'un souffle vasculaire), mesure de la Pression Artérielle aux deux bras, ECG de repos.
+d) Un examen de l'appareil locomoteur, orienté en fonction des éventuelles plaintes fonctionnelles du patient et des segments particulièrement sollicités par sa pratique sportive.",medGemma_27b,openbiollm_8b
+OIC-156-10-A,"Question: Quel est le signe clinique le plus fréquent chez les patients atteints d'arthrite septique aiguë ?
+a) Hyperthermie (fièvre)
+b) Douleurs articulaires et impotence fonctionnelle
+c) Epanchement articulaire
+d) Boiterie","Question: Quels sont les signes cliniques d'arthrite septique aiguë?
+a) Fièvre/hyperthermie
+b) Douleurs articulaires et impotence fonctionnelle
+c) Apparition d'une difficulté à la marche
+d) Epanchement articulaire",llama3_1_8b,openbiollm_8b
+OIC-020-04-B,"Question: Quels arguments utiles à la définition d'une problématique de recherche sont mentionnés dans le contenu éducatif ?
+a) Les arguments utilisent uniquement des données économiques
+b) L'analyse de l'état actuel des connaissances et les éléments épidémiologiques
+c) Les hypothèses physiopathologiques plausibles
+d) Seuls les facteurs de risque sont pris en compte","Question: Selon le texte, quels types d'arguments sont principalement utilisés pour justifier une problématique de recherche ?
+a) Données démographiques et socio-économiques.
+b) Arguments épidémiologiques et état actuel des connaissances.
+c) Opinions d'experts et tendances politiques.
+d) Coûts de la recherche et délais de publication.",llama3_1_8b,medGemma_27b
+OIC-245-05-A,"Question: Quel est le principal avantage du dosage du cortisol à 8h dans le diagnostic d'une insuffisance surrénalienne ?
+a) Il permet de détecter les anomalies métaboliques associées à l'insuffisance surrénalienne.
+b) Il permet de déterminer la cause de l'insuffisance surrénalienne.
+c) Il permet de confirmer le diagnostic en mesurant le taux de cortisol le plus élevé de la journée.
+d) Il permet de suivre l'évolution de la fonction surrénalienne au fil du temps.","Question: Quelle est la valeur de référence pour un dosage de cortisol à 8h qui exclut une insuffisance surrénalienne ?
+a) 50 ng/ml
+b) 180 ng/ml
+c) 500 nmol/l
+d) 138 nmol/l",medGemma_4b,llama3_1_8b
+OIC-162-26-B,"Question: La photographie montre une manifestation de quelle étape de la syphilis ?
+a) Syphilis primaire
+b) Syphilis tertiaire
+c) Syphilis secondaire
+d) Gonorrhée","Question: Quelle est la caractéristique la plus distinctive de l'éruption cutanée observée dans l'image de la syphilis secondaire ?
+a) Eruptions rouges et douloureuses sur le tronc.
+b) Eruptions blanchâtres et prurigineuses sur les mains et les pieds.
+c) Eruptions rouges et douloureuses sur les mains et les pieds.
+d) Eruptions blanchâtres et prurigineuses sur le tronc.",gemma2_9b,medGemma_4b
+OIC-037-09-B,"Question: 
+a) 
+b) 
+c) 
+d) ","Question: Selon le texte, quelle est une contre-indication à l'utilisation de la technique médicamenteuse (mifépristone et misoprostol) pour une interruption volontaire de grossesse (IVG)?
+a) Prise d'un traitement anticoagulant.
+b) Antécédents d'allergie aux prostaglandines.
+c) Anémie profonde (Hb < 9–10 g/dL).
+d) Insuffisance rénale.",gpt-4o,medGemma_27b
+OIC-056-02-A,"Question: Quelle est la caractéristique temporelle la plus importante à considérer dans la définition d'un handicap chez l'enfant ?
+a) L'âge exact de l'apparition du handicap.
+b) La durée de vie attendue de l'enfant.
+c) L'évolution dans le temps du handicap (stable, transitoire, durable, intermittent, évolutif).
+d) La capacité de l'enfant à apprendre de nouvelles compétences.","Question: Quel terme décrit la coexistence de plusieurs déficiences chez un même enfant ?
+a) Surhandicap
+b) Polyhandicap
+c) Multi-handicap ou pluri-handicap
+d) Handicap congénital",medGemma_4b,gemma2_9b
+OIC-336-02-B,"Question: Lequel des centres nerveux suivants joue un rôle **essentiel** dans l'éveil et la conscience ?
+a) Centre respiratoire
+b) Centre cardiovasculaire
+c) Tronc cérébral
+d) Ganglions spinaux","Question: Quels sont les centres nerveux de l'éveil et de la conscience ?
+a) Le cervelet, le tronc cérébral et le système limbique.
+b) Les ganglions basaux, le thalamus et l'hypothalamus.
+c) La moelle épinière, les nerfs crâniens et les nerfs spinaux.
+d) Le cerveau entier est responsable de l'éveil et de la conscience.",gemma2_9b,llama3_1_8b
+OIC-049-19-A,"Question: Selon le contenu éducatif, quel est l'un des deux grands cadres étiologiques des retards pubertaires ?
+a) Les troubles hormonaux liés à la thyroïde.
+b) Les problèmes liés à la fonction hypothalamo-hypophysaire ou gonadique.
+c) Les infections virales.
+d) Les problèmes liés à la fonction rénale.","Question: Quels sont les deux grands cadres étiologiques des retards pubertaires?
+a) Origines hypothalamo-hypophysaire ou gonadique
+b) Origines hypothalamo-hypophysaire ou chromosomiques
+c) Origines gonadique ou infectieuses
+d) Origines hypothalamo-hypophysaire ou endocriniennes",medGemma_4b,llama3_1_8b
+OIC-070-03-B,"Question: Quelle est la prévalence des symptômes psycho-comportementaux chez les patients atteints de démence ?
+a) Moins de 20%
+b) Environ 50%
+c) Plus de 80%
+d) 100%","Question: Quelle est la prévalence des symptômes psychologiques et comportementaux (SCPD) chez les patients atteints de maladie d'Alzheimer ou d'autres démences ?
+a) Moins de 50 %
+b) Entre 50 % et 80 %
+c) Plus de 80 %
+d) Moins de 50 %",gemma2_9b,medGemma_4b
+OIC-336-07-A,"Question: Quel est le seuil de glycémie capillaire qui doit évoquer une hypoglycémie nécessitant une intervention, selon le texte ?
+a) Glycémie > 7 mmol/L
+b) Glycémie < 3 mmol/L
+c) Glycémie > 10 mmol/L
+d) Glycémie > 5 mmol/L","Question: Quel est le premier traitement à administrer en cas de suspicion d'hypoglycémie chez un patient conscient ?
+a) Sucre en morceau
+b) Jus d'orange
+c) Sérum glucosé en IV direct (G30%)
+d) Sérum glucosé en IV direct (G30%) si troubles de la conscience",medGemma_27b,medGemma_4b
+OIC-037-01-A,"Question: Quel événement a contribué à la modification du statut légal de l'avortement en France avant la loi Veil de 1975 ?
+a) La naissance de Simone Veil
+b) Le procès de Marie-Claire au tribunal de Bobigny
+c) L'augmentation du nombre de centres d'IVG
+d) La création du ministère de la santé","Question: Quel était le but de la loi Veil de 1975 sur l'interruption volontaire de grossesse (IVG)?
+a) Facilité des procédures d'avortement
+b) Amélioration des conditions de vie des femmes enceintes non désirées
+c) Création de centres spécialisés dans les avortements illégaux
+d) Augmentation du nombre de médecins formés à l'avortement",gemma2_9b,openbiollm_8b
+OIC-076-11-A,"Question: Parmi les marqueurs biologiques mentionnés, lequel est le plus spécifique pour détecter une consommation excessive d'alcool, tout en se normalisant relativement rapidement après l'arrêt de la consommation?
+a) GGT (Gamma Glutamyl Transpeptidase)
+b) VGM (Volume Globulaire Moyen)
+c) Alcoolémie
+d) CDT (transferrine désialylée)","Question: Quel est le marqueur biologique qui diminue dès la première semaine après l'arrêt de la consommation d'alcool et se normalise en 4 à 10 semaines ?
+a) Alcoolémie
+b) GGT (Gamma Glutamyl Transpeptidase)
+c) VGM (Volume Globulaire Moyen)
+d) CDT (transferrine désialysée)",medGemma_27b,llama3_1_8b
+OIC-230-04-A,"Question: Selon le contenu, quelles sont les quatre urgences cardiovasculaires majeures à considérer en cas de douleur thoracique aiguë ?
+a) Hypertension, arythmie, insuffisance cardiaque, infarctus du myocarde
+b) Péricardite (tamponnade), Syndrome Coronarien Aigu (SCA), Embolie Pulmonaire (EP), Dissection Aortique
+c) Angine de poitrine stable, crise d'asthme, reflux gastro-œsophagien, pneumothorax
+d) Pleurésie, pneumonie, fibrose pulmonaire, tuberculose","Question: Quelles sont les quatre urgences cardio-vasculaires pouvant entraîner une douleur thoracique ?
+a) Dissection aortique
+b) Syndrome coronarien aigu
+c) Embole pulmonaire
+d) Péricardite avec tamponnade",medGemma_27b,openbiollm_8b
+OIC-132-01-A,"Question: Selon le DSM-5, quelle est la principale différence entre un trouble neurocognitif mineur et un trouble neurocognitif majeur ?
+a) Le niveau de déclin cognitif observé.
+b) La présence d'autres affections mentales concomitantes.
+c) L'impact des déficits cognitifs sur l'indépendance fonctionnelle du patient.
+d) La durée des symptômes cognitifs.","Question: Quelle est la définition du DSM-5 des troubles neurocognitifs mineurs et majeurs?
+a) Troubles cognitifs mineurs : présence d’un déclin cognitif modéré à partir d’un niveau antérieur de performance dans un ou plusieurs domaines de la cognition, basé sur les activités instrumentales de la vie quotidienne étant préservées.
+b) Troubles neurocognitifs majeurs : présence d’un déclin cognitif significatif à partir d’un niveau antérieur de performance dans un ou plusieurs domaines de la cognition, basé sur le fait que le déclin cognitif retentit sur l’autonomie dans les activités quotidiennes.
+c) Les déficits cognitifs ne surviennent pas uniquement dans le contexte d’un délirium.
+d) Les déficits cognitifs ne sont pas mieux expliqués par une autre affection mentale.",gemma2_9b,openbiollm_8b
+OIC-247-17-A,"Question: Quel symptôme chez un patient diabétique suggère fortement une cétose ?
+a) Polyurie
+b) Sueurs abondantes
+c) Douleurs abdominales aiguës
+d) Tachycardie","Question: Lequel des symptômes suivants est le plus susceptible d'indiquer une complication métabolique aiguë chez un patient diabétique ?
+a) Syndrome polyuro-polydipsique
+b) Douleurs abdominales aiguës et nausées
+c) Sueurs, pâleurs et tachycardie
+d) Troubles de la vigilance",gemma2_9b,medGemma_27b
+OIC-112-06-A,"Question: Quelle caractéristique décrit une lésion bulleuse ?
+a) Une plaie ouverte et saignante
+b) Une zone rouge et chaude au toucher
+c) Une poche remplie de liquide, tendue sur la peau
+d) Un grain de peau dur et épais","Question: Quelle est la principale caractéristique d'une lésion bulleuse ?
+a) Une peau sèche et craquelée.
+b) Une peau qui ne se décolore pas.
+c) Une peau qui est tendue et qui peut être pressée sans provoquer de douleur.
+d) Une peau qui est rouge et enflammée.",gemma2_9b,medGemma_4b
+OIC-047-04-A,"Question: Quel est le moment recommandé pour effectuer un bilan visuel systématique chez un enfant ?
+a) À l'âge de 10 ans.
+b) À la naissance.
+c) Entre 9 et 24 mois.
+d) À l'âge de 5 ans.","Question: À quel âge un dépistage visuel systématique **n'est pas** recommandé chez l'enfant ?
+a) 2 mois
+b) 4 ans
+c) 6ème année
+d) entre 9 et 24 mois",medGemma_4b,gemma2_9b
+OIC-229-05-A,"Question: Quel est le risque principal associé à la rétractile veineuse centrale dans le territoire cave supérieur?
+a) Hémorragie locale
+b) Trouble de l'hémostase
+c) Points d'insertion difficilement comprimables
+d) Risque d'embolie gazeuse","Question: Quel est l'objectif principal du retrait d'une voie veineuse ?
+a) Stimuler la circulation sanguine
+b) Limiter le risque d'infection
+c) Réduire le risque d'hématome
+d) Augmenter la pression artérielle",openbiollm_8b,gemma2_9b
+OIC-230-11-B,"Question: Quel est l'examen d'imagerie de choix pour établir un diagnostic positif de dissection aortique chez un patient stabilisé ?
+a) Echographie trans-thoracique (ETT)
+b) Echographie trans-oesophagienne (ETO)
+c) Angioscanner thoracique
+d) Echographie cardiaque (générique)","Question: Quels sont les examens complémentaires utiles dans le diagnostic d'une dissection aortique?
+a) Echocardiographie trans-oesophagienne (ETO)
+b) Angioscanner thoracique
+c) Todomodensitometrie thoracique
+d) Autres",medGemma_27b,openbiollm_8b
+OIC-162-30-A,"Question: Quelles sont les principales manifestations cliniques associées à l'infection par le Papillomavirus Humain (HPV) ?
+a) Uniquement des lésions précancéreuses (NIE).
+b) Uniquement des condylomes acuminés (crêtes-de-coq).
+c) Condylomes acuminés, condylomes plans et néoplasies intra épithéliales (NIE).
+d) Uniquement des maculo-papules rosées.","Question: Quelles sont les manifestations cliniques liées au HPV?
+a) Condylomes acuminés
+b) Condylomes plans
+c) Néoplasie intra épithéliale  (NIE)
+d) Localisation variée, unique ou multiple",medGemma_27b,openbiollm_8b
+OIC-133-08-A,"Question: Quelle mesure juridique est destinée à protéger une personne majeure qui n'est plus en état de veiller sur ses propres intérêts ?
+a) Sauvegarde de justice
+b) Curatelle / curatelle renforcée
+c) Tutelle
+d) Mandat de protection future","Question: Quelle mesure de protection juridique permet à un majeur d'être représenté pour accomplir certains actes, en évitant une tutelle ou une curatelle plus contraignante ?
+a) Signalement au Procureur de la République
+b) Mandat de protection future
+c) Sauvegarde de justice
+d) Habilitation familiale",llama3_1_8b,gemma2_9b
+OIC-027-09-A,"Question: Quelle est la principale conséquence potentielle de la rougeole chez une femme enceinte ?
+a) Une infection bénigne pour la mère.
+b) Un risque accru de fausse couche.
+c) Une transmission possible à l'enfant, pouvant causer des complications néonatales.
+d) Une augmentation du poids du bébé à la naissance.","Question: Quelle est la principale caractéristique de la rougeole materno-fœtale selon le texte ?
+a) Elle est fréquente grâce à la couverture vaccinale.
+b) Elle est possible en fin de grossesse et peut causer une rougeole congénitale.
+c) Elle ne représente aucun risque pour le fœtus.
+d) Elle est la principale cause de rougeole congénitale.",gemma2_9b,medGemma_27b
+OIC-235-01-A,"Question: Quelle est la définition principale d'une péricardite aiguë ?
+a) Inflammation chronique du péricarde.
+b) Inflammation aiguë des feuillets du péricarde.
+c) Accumulation de liquide dans le péricarde sans inflammation.
+d) Inflammation du myocarde associée à une élévation de la troponine.","Question: Quelle est la définition d'une péricardite aiguë?
+a) * Inflammation aiguë des feuillets du péricarde
+b) * Accompagnée d’un épanchement péricardique ou non (« péricardite sèche »)
+c) * Si associée à une élévation de la troponine = myo-péricardite
+d) Toutes les réponses précédentes sont correctes.",medGemma_27b,openbiollm_8b
+OIC-336-14-A,"Question: Dans le cadre d'une prise en charge initiale d'un coma non traumatique chez l'adulte ou l'enfant, quelle est la première action à entreprendre si l'hypoglycémie est suspectée ?
+a) Mettre en place une perfusion avec du sérum physiologique.
+b) Appeler à l'aide (réanimateur, SAMU, …).
+c) Mettre en place une perfusion avec du sérum glucosé (G30 en IV).
+d) Evaluer la nécessité d'administrer un antidote : si intoxication aux benzodiazépines >> flumazénil IV","Question: La prise en charge symptomatique initiale d'un état de coma non traumatique chez un adulte ou un enfant comprend les actions suivantes, sauf une :
+a) Libération voies aériennes et mise en place d'une canule de Guédel
+b) Oxygénothérapie si saturation < 92%
+c) Mise en place d'une perfusion avec du sérum physiologique
+d) Administration d'un antidote selon la cause de l'hypoglycémie ou l'intoxication",medGemma_4b,openbiollm_8b
+OIC-006-05-A,"Question: Quel est l'objectif principal des réunions de concertation pluridisciplinaire (RCP) ?
+a) Organiser des formations continues pour les médecins.
+b) Définir la stratégie diagnostique, thérapeutique et de suivi d'un patient complexe.
+c) Faciliter la communication entre les patients et leurs familles.
+d) Réduire les coûts liés aux soins médicaux.","Question: Quels sont les principaux objectifs des réunions de concertation pluridisciplinaire (RCP) ?
+a) Définir les règles de sécurité pour les patients.
+b) Valider l'obligation de développement professionnel continu (DPC).
+c) Définir les règles de sécurité pour les patients et valider l'obligation de développement professionnel continu (DPC).
+d) Se concentrer uniquement sur les aspects techniques de la prise en charge des patients.",gemma2_9b,medGemma_4b
+OIC-208-05-A,"Question: Quel examen est le plus pertinent pour diagnostiquer une insuffisance respiratoire chronique restrictive ?
+a) Spirométrie
+b) Gaz du sang
+c) Pléthysmographie
+d) Diffusion (TLCO)","Question: Quel est l'indicateur principal pour diagnostiquer une IRC obstructive par spirométrie ?
+a) TVO : VEMS/CV > 0,7
+b) CPT < 80% des valeurs prédites
+c) TLCO < 0,7
+d) Pression maximale inspiratoire élevée",gemma2_9b,llama3_1_8b
+OIC-288-15-A,"Question: Quel est le traitement principal de la thrombose hémorroïdaire externe ?
+a) Traitement médicamenteux à long terme
+b) Intervention chirurgicale immédiate
+c) Traitement conservateur et antalgique
+d) Ligature élastique","Question: Quel est le traitement de la thrombose hémorroïdaire externe ?
+a) Traitement chirurgical
+b) Traitement médicamenteux
+c) Traitement conservateur
+d) Traitement endovasculaire",medGemma_27b,openbiollm_8b
+OIC-351-10-A,"Question: Quels sont les examens systématiques à effectuer dans un contexte d’agitation ?
+a) Glycémie, ionogramme, calcémie, NFS, CRP et bilan de coagulation.
+b) Alcoolémie, toxicologie urinaires et TSH US.
+c) Imagerie cérébrale, ponction lombaire et EEG.
+d) Radiographie pulmonaire, goutte épaisse et ECBU.","Question: Quels sont les examens complémentaires indiqués dans le cas d'agitation et délire aigu?
+a) Examens systématiques
+b) En fonction de l'anamnèse et des points d'appel à l'examen clinique
+c) Alcoolémie, toxicologie urinaires, bilan hépatique, fonction rénale, TSH US, imagerie cérébrale, ponction lombaire, EEG, ECBU, goutte épaisse, radiographie pulmonaire
+d) Bilan biologique minimal (glycémie, ionogramme, calcémie, NFS, CRP, bilan de coagulation), ECG (en vue d'un éventuel traitement antipsychotique, recherche d'un QT long)",llama3_1_8b,openbiollm_8b
+OIC-234-15-A,"Question: Quel est le principal signe radiographique visible sur l'image d'une radiographie thoracique d'un œdème aigu du poumon (OAP) d'origine hémodynamique ?
+a) Épanchement pleural unilatéral
+b) Infiltrats interstitiels bilatéraux et symétriques
+c) Pneumothorax spontané
+d) Masse tumorale apicale","Question: Quel est le signe radiographique le plus typique de l'insuffisance cardiaque de l'adulte (OAP) ?
+a) Un cœur hypertrophié.
+b) Un œdème pulmonaire.
+c) Une cardiomégalie.
+d) Une pleurésie.",medGemma_27b,medGemma_4b
+OIC-127-05-A,"Question: Selon le texte, quels sont les éléments clés pour diagnostiquer une Hypertrophie Bénigne de la Prostate (HBP) ?
+a) L'évaluation des symptômes du bas appareil urinaire et la palpation abdominale.
+b) L'évaluation des symptômes sexuels et l'examen des organes génitaux externes.
+c) L'interrogatoire sur les symptômes du bas appareil urinaire et le toucher rectal.
+d) L'évaluation du volume prostatique par imagerie et l'analyse des marqueurs tumoraux.","Question: Quels sont les symptômes cliniques de l'hypertrophie bénigne de la prostate?
+a) Pollakiurie diurne et nocturne
+b) Urgenturie
+c) Dysurie
+d) Miction en plusieurs temps",medGemma_27b,openbiollm_8b
+OIC-005-15-B,"Question: Quel est l'objectif principal d'une démarche de culture positive de l'erreur dans un établissement de santé ?
+a) Punir les professionnels de santé responsables des erreurs.
+b) Cacher les erreurs pour éviter les poursuites judiciaires.
+c) Favoriser le signalement des erreurs et améliorer la sécurité des patients.
+d) Attribuer la responsabilité des erreurs au dernier maillon de la chaîne de soins.","Question: Le repérage des événements indésirables graves dans les hôpitaux se fait principalement à partir de systèmes :
+a) Le volontariat des médecins et autres professionnels de santé.
+b) La volonté des patients ou de leur famille ou proches d’expliquer les dysfonctionnements qu’ils ont rencontrés ou d’obtenir un dédommagement du préjudice qu’ils estiment avoir subi.
+c) Des systèmes actifs fondés sur l’analyse de dossiers ou de traces électroniques.
+d) Des systèmes passifs reposant sur la volonté des patients ou de leur famille ou proches d’expliquer les dysfonctionnements qu’ils ont rencontrés ou d’obtenir un dédommagement du préjudice qu’ils estiment avoir subi.",gemma2_9b,medGemma_4b
+OIC-008-02-B,"Question: Selon le texte, comment les discriminations influencent-elles principalement les inégalités sociales et de santé ?
+a) En améliorant l'accès aux services de santé pour les groupes discriminés.
+b) En réduisant le stress et en favorisant l'intégration socio-économique.
+c) En accentuant les déterminants sociaux de la santé, en augmentant le stress et en contribuant au non-recours aux soins.
+d) En supprimant les barrières économiques à l'accès aux soins et en promouvant l'égalité d'opportunités.","Question: Les discriminations ont un impact sur les inégalités sociales et les inégalités de santé.
+a) Ces inégalités sont liées à des facteurs tels que l'apparence physique, l'origine culturelle ou le milieu social.
+b) Les discriminations ont un impact négatif sur la qualité du logement et les conditions d'emploi, ce qui affecte directement la santé des personnes.
+c) Les discriminations contribuent au stress chez les personnes concernées, ce qui peut avoir des répercussions négatives sur leur état de santé physique et mentale.
+d) Les discriminations accentuent le non-recours aux services de santé, notamment en raison d'attentes négatives ou de barrières à l'accès aux soins.",medGemma_27b,openbiollm_8b
+OIC-265-13-B,"Question: Quelles sont les principales anomalies métaboliques associées aux lithiases calciques ?
+a) Hyperparathyroïdie, hypercalciurie idiopathique, hyperoxalurie
+b) Hypocalcémie, hypouricosurie, acidose tubulaire rénale
+c) Hyperkaliémie, hypermagnesiurie, nephrocalcinose
+d) Hypoparathyroïdie, hyperoxalaturie, granulomatoses","Question: Quelles sont les principales anomalies métaboliques associées à des lithiases calciques ?
+a) Hyperparathyroidie
+b) Hypercalciuries
+c) Hyperoxalurie
+d) Acidose tubulaire rénale",medGemma_27b,llama3_1_8b
+OIC-270-02-A,"Question: Quels sont les principaux types de douleurs lombaires selon leur origine ?
+a) Lombalgies communes d'origine dégénérative discovertébrales et arthrose
+b) Douleurs référées (étiologies extra-rachidiennes) telles que urologiques, néphrologiques, viscérales, vasculaires et cardiologiques
+c) Lombalgies d'origine secondaire non dégénératives comme les infections, les spondyloarthrites, les compressions médullaires et les traumatismes
+d) Toutes les options précédentes sont correctes","Question: Quelle est la cause la plus fréquente de douleurs lombaires aiguës ?
+a) Infection bactérienne
+b) Arthrose dégénérative
+c) Douleurs référées d'origine pulmonaire
+d) Trauma lombaire aigu",llama3_1_8b,gemma2_9b
+OIC-315-05-A,"Question: Quel est le principal danger lié à la neutropénie dans le contexte d'une leucémie aiguë ?
+a) Une augmentation de la production de globules rouges.
+b) Un risque accru de septicémie.
+c) Une diminution de la pression artérielle.
+d) Une amélioration de la fonction rénale.","Question: Quels sont les signes cliniques et biologiques de gravité dans les leucémies aiguës?
+a) Hypokalemie
+b) Hyperkaliemie
+c) Leucostase
+d) Insuffisance medullaire",medGemma_4b,openbiollm_8b
+OIC-187-13-B,"Question: Quelle est la phase physiopathologique qui se produit lorsque le sujet n'a pas encore été exposé à l'allergène ?
+a) Phase de révélation symptomatique
+b) Phase de sensibilisation asymptomatique
+c) Réaction inflammatoire adaptative
+d) Infiltrat de lymphocytes dans l'épiderme","Question: Quels sont les deux phases physiopathologiques de l'eczéma de contact allergique ?
+a) Phase de sensibilisation asymptomatique et phase de révélation symptomatique
+b) Phase de sensibilisation asymptomatique et phase d'évocation clinique
+c) Phase de sensibilisation asymptomatique et phase d'expression clinique
+d) Phase de sensibilisation asymptomatique et phase de révélation clinique",llama3_1_8b,openbiollm_8b
+OIC-198-11-A,"Question: Quand un patient présente des signes généraux d'inflammation aiguë avec une possible infection articulaire, quelle est la modalité d'exclusion préférée de l'arthrite septique ?
+a) Analyse du sang pour déterminer le taux de C-reactive protein (CRP)
+b) Imagerie par résonance magnétique (IRM) pour visualiser les structures articulaires
+c) Biopsie articulaire pour examiner la synoviale et les tissus adjacents
+d) Ponction du liquide articulaire pour analyser le contenu et rechercher des bactéries ou signes d'inflammation","Question: Dans le contexte des arthropathies microcristallines, quel est le principal objectif de la ponction du liquide articulaire ?
+a) Identifier la présence de cristaux de goutte.
+b) Exclure une infection articulaire.
+c) Déterminer la cause exacte de l'inflammation.
+d) Évaluer la gravité de l'inflammation.",openbiollm_8b,medGemma_4b
+OIC-191-06-A,"Question: Quelle est la meilleure approche pour gérer une fièvre chez un patient immunodéprimé ?
+a) Attendre de voir si la fièvre disparaît d'elle-même.
+b) Administrer des antibiotiques à large spectre dès que possible, sans prélèvements microbiologiques.
+c) Rechercher un agent infectieux en fonction du déficit immunitaire du patient et entreprendre une prise en charge adaptée.
+d) Se concentrer sur la gestion de la fièvre avec des médicaments antipyrétiques.","Question: La neutropénie fébrile est toujours une urgence thérapeutique.
+a) Faux
+b) Vrai
+c) Peu probable
+d) Très probable",gemma2_9b,openbiollm_8b
