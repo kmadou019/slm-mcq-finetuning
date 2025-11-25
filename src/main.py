@@ -41,7 +41,7 @@ def main():
         # Load the JSON data from the file
         system_prompts = json.load(file)
 
-    df_mcq = pd.read_csv(os.environ.get('MODEL_MCQ_PATH') + "/" + generated_qcm_file)
+    df_mcq = pd.read_csv(os.environ.get('MODEL_MCQ_PATH') + "/" + generated_qcm_file) 
     df_lisa_sheets = pd.read_csv(os.environ.get('LISA_SHEETS_PATH'))
 
     
@@ -72,7 +72,7 @@ def main():
                                       merge=False # set to True if your dataframe does not have the Lisa Sheet content
                                       )
 
-    df_eval.to_csv(os.environ.get('MODEL_MCQ_EVAL_EXPORT_PATH') + "/" + generated_qcm_file, index=False)
+    df_eval.to_csv(os.environ.get('MODEL_MCQ_EVAL_EXPORT_PATH') + "/" + "llama3_" + generated_qcm_file, index=False)
 
 if __name__ == '__main__':
     main()

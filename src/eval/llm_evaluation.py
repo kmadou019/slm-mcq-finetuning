@@ -1,5 +1,5 @@
 from tqdm import tqdm
-
+import ollama
 tqdm.pandas()
 
 from pydantic import BaseModel
@@ -16,11 +16,23 @@ def call_openai_api(client, system_prompt, user_prompt, temp=0.5, max_completion
                 {"role": "user", "content": user_prompt}
             ],
         )
-        print("Token usage:", response.usage.total_tokens)
+        #print("Token usage:", response.usage.total_tokens)
         return response.choices[0].message.content
     except Exception as e:
         print(f"Error occurred: {e}")
         return None
+    
+
+def call_llama3(system_prompt, user_prompt, temp=0.5):
+    response = ollama.generate(
+        model="llama3.1:70b",
+        system=system_prompt,
+        prompt=user_prompt,
+        options={
+            "temperature":temp
+        })
+    print(response["response"])
+    return response["response"]
 
 def generate_prompt_for_question(row,
                                  question_col='question',

@@ -10,7 +10,6 @@ from eval.question_check import is_question
 from eval.readability import calculate_readability_for_df
 from eval.relevance import calculate_relevance_for_df
 from eval.difficulty import compute_difficulty_for_df
-from time import sleep
 
 from concurrent.futures import ProcessPoolExecutor
 from tqdm import tqdm
