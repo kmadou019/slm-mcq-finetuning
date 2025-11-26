@@ -34,7 +34,8 @@ def compute_distractor_quality_for_df(df: pd.DataFrame,
                                                    include_options=True)
 
         #return call_openai_api(client, system_prompt, user_prompt, temp=temp, max_completion_tokens=max_completion_tokens)
-        return call_llama3(system_prompt, user_prompt, temp=temp)
-
+        quality = call_llama3(system_prompt, user_prompt, temp=temp)
+        return quality if isinstance(quality, int) else "NONE"
+    
     df[distractor_quality_col] = df.apply(distractor_quality_applicable, axis=1)
     return df
