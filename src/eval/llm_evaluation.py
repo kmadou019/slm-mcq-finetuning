@@ -16,8 +16,9 @@ def call_openai_api(client, system_prompt, user_prompt, temp=0.5, max_completion
                 {"role": "user", "content": user_prompt}
             ],
         )
-        #print("Token usage:", response.usage.total_tokens)
-        return response.choices[0].message.content
+        score  = response.choices[0].message.content
+        print("Score:", score)
+        return score
     except Exception as e:
         print(f"Error occurred: {e}")
         return None

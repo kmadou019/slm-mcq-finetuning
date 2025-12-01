@@ -161,8 +161,8 @@ def eval_dataframe_parallel(df_mcqs: pd.DataFrame,
                             df_lisa_sheets: pd.DataFrame,
                             num_workers: int = 10,
                             lisa_sheet_id_col='id',
-                            lisa_sheet_col='content_gpt',
-                            merge=True,
+                            lisa_sheet_col='content_raw',
+                            merge=False,
                             **kwargs):
     """
     Parallel version of eval_df that processes data in batches using multiple workers.
@@ -189,7 +189,7 @@ def eval_dataframe_parallel(df_mcqs: pd.DataFrame,
     logger = logging.getLogger(__name__)
 
     # Ensure dataframes are the same length
-    if len(df_mcqs) != len(df_lisa_sheets):
+    if merge and len(df_mcqs) != len(df_lisa_sheets):
         raise ValueError(f"Input dataframes must have the same length. Got {len(df_mcqs)} and {len(df_lisa_sheets)}.")
 
     # Calculate batch size
@@ -199,6 +199,8 @@ def eval_dataframe_parallel(df_mcqs: pd.DataFrame,
     df_merged = df_mcqs if not merge else pd.merge(df_mcqs,
                                                    df_lisa_sheets[[lisa_sheet_id_col, lisa_sheet_col]],
                                                    on=lisa_sheet_id_col, how='left')
+    
+
 
     # Create batches
     batches = []

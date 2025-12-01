@@ -23,7 +23,7 @@ def compute_distractor_quality_for_df(df: pd.DataFrame,
     client = OpenAI(api_key = api_key)
     
     def distractor_quality_applicable(row):
-        #sleep(10) #Uncomment for gpt for api rate limit
+        sleep(10) #Uncomment for gpt for api rate limit
         user_prompt = generate_prompt_for_question(row,
                                                    question_col=question_col,
                                                    correct_option=correct_option_col,
@@ -33,9 +33,9 @@ def compute_distractor_quality_for_df(df: pd.DataFrame,
                                                    option_d_col=option_d_col,
                                                    include_options=True)
 
-        #return call_openai_api(client, system_prompt, user_prompt, temp=temp, max_completion_tokens=max_completion_tokens)
-        quality = call_llama3(system_prompt, user_prompt, temp=temp)
-        return quality if isinstance(quality, int) else "NONE"
+        return call_openai_api(client, system_prompt, user_prompt, temp=temp, max_completion_tokens=max_completion_tokens)
+        #quality = call_llama3(system_prompt, user_prompt, temp=temp)
+        #return quality if isinstance(quality, int) else "NONE"
     
     df[distractor_quality_col] = df.apply(distractor_quality_applicable, axis=1)
     return df
