@@ -1,0 +1,15 @@
+llama3_1_8b quality distribution:
+distractor_quality
+4    64.68
+3    27.56
+2    4.00
+5    2.59
+1    1.13
+
+medGemma_27b quality distribution:
+distractor_quality
+4    75.03
+3    19.79
+2     3.63
+1     1.26
+5     0.24
