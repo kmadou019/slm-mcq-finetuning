@@ -1,0 +1,244 @@
+id,chosen,rejected,chosen_source,rejected_source
+OIC-009-14-B-,"Question: Quelle mesure statistique décrit la valeur la plus fréquente dans un ensemble de données?
+a) Moyenne
+b) Médiane
+c) Mode
+d) Variance","Question: Quel est le mode d'un ensemble de valeurs?
+a) La valeur la plus élevée
+b) La valeur la plus basse
+c) La somme de toutes les valeurs
+d) La valeur la plus fréquemment rencontrée",medGemma_27b,gemma2_9b
+OIC-157-02-B,"Question: Quel est le terme utilisé pour décrire une réaction nocive et non voulue suspectée d'être due à un médicament?
+a) Effet secondaire
+b) Effet indésirable médicamenteux
+c) Risque iatrogène
+d) Erreur médicamenteuse","Question: Selon la définition donnée, un effet indésirable médicamenteux (EIM) est caractérisé par quoi?
+a) Une réaction bénéfique attendue.
+b) Une réaction nocive et non voulue liée à un médicament.
+c) Une réaction bénéfique voulue liée à un médicament.
+d) Une réaction neutre liée à un médicament.",openbiollm_8b,medGemma_27b
+OIC-183-07-B,"Question: Lequel des éléments suivants est une mesure d'association brute pour une variable à deux classes?
+a) Coefficient de corrélation linéaire
+b) Coefficient de détermination
+c) Odds Ratio
+d) Réduction absolue de risque","Question: nan
+a) nan
+b) nan
+c) nan
+d) nan",gemma2_9b,medGemma_27b
+OIC-223-10-A,"Question: La prise en charge de l'addiction à l'alcool doit être:
+a) Exclusivement médicale.
+b) Privilégiant l'approche psychologique.
+c) Globale, bio-psycho-sociale et pluridisciplinaire.
+d) Centrée sur la réduction des risques sans objectif d'abstinence.","Question: Quel est l'un des objectifs généraux possibles de la prise en charge de l'addiction à l'alcool?
+a) Augmentation de la consommation
+b) Maintien de la consommation actuelle
+c) Réduction des consommations dans un objectif de réduction des risques
+d) Ignorer la demande du patient",gemma2_9b,medGemma_27b
+OIC-038-02-A-,"Question: Selon le CIM-10, quel est le principal agent responsable de la dépendance au tabac?
+a) La nicotine
+b) Le goudron
+c) Le monoxyde de carbone
+d) Les additifs chimiques","Question: Quel est le principal agent responsable de la dépendance au tabac?
+a) La caféine
+b) L'alcool
+c) La nicotine
+d) Le sucre",medGemma_27b,gemma2_9b
+OIC-233-05-B,"Question: Quel est l'examen complémentaire qui permet de détecter des troubles du rythme cardiaque ?
+a) Scanner cérébral sans injection
+b) Bilan biologique
+c) ECG
+d) Tous les trois","Question: Quel examen est utilisé pour diagnostiquer une embolie pulmonaire en cas de trouble de la marche ou de l'équilibre?
+a) Bilan biologique
+b) ECG
+c) RP
+d) EMG",openbiollm_8b,gemma2_9b
+OIC-145-04-B-,"Question: Quel est l'objectif principal de la prise en charge thérapeutique de la colopathie fonctionnelle?
+a) Administrer des médicaments pour guérir la maladie.
+b) Mettre en place un régime alimentaire restrictif.
+c) Éduquer le patient et améliorer sa qualité de vie.
+d) Effectuer une coloscopie pour diagnostiquer la maladie.","Question: La thérapeutique centrée sur le patient est-elle efficace pour prendre en charge la colopathie fonctionnelle?
+a) Oui
+b) Non
+c) Peu importe
+d) Je ne sais pas",gemma2_9b,openbiollm_8b
+OIC-267-35-B,"Question: Lequel de ces éléments N'EST PAS une cause thoracique de douleur aiguë en dehors des 4 urgences cardio-vasculaires?
+a) Épanchement pleural
+b) Douleurs musculoligamentaires
+c) Fracture du tibia
+d) Pneumothorax","Question: Parmi les causes thoraciques de douleur aiguë, qu'est-ce qui est caractérisé par une rupture du médiastin ?
+a) pneumopathie infectieuse
+b) épanchement pleural
+c) douleurs pariétales musculo-squelettiques
+d) pneumothorax",gemma2_9b,openbiollm_8b
+OIC-263-01-A,"Question: Qui vérifie que le consentement du donneur vivant est libre et éclairé ?
+a) Le comité donneurs vivants
+b) L'inspecteur des affaires sanitaires
+c) Le Président du Tribunal judiciaire
+d) Le médecin traitant","Question: Quelle entité s'assure que le consentement du donneur vivant est libre et éclairé?
+a) Le comité donneurs vivants.
+b) Le contributeur Dany Anglicheau.
+c) Le Président du Tribunal judiciaire.
+d) Le receveur de l'organe.",openbiollm_8b,medGemma_27b
+OIC-050-01-A-,"Question: Lequel des éléments suivants N'EST PAS une variable discriminante utilisée pour le score GIR?
+a) Communication à distance
+b) Orientation
+c) Niveau d'éducation
+d) Toilette","Question: Selon le texte, quelle variable discriminante évalue la capacité d'une personne à utiliser des moyens de communication à distance pour alerter?
+a) Orientation
+b) Toilette
+c) Communication à distance
+d) Alimentation",gemma2_9b,medGemma_27b
+OIC-347-05-B,"Question: Lequel des éléments suivants N'EST PAS une cause de choc obstructif?
+a) Embolie pulmonaire
+b) Pneumothorax
+c) Sepsis
+d) Tamponnade péricardique","Question: Comment est diagnostiquée la tamponnade péricardique dans le contexte du choc obstructif?
+a) Par angioscanner.
+b) Par ETT.
+c) Par échographie transthoracique.
+d) Par traitement anticoagulant.",gemma2_9b,medGemma_27b
+OIC-027-03-B-,"Question: Quel type d'anomalie orthopédique est illustrée dans l'image?
+a) Kyphosis
+b) Lordose
+c) Scoliose
+d) Hallux valgus","Question: Quel est le principal objectif du suivi régulier d'un enfant et d'un adolescent, selon le contenu fourni?
+a) Diagnostiquer les maladies infectieuses.
+b) Dépister les anomalies orthopédiques, visuelles, auditives et dentaires.
+c) Surveiller la croissance pondérale uniquement.
+d) Se concentrer uniquement sur la mortalité infantile.",gemma2_9b,medGemma_27b
+OIC-183-01-B,"Question: Quel est le rôle d'une variable aléatoire dans une étude de recherche en santé ?
+a) Elle représente les résultats attendus d'un traitement médical.
+b) Elle mesure la fréquence des événements aléatoires.
+c) Elle attribue un nombre à toutes les issues possibles d'un phénomène aléatoire.
+d) Elle est inconnue et impossible à déterminer.","Question: Une variable aléatoire peut être :
+a) Uniquement discrète
+b) Uniquement continue
+c) Discrète ou continue
+d) Ni discrète ni continue",openbiollm_8b,gemma2_9b
+OIC-176-14-A-,"Question: Qu'est-ce qui est considéré comme un 'obstacle médico-légal' au don d'organes selon le texte?
+a) Le manque d'accord des proches.
+b) La nécessité d'obtenir l'accord du procureur de la République.
+c) La nécessité de préserver des zones ou organes pour une expertise médico-légale (autopsie).
+d) La complexité de la définition de la mort encéphalique pour le grand public.","Question: Quel est le rôle du procureur de la République dans un cas d'obstacle médico-légal au moment du décès ?
+a) Il s'oppose au prélèvement d'organes
+b) Il doit être informé des intentions de don
+c) Il est responsable de la démarche médico-légale
+d) Il ne peut pas intervenir dans le processus du don",medGemma_27b,openbiollm_8b
+OIC-086-08-A,"Question: Quel est le premier principe de prise en charge d'une crise aiguë de goutte?
+a) Le patient doit savoir que le traitement de la crise ne suffit pas à traiter la goutte.
+b) Le choix du traitement de la crise dépend des comorbidités du patient.
+c) Le patient doit être informé de l'importance de traiter la crise dès ses premiers signes.
+d) Les médicaments qui peuvent être utilisés pour le traitement de la crise sont la colchicine, les AINS, la corticothérapie et les inhibiteurs de l'IL-1.","Question: Quels sont les quatre principes simples qui président à la prise en charge d'une crise aiguë de goutte ?
+a) Informer le patient et lui expliquer le traitement, traiter la crise dès ses premiers signes, choisir le traitement en fonction des comorbidités et des antécédents médicaux.
+b) Se limiter à un traitement hypouricémiant pour soulager définitivement les symptômes de la goutte, ignorer les comorbidités et les antécédents médicaux.
+c) Ne pas traiter la crise dès ses premiers signes, ne pas éduquer le patient sur son traitement, choisir le traitement en fonction des seules comorbidités.
+d) Tout faire sauter pour soulager les symptômes de la goutte sans prendre en compte les comorbidités et les antécédents médicaux.",gemma2_9b,openbiollm_8b
+OIC-070-03-B-,"Question: Quels sont les examens complémentaires à réaliser pour une spondylodiscite ?
+a) IRM et échographie cardiaque
+b) Scanner et scintigraphie osseuse
+c) Hémocultures systématiques et ponction biopsie disco-vertébrale
+d) Biologie et imagerie fonctionnelle","Question: Quel est l'examen d'imagerie de référence pour diagnostiquer une spondylodiscite?
+a) Scanner
+b) Scintigraphie osseuse
+c) IRM
+d) Echographie cardiaque",openbiollm_8b,medGemma_27b
+OIC-183-01-B,"Question: Comment peut-on estimer la loi de probabilité d'une variable aléatoire?
+a) En connaissant toutes les issues possibles avec certitude.
+b) En utilisant une fonction de prédiction.
+c) En observant les fréquences des valeurs de la variable sur un grand nombre de séries.
+d) En définissant une variable continue.","Question: Une variable aléatoire peut être :
+a) Uniquement discrète
+b) Uniquement continue
+c) Discrète ou continue
+d) Ni discrète ni continue",medGemma_27b,gemma2_9b
+OIC-024-06-B-,"Question: Quelle est une indication principale pour la préservation de la fertilité féminine selon le texte?
+a) Pathologies ovariennes bénignes unilatérales
+b) Traitement du cancer du poumon
+c) Traitements gonadotoxiques pour le cancer
+d) Grossesse désirée après 40 ans","Question: Les principales indications médicales de préservation de la fertilité féminine sont les traitements gonadotoxiques utilisés dans le traitement du cancer, notamment pour les pathologies hématologiques, le cancer du sein et autres cancers. La bonne réponse est :
+a) a
+b) b
+c) c
+d) d",medGemma_27b,openbiollm_8b
+OIC-047-25-B,"Question: Lequel des mouvements anormaux suivants est caractérisé par des contractions musculaires prolongées responsables d'une posture anormale et/ou de mouvements répétitifs?
+a) Tremblement
+b) Chorée
+c) Myoclonies
+d) Dystonie","Question: nan
+a) nan
+b) nan
+c) nan
+d) nan",gemma2_9b,medGemma_27b
+OIC-038-06-B-,"Question: Quels sont les moyens de prise en charge après un évènement aigu lié à l'addiction au tabac?
+a) Psychothérapies et substituts nicotiniques
+b) Varénicline et bupropion
+c) Cigarettes électroniques et entretiens motivationnels
+d) Aucun traitement spécifique","Question: Quels sont les principaux types de traitements pharmacologiques mentionnés pour l'arrêt du tabac?
+a) Antibiotiques, antidépresseurs, anti-inflammatoires
+b) Substituts nicotiniques, varénicline, bupropion
+c) Antihypertenseurs, anticoagulants, diurétiques
+d) Antiviraux, antifongiques, antiparasitaires",openbiollm_8b,medGemma_27b
+OIC-242-09-A,"Question: Dans quel cas l'ablation du matériel étranger est-elle souvent nécessaire?
+a) En cas de bactériémie liée à un matériel étranger
+b) En cas de rechute après traitement antibiotique
+c) En cas de localisation secondaire de l'infection
+d) En cas de résistance aux antibiotiques","Question: Quel est le traitement habituel de la porte d'entrée ?
+a) Seul médical
+b) Seul chirurgical
+c) Médical et chirurgical simultanément
+d) Aucun traitement nécessaire",gemma2_9b,openbiollm_8b
+OIC-162-26-B-,"Question: Quel est le terme pour décrire un acte délibéré qui met fin à sa propre vie?
+a) Tentative de suicide
+b) Idées de suicidaire
+c) Suicide
+d) Conduite suicidaire","Question: Quel est le terme utilisé pour décrire un individu ayant des pensées concernant le souhait de mourir?
+a) Suicidant
+b) Suicidé
+c) Suicidaire
+d) Suicidant",openbiollm_8b,gemma2_9b
+OIC-235-12-A,"Question: Quelle est la principale complication d'une anesthésie locorégionale?
+a) L'hypotension artérielle
+b) La perte de conscience
+c) Les réactions allergiques aux médicaments
+d) Le syndrome de Horner","Question: Selon le contenu, où les principes, indications et complications de l'anesthésie locorégionale sont-ils présentés?
+a) Dans une section sur l'anesthésie générale
+b) Dans une section sur la prise en charge post-opératoire
+c) Dans la figure 5
+d) Dans une section sur le recueil de consentement",openbiollm_8b,medGemma_27b
+OIC-261-01-A-,"Question: Quels sont les principaux traitements de fond recommandés dans la prise en charge de la spondyloarthrite ?
+a) Anti-inflammatoires non stéroïdiens et antalgiques
+b) CsDMARDs et bDMARDs
+c) Traitements locaux et kinésithérapie
+d) Chirurgie et prise en charge sociale à 100%","Question: Parmi les options suivantes, laquelle est un objectif principal de la kinésithérapie dans la prise en charge non pharmacologique de la spondyloarthrite?
+a) Augmenter la consommation de tabac
+b) Réduire l'activité physique
+c) Réduire le risque d'ankylose axiale et périphérique
+d) Prescrire des opioïdes",openbiollm_8b,medGemma_27b
+OIC-132-12-B-,"Question: Le syndrome hémolytique et urémique (SHU) est caractérisé par :
+a) Une infection virale
+b) Une insuffisance rénale aiguë et un syndrome de MAT
+c) Une inflammation des reins
+d) Une augmentation du taux de sucre dans le sang","Question: Quelle est la définition principale du syndrome hémolytique et urémique (SHU)?
+a) Une infection bactérienne chronique.
+b) Un tableau d'insuffisance rénale aiguë associé à un syndrome de MAT.
+c) Une maladie auto-immune affectant principalement la peau.
+d) Une complication fréquente de la grippe.",gemma2_9b,medGemma_27b
+OIC-132-06-A,"Question: Quel est le traitement de choix pour un SNLGM idiopathique ?
+a) Traitement symptomatique du syndrome néphrotique.
+b) Corticothérapie orale à forte dose et prolongée.
+c) Traitement par dialyse.
+d) Traitement chirurgical.","Question: Quel est le principal traitement du SNLGM idiopathique?
+a) Traitement symptomatique du syndrome néphrotique
+b) Chirurgie de la glande thyroïde
+c) Antibiothérapie à large spectre
+d) Radiothérapie ciblée",openbiollm_8b,gemma2_9b
+OIC-049-26-B-,"Question: Quel est le type de trouble cognitif qui peut être associé à une tomodensitométrie chez un sujet âgé ?
+a) Trouble de mémoire
+b) Trouble de langage
+c) Trouble d'attention
+d) Trouble de perception","Question: Quel est le sujet principal de l'item OIC-132-16-B?
+a) Troubles cognitifs du sujet âgé
+b) Tomodensitométrie
+c) HSD chronique
+d) Contenu multimédia",openbiollm_8b,medGemma_27b
