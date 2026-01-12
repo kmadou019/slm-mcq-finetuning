@@ -25,7 +25,7 @@ d) Des cellules de l'os coquelicot.","Question: Quelle est la description correc
 a) Les lobules et les canaux galactophores
 b) Les cellules du sein
 c) Les cellules du gland
-d) Les cellules du sein",openbiollm_8b,qwen3_6b
+d) Les cellules du sein",openbiollm_8b,qwen3_0.6b
 OIC-009-17-A-,"Question: Qu'est-ce que la population cible?
 a) Le groupe d'individus sélectionnés pour l'étude.
 b) La population à partir de laquelle l'étude est menée.
@@ -34,7 +34,7 @@ d) Le groupe d'individus qui répondent aux critères d'inclusion de l'étude.",
 a) Population cible
 b) Population source
 c) Échantillon
-d) Population source",medGemma_4b,qwen3_6b
+d) Population source",medGemma_4b,qwen3_0.6b
 OIC-100-07-A,"Question: Quels sont les produits de dégradation de la fibrine mentionnés dans le texte ?
 a) Fibrinogène
 b) D-dimères

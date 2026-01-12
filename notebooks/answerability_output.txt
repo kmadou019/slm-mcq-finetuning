@@ -1,3 +1,6 @@
 MedMCQA
-Answerability of meta-llama/Llama-3.1-8B-Instruct: 7.78%
-Answerability of google/medgemma-4b-it: 9.74%
+MedMCQA
+Answerability of Qwen/Qwen3-4B-Instruct-2507: 63.27%
+Answerability of mistralai/Mistral-7B-Instruct-v0.3: 46.26%
+Answerability of utter-project/EuroLLM-9B-Instruct: 41.69%
+Answerability of swiss-ai/Apertus-8B-Instruct-2509: 45.65%

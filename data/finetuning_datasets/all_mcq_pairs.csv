@@ -61,7 +61,7 @@ d) déviation de l’œil vers le bas","Question: Quelle est la définition gén
 a) Une déviation des axes visuels.
 b) Une difficulté à voir de loin.
 c) Une inflammation de l'œil.
-d) Une maladie de la rétine.",qwen3_6b,medGemma_27b
+d) Une maladie de la rétine.",qwen3_0.6b,medGemma_27b
 OIC-047-20-B,"Question: Quelle est la définition de l'**esotropie**?
 a) déviation de l’œil vers l’intérieur
 b) déviation de l’œil vers l’extérieur
@@ -70,7 +70,7 @@ d) déviation de l’œil vers le bas","Question: Quelle est la définition gén
 a) Une déviation des axes visuels.
 b) Une difficulté à voir de loin.
 c) Une inflammation de l'œil.
-d) Une maladie de la rétine.",qwen3_6b,medGemma_27b
+d) Une maladie de la rétine.",qwen3_0.6b,medGemma_27b
 OIC-047-20-B,"Question: Quelle déviation des axes visuels est une déviation de l'œil vers l'intérieur?
 a) Exotropie
 b) Esotropie
@@ -133,7 +133,7 @@ d) Ils permettent de confirmer le diagnostic de TVP/EP.","Question: Les D-dimèr
 a) a
 b) b
 c) c
-d) d",medGemma_27b,qwen3_6b
+d) d",medGemma_27b,qwen3_0.6b
 OIC-100-07-A,"Question: Quelle est la principale caractéristique des D-dimères en matière de diagnostic de TVP/EP?
 a) Ils sont spécifiques à la TVP et à l'EP.
 b) Ils ont une faible valeur prédictive négative.
@@ -151,7 +151,7 @@ d) Protéine C","Question: Les D-dimères sont des produits de dégradation de l
 a) a
 b) b
 c) c
-d) d",openbiollm_8b,qwen3_6b
+d) d",openbiollm_8b,qwen3_0.6b
 OIC-100-07-A,"Question: Quels sont les produits de dégradation de la fibrine mentionnés dans le texte ?
 a) Fibrinogène
 b) D-dimères
@@ -169,7 +169,7 @@ d) Indicateurs fiables du stade de la thrombose","Question: Les D-dimères sont 
 a) a
 b) b
 c) c
-d) d",gemma2_9b,qwen3_6b
+d) d",gemma2_9b,qwen3_0.6b
 OIC-100-07-A,"Question: Quelle est la principale caractéristique des D-dimères?
 a) Spécifiques à la thrombose veineuse profonde (TVP)
 b) Présents uniquement en cas d'embolie pulmonaire (EP)
@@ -187,7 +187,7 @@ d) Ils sont utilisés pour ajuster le dosage des anticoagulants.","Question: Les
 a) a
 b) b
 c) c
-d) d",medGemma_4b,qwen3_6b
+d) d",medGemma_4b,qwen3_0.6b
 OIC-100-07-A,"Question: Quel est le principal rôle des D-dimères dans le diagnostic de thrombose veineuse profonde (TVP) et d'embolie pulmonaire (EP)?
 a) Ils indiquent directement la présence de caillots sanguins.
 b) Ils sont spécifiques à la fibrine et permettent de confirmer le diagnostic.
@@ -205,7 +205,7 @@ d) Ils permettent de confirmer le diagnostic de TVP/EP.","Question: Les D-dimèr
 a) a
 b) b
 c) c
-d) d",medGemma_27b,qwen3_6b
+d) d",medGemma_27b,qwen3_0.6b
 OIC-100-07-A,"Question: Quelle est la principale caractéristique des D-dimères en matière de diagnostic de TVP/EP?
 a) Ils sont spécifiques à la TVP et à l'EP.
 b) Ils ont une faible valeur prédictive négative.
@@ -223,7 +223,7 @@ d) La présence de fibrine","Question: Les D-dimères sont des produits de dégr
 a) a
 b) b
 c) c
-d) d",mistral_7b,qwen3_6b
+d) d",mistral_7b,qwen3_0.6b
 OIC-100-07-A,"Question: Quels facteurs peuvent affecter la valeur des D-dimères dans un diagnostic de thrombose veineuse profonde ou embolie pulmonaire?
 a) L'âge
 b) La probabilité clinique forte
@@ -241,7 +241,7 @@ d) Ils sont spécifiques pour l'EP mais non spécifiques pour la TVP.","Question
 a) a
 b) b
 c) c
-d) d",apertus_8B,qwen3_6b
+d) d",apertus_8B,qwen3_0.6b
 OIC-100-07-A,"Question: Quel est le rôle des D-dimères dans le diagnostic de la thrombose veineuse profonde (TVP) et de l'embolie pulmonaire (EP)?
 a) Ils sont spécifiques et permettent de confirmer le diagnostic.
 b) Ils sont non spécifiques mais ont une forte valeur prédictive positive.
@@ -259,7 +259,7 @@ d) Dissémination hématogène","Question: Quelle est la description correcte de
 a) Les lobules et les canaux galactophores
 b) Les cellules du sein
 c) Les cellules du gland
-d) Les cellules du sein",medGemma_27b,qwen3_6b
+d) Les cellules du sein",medGemma_27b,qwen3_0.6b
 OIC-156-11-B-,"Question: Quelle est la première étape de l'évolution du cancer du sein?
 a) Invasion de la membrane basale
 b) Métastase à distance
@@ -277,7 +277,7 @@ d) Des cellules de l'os coquelicot.","Question: Quelle est la description correc
 a) Les lobules et les canaux galactophores
 b) Les cellules du sein
 c) Les cellules du gland
-d) Les cellules du sein",openbiollm_8b,qwen3_6b
+d) Les cellules du sein",openbiollm_8b,qwen3_0.6b
 OIC-156-11-B-,"Question: Quelle est l'origine des cellules du cancer du sein ?
 a) Des cellules de l'appareil sécrétoire du sein constitué des lobules et des canaux galactophores.
 b) Des cellules de la peau du sein.
@@ -295,7 +295,7 @@ d) Dissémination lymphatique","Question: Quelle est la description correcte de 
 a) Les lobules et les canaux galactophores
 b) Les cellules du sein
 c) Les cellules du gland
-d) Les cellules du sein",gemma2_9b,qwen3_6b
+d) Les cellules du sein",gemma2_9b,qwen3_0.6b
 OIC-156-11-B-,"Question: Quel est le stade initial du cancer du sein où les cellules restent confinées à l'épithélium?
 a) Carcinome invasif
 b) Cancer in situ
@@ -313,7 +313,7 @@ d) Hématogène","Question: Quelle est la description correcte de l'appareil sé
 a) Les lobules et les canaux galactophores
 b) Les cellules du sein
 c) Les cellules du gland
-d) Les cellules du sein",medGemma_4b,qwen3_6b
+d) Les cellules du sein",medGemma_4b,qwen3_0.6b
 OIC-156-11-B-,"Question: Selon le texte, quel est le premier type de cancer du sein?
 a) Invasif
 b) In situ
@@ -331,7 +331,7 @@ d) Dissémination hématogène","Question: Quelle est la description correcte de
 a) Les lobules et les canaux galactophores
 b) Les cellules du sein
 c) Les cellules du gland
-d) Les cellules du sein",medGemma_27b,qwen3_6b
+d) Les cellules du sein",medGemma_27b,qwen3_0.6b
 OIC-156-11-B-,"Question: Quelle est la première étape de l'évolution du cancer du sein?
 a) Invasion de la membrane basale
 b) Métastase à distance
@@ -349,7 +349,7 @@ d) Diffusion par voie hématogène","Question: Quelle est la description correct
 a) Les lobules et les canaux galactophores
 b) Les cellules du sein
 c) Les cellules du gland
-d) Les cellules du sein",mistral_7b,qwen3_6b
+d) Les cellules du sein",mistral_7b,qwen3_0.6b
 OIC-156-11-B-,"Question: Quelle est la première étape dans l'évolution du cancer du sein?
 a) Franchissement de la membrane basale
 b) Développement de cancers 'in situ'
@@ -367,7 +367,7 @@ d) Par voie digestive","Question: Quelle est la description correcte de l'appare
 a) Les lobules et les canaux galactophores
 b) Les cellules du sein
 c) Les cellules du gland
-d) Les cellules du sein",apertus_8B,qwen3_6b
+d) Les cellules du sein",apertus_8B,qwen3_0.6b
 OIC-156-11-B-,"Question: Quel est le mode de dissémination du cancer du sein lorsque le carcinome devient invasif?
 a) Lymphatique
 b) Hématogène
@@ -385,7 +385,7 @@ d) Un sous-ensemble de la population source.","Question: Quelle est la meilleure
 a) Population cible
 b) Population source
 c) Échantillon
-d) Population source",medGemma_27b,qwen3_6b
+d) Population source",medGemma_27b,qwen3_0.6b
 OIC-009-17-A-,"Question: Quelle est la population sur laquelle on s'interroge dans une étude ?
 a) La population source
 b) L'échantillon
@@ -394,7 +394,7 @@ d) Toutes les populations mentionnées sont équivalentes","Question: Quelle est
 a) Population cible
 b) Population source
 c) Échantillon
-d) Population source",openbiollm_8b,qwen3_6b
+d) Population source",openbiollm_8b,qwen3_0.6b
 OIC-009-17-A-,"Question: Quelle est la population cible d'une étude?
 a) La population à partir de laquelle l'étude se déroulera.
 b) Le sous-ensemble de la population source choisi pour l'étude.
@@ -403,7 +403,7 @@ d) La population la plus représentative possible.","Question: Quelle est la mei
 a) Population cible
 b) Population source
 c) Échantillon
-d) Population source",gemma2_9b,qwen3_6b
+d) Population source",gemma2_9b,qwen3_0.6b
 OIC-009-17-A-,"Question: Qu'est-ce que la population cible?
 a) Le groupe d'individus sélectionnés pour l'étude.
 b) La population à partir de laquelle l'étude est menée.
@@ -412,7 +412,7 @@ d) Le groupe d'individus qui répondent aux critères d'inclusion de l'étude.",
 a) Population cible
 b) Population source
 c) Échantillon
-d) Population source",medGemma_4b,qwen3_6b
+d) Population source",medGemma_4b,qwen3_0.6b
 OIC-009-17-A-,"Question: Quelle est la définition de la population cible dans le contexte de la recherche en santé?
 a) Le groupe spécifique d'individus inclus dans l'étude.
 b) La population à partir de laquelle l'échantillon est tiré.
@@ -421,7 +421,7 @@ d) Un sous-ensemble de la population source.","Question: Quelle est la meilleure
 a) Population cible
 b) Population source
 c) Échantillon
-d) Population source",medGemma_27b,qwen3_6b
+d) Population source",medGemma_27b,qwen3_0.6b
 OIC-009-17-A-,"Question: Quelle est la population sur laquelle on s’interroge et à propos de laquelle on veut obtenir des informations pour mieux la connaître et adapter sa prise en charge dans la vraie vie?
 a) Population source
 b) Population cible
@@ -430,7 +430,7 @@ d) Population représentative","Question: Quelle est la meilleure description de
 a) Population cible
 b) Population source
 c) Échantillon
-d) Population source",mistral_7b,qwen3_6b
+d) Population source",mistral_7b,qwen3_0.6b
 OIC-009-17-A-,"Question: Quelle est la différence entre la population cible et la population source?
 a) La population cible est celle à laquelle on souhaite extrapoler les résultats de l'étude, tandis que la population source est celle à partir de laquelle l'étude se déroule.
 b) La population cible est celle à laquelle on souhaite adapter sa prise en charge, tandis que la population source est celle à partir de laquelle l'étude se déroule.
@@ -439,7 +439,7 @@ d) La population cible est celle à laquelle on souhaite adapter sa prise en cha
 a) Population cible
 b) Population source
 c) Échantillon
-d) Population source",eurollm_9b,qwen3_6b
+d) Population source",eurollm_9b,qwen3_0.6b
 OIC-009-17-A-,"Question: La population cible est définie comme celle sur laquelle on s’interroge et à propos de laquelle on veut obtenir des informations pour mieux la connaître et adapter sa prise en charge dans la vraie vie. C’est celle à laquelle on souhaite extrapoler les résultats de l’étude.
 a) La population source
 b) L’échantillon
@@ -448,4 +448,4 @@ d) La population étudiée","Question: Quelle est la meilleure description de la
 a) Population cible
 b) Population source
 c) Échantillon
-d) Population source",apertus_8B,qwen3_6b
+d) Population source",apertus_8B,qwen3_0.6b

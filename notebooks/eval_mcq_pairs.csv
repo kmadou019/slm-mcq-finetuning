@@ -34,7 +34,7 @@ d) Repos","Question: Quelle est la méthode de prise en charge principale pour u
 a) Prescription d'une corticothérapie orale (1 mg/kg/j)
 b) Prescription de larmes artificielles
 c) Prescription de larmes artificielles
-d) Prescription de corticoïdes par voie générale ou locale",gemma2_9b,qwen3_6b
+d) Prescription de corticoïdes par voie générale ou locale",gemma2_9b,qwen3_0.6b
 OIC-198-16-B,"Question: Quelle est la cause la plus fréquente de la puberté précoce chez les filles en France?
 a) Idiopathique
 b) Organique
@@ -52,7 +52,7 @@ d) Antihistaminiques anti H1 de 2ème génération 1 à 2 cpés/jour","Question:
 a) Antihistaminiques anti H1 de 2ème génération 1 à 2 cpés/jour
 b) Antihistaminiques anti H1 de 2ème génération 4 cpés/jour
 c) Antihistaminiques anti H1 de 2ème génération 4 cpés/jour
-d) Antihistaminiques anti H1 de 2ème génération 1 à 2 cpés/jour",qwen3_6b,qwen3_6b
+d) Antihistaminiques anti H1 de 2ème génération 1 à 2 cpés/jour",qwen3_0.6b,qwen3_0.6b
 OIC-102-03-B,"Question: Quel examen biologique est le plus spécifique pour diagnostiquer un syndrome coronarien aigu (SCA)?
 a) CRP
 b) D-dimères
@@ -61,7 +61,7 @@ d) Gaz du sang","Question: Quels examens sont mentionnés comme standard à pres
 a) a
 b) b
 c) c
-d) d",medGemma_4b,qwen3_6b
+d) d",medGemma_4b,qwen3_0.6b
 OIC-102-12-B,"Question: Quelle est la prévalence de l'insuffisance cardiaque dans la population?
 a) 1 %
 b) 2 %
@@ -79,7 +79,7 @@ d) Tête","Question: Quelle est la localisation principale de l'ostéite chroniq
 a) os longs
 b) bassin
 c) mal perforant plantaire
-d) bassin",openbiollm_8b,qwen3_6b
+d) bassin",openbiollm_8b,qwen3_0.6b
 OIC-049-11-A,"Question: Quelles sont les mesures hygiéno-diététiques recommandées chez la femme ménopausée?
 a) Eviction des facteurs de risques cardio vasculaire (tabac, alcool)
 b) Augmentation des dépenses énergétiques : activité physique régulière
@@ -133,7 +133,7 @@ d) Mobilisation et prévention des complications du décubitus","Question: Si Gl
 a) a
 b) b
 c) c
-d) d",apertus_8B,qwen3_6b
+d) d",apertus_8B,qwen3_0.6b
 OIC-245-14-B,"Question: Quelle des options suivantes est la description d'une vulvo-vaginite chez la femme?
 a) Leucorrhée et prurit
 b) Pesanteur pelvienne et dyspareunie
@@ -160,7 +160,7 @@ d) Fréquence cardiaque","Question: Quelle est la définition de l'insuffisance 
 a) Définition : IC où l’atteinte primitive concerne le ventricule gauche
 b) Définition : IC où l’atteinte primitive concerne le ventricule droit
 c) Définition : IC où l’atteinte primitive concerne le ventricule gauche et le ventricule droit
-d) Définition : IC où l’atteinte primitive concerne le ventricule gauche et le ventricule droit",mistral_7b,qwen3_6b
+d) Définition : IC où l’atteinte primitive concerne le ventricule gauche et le ventricule droit",mistral_7b,qwen3_0.6b
 OIC-050-01-A,"Question: Quel est le concept qui désigne la capacité d'une personne de se gouverner elle-même et de prendre des décisions ?
 a) Autonomie
 b) Dépendance
@@ -178,7 +178,7 @@ d) Électrorétinogramme (ERG)","Question: Quelle méthode d'examen permet d'obs
 a) A
 b) B
 c) C
-d) D",medGemma_27b,qwen3_6b
+d) D",medGemma_27b,qwen3_0.6b
 OIC-235-11-B,"Question: Lequel des types d'anesthésie suivants peut être réalisé par n'importe quel médecin, quelle que soit sa spécialité?
 a) Anesthésie générale.
 b) Anesthésie locorégionale.
@@ -241,7 +241,7 @@ d) Échographie","Question: Quelle est l'indication d'impliquer une radiographie
 a) Aucune indication
 b) Une radiographie comparative
 c) Une radiographie de face et de profil
-d) Une échographie",apertus_8B,qwen3_6b
+d) Une échographie",apertus_8B,qwen3_0.6b
 OIC-223-04-A,"Question: Quel est le principal point de comparaison entre la dépendance (CIM-11) et le trouble de l'usage d'alcool (DSM-5) selon le texte?
 a) Ils utilisent des critères complètement différents.
 b) La CIM-11 est plus sévère que le DSM-5.
@@ -268,7 +268,7 @@ d) Une régression de la douleur testiculaire.","Question: La torsion du cordon 
 a) a
 b) b
 c) c
-d) d",medGemma_4b,qwen3_6b
+d) d",medGemma_4b,qwen3_0.6b
 OIC-050-17-A,"Question: Selon le texte, quels sont les deux aspects principaux des soins palliatifs précoces en pédiatrie?
 a) Soins curatifs et soins palliatifs séquentiels.
 b) Soins palliatifs et accompagnement du deuil familial.
@@ -277,7 +277,7 @@ d) Soins palliatifs uniquement après l'échec des traitements curatifs et limit
 a) Les enfants atteints d'une maladie grave engageant le pronostic vital
 b) Les enfants atteints d'une maladie grave engageant le pronostic vital
 c) Les enfants atteints d'une maladie grave engageant le pronostic vital
-d) Les enfants atteints d'une maladie grave engageant le pronostic vital",medGemma_27b,qwen3_6b
+d) Les enfants atteints d'une maladie grave engageant le pronostic vital",medGemma_27b,qwen3_0.6b
 OIC-153-04-A,"Question: Quelle est la principale caractéristique du mélanome?
 a) Origine kératinocytaire
 b) Origine mélanocytaire
@@ -286,7 +286,7 @@ d) Origine épidermoïde","Question: Quelle est la famille de tumeurs cutanées 
 a) a
 b) b
 c) c
-d) d",medGemma_4b,qwen3_6b
+d) d",medGemma_4b,qwen3_0.6b
 OIC-162-21-B,"Question: Les idées délirantes sont caractérisées par :
 a) Une perte de contact avec la réalité partagée par le groupe socio-culturel.
 b) Une perception sensorielle sans présence d’objet détectable.
@@ -322,7 +322,7 @@ d) Les interventions chirurgicales pour la boiterie.","Question: Quelle est la m
 a) Démarche diagnostique
 b) Étude de cas
 c) Vidéo clinique
-d) Étude de cas",medGemma_27b,qwen3_6b
+d) Étude de cas",medGemma_27b,qwen3_0.6b
 OIC-101-13-B,"Question: Quelle est la définition d'une douleur thoracique aiguë?
 a) Douleur ou gêne dans la région de la cage thoracique survenant de manière brutale.
 b) Douleur ou gêne dans la région de la cage thoracique survenant de manière progressive.
@@ -340,7 +340,7 @@ d) Entretien infirmier","Question: Quelle option correspond à la consultation s
 a) a
 b) b
 c) c
-d) d",mistral_7b,qwen3_6b
+d) d",mistral_7b,qwen3_0.6b
 OIC-005-04-A,"Question: Selon le texte, quel est le principal élément que le patient doit prouver pour engager la responsabilité d'un médecin?
 a) La présence d'une atteinte à son droit à la protection de la santé.
 b) La faute du médecin.
@@ -349,7 +349,7 @@ d) L'existence d'un acte de prévention ou de soins.","Question: Quelle option c
 a) droit à la protection de la santé
 b) droit au respect de la dignité
 c) droit à un produit de santé
-d) droit à la vie privée et au secret des informations",medGemma_4b,qwen3_6b
+d) droit à la vie privée et au secret des informations",medGemma_4b,qwen3_0.6b
 OIC-162-04-A,"Question: Si Glasgow < 8 et pas de cause rapidement réversible, intubation orotrachéale et mise sous ventilation mécanique
 a) a
 b) b
@@ -358,7 +358,7 @@ d) d","Question: Si Glasgow < 8 et pas de cause rapidement réversible, intubati
 a) a
 b) b
 c) c
-d) d",qwen3_6b,qwen3_6b
+d) d",qwen3_0.6b,qwen3_0.6b
 OIC-156-10-A,"Question: Quel est le cancer le plus fréquent chez la femme en incidence et en mortalité ?
 a) Cancer du poumon
 b) Cancer du sein
@@ -367,7 +367,7 @@ d) Cancer de l'ovaire","Question: Quel est le cancer le plus fréquent chez la f
 a) a
 b) b
 c) c
-d) d",llama3_1_8b,qwen3_6b
+d) d",llama3_1_8b,qwen3_0.6b
 OIC-132-13-B,"Question: Quel est le principal agent pathogène associé au SHU typique chez l'enfant, souvent précédé de diarrhée sanglante?
 a) Virus de l'hépatite A
 b) Escherichia coli produisant des shigatoxines (STEC)
@@ -385,7 +385,7 @@ d) Adapter le poste de travail pour les employés handicapés.","Question: Quell
 a) Eviter l'apparition d'effets délétères
 b) Concerne tous les types de risques
 c) Elle est technique collective
-d) Elle peut être médicale",medGemma_27b,qwen3_6b
+d) Elle peut être médicale",medGemma_27b,qwen3_0.6b
 OIC-027-05-A,"Question: Quel est le principal objectif de la médecine scolaire?
 a) Soigner les maladies graves des enfants.
 b) Dépendre uniquement du Ministère de la Santé.
@@ -394,7 +394,7 @@ d) Se concentrer uniquement sur les examens obligatoires.","Question: Quelle est
 a) Une institution de santé pour les enfants scolarisés
 b) Une école de santé pour les enfants scolarisés
 c) Une école de santé pour les enfants scolarisés
-d) Une institution de santé pour les enfants scolarisés",medGemma_27b,qwen3_6b
+d) Une institution de santé pour les enfants scolarisés",medGemma_27b,qwen3_0.6b
 OIC-227-05-A,"Question: Selon la description, où peut-on trouver des vidéos de la paralysie faciale périphérique?
 a) Sur le site du CEN
 b) Sur le site de la FDA
@@ -421,7 +421,7 @@ d) Des phénomènes aléatoires sans issues possibles","Question: Quel est le r�
 a) Modélisent des phénomènes aléatoires dont les issues sont connues
 b) Modélisent des phénomènes aléatoires dont les issues sont connues et on peut prédire la valeur
 c) Modélisent des phénomènes aléatoires dont les issues sont incertaines
-d) Modélisent des phénomènes aléatoires dont les issues sont incertaines et on peut prédire la valeur",llama3_1_8b,qwen3_6b
+d) Modélisent des phénomènes aléatoires dont les issues sont incertaines et on peut prédire la valeur",llama3_1_8b,qwen3_0.6b
 OIC-020-12-B,"Question: Quel est le traitement de la vaginose bactérienne à Gardnerella vaginalis?
 a) Amoxicilline
 b) Clindamycine
@@ -430,7 +430,7 @@ d) Erythromycine","Question: Quelle est la durée recommandée pour la prise en 
 a) 7 jours
 b) 2 g en dose unique
 c) 3 mois
-d) 1 g/j pendant 14 jours",gemma2_9b,qwen3_6b
+d) 1 g/j pendant 14 jours",gemma2_9b,qwen3_0.6b
 OIC-156-10-A,"Question: Quel est le cancer le plus fréquent chez la femme en France, en termes d'incidence et de mortalité?
 a) Cancer du poumon
 b) Cancer du sein
@@ -439,7 +439,7 @@ d) Cancer de l'utérus","Question: Quel est le cancer le plus fréquent chez la 
 a) a
 b) b
 c) c
-d) d",medGemma_27b,qwen3_6b
+d) d",medGemma_27b,qwen3_0.6b
 OIC-082-13-B,"Question: Quelle maladie est caractérisée par une atteinte du squelette axial pouvant conduire à une ankylose?
 a) Rhumatisme psoriasique
 b) Arthrites réactionnelles
@@ -457,7 +457,7 @@ d) Réalisation, consultation de contrôle, entretien psycho-social","Question: 
 a) a
 b) b
 c) c
-d) d",llama3_1_8b,qwen3_6b
+d) d",llama3_1_8b,qwen3_0.6b
 OIC-108-13-B,"Question: Quels sont les caractères cliniques des tachycardies jonctionnelles?
 a) Palpitations avec battements cervicaux, début et fin brutale, durée variable, sensation de tachycardie irrégulière, avec polyurie post critique, arrêtées par les manœuvres vagales ou l'injection d'adénosine
 b) Palpitations avec battements cervicaux, début et fin brutale, durée variable, sensation de tachycardie irrégulière, avec polyurie post critique, arrêtées par les manœuvres vagales ou l'injection de midodrine
@@ -466,7 +466,7 @@ d) Palpitations avec battements cervicaux, début et fin brutale, durée variabl
 a) elles surviennent classiquement chez le sujet jeune (adolescent, adulte jeune)
 b) chez le sujet adulte
 c) chez le sujet plus jeune
-d) chez le sujet plus jeune",mistral_7b,qwen3_6b
+d) chez le sujet plus jeune",mistral_7b,qwen3_0.6b
 OIC-226-09-A,"Question: Quel est le pourcentage d'adultes qui ont une migraine chronique (≥ 15 jours/mois) en France?
 a) 0,5%
 b) 1,7%
@@ -529,7 +529,7 @@ d) 50 %","Question: La contamination du fœtus est transplacentaire et le virus 
 a) a
 b) b
 c) c
-d) d",apertus_8B,qwen3_6b
+d) d",apertus_8B,qwen3_0.6b
 OIC-157-06-B,"Question: Quel est le rôle du centre régional de pharmacovigilance dans l'évaluation de l'imputabilité?
 a) Il évalue les notifications d'effets indésirables.
 b) Il quantifie les effets indésirables.
@@ -565,7 +565,7 @@ d) 2015","Question: Quand est le chiffre d'IVG stable en France?
 a) 2006
 b) 2005
 c) 2007
-d) 2008",medGemma_27b,qwen3_6b
+d) 2008",medGemma_27b,qwen3_0.6b
 OIC-233-04-A,"Question: Où peut-on trouver des vidéos pour aider à la compréhension des troubles de la marche?
 a) Sur le site de l'OMS.
 b) Dans les manuels de neurologie.
@@ -583,7 +583,7 @@ d) de gérer les situations d'urgence","Question: Quelle est la fréquence recom
 a) 2 fois par jour.
 b) 4–6 fois par jour.
 c) 8 fois par jour.
-d) 12 fois par jour.",qwen3_6b,llama3_1_8b
+d) 12 fois par jour.",qwen3_0.6b,llama3_1_8b
 OIC-176-09-A,"Question: Quel est le statut juridique de l'embryon vivant en France ?
 a) Il a des droits opposables à la femme qui le porte
 b) Il n'a pas de statut juridique
@@ -610,7 +610,7 @@ d) 28 jours","Question: Quelle est la durée recommandée de traitement pour les
 a) 14 jours
 b) 21 jours
 c) 14 jours
-d) 21 jours",gemma2_9b,qwen3_6b
+d) 21 jours",gemma2_9b,qwen3_0.6b
 OIC-094-03-A,"Question: Quel est l'un des avantages de la transplantation à donneur vivant en transplantation rénale?
 a) Il offre une meilleure survie à long terme de l'organe transplanté
 b) Il constitue un moyen puissant de lutte contre la pénurie de greffons
@@ -637,7 +637,7 @@ d) Hydrocèle","Question: La torsion du cordon spermatique est rare après 40 an
 a) a
 b) b
 c) c
-d) d",medGemma_27b,qwen3_6b
+d) d",medGemma_27b,qwen3_0.6b
 OIC-006-02-A,"Question: Quel est le droit du patient en matière de refus de soins ?
 a) Le médecin a la priorité sur les décisions du patient.
 b) Le patient a le droit de faire respecter sa volonté en consentant aux investigations et aux soins ou en les refusant, même si cela implique un risque pour sa santé ou sa vie.
@@ -655,7 +655,7 @@ d) seuil ajusté à l'âge","Question: Le seuil d'ajustement à l'âge pour la T
 a) a
 b) b
 c) c
-d) d",llama3_1_8b,qwen3_6b
+d) d",llama3_1_8b,qwen3_0.6b
 OIC-027-02-B,"Question: Quel pourcentage d'idiopathique est-il dans les cas de scoliose chez les enfants?
 a) 20%
 b) 50%
@@ -673,7 +673,7 @@ d) Proportion de sujets classés non malades parmi l’ensemble des sujets class
 a) a
 b) b
 c) c
-d) d",apertus_8B,qwen3_6b
+d) d",apertus_8B,qwen3_0.6b
 OIC-176-02-A,"Question: Quel est un exemple d'effet multiplicatif des facteurs défavorables à la santé?
 a) Un environnement de vie bruyant et une difficulté d'accès au logement
 b) Un stress causé par les discriminations et une moins bonne santé cardiovasculaire
@@ -700,7 +700,7 @@ d) Examen clinique et échographie","Question: Quelle est la modalité de diagno
 a) Démarche diagnostique
 b) Étude de cas
 c) Vidéo clinique
-d) Étude de cas",apertus_8B,qwen3_6b
+d) Étude de cas",apertus_8B,qwen3_0.6b
 OIC-112-07-B,"Question: Quel est le dosage systématique effectué chez tous les nouveaux-nés en France depuis 1995 au 3ème jour de vie?
 a) Dosage de la 17 OH progestérone
 b) Dosage de l’aldostérone
@@ -709,7 +709,7 @@ d) Dosage de la thyroxine","Question: Quelle est la méthode de dosing utilisée
 a) a
 b) b
 c) c
-d) d",apertus_8B,qwen3_6b
+d) d",apertus_8B,qwen3_0.6b
 OIC-267-40-A,"Question: Quelle est la principale indication pour la valvuloplastie aortique au ballon?
 a) Cas d'insuffisance aortique sévère.
 b) Cas d'insuffisance aortique en urgence.
@@ -718,7 +718,7 @@ d) Cas de rétrécissement aortique en urgence.","Question: Quelle option corres
 a) a
 b) b
 c) c
-d) d",medGemma_4b,qwen3_6b
+d) d",medGemma_4b,qwen3_0.6b
 OIC-049-10-A,"Question: Selon le texte, quelle est une raison principale d'utiliser une voie d'administration non orale pour le THM?
 a) Pour améliorer l'absorption du THM.
 b) Pour éviter les effets secondaires gastro-intestinaux.
@@ -745,7 +745,7 @@ d) d","Question: Quel des signes suivants est le plus courant associé à l'insu
 a) a
 b) b
 c) c
-d) d",qwen3_6b,qwen3_6b
+d) d",qwen3_0.6b,qwen3_0.6b
 OIC-094-16-B,"Question: Quels examens d’imagerie sont généralement demandés en cas d’insuffisance respiratoire chronique (IRC)?
 a) Radiographie thoracique seule
 b) Radiographie thoracique et TDM thoracique
@@ -781,7 +781,7 @@ d) Prescrire un traitement antibiotique approprié.","Question: Quelle option co
 a) a
 b) b
 c) c
-d) d",gemma2_9b,qwen3_6b
+d) d",gemma2_9b,qwen3_0.6b
 OIC-074-11-A,"Question: Quel est un signe clinique d'une infection génitale basse chez la femme?
 a) Fièvre
 b) Cervicite
@@ -808,7 +808,7 @@ d) Virus de l'immunodéficience humaine (VIH)","Question: Quelle est la majorit�
 a) a
 b) b
 c) c
-d) d",llama3_1_8b,qwen3_6b
+d) d",llama3_1_8b,qwen3_0.6b
 OIC-267-30-B,"Question: Quel signe hémodynamique indique un risque de choc en cas de douleur thoracique aiguë ?
 a) Tirage respiratoire
 b) Confusion
@@ -844,7 +844,7 @@ d) Il est localisé sur les zones d'application de l'allergène","Question: Quel
 a) Érythème déborde de la zone d’application
 b) Vésicules et œdème
 c) Lésions élémentaires de l’eczéma aigu
-d) Érythème mal limité",openbiollm_8b,qwen3_6b
+d) Érythème mal limité",openbiollm_8b,qwen3_0.6b
 OIC-094-16-B,"Question: Quel examen d'imagerie est systématiquement demandé au moment du diagnostic d'une insuffisance respiratoire chronique?
 a) Scanner thoracique
 b) Échographie thoracique
@@ -871,7 +871,7 @@ d) La maladie de l'insuffisance ovarienne prématurée","Question: Quelles sont 
 a) Femmes enceintes
 b) Femmes avec facteurs de risque thrombo-embolique veineux
 c) Hommes âgés
-d) Toutes les situations mentionnées précédemment",qwen3_6b,openbiollm_8b
+d) Toutes les situations mentionnées précédemment",qwen3_0.6b,openbiollm_8b
 OIC-267-19-A,"Question: Quelle est la cause principale de l'hypertension pulmonaire (HTP) post-embolique?
 a) Une thrombose ilio-fémorale
 b) Une thrombose veineuse profonde grave ou des embolies pulmonaires itératives
@@ -889,7 +889,7 @@ d) Calculs rénaux","Question: Quelle étiologie correspond à une hématurie mi
 a) a
 b) b
 c) c
-d) d",medGemma_4b,qwen3_6b
+d) d",medGemma_4b,qwen3_0.6b
 OIC-047-17-A,"Question: Quel est le sujet principal abordé dans le contenu éducatif fourni?
 a) Paralysie faciale idiopathique
 b) Tumeurs cérébrales
@@ -898,7 +898,7 @@ d) Traitement médical de la paralysie faciale","Question: Quelle direction est 
 a) a)
 b) b)
 c) c)
-d) d)",medGemma_27b,qwen3_6b
+d) d)",medGemma_27b,qwen3_0.6b
 OIC-347-02-B,"Question: Lequel des examens suivants est principalement utilisé pour caractériser le profil hémodynamique d'un patient en état de choc?
 a) NFS-coagulation.
 b) ECG.
@@ -925,7 +925,7 @@ d) Réaction retardée de type IV","Question: Quelle est la phase de sensibilisa
 a) a
 b) b
 c) c
-d) d",gemma2_9b,qwen3_6b
+d) d",gemma2_9b,qwen3_0.6b
 OIC-047-20-B,"Question: Qu'est-ce que l'exotropie?
 a) Déviation de l'œil vers l'intérieur
 b) Déviation de l'œil vers l'extérieur
@@ -961,7 +961,7 @@ d) Hypertrophie bénigne de la prostate","Question: Quelle est la cause la plus 
 a) Une infection urogénitale (2C-161)
 b) Une urétrite
 c) Une sténose urétrale
-d) Une maladie de prostate",medGemma_4b,qwen3_6b
+d) Une maladie de prostate",medGemma_4b,qwen3_0.6b
 OIC-310-06-A,"Question: Quels sont les symptômes évocateurs de pathologie cardiovasculaire à l'exercice ?
 a) Douleur abdominale, nausées et vomissements
 b) Palpitations, douleur thoracique, dyspnée et malaise
@@ -988,7 +988,7 @@ d) Environ 1%","Question: Quelle est la prévalence la plus fréquente des troub
 a) a
 b) b
 c) c
-d) d",medGemma_27b,qwen3_6b
+d) d",medGemma_27b,qwen3_0.6b
 OIC-162-25-B,"Question: Quels sont les examens systématiques recommandés dans un contexte d'agitation ?
 a) Glycémie, ionogramme et calcémie
 b) ECG et bilan de coagulation
@@ -1006,7 +1006,7 @@ d) Association anti-tabac","Question: Quelle est la source principale de l'accom
 a) L'administration publique
 b) Le service de santé publique
 c) Ligne téléphone 3989
-d) Le service de santé publique",llama3_1_8b,qwen3_6b
+d) Le service de santé publique",llama3_1_8b,qwen3_0.6b
 OIC-176-16-A,"Question: Quel est le principe éthique qui sous-tend la réalisation de tests génétiques?
 a) Le respect de l'autonomie du patient et la confidentialité des informations génétiques.
 b) La recherche de bénéfice médical pour l'individu et la famille.
@@ -1015,7 +1015,7 @@ d) Le principe de bienfaisance avec le souci du médecin de ne pas être néfast
 a) Le médecin doit informer le patient des risques qu'un silence ferait courir aux membres de sa famille
 b) Le médecin doit informer le patient des risques qu'un silence ferait courir aux membres de sa famille potentiellement concernés
 c) Le médecin doit informer le patient des risques qu'un silence ferait courir aux membres de sa famille
-d) Le médecin doit informer le patient des risques qu'un silence ferait courir aux membres de sa famille",llama3_1_8b,qwen3_6b
+d) Le médecin doit informer le patient des risques qu'un silence ferait courir aux membres de sa famille",llama3_1_8b,qwen3_0.6b
 OIC-201-07-B,"Question: Quel est le traitement recommandé en cas de paraphimosis?
 a) Application de dermocorticoïdes
 b) Soins locaux à base d'antiseptiques
@@ -1024,7 +1024,7 @@ d) Traitement chirurgical","Question: Quelle intervention chirurgicale est recom
 a) La libération des adhérences préputiales
 b) La libération des adhérences préputiales
 c) La posthectomie en urgence
-d) La libération des adhérences préputiales",apertus_8B,qwen3_6b
+d) La libération des adhérences préputiales",apertus_8B,qwen3_0.6b
 OIC-233-04-A,"Question: Où peut-on trouver des vidéos pour aider à la compréhension des troubles de la marche?
 a) Sur le site de l'OMS.
 b) Dans les manuels de neurologie.
@@ -1042,7 +1042,7 @@ d) Choc (toxines)","Question: Quels sont les principaux risques liés à la cons
 a) Troubles gastro-intestinaux, Atteinte neurologique, Hépatite, Insuffisance rénale, Purpura thrombotique thrombocytopénique, Choc, Perturbation endocrinienne, Cancers, Méthémoglobinémie, Fluorose dentaire, Saturnisme, Maladie de Minamata
 b) Troubles gastro-intestinaux, Atteinte neurologique, Hépatite, Insuffisance rénale, Purpura thrombotique thrombocytopénique, Choc, Perturbation endocrinienne, Cancers, Méthémoglobinémie, Fluorose dentaire, Saturnisme, Maladie de Minamata (avec les deux derniers éléments inversés)
 c) Troubles gastro-intestinaux, Atteinte neurologique, Hépatite, Insuffisance rénale, Purpura thrombotique thrombocytopénique, Choc, Perturbation endocrinienne, Cancers, Méthémoglobinémie, Fluorose dentaire, Saturnisme, Maladie de Minamata (avec les deux premiers éléments inversés)
-d) Troubles gastro-intestinaux, Atteinte neurologique, Hépatite, Insuffisance rénale, Purpura thrombotique thrombocytopénique, Choc, Perturbation endocrinienne, Cancers, Méthémoglobinémie, Fluorose dentaire, Saturnisme, Maladie de Minamata (avec les deux premiers éléments et le dernier élément inversés)",qwen3_6b,mistral_7b
+d) Troubles gastro-intestinaux, Atteinte neurologique, Hépatite, Insuffisance rénale, Purpura thrombotique thrombocytopénique, Choc, Perturbation endocrinienne, Cancers, Méthémoglobinémie, Fluorose dentaire, Saturnisme, Maladie de Minamata (avec les deux premiers éléments et le dernier élément inversés)",qwen3_0.6b,mistral_7b
 OIC-070-04-B,"Question: Quelle est la localisation la plus courante des ostéomyélites aiguës chez l'enfant?
 a) Membres supérieurs
 b) Membres inférieurs dans plus de 50% des cas
@@ -1051,7 +1051,7 @@ d) Os longs, pied et bassin","Question: Quelle est la localisation principale de
 a) os longs
 b) bassin
 c) mal perforant plantaire
-d) bassin",llama3_1_8b,qwen3_6b
+d) bassin",llama3_1_8b,qwen3_0.6b
 OIC-234-15-A,"Question: Quel type de lésion cérébrale peut induire un trouble cognitif léger?
 a) infarctus multiples
 b) infarctus multi-lacunaires
@@ -1078,7 +1078,7 @@ d) Mobilisation et prévention des complications du décubitus","Question: Si Gl
 a) a
 b) b
 c) c
-d) d",apertus_8B,qwen3_6b
+d) d",apertus_8B,qwen3_0.6b
 OIC-247-14-B,"Question: Quels sont les principes de la prise en charge symptomatique de la diarrhée chez l'enfant?
 a) Corriger ou prévenir la déshydratation en privilégiant la voie orale quand possible
 b) Réduire l’intensité de la diarrhée
@@ -1096,7 +1096,7 @@ d) b/(a + b)","Question: Quelle est la valeur correcte de la sensibilité (Se)?
 a) a
 b) b
 c) c
-d) d",openbiollm_8b,qwen3_6b
+d) d",openbiollm_8b,qwen3_0.6b
 OIC-223-01-A,"Question: Quels sont les symptômes anxieux et dépressifs induits par le sevrage tabagique qui nécessitent un traitement spécifique psychiatrique?
 a) Les symptômes qui durent quelques semaines
 b) Les symptômes qui disparaissent après le sevrage
@@ -1141,7 +1141,7 @@ d) Demander au patient de marcher sur une ligne.","Question: Quelle méthode d'e
 a) Vidéo clinique
 b) Démarche diagnostique
 c) Étude de cas
-d) Étude de cas",medGemma_4b,qwen3_6b
+d) Étude de cas",medGemma_4b,qwen3_0.6b
 OIC-234-23-B,"Question: Quelle est la séquence de Wood?
 a) Déficience, incapacité, handicap
 b) Incapacité, déficience, handicap
@@ -1159,7 +1159,7 @@ d) La zone d'ancrage dans l'os de différentes structures vasculaires.","Questio
 a) a
 b) b
 c) c
-d) d",mistral_7b,qwen3_6b
+d) d",mistral_7b,qwen3_0.6b
 OIC-223-01-A,"Question: Quel type de co-addiction est associée à l'usage ou le mésusage d'alcool et/ou de cannabis?
 a) L'usage ou le mésusage de substances psychoactives
 b) L'usage ou le mésusage de substances stupéfiantes
@@ -1177,7 +1177,7 @@ d) La vaccination contre une maladie infectieuse.","Question: Quelle est la corr
 a) Exclusion temporaire d'une personne atteinte d'une maladie infectieuse transmissible.
 b) Durée de l'éviction n'est pas définie.
 c) Nécessité de mesures d'éviction ou d'isolement.
-d) Précautions complémentaires adaptées au mode de transmission.",medGemma_27b,qwen3_6b
+d) Précautions complémentaires adaptées au mode de transmission.",medGemma_27b,qwen3_0.6b
 OIC-082-14-B,"Question: Qu'est-ce que les syndesmophytes ?
 a) Des tissus conjonctifs entre deux vertèbres
 b) Des constructions osseuses fines et verticales entre deux vertèbres
@@ -1186,7 +1186,7 @@ d) Des articulations entre les vertèbres","Question: Quel est le type de struct
 a) a
 b) b
 c) c
-d) d",llama3_1_8b,qwen3_6b
+d) d",llama3_1_8b,qwen3_0.6b
 OIC-315-03-B,"Question: Quel est le principal élément clinique associé aux GEM?
 a) Syndrome de Cushing
 b) Syndrome néphrotique
@@ -1195,7 +1195,7 @@ d) Syndrome de l'hyperthyroïdie","Question: Quelle est la cause principale des 
 a) a
 b) b
 c) c
-d) d",medGemma_4b,qwen3_6b
+d) d",medGemma_4b,qwen3_0.6b
 OIC-045-18-A,"Question: Quels sont les signes cliniques d'une sacralgie?
 a) Douleur localisée en regard du sacrum
 b) Gêne fonctionnelle
@@ -1249,7 +1249,7 @@ d) Indicateurs fiables du stade de la thrombose","Question: Les D-dimères sont 
 a) a
 b) b
 c) c
-d) d",gemma2_9b,qwen3_6b
+d) d",gemma2_9b,qwen3_0.6b
 OIC-183-01-B,"Question: Qu'est-ce que la loi de probabilité?
 a) Une loi qui garantit que toutes les issues sont possibles.
 b) Une description de la probabilité associée à chaque valeur d'une variable aléatoire discrète.
@@ -1267,7 +1267,7 @@ d) Odds Ratio","Question: Quelle mesure d'association ajustée est obtenue à l'
 a) Coefficient de corrélation linéaire (r)
 b) Coefficient de détermination (r²)
 c) Réduction relative de risque (RRR)
-d) Nombre de sujets à traiter (NST)",mistral_7b,qwen3_6b
+d) Nombre de sujets à traiter (NST)",mistral_7b,qwen3_0.6b
 OIC-330-01-A,"Question: Les hémorroïdes siègent à la partie haute du canal anal (plexus hémorroïdaire interne) ou péri anal (plexus hémorroïdaire externe). Lequel des énoncés suivants est correct?
 a) seulement le plexus hémorroïdaire interne
 b) seulement le plexus hémorroïdaire externe
@@ -1285,7 +1285,7 @@ d) Remplissage vasculaire","Question: Quelle est la méthode de traitement pour 
 a) Antihistaminiques anti H1 de 2ème génération 1 à 2 cpés/jour
 b) Antihistaminiques anti H1 de 2ème génération 4 cpés/jour
 c) Antihistaminiques anti H1 de 2ème génération 4 cpés/jour
-d) Antihistaminiques anti H1 de 2ème génération 1 à 2 cpés/jour",gemma2_9b,qwen3_6b
+d) Antihistaminiques anti H1 de 2ème génération 1 à 2 cpés/jour",gemma2_9b,qwen3_0.6b
 OIC-074-02-B,"Question: Quelle est la durée de traitement recommandée pour une infection urinaire masculine utilisant des fluroroquinolones, du C3G IV ou du cotrimoxazole?
 a) 7 jours
 b) 14 jours
@@ -1294,7 +1294,7 @@ d) 28 jours","Question: Quelle est la durée recommandée de traitement pour les
 a) 14 jours
 b) 21 jours
 c) 14 jours
-d) 21 jours",openbiollm_8b,qwen3_6b
+d) 21 jours",openbiollm_8b,qwen3_0.6b
 OIC-027-01-A,"Question: Quelles sont les conséquences d'un retard diagnostique dans le cas d'une luxation congénitale de hanche?
 a) Une amélioration de la mobilité
 b) Une réduction de la douleur
@@ -1312,7 +1312,7 @@ d) Aucune atteinte","Question: Quelle est la principale conséquence d'un retard
 a) Une prise en charge simplifiée.
 b) Une prise en charge plus compliquée.
 c) Aucune conséquence significative.
-d) Une guérison spontanée.",qwen3_6b,medGemma_27b
+d) Une guérison spontanée.",qwen3_0.6b,medGemma_27b
 OIC-019-03-B,"Question: Quelle est la fréquence approximative de l'HTA (Hypertension Artérielle) pendant la grossesse?
 a) 1 à 3%
 b) 5 à 10%
@@ -1357,7 +1357,7 @@ d) Satisfaire les demandes de la famille, même si elles ne sont pas médicaleme
 a) a
 b) b
 c) c
-d) d",medGemma_27b,qwen3_6b
+d) d",medGemma_27b,qwen3_0.6b
 OIC-156-04-B,"Question: Quelle est la principale stratégie de prévention primaire contre le mélanome?
 a) L'utilisation de crème solaire à large spectre.
 b) La réduction de l'exposition aux UV.
@@ -1366,7 +1366,7 @@ d) L'utilisation de chapeaux.","Question: Quel est le facteur environnemental pr
 a) a
 b) b
 c) c
-d) d",medGemma_4b,qwen3_6b
+d) d",medGemma_4b,qwen3_0.6b
 OIC-047-25-B,"Question: Lequel des mouvements anormaux suivants est caractérisé par des contractions musculaires prolongées responsables d'une posture anormale et/ou de mouvements répétitifs?
 a) Tremblement
 b) Chorée
@@ -1447,7 +1447,7 @@ d) Améliorer la qualité de vie du patient","Question: Quel est le principal ob
 a) Réduire le risque de rechute
 b) Médical +/- chirurgical (drainage)
 c) L’ablation est souvent nécessaire
-d) Traitement des localisations secondaires : cf item spécifiques",apertus_8B,qwen3_6b
+d) Traitement des localisations secondaires : cf item spécifiques",apertus_8B,qwen3_0.6b
 OIC-100-07-A,"Question: Quelle est la principale caractéristique des D-dimères en matière de diagnostic de TVP/EP?
 a) Ils sont spécifiques à la TVP et à l'EP.
 b) Ils ont une faible valeur prédictive négative.
@@ -1456,7 +1456,7 @@ d) Ils permettent de confirmer le diagnostic de TVP/EP.","Question: Les D-dimèr
 a) a
 b) b
 c) c
-d) d",medGemma_27b,qwen3_6b
+d) d",medGemma_27b,qwen3_0.6b
 OIC-027-46-A,"Question: Quel est le correcteur de la psychothérapie?
 a) Amaury MENGIN
 b) Amaury MENGIN
@@ -1465,7 +1465,7 @@ d) Amaury MENGIN","Question: Quel est le correcteur de la psychothérapie?
 a) Amaury MENGIN
 b) Amaury MENGIN
 c) Amaury MENGIN
-d) Amaury MENGIN",qwen3_6b,qwen3_6b
+d) Amaury MENGIN",qwen3_0.6b,qwen3_0.6b
 OIC-230-02-A,"Question: Quels sont les principaux médicaments susceptibles d'induire des myoclonies ?
 a) Neuroleptiques et autres traitements
 b) Antidépresseurs, inhibiteurs de la recapture de la sérotonine, L-dopa et valproate
@@ -1501,7 +1501,7 @@ d) Ils permettent de confirmer le diagnostic de TVP/EP.","Question: Les D-dimèr
 a) a
 b) b
 c) c
-d) d",medGemma_27b,qwen3_6b
+d) d",medGemma_27b,qwen3_0.6b
 OIC-022-05-A,"Question: Quel élément de l'interrogatoire est particulièrement important pour évaluer le risque de perturbation endocrinienne chez un homme présentant des troubles de la fertilité?
 a) L'âge
 b) La profession et les facteurs de risque professionnels
@@ -1510,7 +1510,7 @@ d) L'exposition aux perturbateurs endocriniens","Question: Quelle partie de l'in
 a) Examen bilatéral et comparatif des testicules, épididymes et déférents
 b) Evaluation du morphotype
 c) Examen génital
-d) Evaluation des caractères sexuels secondaires",apertus_8B,qwen3_6b
+d) Evaluation des caractères sexuels secondaires",apertus_8B,qwen3_0.6b
 OIC-198-11-A,"Question: Qu'est-ce que la thélarche?
 a) Début des règles
 b) Apparition d'une pilosité pubienne précoce
@@ -1519,7 +1519,7 @@ d) Accélération de la vitesse de croissance","Question: Quel terme désigne le
 a) a
 b) b
 c) c
-d) d",medGemma_4b,qwen3_6b
+d) d",medGemma_4b,qwen3_0.6b
 OIC-142-02-B,"Question: Quelle complication de la constipation chronique chez l'enfant est caractérisée par des pleurs à la défécation et rectorragies?
 a) Fissure anale
 b) Prolapsus rectal
@@ -1528,7 +1528,7 @@ d) Sub-occlusions","Question: Quelle condition est mentionnée comme une cause d
 a) a
 b) b
 c) c
-d) d",mistral_7b,qwen3_6b
+d) d",mistral_7b,qwen3_0.6b
 OIC-198-16-B,"Question: La puberté précoce est le plus souvent idiopathique chez :
 a) les garçons
 b) les enfants de moins de 10 ans
@@ -1537,7 +1537,7 @@ d) les adolescents","Question: Quelle est la plus grande différence entre les p
 a) a
 b) b
 c) c
-d) d",gemma2_9b,qwen3_6b
+d) d",gemma2_9b,qwen3_0.6b
 OIC-032-02-B,"Question: Quel est un élément clé du bilan pré-thérapeutique avant de commencer un traitement antipsychotique?
 a) Évaluation de la réponse aux traitements antérieurs.
 b) Dépistage d'un trouble métabolique.
@@ -1618,7 +1618,7 @@ d) Des vaisseaux sanguins et du tissu nerveux","Question: Les hémorroïdes sont
 a) a
 b) b
 c) c
-d) d",llama3_1_8b,qwen3_6b
+d) d",llama3_1_8b,qwen3_0.6b
 OIC-037-05-A,"Question: Quel est le principal risque lié au tabagisme actif ?
 a) Cancer du rein
 b) Cancer broncho-pulmonaire
@@ -1627,7 +1627,7 @@ d) Acné","Question: Quelle est la principale cause des cancers liés au tabac?
 a) Tabac
 b) Cancer broncho-pulmonaire
 c) Tabac 1ère cause de mortalité cardiovasculaire évitable
-d) Cancer du larynx",llama3_1_8b,qwen3_6b
+d) Cancer du larynx",llama3_1_8b,qwen3_0.6b
 OIC-082-15-A,"Question: Quel examen est utile dans les cas de spondyloarthrite avec sacro-iliite sur la radiographie standard ?
 a) IRM des sacro-iliaques et du rachis
 b) Echographie
@@ -1636,7 +1636,7 @@ d) Explorations fonctionnelles respiratoires","Question: Quelle des options déc
 a) Enthésophyte
 b) Syndesmophyte
 c) Ossification cicatricielle
-d) Ossification vertébrale",llama3_1_8b,qwen3_6b
+d) Ossification vertébrale",llama3_1_8b,qwen3_0.6b
 OIC-217-02-B,"Question: Qu'est-ce que les paquets-année (PA) représentent?
 a) Le nombre de cigarettes fumées par jour.
 b) Le nombre de paquets de cigarettes fumés par jour.
@@ -1645,7 +1645,7 @@ d) Le coût total du tabac consommé.","Question: Quelle formule permet d'évalu
 a) a
 b) b
 c) c
-d) d",medGemma_4b,qwen3_6b
+d) d",medGemma_4b,qwen3_0.6b
 OIC-108-13-B,"Question: Quelle est la population typiquement affectée par les tachycardies jonctionnelles (maladie de Bouvere)?
 a) Sujets âgés avec des problèmes cardiaques.
 b) Sujets jeunes avec un cœur sain.
@@ -1654,7 +1654,7 @@ d) Femmes enceintes.","Question: Quelle est la description correcte des tachycar
 a) elles surviennent classiquement chez le sujet jeune (adolescent, adulte jeune)
 b) chez le sujet adulte
 c) chez le sujet plus jeune
-d) chez le sujet plus jeune",medGemma_27b,qwen3_6b
+d) chez le sujet plus jeune",medGemma_27b,qwen3_0.6b
 OIC-336-08-A,"Question: Quel facteur peut rendre une prescription inappropriée?
 a) Le respect des AMM.
 b) La prise en compte des comorbidités du patient.
@@ -1695,7 +1695,7 @@ d) Rougeur locale faible, EVA ou EN douleur < 7/10","Question: Quelle caractéri
 a) a
 b) b
 c) c
-d) d",llama3_1_8b,qwen3_6b
+d) d",llama3_1_8b,qwen3_0.6b
 OIC-326-05-A,"Question: Quelle est la cause de l'hypocalcémie ?
 a) augmentation des entrées de calcium dans la circulation
 b) diminution des pertes de calcium depuis le compartiment extracellulaire
@@ -1713,7 +1713,7 @@ d) Échographie pelvienne.","Question: Quelle est la cause principale de la sacr
 a) radiographies du bassin de face et cliché de de Sèze
 b) discuter un scanner du bassin ou scintigraphie osseuse
 c) cause extra-rachidienne : constipation
-d) discuter une IRM du bassin",medGemma_27b,qwen3_6b
+d) discuter une IRM du bassin",medGemma_27b,qwen3_0.6b
 OIC-047-31-B,"Question: Quel est le premier geste à effectuer en cas de confusion mentale?
 a) Évaluer le retentissement à court terme et traiter immédiatement les troubles vitaux
 b) Retirer tous les médicaments non indispensables
@@ -1740,7 +1740,7 @@ d) La capacité à effectuer des tâches complexes.","Question: C. Les déficits
 a) a
 b) b
 c) c
-d) d",medGemma_4b,qwen3_6b
+d) d",medGemma_4b,qwen3_0.6b
 OIC-188-04-A,"Question: Outre le SAF, quel autre terme est utilisé pour décrire des troubles liés à l'alcoolisation fœtale, souvent lorsque les critères du SAF complet ne sont pas remplis?
 a) Syndrome d'alcoolisation maternelle (SAM).
 b) Troubles d'alcoolisation infantile (TAI).
@@ -1767,7 +1767,7 @@ d) Contamination directe lors d'une morsure","Question: Quel mécanisme de surve
 a) a
 b) b
 c) c
-d) d",mistral_7b,qwen3_6b
+d) d",mistral_7b,qwen3_0.6b
 OIC-260-05-B,"Question: Quelle est la porte d'entrée infectieuse favorisée par les abords veineux pour un patient neutropénique ?
 a) Respiratoire
 b) Tube digestif
@@ -1794,7 +1794,7 @@ d) Ils sont utilisés pour traiter l'hyperkaliémie.","Question: Quelle est la m
 a) Restriction des apports sodés
 b) Augmentation de l’élimination du sodium
 c) Traitement symptomatique pour induire un bilan sodé négatif
-d) Utilisation de la forme injectable",medGemma_27b,qwen3_6b
+d) Utilisation de la forme injectable",medGemma_27b,qwen3_0.6b
 OIC-075-14-A,"Question: Quelle est la principale situation clinique liée à la consommation d’eau polluée?
 a) Troubles gastro-intestinaux (pollution microbienne et parasitaire)
 b) Atteinte neurologique (pollution microbienne : Salmonella, typhi, Clostridium botulinum)
@@ -1803,4 +1803,4 @@ d) Choc (toxines)","Question: Quelle est une des principales situations clinique
 a) Perturbation endocrinienne
 b) Hépatite
 c) Troubles gastro-intestinaux
-d) Cancers",qwen3_6b,medGemma_4b
+d) Cancers",qwen3_0.6b,medGemma_4b

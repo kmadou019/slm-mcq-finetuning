@@ -2,8 +2,8 @@
 from sys import argv
 
 if len(argv) >= 2 :
-    if argv[1] not in ["llama3_1_8b", "openbiollm_8b", "gemma2_9b", "medGemma_4b", "medGemma_27b", "qwen3_6b", "mistral_7b", "eurollm_9b", "apertus_8B"]:
-        print("Please provide a valid model name: llama3_1_8b, openbiollm_8b, gemma2_9b, medGemma_4b, medGemma_27b, qwen3_6b, mistral_7b, eurollm_9b ,apertus_8B")
+    if argv[1] not in ["llama3_1_8b", "openbiollm_8b", "gemma2_9b", "medGemma_4b", "medGemma_27b", "qwen3_8b", "mistral_7b", "eurollm_9b", "apertus_8B", "qwen3_0.6b", "qwen3_1_7b", "qwen3_4b"]:
+        print("Please provide a valid model name: llama3_1_8b, openbiollm_8b, gemma2_9b, medGemma_4b, medGemma_27b, qwen3_0.6b, mistral_7b, eurollm_9b ,apertus_8B")
         exit(1)
     generated_qcm_file = argv[1] + ".csv"
 else :
