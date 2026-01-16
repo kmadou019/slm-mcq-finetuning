@@ -4,3 +4,12 @@ Answerability of Qwen/Qwen3-4B-Instruct-2507: 63.27%
 Answerability of mistralai/Mistral-7B-Instruct-v0.3: 46.26%
 Answerability of utter-project/EuroLLM-9B-Instruct: 41.69%
 Answerability of swiss-ai/Apertus-8B-Instruct-2509: 45.65%
+UNESS
+Answerability of Qwen/Qwen3-0.6B: 13.18%
+Answerability of Qwen/Qwen3-4B-Instruct-2507: 9.88%
+Answerability of mistralai/Mistral-7B-Instruct-v0.3: 9.78%
+Answerability of utter-project/EuroLLM-9B-Instruct: 16.73%
+Answerability of swiss-ai/Apertus-8B-Instruct-2509: 11.40%
+UNESS
+Answerability of meta-llama/Llama-3.1-8B-Instruct: 5.33%
+Answerability of google/medgemma-4b-it: 7.33%
