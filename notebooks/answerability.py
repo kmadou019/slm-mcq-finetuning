@@ -3,6 +3,8 @@ from datasets import load_dataset, concatenate_datasets
 from transformers import AutoTokenizer, pipeline
 import re
 import pandas as pd
+from ollama import chat
+
 
 dataset = load_dataset("openlifescienceai/medmcqa")
 
@@ -60,8 +62,10 @@ def answer_mcq_hf(mcq, model_name,tokenizer, temperature):
     )
     
     messages = [
-        {"role": "system", "content": prompt},
-        {"role": "user", "content": mcq}
+        {
+            "role": "user", 
+            "content": f"{prompt}\n\n{mcq}"
+        }
     ]
     
     response = pipe(
@@ -74,8 +78,30 @@ def answer_mcq_hf(mcq, model_name,tokenizer, temperature):
     )
     return clean(response[0]['generated_text'])[0]
 
-def answer_mcq(mcq, model_name,tokenizer, temperature):
-    ...
+def answer_mcq(mcq, model_name, temperature):
+    prompt = f"""
+       You are tasked with answering multiple-choice questions, containing 4 different answer options - a, b, c and d.
+       You are given some context to help you answer the question.
+       Provide just a single letter corresponding to the correct option as the response.
+       For example: "a", "b", "c", or "d"
+    """
+
+    
+    
+    messages = [
+        {"role": "system", "content": prompt},
+        {"role": "user", "content": mcq}
+    ]
+    
+    generate_params = {
+        'model': model_name,
+        'options': {'temperature': temperature, 'num_ctx': 8192, 'top_p': 1}, 
+        'messages' : messages
+    }
+
+    response = chat(**generate_params)
+    print(response['message']["content"])
+    return response['message']["content"]
 
 def for_a_model(dataset, model_name, save_name, use_ollama=False):
     if not use_ollama:
@@ -112,7 +138,7 @@ def for_a_model(dataset, model_name, save_name, use_ollama=False):
                 print("SyntaxError ou KeyError détectée, relance...")
                 nb_try += 1
                 if nb_try == 5:
-                    print("Nombre d'essai dépassé, passage au Lisa Sheet suivant")
+                    print("Nombre d'essai dépassé, passage au qcm suivant")
                     generated = None
                     break
         
@@ -136,28 +162,28 @@ print(len(dataset_answerability))
 models = [  
       #Qwen
           #("Qwen/Qwen3-0.6B","qwen3_0.6b"),
+          #("Qwen/Qwen3-1.7B","qwen3_1.7b"),
           #("Qwen/Qwen3-4B-Instruct-2507","qwen3_4b"),
+          #("Qwen/Qwen3-8B-Base","qwen3_8b"),
+
           #("mistralai/Mistral-7B-Instruct-v0.3","mistral_7b"),
           #("utter-project/EuroLLM-9B-Instruct","eurollm_9b"),
           #("swiss-ai/Apertus-8B-Instruct-2509","apertus_8B"),
-          #("Qwen/Qwen3-1.7B","qwen3_1.7b"),
-          #("Qwen/Qwen3-8B-Base","qwen3_8b"),
-
           #("google/gemma-2-9b-it","gemma2_9b"),
-          #("google/medgemma-27b-it","medGemma_27b"),
+          ("google/medgemma-27b-it","medGemma_27b"),
           #("hf.co/mradermacher/Llama3-Instruct-OpenBioLLM-8B-merged-i1-GGUF:latest", "openbiollm_8b"),
-          ("meta-llama/Llama-3.1-8B-Instruct","llama3_1_8b"),
-          ("google/medgemma-4b-it","medGemma_4b"),
+          #("meta-llama/Llama-3.1-8B-Instruct","llama3_1_8b"),
+          #("google/medgemma-4b-it","medGemma_4b"),
       
         ]
 
 
 with open("answerability_output.txt", "a") as f:
-    #print("MedMCQA", file=f)
-    #for model_name, save_name in models:
-    #    result = for_a_model(dataset_answerability, model_name, save_name)
-    #    percentage = (result["cop"] == result["llm_cop"]).mean() * 100
-    #    print(f"Answerability of {model_name}: {percentage:.2f}%", file=f)
+    print("MedMCQA", file=f)
+    for model_name, save_name in models:
+        result = for_a_model(dataset_answerability, model_name, save_name)
+        percentage = (result["cop"] == result["llm_cop"]).mean() * 100
+        print(f"Answerability of {model_name}: {percentage:.2f}%", file=f)
     
     print("UNESS", file=f)
     dataset_answerability = pd.read_json("../data/mcqs_answerability.json")

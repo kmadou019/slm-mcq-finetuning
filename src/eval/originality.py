@@ -1,5 +1,4 @@
 import re
-import nltk
 import pandas as pd
 from nltk.util import ngrams
 from nltk.corpus import stopwords
@@ -7,7 +6,7 @@ from nltk.stem import WordNetLemmatizer
 from nltk import word_tokenize
 
 lemmatizer = WordNetLemmatizer()
-stop_words = set(stopwords.words('english'))
+stop_words = set(stopwords.words('french'))
 
 def calculate_originality_for_df(df: pd.DataFrame,
                                  originality_col: str,
@@ -33,6 +32,5 @@ def calculate_originality_for_df(df: pd.DataFrame,
         unique_trigrams = question_trigrams - lisa_sheet_trigrams
         originality_score = len(unique_trigrams) / len(question_trigrams) if question_trigrams else 0
         return originality_score
-
     df[originality_col] = df.apply(lambda row: calculate_originality(row[question_col], row[lisa_sheet_col]), axis=1)
     return df

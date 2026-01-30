@@ -298,7 +298,7 @@ b) Surgery + Radiotherapy
 c) Chemotherapy
 d) Chemotherapy + Surgery
 -----
-",1,3
+",1,1
 "-----
 Question:
 Muscle relaxant used in renal failure -
@@ -449,16 +449,6 @@ c) 48 hours
 d) 36 hours
 -----
 ",1,3
-"-----
-Question:
-Which is used in keratinised skin:
-Options:
-a) Salicylic acid
-b) Fluconazole
-c) Steroids
-d) Coal tar
------
-",0,3
 "-----
 Question:
 In a child who has been raped hymen:
@@ -618,7 +608,7 @@ b) Endogenous depression
 c) Neurotic depression
 d) Dissociate disorder
 -----
-",1,3
+",1,1
 "-----
 Question:
 Vidian neurectomy is used for the treatment of ?
@@ -878,7 +868,7 @@ b) Tibia
 c) Pelvis
 d) Neck femur
 -----
-",2,1
+",2,0
 "-----
 Question:
 According to which section, a person can be punished for attempt to murder with imprisonment for 10 years: NEET 14
@@ -888,7 +878,7 @@ b) Sec. 300 IPC
 c) Sec. 302 IPC
 d) Sec. 307 IPC
 -----
-",3,3
+",3,1
 "-----
 Question:
 Defect in folding of the protein result in which of the following clinical disease:-
@@ -998,7 +988,7 @@ b) 20th week
 c) 30th week
 d) At the onset of labour
 -----
-",2,3
+",2,1
 "-----
 Question:
 Which of the following is the most significant risk factor for postoperative nausea and vomiting
@@ -1068,7 +1058,7 @@ b) Sarcoma
 c) Bronchogenic carcinoma
 d) Bronchogenic cyst
 -----
-",0,0
+",0,1
 "-----
 Question:
 Least helpful for the diagnosis of spondylolisthesis -
@@ -1209,6 +1199,16 @@ c) Active diffusion
 d) Passive diffusion
 -----
 ",0,3
+"-----
+Question:
+Which of the following is common with Streptococcus infection?
+Options:
+a) Cellulitis
+b) Gangrene
+c) Pyoderma
+d) UTI
+-----
+",0,1
 "-----
 Question:
 The only indication of giving corticosteroids in pustular psoriasis is –
@@ -1378,7 +1378,7 @@ b) Optic neuritis
 c) Lesions of occipital lobe
 d) Anterior ischemic optic neuropathy
 -----
-",3,3
+",3,1
 "-----
 Question:
 Which of the following is post-chemotherapy based staging system in Wilms' tumor?
@@ -1408,7 +1408,7 @@ b) Marfan's syndrome
 c) Rheumatic hea disease
 d) Infective endocarditis
 -----
-",0,3
+",0,2
 "-----
 Question:
 For a dental hand instrument with a formula of 10-8.5-8-14, the number 10 refers to ________.
@@ -1498,7 +1498,7 @@ b) 40-45%
 c) 50-55%
 d) 60-65%
 -----
-",2,1
+",2,3
 "-----
 Question:
 A patient with discharge per vagina was evaluated and on endocervical biopsy Chlamydia was found. Treatment to be given in this case is:
@@ -1769,7 +1769,7 @@ b) Textile industries
 c) Sugar cane factories
 d) Grain fields
 -----
-",2,3
+",2,1
 "-----
 Question:
 The Nitrate which does not undergo first pass metabolism is -
@@ -2009,7 +2009,7 @@ b) 0.8 mg/litre
 c) 1 mg/litre
 d) 5 mg/litre
 -----
-",2,3
+",2,1
 "-----
 Question:
 Hypercalcemia is NOT seen in -
@@ -2079,7 +2079,7 @@ b) 50-100ml
 c) 100-200ml
 d) 200-300ml
 -----
-",2,1
+",2,3
 "-----
 Question:
 Which of the following is anaerobic non - acid fast bacilli:
@@ -2179,7 +2179,7 @@ b) HPV 16, 18
 c) HPV 31, 33
 d) HPV 35, 45
 -----
-",0,1
+",0,0
 "-----
 Question:
 An infant presented to OPD with features of respiratory distress. The X-ray is shown below. The most probable organism is
@@ -2249,7 +2249,7 @@ b) Conray 240
 c) Dianosil
 d) Urograffin
 -----
-",2,0
+",2,3
 "-----
 Question:
 Coral red-fluorescence wood's Lamp seen in?
@@ -2649,7 +2649,7 @@ b) Increased levels of estrogen
 c) Decreased levels of LH
 d) Decreased levels of FSH
 -----
-",2,2
+",2,3
 "-----
 Question:
 Which of the following is a cause of wide pulse pressure?
@@ -2799,7 +2799,7 @@ b) Sciatic nerve
 c) Common peroneal nerve
 d) Sural nerve
 -----
-",2,2
+",2,3
 "-----
 Question:
 Composition of Nova - T:
@@ -2979,7 +2979,7 @@ b) BPD at 18 weeks
 c) Abdominal circumference at 24 weeks
 d) BPD at 24 weeks
 -----
-",0,3
+",0,1
 "-----
 Question:
 Maximum air volme in the lung ?
@@ -3059,7 +3059,7 @@ b) Postmoem submersion
 c) Drowning in a fast flowing river
 d) Drowning in chlorinated swimming pool.
 -----
-",2,3
+",2,1
 "-----
 Question:
 C-3 convease in alternate complement pathway ?
@@ -3129,7 +3129,7 @@ b) LDH
 c) HCG
 d) CEA
 -----
-",3,3
+",3,1
 "-----
 Question:
 The most common genetic cause of liver disease in children is -
@@ -3369,7 +3369,7 @@ b) Ulnar
 c) Median
 d) Axillary
 -----
-",2,3
+",2,0
 "-----
 Question:
 A 40 years old patient came to surgery OPD with swelling in the left lateral aspect of the neck. On examination, the swelling was painless, can be moved side to side but not up and down. No history of TB. Blood workup included thyroid profile and CBC which came to be normal. Ultrasound of swelling was performed and showed a highly vascular hypoechoic mass lesion anteriorly to the sternocleidomastoid muscle. Subsequently, a CT angio was performed. what is the Diagnosis ?
@@ -3689,7 +3689,7 @@ b) Painful stress incontinence
 c) Recurrent UTI
 d) Hydronephrosis
 -----
-",1,3
+",1,1
 "-----
 Question:
 Residual bodies are -
@@ -3889,7 +3889,7 @@ b) HIV antibody test by enzyme-linked immunosorbent assay (EIA)
 c) HIV p24 antigen
 d) Reverse transcriptase polymerase chain reaction (PCR) for HIV RNA
 -----
-",3,2
+",3,3
 "-----
 Question:
 Which of the following investigations are essential before cervical cerclage is performed?
@@ -4249,7 +4249,7 @@ b) VZV
 c) Arbovirus
 d) Rhinovirus
 -----
-",3,2
+",3,3
 "-----
 Question:
 Rabies vaccine for pre exposure prophylaxis is given at?
@@ -4389,7 +4389,7 @@ b) Sarcoidosis
 c) Leprosy
 d) Infarction
 -----
-",3,1
+",3,3
 "-----
 Question:
 Tabacco/Smoking is considered as risk factor but not cause of cardiovascular disease because?
@@ -4509,7 +4509,7 @@ b) Mefloquine
 c) Pyrimethamine
 d) Quinine
 -----
-",2,2
+",2,3
 "-----
 Question:
 Which of the following is used in rape victims to determine of rupture of hymen and whether rupture is recent or old?
@@ -4559,7 +4559,7 @@ b) A late stage (decompensated) shock, the least life-threatening stage of shock
 c) A very early stage (compensated) shock, the most life-threatening stage of shock.
 d) A late stage (decompensated) shock, the most life-threatening stage of shock
 -----
-",3,2
+",3,3
 "-----
 Question:
 Assistance for the National Blindness Control Programme is done by
@@ -4569,7 +4569,7 @@ b) UNICEF
 c) DANIDA
 d) SIDA
 -----
-",2,3
+",2,0
 "-----
 Question:
 A 16-year-old boy presented with asymptomatic, multiple, erythematous, annular lesions with a collarette of scales at the periphery of the lesions present on the trunk. The most likely diagnosis is:
@@ -4689,7 +4689,7 @@ b) Gun shot deformity
 c) Swan neck deformity
 d) Dinner fork deformity
 -----
-",3,3
+",3,0
 "-----
 Question:
 Dinitrophenol causes:
@@ -4729,7 +4729,7 @@ b) 20-25 g/square cm
 c) 10-15 g/square cm
 d) 30-35 g/square cm
 -----
-",1,2
+",1,1
 "-----
 Question:
 Stage 2 block (Phase II block) is seen with:
@@ -4919,7 +4919,7 @@ b) low pO2 and high pCO2
 c) Normal pO2 and high pCO2
 d) Low pO2 and normal pCO2
 -----
-",1,3
+",1,1
 "-----
 Question:
 Red velvety appearance of stomach mucosa is seen in the poisoning of
@@ -5029,7 +5029,7 @@ b) CMV
 c) Gram (-) ve organism
 d) Gram (+) ve organism
 -----
-",1,1
+",1,3
 "-----
 Question:
 Which of the following disorders is associated with pterygium of nails?
@@ -5389,7 +5389,7 @@ b) Naeglaria
 c) E.dispar
 d) Acanthamoeba
 -----
-",1,1
+",1,0
 "-----
 Question:
 Which among the following is the commonest cause of postpaum haemorrhage?
@@ -5419,7 +5419,7 @@ b) Infraorbital
 c) Nasociliary
 d) Lacrimal
 -----
-",0,2
+",0,3
 "-----
 Question:
 The sensation of creeping bugs over the body is a feature of which of the following poison?
@@ -5559,7 +5559,7 @@ b) Paraneoplastic pemphigus
 c) Dermatitis herpetiformis
 d) Pemphigus vulgaris
 -----
-",3,0
+",3,3
 "-----
 Question:
 Bilateral ovarian cancer with; capsule breached: ascites positive for malignant cells. Stage is :
@@ -5919,7 +5919,7 @@ b) Glycolysis
 c) Gluconeogenesis
 d) HMP shunt
 -----
-",2,1
+",2,3
 "-----
 Question:
 Pudendal nerve supplying sphincter of bladder has the root value of?
@@ -5959,7 +5959,7 @@ b) Tibial torsion
 c) DDH
 d) Genu valgus
 -----
-",1,2
+",1,3
 "-----
 Question:
 Delusion of Nihilism and Early morning insomnia are characteristic features of
@@ -6049,7 +6049,7 @@ b) Acidic pH
 c) Skin
 d) Lactose
 -----
-",1,0
+",1,1
 "-----
 Question:
 Pityriasis versicolor is caused by-
@@ -6069,7 +6069,7 @@ b) Extension at Proximal interphalangeal joint and flexion at Distal interphalan
 c) Flexion at proximal interphalangeal joint and extension at distal interphalangeal joint
 d) Extension at Metacarpophalangeal joint and flexion at interphalangeal joint
 -----
-",1,0
+",1,1
 "-----
 Question:
 Nocturnal Enuresis is occurrence of involuntary voiding at night in a child more than
@@ -6199,7 +6199,7 @@ b) Glycine
 c) Arginine
 d) Lysine
 -----
-",0,1
+",0,3
 "-----
 Question:
 A 24 years old (middle aged) female has flaccid bullae in the skin and persistent painful oral erosions (palatal & vestibular lesions in buccal mucosa). Histopathology shows intraepidermal acantholytic blister. The most likely diagnosis is
@@ -6279,7 +6279,7 @@ b) Pheochromocytoma
 c) Renal parenchymatous disease
 d) Drug induced
 -----
-",2,3
+",2,1
 "-----
 Question:
 A most common cause of tarsal tunnel syndrome -
@@ -7229,7 +7229,7 @@ b) Lanreotide
 c) Methysergide
 d) Tropisetron
 -----
-",1,2
+",1,3
 "-----
 Question:
 Which among the following organism is detected by 'hanging drop preparation'?
@@ -7279,7 +7279,7 @@ b) Fractional curettage
 c) Transvaginal ultrasound (TVS)
 d) Ca-125 estimation
 -----
-",1,2
+",1,3
 "-----
 Question:
 Diabetic retinopathy, most likely present with –
@@ -8081,7 +8081,7 @@ b) Inferior ophthalmic vein
 c) Abducent nerve
 d) Nasociliary nerve
 -----
-",0,2
+",0,3
 "-----
 Question:
 A 35-year-old coal worker presents with difficulty in breathing on exeion for last 2 years. CXR was performed. What does it show?
@@ -8111,7 +8111,7 @@ b) Fluoride
 c) Formalin
 d) Xylol
 -----
-",1,2
+",1,3
 "-----
 Question:
 Commonest cause of moality in Ivor Lewis operation
@@ -8181,7 +8181,7 @@ b) Probable sign of identification
 c) Presumptive sign of identification
 d) Doubtful sign of identification
 -----
-",0,2
+",0,3
 "-----
 Question:
 Species specific test is:
@@ -8881,7 +8881,7 @@ b) Leprosy
 c) TB
 d) Lupus
 -----
-",0,3
+",0,1
 "-----
 Question:
 Biomedical concept of health is based on -
@@ -8951,7 +8951,7 @@ b) Retrocecal
 c) Pelvic
 d) Postileal
 -----
-",1,0
+",1,1
 "-----
 Question:
 Renal plasma flow is best determined by:
@@ -9991,7 +9991,7 @@ b) Bupivacaine
 c) Prilocaine
 d) Lignocaine + ketorolac
 -----
-",1,3
+",1,1
 "-----
 Question:
 Which of the following is the drug of choice of treatment of corneal ulcers caused by filamentous fungi ?
@@ -10211,7 +10211,7 @@ b) Methylation
 c) Phosphorylation
 d) DNA Replication
 -----
-",1,1
+",1,3
 "-----
 Question:
 A patient on atracurium develops seizures due to accumulation of -
@@ -10372,7 +10372,7 @@ b) Upward cerebellar herniation
 c) Unilateral transtentorial herniation
 d) Central transtentorial herniation
 -----
-",3,3
+",3,1
 "-----
 Question:
 The most common mode of transmission of brucella is
@@ -10452,7 +10452,7 @@ b) Polyuria
 c) Depression
 d) Vomiting
 -----
-",0,2
+",0,3
 "-----
 Question:
 Ascorbate and u-tocopherol are maintained in a reduced state in the lens by:
@@ -10552,7 +10552,7 @@ b) 17 hydroxylase def
 c) 11 hydroxylase def
 d) Desmolase hydrolase def
 -----
-",0,3
+",0,1
 "-----
 Question:
 The first investigation of choice in a patient with suspectedsubarachnoid haemorrhage should be-
@@ -11052,7 +11052,7 @@ b) Pseudomyxoma peritonitis
 c) Adenocarcinoma
 d) Mucocele
 -----
-",0,2
+",0,0
 "-----
 Question:
 Most common cause of fracture of roof of orbit-
@@ -11192,7 +11192,7 @@ b) Sulpha drug reaction
 c) Lichen planus
 d) Erythema multiformae
 -----
-",3,3
+",3,0
 "-----
 Question:
 Pharyngeal muscles are developed from which pharyngeal arch
@@ -11212,7 +11212,7 @@ b) Beta Blockers
 c) ACE inhibitors/ACE Receptor Blockers
 d) Steroids
 -----
-",2,2
+",2,1
 "-----
 Question:
 Which of the following will not cause pupillary white reflex?
@@ -11602,7 +11602,7 @@ b) Cu T 380A
 c) Mirena
 d) Nova T
 -----
-",1,3
+",1,2
 "-----
 Question:
 The most common organism among the following that causes acute meningitis in an AIDS patient is
@@ -11622,7 +11622,7 @@ b) Comminuted
 c) Veical
 d) Horizontal
 -----
-",3,3
+",3,0
 "-----
 Question:
 Sharp waste should be disposed in
@@ -11762,7 +11762,7 @@ b) Entropion
 c) Keratitis
 d) Stye
 -----
-",2,2
+",2,3
 "-----
 Question:
 Ambulatory patients after a Disaster are categorized into ____ colour of Triage:
@@ -11962,7 +11962,7 @@ b) Subscapularis
 c) Infraspinatus
 d) Biceps Breachii
 -----
-",1,0
+",1,2
 "-----
 Question:
 Which among the following is the commonest site of fracture of mandible?
@@ -12022,7 +12022,7 @@ b) Anal canal
 c) External anal spincter
 d) Dentate line
 -----
-",0,1
+",0,3
 "-----
 Question:
 The following anaesthetic drug causes pain on intravenous adminstration:
@@ -12092,7 +12092,7 @@ b) 60 ml 10% D with 40 ml NS
 c) 60 ml 10% D with 50 ml NS
 d) 80 ml 10% D with 20 ml NS
 -----
-",3,1
+",3,3
 "-----
 Question:
 Centroacinar cells are characteristic of
@@ -12242,7 +12242,7 @@ b) Phospholipids
 c) Acid Fast Stain
 d) Iron
 -----
-",0,0
+",0,3
 "-----
 Question:
 Isolation period of Hepatitis A after the onset of jaundice is:
@@ -12302,7 +12302,7 @@ b) Lichen planus
 c) Psoriasis
 d) Pemphigus
 -----
-",0,1
+",0,0
 "-----
 Question:
 Electrode of cochlear implant is placed at ?
@@ -12312,7 +12312,7 @@ b) Scala media
 c) Scala tympani
 d) Scala vestibuli
 -----
-",2,3
+",2,1
 "-----
 Question:
 In epidural anaesthesia drug is injected ?
@@ -12492,7 +12492,7 @@ b) Outer mitochondrial membrane
 c) Sarcoplasmic reticulum
 d) Myelin sheath membrane
 -----
-",3,1
+",3,3
 "-----
 Question:
 Anesthetic agent with vasoconstrictor is contraindicated in?
@@ -12602,7 +12602,7 @@ b) Abdominal exploration and packing of hepatic wounds
 c) Abdominal exploration and ligation of left hepatic aery
 d) Left hepatectomy
 -----
-",0,3
+",0,1
 "-----
 Question:
 When the respiratory muscles are relaxed, the lungs are in which of the following state?
@@ -12842,7 +12842,7 @@ b) O'Brien's block
 c) Nadbath block
 d) Atkinson's block
 -----
-",1,1
+",1,3
 "-----
 Question:
 A28-year-old farmer is convulsing, with 100bpm heart rate, BP180/100, diarrhea, vomiting and urination. Pupil are pin point. Drug poisoning suspected is:
@@ -12983,7 +12983,7 @@ b) 36 keratinocytes : 2 melanocytes
 c) 16 keratinocytes : 1 melanocytes
 d) 36 keratinocytes : 1 melanocyte
 -----
-",3,3
+",3,2
 "-----
 Question:
 Heat stiffening occurs when person exposed at a temp of
@@ -13083,7 +13083,7 @@ b) Intussusception
 c) Ascariasis
 d) Appendicitis
 -----
-",1,1
+",1,3
 "-----
 Question:
 A young person presents with self mutilating behaviour and impulsivity. What is he most likely suffering from?
@@ -13253,7 +13253,7 @@ b) Cheif judicial magistrate
 c) Second class magistrate
 d) Sessions cou
 -----
-",3,1
+",3,3
 "-----
 Question:
 Action of which anaesthetic agent is through NMDA receptors?
@@ -13283,7 +13283,7 @@ b) Myopic
 c) Hypermetropic
 d) Astigmatic
 -----
-",2,3
+",2,0
 "-----
 Question:
 Which method is not used for autopsy ?
@@ -13793,7 +13793,7 @@ b) Intramuscular 1-3 ml / kg of 1: 10,000 adrenaline
 c) Intravenous 0.1-0.3ml / kg of 1:10,000 adrenaline
 d) Intravenous 0.1- 0.3 ml/kg of 1:10,000 adrenaline
 -----
-",3,3
+",3,0
 "-----
 Question:
 Aery of Adamkiewicz is related to?
@@ -13833,7 +13833,7 @@ b) E. coli
 c) B. proteus
 d) Cl. welchii
 -----
-",3,1
+",3,3
 "-----
 Question:
 The effective temperature of 'comfo zone is%
@@ -13993,7 +13993,7 @@ b) Autosomal dominant
 c) Multifactorial
 d) X-linked dominant
 -----
-",2,2
+",2,3
 "-----
 Question:
 Which of the following is not an indication of amniocentesis for chromosomal anomaly detection?
@@ -14123,7 +14123,7 @@ b) Propofol
 c) Etomidate
 d) Ketamine
 -----
-",1,3
+",1,2
 "-----
 Question:
 Glucose transporter in myocyte stimulated by insulin is
@@ -14173,7 +14173,7 @@ b) Scrub Typhus
 c) Trench fever
 d) Q fever
 -----
-",0,0
+",0,3
 "-----
 Question:
 Which of the following is not conveed into an active metabolite?
@@ -14463,7 +14463,7 @@ b) Promethazine
 c) Hydroxyzine
 d) Acrivastine
 -----
-",1,3
+",1,2
 "-----
 Question:
 A child presents with sudden loss of vision with painful ocular movements. The eye is white and there are no obvious signs on ophthalmoscopy. The most likely diagnosis is -
@@ -14503,7 +14503,7 @@ b) 6 months
 c) 9 months
 d) 12 months
 -----
-",1,1
+",1,3
 "-----
 Question:
 Agent causing hemorrhagic cystitis
@@ -14863,7 +14863,7 @@ b) Increased lactobacilli
 c) Increased anaerobic bacteria
 d) Decrease in glycogen contents
 -----
-",1,1
+",1,3
 "-----
 Question:
 Radiation exposure is least in
@@ -15063,7 +15063,7 @@ b) EBV
 c) Rabies virus
 d) HSV
 -----
-",1,1
+",1,3
 "-----
 Question:
 Fox Fordyce's disease is a disease of ?
@@ -15373,7 +15373,7 @@ b) 2 cm ; 3 mm
 c) 2 mm ; < 1 cm
 d) 4 mm ; 1 cm
 -----
-",2,1
+",2,3
 "-----
 Question:
 In between appointment, endodontic flare up is caused by:
@@ -15523,7 +15523,7 @@ b) 800 ml
 c) 400 ml
 d) 1000 ml
 -----
-",3,3
+",3,2
 "-----
 Question:
 Which of the following mixture of anesthetics is applied on skin?
@@ -15543,7 +15543,7 @@ b) Internal intercostal
 c) Innermost intercostal
 d) Transversus thoracis
 -----
-",3,3
+",3,1
 "-----
 Question:
 The procedure of choice for the evaluation of an aneurysm is :
@@ -15673,7 +15673,7 @@ b) Chronaxie 0.3V; rheobase 0.2 msec
 c) Chronaxie 0.3V; rheobase 0.6V
 d) Chronaxie 0.2 msec; rheobase 0.6V
 -----
-",0,3
+",0,1
 "-----
 Question:
 A patient came with complaints of having a deformed nose and also complained that nobody takes him seriously because of the deformity of his nose. He has visited several cosmetic surgeons but they have sent him back saying that there is nothing wrong with his nose. He is probably suffering from
@@ -15753,7 +15753,7 @@ b) Inner hair cells in basal area
 c) Outer hair cells in apical area
 d) Inner hair cells in apical area
 -----
-",0,0
+",0,3
 "-----
 Question:
 Which of the following is a pro drug is ?
@@ -15993,7 +15993,7 @@ b) Culture on McCoy cells
 c) Culture on a bilayer human blood agar
 d) Culture on Vero cell lines
 -----
-",1,3
+",1,1
 "-----
 Question:
 Leukotrienes inhibitors are very effective in which one of the following conditions-
@@ -16073,7 +16073,7 @@ b) AR
 c) AS
 d) Septemberal defect
 -----
-",0,0
+",0,3
 "-----
 Question:
 Patient presents with intermittent weakness in proximal group of muscles, fatigubility, ptosis. Which of the following is most definite test to detect the abnormality
@@ -16113,7 +16113,7 @@ b) IgG2
 c) IgG3
 d) IgG4
 -----
-",0,3
+",0,0
 "-----
 Question:
 Viper bite resembles poisoning by -
@@ -16543,7 +16543,7 @@ b) Popliteal fossa
 c) Thigh
 d) Calf
 -----
-",2,0
+",2,3
 "-----
 Question:
 What is the treatment of threshold ROP:
@@ -16793,7 +16793,7 @@ b) Analytic
 c) Association
 d) Comparison
 -----
-",0,0
+",0,3
 "-----
 Question:
 PIN index of nitrous oxide is?
@@ -16893,7 +16893,7 @@ b) ICD with underwater seal
 c) Thoracotomy and close the rent
 d) Wait and watch
 -----
-",1,1
+",1,3
 "-----
 Question:
 Which of the following pontic designs require surgical procedure?
@@ -16953,7 +16953,7 @@ b) Phosphofructokinase
 c) Acetyl CoA carboxylase
 d) Malonate dehydrogarase
 -----
-",3,2
+",3,3
 "-----
 Question:
 Satellite Lesion are seen in:
@@ -16993,7 +16993,7 @@ b) Prevent Abuse and Neglect through Disease Awareness
 c) Prevent Abuse and Neglect through Dental Assurance
 d) Prevent Abuse and Neglect through Dichroitic Awareness
 -----
-",0,0
+",0,3
 "-----
 Question:
 In a case of medico-legal dispute, after postmoem the body should be handed over to
@@ -17063,7 +17063,7 @@ b) hCG
 c) Estriol
 d) Acetylcholinesterase
 -----
-",3,0
+",3,3
 "-----
 Question:
 The buffer with the highest pKa is:
@@ -17303,7 +17303,7 @@ b) Thyrotrophs
 c) Gonadotrophs
 d) Coicotrophs
 -----
-",1,2
+",1,3
 "-----
 Question:
 Rectified spirit is NOT used as preservative in case of: WB 11; NEET 15
@@ -17393,7 +17393,7 @@ b) Secondary prevention
 c) Specific protection
 d) Disability limitation
 -----
-",2,2
+",2,3
 "-----
 Question:
 In which of the following periods the fetus is most likely to be affected if the mother has varicella zoster infection?
@@ -17563,7 +17563,7 @@ b) Commando operation
 c) Segmental mandiblectomy
 d) Marginal mandibulectomy
 -----
-",2,3
+",2,2
 "-----
 Question:
 Earliest evidence of clubbing is:
@@ -17623,7 +17623,7 @@ b) Psychoanalysis
 c) Cognitive therapy
 d) Supportive therapy
 -----
-",0,0
+",0,2
 "-----
 Question:
 Which of the following is not supplied by the anterior division of mandibular nerve (V3) -
@@ -17743,7 +17743,7 @@ b) Start after 6 years
 c) Start immediately
 d) Start after 3 months
 -----
-",2,3
+",2,1
 "-----
 Question:
 Coombs positive hemolytic anemia associated with:
@@ -17983,7 +17983,7 @@ b) Tc99m mebrofenin
 c) Tc-99m MIBI
 d) Tc99m DTPA
 -----
-",0,0
+",0,3
 "-----
 Question:
 Which of the following aminoacids is a component of Thioredoxin reductase?
@@ -18063,7 +18063,7 @@ b) Ibuprofen
 c) Aspirin
 d) Icatibant
 -----
-",1,3
+",1,0
 "-----
 Question:
 Delayed hypersensitivity is due to -
@@ -18163,7 +18163,7 @@ b) Spigelian hernia
 c) Paraumbilical
 d) Incisional hernia
 -----
-",1,3
+",1,1
 "-----
 Question:
 Which of the following viruses causes an acute febrile rash and produces disease in immunocompetent children but has been associated with transient aplastic crises in persons with sickle cell disease?
@@ -18193,7 +18193,7 @@ b) L. J. medium
 c) Stewart medium
 d) Chocolate agar
 -----
-",0,0
+",0,3
 "-----
 Question:
 Most common tumour of eyelid is: September 2009
@@ -18273,7 +18273,7 @@ b) Marfan's syndrome
 c) Rheumatic hea disease
 d) Infective endocarditis
 -----
-",0,2
+",0,3
 "-----
 Question:
 Hyperkalemia is a feature of
@@ -18883,7 +18883,7 @@ b) 3 months
 c) 6 months
 d) 12 months
 -----
-",1,2
+",1,3
 "-----
 Question:
 In the immediate post operative period, body potassium is -
@@ -18943,7 +18943,7 @@ b) Medulloblastoma
 c) Pilocytic astrocytoma
 d) Hemangioblastoma
 -----
-",0,3
+",0,0
 "-----
 Question:
 Specific for CSF in rhinorrhea: AI 10
@@ -19063,7 +19063,7 @@ b) Hypotelorism
 c) Holoprosencephaly
 d) Rocker bottom foot
 -----
-",3,3
+",3,2
 "-----
 Question:
 Human is dead end host for?
@@ -19133,7 +19133,7 @@ b) Veebral aery
 c) Anterior cerebral aery
 d) Posterior cerebral aery
 -----
-",1,1
+",1,3
 "-----
 Question:
 Multiple erythematous annular lesions with peripheral collorette of scales arranged predominantly on trunk are seen in -
@@ -19323,7 +19323,7 @@ b) Umbilical vein
 c) Ductus venosus
 d) Ductus aeriosus
 -----
-",2,1
+",2,3
 "-----
 Question:
 Delusion is a disorder of: September 2011
@@ -19433,7 +19433,7 @@ b) Mn +2
 c) Fe +2
 d) Zn
 -----
-",0,3
+",0,0
 "-----
 Question:
 The nerve affected in carpal tunnel syndrome is -
@@ -19593,7 +19593,7 @@ b) 26 bones
 c) 30 bones
 d) 32 bones
 -----
-",2,3
+",2,1
 "-----
 Question:
 A 5 year old child is brought to the clinic with abdominal distention. On examination abdominal distention is found to be due to an enlarged liver. Child also developed episodes of uncontrolled hypoglycemia and ketosis. What is the most probable diagnosis?
@@ -20076,7 +20076,7 @@ b) 2 year
 c) 3 year
 d) 4 year
 -----
-",3,1
+",3,3
 "-----
 Question:
 Glomus cells are derived from ?
@@ -20196,7 +20196,7 @@ b) 50 to 70 mg/dL
 c) 120 to 150 mg/dL
 d) 220 to 250 mg/dL
 -----
-",2,3
+",2,0
 "-----
 Question:
 Epley's test is used for?
@@ -20596,7 +20596,7 @@ b) Trisomy of 7 and 17 (+7, +17)
 c) 3 p deletions (3p-)
 d) Monosomy of 1 and Y (-1, -Y)
 -----
-",3,0
+",3,1
 "-----
 Question:
 Which type of vaccine is MMR?
@@ -20916,7 +20916,7 @@ b) Meniere's disease
 c) Acute otitis media
 d) Benign paroxysmal positional vertigo
 -----
-",1,3
+",1,0
 "-----
 Question:
 Lisch nodule is seen in: September 2012
@@ -20976,7 +20976,7 @@ b) Hiatus hernia
 c) Minor surgery
 d) Young age
 -----
-",1,3
+",1,1
 "-----
 Question:
 Net Protein utilization of fish is-
@@ -21066,7 +21066,7 @@ b) Ventral posteromedial
 c) Ventral posterolateral
 d) Superior and inferior colliculi
 -----
-",0,3
+",0,2
 "-----
 Question:
 Defect seen in Vitiligo is: September 2010
@@ -21176,7 +21176,7 @@ b) Apo A-II
 c) Apo B-100
 d) Apo B-48
 -----
-",3,1
+",3,3
 "-----
 Question:
 Sphincter of Oddi consists of -
@@ -21356,7 +21356,7 @@ b) PGE2
 c) PGI2
 d) PGF2-alpha
 -----
-",1,1
+",1,3
 "-----
 Question:
 What is the cause of sudden death in a patient who recently underwent maxillary sinus irrigation?
@@ -21396,7 +21396,7 @@ b) Diclofenac
 c) Nefopam
 d) Etoricoxib
 -----
-",0,1
+",0,3
 "-----
 Question:
 Which amongst the following is X-linked Recessive Disorder?
@@ -21476,7 +21476,7 @@ b) Cyanide
 c) Lead
 d) Sulphite
 -----
-",1,2
+",1,1
 "-----
 Question:
 Serum-ascites albumin gradient >1.1g/dL is seen in
@@ -21566,7 +21566,7 @@ b) Alcoholic liver disease
 c) Hookworm infestation
 d) Celiac disease
 -----
-",3,3
+",3,2
 "-----
 Question:
 Epiphyseal enlargement occurs in
@@ -21816,7 +21816,7 @@ b) Maxillary
 c) Ethmoid
 d) Sphenoid
 -----
-",2,3
+",2,0
 "-----
 Question:
 Duration of treatment for multibacillary and paucibacillary leprosy is
@@ -21956,7 +21956,7 @@ b) PTEN
 c) KRAS
 d) p53
 -----
-",1,3
+",1,1
 "-----
 Question:
 Inheritance pattern of Hemophillia is?
@@ -22076,7 +22076,7 @@ b) 25-100 mg
 c) 100-200 mg
 d) 150-300 mg
 -----
-",1,1
+",1,3
 "-----
 Question:
 A four year old child develops steroid-sensitive nephrotic syndrome. Renal biopsy studies demonstrate normal appearing glomeruli by light microscopy and fusion of foot processes by electron microscopy. Which of the following proteins would be present in the urine in the highest concentration?
@@ -22196,7 +22196,7 @@ b) SLOB rule
 c) Rule of isometry
 d) Convergence
 -----
-",2,3
+",2,1
 "-----
 Question:
 The recommended treatment for suspected arsenic poisoning is
@@ -22376,7 +22376,7 @@ b) CECT
 c) IVP
 d) MRI
 -----
-",0,1
+",0,3
 "-----
 Question:
 Perifascicular atrophy is seen in -
@@ -22406,7 +22406,7 @@ b) Alveolar capillaries
 c) Terminal bronchiole
 d) Respiratory muscles
 -----
-",0,1
+",0,3
 "-----
 Question:
 Which of the following is not an established antimicrobial drug synergism at clinical level?
@@ -22526,7 +22526,7 @@ b) Leprosy
 c) Buschke Lowenstein tumour
 d) TB
 -----
-",2,0
+",2,3
 "-----
 Question:
 Argyll-Robeson pupil is seen in: March 2009
@@ -22766,7 +22766,7 @@ b) Hypoxic hypoxia
 c) Anemic hypoxia
 d) Histotoxic hypoxia
 -----
-",2,1
+",2,3
 "-----
 Question:
 Mechanism of action of Salmeterol is:
@@ -23386,7 +23386,7 @@ b) 2nd degree deep
 c) 1st degree burns
 d) Full thickness burns
 -----
-",0,3
+",0,1
 "-----
 Question:
 Over-inflation of the lung is prevented by?
@@ -23406,7 +23406,7 @@ b) Maggots
 c) Nasal pain
 d) Impaired olfaction
 -----
-",0,1
+",0,0
 "-----
 Question:
 Normal value of fetal scalp pH is?
@@ -23436,7 +23436,7 @@ b) B-cells
 c) Null cells
 d) Macrophages
 -----
-",0,0
+",0,2
 "-----
 Question:
 Minus cylinder lenses are prescribed because of
@@ -23466,7 +23466,7 @@ b) Ectoderm ,Mesoderm, Endoderm
 c) Mesoderm, Endoderm
 d) Ectoderm , Mesoderm
 -----
-",1,1
+",1,3
 "-----
 Question:
 Intra uterine hydronephrosis of 32-34 weeks-management?
@@ -23746,7 +23746,7 @@ b) Ab fibers
 c) Ag fibers
 d) Ad fibers
 -----
-",3,0
+",3,3
 "-----
 Question:
 Most common cause of Dysfunctional Uterine Bleeding:
@@ -23926,7 +23926,7 @@ b) Acetyl CoA
 c) Malonyl CoA
 d) Acyl CoA
 -----
-",0,0
+",0,3
 "-----
 Question:
 Inhalation agent of choice in children -
@@ -23956,7 +23956,7 @@ b) Hyperthyroidism
 c) Hypoparathyroidism
 d) Hyperparathyroidism
 -----
-",3,3
+",3,2
 "-----
 Question:
 The fluoride concentration of human milk ranges from:
@@ -23976,7 +23976,7 @@ b) Ewing's sarcoma
 c) Chronic osteomyelitis
 d) Multiple myeloma
 -----
-",2,2
+",2,3
 "-----
 Question:
 Which of the following is a feature of opioid withdrawal?
@@ -24056,7 +24056,7 @@ b) Glycopyrrolate
 c) Physostigmime
 d) Hyoscine hydro bromide
 -----
-",1,3
+",1,1
 "-----
 Question:
 WHO defines adolescent age between ?
@@ -24116,7 +24116,7 @@ b) Spectroscopic study
 c) Oho tolidine test
 d) Tecihmann test
 -----
-",3,0
+",3,3
 "-----
 Question:
 ""Osteosclerotic"" bone metastasis is found most commonly in which carcinoma:
@@ -24416,7 +24416,7 @@ b) Scotochromogens
 c) Photochromogens
 d) Rapid growers
 -----
-",0,0
+",0,2
 "-----
 Question:
 Delta waves on EEG is seen in: March 2013 (e)
@@ -24696,7 +24696,7 @@ b) Aqueous layer
 c) Lipid layer
 d) Oily layer
 -----
-",0,0
+",0,1
 "-----
 Question:
 A male patient presents with patchy loss of hair on scalp, eyebrows and beard. He also gives istory of rapid graying of hair in a few areas. The likely diagnosis is-
@@ -24886,7 +24886,7 @@ b) Partial thicknees skin graft
 c) Rotational flap
 d) Vascularised fibular graft
 -----
-",0,1
+",0,3
 "-----
 Question:
 The propey which makes betaxolol different from timolol is that betaxolol :
@@ -25466,7 +25466,7 @@ b) Creutzfeldt-Jakob disease
 c) Scrapie disease
 d) Bovine spongiform encephalopathy (BSE)
 -----
-",0,3
+",0,1
 "-----
 Question:
 Not a feature of congenital rubella classical triad-
@@ -25586,7 +25586,7 @@ b) Acid Phosphatase test
 c) Florence test
 d) Phadebas Test
 -----
-",3,2
+",3,3
 "-----
 Question:
 Frotteurism is: NEET 13
@@ -25606,7 +25606,7 @@ b) 42 months
 c) 36 months
 d) 48 months
 -----
-",2,3
+",2,2
 "-----
 Question:
 Calciphylaxis is more commonly seen in
@@ -25616,7 +25616,7 @@ b) Secondary hyperparathyroidism
 c) Teritiary hyperparathyroidism
 d) Pseudo hyperparathyroidism
 -----
-",1,1
+",1,2
 "-----
 Question:
 The maximal increase of free histamine content occurs within how much time after injury
@@ -25626,7 +25626,7 @@ b) 20 - 30 minutes
 c) 1 hour
 d) 2 hour
 -----
-",1,1
+",1,3
 "-----
 Question:
 Perihilar fluffy opacities on Xrays are seen in
@@ -25806,7 +25806,7 @@ b) Crohn's
 c) Whipple's
 d) Abetalipoprotienemia
 -----
-",3,3
+",3,2
 "-----
 Question:
 Highest concentration in extracellular compartment is of which ion-
@@ -25856,7 +25856,7 @@ b) 3 1/2 years
 c) 4 1/2 years
 d) 5 1/2 years
 -----
-",2,3
+",2,1
 "-----
 Question:
 Common primary sites of metastasis to the brain are-
@@ -25986,7 +25986,7 @@ b) Stupor
 c) Oneiroid state
 d) Twilight state
 -----
-",1,1
+",1,3
 "-----
 Question:
 What is the commonest cause of loss of vision in Neurofibromatosis type 1?
@@ -26716,7 +26716,7 @@ b) Stratum intermedium
 c) Stellate reticulum
 d) Hyaline layer of Hopewell-smith
 -----
-",0,1
+",0,0
 "-----
 Question:
 Suppurating buboes are seen in infection with: March 2004
@@ -26836,7 +26836,7 @@ b) Lymphoma
 c) Melanoma
 d) Dysgerminoma
 -----
-",0,3
+",0,0
 "-----
 Question:
 Monthly dose of treatment of vitamin A deficiency in 10 kg child who is 2 years old is -
@@ -26906,7 +26906,7 @@ b) Conray 420
 c) Dianosil
 d) Myodii
 -----
-",2,1
+",2,3
 "-----
 Question:
 A 2 days old premature neonate develops GTCS. What is the investigation done to diagnose the pathology? (AIIMS November 2013, May 2013)
@@ -26966,7 +26966,7 @@ b) Moderate
 c) Severe
 d) Normal
 -----
-",1,1
+",1,0
 "-----
 Question:
 Impulses generated in the taste buds of the tongue reach the cerebral cortex via the:
@@ -27136,7 +27136,7 @@ b) Amount of CO2 transpoed in blood
 c) Ventilation of lung after intubation
 d) Myocardial perfusion
 -----
-",2,3
+",2,0
 "-----
 Question:
 Peri lymph contains:
@@ -27426,7 +27426,7 @@ b) 1.7 mg/kg
 c) 2.4 mg/kg
 d) 3.4 mg/kg
 -----
-",2,0
+",2,3
 "-----
 Question:
 Parachute reflex disappears?
@@ -27436,7 +27436,7 @@ b) 6 months
 c) Never
 d) At birth
 -----
-",2,2
+",2,3
 "-----
 Question:
 Singer's alkali denaturation test is used to differentiate
@@ -27520,7 +27520,7 @@ b) Laryngeal carcinoma
 c) Subglottic stenosis
 d) Laryngomalacia
 -----
-",1,3
+",1,1
 "-----
 Question:
 Which of the following general anaesthetic agent has the least analgesic action?
@@ -27550,7 +27550,7 @@ b) 30-300
 c) 400-400
 d) 800-1200
 -----
-",1,1
+",1,3
 "-----
 Question:
 Metacarpophalangeal joints are most commonly affected in: March 2005
@@ -27900,7 +27900,7 @@ b) Breathing
 c) Circulation
 d) Definitive therapy
 -----
-",1,3
+",1,2
 "-----
 Question:
 A child presents with history of high fever for 4 days along with seizures. Rash develops on the trunk on the day after fever subsides. what is the most probable diagnosis?
@@ -27980,7 +27980,7 @@ b) ARDS
 c) Penetrating trauma
 d) Psychiatric trauma
 -----
-",3,1
+",3,0
 "-----
 Question:
 Treatment of choice for non-united fracture of lower 1/4th tibia with multiple discharging sinuses & various puckered scar with 4 cm shortening of leg -
@@ -28180,7 +28180,7 @@ b) VII
 c) VI
 d) V
 -----
-",2,3
+",2,0
 "-----
 Question:
 This manouver helps to
@@ -28240,7 +28240,7 @@ b) H/O peptic ulcer
 c) H/O gout
 d) H/O of severe rash
 -----
-",2,2
+",2,1
 "-----
 Question:
 Most common site of Ewing's sarcoma -
@@ -28550,7 +28550,7 @@ b) Suprolateral pa of scapula
 c) Superior pa of medial scapula border
 d) Inferior angle of scapula
 -----
-",2,2
+",2,3
 "-----
 Question:
 Occult hepatitis B is:
@@ -28640,7 +28640,7 @@ b) Exploratory Laparotomy under general anesthesia
 c) Insertion of abdominal drain followed by laparotomy
 d) Laproscopy
 -----
-",1,1
+",1,2
 "-----
 Question:
 An intern posted in medicine ward was reprimanded by the senior resident as he had forgotten to send the blood samples of a patient in the morning. Sometime later the same intern was heard shouting on the family member of a patient, who had come to inform him, that the normal saline drip that was being given to his patient needs to be changed. What defines mechanism is the intern using here-
@@ -28740,7 +28740,7 @@ b) Morison's pouch
 c) Pouch of Douglas
 d) Superior pa of supracolic compament
 -----
-",1,3
+",1,0
 "-----
 Question:
 Epidemic hemorrhagic conjuctivitis is caused by -
@@ -29130,7 +29130,7 @@ b) Alkaptonuria
 c) MSUD
 d) Hanups disease
 -----
-",3,3
+",3,1
 "-----
 Question:
 which of the following is seen in the biopsy of a patient who had a post Mi reperfusion injury
@@ -29160,7 +29160,7 @@ b) Needle aspiration
 c) Intercostal tube
 d) Open thoracotomy with ligation of vessel
 -----
-",3,3
+",3,2
 "-----
 Question:
 Epithelial lining of conjunctiva is: March 2009
@@ -29200,7 +29200,7 @@ b) Biological oxygen demand >200 mg/L
 c) Biological oxygen demand <250 mg/L
 d) Biological oxygen demand >150 mg/L
 -----
-",0,0
+",0,1
 "-----
 Question:
 In obstruction of second part of axillay artery, the anostomosis between the following artery will maintain the blood supply of upper limb:
@@ -29330,7 +29330,7 @@ b) Nysten
 c) Morrison
 d) Rule of 12
 -----
-",2,1
+",2,3
 "-----
 Question:
 A 22-year-old woman is admitted to the hospital with an injury to her eye. The corneal reflex is tested and found to be present. Which of the following nerves is responsible for the afferent limb of this reflex?
@@ -29390,7 +29390,7 @@ b) Alkaptonuria
 c) Maple syrup disease
 d) Tyrosinemia
 -----
-",1,1
+",1,3
 "-----
 Question:
 Which among the following factors level is not altered in vit K deficiency?
@@ -29430,7 +29430,7 @@ b) Internal maxillary aery
 c) Superficial temporal aery
 d) Middle cerebral aery
 -----
-",1,1
+",1,3
 "-----
 Question:
 lesion at spinal sensory nucleus of trigeminal nerve leads to loss of ?
@@ -29460,7 +29460,7 @@ b) Endometriosis
 c) Pelvic inflammatory disease
 d) Turner's syndrome
 -----
-",0,0
+",0,3
 "-----
 Question:
 Ideal age for repair of vaginal agenesis is :
@@ -29640,7 +29640,7 @@ b) Aconite poisoning
 c) Iodine poisoning
 d) Codeine poisoning
 -----
-",0,1
+",0,3
 "-----
 Question:
 A child has presented with a BP of 190/110, pedal edema++, facial edema, gross hematuria and absent ascites, The most probable diagnosis is
@@ -30071,7 +30071,7 @@ b) Iridocyclitis
 c) Persistent pupillary membrane
 d) Iris cyst
 -----
-",1,0
+",1,1
 "-----
 Question:
 Treatment of choice in Pustular psoriasis –
@@ -30091,7 +30091,7 @@ b) TAPVC
 c) Constrictive pericarditis
 d) TOF
 -----
-",2,2
+",2,3
 "-----
 Question:
 Immediate side shift Bennett movement is:
@@ -30511,7 +30511,7 @@ b) 3 years
 c) 4 years
 d) 5 years
 -----
-",3,3
+",3,1
 "-----
 Question:
 Which of the following is a pathological calcification?
@@ -30611,7 +30611,7 @@ b) Sphenoid
 c) Maxillary
 d) Mandible
 -----
-",3,1
+",3,3
 "-----
 Question:
 Which of the following cement has most anticariogenic effect used while placing bands on molar to prevent caries?
@@ -30621,7 +30621,7 @@ b) Polycarboxylate
 c) Zinc phosphate
 d) Silicate
 -----
-",0,0
+",0,3
 "-----
 Question:
 Section 377 deals with -
@@ -31062,7 +31062,7 @@ b) Smoking
 c) Nulliparity
 d) Diabetes
 -----
-",1,3
+",1,2
 "-----
 Question:
 Which of the thyroid malignancy is associated with amyloidosis
@@ -31202,7 +31202,7 @@ b) Thyroid disease
 c) Diabetes insipidus
 d) Diabetes mellitus
 -----
-",1,3
+",1,1
 "-----
 Question:
 Detailed survey for fetal anamolies is done at what period of gestation?
@@ -31212,7 +31212,7 @@ b) 14-16 weeks
 c) 16-18 weeks
 d) 18-20 weeks
 -----
-",3,3
+",3,0
 "-----
 Question:
 Heavy smoker for elective hernia repair, smoking should be stopped before how much period?
@@ -31252,7 +31252,7 @@ b) Rhabdomyosarcoma
 c) Neuroblastoma
 d) Ameloblastoma
 -----
-",3,2
+",3,3
 "-----
 Question:
 A mother comes with her 3 year old female child with complain of that child is not eating anything. Her weight is 11 kg (50thpercentile) and height is 88 cm (75lh percentile). What should be done next?
@@ -31272,7 +31272,7 @@ b) RPI system
 c) RPA system
 d) RPM system
 -----
-",1,3
+",1,1
 "-----
 Question:
 Levonorgestrel-releasing Intrauterine device is advised in fibroid management if uterine size is less than
@@ -31542,7 +31542,7 @@ b) 2
 c) 4
 d) 6
 -----
-",3,3
+",3,1
 "-----
 Question:
 Area number for Motor area include
@@ -31592,7 +31592,7 @@ b) Impedance based
 c) Impedance ratio based
 d) Multiple frequencies based
 -----
-",3,3
+",3,1
 "-----
 Question:
 Feature of metabolic syndrome is-
@@ -31752,7 +31752,7 @@ b) Intraparotid
 c) Intracanalicular
 d) Cisternal
 -----
-",2,3
+",2,0
 "-----
 Question:
 Which water soluble vitamin is synthesized in our body -
@@ -31772,7 +31772,7 @@ b) Age
 c) Sex
 d) Caste
 -----
-",0,2
+",0,0
 "-----
 Question:
 The receptors giving to signals that bring about Hering-Breuer inflation reflex are
@@ -31872,7 +31872,7 @@ b) Increase in hydrostatic pressure of capillaries
 c) Increase in oncotic pressure of capillaries
 d) Decrease in oncotic pressure of interstitium
 -----
-",1,1
+",1,0
 "-----
 Question:
 Pilocarpine causes:
@@ -31922,7 +31922,7 @@ b) Sturge weber syndrome
 c) Tuberous sclerosis
 d) Nevus anemicus.
 -----
-",2,0
+",2,3
 "-----
 Question:
 Which of the following is not a component of Kocher's criteria when diagnosing septic arthritis of the hip?
@@ -32262,7 +32262,7 @@ b) Ankylosing Spondylitis
 c) Rheumatoid Ahritis
 d) Gouty Ahritis
 -----
-",1,3
+",1,2
 "-----
 Question:
 A 15-year-old boy presented with one day history of bleedig gums, subconjunctival bleed and purpuric rash. Investigations revealed the following results:Hb-6.4 gm/dL; TLC-26,500/mm3 Platelet 35,000 mm3; prothrombin time-20 sec with a control of 13 sec; paial thromboplastin time-50sec; and Fibrinogen 10mg/dL. Peripheral smear was suggestive of acute myeloblastic leukemia. Which of the following is the most likely -
@@ -32282,7 +32282,7 @@ b) Reduced energy production
 c) Increased production of 2,3 bisphosphoglycerate
 d) Decreased production of 2,3 bisphosphoglycerate
 -----
-",3,3
+",3,1
 "-----
 Question:
 Kussmaul's sign is positive in 
@@ -32487,7 +32487,7 @@ b) Sural nerve
 c) Tibial nerve
 d) Superficial peroneal nerve
 -----
-",0,3
+",0,0
 "-----
 Question:
 A sick child laboratory test reveal low white blood count,metabolic acidosis,increased anion gap,mild hyperammonemia.Measurements of plasma amino acids reveal elevated glycine and measurement of urinary organic acids reveals increased amounts of propionic acid and methyl citrate. which of the following processes is most likely?
@@ -32497,7 +32497,7 @@ b) Propionic acidemia
 c) A fatty acid oxidation disorder
 d) Vitamin B12 deficiency
 -----
-",1,1
+",1,0
 "-----
 Question:
 A 10-year-old child has recurrent signs and symptoms of palpable purpura on the buttocks, arthralgias, colicky abdominal pain, diarrhea, and microscopic hematuria. Which of the following is the most likely diagnosis?
@@ -32537,7 +32537,7 @@ b) Total bilirubin only
 c) Direct bilirubin only
 d) Conjugated bilinibin only
 -----
-",0,3
+",0,0
 "-----
 Question:
 Lateral ventricle is connected to third ventricle by ?
@@ -32567,7 +32567,7 @@ b) Bhore committee
 c) Kaar Singh committee
 d) Mudaliar committee
 -----
-",1,1
+",1,3
 "-----
 Question:
 Most common posterior mediastinal tumor is:
@@ -32757,7 +32757,7 @@ b) Neuroblastoma
 c) Retinoblastoma
 d) Neuroblastoma
 -----
-",1,1
+",1,3
 "-----
 Question:
 2.IDDM patient presents with septal perforation of nose with brownish black discharge probable diagnosis is:
@@ -32817,7 +32817,7 @@ b) Bronchiectasis
 c) Atelectasis
 d) Pneumothorax
 -----
-",3,3
+",3,2
 "-----
 Question:
 A young woman with ataxia-telangiectasia syndrome.For each patient with a medical condition, select the most likely immune dysfunction.
@@ -32887,7 +32887,7 @@ b) Plain X-ray abdomen
 c) MRI
 d) CT scan
 -----
-",0,0
+",0,3
 "-----
 Question:
 The developmental Odontogenic cyst is
@@ -33117,7 +33117,7 @@ b) Depression
 c) Mania
 d) Bipolar disorder
 -----
-",1,3
+",1,1
 "-----
 Question:
 For pericardial calcifications, which is the best investigation -
@@ -33487,7 +33487,7 @@ b) 20-40 IU/L
 c) 40-60 IU/L
 d) 60-80 IU/L
 -----
-",0,3
+",0,0
 "-----
 Question:
 Which of the following disease is transmitted by phlebotomus argentipes-
@@ -33617,7 +33617,7 @@ b) CE-MRI
 c) PET
 d) SPECT
 -----
-",1,1
+",1,3
 "-----
 Question:
 Population attributable risk is defined as the difference between:
@@ -33707,7 +33707,7 @@ b) Alanine
 c) Bicarbonate
 d) Chylomicrons
 -----
-",0,1
+",0,0
 "-----
 Question:
 Target or Iris lesion are seen in:
@@ -34187,7 +34187,7 @@ b) 360-400 nm
 c) 290-320 nm
 d) 240-290 nm
 -----
-",2,1
+",2,3
 "-----
 Question:
 In follow up of BPH, most important indication of surgery is:
@@ -34477,7 +34477,7 @@ b) Cystine
 c) Arginine
 d) Seleno cysteine
 -----
-",3,3
+",3,0
 "-----
 Question:
 Treatment for fracture neck of femur in a 70 year old patient with avascular necrosis of head of femur?
@@ -34527,7 +34527,7 @@ b) Pterygium surgery
 c) Orbital surgery
 d) Glaucoma surgery
 -----
-",2,1
+",2,3
 "-----
 Question:
 An elderly house wife lost her husband who died suddenly of Myocardial infarction couple of years ago. They had been staying alone for almost a decade with infrequent visits from her son and grandchildren. About a week after the death she heard his voice clearly talking to her as he would in a routine manner from the next room. She went to check but saw nothing. Subsequently she often heard his voice conversing with her and she would also discuss her daily matters with him. This however, provoked anxiety and sadness of mood when she was preoccupied with his thought. She should be treated with -
@@ -34707,7 +34707,7 @@ b) Raised ICT
 c) Fracture femur
 d) Paraplegia
 -----
-",3,3
+",3,0
 "-----
 Question:
 GABA is produced from:
@@ -34727,7 +34727,7 @@ b) Measles
 c) Mumps
 d) Rubella
 -----
-",1,3
+",1,0
 "-----
 Question:
 In AS type of tympanogram, compliance:
@@ -34807,7 +34807,7 @@ b) Conray 420
 c) Dianosil
 d) Myodii
 -----
-",2,1
+",2,3
 "-----
 Question:
 The following phenomenon is responsible for antibiotic resistance in bacteria due to slime production -
@@ -34827,7 +34827,7 @@ b) Abdominal Aoic Aneurysm
 c) Thoracic Aoic Aneurysm
 d) Narrow superior mediastinum
 -----
-",0,3
+",0,2
 "-----
 Question:
 Schwaz operation is done in
@@ -34987,7 +34987,7 @@ b) Prosthetic cardiac valves
 c) Insulin pump
 d) Cochlear implants
 -----
-",0,3
+",0,1
 "-----
 Question:
 A 67-year-old male smoker was seen in the ER for evaluation of cough and treated for acute bronchitis. A CXR done at that time prompted a referral to the chest clinic. The patient gives a past history of myocardial infarction, but at the moment is asymptomatic. BP is 128/80 and cardiopulmonary exam is unremarkable. PPD is 7 mm. CXR is shown in. The likely diagnosis is
@@ -35187,7 +35187,7 @@ b) Viridans streptococci
 c) Enterococcus faecalis
 d) Coagulase negative Staphylococcus
 -----
-",2,3
+",2,0
 "-----
 Question:
 Most common inheritance of Achondroplasia is
@@ -35627,7 +35627,7 @@ b) Elimination of the drug is independent of the serum concentration.
 c) Elimination of the drug is propoional to the serum concentration
 d) Absorption of the drug is propoional to the serum concentration
 -----
-",2,1
+",2,0
 "-----
 Question:
 Negri bodies are characteristic of
@@ -35647,7 +35647,7 @@ b) CT
 c) Open surgical biopsy
 d) FNAC
 -----
-",2,2
+",2,3
 "-----
 Question:
 Cremastric muscle is supplied by:
@@ -35707,7 +35707,7 @@ b) K+ reabsorption
 c) Na+ reabsorption
 d) Cl- secretion
 -----
-",2,1
+",2,2
 "-----
 Question:
 Commonest cause of abdominal pain in children is -
@@ -35877,7 +35877,7 @@ b) IgG at Dermo-epiderrnal juction
 c) IgA at Dermo-epidermal junction
 d) IgG in dermis
 -----
-",0,2
+",0,3
 "-----
 Question:
 Underlying internal malignancy is not shown by
@@ -35907,7 +35907,7 @@ b) Ulnar nerve
 c) Median nerve
 d) Axillary nerve
 -----
-",2,2
+",2,3
 "-----
 Question:
 The ground glass ventricular septum is seen in
@@ -36097,7 +36097,7 @@ b) Cyanocobalamin
 c) Thiamine
 d) Folinic acid
 -----
-",3,3
+",3,0
 "-----
 Question:
 A two month old infant has undergone a major surgical procedure. Regarding postoperative pain relief which one of the following is recommended –
@@ -36467,7 +36467,7 @@ b) Seven
 c) Nine
 d) Twelve
 -----
-",1,1
+",1,3
 "-----
 Question:
 Kanavel's sign is diagnosed in
@@ -36507,7 +36507,7 @@ b) Arsenic
 c) Mercury
 d) Phosphorus
 -----
-",0,0
+",0,3
 "-----
 Question:
 Most common skin manifestation seen after 2 days of radiation therapy is?
@@ -37327,7 +37327,7 @@ b) Gram negative Diplococci in pus cells
 c) Gram negative bacilli
 d) Gram positive bacilli
 -----
-",1,0
+",1,3
 "-----
 Question:
 A middle aged man diagnosed of having T3N1M0 stage of carcinoma of larynx. Which among the following is the best treatment modality for this patient?
@@ -37457,7 +37457,7 @@ b) Bionator
 c) Frankel
 d) Twin block
 -----
-",2,3
+",2,1
 "-----
 Question:
 Obliteration of Costophrenic angle is seen in
@@ -37577,7 +37577,7 @@ b) Autosomal recessive
 c) x linked dominant
 d) x linked recessive
 -----
-",1,3
+",1,1
 "-----
 Question:
 A mother brought her child which has got a vascular plaque like lesion over the lateral aspect of forehead mainly involving ophthalmic and maxillary division of trigeminal nerve. Mother says that the lesion remains unchanged since bih. Also mother gives a history that the child is on valproate for seizure disorder. The probable diagnosis is
@@ -38127,7 +38127,7 @@ b) Polyuria
 c) Coma
 d) Pulmonary edema
 -----
-",3,0
+",3,3
 "-----
 Question:
 Calculate degree of freedom Material Location X Y Glass 8 23 Cupboard 56 3 Metal 1 14
@@ -38167,7 +38167,7 @@ b) Type B
 c) Type C
 d) Type D
 -----
-",1,3
+",1,2
 "-----
 Question:
 Spider leg sign on IVP suggests:
@@ -38547,7 +38547,7 @@ b) Cerebellum
 c) Spinothalmic tract
 d) Peripheral nerve
 -----
-",0,0
+",0,1
 "-----
 Question:
 In DIC, which is/are seen-
@@ -38957,7 +38957,7 @@ b) 5 mg/ kg
 c) 10 mg/kg
 d) 20 mg/kg
 -----
-",0,0
+",0,3
 "-----
 Question:
 Which nerve doesn't supply the laryngeal muscles?
@@ -39147,7 +39147,7 @@ b) DEC
 c) Praziquantel
 d) Albendazole
 -----
-",2,3
+",2,2
 "-----
 Question:
 Which of the following drug is corticosteroid synthesis inhibitor?
@@ -39187,7 +39187,7 @@ b) Verapamil
 c) Beta blockers
 d) Digoxin
 -----
-",3,3
+",3,2
 "-----
 Question:
 Glue ear -

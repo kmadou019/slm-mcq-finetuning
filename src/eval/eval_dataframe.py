@@ -64,7 +64,7 @@ def eval_dataframe(df_merged: pd.DataFrame,
                    option_c_col='option_c',
                    option_d_col='option_d',
                    correct_option_col='correct_option',
-                   lisa_sheet_col='content_gpt'):
+                   lisa_sheet_col='content_raw'):
     try:
         if compute_originality:
             df_merged = calculate_originality_for_df(df_merged,
@@ -189,8 +189,8 @@ def eval_dataframe_parallel(df_mcqs: pd.DataFrame,
     logger = logging.getLogger(__name__)
 
     # Ensure dataframes are the same length
-    if merge and len(df_mcqs) != len(df_lisa_sheets):
-        raise ValueError(f"Input dataframes must have the same length. Got {len(df_mcqs)} and {len(df_lisa_sheets)}.")
+    #if merge and len(df_mcqs) != len(df_lisa_sheets):
+    #    raise ValueError(f"Input dataframes must have the same length. Got {len(df_mcqs)} and {len(df_lisa_sheets)}.")
 
     # Calculate batch size
     total_rows = len(df_mcqs)
