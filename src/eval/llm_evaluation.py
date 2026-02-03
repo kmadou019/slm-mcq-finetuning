@@ -6,44 +6,19 @@ import re
 from pydantic import BaseModel
 
 
-def extraire_moyenne_scores(text):
-    """
-    Extrait une liste de dictionnaires JSON d'un texte et retourne la moyenne des scores.
-    Gère le cas où le texte contient ```json ... ```
-    
-    Args:
-        text (str): Texte contenant du JSON (avec ou sans balises ```json)
-    
-    Returns:
-        float: Moyenne des scores
-    """
-    # Supprimer les balises ```json et ```
-    text = re.sub(r'```json\s*', '', text)
-    text = re.sub(r'```\s*', '', text)
-    text = text.strip()
-    
-    # Parser le JSON
-    data = json.loads(text)
-    scores = [item["score"] for item in data]
-    
-    return sum(scores) / len(scores)
-
 
 def call_openai_api(client, system_prompt, user_prompt, temp=0.5, max_completion_tokens = 1):
     try:
         response = client.chat.completions.create(
             model="gpt-4o",
             temperature=temp,
-            max_completion_tokens=4000,
+            max_completion_tokens=max_completion_tokens,
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt}
             ],
         )
-        response  = response.choices[0].message.content
-        score = extraire_moyenne_scores(response)
-        print("Score:", score)
-        return score
+        return response.choices[0].message.content
     except Exception as e:
         print(f"Error occurred: {e}")
         return None

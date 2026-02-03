@@ -1,14 +1,65 @@
 #!/usr/bin/env python3
 from sys import argv
+from card import generer_mcq_multi_cartes, construire_params_depuis_csv
 
-if len(argv) >= 2 :
-    if argv[1] not in ["llama3_1_8b", "openbiollm_8b", "gemma2_9b", "medGemma_4b", "medGemma_27b", "qwen3_8b", "mistral_7b", "eurollm_9b", "apertus_8B", "qwen3_0.6b", "qwen3_1_7b", "qwen3_4b"]:
-        print("Please provide a valid model name: llama3_1_8b, openbiollm_8b, gemma2_9b, medGemma_4b, medGemma_27b, qwen3_0.6b, mistral_7b, eurollm_9b ,apertus_8B")
+if len(argv) >= 2:
+    # Vérifier le modèle (premier paramètre)
+    valid_models = [
+        "llama3_1_8b", "openbiollm_8b", "gemma2_9b", 
+        "medGemma_4b", "medGemma_27b", "qwen3_8b", 
+        "mistral_7b", "eurollm_9b", "apertus_8B", 
+        "qwen3_0.6b", "qwen3_1_7b", "qwen3_4b"
+    ]
+    
+    if argv[1] not in valid_models:
+        print(f"Error: Please provide a valid model name:")
+        for model in valid_models:
+            print(f"  - {model}")
         exit(1)
-    generated_qcm_file = argv[1] + ".csv"
-else :
-    print("Please provide the path to the generated QCM file.")
+    
+    model = argv[1]
+    generated_qcm_file = model + ".csv"
+    
+    # Extraire les indexes (tous les paramètres après le modèle)
+    indexes = []
+    if len(argv) >= 3:
+        try:
+            # Chaque paramètre suivant est un index
+            for i in range(2, len(argv)):
+                index = int(argv[i])
+                indexes.append(index)
+            
+            print(f"✓ Model: {model}")
+            print(f"✓ Generated QCM file: {generated_qcm_file}")
+            print(f"✓ Indexes: {indexes}")
+        
+        except ValueError:
+            print(f"Error: Invalid index at position {i}. All indexes must be integers.")
+            exit(1)
+    else:
+        print(f"✓ Model: {model}")
+        print(f"✓ Generated QCM file: {generated_qcm_file}")
+        print("⚠ No indexes provided (optional)")
+
+else:
+    print("Error: Missing model name")
+    print("\nUsage: ./code.py <model> [index1] [index2] [index3] ...")
+    print("\nValid models:")
+    valid_models = [
+        "llama3_1_8b", "openbiollm_8b", "gemma2_9b", 
+        "medGemma_4b", "medGemma_27b", "qwen3_8b", 
+        "mistral_7b", "eurollm_9b", "apertus_8B", 
+        "qwen3_0.6b", "qwen3_1_7b", "qwen3_4b"
+    ]
+    for model in valid_models:
+        print(f"  - {model}")
+    print("\nExamples:")
+    print("  ./code.py llama3_1_8b")
+    print("  ./code.py llama3_1_8b 1 2 3")
+    print("  ./code.py openbiollm_8b 8 5")
+    print("  ./code.py gemma2_9b 0 5 10 15")
     exit(1)
+
 from dotenv import load_dotenv
 # disable SSL check to download nltk pakages on MacOS
 
@@ -42,6 +93,7 @@ def main():
         system_prompts = json.load(file)
 
     df_mcq = pd.read_csv(os.environ.get('MODEL_MCQ_PATH') + "/" + generated_qcm_file)
+    df_mcq = df_mcq.loc[indexes]
     df_lisa_sheets = pd.read_csv(os.environ.get('LISA_SHEETS_PATH'))
 
     
@@ -58,22 +110,29 @@ def main():
                                       num_workers=10,
                                       lisa_sheet_id_col='id',
                                       lisa_sheet_col='content_raw',
-                                      compute_answerability=False,
-                                      compute_originality=False,
-                                      compute_readability=False,
-                                      compute_negation=False,
-                                      compute_is_question=False,
-                                      compute_relevance=False,
-                                      compute_ambiguity=False,
-                                      compute_disclosure=False,
-                                      compute_difficulty=False,
+                                      compute_answerability      =True,
+                                      compute_originality        =True,
+                                      compute_readability        =True,
+                                      compute_negation           =True,
+                                      compute_is_question        =True,
+                                      compute_relevance          =True,
+                                      compute_ambiguity          =True,
+                                      compute_disclosure         =True,
+                                      compute_difficulty         =True,
                                       compute_distractors_quality=True,
+                                      disclosure_system_prompt=system_prompts['disclosure_prompt'],
+                                      difficulty_system_prompt=system_prompts['difficulty_prompt'],
                                       distractors_quality_system_prompt=system_prompts['distractors_quality_prompt'],
                                       distractors_quality_col='distractor_quality',
                                       merge=True # set to True if your dataframe does not have the Lisa Sheet content
                                       )
+    
+
+    params_list = construire_params_depuis_csv(df_eval,model)
+    generer_mcq_multi_cartes(params_list, "mcq_cards.html")
 
     df_eval.to_csv(os.environ.get('MODEL_MCQ_EVAL_EXPORT_PATH') + "/" +"all__" +  generated_qcm_file, index=False)
+
 
 if __name__ == '__main__':
     main()

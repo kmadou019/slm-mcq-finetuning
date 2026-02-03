@@ -158,38 +158,16 @@ dataset_answerability = pd.concat(
 )
 print(len(dataset_answerability))
 
-
-models = [  
-      #Qwen
-          #("Qwen/Qwen3-0.6B","qwen3_0.6b"),
-          #("Qwen/Qwen3-1.7B","qwen3_1.7b"),
-          #("Qwen/Qwen3-4B-Instruct-2507","qwen3_4b"),
-          #("Qwen/Qwen3-8B-Base","qwen3_8b"),
-
-          #("mistralai/Mistral-7B-Instruct-v0.3","mistral_7b"),
-          #("utter-project/EuroLLM-9B-Instruct","eurollm_9b"),
-          #("swiss-ai/Apertus-8B-Instruct-2509","apertus_8B"),
-          #("google/gemma-2-9b-it","gemma2_9b"),
-          ("google/medgemma-27b-it","medGemma_27b"),
-          #("hf.co/mradermacher/Llama3-Instruct-OpenBioLLM-8B-merged-i1-GGUF:latest", "openbiollm_8b"),
-          #("meta-llama/Llama-3.1-8B-Instruct","llama3_1_8b"),
-          #("google/medgemma-4b-it","medGemma_4b"),
-      
-        ]
-
-
+model_name, save_name = ("hf.co/mradermacher/Llama3-Instruct-OpenBioLLM-8B-merged-i1-GGUF:latest", "openbiollm_8b")
 with open("answerability_output.txt", "a") as f:
     print("MedMCQA", file=f)
-    for model_name, save_name in models:
-        result = for_a_model(dataset_answerability, model_name, save_name)
-        percentage = (result["cop"] == result["llm_cop"]).mean() * 100
-        print(f"Answerability of {model_name}: {percentage:.2f}%", file=f)
+    result = for_a_model(dataset_answerability, model_name, save_name,True)
+    percentage = (result["cop"] == result["llm_cop"]).mean() * 100
+    print(f"Answerability of {model_name}: {percentage:.2f}%", file=f)
     
     print("UNESS", file=f)
     dataset_answerability = pd.read_json("../data/mcqs_answerability.json")
-    for model_name, save_name in models:
-        result = for_a_model(dataset_answerability, model_name, save_name + "_UNESS")
-        percentage = (result["cop"] == result["llm_cop"]).mean() * 100
-        print(f"Answerability of {model_name}: {percentage:.2f}%", file=f)
-
+    result = for_a_model(dataset_answerability, model_name, save_name + "_UNESS",True)
+    percentage = (result["cop"] == result["llm_cop"]).mean() * 100
+    print(f"Answerability of {model_name}: {percentage:.2f}%", file=f)
 

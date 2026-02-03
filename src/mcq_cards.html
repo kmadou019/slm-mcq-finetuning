@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCQ Acceptance Cards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .slides-wrapper {
+            display: flex;
+            height: 100%;
+            transition: transform 0.6s ease-in-out;
+        }
+        
+        .slide {
+            flex: 0 0 100%;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            padding: 20px;
+            scroll-behavior: smooth;
+        }
+        
+        .main-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            height: fit-content;
+            min-height: 100%;
+        }
+        
+        .column {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .header {
+            background-color: #999;
+            color: white;
+            padding: 12px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        
+        .header-info {
+            margin-bottom: 15px;
+            font-size: 13px;
+        }
+        
+        .header-info p {
+            margin: 4px 0;
+            line-height: 1.5;
+        }
+        
+        .header-info strong {
+            font-weight: 600;
+        }
+        
+        .mcq-section {
+            margin: 15px 0;
+            padding: 12px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #333;
+        }
+        
+        .mcq-section h3 {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .mcq-section p {
+            margin: 6px 0;
+            line-height: 1.5;
+            font-size: 13px;
+        }
+        
+        .options {
+            margin: 10px 0;
+            padding-left: 15px;
+        }
+        
+        .options p {
+            margin: 5px 0;
+        }
+        
+        .correct-option {
+            font-weight: bold;
+            color: #333;
+            margin-top: 8px;
+        }
+        
+        .section-title {
+            font-size: 14px;
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #333;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+            font-size: 12px;
+        }
+        
+        table th {
+            background-color: #f0f0f0;
+            padding: 8px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 1px solid #999;
+        }
+        
+        table td {
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        table tr:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .result {
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .result.pass {
+            color: #28a745;
+        }
+        
+        .result.warn {
+            color: #ff8c00;
+        }
+        
+        .decision-section {
+            margin: 15px 0;
+            padding: 12px;
+            background-color: #fff3cd;
+            border-left: 4px solid #ff8c00;
+            border-radius: 4px;
+        }
+        
+        .decision-section p {
+            margin: 4px 0;
+            font-size: 13px;
+        }
+        
+        .decision-section strong {
+            font-weight: bold;
+        }
+        
+        .audit-trail {
+            margin-top: 15px;
+            padding: 12px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        
+        .audit-trail h4 {
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+        
+        /* LISA Sheet Styles */
+        .lisa-header {
+            background-color: #333;
+            color: white;
+            padding: 12px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            border-radius: 4px;
+        }
+        
+        .lisa-metadata {
+            margin-bottom: 15px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        .lisa-metadata p {
+            margin: 5px 0;
+        }
+        
+        .lisa-metadata strong {
+            font-weight: 600;
+        }
+        
+        .lisa-item-parent {
+            background-color: #e8f4f8;
+            padding: 12px;
+            border-left: 4px solid #0077be;
+            border-radius: 4px;
+            margin: 12px 0;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+        
+        .lisa-item-parent-label {
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        
+        .lisa-section {
+            margin: 15px 0;
+            padding: 12px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #666;
+            border-radius: 4px;
+        }
+        
+        .lisa-section-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+        
+        .lisa-section-content {
+            font-size: 13px;
+            line-height: 1.6;
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+        }
+        
+        /* Navigation */
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 15px;
+            z-index: 100;
+            background: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        .nav-button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-button:hover {
+            background-color: #555;
+        }
+        
+        .nav-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        
+        .slide-counter {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        .slide-counter input {
+            width: 50px;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 14px;
+        }
+        
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background-color: #007bff;
+            transition: width 0.3s;
+            z-index: 101;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1400px) {
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="container">
+        <div class="slides-wrapper" id="slidesWrapper">
+            
+    <div class="slide" id="slide-0">
+        <div class="main-container">
+            <!-- Colonne MCQ Card -->
+            <div class="column">
+                <div class="card">
+                    <div class="header">MCQ Acceptance Card (example template)</div>
+                    
+                    <div class="header-info">
+                        <p><strong>Item ID:</strong> MCQ-000001</p>
+                        <p><strong>Source Material:</strong> OIC-005-03-A</p>
+                        <p><strong>Generator:</strong> apertus_8B</p>
+                        <p><strong>Output Format:</strong> CSV</p>
+                    </div>
+                    
+                    <div class="mcq-section">
+                        <h3>MCQ:</h3>
+                        <p>La responsabilité sans faute est engagée dans le cas d'un dommage lié aux soins survenu sans manquement aux règles professionnelles ou scientifiques, ni erreur. Quelle est la définition de cette responsabilité?</p>
+                        <div class="options">
+                            <p><strong>A)</strong> Elle est engagée lorsque le patient a donné son consentement éclairé.</p>
+<p><strong>B)</strong> Elle est engagée lorsque le dommage est survenu sans manquement aux règles professionnelles ou scientifiques, ni erreur.</p>
+<p><strong>C)</strong> Elle est engagée lorsque le dommage est survenu en raison d'une faute médicale.</p>
+<p><strong>D)</strong> Elle est engagée lorsque le dommage est survenu en raison d'une erreur médicale.</p>
+
+                        </div>
+                        <p class="correct-option"><strong>Correct option:</strong> b</p>
+                    </div>
+                    
+                    <div class="section-title">Section A — Deterministic Checks</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Result</th>
+                                <th>Threshold</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>Question mark present</td>
+            <td class="result pass">PASS</td>
+            <td>required</td>
+            <td>Question format validated</td>
+        </tr>
+        
+        <tr>
+            <td>No leading negation</td>
+            <td class="result pass">PASS</td>
+            <td>required</td>
+            <td>No negation</td>
+        </tr>
+        
+        <tr>
+            <td>Originality (integral)</td>
+            <td class="result pass">PASS</td>
+            <td>≥ 0.75</td>
+            <td>Score: 1.0</td>
+        </tr>
+        
+        <tr>
+            <td>Readability (FK grade)</td>
+            <td class="result pass">PASS</td>
+            <td>≥ 12</td>
+            <td>Score: 13.293709677419354</td>
+        </tr>
+        
+                        </tbody>
+                    </table>
+                    
+                    <div class="section-title">Section B — Judgment-Based Checks</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Result</th>
+                                <th>Score</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>Disclosure (answer leakage)</td>
+            <td class="result pass">PASS</td>
+            <td>True/False</td>
+            <td>Score: True</td>
+        </tr>
+        
+        <tr>
+            <td>Relevance to material</td>
+            <td class="result warn">WARN</td>
+            <td>0-1</td>
+            <td>Score: 0.7541348934173584</td>
+        </tr>
+        
+        <tr>
+            <td>Distractor plausibility</td>
+            <td class="result warn">WARN</td>
+            <td>True/False</td>
+            <td>Score: False</td>
+        </tr>
+        
+        <tr>
+            <td>Difficulty appropriateness</td>
+            <td class="result pass">PASS</td>
+            <td>low/med/high</td>
+            <td>Judge: low</td>
+        </tr>
+        
+                        </tbody>
+                    </table>
+                    
+                    <div class="decision-section">
+                        <p><strong>Decision Policy</strong></p>
+                        <p>Accept if all hard constraints pass and no critical AI-judge dimension fails.</p>
+                        <p style="margin-top: 8px;"><strong>Final decision:</strong> REVISE</p>
+                    </div>
+                    
+                    <div class="audit-trail">
+                        <h4>Audit Trail</h4>
+                        <p>Judge model: Automated, consistency: evaluated from CSV metrics.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Colonne LISA Sheet -->
+            <div class="column">
+                <div class="card">
+                    <div class="lisa-header">LISA Sheet - Objectif de Connaissance</div>
+                    
+                    <div class="lisa-metadata">
+                        <p><strong>Identifiant:</strong> OIC-005-03-A</p>
+                        <p><strong>Rang:</strong> A</p>
+                        <p><strong>Rubrique:</strong> Définition</p>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Intitulé</div>
+                        <div class="lisa-section-content">Connaître la définition de la responsabilité civile</div>
+                    </div>
+                    
+                    <div class="lisa-item-parent">
+                        <div class="lisa-item-parent-label">Item Parent:</div>
+                        <div></div>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Description</div>
+                        <div class="lisa-section-content">None</div>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Contenu</div>
+                        <div class="lisa-section-content">Les professionnels exerçant à titre libéral et les établissements de santé privés engagent leur responsabilité civile devant les juridictions de l’ordre judiciaire : tribunal de grande instance, cour d’appel, cour de cassation.<br/><br/>S’agissant des médecins salariés d’établissements, services ou organismes privés, ils n’engagent pas leur responsabilité civile personnelle du fait des dommages causés à un patient dès lors qu’ils n’outrepassent pas la mission qui leur a été confiée par leur employeur. C’est l’application du régime de responsabilité du commettant (l’employeur) du fait de son proposé (le médecin), lequel n’est pas incompatible avec le principe d’indépendance professionnelle du médecin dans l’exercice de son art.<br/><br/>Les praticiens hospitaliers engagent leur responsabilité civile professionnelle à raison des dommages survenus dans le cadre de leur secteur d’activité libérale au sein d’un établissement public de santé.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide" id="slide-1">
+        <div class="main-container">
+            <!-- Colonne MCQ Card -->
+            <div class="column">
+                <div class="card">
+                    <div class="header">MCQ Acceptance Card (example template)</div>
+                    
+                    <div class="header-info">
+                        <p><strong>Item ID:</strong> MCQ-000002</p>
+                        <p><strong>Source Material:</strong> OIC-005-04-A</p>
+                        <p><strong>Generator:</strong> apertus_8B</p>
+                        <p><strong>Output Format:</strong> CSV</p>
+                    </div>
+                    
+                    <div class="mcq-section">
+                        <h3>MCQ:</h3>
+                        <p>Quelle est la définition de la faute dans le contexte de la responsabilité médicale?</p>
+                        <div class="options">
+                            <p><strong>A)</strong> Une violation des connaissances médicales avérées ou des données acquises de la science.</p>
+<p><strong>B)</strong> Une atteinte au droit à la protection de la santé.</p>
+<p><strong>C)</strong> Une violation du devoir d’humanisme.</p>
+<p><strong>D)</strong> Une atteinte au droit au respect de la dignité.</p>
+
+                        </div>
+                        <p class="correct-option"><strong>Correct option:</strong> a</p>
+                    </div>
+                    
+                    <div class="section-title">Section A — Deterministic Checks</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Result</th>
+                                <th>Threshold</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>Question mark present</td>
+            <td class="result pass">PASS</td>
+            <td>required</td>
+            <td>Question format validated</td>
+        </tr>
+        
+        <tr>
+            <td>No leading negation</td>
+            <td class="result pass">PASS</td>
+            <td>required</td>
+            <td>No negation</td>
+        </tr>
+        
+        <tr>
+            <td>Originality (integral)</td>
+            <td class="result pass">PASS</td>
+            <td>≥ 0.75</td>
+            <td>Score: 1.0</td>
+        </tr>
+        
+        <tr>
+            <td>Readability (FK grade)</td>
+            <td class="result warn">WARN</td>
+            <td>≥ 12</td>
+            <td>Score: 11.784285714285716</td>
+        </tr>
+        
+                        </tbody>
+                    </table>
+                    
+                    <div class="section-title">Section B — Judgment-Based Checks</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Result</th>
+                                <th>Score</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>Disclosure (answer leakage)</td>
+            <td class="result warn">WARN</td>
+            <td>True/False</td>
+            <td>Score: False</td>
+        </tr>
+        
+        <tr>
+            <td>Relevance to material</td>
+            <td class="result warn">WARN</td>
+            <td>0-1</td>
+            <td>Score: 0.7690095901489258</td>
+        </tr>
+        
+        <tr>
+            <td>Distractor plausibility</td>
+            <td class="result warn">WARN</td>
+            <td>True/False</td>
+            <td>Score: False</td>
+        </tr>
+        
+        <tr>
+            <td>Difficulty appropriateness</td>
+            <td class="result pass">PASS</td>
+            <td>low/med/high</td>
+            <td>Judge: high</td>
+        </tr>
+        
+                        </tbody>
+                    </table>
+                    
+                    <div class="decision-section">
+                        <p><strong>Decision Policy</strong></p>
+                        <p>Accept if all hard constraints pass and no critical AI-judge dimension fails.</p>
+                        <p style="margin-top: 8px;"><strong>Final decision:</strong> REVISE</p>
+                    </div>
+                    
+                    <div class="audit-trail">
+                        <h4>Audit Trail</h4>
+                        <p>Judge model: Automated, consistency: evaluated from CSV metrics.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Colonne LISA Sheet -->
+            <div class="column">
+                <div class="card">
+                    <div class="lisa-header">LISA Sheet - Objectif de Connaissance</div>
+                    
+                    <div class="lisa-metadata">
+                        <p><strong>Identifiant:</strong> OIC-005-04-A</p>
+                        <p><strong>Rang:</strong> A</p>
+                        <p><strong>Rubrique:</strong> Définition</p>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Intitulé</div>
+                        <div class="lisa-section-content">Connaître la définition de la responsabilité administrative</div>
+                    </div>
+                    
+                    <div class="lisa-item-parent">
+                        <div class="lisa-item-parent-label">Item Parent:</div>
+                        <div></div>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Description</div>
+                        <div class="lisa-section-content">None</div>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Contenu</div>
+                        <div class="lisa-section-content">Il n’existe pas de relation juridique entre le médecin, agent du service public hospitalier, et son patient. Les deux ne sont en effet liés juridiquement qu’à l’établissement public de santé. S’agissant des actes réalisés par les médecins hospitaliers, c’est la responsabilité de l’établissement public de santé qui est engagée devant les juridictions de l’ordre administratif : tribunal administratif, cour administrative d’appel, Conseil d’Etat.<br/><br/>La jurisprudence administrative a défini une typologie des fautes susceptibles d’engager la responsabilité du service public :<br/><br/>- la faute de service : c’est la faute commise par un agent public dans l’exercice de ses fonctions, c’est-à-dire pendant le service, avec les moyens du service et en dehors de tout intérêt personnel ;<br/><br/>- la faute dans l’organisation et le fonctionnement du service : ont pu être qualifiés ainsi une insuffisance dans la surveillance des patients ou des locaux, le mauvais entretien des locaux et du matériel, la mauvaise coordination entre médecins, etc.<br/><br/>Doit être distinguée la faute personnelle ou détachable du service, qui engage la responsabilité civile personnelle de son auteur. Deux cas de figure peuvent être envisagées :<br/><br/>- soit elle a été commise en dehors du service et n’a aucun lien avec le service (exemple de la faute commise par un médecin dans des soins dispensés dans un cadre privé) ;<br/><br/>- soit elle a été commise dans le service mais elle s’en détache en raison de l’intention de nuire de son auteur ou de son exceptionnelle gravité (exemple du refus du chirurgien de garde de se déplacer pour un blessé par balle alors qu’il avait été averti par l’interne de la gravité de son état).</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide" id="slide-2">
+        <div class="main-container">
+            <!-- Colonne MCQ Card -->
+            <div class="column">
+                <div class="card">
+                    <div class="header">MCQ Acceptance Card (example template)</div>
+                    
+                    <div class="header-info">
+                        <p><strong>Item ID:</strong> MCQ-000003</p>
+                        <p><strong>Source Material:</strong> OIC-005-10-A</p>
+                        <p><strong>Generator:</strong> apertus_8B</p>
+                        <p><strong>Output Format:</strong> CSV</p>
+                    </div>
+                    
+                    <div class="mcq-section">
+                        <h3>MCQ:</h3>
+                        <p>Un protocole pluriprofessionnel est défini comme :</p>
+                        <div class="options">
+                            <p><strong>A)</strong> un ensemble de règles strictes pour la prise en charge d'une maladie</p>
+<p><strong>B)</strong> un consensus entre plusieurs professionnels sur la prise en charge d'une maladie</p>
+<p><strong>C)</strong> un document juridique pour la gestion des soins</p>
+<p><strong>D)</strong> un outil de formation pour les professionnels de santé</p>
+
+                        </div>
+                        <p class="correct-option"><strong>Correct option:</strong> b</p>
+                    </div>
+                    
+                    <div class="section-title">Section A — Deterministic Checks</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Result</th>
+                                <th>Threshold</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>Question mark present</td>
+            <td class="result warn">WARN</td>
+            <td>required</td>
+            <td>Not a question</td>
+        </tr>
+        
+        <tr>
+            <td>No leading negation</td>
+            <td class="result pass">PASS</td>
+            <td>required</td>
+            <td>No negation</td>
+        </tr>
+        
+        <tr>
+            <td>Originality (integral)</td>
+            <td class="result pass">PASS</td>
+            <td>≥ 0.75</td>
+            <td>Score: 1.0</td>
+        </tr>
+        
+        <tr>
+            <td>Readability (FK grade)</td>
+            <td class="result warn">WARN</td>
+            <td>≥ 12</td>
+            <td>Score: nan</td>
+        </tr>
+        
+                        </tbody>
+                    </table>
+                    
+                    <div class="section-title">Section B — Judgment-Based Checks</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Result</th>
+                                <th>Score</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>Disclosure (answer leakage)</td>
+            <td class="result pass">PASS</td>
+            <td>True/False</td>
+            <td>Score: True</td>
+        </tr>
+        
+        <tr>
+            <td>Relevance to material</td>
+            <td class="result warn">WARN</td>
+            <td>0-1</td>
+            <td>Score: 0.6365777850151062</td>
+        </tr>
+        
+        <tr>
+            <td>Distractor plausibility</td>
+            <td class="result warn">WARN</td>
+            <td>True/False</td>
+            <td>Score: False</td>
+        </tr>
+        
+        <tr>
+            <td>Difficulty appropriateness</td>
+            <td class="result pass">PASS</td>
+            <td>low/med/high</td>
+            <td>Judge: low</td>
+        </tr>
+        
+                        </tbody>
+                    </table>
+                    
+                    <div class="decision-section">
+                        <p><strong>Decision Policy</strong></p>
+                        <p>Accept if all hard constraints pass and no critical AI-judge dimension fails.</p>
+                        <p style="margin-top: 8px;"><strong>Final decision:</strong> REVISE</p>
+                    </div>
+                    
+                    <div class="audit-trail">
+                        <h4>Audit Trail</h4>
+                        <p>Judge model: Automated, consistency: evaluated from CSV metrics.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Colonne LISA Sheet -->
+            <div class="column">
+                <div class="card">
+                    <div class="lisa-header">LISA Sheet - Objectif de Connaissance</div>
+                    
+                    <div class="lisa-metadata">
+                        <p><strong>Identifiant:</strong> OIC-005-10-A</p>
+                        <p><strong>Rang:</strong> A</p>
+                        <p><strong>Rubrique:</strong> Définition</p>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Intitulé</div>
+                        <div class="lisa-section-content">Connaître la définition de l’infection nosocomiale</div>
+                    </div>
+                    
+                    <div class="lisa-item-parent">
+                        <div class="lisa-item-parent-label">Item Parent:</div>
+                        <div></div>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Description</div>
+                        <div class="lisa-section-content">None</div>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Contenu</div>
+                        <div class="lisa-section-content">Les infections nosocomiales sont les infections contractées au cours d’un séjour dans un établissement de santé (hôpital, clinique…). Elle est aussi appelée infection associée aux soins. Ceci veut dire que ces infections sont absentes au moment de l’admission du patient dans l’établissement. Cependant, si l’état infectieux du patient à l’admission est inconnu, l’infection est généralement considérée comme nosocomiale si elle apparaît après 48 heures d’hospitalisation. Si elle apparaît avant un tel délai, on considère en général qu’elle était en incubation lors de l’entrée dans l’établissement.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide" id="slide-3">
+        <div class="main-container">
+            <!-- Colonne MCQ Card -->
+            <div class="column">
+                <div class="card">
+                    <div class="header">MCQ Acceptance Card (example template)</div>
+                    
+                    <div class="header-info">
+                        <p><strong>Item ID:</strong> MCQ-000004</p>
+                        <p><strong>Source Material:</strong> OIC-009-01-A</p>
+                        <p><strong>Generator:</strong> apertus_8B</p>
+                        <p><strong>Output Format:</strong> CSV</p>
+                    </div>
+                    
+                    <div class="mcq-section">
+                        <h3>MCQ:</h3>
+                        <p>Quelle des affirmations suivantes est la plus proche de la manière dont les représentations du corps en bonne santé évoluent au fil du temps?</p>
+                        <div class="options">
+                            <p><strong>A)</strong> Elles restent stables et ne changent pas selon les époques.</p>
+<p><strong>B)</strong> Elles sont influencées par les traditions culturelles et le milieu naturel.</p>
+<p><strong>C)</strong> Elles sont déterminées uniquement par les avancées scientifiques.</p>
+<p><strong>D)</strong> Elles sont universelles et ne varient pas selon les sociétés.</p>
+
+                        </div>
+                        <p class="correct-option"><strong>Correct option:</strong> b</p>
+                    </div>
+                    
+                    <div class="section-title">Section A — Deterministic Checks</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Result</th>
+                                <th>Threshold</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>Question mark present</td>
+            <td class="result pass">PASS</td>
+            <td>required</td>
+            <td>Question format validated</td>
+        </tr>
+        
+        <tr>
+            <td>No leading negation</td>
+            <td class="result pass">PASS</td>
+            <td>required</td>
+            <td>No negation</td>
+        </tr>
+        
+        <tr>
+            <td>Originality (integral)</td>
+            <td class="result pass">PASS</td>
+            <td>≥ 0.75</td>
+            <td>Score: 1.0</td>
+        </tr>
+        
+        <tr>
+            <td>Readability (FK grade)</td>
+            <td class="result pass">PASS</td>
+            <td>≥ 12</td>
+            <td>Score: 12.453333333333333</td>
+        </tr>
+        
+                        </tbody>
+                    </table>
+                    
+                    <div class="section-title">Section B — Judgment-Based Checks</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Result</th>
+                                <th>Score</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>Disclosure (answer leakage)</td>
+            <td class="result warn">WARN</td>
+            <td>True/False</td>
+            <td>Score: False</td>
+        </tr>
+        
+        <tr>
+            <td>Relevance to material</td>
+            <td class="result warn">WARN</td>
+            <td>0-1</td>
+            <td>Score: 0.7563823461532593</td>
+        </tr>
+        
+        <tr>
+            <td>Distractor plausibility</td>
+            <td class="result warn">WARN</td>
+            <td>True/False</td>
+            <td>Score: False</td>
+        </tr>
+        
+        <tr>
+            <td>Difficulty appropriateness</td>
+            <td class="result pass">PASS</td>
+            <td>low/med/high</td>
+            <td>Judge: low</td>
+        </tr>
+        
+                        </tbody>
+                    </table>
+                    
+                    <div class="decision-section">
+                        <p><strong>Decision Policy</strong></p>
+                        <p>Accept if all hard constraints pass and no critical AI-judge dimension fails.</p>
+                        <p style="margin-top: 8px;"><strong>Final decision:</strong> REVISE</p>
+                    </div>
+                    
+                    <div class="audit-trail">
+                        <h4>Audit Trail</h4>
+                        <p>Judge model: Automated, consistency: evaluated from CSV metrics.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Colonne LISA Sheet -->
+            <div class="column">
+                <div class="card">
+                    <div class="lisa-header">LISA Sheet - Objectif de Connaissance</div>
+                    
+                    <div class="lisa-metadata">
+                        <p><strong>Identifiant:</strong> OIC-009-01-A</p>
+                        <p><strong>Rang:</strong> A</p>
+                        <p><strong>Rubrique:</strong> Définition</p>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Intitulé</div>
+                        <div class="lisa-section-content">Connaître la définition de l’éthique</div>
+                    </div>
+                    
+                    <div class="lisa-item-parent">
+                        <div class="lisa-item-parent-label">Item Parent:</div>
+                        <div></div>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Description</div>
+                        <div class="lisa-section-content">L'éthique : notion philosophique qui entend interroger et cerner la conduite juste. En médecine : l'interrogation, en vue de leur justification argumentée, des principes, valeurs et règles des actions du praticien et du chercheur</div>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Contenu</div>
+                        <div class="lisa-section-content">&lt;br /&gt;<br/><br/>=== Sens et définition de la démarche éthique, différente de la morale et de la déontologie ===<br/>L’éthique est une compétence des individus à réfléchir de façon critique sur la dimension morale de leurs actions et pratiques individuelles et collectives. C’est une capacité réflexive qui permet de questionner la moralité de ses actes et d’interroger la pertinence des valeurs, normes et règles qui enjoignent d’agir de telle ou telle façon. Elle est une compétence qui permet de remettre la morale en question, car elle est à la fois lieu de production des normes morales et lieu de leur remise en question. Là où la morale apporte des réponses et restreint la liberté, l’éthique permet de questionner ses choix, d’arbitrer entre des obligations morales contradictoires. L’éthique reconnait le pluralisme moral (des valeurs) mais aussi la nécessité de s’entendre au-delà de ce pluralisme, par le recours à la raison et la discussion dans un contexte démocratique.<br/><br/>Les questions induites dans la pratique médicale par l'évolution de la science et de notre société (droits des patients, accès aux soins, conception de la famille, usage de la génétique, conservation des gamètes et des embryons, prélèvements d'organes, informatisation des données du dossier médical, recherche biomédicale, perte d'autonomie, fin de la vie, etc.) imposent une réflexion individuelle et collective qui permet de penser les conséquences bonnes ou mauvaises des décisions et d'arbitrer des choix parfois complexes dans les pratiques de soins ou l'organisation du système de santé.<br/><br/>Chaque décision relève aujourd'hui d'un arbitrage pluridisciplinaire entre les données scientifiques médicales, les droits des personnes (protection des personnes, information, consentement), les désirs individuels, les valeurs et normes collectives et les contraintes économiques qui guident notre société.<br/><br/>La démarche éthique vise à organiser, face à chaque situation, la façon dont sont prises les décisions en fonction de ces différents éléments, parfois contradictoires. L'éthique n'est donc pas un jugement de valeur (comme la morale qui prescrit ou interdit), ni un code de bonnes pratiques souvent rattachées à des règles de droit (comme la déontologie), mais une démarche de réflexion et d’analyse permettant une aide à la décision. Ces distinctions sont importantes. La morale reflète l'état de pensée d'une société (ou d'une partie de la société) à un moment donné ou traduit un dogme. Elle découle d'un ensemble de principes qui déterminent le bien au sens d'Aristote : elle est normative, approuve ou réprouve, récompense ou sanctionne. La déontologie réunit, au sein d'un code, les règles de bonnes pratiques professionnelles qui balisent la relation soignant-soigné. Elle définit un cadre pour la responsabilité professionnelle et découle de principes issus du serment d'Hippocrate et de textes législatifs régissant la pratique médicale. Le droit, quant à lui, englobe l'ensemble des règles qui régissent notre société, les obligations et devoirs de chacun. Appliqué au système de soins et de santé publique, on parle de droit de la santé. Il émane de nombreux textes législatifs (loi sur les droits des patients, lois de bioéthique, lois organisant le système de santé…) et trouve place dans des codes (Code de santé publique, Code civil, Code pénal). Il est conçu pour gérer les conflits, décider de sanctions et d'indemnisations. Son application relève de la Justice. Déontologie et droit sont intimement mêlés et peuvent évoluer au fil du temps. L'éthique, quant à elle, est une démarche. Elle a pour but de réinterroger les principes moraux et les règles déontologiques et juridiques, en particulier quand ils ne permettent pas de donner des réponses conformes aux souhaits des personnes concernées ou que la situation qui se présente n'y trouve pas de réponse. L'éthique procède ainsi d'une réflexion active, collective, interactive, sur les valeurs humaines et sur les tensions entre des volontés et d'autres logiques. Elle étudie les valeurs, les tensions, les critères de choix et les différents scénarii possibles. Elle fonctionne par argumentations et débats. Dans la pratique médicale, elle est essentielle, car elle aide à guider les choix vers des décisions concrètes qui concernent au premier plan une personne singulière : le patient.<br/><br/>En tant que questionnement sur la manière dont nous devons agir, l’éthique est donc avant tout une réflexion pluridisciplinaire, au sens où l’ensemble des sciences humaines, le droit, les sciences de la santé et les professionnels du soin participent à la construction de la réflexion par leurs apports variés concernant tant la personne que la société et ses institutions. C’est pourquoi l’éthique n’est pas au sens strict du terme une science, elle ne fait pas l’objet d’un savoir positif, elle ne résulte pas simplement de l’étude des faits et des comportements. Une telle étude, si elle présente un réel intérêt, ne peut suffire pour établir des valeurs ; décrire et expliquer ce qui est, ne suffit pas pour définir ce qui doit être.<br/><br/>=== Ethique de la responsabilité et éthique appliquée ===<br/>Dans l'éthique de la responsabilité, il s'agit d'aller plus loin en se sentant responsable de toutes les conséquences de nos actes, avec en particulier la nécessité d'une analyse critique d'une règle ou d'une décision si celles-ci ne sont pas acceptées par tous ou adaptées pour tous, ''a fortiori'' si on sait qu'elles peuvent avoir des conséquences néfastes sur l'équilibre d'une personne ou d'un groupe de personnes. Ainsi, l'éthique de la responsabilité débouche sur la volonté d'agir non pas par des choix automatiques, mais à chaque fois de manière singulière et raisonnée, en faveur d'une approche conséquentialiste.<br/><br/>Cela impose de maximiser la connaissance des conséquences des choix et des actions. Ainsi, comme l'exige l'objectif de la responsabilité, toute éthique anticipative devient une branche de la recherche avec une obligation d'analyse collective qu'il convient de cultiver en suscitant la coopération de nombreux experts dans les domaines les plus divers, invitant le plus souvent à une approche de logiques croisées, pluridisciplinaires. Mais il convient aussi de débattre avec les personnes concernées, les patients ou plus largement les citoyens. Il y a donc nécessité que toute décision impliquant l'avenir d'une ou de plusieurs personnes, ''a fortiori'' de tous, soit au cœur d'une démarche qui regarde les conséquences futures, partageant les informations sur les bénéfices, les doutes, les incertitudes et les risques. Toute pratique qui comporte risque ou incertitude, pouvant mettre en cause une valeur particulière de l'humain, doit être débattue.<br/><br/>Cette approche s'applique totalement au domaine médical. Compte tenu des nombreux bouleversements qu'induit la médecine sur le cours de nos vies et sur l'organisation de la société (qualité de vie, avenir de la personne, handicap, mort, souffrance, procréation, dépistage et prédiction, etc.), la question d'un biopouvoir sur les individus a été posée et aujourd'hui, les risques et les pratiques médicales sont regardés à la loupe.<br/><br/>Si l'on souhaite promouvoir une démarche démocratique autour des questions de santé et promouvoir la liberté et la responsabilité des personnes dans ce domaine, il est nécessaire de lier progrès médical et reconnaissance des attentes sociales. Cette liaison est particulièrement importante dès que l'on touche à des pratiques ayant un fort impact sur la vie des citoyens, d'autant plus si les bénéfices sont débattus et/ou qu'il existe des risques.<br/><br/>C’est pourquoi l’éthique en santé se veut pratique, opérationnelle, c'est à dire une éthique qui ne soit pas que conceptuelle, mais qui débouche sur des avis permettant de guider l'action et les choix. C'est pourquoi on parle d'éthique appliquée.<br/><br/>L’éthique appliquée se fonde soit sur des analyses descriptives de cas, soit sur des enquêtes de situations, sur des études sociologiques ou ethno-médicales. Elle propose d'une part l'analyse de pratiques professionnelles, visant à aborder les attitudes et les comportements de tous les acteurs concernés face à une situation qui pose problème, et d'autre part une argumentation sur les conséquences des différents choix possibles. Quand elle s'applique à des cas particuliers, on parle de « micro-éthique », et quand il s'agit de choix de société ou de politiques de soins, on parle de « macro-éthique ». L’éthique appliquée vise à guider la prise de décision.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide" id="slide-4">
+        <div class="main-container">
+            <!-- Colonne MCQ Card -->
+            <div class="column">
+                <div class="card">
+                    <div class="header">MCQ Acceptance Card (example template)</div>
+                    
+                    <div class="header-info">
+                        <p><strong>Item ID:</strong> MCQ-000005</p>
+                        <p><strong>Source Material:</strong> OIC-005-01-A</p>
+                        <p><strong>Generator:</strong> apertus_8B</p>
+                        <p><strong>Output Format:</strong> CSV</p>
+                    </div>
+                    
+                    <div class="mcq-section">
+                        <h3>MCQ:</h3>
+                        <p>La responsabilité pénale d'un médecin est toujours personnelle et concerne à l'identique tous les médecins, quel que soit le cadre de leur exercice. Quelle est la nature de cette responsabilité?</p>
+                        <div class="options">
+                            <p><strong>A)</strong> Elle est collective et concerne les établissements de santé.</p>
+<p><strong>B)</strong> Elle est personnelle et concerne à l'identique tous les médecins.</p>
+<p><strong>C)</strong> Elle est personnelle et concerne les médecins en fonction de leur spécialité.</p>
+<p><strong>D)</strong> Elle est collective et concerne les médecins en fonction de leur spécialité.</p>
+
+                        </div>
+                        <p class="correct-option"><strong>Correct option:</strong> b</p>
+                    </div>
+                    
+                    <div class="section-title">Section A — Deterministic Checks</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Result</th>
+                                <th>Threshold</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>Question mark present</td>
+            <td class="result pass">PASS</td>
+            <td>required</td>
+            <td>Question format validated</td>
+        </tr>
+        
+        <tr>
+            <td>No leading negation</td>
+            <td class="result pass">PASS</td>
+            <td>required</td>
+            <td>No negation</td>
+        </tr>
+        
+        <tr>
+            <td>Originality (integral)</td>
+            <td class="result pass">PASS</td>
+            <td>≥ 0.75</td>
+            <td>Score: 1.0</td>
+        </tr>
+        
+        <tr>
+            <td>Readability (FK grade)</td>
+            <td class="result pass">PASS</td>
+            <td>≥ 12</td>
+            <td>Score: 13.073333333333338</td>
+        </tr>
+        
+                        </tbody>
+                    </table>
+                    
+                    <div class="section-title">Section B — Judgment-Based Checks</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Result</th>
+                                <th>Score</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>Disclosure (answer leakage)</td>
+            <td class="result pass">PASS</td>
+            <td>True/False</td>
+            <td>Score: True</td>
+        </tr>
+        
+        <tr>
+            <td>Relevance to material</td>
+            <td class="result pass">PASS</td>
+            <td>0-1</td>
+            <td>Score: 0.8158424496650696</td>
+        </tr>
+        
+        <tr>
+            <td>Distractor plausibility</td>
+            <td class="result warn">WARN</td>
+            <td>True/False</td>
+            <td>Score: False</td>
+        </tr>
+        
+        <tr>
+            <td>Difficulty appropriateness</td>
+            <td class="result pass">PASS</td>
+            <td>low/med/high</td>
+            <td>Judge: high</td>
+        </tr>
+        
+                        </tbody>
+                    </table>
+                    
+                    <div class="decision-section">
+                        <p><strong>Decision Policy</strong></p>
+                        <p>Accept if all hard constraints pass and no critical AI-judge dimension fails.</p>
+                        <p style="margin-top: 8px;"><strong>Final decision:</strong> REVISE</p>
+                    </div>
+                    
+                    <div class="audit-trail">
+                        <h4>Audit Trail</h4>
+                        <p>Judge model: Automated, consistency: evaluated from CSV metrics.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Colonne LISA Sheet -->
+            <div class="column">
+                <div class="card">
+                    <div class="lisa-header">LISA Sheet - Objectif de Connaissance</div>
+                    
+                    <div class="lisa-metadata">
+                        <p><strong>Identifiant:</strong> OIC-005-01-A</p>
+                        <p><strong>Rang:</strong> A</p>
+                        <p><strong>Rubrique:</strong> Définition</p>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Intitulé</div>
+                        <div class="lisa-section-content">Connaître la définition de la responsabilité sanction/indemnisation</div>
+                    </div>
+                    
+                    <div class="lisa-item-parent">
+                        <div class="lisa-item-parent-label">Item Parent:</div>
+                        <div></div>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Description</div>
+                        <div class="lisa-section-content">None</div>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Contenu</div>
+                        <div class="lisa-section-content">La responsabilité d’un professionnel de santé ou d’un établissement de santé peut être recherchée à deux fins : soit la sanction du professionnel ou de l’établissement, soit l’indemnisation de l’usager victime des conséquences d’un événement indésirable associé aux soins. La sanction peut être de nature pénale ou disciplinaire. L’indemnisation incombe au responsable (exercice libéral) ou à son employeur s’il est salarié (public ou privé). Elle peut également être obtenue via la procédure amiable devant les commissions de conciliation et d’indemnisation. L’indemnisation des victimes est assurée par l’obligation de souscription pour les médecins et les établissements de santé (public ou privé) d’une assurance de responsabilité civile professionnelle. En plus d’assurer l’indemnisation des victimes, cette assurance permet de couvrir les médecins salariés lorsque la faute est détachable du service ou lorsque la mission qui leur a été confiée est outrepassée.<br/><br/>L’indemnisation de l’usager s’estimant victime des conséquences dommageables d’un acte médical suppose qu’il apporte la preuve d’un dommage, d’un fait générateur de responsabilité et d’un lien de causalité entre le fait générateur et le dommage.<br/><br/>En matière de responsabilité des professionnels et des établissements de santé, le dommage peut prendre plusieurs formes. Il peut s’agir :<br/><br/>- d’une atteinte à l’intégrité physique ou psychique ;<br/><br/>- d’une perte de chance de survie ou de guérison ;<br/><br/>- d’une perte de chance d’avoir échappé à un risque qui s’est finalement réalisé (en cas de défaut d’information).<br/><br/>Le dommage doit être actuel et certain. Il peut être futur dès lors qu’il est certain (par exemple, la stérilité d’une enfant du fait d’une irradiation fautive).<br/><br/>Le lien de causalité entre le fait générateur de responsabilité (en règle générale, la faute) et le dommage doit être certain. Il n’a pas à être direct ni exclusif.<br/><br/>Parmi les éléments du triptyque fondant l’engagement de la responsabilité, le lien de causalité est habituellement le plus difficile à prouver par le patient. En effet, il est souvent complexe de distinguer les conséquences de la faute de celles de l’évolution spontanée de l’état de santé pathologique. Le juge admet que l’on puisse indemniser la perte de chance de survie ou de guérison. Dans ce cas, l’indemnisation est accordée à proportion de la probabilité de survie ou de guérison perdue du fait de la faute.<br/><br/>Le même raisonnement est appliqué en cas de défaut d’information. Dans cette hypothèse, le patient a perdu une chance de s’échapper au risque qui s’est finalement réalisé. En d’autres termes, s’il avait été informé du risque, il aurait pu choisir de le courir ou de renoncer à l’acte médical. L’indemnisation est accordée à proportion de la probabilité qu’il aurait eu de renoncer à l’acte s’il avait été informé du risque. Il en résulte que si l’acte était indispensable, le juge en déduit que même informé du risque, le patient n’aurait pas renoncé à l’acte. La perte de chance est donc nulle.<br/><br/>Le juge judiciaire comme le juge administratif admettent également qu’un défaut d’information ouvre droit à une indemnisation au titre du préjudice d’impréparation, distinct de la perte de chance. Cette indemnisation répare, lorsque le risque dont le patient n’a pas été informé s’est réalisé, les troubles qu’il a pu subir du fait qu’il n’a pas pu se préparer à cette éventualité, notamment en prenant certaines dispositions personnelles.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide" id="slide-5">
+        <div class="main-container">
+            <!-- Colonne MCQ Card -->
+            <div class="column">
+                <div class="card">
+                    <div class="header">MCQ Acceptance Card (example template)</div>
+                    
+                    <div class="header-info">
+                        <p><strong>Item ID:</strong> MCQ-000006</p>
+                        <p><strong>Source Material:</strong> OIC-005-02-A</p>
+                        <p><strong>Generator:</strong> apertus_8B</p>
+                        <p><strong>Output Format:</strong> CSV</p>
+                    </div>
+                    
+                    <div class="mcq-section">
+                        <h3>MCQ:</h3>
+                        <p>Les professionnels exerçant à titre libéral engagent leur responsabilité civile devant les juridictions de l’ordre judiciaire :</p>
+                        <div class="options">
+                            <p><strong>A)</strong> tribunal de grande instance, cour d’appel, cour de cassation</p>
+<p><strong>B)</strong> tribunal correctionnel, cour d’assises, cour de cassation</p>
+<p><strong>C)</strong> tribunal administratif, cour administrative d’appel, cour de cassation</p>
+<p><strong>D)</strong> tribunal de commerce, cour d’appel, cour de cassation</p>
+
+                        </div>
+                        <p class="correct-option"><strong>Correct option:</strong> a</p>
+                    </div>
+                    
+                    <div class="section-title">Section A — Deterministic Checks</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Result</th>
+                                <th>Threshold</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>Question mark present</td>
+            <td class="result warn">WARN</td>
+            <td>required</td>
+            <td>Not a question</td>
+        </tr>
+        
+        <tr>
+            <td>No leading negation</td>
+            <td class="result pass">PASS</td>
+            <td>required</td>
+            <td>No negation</td>
+        </tr>
+        
+        <tr>
+            <td>Originality (integral)</td>
+            <td class="result pass">PASS</td>
+            <td>≥ 0.75</td>
+            <td>Score: 1.0</td>
+        </tr>
+        
+        <tr>
+            <td>Readability (FK grade)</td>
+            <td class="result warn">WARN</td>
+            <td>≥ 12</td>
+            <td>Score: nan</td>
+        </tr>
+        
+                        </tbody>
+                    </table>
+                    
+                    <div class="section-title">Section B — Judgment-Based Checks</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Result</th>
+                                <th>Score</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>Disclosure (answer leakage)</td>
+            <td class="result warn">WARN</td>
+            <td>True/False</td>
+            <td>Score: False</td>
+        </tr>
+        
+        <tr>
+            <td>Relevance to material</td>
+            <td class="result warn">WARN</td>
+            <td>0-1</td>
+            <td>Score: 0.7143037915229797</td>
+        </tr>
+        
+        <tr>
+            <td>Distractor plausibility</td>
+            <td class="result warn">WARN</td>
+            <td>True/False</td>
+            <td>Score: False</td>
+        </tr>
+        
+        <tr>
+            <td>Difficulty appropriateness</td>
+            <td class="result pass">PASS</td>
+            <td>low/med/high</td>
+            <td>Judge: high</td>
+        </tr>
+        
+                        </tbody>
+                    </table>
+                    
+                    <div class="decision-section">
+                        <p><strong>Decision Policy</strong></p>
+                        <p>Accept if all hard constraints pass and no critical AI-judge dimension fails.</p>
+                        <p style="margin-top: 8px;"><strong>Final decision:</strong> REVISE</p>
+                    </div>
+                    
+                    <div class="audit-trail">
+                        <h4>Audit Trail</h4>
+                        <p>Judge model: Automated, consistency: evaluated from CSV metrics.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Colonne LISA Sheet -->
+            <div class="column">
+                <div class="card">
+                    <div class="lisa-header">LISA Sheet - Objectif de Connaissance</div>
+                    
+                    <div class="lisa-metadata">
+                        <p><strong>Identifiant:</strong> OIC-005-02-A</p>
+                        <p><strong>Rang:</strong> A</p>
+                        <p><strong>Rubrique:</strong> Définition</p>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Intitulé</div>
+                        <div class="lisa-section-content">Connaître la définition de la responsabilité pénale</div>
+                    </div>
+                    
+                    <div class="lisa-item-parent">
+                        <div class="lisa-item-parent-label">Item Parent:</div>
+                        <div></div>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Description</div>
+                        <div class="lisa-section-content">None</div>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Contenu</div>
+                        <div class="lisa-section-content">La responsabilité pénale a une fonction répressive ayant pour vocation de sanctionner des individus dont le comportement est réprouvé dans notre société. Elle est toujours personnelle, concernant à l’identique tous les médecins (y compris les internes), quel que soit le cadre de leur exercice. Elle peut également concerner les établissements de santé, en leur qualité de personnes morales.<br/><br/>Les comportements que la société définit comme répréhensibles sont appelés infractions. Celle-ci sont énumérées dans le Code pénal et classées en trois catégories par ordre de gravité : contraventions, délits, crimes.<br/><br/>'''Infractions'''<br/><br/>En dehors de certaines dispositions particulières liées au non-respect des conditions spécifiques à certaines actions de soins (actes d’assistance médicale à la procréation, activités de recherche biomédicale, etc.), les infractions qui peuvent être reprochées à un médecin peuvent également l’être à tout citoyen. Toutefois, les médecins sont exposés à commettre certaines infractions plus que d’autres. On peut en citer trois grands types du fait de l’exercice de soin : celles qui résultent de la violation d’un devoir d’humanisme, les blessures et l’homicide involontaires et les blessures et l’homicide volontaire.<br/><br/>'''Violation d’un devoir d’humanisme'''<br/><br/>La violation d’un devoir d’humanisme concerne principalement 1/ la rédaction de faux certificats (article 441-7 du Code pénal), 2/ la violation du secret professionnel (article 226-13 du Code pénal) et 3/ la non-assistance à personne en péril (article 226-3 du Code pénal, encadré 5.1). Il faut noter que le défaut d’information au patient ne constitue pas une infraction pénale. Ce défaut est par contre une cause potentielle de responsabilité civile.<br/><br/>'''Homicide et blessures involontaires'''<br/><br/>L’homicide et les blessures involontaires recouvrent la majeure partie des infractions reprochées à un médecin (articles 221-6, 222-19 et 222-20 du Code pénal). La mort d’un patient ou ses blessures sont supposées résulter d’une faute par maladresse, imprudence, inattention, négligence ou manquement à une obligation de sécurité. Le médecin mis en cause n’a potentiellement pas respecté les données acquises de la science ou a commis une faute « banale » dans l’élaboration d’un diagnostic, dans la prescription ou la réalisation d’un traitement. Pour que l’infraction existe, il faut que le dommage et le lien de causalité certain avec la faute soient établis. Le lien de causalité peut être soit direct, soit indirect, à condition que la faute commise soit dite qualifiée, c’est-à-dire ayant créé ou contribué à créer la situation qui a contribué au dommage, ou n’ayant pas pris les mesures nécessaires pour l’éviter. On distingue deux types de fautes qualifiées :<br/><br/>- la faute délibérée : il s’agit d’une violation d’une obligation particulière de prudence ou de sécurité prévue par la loi ou le règlement. Elle nécessite de violer délibérément (donc de façon consciente) une règle de prudence ou de sécurité.<br/><br/>- la faute caractérisée : il s’agit d’une faute d’imprudence, de négligence, un manquement à une obligation de prudence ou de sécurité qui expose le patient à un risque d’une particulière gravité, que le médecin ne peut ignorer.<br/><br/>'''Homicide et blessures volontaires'''<br/><br/>Cela reste des infractions rares en responsabilité médicale. Elle se résument pour l’essentiel à la question de :<br/><br/>- l’euthanasie ;<br/><br/>- l’absence d’obtention d’un consentement d’un patient à un acte médical ;<br/><br/>- le non-respect des conditions de licéité de certains actes médicaux, encadrés par des lois spécifiques : interruption de grossesse, stérilisation à but contraceptif, prélèvements d’organes, expérimentation chez l’homme, etc.<br/><br/>'''Mise en œuvre de la responsabilité pénale'''<br/><br/>'''Poursuites'''<br/><br/>L’initiative des poursuites appartient au procureur de la République, qui décide des suites à donner aux plaintes, dénonciations et enquêtes de police. Il peut classer l’affaire sans suite, renvoyer directement l’auteur devant la juridiction de jugement ou requérir l’ouverture d’une information judiciaire.<br/><br/>Si l’affaire n’est pas classée sans suite, l’étape de l’information judiciaire est la règle en matière médicale, compte tenu de la complexité fréquente des dossiers.<br/><br/>'''Jugement'''<br/><br/>Les contraventions sont jugées par le tribunal de police et passibles d’amendes, les délits par le tribunal correctionnel et passibles de peines d’emprisonnement et les crimes par la cour d’assises et passibles de peines de réclusion criminelle.<br/><br/>Les infractions reprochées aux médecins relèvent habituellement du tribunal correctionnel, constituant pour l’essentiel des délits exposant à des peines d’emprisonnement, pouvant être assorties du sursis, et à des amendes.<br/><br/>Le patient victime peut demander en parallèle de la sanction pénale l’indemnisation de son dommage, au cours du même procès, en se constituant partie civile.<br/><br/>&lt;br /&gt;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="slide" id="slide-6">
+        <div class="main-container">
+            <!-- Colonne MCQ Card -->
+            <div class="column">
+                <div class="card">
+                    <div class="header">MCQ Acceptance Card (example template)</div>
+                    
+                    <div class="header-info">
+                        <p><strong>Item ID:</strong> MCQ-000007</p>
+                        <p><strong>Source Material:</strong> OIC-005-02-A</p>
+                        <p><strong>Generator:</strong> apertus_8B</p>
+                        <p><strong>Output Format:</strong> CSV</p>
+                    </div>
+                    
+                    <div class="mcq-section">
+                        <h3>MCQ:</h3>
+                        <p>La responsabilité administrative du médecin hospitalier est engagée devant les juridictions de l’ordre administratif lorsque :</p>
+                        <div class="options">
+                            <p><strong>A)</strong> Il commet une faute personnelle ou détachable du service.</p>
+<p><strong>B)</strong> Il commet une faute de service.</p>
+<p><strong>C)</strong> Il commet une faute dans l’organisation et le fonctionnement du service.</p>
+<p><strong>D)</strong> Il commet une faute dans l’exercice de ses fonctions.</p>
+
+                        </div>
+                        <p class="correct-option"><strong>Correct option:</strong> b</p>
+                    </div>
+                    
+                    <div class="section-title">Section A — Deterministic Checks</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Result</th>
+                                <th>Threshold</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>Question mark present</td>
+            <td class="result warn">WARN</td>
+            <td>required</td>
+            <td>Not a question</td>
+        </tr>
+        
+        <tr>
+            <td>No leading negation</td>
+            <td class="result pass">PASS</td>
+            <td>required</td>
+            <td>No negation</td>
+        </tr>
+        
+        <tr>
+            <td>Originality (integral)</td>
+            <td class="result pass">PASS</td>
+            <td>≥ 0.75</td>
+            <td>Score: 1.0</td>
+        </tr>
+        
+        <tr>
+            <td>Readability (FK grade)</td>
+            <td class="result warn">WARN</td>
+            <td>≥ 12</td>
+            <td>Score: nan</td>
+        </tr>
+        
+                        </tbody>
+                    </table>
+                    
+                    <div class="section-title">Section B — Judgment-Based Checks</div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dimension</th>
+                                <th>Result</th>
+                                <th>Score</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+        <tr>
+            <td>Disclosure (answer leakage)</td>
+            <td class="result warn">WARN</td>
+            <td>True/False</td>
+            <td>Score: False</td>
+        </tr>
+        
+        <tr>
+            <td>Relevance to material</td>
+            <td class="result warn">WARN</td>
+            <td>0-1</td>
+            <td>Score: 0.7948817014694214</td>
+        </tr>
+        
+        <tr>
+            <td>Distractor plausibility</td>
+            <td class="result pass">PASS</td>
+            <td>True/False</td>
+            <td>Score: True</td>
+        </tr>
+        
+        <tr>
+            <td>Difficulty appropriateness</td>
+            <td class="result pass">PASS</td>
+            <td>low/med/high</td>
+            <td>Judge: low</td>
+        </tr>
+        
+                        </tbody>
+                    </table>
+                    
+                    <div class="decision-section">
+                        <p><strong>Decision Policy</strong></p>
+                        <p>Accept if all hard constraints pass and no critical AI-judge dimension fails.</p>
+                        <p style="margin-top: 8px;"><strong>Final decision:</strong> REVISE</p>
+                    </div>
+                    
+                    <div class="audit-trail">
+                        <h4>Audit Trail</h4>
+                        <p>Judge model: Automated, consistency: evaluated from CSV metrics.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Colonne LISA Sheet -->
+            <div class="column">
+                <div class="card">
+                    <div class="lisa-header">LISA Sheet - Objectif de Connaissance</div>
+                    
+                    <div class="lisa-metadata">
+                        <p><strong>Identifiant:</strong> OIC-005-02-A</p>
+                        <p><strong>Rang:</strong> A</p>
+                        <p><strong>Rubrique:</strong> Définition</p>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Intitulé</div>
+                        <div class="lisa-section-content">Connaître la définition de la responsabilité pénale</div>
+                    </div>
+                    
+                    <div class="lisa-item-parent">
+                        <div class="lisa-item-parent-label">Item Parent:</div>
+                        <div></div>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Description</div>
+                        <div class="lisa-section-content">None</div>
+                    </div>
+                    
+                    <div class="lisa-section">
+                        <div class="lisa-section-title">Contenu</div>
+                        <div class="lisa-section-content">La responsabilité pénale a une fonction répressive ayant pour vocation de sanctionner des individus dont le comportement est réprouvé dans notre société. Elle est toujours personnelle, concernant à l’identique tous les médecins (y compris les internes), quel que soit le cadre de leur exercice. Elle peut également concerner les établissements de santé, en leur qualité de personnes morales.<br/><br/>Les comportements que la société définit comme répréhensibles sont appelés infractions. Celle-ci sont énumérées dans le Code pénal et classées en trois catégories par ordre de gravité : contraventions, délits, crimes.<br/><br/>'''Infractions'''<br/><br/>En dehors de certaines dispositions particulières liées au non-respect des conditions spécifiques à certaines actions de soins (actes d’assistance médicale à la procréation, activités de recherche biomédicale, etc.), les infractions qui peuvent être reprochées à un médecin peuvent également l’être à tout citoyen. Toutefois, les médecins sont exposés à commettre certaines infractions plus que d’autres. On peut en citer trois grands types du fait de l’exercice de soin : celles qui résultent de la violation d’un devoir d’humanisme, les blessures et l’homicide involontaires et les blessures et l’homicide volontaire.<br/><br/>'''Violation d’un devoir d’humanisme'''<br/><br/>La violation d’un devoir d’humanisme concerne principalement 1/ la rédaction de faux certificats (article 441-7 du Code pénal), 2/ la violation du secret professionnel (article 226-13 du Code pénal) et 3/ la non-assistance à personne en péril (article 226-3 du Code pénal, encadré 5.1). Il faut noter que le défaut d’information au patient ne constitue pas une infraction pénale. Ce défaut est par contre une cause potentielle de responsabilité civile.<br/><br/>'''Homicide et blessures involontaires'''<br/><br/>L’homicide et les blessures involontaires recouvrent la majeure partie des infractions reprochées à un médecin (articles 221-6, 222-19 et 222-20 du Code pénal). La mort d’un patient ou ses blessures sont supposées résulter d’une faute par maladresse, imprudence, inattention, négligence ou manquement à une obligation de sécurité. Le médecin mis en cause n’a potentiellement pas respecté les données acquises de la science ou a commis une faute « banale » dans l’élaboration d’un diagnostic, dans la prescription ou la réalisation d’un traitement. Pour que l’infraction existe, il faut que le dommage et le lien de causalité certain avec la faute soient établis. Le lien de causalité peut être soit direct, soit indirect, à condition que la faute commise soit dite qualifiée, c’est-à-dire ayant créé ou contribué à créer la situation qui a contribué au dommage, ou n’ayant pas pris les mesures nécessaires pour l’éviter. On distingue deux types de fautes qualifiées :<br/><br/>- la faute délibérée : il s’agit d’une violation d’une obligation particulière de prudence ou de sécurité prévue par la loi ou le règlement. Elle nécessite de violer délibérément (donc de façon consciente) une règle de prudence ou de sécurité.<br/><br/>- la faute caractérisée : il s’agit d’une faute d’imprudence, de négligence, un manquement à une obligation de prudence ou de sécurité qui expose le patient à un risque d’une particulière gravité, que le médecin ne peut ignorer.<br/><br/>'''Homicide et blessures volontaires'''<br/><br/>Cela reste des infractions rares en responsabilité médicale. Elle se résument pour l’essentiel à la question de :<br/><br/>- l’euthanasie ;<br/><br/>- l’absence d’obtention d’un consentement d’un patient à un acte médical ;<br/><br/>- le non-respect des conditions de licéité de certains actes médicaux, encadrés par des lois spécifiques : interruption de grossesse, stérilisation à but contraceptif, prélèvements d’organes, expérimentation chez l’homme, etc.<br/><br/>'''Mise en œuvre de la responsabilité pénale'''<br/><br/>'''Poursuites'''<br/><br/>L’initiative des poursuites appartient au procureur de la République, qui décide des suites à donner aux plaintes, dénonciations et enquêtes de police. Il peut classer l’affaire sans suite, renvoyer directement l’auteur devant la juridiction de jugement ou requérir l’ouverture d’une information judiciaire.<br/><br/>Si l’affaire n’est pas classée sans suite, l’étape de l’information judiciaire est la règle en matière médicale, compte tenu de la complexité fréquente des dossiers.<br/><br/>'''Jugement'''<br/><br/>Les contraventions sont jugées par le tribunal de police et passibles d’amendes, les délits par le tribunal correctionnel et passibles de peines d’emprisonnement et les crimes par la cour d’assises et passibles de peines de réclusion criminelle.<br/><br/>Les infractions reprochées aux médecins relèvent habituellement du tribunal correctionnel, constituant pour l’essentiel des délits exposant à des peines d’emprisonnement, pouvant être assorties du sursis, et à des amendes.<br/><br/>Le patient victime peut demander en parallèle de la sanction pénale l’indemnisation de son dommage, au cours du même procès, en se constituant partie civile.<br/><br/>&lt;br /&gt;</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <button class="nav-button" id="prevBtn" onclick="previousSlide()">← Précédent</button>
+        <div class="slide-counter">
+            <span>Carte</span>
+            <input type="number" id="slideInput" min="1" max="7" value="1" onchange="goToSlide(this.value)">
+            <span>/ 7</span>
+        </div>
+        <button class="nav-button" id="nextBtn" onclick="nextSlide()">Suivant →</button>
+    </div>
+    
+    <script>
+        let currentSlide = 0;
+        const totalSlides = 7;
+        const slidesWrapper = document.getElementById('slidesWrapper');
+        const slideInput = document.getElementById('slideInput');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progressBar = document.getElementById('progressBar');
+        
+        function showSlide(n) {
+            if (n >= totalSlides) {
+                currentSlide = totalSlides - 1;
+            }
+            if (n < 0) {
+                currentSlide = 0;
+            }
+            
+            const offset = -currentSlide * 100;
+            slidesWrapper.style.transform = `translateX(${offset}%)`;
+            
+            slideInput.value = currentSlide + 1;
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === totalSlides - 1;
+            
+            const progress = ((currentSlide + 1) / totalSlides) * 100;
+            progressBar.style.width = progress + '%';
+        }
+        
+        function nextSlide() {
+            currentSlide++;
+            showSlide(currentSlide);
+        }
+        
+        function previousSlide() {
+            currentSlide--;
+            showSlide(currentSlide);
+        }
+        
+        function goToSlide(n) {
+            currentSlide = parseInt(n) - 1;
+            showSlide(currentSlide);
+        }
+        
+        // Contrôles au clavier
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowRight') {
+                nextSlide();
+            } else if (event.key === 'ArrowLeft') {
+                previousSlide();
+            }
+        });
+        
+        // Initialiser
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
