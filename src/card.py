@@ -158,7 +158,7 @@ def construire_params_depuis_csv(df, model):
 
 def generer_carte_mcq(card_data, index):
     """
-    Génère le HTML pour une seule carte MCQ
+    Génère le HTML pour une seule carte MCQ avec champ feedback
     """
     
     # Parser LISA
@@ -277,6 +277,11 @@ def generer_carte_mcq(card_data, index):
                         <button class="btn-accept" onclick="acceptCard({index})">✓ Accepter</button>
                         <button class="btn-reject" onclick="rejectCard({index})">✗ Refuser</button>
                     </div>
+                    
+                    <div class="feedback-section">
+                        <label for="feedback-{index}"><strong>Feedback (optionnel):</strong></label>
+                        <textarea id="feedback-{index}" class="feedback-textarea" placeholder="Entrez votre feedback ici..." onchange="saveFeedback({index})" data-index="{index}"></textarea>
+                    </div>
                 </div>
             </div>
             
@@ -321,7 +326,7 @@ def generer_carte_mcq(card_data, index):
 
 def generer_mcq_multi_cartes(params_list, filename="mcq_multi_cartes.html"):
     """
-    Génère une page avec plusieurs cartes MCQ + LISA Sheets avec défilement et validation
+    Génère une page avec plusieurs cartes MCQ + LISA Sheets avec défilement, validation et feedback
     """
     
     # Générer les cartes
@@ -605,6 +610,43 @@ def generer_mcq_multi_cartes(params_list, filename="mcq_multi_cartes.html"):
             border: 3px solid #0056b3;
         }}
         
+        .feedback-section {{
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e7f3ff;
+            border-left: 4px solid #0077be;
+            border-radius: 4px;
+        }}
+        
+        .feedback-section label {{
+            display: block;
+            margin-bottom: 8px;
+            font-size: 13px;
+            color: #333;
+        }}
+        
+        .feedback-textarea {{
+            width: 100%;
+            min-height: 100px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 13px;
+            resize: vertical;
+            border: 2px solid #0077be;
+        }}
+        
+        .feedback-textarea:focus {{
+            outline: none;
+            border-color: #005a9f;
+            box-shadow: 0 0 5px rgba(0, 119, 182, 0.3);
+        }}
+        
+        .feedback-textarea::placeholder {{
+            color: #999;
+        }}
+        
         /* LISA Sheet Styles */
         .lisa-header {{
             background-color: #333;
@@ -761,9 +803,10 @@ def generer_mcq_multi_cartes(params_list, filename="mcq_multi_cartes.html"):
         // Clé unique pour cette génération (basée sur le nombre de cartes et les données)
         const generationKey = 'mcq_validations_' + {nombre_cartes} + '_' + JSON.stringify({cartes_json}).substring(0, 50).replace(/[^a-zA-Z0-9]/g, '');
         
-        // Stockage des validations et des décisions
+        // Stockage des validations, des décisions et des feedbacks
         let validations = {{}};
         let cardDecisions = {{}};
+        let cardFeedbacks = {{}};
         const cardData = {cartes_json};
         
         let currentSlide = 0;
@@ -774,9 +817,10 @@ def generer_mcq_multi_cartes(params_list, filename="mcq_multi_cartes.html"):
         const nextBtn = document.getElementById('nextBtn');
         const progressBar = document.getElementById('progressBar');
         
-        // Initialiser les décisions
+        // Initialiser les décisions et feedbacks
         for (let i = 0; i < totalSlides; i++) {{
             cardDecisions[i] = null;
+            cardFeedbacks[i] = '';
         }}
         
         // Charger les validations depuis localStorage si la clé correspond
@@ -787,6 +831,7 @@ def generer_mcq_multi_cartes(params_list, filename="mcq_multi_cartes.html"):
                     const data = JSON.parse(stored);
                     validations = data.validations || {{}};
                     cardDecisions = data.decisions || {{}};
+                    cardFeedbacks = data.feedbacks || {{}};
                     
                     // Restaurer les checkboxes
                     document.querySelectorAll('.validation-checkbox').forEach(checkbox => {{
@@ -796,12 +841,20 @@ def generer_mcq_multi_cartes(params_list, filename="mcq_multi_cartes.html"):
                         }}
                     }});
                     
+                    // Restaurer les feedbacks
+                    for (let i = 0; i < totalSlides; i++) {{
+                        const feedbackTextarea = document.getElementById(`feedback-${{i}}`);
+                        if (feedbackTextarea && cardFeedbacks[i]) {{
+                            feedbackTextarea.value = cardFeedbacks[i];
+                        }}
+                    }}
+                    
                     // Restaurer les boutons
                     for (let i = 0; i < totalSlides; i++) {{
                         updateButtonStates(i);
                     }}
                     
-                    console.log('✓ Validations restaurées depuis localStorage');
+                    console.log('✓ Validations et feedbacks restaurés depuis localStorage');
                 }}
             }} catch (e) {{
                 console.error('Erreur lors du chargement des validations:', e);
@@ -814,6 +867,7 @@ def generer_mcq_multi_cartes(params_list, filename="mcq_multi_cartes.html"):
                 const data = {{
                     validations: validations,
                     decisions: cardDecisions,
+                    feedbacks: cardFeedbacks,
                     timestamp: new Date().toISOString()
                 }};
                 localStorage.setItem(generationKey, JSON.stringify(data));
@@ -830,6 +884,14 @@ def generer_mcq_multi_cartes(params_list, filename="mcq_multi_cartes.html"):
                 saveValidations();
             }});
         }});
+        
+        function saveFeedback(index) {{
+            const feedbackTextarea = document.getElementById(`feedback-${{index}}`);
+            if (feedbackTextarea) {{
+                cardFeedbacks[index] = feedbackTextarea.value;
+                saveValidations();
+            }}
+        }}
         
         function acceptCard(index) {{
             cardDecisions[index] = 'ACCEPT';
@@ -884,6 +946,7 @@ def generer_mcq_multi_cartes(params_list, filename="mcq_multi_cartes.html"):
                     }},
                     validated_fields: cardValidations,
                     human_decision: cardDecisions[i],
+                    human_feedback: cardFeedbacks[i] || null,
                     timestamp: new Date().toISOString()
                 }};
                 
@@ -900,7 +963,7 @@ def generer_mcq_multi_cartes(params_list, filename="mcq_multi_cartes.html"):
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
-            alert('✓ Validations exportées en JSON');
+            alert('✓ Validations et feedbacks exportés en JSON');
         }}
         
         function showSlide(n) {{

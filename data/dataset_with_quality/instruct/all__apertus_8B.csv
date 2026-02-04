@@ -1,0 +1,41 @@
+Unnamed: 0,id,question,option_a,option_b,option_c,option_d,correct_option,content_raw,originality,readability,starts_with_negation,is_question,relevance,ambiguity,disclosure,difficulty,distractor_quality
+5,OIC-005-03-A,"La responsabilité sans faute est engagée dans le cas d'un dommage lié aux soins survenu sans manquement aux règles professionnelles ou scientifiques, ni erreur. Quelle est la définition de cette responsabilité?",Elle est engagée lorsque le patient a donné son consentement éclairé.,"Elle est engagée lorsque le dommage est survenu sans manquement aux règles professionnelles ou scientifiques, ni erreur.",Elle est engagée lorsque le dommage est survenu en raison d'une faute médicale.,Elle est engagée lorsque le dommage est survenu en raison d'une erreur médicale.,b,"{{objectif de connaissance
+|Identifiant=OIC-005-03-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité civile
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=3}}
+
+Les professionnels exerçant à titre libéral et les établissements de santé privés engagent leur responsabilité civile devant les juridictions de l’ordre judiciaire : tribunal de grande instance, cour d’appel, cour de cassation.
+
+S’agissant des médecins salariés d’établissements, services ou organismes privés, ils n’engagent pas leur responsabilité civile personnelle du fait des dommages causés à un patient dès lors qu’ils n’outrepassent pas la mission qui leur a été confiée par leur employeur. C’est l’application du régime de responsabilité du commettant (l’employeur) du fait de son proposé (le médecin), lequel n’est pas incompatible avec le principe d’indépendance professionnelle du médecin dans l’exercice de son art.
+
+Les praticiens hospitaliers engagent leur responsabilité civile professionnelle à raison des dommages survenus dans le cadre de leur secteur d’activité libérale au sein d’un établissement public de santé.",1.0,13.293709677419354,False,True,0.7541348934173584,0.8129594127337137,False,2,False
+6,OIC-005-04-A,Quelle est la définition de la faute dans le contexte de la responsabilité médicale?,Une violation des connaissances médicales avérées ou des données acquises de la science.,Une atteinte au droit à la protection de la santé.,Une violation du devoir d’humanisme.,Une atteinte au droit au respect de la dignité.,a,"{{objectif de connaissance
+|Identifiant=OIC-005-04-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité administrative
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=4}}
+
+Il n’existe pas de relation juridique entre le médecin, agent du service public hospitalier, et son patient. Les deux ne sont en effet liés juridiquement qu’à l’établissement public de santé. S’agissant des actes réalisés par les médecins hospitaliers, c’est la responsabilité de l’établissement public de santé qui est engagée devant les juridictions de l’ordre administratif : tribunal administratif, cour administrative d’appel, Conseil d’Etat.
+
+La jurisprudence administrative a défini une typologie des fautes susceptibles d’engager la responsabilité du service public :
+
+- la faute de service : c’est la faute commise par un agent public dans l’exercice de ses fonctions, c’est-à-dire pendant le service, avec les moyens du service et en dehors de tout intérêt personnel ;
+
+- la faute dans l’organisation et le fonctionnement du service : ont pu être qualifiés ainsi une insuffisance dans la surveillance des patients ou des locaux, le mauvais entretien des locaux et du matériel, la mauvaise coordination entre médecins, etc.
+
+Doit être distinguée la faute personnelle ou détachable du service, qui engage la responsabilité civile personnelle de son auteur. Deux cas de figure peuvent être envisagées :
+
+- soit elle a été commise en dehors du service et n’a aucun lien avec le service (exemple de la faute commise par un médecin dans des soins dispensés dans un cadre privé) ;
+
+- soit elle a été commise dans le service mais elle s’en détache en raison de l’intention de nuire de son auteur ou de son exceptionnelle gravité (exemple du refus du chirurgien de garde de se déplacer pour un blessé par balle alors qu’il avait été averti par l’interne de la gravité de son état).",1.0,11.784285714285716,False,True,0.7690095901489258,0.7546420296033224,False,4,False

@@ -1,3 +1,4 @@
+# # Prerequisite
 #!/usr/bin/env python3
 
 from pydantic import BaseModel
@@ -39,15 +40,46 @@ def validate_mcq(mcq_json):
 
 
 def flatten_and_export_mcq(df: DataFrame, export_filename: str, mcq_column_name: str):
-    ids = [x for val in df["id"] for x in (val, val+'-') ]
-    result_df = pd.DataFrame({"id": ids})
+    # Créer les listes de données en intercalant question1/question2
+    ids = []
+    questions = []
+    option_as = []
+    option_bs = []
+    option_cs = []
+    option_ds = []
+    correct_options = []
     
-    result_df['question'] = pd.concat([df[mcq_column_name].apply(lambda x: x.question1 if x else ""), df[mcq_column_name].apply(lambda x: x.question2 if x else "")], ignore_index=True)
-    result_df['option_a'] = pd.concat([df[mcq_column_name].apply(lambda x: x.option_a1 if x else ""), df[mcq_column_name].apply(lambda x: x.option_a2 if x else "")], ignore_index=True)
-    result_df['option_b'] = pd.concat([df[mcq_column_name].apply(lambda x: x.option_b1 if x else ""), df[mcq_column_name].apply(lambda x: x.option_b2 if x else "")], ignore_index=True) 
-    result_df['option_c'] = pd.concat([df[mcq_column_name].apply(lambda x: x.option_c1 if x else ""), df[mcq_column_name].apply(lambda x: x.option_c2 if x else "")], ignore_index=True)
-    result_df['option_d'] = pd.concat([df[mcq_column_name].apply(lambda x: x.option_d1 if x else ""), df[mcq_column_name].apply(lambda x: x.option_d2 if x else "")], ignore_index=True)
-    result_df['correct_option'] = pd.concat([df[mcq_column_name].apply(lambda x: x.correct_option1 if x else ""),df[mcq_column_name].apply(lambda x: x.correct_option2 if x else "")],ignore_index=True)
+    for idx, row in df.iterrows():
+        mcq = row[mcq_column_name]
+        
+        # Ajouter question1 et ses options
+        ids.append(row["id"])
+        questions.append(mcq.question1 if mcq else "")
+        option_as.append(mcq.option_a1 if mcq else "")
+        option_bs.append(mcq.option_b1 if mcq else "")
+        option_cs.append(mcq.option_c1 if mcq else "")
+        option_ds.append(mcq.option_d1 if mcq else "")
+        correct_options.append(mcq.correct_option1 if mcq else "")
+        
+        # Ajouter question2 et ses options
+        ids.append(f"{row['id']}-")
+        questions.append(mcq.question2 if mcq else "")
+        option_as.append(mcq.option_a2 if mcq else "")
+        option_bs.append(mcq.option_b2 if mcq else "")
+        option_cs.append(mcq.option_c2 if mcq else "")
+        option_ds.append(mcq.option_d2 if mcq else "")
+        correct_options.append(mcq.correct_option2 if mcq else "")
+    
+    # Créer le DataFrame avec les listes intercalées
+    result_df = pd.DataFrame({
+        "id": ids,
+        "question": questions,
+        "option_a": option_as,
+        "option_b": option_bs,
+        "option_c": option_cs,
+        "option_d": option_ds,
+        "correct_option": correct_options
+    })
     
     result_df.to_csv(export_filename, index=False)
 
@@ -199,7 +231,6 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
                 if nb_try == 5:
                     print("Nombre d'essai depassé, passage au Lisa Sheet suivant")
                     break
-        
         df_in_construction.loc[idx, f"generated_{save_name}"] = generated
         
         if idx % pas == 0:
@@ -226,15 +257,26 @@ with open(file_path, "r", encoding="utf-8") as file:
 df_test = df[df.folder.isin(test_folders)].reset_index(drop=True)
 print("Number of lisa sheets :", len(df_test))
 
+models = [  
+    ("PARTAGES-dev/Qwen3-0.6B-PDAPT-SLERP", "qwen3_0.6b_pdapt_slerp"),
+    ("PARTAGES-dev/Qwen3-1.7B-PDAPT-SLERP", "qwen3_1.7b_pdapt_slerp"),
+    ("PARTAGES-dev/Qwen3-4B-PDAPT-SLERP", "qwen3_4b_pdapt_slerp"),
+    ("PARTAGES-dev/Qwen3-8B-PDAPT-SLERP", "qwen3_8b_pdapt_slerp"),
+# Instructed models
+    #("meta-llama/Llama-3.1-8B-Instruct", "llama3_1_8b"),
+    #("google/gemma-2-9b-it", "gemma2_9b"),
+    #("google/medgemma-4b-it", "medGemma_4b"),
+    #("google/medgemma-27b-it", "medGemma_27b"),
+    #("hf.co/mradermacher/Llama3-Instruct-OpenBioLLM-8B-merged-i1-GGUF:latest", "openbiollm_8b"),
+# Additional models
+    #("Qwen/Qwen3-0.6B", "qwen3_0.6b"),
+    #("mistralai/Mistral-7B-Instruct-v0.3", "mistral_7b"),
+    #("utter-project/EuroLLM-9B-Instruct", "eurollm_9b"),
+    #("swiss-ai/Apertus-8B-Instruct-2509", "apertus_8b"),
+    #("PARTAGES-dev/Qwen3-8B-PDAPT-SLERP", "qwen3_8b_ps"),
+]
 
-# ## Qwen
-model_name = "Qwen/Qwen3-1.7B"
-save_name = "qwen3_1_7b"
-for_a_model(df_test,model_name,save_name)
-
-
-model_name = "Qwen/Qwen3-4B-Instruct-2507"
-save_name = "qwen3_4b"
-for_a_model(df_test,model_name,save_name)
+for model_name, save_name in models:
+    for_a_model(df_test,model_name,save_name)
 
 
