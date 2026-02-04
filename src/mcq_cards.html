@@ -148,6 +148,22 @@
             border-bottom: 1px solid #ddd;
         }
         
+        .validation-cell {
+            text-align: center;
+            padding: 8px;
+        }
+        
+        .validation-checkbox {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #28a745;
+        }
+        
+        .validation-checkbox:hover {
+            transform: scale(1.1);
+        }
+        
         table tr:hover {
             background-color: #f9f9f9;
         }
@@ -195,6 +211,55 @@
             margin-bottom: 8px;
             font-size: 13px;
             font-weight: bold;
+        }
+        
+        .decision-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }
+        
+        .btn-accept {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            flex: 1;
+        }
+        
+        .btn-accept:hover {
+            background-color: #218838;
+        }
+        
+        .btn-reject {
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            flex: 1;
+        }
+        
+        .btn-reject:hover {
+            background-color: #c82333;
+        }
+        
+        .btn-accept.selected {
+            border: 3px solid #0056b3;
+        }
+        
+        .btn-reject.selected {
+            border: 3px solid #0056b3;
         }
         
         /* LISA Sheet Styles */
@@ -346,7 +411,7 @@
                         <p><strong>Item ID:</strong> MCQ-000001</p>
                         <p><strong>Source Material:</strong> OIC-005-03-A</p>
                         <p><strong>Generator:</strong> apertus_8B</p>
-                        <p><strong>Output Format:</strong> CSV</p>
+                        <p><strong>Output Format:</strong> JSON</p>
                     </div>
                     
                     <div class="mcq-section">
@@ -370,6 +435,7 @@
                                 <th>Result</th>
                                 <th>Threshold</th>
                                 <th>Notes</th>
+                                <th>Validation</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -379,6 +445,9 @@
             <td class="result pass">PASS</td>
             <td>required</td>
             <td>Question format validated</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="0" data-dim="Question mark present">
+            </td>
         </tr>
         
         <tr>
@@ -386,6 +455,9 @@
             <td class="result pass">PASS</td>
             <td>required</td>
             <td>No negation</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="0" data-dim="No leading negation">
+            </td>
         </tr>
         
         <tr>
@@ -393,6 +465,9 @@
             <td class="result pass">PASS</td>
             <td>≥ 0.75</td>
             <td>Score: 1.0</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="0" data-dim="Originality (integral)">
+            </td>
         </tr>
         
         <tr>
@@ -400,6 +475,9 @@
             <td class="result pass">PASS</td>
             <td>≥ 12</td>
             <td>Score: 13.293709677419354</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="0" data-dim="Readability (FK grade)">
+            </td>
         </tr>
         
                         </tbody>
@@ -413,15 +491,19 @@
                                 <th>Result</th>
                                 <th>Score</th>
                                 <th>Notes</th>
+                                <th>Validation</th>
                             </tr>
                         </thead>
                         <tbody>
                             
         <tr>
             <td>Disclosure (answer leakage)</td>
-            <td class="result pass">PASS</td>
+            <td class="result warn">WARN</td>
             <td>True/False</td>
-            <td>Score: True</td>
+            <td>Score: False</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="0" data-dim="Disclosure (answer leakage)">
+            </td>
         </tr>
         
         <tr>
@@ -429,6 +511,9 @@
             <td class="result warn">WARN</td>
             <td>0-1</td>
             <td>Score: 0.7541348934173584</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="0" data-dim="Relevance to material">
+            </td>
         </tr>
         
         <tr>
@@ -436,6 +521,9 @@
             <td class="result warn">WARN</td>
             <td>True/False</td>
             <td>Score: False</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="0" data-dim="Distractor plausibility">
+            </td>
         </tr>
         
         <tr>
@@ -443,6 +531,9 @@
             <td class="result pass">PASS</td>
             <td>low/med/high</td>
             <td>Judge: low</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="0" data-dim="Difficulty appropriateness">
+            </td>
         </tr>
         
                         </tbody>
@@ -457,6 +548,11 @@
                     <div class="audit-trail">
                         <h4>Audit Trail</h4>
                         <p>Judge model: Automated, consistency: evaluated from CSV metrics.</p>
+                    </div>
+                    
+                    <div class="decision-buttons">
+                        <button class="btn-accept" onclick="acceptCard(0)">✓ Accepter</button>
+                        <button class="btn-reject" onclick="rejectCard(0)">✗ Refuser</button>
                     </div>
                 </div>
             </div>
@@ -507,7 +603,7 @@
                         <p><strong>Item ID:</strong> MCQ-000002</p>
                         <p><strong>Source Material:</strong> OIC-005-04-A</p>
                         <p><strong>Generator:</strong> apertus_8B</p>
-                        <p><strong>Output Format:</strong> CSV</p>
+                        <p><strong>Output Format:</strong> JSON</p>
                     </div>
                     
                     <div class="mcq-section">
@@ -531,6 +627,7 @@
                                 <th>Result</th>
                                 <th>Threshold</th>
                                 <th>Notes</th>
+                                <th>Validation</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -540,6 +637,9 @@
             <td class="result pass">PASS</td>
             <td>required</td>
             <td>Question format validated</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="1" data-dim="Question mark present">
+            </td>
         </tr>
         
         <tr>
@@ -547,6 +647,9 @@
             <td class="result pass">PASS</td>
             <td>required</td>
             <td>No negation</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="1" data-dim="No leading negation">
+            </td>
         </tr>
         
         <tr>
@@ -554,6 +657,9 @@
             <td class="result pass">PASS</td>
             <td>≥ 0.75</td>
             <td>Score: 1.0</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="1" data-dim="Originality (integral)">
+            </td>
         </tr>
         
         <tr>
@@ -561,6 +667,9 @@
             <td class="result warn">WARN</td>
             <td>≥ 12</td>
             <td>Score: 11.784285714285716</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="1" data-dim="Readability (FK grade)">
+            </td>
         </tr>
         
                         </tbody>
@@ -574,6 +683,7 @@
                                 <th>Result</th>
                                 <th>Score</th>
                                 <th>Notes</th>
+                                <th>Validation</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -583,6 +693,9 @@
             <td class="result warn">WARN</td>
             <td>True/False</td>
             <td>Score: False</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="1" data-dim="Disclosure (answer leakage)">
+            </td>
         </tr>
         
         <tr>
@@ -590,6 +703,9 @@
             <td class="result warn">WARN</td>
             <td>0-1</td>
             <td>Score: 0.7690095901489258</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="1" data-dim="Relevance to material">
+            </td>
         </tr>
         
         <tr>
@@ -597,6 +713,9 @@
             <td class="result warn">WARN</td>
             <td>True/False</td>
             <td>Score: False</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="1" data-dim="Distractor plausibility">
+            </td>
         </tr>
         
         <tr>
@@ -604,6 +723,9 @@
             <td class="result pass">PASS</td>
             <td>low/med/high</td>
             <td>Judge: high</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="1" data-dim="Difficulty appropriateness">
+            </td>
         </tr>
         
                         </tbody>
@@ -618,6 +740,11 @@
                     <div class="audit-trail">
                         <h4>Audit Trail</h4>
                         <p>Judge model: Automated, consistency: evaluated from CSV metrics.</p>
+                    </div>
+                    
+                    <div class="decision-buttons">
+                        <button class="btn-accept" onclick="acceptCard(1)">✓ Accepter</button>
+                        <button class="btn-reject" onclick="rejectCard(1)">✗ Refuser</button>
                     </div>
                 </div>
             </div>
@@ -668,7 +795,7 @@
                         <p><strong>Item ID:</strong> MCQ-000003</p>
                         <p><strong>Source Material:</strong> OIC-005-10-A</p>
                         <p><strong>Generator:</strong> apertus_8B</p>
-                        <p><strong>Output Format:</strong> CSV</p>
+                        <p><strong>Output Format:</strong> JSON</p>
                     </div>
                     
                     <div class="mcq-section">
@@ -692,6 +819,7 @@
                                 <th>Result</th>
                                 <th>Threshold</th>
                                 <th>Notes</th>
+                                <th>Validation</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -701,6 +829,9 @@
             <td class="result warn">WARN</td>
             <td>required</td>
             <td>Not a question</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="2" data-dim="Question mark present">
+            </td>
         </tr>
         
         <tr>
@@ -708,6 +839,9 @@
             <td class="result pass">PASS</td>
             <td>required</td>
             <td>No negation</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="2" data-dim="No leading negation">
+            </td>
         </tr>
         
         <tr>
@@ -715,6 +849,9 @@
             <td class="result pass">PASS</td>
             <td>≥ 0.75</td>
             <td>Score: 1.0</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="2" data-dim="Originality (integral)">
+            </td>
         </tr>
         
         <tr>
@@ -722,6 +859,9 @@
             <td class="result warn">WARN</td>
             <td>≥ 12</td>
             <td>Score: nan</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="2" data-dim="Readability (FK grade)">
+            </td>
         </tr>
         
                         </tbody>
@@ -735,6 +875,7 @@
                                 <th>Result</th>
                                 <th>Score</th>
                                 <th>Notes</th>
+                                <th>Validation</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -744,6 +885,9 @@
             <td class="result pass">PASS</td>
             <td>True/False</td>
             <td>Score: True</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="2" data-dim="Disclosure (answer leakage)">
+            </td>
         </tr>
         
         <tr>
@@ -751,6 +895,9 @@
             <td class="result warn">WARN</td>
             <td>0-1</td>
             <td>Score: 0.6365777850151062</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="2" data-dim="Relevance to material">
+            </td>
         </tr>
         
         <tr>
@@ -758,6 +905,9 @@
             <td class="result warn">WARN</td>
             <td>True/False</td>
             <td>Score: False</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="2" data-dim="Distractor plausibility">
+            </td>
         </tr>
         
         <tr>
@@ -765,6 +915,9 @@
             <td class="result pass">PASS</td>
             <td>low/med/high</td>
             <td>Judge: low</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="2" data-dim="Difficulty appropriateness">
+            </td>
         </tr>
         
                         </tbody>
@@ -779,6 +932,11 @@
                     <div class="audit-trail">
                         <h4>Audit Trail</h4>
                         <p>Judge model: Automated, consistency: evaluated from CSV metrics.</p>
+                    </div>
+                    
+                    <div class="decision-buttons">
+                        <button class="btn-accept" onclick="acceptCard(2)">✓ Accepter</button>
+                        <button class="btn-reject" onclick="rejectCard(2)">✗ Refuser</button>
                     </div>
                 </div>
             </div>
@@ -829,7 +987,7 @@
                         <p><strong>Item ID:</strong> MCQ-000004</p>
                         <p><strong>Source Material:</strong> OIC-009-01-A</p>
                         <p><strong>Generator:</strong> apertus_8B</p>
-                        <p><strong>Output Format:</strong> CSV</p>
+                        <p><strong>Output Format:</strong> JSON</p>
                     </div>
                     
                     <div class="mcq-section">
@@ -853,6 +1011,7 @@
                                 <th>Result</th>
                                 <th>Threshold</th>
                                 <th>Notes</th>
+                                <th>Validation</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -862,6 +1021,9 @@
             <td class="result pass">PASS</td>
             <td>required</td>
             <td>Question format validated</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="3" data-dim="Question mark present">
+            </td>
         </tr>
         
         <tr>
@@ -869,6 +1031,9 @@
             <td class="result pass">PASS</td>
             <td>required</td>
             <td>No negation</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="3" data-dim="No leading negation">
+            </td>
         </tr>
         
         <tr>
@@ -876,6 +1041,9 @@
             <td class="result pass">PASS</td>
             <td>≥ 0.75</td>
             <td>Score: 1.0</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="3" data-dim="Originality (integral)">
+            </td>
         </tr>
         
         <tr>
@@ -883,6 +1051,9 @@
             <td class="result pass">PASS</td>
             <td>≥ 12</td>
             <td>Score: 12.453333333333333</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="3" data-dim="Readability (FK grade)">
+            </td>
         </tr>
         
                         </tbody>
@@ -896,6 +1067,7 @@
                                 <th>Result</th>
                                 <th>Score</th>
                                 <th>Notes</th>
+                                <th>Validation</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -905,6 +1077,9 @@
             <td class="result warn">WARN</td>
             <td>True/False</td>
             <td>Score: False</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="3" data-dim="Disclosure (answer leakage)">
+            </td>
         </tr>
         
         <tr>
@@ -912,6 +1087,9 @@
             <td class="result warn">WARN</td>
             <td>0-1</td>
             <td>Score: 0.7563823461532593</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="3" data-dim="Relevance to material">
+            </td>
         </tr>
         
         <tr>
@@ -919,6 +1097,9 @@
             <td class="result warn">WARN</td>
             <td>True/False</td>
             <td>Score: False</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="3" data-dim="Distractor plausibility">
+            </td>
         </tr>
         
         <tr>
@@ -926,6 +1107,9 @@
             <td class="result pass">PASS</td>
             <td>low/med/high</td>
             <td>Judge: low</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="3" data-dim="Difficulty appropriateness">
+            </td>
         </tr>
         
                         </tbody>
@@ -940,6 +1124,11 @@
                     <div class="audit-trail">
                         <h4>Audit Trail</h4>
                         <p>Judge model: Automated, consistency: evaluated from CSV metrics.</p>
+                    </div>
+                    
+                    <div class="decision-buttons">
+                        <button class="btn-accept" onclick="acceptCard(3)">✓ Accepter</button>
+                        <button class="btn-reject" onclick="rejectCard(3)">✗ Refuser</button>
                     </div>
                 </div>
             </div>
@@ -990,7 +1179,7 @@
                         <p><strong>Item ID:</strong> MCQ-000005</p>
                         <p><strong>Source Material:</strong> OIC-005-01-A</p>
                         <p><strong>Generator:</strong> apertus_8B</p>
-                        <p><strong>Output Format:</strong> CSV</p>
+                        <p><strong>Output Format:</strong> JSON</p>
                     </div>
                     
                     <div class="mcq-section">
@@ -1014,6 +1203,7 @@
                                 <th>Result</th>
                                 <th>Threshold</th>
                                 <th>Notes</th>
+                                <th>Validation</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1023,6 +1213,9 @@
             <td class="result pass">PASS</td>
             <td>required</td>
             <td>Question format validated</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="4" data-dim="Question mark present">
+            </td>
         </tr>
         
         <tr>
@@ -1030,6 +1223,9 @@
             <td class="result pass">PASS</td>
             <td>required</td>
             <td>No negation</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="4" data-dim="No leading negation">
+            </td>
         </tr>
         
         <tr>
@@ -1037,6 +1233,9 @@
             <td class="result pass">PASS</td>
             <td>≥ 0.75</td>
             <td>Score: 1.0</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="4" data-dim="Originality (integral)">
+            </td>
         </tr>
         
         <tr>
@@ -1044,6 +1243,9 @@
             <td class="result pass">PASS</td>
             <td>≥ 12</td>
             <td>Score: 13.073333333333338</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="4" data-dim="Readability (FK grade)">
+            </td>
         </tr>
         
                         </tbody>
@@ -1057,15 +1259,19 @@
                                 <th>Result</th>
                                 <th>Score</th>
                                 <th>Notes</th>
+                                <th>Validation</th>
                             </tr>
                         </thead>
                         <tbody>
                             
         <tr>
             <td>Disclosure (answer leakage)</td>
-            <td class="result pass">PASS</td>
+            <td class="result warn">WARN</td>
             <td>True/False</td>
-            <td>Score: True</td>
+            <td>Score: False</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="4" data-dim="Disclosure (answer leakage)">
+            </td>
         </tr>
         
         <tr>
@@ -1073,6 +1279,9 @@
             <td class="result pass">PASS</td>
             <td>0-1</td>
             <td>Score: 0.8158424496650696</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="4" data-dim="Relevance to material">
+            </td>
         </tr>
         
         <tr>
@@ -1080,6 +1289,9 @@
             <td class="result warn">WARN</td>
             <td>True/False</td>
             <td>Score: False</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="4" data-dim="Distractor plausibility">
+            </td>
         </tr>
         
         <tr>
@@ -1087,6 +1299,9 @@
             <td class="result pass">PASS</td>
             <td>low/med/high</td>
             <td>Judge: high</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="4" data-dim="Difficulty appropriateness">
+            </td>
         </tr>
         
                         </tbody>
@@ -1101,6 +1316,11 @@
                     <div class="audit-trail">
                         <h4>Audit Trail</h4>
                         <p>Judge model: Automated, consistency: evaluated from CSV metrics.</p>
+                    </div>
+                    
+                    <div class="decision-buttons">
+                        <button class="btn-accept" onclick="acceptCard(4)">✓ Accepter</button>
+                        <button class="btn-reject" onclick="rejectCard(4)">✗ Refuser</button>
                     </div>
                 </div>
             </div>
@@ -1151,7 +1371,7 @@
                         <p><strong>Item ID:</strong> MCQ-000006</p>
                         <p><strong>Source Material:</strong> OIC-005-02-A</p>
                         <p><strong>Generator:</strong> apertus_8B</p>
-                        <p><strong>Output Format:</strong> CSV</p>
+                        <p><strong>Output Format:</strong> JSON</p>
                     </div>
                     
                     <div class="mcq-section">
@@ -1175,6 +1395,7 @@
                                 <th>Result</th>
                                 <th>Threshold</th>
                                 <th>Notes</th>
+                                <th>Validation</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1184,6 +1405,9 @@
             <td class="result warn">WARN</td>
             <td>required</td>
             <td>Not a question</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="5" data-dim="Question mark present">
+            </td>
         </tr>
         
         <tr>
@@ -1191,6 +1415,9 @@
             <td class="result pass">PASS</td>
             <td>required</td>
             <td>No negation</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="5" data-dim="No leading negation">
+            </td>
         </tr>
         
         <tr>
@@ -1198,6 +1425,9 @@
             <td class="result pass">PASS</td>
             <td>≥ 0.75</td>
             <td>Score: 1.0</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="5" data-dim="Originality (integral)">
+            </td>
         </tr>
         
         <tr>
@@ -1205,6 +1435,9 @@
             <td class="result warn">WARN</td>
             <td>≥ 12</td>
             <td>Score: nan</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="5" data-dim="Readability (FK grade)">
+            </td>
         </tr>
         
                         </tbody>
@@ -1218,6 +1451,7 @@
                                 <th>Result</th>
                                 <th>Score</th>
                                 <th>Notes</th>
+                                <th>Validation</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1227,6 +1461,9 @@
             <td class="result warn">WARN</td>
             <td>True/False</td>
             <td>Score: False</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="5" data-dim="Disclosure (answer leakage)">
+            </td>
         </tr>
         
         <tr>
@@ -1234,6 +1471,9 @@
             <td class="result warn">WARN</td>
             <td>0-1</td>
             <td>Score: 0.7143037915229797</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="5" data-dim="Relevance to material">
+            </td>
         </tr>
         
         <tr>
@@ -1241,6 +1481,9 @@
             <td class="result warn">WARN</td>
             <td>True/False</td>
             <td>Score: False</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="5" data-dim="Distractor plausibility">
+            </td>
         </tr>
         
         <tr>
@@ -1248,6 +1491,9 @@
             <td class="result pass">PASS</td>
             <td>low/med/high</td>
             <td>Judge: high</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="5" data-dim="Difficulty appropriateness">
+            </td>
         </tr>
         
                         </tbody>
@@ -1262,6 +1508,11 @@
                     <div class="audit-trail">
                         <h4>Audit Trail</h4>
                         <p>Judge model: Automated, consistency: evaluated from CSV metrics.</p>
+                    </div>
+                    
+                    <div class="decision-buttons">
+                        <button class="btn-accept" onclick="acceptCard(5)">✓ Accepter</button>
+                        <button class="btn-reject" onclick="rejectCard(5)">✗ Refuser</button>
                     </div>
                 </div>
             </div>
@@ -1312,7 +1563,7 @@
                         <p><strong>Item ID:</strong> MCQ-000007</p>
                         <p><strong>Source Material:</strong> OIC-005-02-A</p>
                         <p><strong>Generator:</strong> apertus_8B</p>
-                        <p><strong>Output Format:</strong> CSV</p>
+                        <p><strong>Output Format:</strong> JSON</p>
                     </div>
                     
                     <div class="mcq-section">
@@ -1336,6 +1587,7 @@
                                 <th>Result</th>
                                 <th>Threshold</th>
                                 <th>Notes</th>
+                                <th>Validation</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1345,6 +1597,9 @@
             <td class="result warn">WARN</td>
             <td>required</td>
             <td>Not a question</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="6" data-dim="Question mark present">
+            </td>
         </tr>
         
         <tr>
@@ -1352,6 +1607,9 @@
             <td class="result pass">PASS</td>
             <td>required</td>
             <td>No negation</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="6" data-dim="No leading negation">
+            </td>
         </tr>
         
         <tr>
@@ -1359,6 +1617,9 @@
             <td class="result pass">PASS</td>
             <td>≥ 0.75</td>
             <td>Score: 1.0</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="6" data-dim="Originality (integral)">
+            </td>
         </tr>
         
         <tr>
@@ -1366,6 +1627,9 @@
             <td class="result warn">WARN</td>
             <td>≥ 12</td>
             <td>Score: nan</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="6" data-dim="Readability (FK grade)">
+            </td>
         </tr>
         
                         </tbody>
@@ -1379,6 +1643,7 @@
                                 <th>Result</th>
                                 <th>Score</th>
                                 <th>Notes</th>
+                                <th>Validation</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -1388,6 +1653,9 @@
             <td class="result warn">WARN</td>
             <td>True/False</td>
             <td>Score: False</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="6" data-dim="Disclosure (answer leakage)">
+            </td>
         </tr>
         
         <tr>
@@ -1395,6 +1663,9 @@
             <td class="result warn">WARN</td>
             <td>0-1</td>
             <td>Score: 0.7948817014694214</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="6" data-dim="Relevance to material">
+            </td>
         </tr>
         
         <tr>
@@ -1402,6 +1673,9 @@
             <td class="result pass">PASS</td>
             <td>True/False</td>
             <td>Score: True</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="6" data-dim="Distractor plausibility">
+            </td>
         </tr>
         
         <tr>
@@ -1409,6 +1683,9 @@
             <td class="result pass">PASS</td>
             <td>low/med/high</td>
             <td>Judge: low</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="6" data-dim="Difficulty appropriateness">
+            </td>
         </tr>
         
                         </tbody>
@@ -1423,6 +1700,11 @@
                     <div class="audit-trail">
                         <h4>Audit Trail</h4>
                         <p>Judge model: Automated, consistency: evaluated from CSV metrics.</p>
+                    </div>
+                    
+                    <div class="decision-buttons">
+                        <button class="btn-accept" onclick="acceptCard(6)">✓ Accepter</button>
+                        <button class="btn-reject" onclick="rejectCard(6)">✗ Refuser</button>
                     </div>
                 </div>
             </div>
@@ -1473,9 +1755,18 @@
             <span>/ 7</span>
         </div>
         <button class="nav-button" id="nextBtn" onclick="nextSlide()">Suivant →</button>
+        <button class="nav-button" id="exportBtn" onclick="exportValidations()" style="background-color: #007bff;">📥 Exporter</button>
     </div>
     
     <script>
+        // Clé unique pour cette génération (basée sur le nombre de cartes et les données)
+        const generationKey = 'mcq_validations_' + 7 + '_' + JSON.stringify([{"index": 0, "source_material": "OIC-005-03-A", "mcq_question": "La responsabilit\u00e9 sans faute est engag\u00e9e dans le cas d'un dommage li\u00e9 aux soins survenu sans manquement aux r\u00e8gles professionnelles ou scientifiques, ni erreur. Quelle est la d\u00e9finition de cette responsabilit\u00e9?", "options": {"A": "Elle est engag\u00e9e lorsque le patient a donn\u00e9 son consentement \u00e9clair\u00e9.", "B": "Elle est engag\u00e9e lorsque le dommage est survenu sans manquement aux r\u00e8gles professionnelles ou scientifiques, ni erreur.", "C": "Elle est engag\u00e9e lorsque le dommage est survenu en raison d'une faute m\u00e9dicale.", "D": "Elle est engag\u00e9e lorsque le dommage est survenu en raison d'une erreur m\u00e9dicale."}, "correct_option": "b"}, {"index": 1, "source_material": "OIC-005-04-A", "mcq_question": "Quelle est la d\u00e9finition de la faute dans le contexte de la responsabilit\u00e9 m\u00e9dicale?", "options": {"A": "Une violation des connaissances m\u00e9dicales av\u00e9r\u00e9es ou des donn\u00e9es acquises de la science.", "B": "Une atteinte au droit \u00e0 la protection de la sant\u00e9.", "C": "Une violation du devoir d\u2019humanisme.", "D": "Une atteinte au droit au respect de la dignit\u00e9."}, "correct_option": "a"}, {"index": 2, "source_material": "OIC-005-10-A", "mcq_question": "Un protocole pluriprofessionnel est d\u00e9fini comme :", "options": {"A": "un ensemble de r\u00e8gles strictes pour la prise en charge d'une maladie", "B": "un consensus entre plusieurs professionnels sur la prise en charge d'une maladie", "C": "un document juridique pour la gestion des soins", "D": "un outil de formation pour les professionnels de sant\u00e9"}, "correct_option": "b"}, {"index": 3, "source_material": "OIC-009-01-A", "mcq_question": "Quelle des affirmations suivantes est la plus proche de la mani\u00e8re dont les repr\u00e9sentations du corps en bonne sant\u00e9 \u00e9voluent au fil du temps?", "options": {"A": "Elles restent stables et ne changent pas selon les \u00e9poques.", "B": "Elles sont influenc\u00e9es par les traditions culturelles et le milieu naturel.", "C": "Elles sont d\u00e9termin\u00e9es uniquement par les avanc\u00e9es scientifiques.", "D": "Elles sont universelles et ne varient pas selon les soci\u00e9t\u00e9s."}, "correct_option": "b"}, {"index": 4, "source_material": "OIC-005-01-A", "mcq_question": "La responsabilit\u00e9 p\u00e9nale d'un m\u00e9decin est toujours personnelle et concerne \u00e0 l'identique tous les m\u00e9decins, quel que soit le cadre de leur exercice. Quelle est la nature de cette responsabilit\u00e9?", "options": {"A": "Elle est collective et concerne les \u00e9tablissements de sant\u00e9.", "B": "Elle est personnelle et concerne \u00e0 l'identique tous les m\u00e9decins.", "C": "Elle est personnelle et concerne les m\u00e9decins en fonction de leur sp\u00e9cialit\u00e9.", "D": "Elle est collective et concerne les m\u00e9decins en fonction de leur sp\u00e9cialit\u00e9."}, "correct_option": "b"}, {"index": 5, "source_material": "OIC-005-02-A", "mcq_question": "Les professionnels exer\u00e7ant \u00e0 titre lib\u00e9ral engagent leur responsabilit\u00e9 civile devant les juridictions de l\u2019ordre judiciaire :", "options": {"A": "tribunal de grande instance, cour d\u2019appel, cour de cassation", "B": "tribunal correctionnel, cour d\u2019assises, cour de cassation", "C": "tribunal administratif, cour administrative d\u2019appel, cour de cassation", "D": "tribunal de commerce, cour d\u2019appel, cour de cassation"}, "correct_option": "a"}, {"index": 6, "source_material": "OIC-005-02-A", "mcq_question": "La responsabilit\u00e9 administrative du m\u00e9decin hospitalier est engag\u00e9e devant les juridictions de l\u2019ordre administratif lorsque :", "options": {"A": "Il commet une faute personnelle ou d\u00e9tachable du service.", "B": "Il commet une faute de service.", "C": "Il commet une faute dans l\u2019organisation et le fonctionnement du service.", "D": "Il commet une faute dans l\u2019exercice de ses fonctions."}, "correct_option": "b"}]).substring(0, 50).replace(/[^a-zA-Z0-9]/g, '');
+        
+        // Stockage des validations et des décisions
+        let validations = {};
+        let cardDecisions = {};
+        const cardData = [{"index": 0, "source_material": "OIC-005-03-A", "mcq_question": "La responsabilit\u00e9 sans faute est engag\u00e9e dans le cas d'un dommage li\u00e9 aux soins survenu sans manquement aux r\u00e8gles professionnelles ou scientifiques, ni erreur. Quelle est la d\u00e9finition de cette responsabilit\u00e9?", "options": {"A": "Elle est engag\u00e9e lorsque le patient a donn\u00e9 son consentement \u00e9clair\u00e9.", "B": "Elle est engag\u00e9e lorsque le dommage est survenu sans manquement aux r\u00e8gles professionnelles ou scientifiques, ni erreur.", "C": "Elle est engag\u00e9e lorsque le dommage est survenu en raison d'une faute m\u00e9dicale.", "D": "Elle est engag\u00e9e lorsque le dommage est survenu en raison d'une erreur m\u00e9dicale."}, "correct_option": "b"}, {"index": 1, "source_material": "OIC-005-04-A", "mcq_question": "Quelle est la d\u00e9finition de la faute dans le contexte de la responsabilit\u00e9 m\u00e9dicale?", "options": {"A": "Une violation des connaissances m\u00e9dicales av\u00e9r\u00e9es ou des donn\u00e9es acquises de la science.", "B": "Une atteinte au droit \u00e0 la protection de la sant\u00e9.", "C": "Une violation du devoir d\u2019humanisme.", "D": "Une atteinte au droit au respect de la dignit\u00e9."}, "correct_option": "a"}, {"index": 2, "source_material": "OIC-005-10-A", "mcq_question": "Un protocole pluriprofessionnel est d\u00e9fini comme :", "options": {"A": "un ensemble de r\u00e8gles strictes pour la prise en charge d'une maladie", "B": "un consensus entre plusieurs professionnels sur la prise en charge d'une maladie", "C": "un document juridique pour la gestion des soins", "D": "un outil de formation pour les professionnels de sant\u00e9"}, "correct_option": "b"}, {"index": 3, "source_material": "OIC-009-01-A", "mcq_question": "Quelle des affirmations suivantes est la plus proche de la mani\u00e8re dont les repr\u00e9sentations du corps en bonne sant\u00e9 \u00e9voluent au fil du temps?", "options": {"A": "Elles restent stables et ne changent pas selon les \u00e9poques.", "B": "Elles sont influenc\u00e9es par les traditions culturelles et le milieu naturel.", "C": "Elles sont d\u00e9termin\u00e9es uniquement par les avanc\u00e9es scientifiques.", "D": "Elles sont universelles et ne varient pas selon les soci\u00e9t\u00e9s."}, "correct_option": "b"}, {"index": 4, "source_material": "OIC-005-01-A", "mcq_question": "La responsabilit\u00e9 p\u00e9nale d'un m\u00e9decin est toujours personnelle et concerne \u00e0 l'identique tous les m\u00e9decins, quel que soit le cadre de leur exercice. Quelle est la nature de cette responsabilit\u00e9?", "options": {"A": "Elle est collective et concerne les \u00e9tablissements de sant\u00e9.", "B": "Elle est personnelle et concerne \u00e0 l'identique tous les m\u00e9decins.", "C": "Elle est personnelle et concerne les m\u00e9decins en fonction de leur sp\u00e9cialit\u00e9.", "D": "Elle est collective et concerne les m\u00e9decins en fonction de leur sp\u00e9cialit\u00e9."}, "correct_option": "b"}, {"index": 5, "source_material": "OIC-005-02-A", "mcq_question": "Les professionnels exer\u00e7ant \u00e0 titre lib\u00e9ral engagent leur responsabilit\u00e9 civile devant les juridictions de l\u2019ordre judiciaire :", "options": {"A": "tribunal de grande instance, cour d\u2019appel, cour de cassation", "B": "tribunal correctionnel, cour d\u2019assises, cour de cassation", "C": "tribunal administratif, cour administrative d\u2019appel, cour de cassation", "D": "tribunal de commerce, cour d\u2019appel, cour de cassation"}, "correct_option": "a"}, {"index": 6, "source_material": "OIC-005-02-A", "mcq_question": "La responsabilit\u00e9 administrative du m\u00e9decin hospitalier est engag\u00e9e devant les juridictions de l\u2019ordre administratif lorsque :", "options": {"A": "Il commet une faute personnelle ou d\u00e9tachable du service.", "B": "Il commet une faute de service.", "C": "Il commet une faute dans l\u2019organisation et le fonctionnement du service.", "D": "Il commet une faute dans l\u2019exercice de ses fonctions."}, "correct_option": "b"}];
+        
         let currentSlide = 0;
         const totalSlides = 7;
         const slidesWrapper = document.getElementById('slidesWrapper');
@@ -1483,6 +1774,135 @@
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         const progressBar = document.getElementById('progressBar');
+        
+        // Initialiser les décisions
+        for (let i = 0; i < totalSlides; i++) {
+            cardDecisions[i] = null;
+        }
+        
+        // Charger les validations depuis localStorage si la clé correspond
+        function loadValidations() {
+            try {
+                const stored = localStorage.getItem(generationKey);
+                if (stored) {
+                    const data = JSON.parse(stored);
+                    validations = data.validations || {};
+                    cardDecisions = data.decisions || {};
+                    
+                    // Restaurer les checkboxes
+                    document.querySelectorAll('.validation-checkbox').forEach(checkbox => {
+                        const key = `${checkbox.dataset.type}_${checkbox.dataset.index}_${checkbox.dataset.dim}`;
+                        if (validations[key] !== undefined) {
+                            checkbox.checked = validations[key];
+                        }
+                    });
+                    
+                    // Restaurer les boutons
+                    for (let i = 0; i < totalSlides; i++) {
+                        updateButtonStates(i);
+                    }
+                    
+                    console.log('✓ Validations restaurées depuis localStorage');
+                }
+            } catch (e) {
+                console.error('Erreur lors du chargement des validations:', e);
+            }
+        }
+        
+        // Sauvegarder les validations dans localStorage
+        function saveValidations() {
+            try {
+                const data = {
+                    validations: validations,
+                    decisions: cardDecisions,
+                    timestamp: new Date().toISOString()
+                };
+                localStorage.setItem(generationKey, JSON.stringify(data));
+            } catch (e) {
+                console.error('Erreur lors de la sauvegarde:', e);
+            }
+        }
+        
+        // Écouter les changements des cases à cocher
+        document.querySelectorAll('.validation-checkbox').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const key = `${this.dataset.type}_${this.dataset.index}_${this.dataset.dim}`;
+                validations[key] = this.checked;
+                saveValidations();
+            });
+        });
+        
+        function acceptCard(index) {
+            cardDecisions[index] = 'ACCEPT';
+            updateButtonStates(index);
+            saveValidations();
+        }
+        
+        function rejectCard(index) {
+            cardDecisions[index] = 'REJECT';
+            updateButtonStates(index);
+            saveValidations();
+        }
+        
+        function updateButtonStates(index) {
+            const slide = document.getElementById(`slide-${index}`);
+            if (slide) {
+                const acceptBtn = slide.querySelector('.btn-accept');
+                const rejectBtn = slide.querySelector('.btn-reject');
+                
+                if (acceptBtn && rejectBtn) {
+                    acceptBtn.classList.remove('selected');
+                    rejectBtn.classList.remove('selected');
+                    
+                    if (cardDecisions[index] === 'ACCEPT') {
+                        acceptBtn.classList.add('selected');
+                    } else if (cardDecisions[index] === 'REJECT') {
+                        rejectBtn.classList.add('selected');
+                    }
+                }
+            }
+        }
+        
+        function exportValidations() {
+            const exportData = [];
+            
+            for (let i = 0; i < totalSlides; i++) {
+                // Collecter les validations pour cette carte
+                const cardValidations = {};
+                for (let key in validations) {
+                    if (key.includes(`_${i}_`)) {
+                        cardValidations[key] = validations[key];
+                    }
+                }
+                
+                const cardInfo = {
+                    index: i,
+                    id_lisa_sheet: cardData[i].source_material,
+                    mcq: {
+                        question: cardData[i].mcq_question,
+                        options: cardData[i].options,
+                        correct_option: cardData[i].correct_option
+                    },
+                    validated_fields: cardValidations,
+                    human_decision: cardDecisions[i],
+                    timestamp: new Date().toISOString()
+                };
+                
+                exportData.push(cardInfo);
+            }
+            
+            const json = JSON.stringify(exportData, null, 2);
+            const blob = new Blob([json], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'validations_' + new Date().toISOString().slice(0,10) + '.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            alert('✓ Validations exportées en JSON');
+        }
         
         function showSlide(n) {
             if (n >= totalSlides) {
@@ -1528,6 +1948,7 @@
         });
         
         // Initialiser
+        loadValidations();
         showSlide(currentSlide);
     </script>
 </body>

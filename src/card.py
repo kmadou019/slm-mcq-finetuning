@@ -1,5 +1,6 @@
 import pandas as pd
 import re
+import json
 
 
 def parser_lisa_sheet(lisa_texte_brut):
@@ -55,7 +56,7 @@ def parser_lisa_sheet(lisa_texte_brut):
     return data
 
 
-def evaluation_to_pass_warn(score,threshold):
+def evaluation_to_pass_warn(score, threshold):
     """
     Convertit un score numérique ou booléen en PASS ou WARN
     """
@@ -71,33 +72,16 @@ def evaluation_to_pass_warn(score,threshold):
         return "PASS" if score else "WARN"
 
 
-def construire_params_depuis_csv(df,model):
+def construire_params_depuis_csv(df, model):
     """
-    Construit la liste de paramètres à partir d'un fichier CSV
-    
-    Colonnes attendues:
-    - id: Source material (LISA Sheet ###...)
-    - question: Question MCQ
-    - option_a, option_b, option_c, option_d: Options
-    - correct_option: Option correcte (A, B, C ou D)
-    - content_raw: Contenu brut de la LISA Sheet
-    - originality: Score (0-1)
-    - readability: Score
-    - starts_with_negation: True/False
-    - is_question: True/False
-    - relevance: Score (0-1)
-    - ambiguity: Score (0-1)
-    - disclosure: Score (0-1)
-    - difficulty: Score/Texte
+    Construit la liste de paramètres à partir d'un DataFrame
     """
     
-    # Lire le CSV    
     params_list = []
     
     for idx, row in df.iterrows():
         # Construire les checks Section A
         section_a_checks = [
-            #("Valid JSON schema", "PASS", "required", "Parsed and validated"),
             ("Question mark present", 
              evaluation_to_pass_warn(row.get('is_question'), True), 
              "required", 
@@ -107,42 +91,42 @@ def construire_params_depuis_csv(df,model):
              "required", 
              "Negation detected" if row.get('starts_with_negation') == True or str(row.get('starts_with_negation')).lower() == 'true' else "No negation"),
             ("Originality (integral)", 
-             evaluation_to_pass_warn(row.get('originality'),0.75), 
+             evaluation_to_pass_warn(row.get('originality'), 0.75), 
              "≥ 0.75", 
              f"Score: {row.get('originality', 'N/A')}"),
             ("Readability (FK grade)", 
-             evaluation_to_pass_warn(row.get('readability'),12), 
+             evaluation_to_pass_warn(row.get('readability'), 12), 
              "≥ 12", 
              f"Score: {row.get('readability')}")
         ]
         
         # Construire les checks Section B
-        difficulty = int(row.get('difficulty'))
+        difficulty = int(row.get('difficulty', 3))
         mapping = {
-                1: "low",
-                2: "low",
-                3: "medium",
-                4: "high",
-                5: "high"
-            }
+            1: "low",
+            2: "low",
+            3: "medium",
+            4: "high",
+            5: "high"
+        }
 
         section_b_checks = [
             ("Disclosure (answer leakage)", 
-             evaluation_to_pass_warn(row.get('disclosure'),True), 
+             evaluation_to_pass_warn(row.get('disclosure'), True), 
              "True/False", 
              f"Score: {row.get('disclosure', 'N/A')}"),
             ("Relevance to material", 
-             evaluation_to_pass_warn(row.get('relevance'),0.8), # To define
+             evaluation_to_pass_warn(row.get('relevance'), 0.8),
              "0-1", 
              f"Score: {row.get('relevance', 'N/A')}"),
             ("Distractor plausibility", 
-             evaluation_to_pass_warn(row.get('distractor_quality'),True), # To define
+             evaluation_to_pass_warn(row.get('distractor_quality'), True),
              "True/False", 
              f"Score: {row.get('distractor_quality', 'N/A')}"),
             ("Difficulty appropriateness", 
-             evaluation_to_pass_warn(difficulty,"medium"), # To define
+             evaluation_to_pass_warn(difficulty, "medium"),
              "low/med/high", 
-             f"Judge: {mapping[difficulty]}") # Une ligne pour l'ambiguité
+             f"Judge: {mapping[difficulty]}")
         ]
         
         # Construire le dictionnaire de paramètres
@@ -150,7 +134,7 @@ def construire_params_depuis_csv(df,model):
             "item_id": f"MCQ-{idx+1:06d}",
             "source_material": str(row.get('id', 'LISA Sheet')),
             "generator_info": model,
-            "output_format": "CSV",
+            "output_format": "JSON",
             "mcq_question": str(row.get('question', '')),
             "options": {
                 "A": str(row.get('option_a', '')),
@@ -190,6 +174,9 @@ def generer_carte_mcq(card_data, index):
             <td class="result {classe_result}">{result}</td>
             <td>{threshold}</td>
             <td>{notes}</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-a" data-index="{index}" data-dim="{dim}">
+            </td>
         </tr>
         """
     
@@ -203,6 +190,9 @@ def generer_carte_mcq(card_data, index):
             <td class="result {classe_result}">{result}</td>
             <td>{score}</td>
             <td>{notes}</td>
+            <td class="validation-cell">
+                <input type="checkbox" class="validation-checkbox" data-type="section-b" data-index="{index}" data-dim="{dim}">
+            </td>
         </tr>
         """
     
@@ -248,6 +238,7 @@ def generer_carte_mcq(card_data, index):
                                 <th>Result</th>
                                 <th>Threshold</th>
                                 <th>Notes</th>
+                                <th>Validation</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -263,6 +254,7 @@ def generer_carte_mcq(card_data, index):
                                 <th>Result</th>
                                 <th>Score</th>
                                 <th>Notes</th>
+                                <th>Validation</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -279,6 +271,11 @@ def generer_carte_mcq(card_data, index):
                     <div class="audit-trail">
                         <h4>Audit Trail</h4>
                         <p>{card_data['audit_trail']}</p>
+                    </div>
+                    
+                    <div class="decision-buttons">
+                        <button class="btn-accept" onclick="acceptCard({index})">✓ Accepter</button>
+                        <button class="btn-reject" onclick="rejectCard({index})">✗ Refuser</button>
                     </div>
                 </div>
             </div>
@@ -324,7 +321,7 @@ def generer_carte_mcq(card_data, index):
 
 def generer_mcq_multi_cartes(params_list, filename="mcq_multi_cartes.html"):
     """
-    Génère une page avec plusieurs cartes MCQ + LISA Sheets avec défilement
+    Génère une page avec plusieurs cartes MCQ + LISA Sheets avec défilement et validation
     """
     
     # Générer les cartes
@@ -333,6 +330,15 @@ def generer_mcq_multi_cartes(params_list, filename="mcq_multi_cartes.html"):
         cartes_html += generer_carte_mcq(params, i)
     
     nombre_cartes = len(params_list)
+    
+    # Préparer les données pour le JavaScript (JSON des cartes)
+    cartes_json = json.dumps([{
+        "index": i,
+        "source_material": params["source_material"],
+        "mcq_question": params["mcq_question"],
+        "options": params["options"],
+        "correct_option": params["correct_option"]
+    } for i, params in enumerate(params_list)])
     
     # HTML complet
     html_content = f"""<!DOCTYPE html>
@@ -485,6 +491,22 @@ def generer_mcq_multi_cartes(params_list, filename="mcq_multi_cartes.html"):
             border-bottom: 1px solid #ddd;
         }}
         
+        .validation-cell {{
+            text-align: center;
+            padding: 8px;
+        }}
+        
+        .validation-checkbox {{
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: #28a745;
+        }}
+        
+        .validation-checkbox:hover {{
+            transform: scale(1.1);
+        }}
+        
         table tr:hover {{
             background-color: #f9f9f9;
         }}
@@ -532,6 +554,55 @@ def generer_mcq_multi_cartes(params_list, filename="mcq_multi_cartes.html"):
             margin-bottom: 8px;
             font-size: 13px;
             font-weight: bold;
+        }}
+        
+        .decision-buttons {{
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+            justify-content: center;
+        }}
+        
+        .btn-accept {{
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            flex: 1;
+        }}
+        
+        .btn-accept:hover {{
+            background-color: #218838;
+        }}
+        
+        .btn-reject {{
+            background-color: #dc3545;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            flex: 1;
+        }}
+        
+        .btn-reject:hover {{
+            background-color: #c82333;
+        }}
+        
+        .btn-accept.selected {{
+            border: 3px solid #0056b3;
+        }}
+        
+        .btn-reject.selected {{
+            border: 3px solid #0056b3;
         }}
         
         /* LISA Sheet Styles */
@@ -683,9 +754,18 @@ def generer_mcq_multi_cartes(params_list, filename="mcq_multi_cartes.html"):
             <span>/ {nombre_cartes}</span>
         </div>
         <button class="nav-button" id="nextBtn" onclick="nextSlide()">Suivant →</button>
+        <button class="nav-button" id="exportBtn" onclick="exportValidations()" style="background-color: #007bff;">📥 Exporter</button>
     </div>
     
     <script>
+        // Clé unique pour cette génération (basée sur le nombre de cartes et les données)
+        const generationKey = 'mcq_validations_' + {nombre_cartes} + '_' + JSON.stringify({cartes_json}).substring(0, 50).replace(/[^a-zA-Z0-9]/g, '');
+        
+        // Stockage des validations et des décisions
+        let validations = {{}};
+        let cardDecisions = {{}};
+        const cardData = {cartes_json};
+        
         let currentSlide = 0;
         const totalSlides = {nombre_cartes};
         const slidesWrapper = document.getElementById('slidesWrapper');
@@ -693,6 +773,135 @@ def generer_mcq_multi_cartes(params_list, filename="mcq_multi_cartes.html"):
         const prevBtn = document.getElementById('prevBtn');
         const nextBtn = document.getElementById('nextBtn');
         const progressBar = document.getElementById('progressBar');
+        
+        // Initialiser les décisions
+        for (let i = 0; i < totalSlides; i++) {{
+            cardDecisions[i] = null;
+        }}
+        
+        // Charger les validations depuis localStorage si la clé correspond
+        function loadValidations() {{
+            try {{
+                const stored = localStorage.getItem(generationKey);
+                if (stored) {{
+                    const data = JSON.parse(stored);
+                    validations = data.validations || {{}};
+                    cardDecisions = data.decisions || {{}};
+                    
+                    // Restaurer les checkboxes
+                    document.querySelectorAll('.validation-checkbox').forEach(checkbox => {{
+                        const key = `${{checkbox.dataset.type}}_${{checkbox.dataset.index}}_${{checkbox.dataset.dim}}`;
+                        if (validations[key] !== undefined) {{
+                            checkbox.checked = validations[key];
+                        }}
+                    }});
+                    
+                    // Restaurer les boutons
+                    for (let i = 0; i < totalSlides; i++) {{
+                        updateButtonStates(i);
+                    }}
+                    
+                    console.log('✓ Validations restaurées depuis localStorage');
+                }}
+            }} catch (e) {{
+                console.error('Erreur lors du chargement des validations:', e);
+            }}
+        }}
+        
+        // Sauvegarder les validations dans localStorage
+        function saveValidations() {{
+            try {{
+                const data = {{
+                    validations: validations,
+                    decisions: cardDecisions,
+                    timestamp: new Date().toISOString()
+                }};
+                localStorage.setItem(generationKey, JSON.stringify(data));
+            }} catch (e) {{
+                console.error('Erreur lors de la sauvegarde:', e);
+            }}
+        }}
+        
+        // Écouter les changements des cases à cocher
+        document.querySelectorAll('.validation-checkbox').forEach(checkbox => {{
+            checkbox.addEventListener('change', function() {{
+                const key = `${{this.dataset.type}}_${{this.dataset.index}}_${{this.dataset.dim}}`;
+                validations[key] = this.checked;
+                saveValidations();
+            }});
+        }});
+        
+        function acceptCard(index) {{
+            cardDecisions[index] = 'ACCEPT';
+            updateButtonStates(index);
+            saveValidations();
+        }}
+        
+        function rejectCard(index) {{
+            cardDecisions[index] = 'REJECT';
+            updateButtonStates(index);
+            saveValidations();
+        }}
+        
+        function updateButtonStates(index) {{
+            const slide = document.getElementById(`slide-${{index}}`);
+            if (slide) {{
+                const acceptBtn = slide.querySelector('.btn-accept');
+                const rejectBtn = slide.querySelector('.btn-reject');
+                
+                if (acceptBtn && rejectBtn) {{
+                    acceptBtn.classList.remove('selected');
+                    rejectBtn.classList.remove('selected');
+                    
+                    if (cardDecisions[index] === 'ACCEPT') {{
+                        acceptBtn.classList.add('selected');
+                    }} else if (cardDecisions[index] === 'REJECT') {{
+                        rejectBtn.classList.add('selected');
+                    }}
+                }}
+            }}
+        }}
+        
+        function exportValidations() {{
+            const exportData = [];
+            
+            for (let i = 0; i < totalSlides; i++) {{
+                // Collecter les validations pour cette carte
+                const cardValidations = {{}};
+                for (let key in validations) {{
+                    if (key.includes(`_${{i}}_`)) {{
+                        cardValidations[key] = validations[key];
+                    }}
+                }}
+                
+                const cardInfo = {{
+                    index: i,
+                    id_lisa_sheet: cardData[i].source_material,
+                    mcq: {{
+                        question: cardData[i].mcq_question,
+                        options: cardData[i].options,
+                        correct_option: cardData[i].correct_option
+                    }},
+                    validated_fields: cardValidations,
+                    human_decision: cardDecisions[i],
+                    timestamp: new Date().toISOString()
+                }};
+                
+                exportData.push(cardInfo);
+            }}
+            
+            const json = JSON.stringify(exportData, null, 2);
+            const blob = new Blob([json], {{ type: 'application/json' }});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'validations_' + new Date().toISOString().slice(0,10) + '.json';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            alert('✓ Validations exportées en JSON');
+        }}
         
         function showSlide(n) {{
             if (n >= totalSlides) {{
@@ -738,6 +947,7 @@ def generer_mcq_multi_cartes(params_list, filename="mcq_multi_cartes.html"):
         }});
         
         // Initialiser
+        loadValidations();
         showSlide(currentSlide);
     </script>
 </body>
@@ -756,10 +966,9 @@ def generer_mcq_multi_cartes(params_list, filename="mcq_multi_cartes.html"):
 # Utilisation
 if __name__ == "__main__":
     # Lire le CSV
-    csv_file = "df_eval.csv"  # À remplacer par ton chemin réel
-    df = pd.read_csv("...")
-    print(f"Lecture du fichier CSV: {csv_file}")
-    params_list = construire_params_depuis_csv(df)
+    df = pd.read_csv("df_eval.csv")  # À remplacer par ton chemin réel
+    print(f"Lecture du fichier CSV")
+    params_list = construire_params_depuis_csv(df, "Llama3.1-8B")
     
     print(f"✓ {len(params_list)} cartes construites")
     
