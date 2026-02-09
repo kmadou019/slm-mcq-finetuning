@@ -8,7 +8,9 @@ if len(argv) >= 2:
         "llama3_1_8b", "openbiollm_8b", "gemma2_9b", 
         "medGemma_4b", "medGemma_27b", "qwen3_8b", 
         "mistral_7b", "eurollm_9b", "apertus_8B", 
-        "qwen3_0.6b", "qwen3_1_7b", "qwen3_4b"
+        "qwen3_0.6b", "qwen3_1_7b", "qwen3_4b",
+        "qwen3_8b_pdapt_slerp","qwen3_4b_pdapt_slerp",
+        "qwen3_1_7b_pdapt_slerp","qwen3_0.6b_pdapt_slerp"
     ]
     
     if argv[1] not in valid_models:
@@ -93,7 +95,8 @@ def main():
         system_prompts = json.load(file)
 
     df_mcq = pd.read_csv(os.environ.get('MODEL_MCQ_PATH') + "/" + generated_qcm_file)
-    df_mcq = df_mcq.loc[indexes]
+    if indexes:
+        df_mcq = df_mcq.loc[indexes]
     df_lisa_sheets = pd.read_csv(os.environ.get('LISA_SHEETS_PATH'))
 
     
@@ -110,15 +113,15 @@ def main():
                                       num_workers=10,
                                       lisa_sheet_id_col='id',
                                       lisa_sheet_col='content_raw',
-                                      compute_answerability      =True,
-                                      compute_originality        =True,
-                                      compute_readability        =True,
-                                      compute_negation           =True,
-                                      compute_is_question        =True,
-                                      compute_relevance          =True,
-                                      compute_ambiguity          =True,
-                                      compute_disclosure         =True,
-                                      compute_difficulty         =True,
+                                      compute_answerability      =False,
+                                      compute_originality        =False,
+                                      compute_readability        =False,
+                                      compute_negation           =False,
+                                      compute_is_question        =False,
+                                      compute_relevance          =False,
+                                      compute_ambiguity          =False,
+                                      compute_disclosure         =False,
+                                      compute_difficulty         =False,
                                       compute_distractors_quality=True,
                                       disclosure_system_prompt=system_prompts['disclosure_prompt'],
                                       difficulty_system_prompt=system_prompts['difficulty_prompt'],
@@ -131,7 +134,7 @@ def main():
     params_list = construire_params_depuis_csv(df_eval,model)
     generer_mcq_multi_cartes(params_list, "mcq_cards.html")
 
-    df_eval.to_csv(os.environ.get('MODEL_MCQ_EVAL_EXPORT_PATH') + "/" +"all__" +  generated_qcm_file, index=False)
+    df_eval.to_csv(os.environ.get('MODEL_MCQ_EVAL_EXPORT_PATH') + "/" +  generated_qcm_file, index=False)
 
 
 if __name__ == '__main__':

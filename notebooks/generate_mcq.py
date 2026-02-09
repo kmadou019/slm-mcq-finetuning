@@ -1,6 +1,8 @@
-# # Prerequisite
 #!/usr/bin/env python3
 
+# # Prerequisite
+
+import os
 from pydantic import BaseModel
 import json
 import pandas as pd
@@ -13,6 +15,9 @@ import os
 import ast
 import json
 from huggingface_hub import login
+import ollama
+from openai import OpenAI
+
 
 
 class MCQQuestion(BaseModel):
@@ -39,7 +44,7 @@ def validate_mcq(mcq_json):
         
 
 
-def flatten_and_export_mcq(df: DataFrame, export_filename: str, mcq_column_name: str):
+def flatten(df: DataFrame, mcq_column_name: str):
     # Créer les listes de données en intercalant question1/question2
     ids = []
     questions = []
@@ -81,7 +86,7 @@ def flatten_and_export_mcq(df: DataFrame, export_filename: str, mcq_column_name:
         "correct_option": correct_options
     })
     
-    result_df.to_csv(export_filename, index=False)
+    return result_df
 
 def extract_json(text):
     start = text.find("{")
@@ -190,16 +195,16 @@ def get_checkpoint():
     try:
         with open("../data/checkpoints/start", "r") as start:
             start = start.readline()
-            df_in_construction = pd.read_csv("../data/checkpoints/df_in_construction.csv")
+            df_in_construction = pd.read_csv("../data/checkpoints/df_in_construction_.csv")
     except FileNotFoundError:
         df_in_construction = pd.DataFrame()
         start = 0
     return int(start), df_in_construction
 
 def save_checkpoint(start, df_in_construction):
-    with open("../data/checkpoints/start", "w") as fic:
+    with open("../data/checkpoints/start_", "w") as fic:
         fic.write(str(start))
-    df_in_construction.to_csv("../data/checkpoints/df_in_construction.csv", index=False)
+    df_in_construction.to_csv("../data/checkpoints/df_in_construction_.csv", index=False)
 
 def for_a_model(df_test, model_name, save_name, use_ollama=False):
     if not use_ollama:
@@ -224,6 +229,7 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
                     if not use_ollama
                     else generate_mcq(content, model_name, temperature=0.1)
                 )
+                df_in_construction.loc[idx, f"generated_{save_name}"] = generated
                 break
             except SyntaxError:
                 print("SyntaxError détectée, relance...")
@@ -231,20 +237,77 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
                 if nb_try == 5:
                     print("Nombre d'essai depassé, passage au Lisa Sheet suivant")
                     break
-        df_in_construction.loc[idx, f"generated_{save_name}"] = generated
         
         if idx % pas == 0:
             save_checkpoint(idx, df_in_construction)
     
     df_test[save_name] = df_in_construction[f'generated_{save_name}'].apply(validate_mcq)
-    flatten_and_export_mcq(df_test, f'../data/base_models/instruct/{save_name}.csv', save_name)
+    df = flatten(df_test, save_name)
     
     # Clean for other model
-    os.remove("../data/checkpoints/df_in_construction.csv")
-    os.remove("../data/checkpoints/start")
+    os.remove("../data/checkpoints/df_in_construction_.csv")
+    os.remove("../data/checkpoints/start_")
+
+    return df
+
+def create_mcq_text(mcq_dict):
+    return (
+        f"Question: {mcq_dict['question']}\n"
+        f"a) {mcq_dict['option_a']}\n"
+        f"b) {mcq_dict['option_b']}\n"
+        f"c) {mcq_dict['option_c']}\n"
+        f"d) {mcq_dict['option_d']}"
+    )
+
+def llama_answer_qcm(mcq_text,system_prompt):
+    user_prompt = f"""Répond STRICTEMENT à ce QCM :
+        {mcq_text}
+        CONTRAINTE ABSOLUE :
+        - Ta sortie doit être UNIQUEMENT la lettre de la bonne réponse (A, B, C, D, etc.).
+        - AUCUN autre texte, aucune explication, aucun point, aucun saut de ligne, aucun espace.
+        - Ne préfixe pas la réponse, n’ajoute rien avant ou après.
+        - Répond par une seule lettre et rien d’autre.
+
+        FORMAT DE SORTIE OBLIGATOIRE :
+        <lettre>
+    """
+    response = ollama.generate(
+        model="llama3.1:70b",
+        prompt=user_prompt,
+        system=system_prompt)
+
+    return response["response"][0]
+
+def call_openai_api(client, system_prompt, mcq_text, temp=0.5, max_completion_tokens=1):
+    user_prompt = f"""Répond STRICTEMENT à ce QCM :
+        {mcq_text}
+        CONTRAINTE ABSOLUE :
+        - Ta sortie doit être UNIQUEMENT la lettre de la bonne réponse (A, B, C, D, etc.).
+        - AUCUN autre texte, aucune explication, aucun point, aucun saut de ligne, aucun espace.
+        - Ne préfixe pas la réponse, n’ajoute rien avant ou après.
+        - Répond par une seule lettre et rien d’autre.
+
+        FORMAT DE SORTIE OBLIGATOIRE :
+        <lettre>
+         """
+    try:
+        response = client.chat.completions.create(
+            model="gpt-4o",
+            temperature=temp,
+            max_tokens=max_completion_tokens,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt}
+            ],
+        )
+        return response.choices[0].message.content
+    except Exception as e:
+        print(f"Error occurred: {e}")
+        return None
 
 load_dotenv()                  
 HF_TOKEN = os.getenv("HF_TOKEN")  
+OPENAI_KEY = os.environ.get("OPENAI_API_KEY")
 login(token=HF_TOKEN)
 
 df = pd.read_csv("../data/lisa_sheets.csv")
@@ -257,26 +320,60 @@ with open(file_path, "r", encoding="utf-8") as file:
 df_test = df[df.folder.isin(test_folders)].reset_index(drop=True)
 print("Number of lisa sheets :", len(df_test))
 
-models = [  
-    ("PARTAGES-dev/Qwen3-0.6B-PDAPT-SLERP", "qwen3_0.6b_pdapt_slerp"),
-    ("PARTAGES-dev/Qwen3-1.7B-PDAPT-SLERP", "qwen3_1.7b_pdapt_slerp"),
-    ("PARTAGES-dev/Qwen3-4B-PDAPT-SLERP", "qwen3_4b_pdapt_slerp"),
-    ("PARTAGES-dev/Qwen3-8B-PDAPT-SLERP", "qwen3_8b_pdapt_slerp"),
-# Instructed models
-    #("meta-llama/Llama-3.1-8B-Instruct", "llama3_1_8b"),
-    #("google/gemma-2-9b-it", "gemma2_9b"),
-    #("google/medgemma-4b-it", "medGemma_4b"),
-    #("google/medgemma-27b-it", "medGemma_27b"),
-    #("hf.co/mradermacher/Llama3-Instruct-OpenBioLLM-8B-merged-i1-GGUF:latest", "openbiollm_8b"),
-# Additional models
-    #("Qwen/Qwen3-0.6B", "qwen3_0.6b"),
-    #("mistralai/Mistral-7B-Instruct-v0.3", "mistral_7b"),
-    #("utter-project/EuroLLM-9B-Instruct", "eurollm_9b"),
-    #("swiss-ai/Apertus-8B-Instruct-2509", "apertus_8b"),
-    #("PARTAGES-dev/Qwen3-8B-PDAPT-SLERP", "qwen3_8b_ps"),
-]
+# # How many output are incorrect
 
-for model_name, save_name in models:
-    for_a_model(df_test,model_name,save_name)
+def correct_output(df,save_name,file):
+    initial_len = len(df)
+    df = df[df["correct_option"].astype(str).str.lower().isin(list("abcd"))]
+    
+    incorrect_output = initial_len - len(df)
+    print(initial_len-incorrect_output)
+    print(f"Incorrect output for {save_name}: {round((incorrect_output/initial_len)*100,2)}%",file=file)
+    return df
+
+# ## Correctness
+
+system_prompt = "Tu es un expert dans le domaine médical"
+client = OpenAI(api_key=OPENAI_KEY)
+
+def correctness(df,save_name,file):
+    initial_len = len(df)
+    indices_to_drop = []
+    for idx, row in df.iterrows():
+        mcq_text = create_mcq_text(row)
+        correct_option = row["correct_option"]
+        correct_reeval = call_openai_api(client=client,system_prompt=system_prompt,mcq_text=mcq_text)
+        if  not(isinstance(correct_option, str)):
+            continue 
+        if correct_option.lower() != correct_reeval.lower():
+            indices_to_drop.append(idx)
+
+    df = df.drop(indices_to_drop).reset_index(drop=True)
+    df.to_csv("../data/correct_mcqs_dataset/"+ save_name + ".csv")
+    print(f"Number of correct MCQs for {save_name} {len(df)} / {initial_len}",file=file)
+
+# # MCQs Generation
+
+models = {
+    #"qwen3_8b_pdapt_slerp": "PARTAGES-dev/Qwen3-8B-PDAPT-SLERP",
+    "qwen3_4b_pdapt_slerp": "PARTAGES-dev/Qwen3-4B-PDAPT-SLERP",
+    "qwen3_1.7b_pdapt_slerp": "PARTAGES-dev/Qwen3-1.7B-PDAPT-SLERP",
+    "qwen3_0.6b_pdapt_slerp": "PARTAGES-dev/Qwen3-0.6B-PDAPT-SLERP",
+    #"llama3_1_8b": "meta-llama/Llama-3.1-8B-Instruct",
+    #"gemma2_9b": "google/gemma-2-9b-it",
+    #"medGemma_4b": "google/medgemma-4b-it",
+    #"medGemma_27b": "google/medgemma-27b-it",
+    #"openbiollm_8b": "hf.co/mradermacher/Llama3-Instruct-OpenBioLLM-8B-merged-i1-GGUF:latest",
+    #"qwen3_0.6b": "Qwen/Qwen3-0.6B",
+    #"mistral_7b": "mistralai/Mistral-7B-Instruct-v0.3",
+    #"eurollm_9b": "utter-project/EuroLLM-9B-Instruct",
+    #"apertus_8b": "swiss-ai/Apertus-8B-Instruct-2509",
+}
+
+with open("correctness.output", mode="a") as f:
+    for save_name,model_name in models.items():
+        df = for_a_model(df_test,model_name,save_name)
+        df = correct_output(df,save_name,f)
+        correctness(df,save_name,f)
 
 

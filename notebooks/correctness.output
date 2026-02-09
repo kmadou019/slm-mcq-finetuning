@@ -1,0 +1,6 @@
+Incorrect output for medGemma_4b: 0.0%
+Number of correct MCQs for medGemma_4b 2 / 2
+Incorrect output for qwen3_4b_pdapt_slerp: 0.0%
+Number of correct MCQs for qwen3_4b_pdapt_slerp 2 / 2
+Incorrect output for qwen3_8b_pdapt_slerp: 0.19%
+Number of correct MCQs for qwen3_8b_pdapt_slerp 2493 / 3178

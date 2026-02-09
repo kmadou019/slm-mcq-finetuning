@@ -112,7 +112,7 @@ def construire_params_depuis_csv(df, model):
 
         section_b_checks = [
             ("Disclosure (answer leakage)", 
-             evaluation_to_pass_warn(row.get('disclosure'), True), 
+             evaluation_to_pass_warn(row.get('disclosure'), False), 
              "True/False", 
              f"Score: {row.get('disclosure', 'N/A')}"),
             ("Relevance to material", 
@@ -265,7 +265,6 @@ def generer_carte_mcq(card_data, index):
                     <div class="decision-section">
                         <p><strong>Decision Policy</strong></p>
                         <p>{card_data['decision_policy']}</p>
-                        <p style="margin-top: 8px;"><strong>Final decision:</strong> {card_data['final_decision']}</p>
                     </div>
                     
                     <div class="audit-trail">
@@ -279,7 +278,7 @@ def generer_carte_mcq(card_data, index):
                     </div>
                     
                     <div class="feedback-section">
-                        <label for="feedback-{index}"><strong>Feedback (optionnel):</strong></label>
+                        <label for="feedback-{index}"><strong>Feedback:</strong></label>
                         <textarea id="feedback-{index}" class="feedback-textarea" placeholder="Entrez votre feedback ici..." onchange="saveFeedback({index})" data-index="{index}"></textarea>
                     </div>
                 </div>
