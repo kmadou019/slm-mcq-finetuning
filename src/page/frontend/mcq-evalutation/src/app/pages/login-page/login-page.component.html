@@ -1,0 +1,81 @@
+<div class="login-container">
+  <div class="login-card">
+    <!-- Header -->
+    <div class="login-header">
+      <h1>MCQ Evaluation</h1>
+      <p>Connectez-vous pour évaluer les questions</p>
+    </div>
+
+    <!-- Error Alert -->
+    @if (error()) {
+      <div class="alert alert-error">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="12" y1="8" x2="12" y2="12"></line>
+          <line x1="12" y1="16" x2="12.01" y2="16"></line>
+        </svg>
+        <span>{{ error() }}</span>
+      </div>
+    }
+
+    <!-- Login Form -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <!-- Username Field -->
+      <div class="form-group">
+        <label for="username">Nom d'utilisateur</label>
+        <input
+          id="username"
+          type="text"
+          formControlName="username"
+          placeholder="Entrez votre nom d'utilisateur"
+          [class.input-error]="hasError('username')"
+        />
+        @if (hasError('username')) {
+          <span class="error-message">{{ getErrorMessage('username') }}</span>
+        }
+      </div>
+
+      <!-- Password Field -->
+      <div class="form-group">
+        <label for="password">Mot de passe</label>
+        <input
+          id="password"
+          type="password"
+          formControlName="password"
+          placeholder="Entrez votre mot de passe"
+          [class.input-error]="hasError('password')"
+        />
+        @if (hasError('password')) {
+          <span class="error-message">{{ getErrorMessage('password') }}</span>
+        }
+      </div>
+
+      <!-- Submit Button -->
+      <button
+        type="submit"
+        class="btn-login"
+        [disabled]="loading()"
+      >
+        @if (loading()) {
+          <span class="spinner"></span>
+          <span>Connexion...</span>
+        } @else {
+          <span>Se connecter</span>
+        }
+      </button>
+    </form>
+
+    <!-- Footer -->
+    <div class="login-footer">
+      <p>Besoin d'aide ? Contactez votre administrateur</p>
+    </div>
+  </div>
+
+  <!-- MCQ Selection Modal -->
+  @if (showMcqModal()) {
+    <app-mcq-selection-modal
+      (close)="onModalClose()"
+      (confirm)="onModalConfirm($event)"
+    ></app-mcq-selection-modal>
+  }
+</div>

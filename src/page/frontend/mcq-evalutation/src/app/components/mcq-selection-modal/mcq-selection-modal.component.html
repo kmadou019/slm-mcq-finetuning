@@ -1,0 +1,84 @@
+<div class="modal-overlay" (click)="onClose()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <!-- Header -->
+    <div class="modal-header">
+      <h2>Sélection des questions</h2>
+      <button class="btn-close" (click)="onClose()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Body -->
+    <div class="modal-body">
+      <p class="modal-description">
+        Combien de questions souhaitez-vous évaluer ?
+      </p>
+
+      <!-- Error Alert -->
+      @if (error()) {
+        <div class="alert alert-error">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          <span>{{ error() }}</span>
+        </div>
+      }
+
+      <!-- Predefined Options -->
+      <div class="options-grid">
+        @for (option of predefinedOptions; track option) {
+          <button
+            class="option-card"
+            [class.selected]="selectedCount() === option"
+            (click)="selectOption(option)"
+            [disabled]="loading()"
+          >
+            <span class="option-number">{{ option }}</span>
+            <span class="option-label">questions</span>
+          </button>
+        }
+      </div>
+
+      <!-- Custom Input -->
+      <div class="custom-input-section">
+        <label>Ou choisissez un nombre personnalisé :</label>
+        <div class="custom-input-group">
+          <input
+            type="number"
+            [(ngModel)]="customCount"
+            (input)="useCustomCount()"
+            min="1"
+            max="500"
+            placeholder="Ex: 25"
+            [disabled]="loading()"
+          />
+          <span class="input-suffix">questions</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="modal-footer">
+      <button class="btn-cancel" (click)="onClose()" [disabled]="loading()">
+        Annuler
+      </button>
+      <button
+        class="btn-confirm"
+        (click)="onConfirm()"
+        [disabled]="loading() || !selectedCount()"
+      >
+        @if (loading()) {
+          <span class="spinner"></span>
+          <span>Chargement...</span>
+        } @else {
+          <span>Commencer l'évaluation</span>
+        }
+      </button>
+    </div>
+  </div>
+</div>

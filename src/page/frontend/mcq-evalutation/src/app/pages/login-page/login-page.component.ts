@@ -1,0 +1,145 @@
+import { Component, inject, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
+import { LoginRequest } from '../../models';
+import { McqSelectionModalComponent } from '../../components/mcq-selection-modal/mcq-selection-modal.component';
+
+/**
+ * LoginPage Component - Page de connexion des évaluateurs
+ */
+@Component({
+  selector: 'app-login-page',
+  standalone: true,
+  imports: [CommonModule, ReactiveFormsModule, McqSelectionModalComponent],
+  templateUrl: './login-page.component.html',
+  styleUrl: './login-page.component.scss'
+})
+export class LoginPageComponent {
+  private readonly fb = inject(FormBuilder);
+  private readonly authService = inject(AuthService);
+  private readonly router = inject(Router);
+
+  // Formulaire de connexion
+  loginForm: FormGroup;
+
+  // État du composant
+  loading = signal(false);
+  error = signal<string | null>(null);
+  showMcqModal = signal(false);
+
+  constructor() {
+    // Initialiser le formulaire
+    this.loginForm = this.fb.group({
+      username: ['', [Validators.required, Validators.minLength(3)]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
+    });
+
+    // Rediriger si déjà connecté
+    if (this.authService.isAuthenticated()) {
+      this.router.navigate(['/dashboard']);
+    }
+  }
+
+  /**
+   * Soumettre le formulaire de connexion
+   */
+  onSubmit(): void {
+    // Réinitialiser l'erreur
+    this.error.set(null);
+
+    // Vérifier la validité du formulaire
+    if (this.loginForm.invalid) {
+      this.markFormGroupTouched(this.loginForm);
+      return;
+    }
+
+    // Récupérer les valeurs du formulaire
+    const credentials: LoginRequest = this.loginForm.value;
+
+    // Démarrer le chargement
+    this.loading.set(true);
+
+    // Appeler le service d'authentification
+    this.authService.login(credentials).subscribe({
+      next: (response) => {
+        console.log('Login successful:', response);
+        // Ouvrir le modal de sélection de MCQ
+        this.loading.set(false);
+        this.showMcqModal.set(true);
+      },
+      error: (error) => {
+        console.error('Login error:', error);
+        this.loading.set(false);
+
+        // Gérer les différents types d'erreurs
+        if (error.status === 401) {
+          this.error.set('Identifiants incorrects. Veuillez réessayer.');
+        } else if (error.status === 0) {
+          this.error.set('Impossible de se connecter au serveur. Vérifiez votre connexion.');
+        } else {
+          this.error.set('Une erreur est survenue. Veuillez réessayer plus tard.');
+        }
+      }
+    });
+  }
+
+  /**
+   * Gérer la fermeture du modal (annulation)
+   * L'utilisateur est déconnecté si le modal est fermé sans sélection
+   */
+  onModalClose(): void {
+    this.showMcqModal.set(false);
+    // Déconnecter l'utilisateur car il n'a pas sélectionné de MCQ
+    this.authService.logout().subscribe();
+  }
+
+  /**
+   * Gérer la confirmation du modal
+   * Naviguer vers le dashboard après sélection du nombre de MCQ
+   */
+  onModalConfirm(count: number): void {
+    console.log('MCQ assignment confirmed:', count);
+    this.showMcqModal.set(false);
+    this.router.navigate(['/dashboard']);
+  }
+
+  /**
+   * Marquer tous les champs du formulaire comme "touched"
+   * pour afficher les erreurs de validation
+   */
+  private markFormGroupTouched(formGroup: FormGroup): void {
+    Object.keys(formGroup.controls).forEach(key => {
+      const control = formGroup.get(key);
+      control?.markAsTouched();
+    });
+  }
+
+  /**
+   * Vérifier si un champ a une erreur et est touché
+   */
+  hasError(fieldName: string): boolean {
+    const field = this.loginForm.get(fieldName);
+    return !!(field && field.invalid && field.touched);
+  }
+
+  /**
+   * Récupérer le message d'erreur pour un champ
+   */
+  getErrorMessage(fieldName: string): string {
+    const field = this.loginForm.get(fieldName);
+    if (!field) return '';
+
+    if (field.hasError('required')) {
+      return `Le champ ${fieldName === 'username' ? 'nom d\'utilisateur' : 'mot de passe'} est requis.`;
+    }
+
+    if (field.hasError('minlength')) {
+      const minLength = field.errors?.['minlength'].requiredLength;
+      return `Minimum ${minLength} caractères requis.`;
+    }
+
+    return '';
+  }
+}
