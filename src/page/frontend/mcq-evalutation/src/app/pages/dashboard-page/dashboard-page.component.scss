@@ -248,6 +248,37 @@
     }
   }
 
+  .btn-admin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 14px 24px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(245, 87, 108, 0.4);
+    }
+  }
+
+  &.admin-card {
+    border: 2px solid #f5576c;
+    background: linear-gradient(135deg, #fff5f7 0%, #ffe9ec 100%);
+
+    h2 {
+      color: #f5576c;
+    }
+  }
+
   .progress-info {
     .progress-bar {
       width: 100%;

@@ -33,18 +33,18 @@ export class AdminDashboardPageComponent implements OnInit {
   // Utilisateurs
   users = signal<any[]>([]);
   showCreateUserModal = signal(false);
-  newUser = signal({
+  newUser = {
     username: '',
     password: '',
     email: '',
     role: 'evaluator'
-  });
+  };
 
   // Tracker
   tracker = signal<any>(null);
   trackerPath = signal('');
   showTrackerEditor = signal(false);
-  trackerJson = signal('');
+  trackerJson = '';
 
   ngOnInit(): void {
     this.loadAllData();
@@ -95,7 +95,7 @@ export class AdminDashboardPageComponent implements OnInit {
         console.log('🎯 Tracker:', data);
         this.tracker.set(data.tracker);
         this.trackerPath.set(data.path);
-        this.trackerJson.set(JSON.stringify(data.tracker, null, 2));
+        this.trackerJson = JSON.stringify(data.tracker, null, 2);
         this.loading.set(false);
       },
       error: (error) => {
@@ -120,12 +120,12 @@ export class AdminDashboardPageComponent implements OnInit {
    * Ouvrir la modal de création d'utilisateur
    */
   openCreateUserModal(): void {
-    this.newUser.set({
+    this.newUser = {
       username: '',
       password: '',
       email: '',
       role: 'evaluator'
-    });
+    };
     this.showCreateUserModal.set(true);
   }
 
@@ -140,7 +140,7 @@ export class AdminDashboardPageComponent implements OnInit {
    * Créer un nouvel utilisateur
    */
   createUser(): void {
-    const userData = this.newUser();
+    const userData = this.newUser;
 
     if (!userData.username || !userData.password || !userData.email) {
       alert('Veuillez remplir tous les champs requis');
@@ -211,7 +211,7 @@ export class AdminDashboardPageComponent implements OnInit {
    */
   saveTracker(): void {
     try {
-      const trackerData = JSON.parse(this.trackerJson());
+      const trackerData = JSON.parse(this.trackerJson);
 
       this.adminService.updateTracker(trackerData).subscribe({
         next: (response) => {
@@ -245,7 +245,7 @@ export class AdminDashboardPageComponent implements OnInit {
         // Recharger le tracker
         this.adminService.getTracker().subscribe(data => {
           this.tracker.set(data.tracker);
-          this.trackerJson.set(JSON.stringify(data.tracker, null, 2));
+          this.trackerJson = JSON.stringify(data.tracker, null, 2);
         });
         // Recharger les stats
         this.adminService.getStatsByModel().subscribe(stats => {

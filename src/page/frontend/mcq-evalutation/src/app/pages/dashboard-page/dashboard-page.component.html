@@ -127,6 +127,21 @@
           Demander
         </button>
       </div>
+
+      @if (currentUser()?.role === 'admin') {
+        <div class="action-card admin-card">
+          <h2>🔧 Dashboard Admin</h2>
+          <p>Accédez aux outils d'administration et statistiques globales</p>
+          <button class="btn-admin" (click)="onGoToAdmin()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+            Ouvrir l'Admin
+          </button>
+        </div>
+      }
     </div>
   }
 

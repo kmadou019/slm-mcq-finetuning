@@ -162,4 +162,11 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
     // Recharger les stats pour afficher les nouveaux MCQ
     this.loadStats();
   }
+
+  /**
+   * Aller au dashboard admin
+   */
+  onGoToAdmin(): void {
+    this.router.navigate(['/admin']);
+  }
 }

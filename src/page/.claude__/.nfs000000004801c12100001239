@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip install:*)",
+      "Bash(npm run build:*)",
+      "Bash(./node_modules/.bin/ng build:*)"
+    ]
+  }
+}

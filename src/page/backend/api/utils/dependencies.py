@@ -4,17 +4,20 @@ FastAPI dependencies
 from fastapi import Depends, HTTPException, status
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from typing import Optional
+from pathlib import Path
+import json
 from ..models.auth import User
 from .security import decode_access_token
 
 # Security scheme
 security = HTTPBearer()
 
-# Mock database - In production, use a real database
-# For demo, we'll have a simple in-memory user store
-# TEMPORARY: Using plain passwords for testing (replace with hashed in production)
-MOCK_USERS = {
-    "admin": {
+# Users database file path
+USERS_DB_PATH = Path(__file__).parent.parent.parent.parent / "data" / "users.json"
+
+# Default users for initialization
+DEFAULT_USERS = [
+    {
         "id": "user-001",
         "username": "admin",
         "email": "admin@mcq-eval.com",
@@ -22,7 +25,7 @@ MOCK_USERS = {
         "created_at": "2024-01-01T00:00:00Z",
         "password": "admin123"  # TEMPORARY: plain password for testing
     },
-    "evaluator": {
+    {
         "id": "user-002",
         "username": "evaluator",
         "email": "evaluator@mcq-eval.com",
@@ -30,7 +33,32 @@ MOCK_USERS = {
         "created_at": "2024-01-01T00:00:00Z",
         "password": "eval123"  # TEMPORARY: plain password for testing
     }
-}
+]
+
+# Initialize users database
+def init_users_db():
+    """Initialize users database file if it doesn't exist"""
+    if not USERS_DB_PATH.exists():
+        USERS_DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+        with open(USERS_DB_PATH, 'w') as f:
+            json.dump(DEFAULT_USERS, f, indent=2)
+        print(f"✅ Users database initialized at {USERS_DB_PATH}")
+    return load_users_db()
+
+def load_users_db():
+    """Load users from JSON file into dictionary"""
+    try:
+        with open(USERS_DB_PATH, 'r') as f:
+            users_list = json.load(f)
+        # Convert list to dict with username as key
+        return {user["username"]: user for user in users_list}
+    except Exception as e:
+        print(f"⚠️ Error loading users DB: {e}")
+        # Return default users if file can't be loaded
+        return {user["username"]: user for user in DEFAULT_USERS}
+
+# Load users database on module import
+USERS_DB = init_users_db()
 
 
 async def get_current_user(
@@ -61,8 +89,8 @@ async def get_current_user(
             headers={"WWW-Authenticate": "Bearer"},
         )
 
-    # Get user from mock database
-    user_data = MOCK_USERS.get(username)
+    # Get user from users database
+    user_data = USERS_DB.get(username)
 
     if user_data is None:
         raise HTTPException(
@@ -83,6 +111,6 @@ async def get_current_user(
 
 def get_user_by_username(username: str) -> Optional[dict]:
     """
-    Get user by username from mock database
+    Get user by username from users database
     """
-    return MOCK_USERS.get(username)
+    return USERS_DB.get(username)

@@ -212,7 +212,7 @@
 
         <div class="tracker-preview">
           <h3>État actuel du Tracker</h3>
-          <pre>{{ trackerJson() }}</pre>
+          <pre>{{ trackerJson }}</pre>
         </div>
       </section>
     </div>
@@ -262,7 +262,7 @@
         <input
           type="text"
           id="username"
-          [(ngModel)]="newUser().username"
+          [(ngModel)]="newUser.username"
           placeholder="johndoe"
           required>
       </div>
@@ -272,7 +272,7 @@
         <input
           type="email"
           id="email"
-          [(ngModel)]="newUser().email"
+          [(ngModel)]="newUser.email"
           placeholder="john@example.com"
           required>
       </div>
@@ -282,14 +282,14 @@
         <input
           type="password"
           id="password"
-          [(ngModel)]="newUser().password"
+          [(ngModel)]="newUser.password"
           placeholder="••••••••"
           required>
       </div>
 
       <div class="form-group">
         <label for="role">Rôle *</label>
-        <select id="role" [(ngModel)]="newUser().role">
+        <select id="role" [(ngModel)]="newUser.role">
           <option value="evaluator">Évaluateur</option>
           <option value="admin">Administrateur</option>
         </select>
@@ -323,7 +323,7 @@
         <label for="trackerJson">JSON du Tracker</label>
         <textarea
           id="trackerJson"
-          [(ngModel)]="trackerJson()"
+          [(ngModel)]="trackerJson"
           rows="20"
           class="code-editor"></textarea>
       </div>
