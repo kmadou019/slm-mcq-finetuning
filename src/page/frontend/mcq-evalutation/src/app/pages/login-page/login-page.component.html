@@ -70,12 +70,4 @@
       <p>Besoin d'aide ? Contactez votre administrateur</p>
     </div>
   </div>
-
-  <!-- MCQ Selection Modal -->
-  @if (showMcqModal()) {
-    <app-mcq-selection-modal
-      (close)="onModalClose()"
-      (confirm)="onModalConfirm($event)"
-    ></app-mcq-selection-modal>
-  }
 </div>

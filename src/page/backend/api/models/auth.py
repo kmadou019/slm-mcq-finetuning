@@ -36,6 +36,7 @@ class LoginResponse(BaseModel):
 class MCQSelectionRequest(BaseModel):
     """MCQ selection request"""
     count: int
+    model: Optional[str] = "qwen3_8b_pdapt_slerp"  # Modèle par défaut
 
 
 class MCQAssignment(BaseModel):

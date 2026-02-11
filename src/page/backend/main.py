@@ -5,7 +5,8 @@ FastAPI Main Application - MCQ Evaluation Backend
 """
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from api.routes import auth
+from api.routes import auth, mcq, validations, admin
+from database import init_db
 
 # Create FastAPI app
 app = FastAPI(
@@ -13,6 +14,13 @@ app = FastAPI(
     description="Backend API for MCQ evaluation application",
     version="1.0.0"
 )
+
+# Initialize database on startup
+@app.on_event("startup")
+async def startup_event():
+    """Initialize database tables"""
+    init_db()
+    print("🚀 Application started - Database initialized")
 
 # Configure CORS
 app.add_middleware(
@@ -28,6 +36,9 @@ app.add_middleware(
 
 # Include routers
 app.include_router(auth.router, prefix="/api")
+app.include_router(mcq.router, prefix="/api")
+app.include_router(validations.router, prefix="/api")
+app.include_router(admin.router, prefix="/api")
 
 # Root endpoint
 @app.get("/")

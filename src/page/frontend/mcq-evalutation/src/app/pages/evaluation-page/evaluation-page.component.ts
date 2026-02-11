@@ -1,9 +1,12 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
+import { McqService } from '../../services/mcq.service';
+import { ValidationService } from '../../services/validation.service';
 import { MCQCard, SectionCheck } from '../../models';
+import { filter, Subscription } from 'rxjs';
 
 /**
  * EvaluationPage Component - Page d'évaluation des MCQ
@@ -15,10 +18,13 @@ import { MCQCard, SectionCheck } from '../../models';
   templateUrl: './evaluation-page.component.html',
   styleUrl: './evaluation-page.component.scss'
 })
-export class EvaluationPageComponent implements OnInit {
+export class EvaluationPageComponent implements OnInit, OnDestroy {
   private readonly fb = inject(FormBuilder);
   private readonly authService = inject(AuthService);
+  private readonly mcqService = inject(McqService);
+  private readonly validationService = inject(ValidationService);
   private readonly router = inject(Router);
+  private routerSubscription?: Subscription;
 
   // État du composant
   loading = signal(true);
@@ -37,98 +43,233 @@ export class EvaluationPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // TODO: Charger les MCQ assignés depuis l'API
-    // Pour l'instant, utiliser des données mock
+    // Initialiser le chargement
+    this.initializeEvaluation();
+
+    // Écouter les événements de navigation pour recharger les MCQ
+    // quand l'utilisateur revient à la page evaluation après avoir demandé de nouveaux MCQ
+    this.routerSubscription = this.router.events.pipe(
+      filter(event => event instanceof NavigationEnd)
+    ).subscribe((event: any) => {
+      if (event.url === '/evaluation') {
+        console.log('🔄 Retour à l\'évaluation - rechargement des MCQ');
+        this.initializeEvaluation();
+      }
+    });
+  }
+
+  ngOnDestroy(): void {
+    // Nettoyer la souscription pour éviter les fuites mémoire
+    this.routerSubscription?.unsubscribe();
+  }
+
+  /**
+   * Initialiser ou réinitialiser l'évaluation
+   */
+  private initializeEvaluation(): void {
+    // Vérifier s'il y a une progression sauvegardée
+    const savedProgress = this.mcqService.loadProgress();
+    if (savedProgress) {
+      if (confirm('Voulez-vous reprendre votre évaluation là où vous vous êtes arrêté ?')) {
+        this.mcqList.set(savedProgress.mcq_list);
+        this.loadMCQ(savedProgress.current_index);
+        return;
+      } else {
+        // Effacer la progression si l'utilisateur ne veut pas reprendre
+        this.mcqService.clearProgress();
+      }
+    }
+
+    // Charger les MCQ assignés depuis l'API
     this.loadAssignedMCQs();
   }
 
   /**
-   * Charger les MCQ assignés (mock pour l'instant)
+   * Charger les MCQ assignés depuis le backend
    */
   private loadAssignedMCQs(): void {
-    // TODO: Remplacer par un vrai appel API
-    // this.mcqService.getAssignedMCQs().subscribe(...)
+    this.loading.set(true);
 
-    // Mock data - simuler un délai de chargement
-    setTimeout(() => {
-      this.mcqList.set(['MCQ-000001', 'MCQ-000002', 'MCQ-000003']);
-      this.loadMCQ(0);
-    }, 500);
+    this.mcqService.getAssignedMcqs().subscribe({
+      next: (response) => {
+        console.log('📋 MCQs assignés chargés:', response);
+        this.mcqList.set(response.mcq_ids);
+        if (response.mcq_ids.length > 0) {
+          this.loadMCQ(0);
+        } else {
+          this.loading.set(false);
+          alert('Aucun MCQ assigné pour le moment.');
+        }
+      },
+      error: (error) => {
+        console.error('❌ Erreur backend, utilisation des données mockées:', error);
+        // Fallback vers les données mockées si le backend n'est pas disponible
+        this.loadMockData();
+      }
+    });
   }
 
   /**
-   * Charger un MCQ spécifique
+   * Charger des données mockées (fallback si backend indisponible)
+   */
+  private loadMockData(): void {
+    console.log('🔄 Chargement des données mockées (mode développement)');
+    this.mcqList.set(['MCQ-000001', 'MCQ-000002', 'MCQ-000003']);
+    this.loadMCQ_MOCK(0);
+  }
+
+  /**
+   * Charger un MCQ spécifique depuis le backend
    */
   private loadMCQ(index: number): void {
+    console.log('📄 loadMCQ - Loading MCQ at index:', index);
+
     this.loading.set(true);
     const mcqId = this.mcqList()[index];
+    console.log('🔑 MCQ ID:', mcqId);
 
-    // TODO: Remplacer par un vrai appel API
-    // this.mcqService.getMCQ(mcqId).subscribe(...)
-
-    // Mock data pour démonstration
-    setTimeout(() => {
-      const mockMCQ: MCQCard = {
-        item_id: mcqId,
-        source_material: 'Generated from LISA text',
-        generator_info: 'GPT-4',
-        output_format: 'JSON',
-        mcq_question: 'Quelle est la capitale de la France ?',
-        options: {
-          A: 'Londres',
-          B: 'Paris',
-          C: 'Berlin',
-          D: 'Madrid'
-        },
-        correct_option: 'B',
-        section_a_checks: [
-          {
-            check_id: 'A1',
-            description: 'La question est claire et sans ambiguïté',
-            status: 'not_checked',
-            confidence: null
-          },
-          {
-            check_id: 'A2',
-            description: 'Les options sont distinctes et plausibles',
-            status: 'not_checked',
-            confidence: null
-          },
-          {
-            check_id: 'A3',
-            description: 'La réponse correcte est sans équivoque',
-            status: 'not_checked',
-            confidence: null
-          }
-        ],
-        section_b_checks: [
-          {
-            check_id: 'B1',
-            description: 'La question est basée sur le texte LISA',
-            status: 'not_checked',
-            confidence: null
-          },
-          {
-            check_id: 'B2',
-            description: 'Le niveau de difficulté est approprié',
-            status: 'not_checked',
-            confidence: null
-          }
-        ],
-        decision_policy: 'strict',
-        final_decision: 'REVISE',
-        audit_trail: '',
-        lisa_texte_brut: 'Paris est la capitale et la plus grande ville de la France. Elle se situe au centre du Bassin parisien, sur une boucle de la Seine.'
-      };
-
-      this.currentMcq.set(mockMCQ);
-      this.currentIndex.set(index);
-      this.loading.set(false);
-    }, 300);
+    this.mcqService.getMcqById(mcqId).subscribe({
+      next: (mcq) => {
+        console.log('✅ MCQ chargé:', mcq);
+        this.currentMcq.set(mcq);
+        this.currentIndex.set(index);
+        this.loading.set(false);
+        this.validationForm.reset();
+      },
+      error: (error) => {
+        console.error('❌ Erreur backend, utilisation des données mockées:', error);
+        // Fallback vers les données mockées
+        this.loadMCQ_MOCK(index);
+      }
+    });
   }
 
   /**
-   * Toggle le statut d'un check (Section A ou B)
+   * Charger un MCQ spécifique (ANCIENNE VERSION MOCKÉE - GARDÉE POUR RÉFÉRENCE)
+   */
+  private loadMCQ_MOCK(index: number): void {
+    console.log('📄 loadMCQ - Loading MCQ at index:', index);
+
+    const mcqId = this.mcqList()[index];
+    console.log('🔑 MCQ ID:', mcqId);
+
+    // Mock data correspondant à mcq_cards.html - chargement immédiat
+    const mockMCQ: MCQCard = {
+      item_id: mcqId,
+      source_material: 'OIC-005-01-A',
+      generator_info: 'qwen3_8b_pdapt_slerp',
+      output_format: 'JSON',
+      mcq_question: 'Quel est l\'élément le plus difficile à prouver pour établir la responsabilité d\'un professionnel de santé?',
+      options: {
+        A: 'Le dommage',
+        B: 'Le fait générateur de responsabilité',
+        C: 'Le lien de causalité entre le fait générateur et le dommage',
+        D: 'L\'indemnisation'
+      },
+      correct_option: 'C',
+      section_a_checks: [
+        {
+          check_id: 'A1',
+          description: 'Question mark present',
+          result: 'WARN',
+          status: 'not_checked',
+          confidence: null,
+          threshold: 'required',
+          notes: 'Not a question'
+        },
+        {
+          check_id: 'A2',
+          description: 'No leading negation',
+          result: 'PASS',
+          status: 'not_checked',
+          confidence: null,
+          threshold: 'required',
+          notes: 'No negation'
+        },
+        {
+          check_id: 'A3',
+          description: 'Originality (integral)',
+          result: 'WARN',
+          status: 'not_checked',
+          confidence: null,
+          threshold: '≥ 0.75',
+          notes: 'Score: N/A'
+        },
+        {
+          check_id: 'A4',
+          description: 'Readability (FK grade)',
+          result: 'WARN',
+          status: 'not_checked',
+          confidence: null,
+          threshold: '≥ 12',
+          notes: 'Score: None'
+        }
+      ],
+      section_b_checks: [
+        {
+          check_id: 'B1',
+          description: 'Disclosure (answer leakage)',
+          result: 'WARN',
+          status: 'not_checked',
+          confidence: null,
+          score: 'True/False',
+          notes: 'Score: N/A'
+        },
+        {
+          check_id: 'B2',
+          description: 'Relevance to material',
+          result: 'WARN',
+          status: 'not_checked',
+          confidence: null,
+          score: '0-1',
+          notes: 'Score: N/A'
+        },
+        {
+          check_id: 'B3',
+          description: 'Distractor plausibility',
+          result: 'WARN',
+          status: 'not_checked',
+          confidence: null,
+          score: 'True/False',
+          notes: 'Score: False'
+        },
+        {
+          check_id: 'B4',
+          description: 'Difficulty appropriateness',
+          result: 'PASS',
+          status: 'not_checked',
+          confidence: null,
+          score: 'low/med/high',
+          notes: 'Judge: medium'
+        }
+      ],
+      decision_policy: 'Accept if all hard constraints pass and no critical AI-judge dimension fails.',
+      final_decision: 'REVISE',
+      audit_trail: 'Judge model: Automated, consistency: evaluated from CSV metrics.',
+      lisa_texte_brut: 'La responsabilité d\'un professionnel de santé ou d\'un établissement de santé peut être recherchée à deux fins : soit la sanction du professionnel ou de l\'établissement, soit l\'indemnisation de l\'usager victime des conséquences d\'un événement indésirable associé aux soins. La sanction peut être de nature pénale ou disciplinaire. L\'indemnisation incombe au responsable (exercice libéral) ou à son employeur s\'il est salarié (public ou privé). Elle peut également être obtenue via la procédure amiable devant les commissions de conciliation et d\'indemnisation. L\'indemnisation des victimes est assurée par l\'obligation de souscription pour les médecins et les établissements de santé (public ou privé) d\'une assurance de responsabilité civile professionnelle. En plus d\'assurer l\'indemnisation des victimes, cette assurance permet de couvrir les médecins salariés lorsque la faute est détachable du service ou lorsque la mission qui leur a été confiée est outrepassée.\n\nL\'indemnisation de l\'usager s\'estimant victime des conséquences dommageables d\'un acte médical suppose qu\'il apporte la preuve d\'un dommage, d\'un fait générateur de responsabilité et d\'un lien de causalité entre le fait générateur et le dommage.\n\nEn matière de responsabilité des professionnels et des établissements de santé, le dommage peut prendre plusieurs formes. Il peut s\'agir :\n\n- d\'une atteinte à l\'intégrité physique ou psychique ;\n\n- d\'une perte de chance de survie ou de guérison ;\n\n- d\'une perte de chance d\'avoir échappé à un risque qui s\'est finalement réalisé (en cas de défaut d\'information).\n\nLe dommage doit être actuel et certain. Il peut être futur dès lors qu\'il est certain (par exemple, la stérilité d\'une enfant du fait d\'une irradiation fautive).\n\nLe lien de causalité entre le fait générateur de responsabilité (en règle générale, la faute) et le dommage doit être certain. Il n\'a pas à être direct ni exclusif.\n\nParmi les éléments du triptyque fondant l\'engagement de la responsabilité, le lien de causalité est habituellement le plus difficile à prouver par le patient. En effet, il est souvent complexe de distinguer les conséquences de la faute de celles de l\'évolution spontanée de l\'état de santé pathologique. Le juge admet que l\'on puisse indemniser la perte de chance de survie ou de guérison. Dans ce cas, l\'indemnisation est accordée à proportion de la probabilité de survie ou de guérison perdue du fait de la faute.',
+      lisa_metadata: {
+        identifiant: 'OIC-005-01-A',
+        rang: 'A',
+        rubrique: 'Définition',
+        intitule: 'Connaître la définition de la responsabilité sanction/indemnisation',
+        item_parent: '',
+        description: 'None',
+        contenu: 'La responsabilité d\'un professionnel de santé...'
+      }
+    };
+
+    console.log('📦 Mock MCQ created:', mockMCQ);
+
+    this.currentMcq.set(mockMCQ);
+    this.currentIndex.set(index);
+    this.loading.set(false);
+
+    console.log('✅ loadMCQ finished - loading:', this.loading(), 'currentMcq set:', !!this.currentMcq(), 'currentIndex:', this.currentIndex());
+  }
+
+  /**
+   * Toggle le statut de validation d'un check (Section A ou B)
+   * La checkbox permet à l'expert de valider le résultat du backend
    */
   toggleCheck(section: 'A' | 'B', checkIndex: number): void {
     const mcq = this.currentMcq();
@@ -137,17 +278,18 @@ export class EvaluationPageComponent implements OnInit {
     const checks = section === 'A' ? mcq.section_a_checks : mcq.section_b_checks;
     const check = checks[checkIndex];
 
-    // Cycle through: not_checked → pass → fail → not_checked
+    console.log(`🔄 toggleCheck - Section ${section}, Index ${checkIndex}, Current status: ${check.status}`);
+
+    // Simple toggle: not_checked ↔ validated
     if (check.status === 'not_checked') {
-      check.status = 'pass';
-      check.confidence = 'high';
-    } else if (check.status === 'pass') {
-      check.status = 'fail';
+      check.status = 'validated';
       check.confidence = 'high';
     } else {
       check.status = 'not_checked';
       check.confidence = null;
     }
+
+    console.log(`✅ toggleCheck - New status: ${check.status}`);
 
     // Forcer la mise à jour du signal
     this.currentMcq.set({ ...mcq });
@@ -167,35 +309,54 @@ export class EvaluationPageComponent implements OnInit {
    */
   onReject(): void {
     if (confirm('Rejeter ce MCQ ?')) {
-      this.submitValidation('REVISE');
+      this.submitValidation('REJECT');
     }
   }
 
   /**
-   * Soumettre la validation
+   * Soumettre la validation au backend
    */
-  private submitValidation(decision: 'ACCEPT' | 'REVISE'): void {
+  private submitValidation(decision: 'ACCEPT' | 'REJECT'): void {
     const mcq = this.currentMcq();
     if (!mcq) return;
 
-    const validation = {
-      mcq_id: mcq.item_id,
-      decision: decision,
+    const validationData = {
       section_a_checks: mcq.section_a_checks,
       section_b_checks: mcq.section_b_checks,
-      feedback: this.validationForm.get('feedback')?.value || ''
+      human_decision: decision,
+      human_feedback: this.validationForm.get('feedback')?.value || ''
     };
 
-    console.log('Validation soumise:', validation);
+    console.log('📤 Soumission de la validation:', validationData);
 
-    // TODO: Envoyer au backend
-    // this.mcqService.submitValidation(validation).subscribe(...)
+    // Utiliser la nouvelle méthode qui gère localStorage + backend
+    this.validationService.saveValidationToBackend(
+      mcq.item_id,
+      decision,
+      validationData
+    ).subscribe({
+      next: (response) => {
+        console.log('✅ Validation sauvegardée:', response);
+        this.navigateAfterValidation();
+      },
+      error: (error) => {
+        console.warn('⚠️ Erreur lors de la sauvegarde:', error);
+        // Quand même naviguer car la validation est sauvegardée localement
+        this.navigateAfterValidation();
+      }
+    });
+  }
 
+  /**
+   * Navigation après validation
+   */
+  private navigateAfterValidation(): void {
     // Passer au MCQ suivant ou retourner au dashboard
     if (this.hasNext()) {
       this.onNext();
     } else {
       alert('Toutes les évaluations sont terminées !');
+      this.mcqService.clearProgress();
       this.router.navigate(['/dashboard']);
     }
   }
@@ -206,7 +367,6 @@ export class EvaluationPageComponent implements OnInit {
   onPrevious(): void {
     if (this.hasPrevious()) {
       this.loadMCQ(this.currentIndex() - 1);
-      this.validationForm.reset();
     }
   }
 
@@ -216,8 +376,28 @@ export class EvaluationPageComponent implements OnInit {
   onNext(): void {
     if (this.hasNext()) {
       this.loadMCQ(this.currentIndex() + 1);
-      this.validationForm.reset();
     }
+  }
+
+  /**
+   * Faire une pause et sauvegarder la progression
+   */
+  onPause(): void {
+    const mcq = this.currentMcq();
+    if (!mcq) return;
+
+    // Sauvegarder la progression
+    this.mcqService.saveProgress({
+      current_index: this.currentIndex(),
+      mcq_list: this.mcqList(),
+      current_mcq_state: {
+        mcq: mcq,
+        feedback: this.validationForm.get('feedback')?.value || ''
+      }
+    });
+
+    alert('✅ Votre progression a été sauvegardée. Vous pourrez reprendre plus tard.');
+    this.router.navigate(['/dashboard']);
   }
 
   /**

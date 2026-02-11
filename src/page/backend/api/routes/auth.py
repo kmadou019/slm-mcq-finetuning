@@ -3,6 +3,7 @@ Authentication routes
 """
 from fastapi import APIRouter, Depends, HTTPException, status
 from datetime import datetime
+from sqlalchemy.orm import Session
 from ..models.auth import (
     LoginRequest,
     LoginResponse,
@@ -10,8 +11,10 @@ from ..models.auth import (
     MCQSelectionRequest,
     MCQAssignment
 )
+from ..models.db_models import MCQAssignment as DBMCQAssignment
 from ..utils.security import create_access_token
 from ..utils.dependencies import get_current_user, get_user_by_username
+from database import get_db
 
 router = APIRouter(prefix="/auth", tags=["authentication"])
 
@@ -80,21 +83,68 @@ async def get_me(current_user: User = Depends(get_current_user)):
 @router.post("/assign-mcq", response_model=MCQAssignment)
 async def assign_mcq(
     request: MCQSelectionRequest,
-    current_user: User = Depends(get_current_user)
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
 ):
     """
     Assign MCQ questions to the current user
+    Uses sequential assignment from CSV files
+    Saves assignments to database
     """
-    # TODO: In production, fetch real MCQ IDs from database
-    # For now, generate mock MCQ IDs
-    mcq_ids = [f"MCQ-{i:06d}" for i in range(1, request.count + 1)]
+    # Import the assignment function from mcq routes
+    from .mcq import assign_mcqs_to_user
 
-    assignment = MCQAssignment(
-        user_id=current_user.id,
-        mcq_count=request.count,
-        assigned_mcq_ids=mcq_ids,
-        assigned_at=datetime.utcnow().isoformat() + "Z",
-        status="pending"
-    )
+    try:
+        # Utiliser la fonction d'assignation séquentielle
+        result = assign_mcqs_to_user(
+            username=current_user.username,
+            count=request.count,
+            model=request.model or "qwen3_8b_pdapt_slerp"
+        )
 
-    return assignment
+        # Sauvegarder les assignments dans la base de données
+        for mcq_id in result["mcq_ids"]:
+            # Vérifier si l'assignment existe déjà
+            existing = db.query(DBMCQAssignment).filter(
+                DBMCQAssignment.user_id == current_user.id,
+                DBMCQAssignment.mcq_id == mcq_id
+            ).first()
+
+            if not existing:
+                # Créer un nouvel assignment
+                db_assignment = DBMCQAssignment(
+                    user_id=current_user.id,
+                    mcq_id=mcq_id,
+                    model=request.model or "qwen3_8b_pdapt_slerp",
+                    status="pending"
+                )
+                db.add(db_assignment)
+
+        # Commit tous les assignments
+        db.commit()
+
+        assignment = MCQAssignment(
+            user_id=current_user.id,
+            mcq_count=len(result["mcq_ids"]),
+            assigned_mcq_ids=result["mcq_ids"],
+            assigned_at=datetime.utcnow().isoformat() + "Z",
+            status="pending"
+        )
+
+        return assignment
+
+    except FileNotFoundError as e:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=str(e)
+        )
+    except ValueError as e:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=str(e)
+        )
+    except Exception as e:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Error assigning MCQs: {str(e)}"
+        )

@@ -31,4 +31,5 @@ export interface MCQAssignment {
 
 export interface MCQSelectionRequest {
   count: number;
+  model?: string;
 }

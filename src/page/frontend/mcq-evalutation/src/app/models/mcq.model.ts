@@ -13,8 +13,22 @@ export interface MCQOption {
 export interface SectionCheck {
   check_id: string;
   description: string;
-  status: 'not_checked' | 'pass' | 'fail';
+  result: 'PASS' | 'WARN';  // Result from backend (read-only)
+  status: 'not_checked' | 'validated' | 'rejected';  // Expert validation status
   confidence: 'high' | 'medium' | 'low' | null;
+  threshold?: string;  // For Section A
+  score?: string;      // For Section B
+  notes?: string;      // Notes about the check
+}
+
+export interface LISAMetadata {
+  identifiant: string;
+  rang: string;
+  rubrique: string;
+  intitule: string;
+  item_parent: string;
+  description: string;
+  contenu: string;
 }
 
 export interface MCQCard {
@@ -31,6 +45,7 @@ export interface MCQCard {
   final_decision: 'ACCEPT' | 'REVISE';
   audit_trail: string;
   lisa_texte_brut: string;
+  lisa_metadata?: LISAMetadata;  // Optional LISA metadata
 }
 
 export interface LISASheet {

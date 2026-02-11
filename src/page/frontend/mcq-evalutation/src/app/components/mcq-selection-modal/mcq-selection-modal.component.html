@@ -29,6 +29,33 @@
         </div>
       }
 
+      <!-- Model Selection -->
+      <div class="model-selection-section">
+        <label for="model-select">Choisissez le modèle :</label>
+        @if (loadingModels()) {
+          <div class="loading-models">
+            <span class="spinner-small"></span>
+            <span>Chargement des modèles...</span>
+          </div>
+        } @else {
+          <select
+            id="model-select"
+            class="model-select"
+            [(ngModel)]="selectedModel"
+            [disabled]="loading()"
+          >
+            @for (modelInfo of availableModels(); track modelInfo.model) {
+              <option [value]="modelInfo.model">
+                {{ modelInfo.model }}
+                @if (modelInfo.count > 0) {
+                  ({{ modelInfo.count }} MCQs)
+                }
+              </option>
+            }
+          </select>
+        }
+      </div>
+
       <!-- Predefined Options -->
       <div class="options-grid">
         @for (option of predefinedOptions; track option) {

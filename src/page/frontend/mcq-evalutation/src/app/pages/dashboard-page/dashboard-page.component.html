@@ -35,7 +35,7 @@
         </div>
         <div class="stat-content">
           <p class="stat-label">Total MCQ</p>
-          <p class="stat-value">{{ stats.total }}</p>
+          <p class="stat-value">{{ stats().total }}</p>
         </div>
       </div>
 
@@ -48,7 +48,7 @@
         </div>
         <div class="stat-content">
           <p class="stat-label">En attente</p>
-          <p class="stat-value">{{ stats.pending }}</p>
+          <p class="stat-value">{{ stats().pending }}</p>
         </div>
       </div>
 
@@ -60,7 +60,7 @@
         </div>
         <div class="stat-content">
           <p class="stat-label">Complétées</p>
-          <p class="stat-value">{{ stats.completed }}</p>
+          <p class="stat-value">{{ stats().completed }}</p>
         </div>
       </div>
 
@@ -73,7 +73,7 @@
         </div>
         <div class="stat-content">
           <p class="stat-label">Acceptées</p>
-          <p class="stat-value">{{ stats.accepted }}</p>
+          <p class="stat-value">{{ stats().accepted }}</p>
         </div>
       </div>
 
@@ -87,7 +87,7 @@
         </div>
         <div class="stat-content">
           <p class="stat-label">Refusées</p>
-          <p class="stat-value">{{ stats.rejected }}</p>
+          <p class="stat-value">{{ stats().rejected }}</p>
         </div>
       </div>
     </div>
@@ -110,11 +110,31 @@
         <p>Consultez vos progrès et performances d'évaluation</p>
         <div class="progress-info">
           <div class="progress-bar">
-            <div class="progress-fill" [style.width.%]="(stats.completed / stats.total) * 100"></div>
+            <div class="progress-fill" [style.width.%]="(stats().completed / stats().total) * 100"></div>
           </div>
-          <p class="progress-text">{{ stats.completed }} / {{ stats.total }} complétées</p>
+          <p class="progress-text">{{ stats().completed }} / {{ stats().total }} complétées</p>
         </div>
       </div>
+
+      <div class="action-card">
+        <h2>Demander de nouveaux MCQ</h2>
+        <p>Recevez de nouvelles questions à évaluer</p>
+        <button class="btn-secondary" (click)="onRequestNewMcqs()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="12" y1="5" x2="12" y2="19"></line>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+          </svg>
+          Demander
+        </button>
+      </div>
     </div>
+  }
+
+  <!-- MCQ Selection Modal -->
+  @if (showMcqModal()) {
+    <app-mcq-selection-modal
+      (close)="onModalClose()"
+      (confirm)="onModalConfirm($event)"
+    ></app-mcq-selection-modal>
   }
 </div>

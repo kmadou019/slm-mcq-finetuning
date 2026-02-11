@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Output, signal, inject } from '@angular/core';
+import { Component, EventEmitter, Output, signal, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
+import { McqService } from '../../services/mcq.service';
 
 /**
  * MCQSelectionModal Component - Modal pour sélectionner le nombre de MCQ
@@ -13,8 +14,9 @@ import { AuthService } from '../../services/auth.service';
   templateUrl: './mcq-selection-modal.component.html',
   styleUrl: './mcq-selection-modal.component.scss'
 })
-export class McqSelectionModalComponent {
+export class McqSelectionModalComponent implements OnInit {
   private readonly authService = inject(AuthService);
+  private readonly mcqService = inject(McqService);
 
   @Output() close = new EventEmitter<void>();
   @Output() confirm = new EventEmitter<number>();
@@ -26,9 +28,39 @@ export class McqSelectionModalComponent {
   selectedCount = signal<number | null>(null);
   customCount = signal<number | null>(null);
 
+  // Modèles disponibles
+  availableModels = signal<{ model: string, count: number }[]>([]);
+  selectedModel = signal<string>('qwen3_4b_pdapt_slerp');
+
   // État
   loading = signal(false);
+  loadingModels = signal(true);
   error = signal<string | null>(null);
+
+  ngOnInit(): void {
+    // Charger les modèles disponibles depuis le backend
+    this.loadingModels.set(true);
+    this.mcqService.getAvailableModels().subscribe({
+      next: (models) => {
+        this.availableModels.set(models);
+        this.loadingModels.set(false);
+      },
+      error: (error) => {
+        console.error('Erreur lors du chargement des modèles:', error);
+        // Fallback: utiliser les modèles prédéfinis si le backend n'est pas disponible
+        const defaultModels = [
+          'llama3_1_8b', 'openbiollm_8b', 'gemma2_9b',
+          'medGemma_4b', 'medGemma_27b', 'qwen3_8b',
+          'mistral_7b', 'eurollm_9b', 'apertus_8B',
+          'qwen3_0.6b', 'qwen3_1_7b', 'qwen3_4b',
+          'qwen3_8b_pdapt_slerp', 'qwen3_4b_pdapt_slerp',
+          'qwen3_1_7b_pdapt_slerp', 'qwen3_0.6b_pdapt_slerp'
+        ].map(model => ({ model, count: 0 }));
+        this.availableModels.set(defaultModels);
+        this.loadingModels.set(false);
+      }
+    });
+  }
 
   /**
    * Sélectionner une option prédéfinie
@@ -55,6 +87,7 @@ export class McqSelectionModalComponent {
    */
   onConfirm(): void {
     const count = this.selectedCount();
+    const model = this.selectedModel();
 
     // Validation
     if (!count || count <= 0) {
@@ -67,12 +100,17 @@ export class McqSelectionModalComponent {
       return;
     }
 
+    if (!model) {
+      this.error.set('Veuillez sélectionner un modèle.');
+      return;
+    }
+
     // Démarrer le chargement
     this.loading.set(true);
     this.error.set(null);
 
-    // Appeler l'API pour assigner les MCQ
-    this.authService.assignMCQs(count).subscribe({
+    // Appeler l'API pour assigner les MCQ avec le modèle sélectionné
+    this.authService.assignMCQs(count, model).subscribe({
       next: (assignment) => {
         console.log('MCQ assigned:', assignment);
         this.loading.set(false);

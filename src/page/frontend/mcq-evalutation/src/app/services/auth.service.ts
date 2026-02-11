@@ -59,16 +59,25 @@ export class AuthService {
    * Déconnexion de l'utilisateur
    */
   logout(): Observable<void> {
+    console.log('🔄 AuthService.logout() appelé');
+
     return this.http.post<void>(`${this.apiUrl}/auth/logout`, {}).pipe(
       tap(() => {
+        console.log('✅ Requête logout réussie');
         this.clearSession();
+        console.log('✅ Session nettoyée, navigation vers /login');
         this.router.navigate(['/login']);
       }),
       catchError(error => {
-        // Même en cas d'erreur, on déconnecte localement
+        console.warn('⚠️ Erreur backend lors du logout, déconnexion locale quand même', error);
+        // Même en cas d'erreur backend, on déconnecte localement
         this.clearSession();
+        console.log('✅ Session nettoyée (après erreur), navigation vers /login');
         this.router.navigate(['/login']);
-        return throwError(() => error);
+        // Retourner un Observable vide au lieu d'une erreur pour que le subscribe se termine proprement
+        return new Observable<void>(observer => {
+          observer.complete();
+        });
       })
     );
   }
@@ -93,8 +102,8 @@ export class AuthService {
   /**
    * Assigner des MCQ à l'utilisateur actuel
    */
-  assignMCQs(count: number): Observable<MCQAssignment> {
-    const request: MCQSelectionRequest = { count };
+  assignMCQs(count: number, model?: string): Observable<MCQAssignment> {
+    const request: MCQSelectionRequest = { count, model };
     return this.http.post<MCQAssignment>(`${this.apiUrl}/auth/assign-mcq`, request).pipe(
       catchError(error => {
         console.error('Assign MCQs error:', error);

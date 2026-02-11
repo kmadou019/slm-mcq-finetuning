@@ -26,17 +26,38 @@ if len(argv) >= 2:
     indexes = []
     if len(argv) >= 3:
         try:
-            # Chaque paramètre suivant est un index
+            # Chaque paramètre suivant est un index ou un intervalle
             for i in range(2, len(argv)):
-                index = int(argv[i])
-                indexes.append(index)
-            
+                arg = argv[i]
+
+                # Vérifier si c'est un intervalle (contient '-')
+                if '-' in arg:
+                    parts = arg.split('-')
+                    if len(parts) != 2:
+                        print(f"Error: Invalid interval format '{arg}'. Use format: start-end (e.g., 1-10)")
+                        exit(1)
+
+                    start = int(parts[0])
+                    end = int(parts[1])
+
+                    if start > end:
+                        print(f"Error: Invalid interval '{arg}'. Start must be <= end.")
+                        exit(1)
+
+                    # Ajouter tous les index de l'intervalle
+                    indexes.extend(range(start, end + 1))
+                else:
+                    # C'est un index simple
+                    index = int(arg)
+                    indexes.append(index)
+
             print(f"✓ Model: {model}")
             print(f"✓ Generated QCM file: {generated_qcm_file}")
             print(f"✓ Indexes: {indexes}")
-        
-        except ValueError:
-            print(f"Error: Invalid index at position {i}. All indexes must be integers.")
+
+        except ValueError as e:
+            print(f"Error: Invalid index/interval at position {i}. All indexes must be integers.")
+            print(f"Details: {e}")
             exit(1)
     else:
         print(f"✓ Model: {model}")
@@ -45,12 +66,12 @@ if len(argv) >= 2:
 
 else:
     print("Error: Missing model name")
-    print("\nUsage: ./code.py <model> [index1] [index2] [index3] ...")
+    print("\nUsage: ./code.py <model> [index1] [index2] [start-end] ...")
     print("\nValid models:")
     valid_models = [
-        "llama3_1_8b", "openbiollm_8b", "gemma2_9b", 
-        "medGemma_4b", "medGemma_27b", "qwen3_8b", 
-        "mistral_7b", "eurollm_9b", "apertus_8B", 
+        "llama3_1_8b", "openbiollm_8b", "gemma2_9b",
+        "medGemma_4b", "medGemma_27b", "qwen3_8b",
+        "mistral_7b", "eurollm_9b", "apertus_8B",
         "qwen3_0.6b", "qwen3_1_7b", "qwen3_4b"
     ]
     for model in valid_models:
@@ -58,7 +79,8 @@ else:
     print("\nExamples:")
     print("  ./code.py llama3_1_8b")
     print("  ./code.py llama3_1_8b 1 2 3")
-    print("  ./code.py openbiollm_8b 8 5")
+    print("  ./code.py llama3_1_8b 1-10")
+    print("  ./code.py openbiollm_8b 0-5 8 10-15")
     print("  ./code.py gemma2_9b 0 5 10 15")
     exit(1)
 
@@ -113,15 +135,15 @@ def main():
                                       num_workers=10,
                                       lisa_sheet_id_col='id',
                                       lisa_sheet_col='content_raw',
-                                      compute_answerability      =False,
-                                      compute_originality        =False,
-                                      compute_readability        =False,
-                                      compute_negation           =False,
-                                      compute_is_question        =False,
-                                      compute_relevance          =False,
-                                      compute_ambiguity          =False,
-                                      compute_disclosure         =False,
-                                      compute_difficulty         =False,
+                                      compute_answerability      =True,
+                                      compute_originality        =True,
+                                      compute_readability        =True,
+                                      compute_negation           =True,
+                                      compute_is_question        =True,
+                                      compute_relevance          =True,
+                                      compute_ambiguity          =True,
+                                      compute_disclosure         =True,
+                                      compute_difficulty         =True,
                                       compute_distractors_quality=True,
                                       disclosure_system_prompt=system_prompts['disclosure_prompt'],
                                       difficulty_system_prompt=system_prompts['difficulty_prompt'],

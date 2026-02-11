@@ -4,7 +4,6 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { LoginRequest } from '../../models';
-import { McqSelectionModalComponent } from '../../components/mcq-selection-modal/mcq-selection-modal.component';
 
 /**
  * LoginPage Component - Page de connexion des évaluateurs
@@ -12,7 +11,7 @@ import { McqSelectionModalComponent } from '../../components/mcq-selection-modal
 @Component({
   selector: 'app-login-page',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule, McqSelectionModalComponent],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './login-page.component.html',
   styleUrl: './login-page.component.scss'
 })
@@ -27,7 +26,6 @@ export class LoginPageComponent {
   // État du composant
   loading = signal(false);
   error = signal<string | null>(null);
-  showMcqModal = signal(false);
 
   constructor() {
     // Initialiser le formulaire
@@ -65,9 +63,9 @@ export class LoginPageComponent {
     this.authService.login(credentials).subscribe({
       next: (response) => {
         console.log('Login successful:', response);
-        // Ouvrir le modal de sélection de MCQ
+        // Rediriger directement vers le dashboard
         this.loading.set(false);
-        this.showMcqModal.set(true);
+        this.router.navigate(['/dashboard']);
       },
       error: (error) => {
         console.error('Login error:', error);
@@ -85,25 +83,6 @@ export class LoginPageComponent {
     });
   }
 
-  /**
-   * Gérer la fermeture du modal (annulation)
-   * L'utilisateur est déconnecté si le modal est fermé sans sélection
-   */
-  onModalClose(): void {
-    this.showMcqModal.set(false);
-    // Déconnecter l'utilisateur car il n'a pas sélectionné de MCQ
-    this.authService.logout().subscribe();
-  }
-
-  /**
-   * Gérer la confirmation du modal
-   * Naviguer vers le dashboard après sélection du nombre de MCQ
-   */
-  onModalConfirm(count: number): void {
-    console.log('MCQ assignment confirmed:', count);
-    this.showMcqModal.set(false);
-    this.router.navigate(['/dashboard']);
-  }
 
   /**
    * Marquer tous les champs du formulaire comme "touched"

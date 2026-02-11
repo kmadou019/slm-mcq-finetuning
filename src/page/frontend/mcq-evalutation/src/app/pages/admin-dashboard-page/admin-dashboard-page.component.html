@@ -1,0 +1,341 @@
+<div class="admin-dashboard">
+  <!-- Header -->
+  <header class="admin-header">
+    <div class="header-content">
+      <h1>🔧 Dashboard Administrateur</h1>
+      <div class="header-actions">
+        <button class="btn-secondary" (click)="goToDashboard()">
+          ← Retour au Dashboard
+        </button>
+        <button class="btn-logout" (click)="onLogout()">
+          Déconnexion
+        </button>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button
+        class="tab"
+        [class.active]="activeTab() === 'stats'"
+        (click)="setActiveTab('stats')">
+        📊 Statistiques
+      </button>
+      <button
+        class="tab"
+        [class.active]="activeTab() === 'users'"
+        (click)="setActiveTab('users')">
+        👥 Utilisateurs
+      </button>
+      <button
+        class="tab"
+        [class.active]="activeTab() === 'tracker'"
+        (click)="setActiveTab('tracker')">
+        🎯 Tracker
+      </button>
+      <button
+        class="tab"
+        [class.active]="activeTab() === 'export'"
+        (click)="setActiveTab('export')">
+        💾 Export
+      </button>
+    </div>
+  </header>
+
+  <!-- Loading -->
+  <div *ngIf="loading()" class="loading">
+    <div class="spinner"></div>
+    <p>Chargement des données...</p>
+  </div>
+
+  <!-- Content -->
+  <div *ngIf="!loading()" class="admin-content">
+
+    <!-- ============================================================================ -->
+    <!-- ONGLET STATISTIQUES -->
+    <!-- ============================================================================ -->
+    <div *ngIf="activeTab() === 'stats'" class="tab-content">
+
+      <!-- Stats globales -->
+      <section class="section">
+        <h2>📊 Statistiques Globales</h2>
+        <div class="stats-grid" *ngIf="globalStats()">
+          <div class="stat-card">
+            <div class="stat-value">{{ globalStats().total_validations }}</div>
+            <div class="stat-label">Total Validations</div>
+          </div>
+          <div class="stat-card success">
+            <div class="stat-value">{{ globalStats().accepted }}</div>
+            <div class="stat-label">Acceptés</div>
+          </div>
+          <div class="stat-card danger">
+            <div class="stat-value">{{ globalStats().rejected }}</div>
+            <div class="stat-label">Rejetés</div>
+          </div>
+          <div class="stat-card info">
+            <div class="stat-value">{{ globalStats().acceptance_rate }}%</div>
+            <div class="stat-label">Taux d'acceptation</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">{{ globalStats().active_evaluators }}</div>
+            <div class="stat-label">Évaluateurs actifs</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value">{{ globalStats().completion_rate }}%</div>
+            <div class="stat-label">Taux de complétion</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats par modèle -->
+      <section class="section">
+        <h2>🤖 Statistiques par Modèle</h2>
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Modèle</th>
+                <th>Total Dispo</th>
+                <th>Assignés</th>
+                <th>Évalués</th>
+                <th>Acceptés</th>
+                <th>Rejetés</th>
+                <th>Restants</th>
+                <th>Taux Accept.</th>
+                <th>Progression</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let stat of modelStats()">
+                <td class="model-name">{{ stat.model }}</td>
+                <td>{{ stat.total_available }}</td>
+                <td>{{ stat.total_assigned }}</td>
+                <td>{{ stat.evaluated }}</td>
+                <td class="success-text">{{ stat.accepted }}</td>
+                <td class="danger-text">{{ stat.rejected }}</td>
+                <td>{{ stat.remaining }}</td>
+                <td>{{ stat.acceptance_rate }}%</td>
+                <td>
+                  <div class="progress-bar">
+                    <div class="progress-fill" [style.width.%]="stat.progress_percent"></div>
+                    <span class="progress-text">{{ stat.progress_percent }}%</span>
+                  </div>
+                </td>
+                <td>
+                  <button
+                    class="btn-small btn-danger"
+                    (click)="resetModelTracker(stat.model)"
+                    title="Réinitialiser le tracker pour ce modèle">
+                    🔄 Reset
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================================================================ -->
+    <!-- ONGLET UTILISATEURS -->
+    <!-- ============================================================================ -->
+    <div *ngIf="activeTab() === 'users'" class="tab-content">
+      <section class="section">
+        <div class="section-header">
+          <h2>👥 Gestion des Utilisateurs</h2>
+          <button class="btn-primary" (click)="openCreateUserModal()">
+            ➕ Créer un utilisateur
+          </button>
+        </div>
+
+        <div class="table-container">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Nom d'utilisateur</th>
+                <th>Email</th>
+                <th>Rôle</th>
+                <th>Créé le</th>
+                <th>Assignments</th>
+                <th>Validations</th>
+                <th>Acceptés</th>
+                <th>Rejetés</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users()">
+                <td class="username">{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                  <span class="role-badge" [class.admin]="user.role === 'admin'">
+                    {{ user.role }}
+                  </span>
+                </td>
+                <td>{{ user.created_at | date:'short' }}</td>
+                <td>{{ user.stats.assignments }}</td>
+                <td>{{ user.stats.validations }}</td>
+                <td class="success-text">{{ user.stats.accepted }}</td>
+                <td class="danger-text">{{ user.stats.rejected }}</td>
+                <td>
+                  <button
+                    *ngIf="user.role !== 'admin'"
+                    class="btn-small btn-danger"
+                    (click)="deleteUser(user.id, user.username)">
+                    🗑️ Supprimer
+                  </button>
+                  <span *ngIf="user.role === 'admin'" class="muted">-</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================================================================ -->
+    <!-- ONGLET TRACKER -->
+    <!-- ============================================================================ -->
+    <div *ngIf="activeTab() === 'tracker'" class="tab-content">
+      <section class="section">
+        <div class="section-header">
+          <h2>🎯 Gestion du Tracker</h2>
+          <button class="btn-primary" (click)="openTrackerEditor()">
+            ✏️ Éditer le Tracker
+          </button>
+        </div>
+
+        <div class="tracker-info">
+          <p><strong>Fichier:</strong> {{ trackerPath() }}</p>
+        </div>
+
+        <div class="tracker-preview">
+          <h3>État actuel du Tracker</h3>
+          <pre>{{ trackerJson() }}</pre>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============================================================================ -->
+    <!-- ONGLET EXPORT -->
+    <!-- ============================================================================ -->
+    <div *ngIf="activeTab() === 'export'" class="tab-content">
+      <section class="section">
+        <h2>💾 Export des Données</h2>
+
+        <div class="export-actions">
+          <div class="export-card">
+            <h3>📋 Validations</h3>
+            <p>Exporter toutes les validations au format JSON</p>
+            <button class="btn-primary" (click)="exportValidations()">
+              ⬇️ Télécharger les validations
+            </button>
+          </div>
+
+          <div class="export-card">
+            <h3>📊 Rapport Complet</h3>
+            <p>Exporter un rapport complet avec toutes les statistiques</p>
+            <button class="btn-primary" (click)="exportFullReport()">
+              ⬇️ Télécharger le rapport complet
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================================ -->
+<!-- MODAL: Créer un utilisateur -->
+<!-- ============================================================================ -->
+<div *ngIf="showCreateUserModal()" class="modal-overlay" (click)="closeCreateUserModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>➕ Créer un nouvel utilisateur</h2>
+      <button class="modal-close" (click)="closeCreateUserModal()">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="username">Nom d'utilisateur *</label>
+        <input
+          type="text"
+          id="username"
+          [(ngModel)]="newUser().username"
+          placeholder="johndoe"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email *</label>
+        <input
+          type="email"
+          id="email"
+          [(ngModel)]="newUser().email"
+          placeholder="john@example.com"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Mot de passe *</label>
+        <input
+          type="password"
+          id="password"
+          [(ngModel)]="newUser().password"
+          placeholder="••••••••"
+          required>
+      </div>
+
+      <div class="form-group">
+        <label for="role">Rôle *</label>
+        <select id="role" [(ngModel)]="newUser().role">
+          <option value="evaluator">Évaluateur</option>
+          <option value="admin">Administrateur</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-secondary" (click)="closeCreateUserModal()">
+        Annuler
+      </button>
+      <button class="btn-primary" (click)="createUser()">
+        Créer l'utilisateur
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================================ -->
+<!-- MODAL: Éditer le Tracker -->
+<!-- ============================================================================ -->
+<div *ngIf="showTrackerEditor()" class="modal-overlay" (click)="closeTrackerEditor()">
+  <div class="modal-content modal-large" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>✏️ Éditer le Tracker</h2>
+      <button class="modal-close" (click)="closeTrackerEditor()">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <p class="warning-text">⚠️ Attention : Modifier le tracker peut affecter l'attribution des MCQs</p>
+      <div class="form-group">
+        <label for="trackerJson">JSON du Tracker</label>
+        <textarea
+          id="trackerJson"
+          [(ngModel)]="trackerJson()"
+          rows="20"
+          class="code-editor"></textarea>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-secondary" (click)="closeTrackerEditor()">
+        Annuler
+      </button>
+      <button class="btn-primary" (click)="saveTracker()">
+        💾 Sauvegarder
+      </button>
+    </div>
+  </div>
+</div>
