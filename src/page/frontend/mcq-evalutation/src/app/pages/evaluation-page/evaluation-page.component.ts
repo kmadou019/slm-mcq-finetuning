@@ -81,30 +81,13 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
    * Après la synchronisation, vérifier la progression ou charger les MCQs
    */
   private afterSync(): void {
-    // Vérifier s'il y a une progression sauvegardée
-    const savedProgress = this.mcqService.loadProgress();
-    if (savedProgress) {
-      // Vérifier que la progression sauvegardée contient encore des MCQs non évalués
-      const validations = this.validationService.getAllValidations();
-      const remainingFromSaved = savedProgress.mcq_list.filter(id => !validations[id]);
-
-      if (remainingFromSaved.length > 0) {
-        if (confirm('Voulez-vous reprendre votre évaluation là où vous vous êtes arrêté ?')) {
-          this.mcqList.set(remainingFromSaved);
-          this.loadMCQ(0);
-          return;
-        }
-      }
-      // Effacer la progression si plus rien à évaluer ou si l'utilisateur refuse
-      this.mcqService.clearProgress();
-    }
-
-    // Charger les MCQ assignés depuis l'API
+    // Toujours charger la liste depuis le backend (source de verite)
     this.loadAssignedMCQs();
   }
 
   /**
    * Charger les MCQ assignés depuis le backend, en filtrant ceux déjà évalués
+   * Utilise la progression sauvegardée pour reprendre à la bonne position
    */
   private loadAssignedMCQs(): void {
     this.loading.set(true);
@@ -115,19 +98,36 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
         const validations = this.validationService.getAllValidations();
         const pendingMcqs = response.mcq_ids.filter(id => !validations[id]);
 
-        console.log(`📋 MCQs assignés: ${response.mcq_ids.length}, déjà évalués: ${response.mcq_ids.length - pendingMcqs.length}, en attente: ${pendingMcqs.length}`);
+        console.log(`MCQs assignes: ${response.mcq_ids.length}, deja evalues: ${response.mcq_ids.length - pendingMcqs.length}, en attente: ${pendingMcqs.length}`);
 
         this.mcqList.set(pendingMcqs);
+
         if (pendingMcqs.length > 0) {
-          this.loadMCQ(0);
+          // Verifier s'il y a une progression sauvegardee pour reprendre
+          const savedProgress = this.mcqService.loadProgress();
+          let startIndex = 0;
+
+          if (savedProgress && savedProgress.mcq_list.length > 0) {
+            // Trouver la position de reprise dans la nouvelle liste
+            const lastMcqId = savedProgress.mcq_list[savedProgress.current_index];
+            const resumeIndex = pendingMcqs.indexOf(lastMcqId);
+            if (resumeIndex >= 0) {
+              startIndex = resumeIndex;
+              console.log(`Reprise a la position ${startIndex} (${lastMcqId})`);
+            }
+            this.mcqService.clearProgress();
+          }
+
+          this.loadMCQ(startIndex);
         } else {
           this.loading.set(false);
-          alert('Toutes les évaluations sont terminées ! Vous pouvez demander de nouveaux MCQ depuis le dashboard.');
+          this.mcqService.clearProgress();
+          alert('Toutes les evaluations sont terminees ! Vous pouvez demander de nouveaux MCQ depuis le dashboard.');
           this.router.navigate(['/dashboard']);
         }
       },
       error: (error) => {
-        console.error('❌ Erreur backend, utilisation des données mockées:', error);
+        console.error('Erreur backend, utilisation des donnees mockees:', error);
         this.loadMockData();
       }
     });

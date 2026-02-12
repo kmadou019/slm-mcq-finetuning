@@ -24,6 +24,29 @@ CSV_DIR = DATA_DIR / "dataset_with_quality"  # Fichiers avec résultats de quali
 CSV_PATH = CSV_DIR / "qwen3_8b_pdapt_slerp.csv"  # CSV par défaut
 ASSIGNMENTS_PATH = DATA_DIR / "assignments.json"  # Assignations par utilisateur
 GLOBAL_TRACKER_PATH = DATA_DIR / "global_assignment_tracker.json"  # Tracker global par modèle
+LISA_SHEETS_PATH = DATA_DIR / "lisa_sheets.csv"  # Lisa sheets de référence
+
+# Cache pour les lisa sheets (chargé une seule fois)
+_lisa_sheets_cache: Dict[str, str] | None = None
+
+def get_lisa_content(mcq_id: str) -> str:
+    """Lookup content_raw from lisa_sheets.csv by MCQ id (with trailing - stripped)"""
+    global _lisa_sheets_cache
+    if _lisa_sheets_cache is None:
+        _lisa_sheets_cache = {}
+        if LISA_SHEETS_PATH.exists():
+            try:
+                df = pd.read_csv(LISA_SHEETS_PATH, engine='python', quotechar='"', on_bad_lines='skip')
+                for _, row in df.iterrows():
+                    _lisa_sheets_cache[str(row.get('id', ''))] = str(row.get('content_raw', ''))
+                print(f"Loaded {len(_lisa_sheets_cache)} lisa sheets from {LISA_SHEETS_PATH}")
+            except Exception as e:
+                print(f"Error loading lisa sheets: {e}")
+    # Try exact match, then stripped match
+    result = _lisa_sheets_cache.get(mcq_id, '')
+    if not result:
+        result = _lisa_sheets_cache.get(mcq_id.rstrip('-'), '')
+    return result
 
 # Modèles disponibles
 AVAILABLE_MODELS = [
@@ -414,8 +437,11 @@ def build_mcq_card_from_row(row: pd.Series, index: int, model: str) -> Dict[str,
         }
     ]
 
-    # Parser LISA Sheet
-    lisa_data = parser_lisa_sheet(str(row.get('content_raw', '')))
+    # Parser LISA Sheet - utiliser content_raw du CSV, sinon fallback sur lisa_sheets.csv
+    content_raw = row.get('content_raw')
+    if not content_raw or (isinstance(content_raw, float) and pd.isna(content_raw)) or str(content_raw).strip() == '':
+        content_raw = get_lisa_content(str(row.get('id', '')))
+    lisa_data = parser_lisa_sheet(str(content_raw))
 
     # Construire la carte complète
     card = {
@@ -436,7 +462,7 @@ def build_mcq_card_from_row(row: pd.Series, index: int, model: str) -> Dict[str,
         "decision_policy": "Accept if all hard constraints pass and no critical AI-judge dimension fails.",
         "final_decision": "ACCEPT" if all(check['result'] == "PASS" for check in section_a_checks + section_b_checks) else "REVISE",
         "audit_trail": "Judge model: Automated, consistency: evaluated from CSV metrics.",
-        "lisa_texte_brut": str(row.get('content_raw', '')),
+        "lisa_texte_brut": str(content_raw),
         "lisa_metadata": {
             "identifiant": lisa_data['identifiant'],
             "rang": lisa_data['rang'],

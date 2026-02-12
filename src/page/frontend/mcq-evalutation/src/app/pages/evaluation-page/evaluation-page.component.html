@@ -146,9 +146,9 @@
 
             <!-- LISA Metadata -->
             <div class="lisa-metadata">
-              <p><strong>Identifiant:</strong> {{ currentMcq()?.source_material }}</p>
-              <p><strong>Rang:</strong> A</p>
-              <p><strong>Rubrique:</strong> Définition</p>
+              <p><strong>Identifiant:</strong> {{ currentMcq()?.lisa_metadata?.identifiant || currentMcq()?.source_material }}</p>
+              <p><strong>Rang:</strong> {{ currentMcq()?.lisa_metadata?.rang || 'N/A' }}</p>
+              <p><strong>Rubrique:</strong> {{ currentMcq()?.lisa_metadata?.rubrique || 'N/A' }}</p>
             </div>
 
             <!-- Intitulé Section -->
@@ -172,7 +172,7 @@
             <!-- Contenu Section -->
             <div class="lisa-section">
               <div class="lisa-section-title">Contenu</div>
-              <div class="lisa-section-content">{{ currentMcq()?.lisa_texte_brut }}</div>
+              <div class="lisa-section-content">{{ currentMcq()?.lisa_metadata?.contenu || '' }}</div>
             </div>
           </div>
         </div>
