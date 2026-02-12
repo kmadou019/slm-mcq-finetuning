@@ -1,6 +1,8 @@
+@import '../../../styles/colors';
+
 .dashboard-container {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  background: $gradient-background;
   padding: 20px;
 }
 
@@ -15,8 +17,8 @@
   .spinner {
     width: 48px;
     height: 48px;
-    border: 4px solid rgba(102, 126, 234, 0.2);
-    border-top-color: #667eea;
+    border: 4px solid rgba(37, 99, 235, 0.2);
+    border-top-color: $primary;
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
   }
@@ -50,17 +52,17 @@
     h1 {
       font-size: 28px;
       font-weight: 700;
-      color: #1a202c;
+      color: $gray-900;
       margin: 0 0 8px 0;
     }
 
     .welcome {
       font-size: 16px;
-      color: #718096;
+      color: $gray-500;
       margin: 0;
 
       strong {
-        color: #667eea;
+        color: $primary;
         font-weight: 600;
       }
     }
@@ -72,18 +74,18 @@
     gap: 8px;
     padding: 10px 20px;
     background: #fff;
-    border: 2px solid #e2e8f0;
+    border: 2px solid $gray-200;
     border-radius: 8px;
-    color: #718096;
+    color: $gray-500;
     font-size: 14px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
 
     &:hover {
-      border-color: #fc8181;
-      color: #fc8181;
-      background: #fff5f5;
+      border-color: $danger;
+      color: $danger;
+      background: $danger-bg;
     }
   }
 }
@@ -124,7 +126,7 @@
 
     .stat-label {
       font-size: 14px;
-      color: #718096;
+      color: $gray-500;
       margin: 0 0 4px 0;
     }
 
@@ -137,42 +139,42 @@
 
   &.total {
     .stat-icon {
-      background: #e6f2ff;
-      color: #0066cc;
+      background: $primary-bg;
+      color: $primary;
     }
-    .stat-value { color: #0066cc; }
+    .stat-value { color: $primary; }
   }
 
   &.pending {
     .stat-icon {
-      background: #fff4e6;
-      color: #ff8c00;
+      background: $warning-bg;
+      color: $warning;
     }
-    .stat-value { color: #ff8c00; }
+    .stat-value { color: $warning; }
   }
 
   &.completed {
     .stat-icon {
-      background: #e6f7ff;
-      color: #1890ff;
+      background: $info-bg;
+      color: $info;
     }
-    .stat-value { color: #1890ff; }
+    .stat-value { color: $info; }
   }
 
   &.accepted {
     .stat-icon {
-      background: #e6f4ea;
-      color: #28a745;
+      background: $success-bg;
+      color: $success;
     }
-    .stat-value { color: #28a745; }
+    .stat-value { color: $success; }
   }
 
   &.rejected {
     .stat-icon {
-      background: #fee;
-      color: #dc3545;
+      background: $danger-bg;
+      color: $danger;
     }
-    .stat-value { color: #dc3545; }
+    .stat-value { color: $danger; }
   }
 }
 
@@ -191,13 +193,13 @@
   h2 {
     font-size: 20px;
     font-weight: 700;
-    color: #1a202c;
+    color: $gray-900;
     margin: 0 0 8px 0;
   }
 
   p {
     font-size: 14px;
-    color: #718096;
+    color: $gray-500;
     margin: 0 0 20px 0;
     line-height: 1.6;
   }
@@ -209,7 +211,7 @@
     gap: 8px;
     width: 100%;
     padding: 14px 24px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: $gradient-primary;
     color: white;
     border: none;
     border-radius: 8px;
@@ -220,7 +222,7 @@
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
     }
   }
 
@@ -232,8 +234,8 @@
     width: 100%;
     padding: 14px 24px;
     background: white;
-    color: #667eea;
-    border: 2px solid #667eea;
+    color: $primary;
+    border: 2px solid $primary;
     border-radius: 8px;
     font-size: 16px;
     font-weight: 600;
@@ -242,9 +244,9 @@
 
     &:hover {
       transform: translateY(-2px);
-      background: #667eea;
+      background: $primary;
       color: white;
-      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.3);
     }
   }
 
@@ -255,7 +257,7 @@
     gap: 8px;
     width: 100%;
     padding: 14px 24px;
-    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    background: linear-gradient(135deg, $secondary 0%, $secondary-dark 100%);
     color: white;
     border: none;
     border-radius: 8px;
@@ -266,16 +268,16 @@
 
     &:hover {
       transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(245, 87, 108, 0.4);
+      box-shadow: 0 10px 25px rgba(8, 145, 178, 0.4);
     }
   }
 
   &.admin-card {
-    border: 2px solid #f5576c;
-    background: linear-gradient(135deg, #fff5f7 0%, #ffe9ec 100%);
+    border: 2px solid $secondary;
+    background: linear-gradient(135deg, #f0fdfa 0%, #e0f7fa 100%);
 
     h2 {
-      color: #f5576c;
+      color: $secondary-dark;
     }
   }
 
@@ -283,21 +285,21 @@
     .progress-bar {
       width: 100%;
       height: 8px;
-      background: #e2e8f0;
+      background: $gray-200;
       border-radius: 4px;
       overflow: hidden;
       margin-bottom: 8px;
 
       .progress-fill {
         height: 100%;
-        background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        background: $gradient-primary;
         transition: width 0.3s ease;
       }
     }
 
     .progress-text {
       font-size: 13px;
-      color: #718096;
+      color: $gray-500;
       margin: 0;
     }
   }

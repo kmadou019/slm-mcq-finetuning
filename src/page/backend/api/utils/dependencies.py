@@ -7,7 +7,7 @@ from typing import Optional
 from pathlib import Path
 import json
 from ..models.auth import User
-from .security import decode_access_token
+from .security import decode_access_token, hash_password
 
 # Security scheme
 security = HTTPBearer()
@@ -15,15 +15,15 @@ security = HTTPBearer()
 # Users database file path
 USERS_DB_PATH = Path(__file__).parent.parent.parent.parent / "data" / "users.json"
 
-# Default users for initialization
-DEFAULT_USERS = [
+# Default users for initialization (passwords will be hashed during init)
+DEFAULT_USERS_PLAIN = [
     {
         "id": "user-001",
         "username": "admin",
         "email": "admin@mcq-eval.com",
         "role": "admin",
         "created_at": "2024-01-01T00:00:00Z",
-        "password": "admin123"  # TEMPORARY: plain password for testing
+        "plain_password": "admin123"  # Will be hashed during init
     },
     {
         "id": "user-002",
@@ -31,7 +31,7 @@ DEFAULT_USERS = [
         "email": "evaluator@mcq-eval.com",
         "role": "evaluator",
         "created_at": "2024-01-01T00:00:00Z",
-        "password": "eval123"  # TEMPORARY: plain password for testing
+        "plain_password": "eval123"  # Will be hashed during init
     }
 ]
 
@@ -40,8 +40,17 @@ def init_users_db():
     """Initialize users database file if it doesn't exist"""
     if not USERS_DB_PATH.exists():
         USERS_DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+
+        # Hash passwords before saving
+        hashed_users = []
+        for user in DEFAULT_USERS_PLAIN:
+            hashed_user = user.copy()
+            plain_pwd = hashed_user.pop("plain_password")
+            hashed_user["hashed_password"] = hash_password(plain_pwd)
+            hashed_users.append(hashed_user)
+
         with open(USERS_DB_PATH, 'w') as f:
-            json.dump(DEFAULT_USERS, f, indent=2)
+            json.dump(hashed_users, f, indent=2)
         print(f"✅ Users database initialized at {USERS_DB_PATH}")
     return load_users_db()
 
@@ -54,8 +63,8 @@ def load_users_db():
         return {user["username"]: user for user in users_list}
     except Exception as e:
         print(f"⚠️ Error loading users DB: {e}")
-        # Return default users if file can't be loaded
-        return {user["username"]: user for user in DEFAULT_USERS}
+        # Return empty dict - init_users_db will be called to create the file
+        return {}
 
 # Load users database on module import
 USERS_DB = init_users_db()
@@ -75,17 +84,20 @@ async def get_current_user(
     if payload is None:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Could not validate credentials",
+            detail="Invalid authentication credentials",  # Generic message
             headers={"WWW-Authenticate": "Bearer"},
         )
 
-    # Get username from payload
+    # Validate token expiration (jose library does this automatically)
+    # Check for required fields
     username: Optional[str] = payload.get("sub")
+    exp = payload.get("exp")
+    role: Optional[str] = payload.get("role")
 
-    if username is None:
+    if username is None or exp is None:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Could not validate credentials",
+            detail="Invalid authentication credentials",
             headers={"WWW-Authenticate": "Bearer"},
         )
 
@@ -95,16 +107,17 @@ async def get_current_user(
     if user_data is None:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="User not found",
+            detail="Invalid authentication credentials",  # Generic message
             headers={"WWW-Authenticate": "Bearer"},
         )
 
     # Return User object (without password)
+    # Role from JWT takes priority over file (prevents file tampering)
     return User(
         id=user_data["id"],
         username=user_data["username"],
         email=user_data["email"],
-        role=user_data["role"],
+        role=role or user_data.get("role", "evaluator"),
         created_at=user_data["created_at"]
     )
 

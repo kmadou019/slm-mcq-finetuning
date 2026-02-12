@@ -45,8 +45,8 @@ export class McqService {
   /**
    * Get available models with their MCQ counts
    */
-  getAvailableModels(): Observable<{ model: string, count: number }[]> {
-    return this.http.get<{ model: string, count: number }[]>(`${this.apiUrl}/mcq-models`);
+  getAvailableModels(): Observable<{ model: string, count: number, available: number }[]> {
+    return this.http.get<{ model: string, count: number, available: number }[]>(`${this.apiUrl}/mcq-models`);
   }
 
   /**
@@ -65,6 +65,20 @@ export class McqService {
   }
 
   /**
+   * Clé localStorage dynamique par utilisateur
+   */
+  private getProgressKey(): string {
+    const userJson = sessionStorage.getItem('mcq_current_user');
+    if (userJson) {
+      try {
+        const user = JSON.parse(userJson);
+        if (user.username) return `mcq_evaluation_progress_${user.username}`;
+      } catch {}
+    }
+    return 'mcq_evaluation_progress_anonymous';
+  }
+
+  /**
    * Save current progress (for pause/resume)
    */
   saveProgress(data: {
@@ -72,7 +86,7 @@ export class McqService {
     mcq_list: string[],
     current_mcq_state?: any
   }): void {
-    localStorage.setItem('mcq_evaluation_progress', JSON.stringify(data));
+    localStorage.setItem(this.getProgressKey(), JSON.stringify(data));
   }
 
   /**
@@ -83,7 +97,7 @@ export class McqService {
     mcq_list: string[],
     current_mcq_state?: any
   } | null {
-    const saved = localStorage.getItem('mcq_evaluation_progress');
+    const saved = localStorage.getItem(this.getProgressKey());
     return saved ? JSON.parse(saved) : null;
   }
 
@@ -91,6 +105,6 @@ export class McqService {
    * Clear saved progress
    */
   clearProgress(): void {
-    localStorage.removeItem('mcq_evaluation_progress');
+    localStorage.removeItem(this.getProgressKey());
   }
 }

@@ -113,7 +113,7 @@ export class AuthService {
   }
 
   /**
-   * Vérifier si l'utilisateur est authentifié
+   * Vérifier si l'utilisateur est authentifié et le token n'est pas expiré
    */
   isAuthenticated(): boolean {
     const token = this.getToken();
@@ -121,30 +121,49 @@ export class AuthService {
       return false;
     }
 
-    // Optionnel: Vérifier si le token est expiré
-    // Pour l'instant, on vérifie juste s'il existe
-    return true;
+    try {
+      // Decode JWT and check expiration (simple base64 decode of payload)
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      const exp = payload.exp;
+
+      if (!exp) {
+        return false;
+      }
+
+      // Check if token is expired (exp is in seconds, Date.now() is in ms)
+      if (exp * 1000 < Date.now()) {
+        console.warn('Token expired, clearing session');
+        this.clearSession();
+        return false;
+      }
+
+      return true;
+    } catch (error) {
+      console.error('Error validating token:', error);
+      this.clearSession();
+      return false;
+    }
   }
 
   /**
    * Récupérer le token JWT
    */
   getToken(): string | null {
-    return localStorage.getItem(this.tokenKey);
+    return sessionStorage.getItem(this.tokenKey);
   }
 
   /**
    * Sauvegarder le token JWT
    */
   saveToken(token: string): void {
-    localStorage.setItem(this.tokenKey, token);
+    sessionStorage.setItem(this.tokenKey, token);
   }
 
   /**
    * Supprimer le token JWT
    */
   removeToken(): void {
-    localStorage.removeItem(this.tokenKey);
+    sessionStorage.removeItem(this.tokenKey);
   }
 
   /**
@@ -155,17 +174,17 @@ export class AuthService {
   }
 
   /**
-   * Sauvegarder l'utilisateur dans le localStorage
+   * Sauvegarder l'utilisateur dans le sessionStorage
    */
   private saveUser(user: User): void {
-    localStorage.setItem('mcq_current_user', JSON.stringify(user));
+    sessionStorage.setItem('mcq_current_user', JSON.stringify(user));
   }
 
   /**
-   * Récupérer l'utilisateur depuis le localStorage
+   * Récupérer l'utilisateur depuis le sessionStorage
    */
   private getUserFromStorage(): User | null {
-    const userJson = localStorage.getItem('mcq_current_user');
+    const userJson = sessionStorage.getItem('mcq_current_user');
     if (userJson) {
       try {
         return JSON.parse(userJson);
@@ -178,16 +197,22 @@ export class AuthService {
   }
 
   /**
-   * Supprimer l'utilisateur du localStorage
+   * Supprimer l'utilisateur du sessionStorage
    */
   private removeUser(): void {
-    localStorage.removeItem('mcq_current_user');
+    sessionStorage.removeItem('mcq_current_user');
   }
 
   /**
    * Nettoyer toute la session (token + user)
    */
   private clearSession(): void {
+    // Nettoyer les données d'évaluation spécifiques à l'utilisateur
+    const user = this.getUserFromStorage();
+    if (user?.username) {
+      localStorage.removeItem(`mcq_validations_${user.username}`);
+      localStorage.removeItem(`mcq_evaluation_progress_${user.username}`);
+    }
     this.removeToken();
     this.removeUser();
     this.currentUserSubject.next(null);

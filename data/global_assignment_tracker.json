@@ -1,12 +1,12 @@
 {
-  "qwen3_8b_pdapt_slerp": {
-    "last_assigned_index": 49,
-    "total_available": 50,
-    "assigned_count": 50
-  },
   "qwen3_4b_pdapt_slerp": {
-    "last_assigned_index": 79,
+    "last_assigned_index": 39,
     "total_available": 2430,
-    "assigned_count": 80
+    "assigned_count": 40
+  },
+  "qwen3_8b_pdapt_slerp": {
+    "last_assigned_index": 19,
+    "total_available": 50,
+    "assigned_count": 20
   }
 }

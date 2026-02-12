@@ -14,6 +14,7 @@ from api.models.db_models import Validation, MCQAssignment
 from api.models.auth import User
 from api.routes.auth import get_current_user
 from api.routes.mcq import load_global_tracker, save_global_tracker, GLOBAL_TRACKER_PATH
+from api.utils.security import hash_password
 
 router = APIRouter(prefix="/admin", tags=["admin"])
 
@@ -101,44 +102,69 @@ async def get_stats_by_model(
     db: Session = Depends(get_db)
 ) -> List[Dict[str, Any]]:
     """
-    Statistiques par modèle
+    Statistiques par modèle - inclut tous les modèles CSV + ceux en DB
     """
-    # Récupérer tous les modèles depuis les assignments
-    models = db.query(MCQAssignment.model).distinct().all()
+    import pandas as pd
+    from api.routes.mcq import CSV_DIR
 
+    # Collecter tous les noms de modèles (CSV + DB)
+    all_models = set()
+
+    # Modèles depuis les fichiers CSV
+    csv_totals = {}
+    if CSV_DIR.exists():
+        for csv_file in CSV_DIR.glob("*.csv"):
+            model_name = csv_file.stem
+            all_models.add(model_name)
+            try:
+                df = pd.read_csv(csv_file, engine='python', quotechar='"', on_bad_lines='skip')
+                csv_totals[model_name] = len(df)
+            except Exception:
+                csv_totals[model_name] = 0
+
+    # Modèles depuis la DB (au cas où un CSV aurait été supprimé)
+    db_models = db.query(MCQAssignment.model).distinct().all()
+    for (model,) in db_models:
+        all_models.add(model)
+
+    tracker = load_global_tracker()
     stats_by_model = []
 
-    for (model,) in models:
+    for model in sorted(all_models):
         # Assignments pour ce modèle
         total_assigned = db.query(func.count(MCQAssignment.id)).filter(
             MCQAssignment.model == model
         ).scalar() or 0
 
-        # Récupérer les MCQ IDs assignés pour ce modèle
+        # Validations pour ce modèle
         mcq_ids_query = db.query(MCQAssignment.mcq_id).filter(
             MCQAssignment.model == model
         ).all()
         mcq_ids = [mcq_id for (mcq_id,) in mcq_ids_query]
 
-        # Validations pour ces MCQ IDs
-        validations = db.query(
-            Validation.decision,
-            func.count(Validation.id).label('count')
-        ).filter(
-            Validation.mcq_id.in_(mcq_ids)
-        ).group_by(Validation.decision).all()
+        accepted = 0
+        rejected = 0
+        if mcq_ids:
+            validations = db.query(
+                Validation.decision,
+                func.count(Validation.id).label('count')
+            ).filter(
+                Validation.mcq_id.in_(mcq_ids)
+            ).group_by(Validation.decision).all()
+            val_dict = {decision: count for decision, count in validations}
+            accepted = val_dict.get('ACCEPT', 0)
+            rejected = val_dict.get('REJECT', 0)
 
-        val_dict = {decision: count for decision, count in validations}
-        accepted = val_dict.get('ACCEPT', 0)
-        rejected = val_dict.get('REJECT', 0)
         evaluated = accepted + rejected
 
-        # Tracker info
-        tracker = load_global_tracker()
+        # Total disponible: CSV d'abord, sinon tracker
+        total_available = csv_totals.get(model, 0)
+        if total_available == 0:
+            total_available = tracker.get(model, {}).get('total_available', 0)
+
         tracker_info = tracker.get(model, {})
-        total_available = tracker_info.get('total_available', 0)
         last_assigned_index = tracker_info.get('last_assigned_index', -1)
-        remaining = total_available - (last_assigned_index + 1) if total_available > 0 else 0
+        remaining = max(0, total_available - (last_assigned_index + 1)) if total_available > 0 else 0
 
         acceptance_rate = (accepted / evaluated * 100) if evaluated > 0 else 0
 
@@ -238,7 +264,7 @@ async def create_user(
     new_user = {
         "id": new_user_id,
         "username": user_data.username,
-        "password": user_data.password,  # TODO: Hash in production!
+        "hashed_password": hash_password(user_data.password),
         "email": user_data.email,
         "role": user_data.role,
         "created_at": datetime.utcnow().isoformat() + "Z"

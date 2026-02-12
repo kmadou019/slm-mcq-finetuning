@@ -29,7 +29,7 @@ export class McqSelectionModalComponent implements OnInit {
   customCount = signal<number | null>(null);
 
   // Modèles disponibles
-  availableModels = signal<{ model: string, count: number }[]>([]);
+  availableModels = signal<{ model: string, count: number, available: number }[]>([]);
   selectedModel = signal<string>('qwen3_4b_pdapt_slerp');
 
   // État
@@ -55,7 +55,7 @@ export class McqSelectionModalComponent implements OnInit {
           'qwen3_0.6b', 'qwen3_1_7b', 'qwen3_4b',
           'qwen3_8b_pdapt_slerp', 'qwen3_4b_pdapt_slerp',
           'qwen3_1_7b_pdapt_slerp', 'qwen3_0.6b_pdapt_slerp'
-        ].map(model => ({ model, count: 0 }));
+        ].map(model => ({ model, count: 0, available: 0 }));
         this.availableModels.set(defaultModels);
         this.loadingModels.set(false);
       }

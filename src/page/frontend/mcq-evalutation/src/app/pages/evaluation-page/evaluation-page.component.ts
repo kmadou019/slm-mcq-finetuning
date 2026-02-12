@@ -65,19 +65,38 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
 
   /**
    * Initialiser ou réinitialiser l'évaluation
+   * Sync avec le backend d'abord pour avoir l'état à jour des validations
    */
   private initializeEvaluation(): void {
+    this.loading.set(true);
+
+    // D'abord synchroniser les validations avec le backend
+    this.validationService.syncWithBackend().subscribe({
+      next: () => this.afterSync(),
+      error: () => this.afterSync()
+    });
+  }
+
+  /**
+   * Après la synchronisation, vérifier la progression ou charger les MCQs
+   */
+  private afterSync(): void {
     // Vérifier s'il y a une progression sauvegardée
     const savedProgress = this.mcqService.loadProgress();
     if (savedProgress) {
-      if (confirm('Voulez-vous reprendre votre évaluation là où vous vous êtes arrêté ?')) {
-        this.mcqList.set(savedProgress.mcq_list);
-        this.loadMCQ(savedProgress.current_index);
-        return;
-      } else {
-        // Effacer la progression si l'utilisateur ne veut pas reprendre
-        this.mcqService.clearProgress();
+      // Vérifier que la progression sauvegardée contient encore des MCQs non évalués
+      const validations = this.validationService.getAllValidations();
+      const remainingFromSaved = savedProgress.mcq_list.filter(id => !validations[id]);
+
+      if (remainingFromSaved.length > 0) {
+        if (confirm('Voulez-vous reprendre votre évaluation là où vous vous êtes arrêté ?')) {
+          this.mcqList.set(remainingFromSaved);
+          this.loadMCQ(0);
+          return;
+        }
       }
+      // Effacer la progression si plus rien à évaluer ou si l'utilisateur refuse
+      this.mcqService.clearProgress();
     }
 
     // Charger les MCQ assignés depuis l'API
@@ -85,25 +104,30 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Charger les MCQ assignés depuis le backend
+   * Charger les MCQ assignés depuis le backend, en filtrant ceux déjà évalués
    */
   private loadAssignedMCQs(): void {
     this.loading.set(true);
 
     this.mcqService.getAssignedMcqs().subscribe({
       next: (response) => {
-        console.log('📋 MCQs assignés chargés:', response);
-        this.mcqList.set(response.mcq_ids);
-        if (response.mcq_ids.length > 0) {
+        // Filtrer les MCQs déjà évalués
+        const validations = this.validationService.getAllValidations();
+        const pendingMcqs = response.mcq_ids.filter(id => !validations[id]);
+
+        console.log(`📋 MCQs assignés: ${response.mcq_ids.length}, déjà évalués: ${response.mcq_ids.length - pendingMcqs.length}, en attente: ${pendingMcqs.length}`);
+
+        this.mcqList.set(pendingMcqs);
+        if (pendingMcqs.length > 0) {
           this.loadMCQ(0);
         } else {
           this.loading.set(false);
-          alert('Aucun MCQ assigné pour le moment.');
+          alert('Toutes les évaluations sont terminées ! Vous pouvez demander de nouveaux MCQ depuis le dashboard.');
+          this.router.navigate(['/dashboard']);
         }
       },
       error: (error) => {
         console.error('❌ Erreur backend, utilisation des données mockées:', error);
-        // Fallback vers les données mockées si le backend n'est pas disponible
         this.loadMockData();
       }
     });

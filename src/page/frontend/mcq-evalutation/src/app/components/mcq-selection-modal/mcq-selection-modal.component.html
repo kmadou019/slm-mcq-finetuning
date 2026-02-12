@@ -46,10 +46,7 @@
           >
             @for (modelInfo of availableModels(); track modelInfo.model) {
               <option [value]="modelInfo.model">
-                {{ modelInfo.model }}
-                @if (modelInfo.count > 0) {
-                  ({{ modelInfo.count }} MCQs)
-                }
+                {{ modelInfo.model }} ({{ modelInfo.count }} MCQs, {{ modelInfo.available }} disponibles)
               </option>
             }
           </select>

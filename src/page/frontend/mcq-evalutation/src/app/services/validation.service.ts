@@ -13,7 +13,19 @@ import { tap, catchError } from 'rxjs/operators';
 export class ValidationService {
   private http = inject(HttpClient);
   private apiUrl = 'http://localhost:8000/api';
-  private STORAGE_KEY = 'mcq_validations';
+  /**
+   * Clé localStorage dynamique par utilisateur
+   */
+  private getStorageKey(): string {
+    const userJson = sessionStorage.getItem('mcq_current_user');
+    if (userJson) {
+      try {
+        const user = JSON.parse(userJson);
+        if (user.username) return `mcq_validations_${user.username}`;
+      } catch {}
+    }
+    return 'mcq_validations_anonymous';
+  }
 
   /**
    * Sauvegarder une validation
@@ -24,14 +36,14 @@ export class ValidationService {
       decision,
       timestamp: new Date().toISOString()
     };
-    localStorage.setItem(this.STORAGE_KEY, JSON.stringify(validations));
+    localStorage.setItem(this.getStorageKey(), JSON.stringify(validations));
   }
 
   /**
    * Récupérer toutes les validations
    */
   getAllValidations(): Record<string, { decision: string, timestamp: string }> {
-    const saved = localStorage.getItem(this.STORAGE_KEY);
+    const saved = localStorage.getItem(this.getStorageKey());
     return saved ? JSON.parse(saved) : {};
   }
 
@@ -91,7 +103,7 @@ export class ValidationService {
    * Effacer toutes les validations
    */
   clearAll(): void {
-    localStorage.removeItem(this.STORAGE_KEY);
+    localStorage.removeItem(this.getStorageKey());
   }
 
   /**
@@ -133,7 +145,7 @@ export class ValidationService {
         console.log('🔄 Sync backend → localStorage:', response);
         // Mettre à jour localStorage avec les données du backend
         if (response.validations) {
-          localStorage.setItem(this.STORAGE_KEY, JSON.stringify(response.validations));
+          localStorage.setItem(this.getStorageKey(), JSON.stringify(response.validations));
         }
       }),
       catchError(error => {

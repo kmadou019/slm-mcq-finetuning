@@ -5,7 +5,7 @@
     "email": "admin@mcq-eval.com",
     "role": "admin",
     "created_at": "2024-01-01T00:00:00Z",
-    "password": "admin123"
+    "hashed_password": "$2b$12$zcpJcXD7tyR2LA5iQOeWW.BTlS4MgC31uaFXvMFfDtCWor32eBRAi"
   },
   {
     "id": "user-002",
@@ -13,14 +13,6 @@
     "email": "evaluator@mcq-eval.com",
     "role": "evaluator",
     "created_at": "2024-01-01T00:00:00Z",
-    "password": "eval123"
-  },
-  {
-    "id": "f811216f-7531-454d-b4a5-3daec0f798d8",
-    "username": "lorouxe",
-    "password": "eval123",
-    "email": "loroux.e@g.com",
-    "role": "evaluator",
-    "created_at": "2026-02-11T14:21:21.539264Z"
+    "hashed_password": "$2b$12$P7GrQ.8MRStzvVm1tvMUY.lCNmaYIvxJMeT5TafNMd7ec2QqqYBK2"
   }
 ]

@@ -2,6 +2,7 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { forkJoin } from 'rxjs';
 import { AdminService } from '../../services/admin.service';
 import { AuthService } from '../../services/auth.service';
 
@@ -56,50 +57,23 @@ export class AdminDashboardPageComponent implements OnInit {
   private loadAllData(): void {
     this.loading.set(true);
 
-    // Charger les stats globales
-    this.adminService.getGlobalStats().subscribe({
-      next: (stats) => {
-        console.log('📊 Global stats:', stats);
-        this.globalStats.set(stats);
-      },
-      error: (error) => {
-        console.error('❌ Erreur chargement stats globales:', error);
-      }
-    });
-
-    // Charger les stats par modèle
-    this.adminService.getStatsByModel().subscribe({
-      next: (stats) => {
-        console.log('📊 Model stats:', stats);
-        this.modelStats.set(stats);
-      },
-      error: (error) => {
-        console.error('❌ Erreur chargement stats par modèle:', error);
-      }
-    });
-
-    // Charger les utilisateurs
-    this.adminService.listUsers().subscribe({
-      next: (users) => {
-        console.log('👥 Users:', users);
-        this.users.set(users);
-      },
-      error: (error) => {
-        console.error('❌ Erreur chargement utilisateurs:', error);
-      }
-    });
-
-    // Charger le tracker
-    this.adminService.getTracker().subscribe({
-      next: (data) => {
-        console.log('🎯 Tracker:', data);
-        this.tracker.set(data.tracker);
-        this.trackerPath.set(data.path);
-        this.trackerJson = JSON.stringify(data.tracker, null, 2);
+    forkJoin({
+      globalStats: this.adminService.getGlobalStats(),
+      modelStats: this.adminService.getStatsByModel(),
+      users: this.adminService.listUsers(),
+      tracker: this.adminService.getTracker()
+    }).subscribe({
+      next: (results) => {
+        this.globalStats.set(results.globalStats);
+        this.modelStats.set(results.modelStats);
+        this.users.set(results.users);
+        this.tracker.set(results.tracker.tracker);
+        this.trackerPath.set(results.tracker.path);
+        this.trackerJson = JSON.stringify(results.tracker.tracker, null, 2);
         this.loading.set(false);
       },
       error: (error) => {
-        console.error('❌ Erreur chargement tracker:', error);
+        console.error('Erreur chargement donnees admin:', error);
         this.loading.set(false);
       }
     });
@@ -148,18 +122,13 @@ export class AdminDashboardPageComponent implements OnInit {
     }
 
     this.adminService.createUser(userData).subscribe({
-      next: (response) => {
-        console.log('✅ Utilisateur créé:', response);
-        alert(`Utilisateur ${userData.username} créé avec succès !`);
+      next: () => {
+        alert(`Utilisateur ${userData.username} cree avec succes !`);
         this.closeCreateUserModal();
-        // Recharger la liste des utilisateurs
-        this.adminService.listUsers().subscribe(users => {
-          this.users.set(users);
-        });
+        this.loadAllData();
       },
       error: (error) => {
-        console.error('❌ Erreur création utilisateur:', error);
-        alert(`Erreur lors de la création: ${error.error?.detail || error.message}`);
+        alert(`Erreur lors de la creation: ${error.error?.detail || error.message}`);
       }
     });
   }
@@ -173,16 +142,11 @@ export class AdminDashboardPageComponent implements OnInit {
     }
 
     this.adminService.deleteUser(userId).subscribe({
-      next: (response) => {
-        console.log('✅ Utilisateur supprimé:', response);
-        alert(`Utilisateur ${username} supprimé avec succès !`);
-        // Recharger la liste des utilisateurs
-        this.adminService.listUsers().subscribe(users => {
-          this.users.set(users);
-        });
+      next: () => {
+        alert(`Utilisateur ${username} supprime avec succes !`);
+        this.loadAllData();
       },
       error: (error) => {
-        console.error('❌ Erreur suppression utilisateur:', error);
         alert(`Erreur lors de la suppression: ${error.error?.detail || error.message}`);
       }
     });
@@ -214,15 +178,13 @@ export class AdminDashboardPageComponent implements OnInit {
       const trackerData = JSON.parse(this.trackerJson);
 
       this.adminService.updateTracker(trackerData).subscribe({
-        next: (response) => {
-          console.log('✅ Tracker mis à jour:', response);
-          alert('Tracker mis à jour avec succès !');
-          this.tracker.set(trackerData);
+        next: () => {
+          alert('Tracker mis a jour avec succes !');
           this.closeTrackerEditor();
+          this.loadAllData();
         },
         error: (error) => {
-          console.error('❌ Erreur mise à jour tracker:', error);
-          alert(`Erreur lors de la mise à jour: ${error.error?.detail || error.message}`);
+          alert(`Erreur lors de la mise a jour: ${error.error?.detail || error.message}`);
         }
       });
     } catch (error) {
@@ -239,21 +201,11 @@ export class AdminDashboardPageComponent implements OnInit {
     }
 
     this.adminService.resetTrackerForModel(model).subscribe({
-      next: (response) => {
-        console.log('✅ Tracker réinitialisé:', response);
-        alert(`Tracker réinitialisé pour ${model} !`);
-        // Recharger le tracker
-        this.adminService.getTracker().subscribe(data => {
-          this.tracker.set(data.tracker);
-          this.trackerJson = JSON.stringify(data.tracker, null, 2);
-        });
-        // Recharger les stats
-        this.adminService.getStatsByModel().subscribe(stats => {
-          this.modelStats.set(stats);
-        });
+      next: () => {
+        alert(`Tracker reinitialise pour ${model} !`);
+        this.loadAllData();
       },
       error: (error) => {
-        console.error('❌ Erreur réinitialisation tracker:', error);
         alert(`Erreur: ${error.error?.detail || error.message}`);
       }
     });

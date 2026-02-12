@@ -1,9 +1,11 @@
 """
 Authentication routes
 """
-from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi import APIRouter, Depends, HTTPException, status, Request
 from datetime import datetime
 from sqlalchemy.orm import Session
+from slowapi import Limiter
+from slowapi.util import get_remote_address
 from ..models.auth import (
     LoginRequest,
     LoginResponse,
@@ -12,40 +14,42 @@ from ..models.auth import (
     MCQAssignment
 )
 from ..models.db_models import MCQAssignment as DBMCQAssignment
-from ..utils.security import create_access_token
+from ..utils.security import create_access_token, verify_password
 from ..utils.dependencies import get_current_user, get_user_by_username
 from database import get_db
 
 router = APIRouter(prefix="/auth", tags=["authentication"])
+limiter = Limiter(key_func=get_remote_address)
 
 
 @router.post("/login", response_model=LoginResponse)
-async def login(credentials: LoginRequest):
+@limiter.limit("5/minute")
+async def login(request: Request, credentials: LoginRequest):
     """
     Login endpoint - Authenticate user and return JWT token
+    Rate limited to 5 attempts per minute
     """
     # Get user from database
     user_data = get_user_by_username(credentials.username)
 
-    # Check if user exists
+    # Generic error - don't reveal if user exists
     if user_data is None:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Incorrect username or password",
+            detail="Invalid credentials",
             headers={"WWW-Authenticate": "Bearer"},
         )
 
-    # Verify password (TEMPORARY: plain text comparison for testing)
-    # TODO: Replace with verify_password(credentials.password, user_data["hashed_password"]) in production
-    if credentials.password != user_data.get("password"):
+    # Verify password with bcrypt
+    if not verify_password(credentials.password, user_data.get("hashed_password", "")):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
-            detail="Incorrect username or password",
+            detail="Invalid credentials",
             headers={"WWW-Authenticate": "Bearer"},
         )
 
-    # Create access token
-    access_token = create_access_token(data={"sub": user_data["username"]})
+    # Create JWT access token
+    access_token = create_access_token(data={"sub": user_data["username"], "role": user_data["role"]})
 
     # Create User object (without password)
     user = User(
@@ -91,36 +95,56 @@ async def assign_mcq(
     Uses sequential assignment from CSV files
     Saves assignments to database
     """
-    # Import the assignment function from mcq routes
-    from .mcq import assign_mcqs_to_user
+    from .mcq import assign_mcqs_to_user, load_global_tracker, save_global_tracker
+
+    model = request.model or "qwen3_4b_pdapt_slerp"
 
     try:
-        # Utiliser la fonction d'assignation séquentielle
+        # Auto-repair: synchroniser le tracker avec la DB
+        # Trouver le max MCQ index assigné pour ce modèle en DB (tous users confondus)
+        max_assignment = db.query(DBMCQAssignment).filter(
+            DBMCQAssignment.model == model
+        ).order_by(DBMCQAssignment.mcq_id.desc()).first()
+
+        if max_assignment:
+            try:
+                max_db_index = int(max_assignment.mcq_id.split('-')[1]) - 1
+            except (ValueError, IndexError):
+                max_db_index = -1
+
+            # Mettre à jour le tracker si la DB est en avance
+            tracker = load_global_tracker()
+            if model not in tracker:
+                tracker[model] = {"last_assigned_index": -1, "total_available": 0, "assigned_count": 0}
+            if max_db_index > tracker[model]["last_assigned_index"]:
+                print(f"🔧 Auto-repair tracker for '{model}': {tracker[model]['last_assigned_index']} → {max_db_index}")
+                tracker[model]["last_assigned_index"] = max_db_index
+                tracker[model]["assigned_count"] = max_db_index + 1
+                save_global_tracker(tracker)
+
+        # Assigner (tracker maintenant à jour)
         result = assign_mcqs_to_user(
             username=current_user.username,
             count=request.count,
-            model=request.model or "qwen3_8b_pdapt_slerp"
+            model=model
         )
 
-        # Sauvegarder les assignments dans la base de données
+        # Sauvegarder en DB
         for mcq_id in result["mcq_ids"]:
-            # Vérifier si l'assignment existe déjà
             existing = db.query(DBMCQAssignment).filter(
                 DBMCQAssignment.user_id == current_user.id,
                 DBMCQAssignment.mcq_id == mcq_id
             ).first()
 
             if not existing:
-                # Créer un nouvel assignment
                 db_assignment = DBMCQAssignment(
                     user_id=current_user.id,
                     mcq_id=mcq_id,
-                    model=request.model or "qwen3_8b_pdapt_slerp",
+                    model=model,
                     status="pending"
                 )
                 db.add(db_assignment)
 
-        # Commit tous les assignments
         db.commit()
 
         assignment = MCQAssignment(

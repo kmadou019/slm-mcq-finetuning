@@ -1,7 +1,7 @@
 """
 MCQ Routes - API endpoints for MCQ evaluation
 """
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, status
 from typing import List, Dict, Any
 import pandas as pd
 import re
@@ -234,7 +234,7 @@ def get_csv_path_for_model(model: str) -> Path:
     return csv_path
 
 
-def assign_mcqs_to_user(username: str, count: int, model: str = "qwen3_8b_pdapt_slerp") -> Dict[str, Any]:
+def assign_mcqs_to_user(username: str, count: int, model: str = "qwen3_4b_pdapt_slerp") -> Dict[str, Any]:
     """
     Assigner un nombre spécifique de MCQs à un utilisateur depuis un modèle spécifique
     Politique d'assignation: Les N prochains MCQs non assignés du fichier CSV
@@ -258,13 +258,16 @@ def assign_mcqs_to_user(username: str, count: int, model: str = "qwen3_8b_pdapt_
     # Charger le tracker global
     global_tracker = load_global_tracker()
 
-    # Initialiser le tracker pour ce modèle s'il n'existe pas
+    # Initialiser ou mettre à jour le tracker pour ce modèle
     if model not in global_tracker:
         global_tracker[model] = {
             "last_assigned_index": -1,  # -1 signifie qu'aucun MCQ n'a été assigné
             "total_available": total_mcqs,
             "assigned_count": 0
         }
+    else:
+        # Toujours rafraîchir total_available depuis le CSV
+        global_tracker[model]["total_available"] = total_mcqs
 
     # Récupérer le dernier index assigné
     last_index = global_tracker[model]["last_assigned_index"]
@@ -292,12 +295,18 @@ def assign_mcqs_to_user(username: str, count: int, model: str = "qwen3_8b_pdapt_
     # Charger les assignations existantes
     assignments = load_assignments()
 
-    # Ajouter/mettre à jour l'assignation pour cet utilisateur
-    assignments[username] = {
-        "model": model,
-        "mcq_ids": mcq_ids,
-        "assigned_at": pd.Timestamp.now().isoformat()
-    }
+    # Ajouter les nouveaux MCQs aux existants (accumuler, pas remplacer)
+    if username in assignments:
+        existing_ids = assignments[username].get("mcq_ids", [])
+        assignments[username]["mcq_ids"] = existing_ids + mcq_ids
+        assignments[username]["model"] = model
+        assignments[username]["assigned_at"] = pd.Timestamp.now().isoformat()
+    else:
+        assignments[username] = {
+            "model": model,
+            "mcq_ids": mcq_ids,
+            "assigned_at": pd.Timestamp.now().isoformat()
+        }
 
     # Sauvegarder
     save_assignments(assignments)
@@ -481,7 +490,7 @@ async def get_assigned_mcqs(
         else:
             # Récupérer les mcq_ids et le modèle depuis la DB
             mcq_ids = [assignment.mcq_id for assignment in db_assignments]
-            model = db_assignments[0].model if db_assignments else "qwen3_8b_pdapt_slerp"
+            model = db_assignments[0].model if db_assignments else "qwen3_4b_pdapt_slerp"
 
         return {
             "mcq_ids": mcq_ids,
@@ -492,56 +501,6 @@ async def get_assigned_mcqs(
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error loading MCQ list: {str(e)}")
-
-
-@router.get("/mcq/{mcq_id}")
-async def get_mcq_by_id(mcq_id: str, current_user: User = Depends(get_current_user)) -> MCQCard:
-    """
-    Retourne une carte MCQ complète avec toutes ses données
-    Le modèle est déterminé depuis l'assignation de l'utilisateur
-    """
-    try:
-        # Charger les assignations pour trouver le modèle
-        assignments = load_assignments()
-
-        if current_user.username not in assignments:
-            raise HTTPException(status_code=404, detail="No assignment found for user")
-
-        user_assignment = assignments[current_user.username]
-        model = user_assignment["model"]
-        assigned_mcqs = user_assignment["mcq_ids"]
-
-        # Vérifier que le MCQ est bien assigné à cet utilisateur
-        if mcq_id not in assigned_mcqs:
-            raise HTTPException(status_code=403, detail="MCQ not assigned to this user")
-
-        # Obtenir le chemin du CSV pour ce modèle
-        csv_path = get_csv_path_for_model(model)
-
-        # Extraire l'index depuis l'ID (MCQ-000001 -> 0)
-        try:
-            index = int(mcq_id.split('-')[1]) - 1
-        except:
-            raise HTTPException(status_code=400, detail="Invalid MCQ ID format")
-
-        # Charger le CSV
-        df = pd.read_csv(csv_path, engine='python', quotechar='"', on_bad_lines='skip')
-
-        if index < 0 or index >= len(df):
-            raise HTTPException(status_code=404, detail="MCQ not found")
-
-        # Récupérer la ligne
-        row = df.iloc[index]
-
-        # Construire la carte MCQ
-        card = build_mcq_card_from_row(row, index, model)
-
-        return MCQCard(**card)
-
-    except HTTPException:
-        raise
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error loading MCQ: {str(e)}")
 
 
 @router.get("/mcq/batch")
@@ -580,6 +539,83 @@ async def get_mcqs_batch(
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error loading MCQ batch: {str(e)}")
+
+
+@router.get("/mcq/assignments")
+async def get_all_assignments(current_user: User = Depends(get_current_user)) -> Dict[str, Any]:
+    """
+    Récupérer toutes les assignations
+    Nécessite les droits admin
+    """
+    # Vérifier que current_user est admin
+    if current_user.role != "admin":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Insufficient permissions"
+        )
+
+    try:
+        assignments = load_assignments()
+
+        return {
+            "status": "success",
+            "data": assignments,
+            "total_users": len(assignments)
+        }
+
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error loading assignments: {str(e)}")
+
+
+@router.get("/mcq/{mcq_id}")
+async def get_mcq_by_id(
+    mcq_id: str,
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
+) -> MCQCard:
+    """
+    Retourne une carte MCQ complète avec toutes ses données
+    Le modèle est déterminé depuis l'assignation en base de données
+    """
+    try:
+        # Vérifier l'assignation et récupérer le modèle depuis la DB
+        assignment = db.query(DBMCQAssignment).filter(
+            DBMCQAssignment.user_id == current_user.id,
+            DBMCQAssignment.mcq_id == mcq_id
+        ).first()
+
+        if not assignment:
+            raise HTTPException(status_code=403, detail="MCQ not assigned to this user")
+
+        model = assignment.model
+
+        # Obtenir le chemin du CSV pour ce modèle
+        csv_path = get_csv_path_for_model(model)
+
+        # Extraire l'index depuis l'ID (MCQ-000001 -> 0)
+        try:
+            index = int(mcq_id.split('-')[1]) - 1
+        except:
+            raise HTTPException(status_code=400, detail="Invalid MCQ ID format")
+
+        # Charger le CSV
+        df = pd.read_csv(csv_path, engine='python', quotechar='"', on_bad_lines='skip')
+
+        if index < 0 or index >= len(df):
+            raise HTTPException(status_code=404, detail="MCQ not found")
+
+        # Récupérer la ligne
+        row = df.iloc[index]
+
+        # Construire la carte MCQ
+        card = build_mcq_card_from_row(row, index, model)
+
+        return MCQCard(**card)
+
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Error loading MCQ: {str(e)}")
 
 
 @router.post("/mcq/{mcq_id}/validate")
@@ -621,19 +657,67 @@ async def validate_mcq(
 @router.post("/mcq/assign")
 async def create_assignment(
     assignment: AssignmentRequest,
-    current_user: User = Depends(get_current_user)
+    current_user: User = Depends(get_current_user),
+    db: Session = Depends(get_db)
 ) -> Dict[str, Any]:
     """
     Créer une assignation de MCQs pour un utilisateur
-    Nécessite les droits admin (pour l'instant, tous les utilisateurs peuvent le faire)
+    Nécessite les droits admin. Sauvegarde dans le JSON ET la base de données.
     """
-    try:
-        # TODO: Vérifier que current_user est admin
-        # if current_user.role != "admin":
-        #     raise HTTPException(status_code=403, detail="Admin access required")
+    # Vérifier que current_user est admin
+    if current_user.role != "admin":
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Insufficient permissions"
+        )
 
-        # Créer l'assignation avec le modèle spécifié
-        assignment_data = assign_mcqs_to_user(assignment.username, assignment.count, assignment.model)
+    try:
+        model = assignment.model or "qwen3_4b_pdapt_slerp"
+
+        # Auto-repair: synchroniser le tracker avec la DB
+        max_assignment = db.query(DBMCQAssignment).filter(
+            DBMCQAssignment.model == model
+        ).order_by(DBMCQAssignment.mcq_id.desc()).first()
+
+        if max_assignment:
+            try:
+                max_db_index = int(max_assignment.mcq_id.split('-')[1]) - 1
+            except (ValueError, IndexError):
+                max_db_index = -1
+
+            tracker = load_global_tracker()
+            if model not in tracker:
+                tracker[model] = {"last_assigned_index": -1, "total_available": 0, "assigned_count": 0}
+            if max_db_index > tracker[model]["last_assigned_index"]:
+                print(f"🔧 Auto-repair tracker for '{model}': {tracker[model]['last_assigned_index']} → {max_db_index}")
+                tracker[model]["last_assigned_index"] = max_db_index
+                tracker[model]["assigned_count"] = max_db_index + 1
+                save_global_tracker(tracker)
+
+        # Créer l'assignation (JSON + tracker)
+        assignment_data = assign_mcqs_to_user(assignment.username, assignment.count, model)
+
+        # Résoudre le user_id depuis le username
+        from ..utils.dependencies import get_user_by_username
+        user_data = get_user_by_username(assignment.username)
+        if not user_data:
+            raise HTTPException(status_code=404, detail=f"User '{assignment.username}' not found")
+
+        # Sauvegarder aussi en base de données
+        for mcq_id in assignment_data["mcq_ids"]:
+            existing = db.query(DBMCQAssignment).filter(
+                DBMCQAssignment.user_id == user_data["id"],
+                DBMCQAssignment.mcq_id == mcq_id
+            ).first()
+            if not existing:
+                db_assignment = DBMCQAssignment(
+                    user_id=user_data["id"],
+                    mcq_id=mcq_id,
+                    model=assignment_data["model"],
+                    status="pending"
+                )
+                db.add(db_assignment)
+        db.commit()
 
         return {
             "status": "success",
@@ -652,26 +736,6 @@ async def create_assignment(
         raise HTTPException(status_code=404, detail=str(e))
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error creating assignment: {str(e)}")
-
-
-@router.get("/mcq/assignments")
-async def get_all_assignments(current_user: User = Depends(get_current_user)) -> Dict[str, Any]:
-    """
-    Récupérer toutes les assignations
-    Nécessite les droits admin (pour l'instant, tous les utilisateurs peuvent le faire)
-    """
-    try:
-        # TODO: Vérifier que current_user est admin
-        assignments = load_assignments()
-
-        return {
-            "status": "success",
-            "data": assignments,
-            "total_users": len(assignments)
-        }
-
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=f"Error loading assignments: {str(e)}")
 
 
 @router.get("/mcq-models")
@@ -711,7 +775,8 @@ async def get_available_models() -> List[Dict[str, Any]]:
 
                 models_info.append({
                     "model": model_name,
-                    "count": max(0, available_count)  # Ne pas retourner de valeurs négatives
+                    "count": total_mcqs,  # Nombre total de MCQs dans le CSV
+                    "available": max(0, available_count)  # Non encore assignés
                 })
 
             except Exception as e:

@@ -45,11 +45,8 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
       this.currentUser.set(user);
     });
 
-    // Synchroniser avec le backend (récupérer les validations)
-    this.validationService.syncWithBackend().subscribe();
-
-    // Charger les vraies statistiques depuis l'API
-    this.loadStats();
+    // Synchroniser avec le backend PUIS charger les stats (séquentiel)
+    this.syncThenLoadStats();
 
     // Écouter les événements de navigation pour recharger les stats
     // quand l'utilisateur revient au dashboard depuis une autre page
@@ -57,12 +54,19 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
       filter(event => event instanceof NavigationEnd)
     ).subscribe((event: any) => {
       if (event.url === '/dashboard' || event.url === '/') {
-        console.log('🔄 Retour au dashboard - rechargement des stats');
-        // Re-synchroniser et recharger les stats
-        this.validationService.syncWithBackend().subscribe(() => {
-          this.loadStats();
-        });
+        this.syncThenLoadStats();
       }
+    });
+  }
+
+  /**
+   * Synchroniser les validations avec le backend, puis charger les stats
+   */
+  private syncThenLoadStats(): void {
+    this.loading.set(true);
+    this.validationService.syncWithBackend().subscribe({
+      next: () => this.loadStats(),
+      error: () => this.loadStats()
     });
   }
 
@@ -159,8 +163,8 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
   onModalConfirm(count: number): void {
     console.log('Nouveaux MCQ assignés:', count);
     this.showMcqModal.set(false);
-    // Recharger les stats pour afficher les nouveaux MCQ
-    this.loadStats();
+    // Synchroniser puis recharger les stats pour afficher les nouveaux MCQ
+    this.syncThenLoadStats();
   }
 
   /**
