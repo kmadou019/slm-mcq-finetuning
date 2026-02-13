@@ -127,3 +127,10 @@ def get_user_by_username(username: str) -> Optional[dict]:
     Get user by username from users database
     """
     return USERS_DB.get(username)
+
+
+def save_users_db():
+    """Save USERS_DB to the JSON file"""
+    USERS_DB_PATH.parent.mkdir(parents=True, exist_ok=True)
+    with open(USERS_DB_PATH, 'w') as f:
+        json.dump(list(USERS_DB.values()), f, indent=2)

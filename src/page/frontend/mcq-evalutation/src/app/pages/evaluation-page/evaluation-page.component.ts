@@ -348,7 +348,16 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
       section_a_checks: mcq.section_a_checks,
       section_b_checks: mcq.section_b_checks,
       human_decision: decision,
-      human_feedback: this.validationForm.get('feedback')?.value || ''
+      human_feedback: this.validationForm.get('feedback')?.value || '',
+      mcq_data: {
+        item_id: mcq.item_id,
+        mcq_question: mcq.mcq_question,
+        options: mcq.options,
+        correct_option: mcq.correct_option,
+        source_material: mcq.source_material,
+        generator_info: mcq.generator_info,
+        final_decision: mcq.final_decision
+      }
     };
 
     console.log('📤 Soumission de la validation:', validationData);

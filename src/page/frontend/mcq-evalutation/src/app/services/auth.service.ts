@@ -100,6 +100,21 @@ export class AuthService {
   }
 
   /**
+   * Changer le mot de passe de l'utilisateur connecte
+   */
+  changePassword(currentPassword: string, newPassword: string): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/auth/change-password`, {
+      current_password: currentPassword,
+      new_password: newPassword
+    }).pipe(
+      catchError(error => {
+        console.error('Change password error:', error);
+        return throwError(() => error);
+      })
+    );
+  }
+
+  /**
    * Assigner des MCQ à l'utilisateur actuel
    */
   assignMCQs(count: number, model?: string): Observable<MCQAssignment> {

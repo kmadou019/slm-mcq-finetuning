@@ -178,14 +178,19 @@
                 <td>{{ user.stats.validations }}</td>
                 <td class="success-text">{{ user.stats.accepted }}</td>
                 <td class="danger-text">{{ user.stats.rejected }}</td>
-                <td>
+                <td class="actions-cell">
+                  <button
+                    class="btn-small btn-primary"
+                    (click)="openEditUserModal(user)"
+                    title="Modifier cet utilisateur">
+                    ✏️ Modifier
+                  </button>
                   <button
                     *ngIf="user.role !== 'admin'"
                     class="btn-small btn-danger"
                     (click)="deleteUser(user.id, user.username)">
                     🗑️ Supprimer
                   </button>
-                  <span *ngIf="user.role === 'admin'" class="muted">-</span>
                 </td>
               </tr>
             </tbody>
@@ -302,6 +307,55 @@
       </button>
       <button class="btn-primary" (click)="createUser()">
         Créer l'utilisateur
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================================ -->
+<!-- MODAL: Modifier un utilisateur -->
+<!-- ============================================================================ -->
+<div *ngIf="showEditUserModal()" class="modal-overlay" (click)="closeEditUserModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <h2>✏️ Modifier {{ editUser.username }}</h2>
+      <button class="modal-close" (click)="closeEditUserModal()">✕</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="form-group">
+        <label for="editEmail">Email</label>
+        <input
+          type="email"
+          id="editEmail"
+          [(ngModel)]="editUser.email"
+          placeholder="john@example.com">
+      </div>
+
+      <div class="form-group">
+        <label for="editRole">Role</label>
+        <select id="editRole" [(ngModel)]="editUser.role">
+          <option value="evaluator">Evaluateur</option>
+          <option value="admin">Administrateur</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="editPassword">Nouveau mot de passe (laisser vide pour ne pas changer)</label>
+        <input
+          type="password"
+          id="editPassword"
+          [(ngModel)]="editUser.password"
+          placeholder="••••••••">
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button class="btn-secondary" (click)="closeEditUserModal()">
+        Annuler
+      </button>
+      <button class="btn-primary" (click)="saveUserEdit()">
+        Sauvegarder
       </button>
     </div>
   </div>

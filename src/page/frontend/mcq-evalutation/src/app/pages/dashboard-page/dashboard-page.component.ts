@@ -1,5 +1,6 @@
 import { Component, inject, OnInit, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Router, NavigationEnd } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { McqService } from '../../services/mcq.service';
@@ -14,7 +15,7 @@ import { filter, Subscription } from 'rxjs';
 @Component({
   selector: 'app-dashboard-page',
   standalone: true,
-  imports: [CommonModule, McqSelectionModalComponent],
+  imports: [CommonModule, FormsModule, McqSelectionModalComponent],
   templateUrl: './dashboard-page.component.html',
   styleUrl: './dashboard-page.component.scss'
 })
@@ -29,6 +30,12 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
   currentUser = signal<User | null>(null);
   loading = signal(true);
   showMcqModal = signal(false);
+  showPasswordModal = signal(false);
+  passwordForm = {
+    currentPassword: '',
+    newPassword: '',
+    confirmPassword: ''
+  };
 
   // Statistiques
   stats = signal({
@@ -165,6 +172,49 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
     this.showMcqModal.set(false);
     // Synchroniser puis recharger les stats pour afficher les nouveaux MCQ
     this.syncThenLoadStats();
+  }
+
+  /**
+   * Ouvrir la modal de changement de mot de passe
+   */
+  openPasswordModal(): void {
+    this.passwordForm = { currentPassword: '', newPassword: '', confirmPassword: '' };
+    this.showPasswordModal.set(true);
+  }
+
+  /**
+   * Fermer la modal de changement de mot de passe
+   */
+  closePasswordModal(): void {
+    this.showPasswordModal.set(false);
+  }
+
+  /**
+   * Changer le mot de passe
+   */
+  changePassword(): void {
+    if (!this.passwordForm.currentPassword || !this.passwordForm.newPassword) {
+      alert('Veuillez remplir tous les champs');
+      return;
+    }
+
+    if (this.passwordForm.newPassword !== this.passwordForm.confirmPassword) {
+      alert('Les mots de passe ne correspondent pas');
+      return;
+    }
+
+    this.authService.changePassword(
+      this.passwordForm.currentPassword,
+      this.passwordForm.newPassword
+    ).subscribe({
+      next: () => {
+        alert('Mot de passe modifie avec succes !');
+        this.closePasswordModal();
+      },
+      error: (error) => {
+        alert(`Erreur: ${error.error?.detail || error.message}`);
+      }
+    });
   }
 
   /**

@@ -1,4 +1,4 @@
-@import '../../../styles/colors';
+@use '../../../styles/colors' as *;
 
 .admin-dashboard {
   min-height: 100vh;
@@ -238,6 +238,12 @@
 
 .muted {
   color: #999;
+}
+
+.actions-cell {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
 }
 
 // ============================================================================

@@ -84,6 +84,13 @@ export class AdminService {
   }
 
   /**
+   * Modifier un utilisateur
+   */
+  updateUser(userId: string, data: { email?: string; password?: string; role?: string }): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/users/${userId}`, data);
+  }
+
+  /**
    * Supprimer un utilisateur
    */
   deleteUser(userId: string): Observable<any> {

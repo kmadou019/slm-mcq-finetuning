@@ -15,6 +15,7 @@ from api.models.auth import User
 from api.routes.auth import get_current_user
 from api.routes.mcq import load_global_tracker, save_global_tracker, GLOBAL_TRACKER_PATH
 from api.utils.security import hash_password
+from api.utils.dependencies import USERS_DB, save_users_db
 
 router = APIRouter(prefix="/admin", tags=["admin"])
 
@@ -195,9 +196,6 @@ async def list_users(
     """
     Liste tous les utilisateurs avec leurs statistiques
     """
-    # Pour cette démo, on va lire depuis le fichier users.json
-    # En production, ce serait une table User dans la DB
-    from api.utils.dependencies import USERS_DB
 
     users_list = []
 
@@ -248,7 +246,6 @@ async def create_user(
     """
     Créer un nouvel utilisateur
     """
-    from api.utils.dependencies import USERS_DB, USERS_DB_PATH
     from datetime import datetime
     import uuid
 
@@ -270,13 +267,9 @@ async def create_user(
         "created_at": datetime.utcnow().isoformat() + "Z"
     }
 
-    # Ajouter à la DB en mémoire
+    # Ajouter à la DB en mémoire et sauvegarder
     USERS_DB[user_data.username] = new_user
-
-    # Sauvegarder dans le fichier
-    USERS_DB_PATH.parent.mkdir(parents=True, exist_ok=True)
-    with open(USERS_DB_PATH, 'w') as f:
-        json.dump(list(USERS_DB.values()), f, indent=2)
+    save_users_db()
 
     return {
         "status": "success",
@@ -298,8 +291,6 @@ async def delete_user(
     """
     Supprimer un utilisateur (soft delete - ne supprime pas les validations)
     """
-    from api.utils.dependencies import USERS_DB, USERS_DB_PATH
-
     # Trouver et supprimer l'utilisateur
     user_to_delete = None
     for username, user_data in USERS_DB.items():
@@ -320,14 +311,70 @@ async def delete_user(
             detail="Cannot delete admin users"
         )
 
-    # Supprimer
+    # Supprimer et sauvegarder
     del USERS_DB[user_to_delete]
-
-    # Sauvegarder
-    with open(USERS_DB_PATH, 'w') as f:
-        json.dump(list(USERS_DB.values()), f, indent=2)
+    save_users_db()
 
     return {"status": "success", "message": "User deleted successfully"}
+
+
+@router.put("/users/{user_id}")
+async def update_user(
+    user_id: str,
+    update_data: UserUpdate,
+    current_user: User = Depends(require_admin)
+) -> Dict[str, Any]:
+    """
+    Modifier un utilisateur (email, role, mot de passe)
+    """
+    # Trouver l'utilisateur par ID
+    target_username = None
+    for username, user_data in USERS_DB.items():
+        if user_data["id"] == user_id:
+            target_username = username
+            break
+
+    if not target_username:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User not found"
+        )
+
+    user_data = USERS_DB[target_username]
+
+    # Mettre a jour les champs fournis
+    if update_data.email is not None:
+        user_data["email"] = update_data.email
+
+    if update_data.role is not None:
+        user_data["role"] = update_data.role
+
+    if update_data.password is not None and update_data.password.strip():
+        user_data["hashed_password"] = hash_password(update_data.password)
+
+    # Si le username change, mettre a jour la cle du dict
+    if update_data.username is not None and update_data.username != target_username:
+        if update_data.username in USERS_DB:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail="Username already exists"
+            )
+        user_data["username"] = update_data.username
+        del USERS_DB[target_username]
+        USERS_DB[update_data.username] = user_data
+
+    save_users_db()
+
+    return {
+        "status": "success",
+        "message": "User updated successfully",
+        "user": {
+            "id": user_data["id"],
+            "username": user_data["username"],
+            "email": user_data.get("email", ""),
+            "role": user_data.get("role", "evaluator")
+        }
+    }
 
 
 # ============================================================================

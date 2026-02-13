@@ -41,6 +41,16 @@ export class AdminDashboardPageComponent implements OnInit {
     role: 'evaluator'
   };
 
+  // Edition utilisateur
+  showEditUserModal = signal(false);
+  editUser = {
+    id: '',
+    username: '',
+    email: '',
+    role: 'evaluator',
+    password: ''
+  };
+
   // Tracker
   tracker = signal<any>(null);
   trackerPath = signal('');
@@ -148,6 +158,52 @@ export class AdminDashboardPageComponent implements OnInit {
       },
       error: (error) => {
         alert(`Erreur lors de la suppression: ${error.error?.detail || error.message}`);
+      }
+    });
+  }
+
+  /**
+   * Ouvrir la modal d'edition utilisateur
+   */
+  openEditUserModal(user: any): void {
+    this.editUser = {
+      id: user.id,
+      username: user.username,
+      email: user.email,
+      role: user.role,
+      password: ''
+    };
+    this.showEditUserModal.set(true);
+  }
+
+  /**
+   * Fermer la modal d'edition utilisateur
+   */
+  closeEditUserModal(): void {
+    this.showEditUserModal.set(false);
+  }
+
+  /**
+   * Sauvegarder les modifications utilisateur
+   */
+  saveUserEdit(): void {
+    const data: any = {
+      email: this.editUser.email,
+      role: this.editUser.role
+    };
+
+    if (this.editUser.password.trim()) {
+      data.password = this.editUser.password;
+    }
+
+    this.adminService.updateUser(this.editUser.id, data).subscribe({
+      next: () => {
+        alert(`Utilisateur ${this.editUser.username} modifie avec succes !`);
+        this.closeEditUserModal();
+        this.loadAllData();
+      },
+      error: (error) => {
+        alert(`Erreur: ${error.error?.detail || error.message}`);
       }
     });
   }

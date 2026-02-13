@@ -14,12 +14,18 @@ from ..models.auth import (
     MCQAssignment
 )
 from ..models.db_models import MCQAssignment as DBMCQAssignment
-from ..utils.security import create_access_token, verify_password
-from ..utils.dependencies import get_current_user, get_user_by_username
+from pydantic import BaseModel
+from ..utils.security import create_access_token, verify_password, hash_password
+from ..utils.dependencies import get_current_user, get_user_by_username, USERS_DB, save_users_db
 from database import get_db
 
 router = APIRouter(prefix="/auth", tags=["authentication"])
 limiter = Limiter(key_func=get_remote_address)
+
+
+class ChangePasswordRequest(BaseModel):
+    current_password: str
+    new_password: str
 
 
 @router.post("/login", response_model=LoginResponse)
@@ -82,6 +88,35 @@ async def get_me(current_user: User = Depends(get_current_user)):
     Get current authenticated user
     """
     return current_user
+
+
+@router.put("/change-password")
+async def change_password(
+    request: ChangePasswordRequest,
+    current_user: User = Depends(get_current_user)
+):
+    """
+    Change password for the current authenticated user
+    """
+    user_data = USERS_DB.get(current_user.username)
+    if not user_data:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="User not found"
+        )
+
+    # Verify current password
+    if not verify_password(request.current_password, user_data.get("hashed_password", "")):
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Current password is incorrect"
+        )
+
+    # Update password
+    user_data["hashed_password"] = hash_password(request.new_password)
+    save_users_db()
+
+    return {"status": "success", "message": "Password changed successfully"}
 
 
 @router.post("/assign-mcq", response_model=MCQAssignment)

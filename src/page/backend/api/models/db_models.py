@@ -43,6 +43,7 @@ class Validation(Base):
     section_a_checks = Column(Text, nullable=True)  # JSON string
     section_b_checks = Column(Text, nullable=True)  # JSON string
     validation_duration_seconds = Column(Integer, nullable=True)
+    mcq_data = Column(Text, nullable=True)  # JSON string - full MCQ content
     validated_at = Column(DateTime(timezone=True), server_default=func.now())
 
     # Contraintes
@@ -56,14 +57,21 @@ class Validation(Base):
 
     def to_dict(self):
         """Convert to dictionary for API responses"""
-        return {
+        import json as _json
+        result = {
             "id": self.id,
             "user_id": self.user_id,
             "mcq_id": self.mcq_id,
             "decision": self.decision,
             "human_feedback": self.human_feedback,
-            "section_a_checks": self.section_a_checks,
-            "section_b_checks": self.section_b_checks,
             "validation_duration_seconds": self.validation_duration_seconds,
             "validated_at": self.validated_at.isoformat() if self.validated_at else None
         }
+        if self.mcq_data:
+            try:
+                mcq = _json.loads(self.mcq_data)
+                mcq.pop("lisa_metadata", None)
+                result["mcq_data"] = mcq
+            except (ValueError, TypeError):
+                result["mcq_data"] = self.mcq_data
+        return result

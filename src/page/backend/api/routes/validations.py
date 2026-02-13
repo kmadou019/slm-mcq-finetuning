@@ -130,6 +130,11 @@ async def create_validation(
         Validation.mcq_id == mcq_id
     ).first()
 
+    # Serialiser les donnees MCQ si fournies
+    mcq_data_json = None
+    if validation_data.get("mcq_data"):
+        mcq_data_json = json.dumps(validation_data["mcq_data"], ensure_ascii=False)
+
     if existing_validation:
         # Mettre à jour
         existing_validation.decision = validation_data.get("human_decision", "REJECT")
@@ -137,6 +142,8 @@ async def create_validation(
         existing_validation.section_a_checks = json.dumps(validation_data.get("section_a_checks", []))
         existing_validation.section_b_checks = json.dumps(validation_data.get("section_b_checks", []))
         existing_validation.validation_duration_seconds = validation_data.get("validation_duration_seconds")
+        if mcq_data_json:
+            existing_validation.mcq_data = mcq_data_json
         existing_validation.validated_at = func.now()
 
         db.commit()
@@ -156,7 +163,8 @@ async def create_validation(
             human_feedback=validation_data.get("human_feedback", ""),
             section_a_checks=json.dumps(validation_data.get("section_a_checks", [])),
             section_b_checks=json.dumps(validation_data.get("section_b_checks", [])),
-            validation_duration_seconds=validation_data.get("validation_duration_seconds")
+            validation_duration_seconds=validation_data.get("validation_duration_seconds"),
+            mcq_data=mcq_data_json
         )
 
         db.add(new_validation)
