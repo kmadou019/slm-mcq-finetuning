@@ -1,8 +1,8 @@
 """
 MCQ Routes - API endpoints for MCQ evaluation
 """
-from fastapi import APIRouter, Depends, HTTPException, status
-from typing import List, Dict, Any
+from fastapi import APIRouter, Depends, HTTPException, Query, status
+from typing import List, Dict, Any, Optional
 import pandas as pd
 import re
 import json
@@ -186,15 +186,14 @@ def evaluation_to_pass_warn(score, threshold) -> str:
         return "PASS" if score else "WARN"
 
 
-def load_assignments() -> Dict[str, Dict[str, Any]]:
+def load_assignments() -> Dict[str, Any]:
     """
     Charger les assignations depuis le fichier JSON
     Format: {
-        "username": {
-            "model": "qwen3_4b_pdapt_slerp",
-            "mcq_ids": ["MCQ-000001", "MCQ-000002", ...],
-            "assigned_at": "2026-02-10T12:00:00"
-        }
+        "username": [
+            { "model": "qwen3_4b_pdapt_slerp", "mcq_ids": [...], "assigned_at": "..." },
+            { "model": "qwen3_8b_pdapt_slerp", "mcq_ids": [...], "assigned_at": "..." }
+        ]
     }
     """
     if not ASSIGNMENTS_PATH.exists():
@@ -315,21 +314,28 @@ def assign_mcqs_to_user(username: str, count: int, model: str = "qwen3_4b_pdapt_
     global_tracker[model]["assigned_count"] += actual_count
     save_global_tracker(global_tracker)
 
-    # Charger les assignations existantes
+    # Charger les assignations existantes (format multi-modele)
     assignments = load_assignments()
 
-    # Ajouter les nouveaux MCQs aux existants (accumuler, pas remplacer)
-    if username in assignments:
-        existing_ids = assignments[username].get("mcq_ids", [])
-        assignments[username]["mcq_ids"] = existing_ids + mcq_ids
-        assignments[username]["model"] = model
-        assignments[username]["assigned_at"] = pd.Timestamp.now().isoformat()
+    if username not in assignments:
+        assignments[username] = []
+
+    # Chercher un batch existant pour ce modele
+    existing_batch = None
+    for batch in assignments[username]:
+        if batch.get("model") == model:
+            existing_batch = batch
+            break
+
+    if existing_batch:
+        existing_batch["mcq_ids"] = existing_batch.get("mcq_ids", []) + mcq_ids
+        existing_batch["assigned_at"] = pd.Timestamp.now().isoformat()
     else:
-        assignments[username] = {
+        assignments[username].append({
             "model": model,
             "mcq_ids": mcq_ids,
             "assigned_at": pd.Timestamp.now().isoformat()
-        }
+        })
 
     # Sauvegarder
     save_assignments(assignments)
@@ -487,23 +493,21 @@ async def get_assigned_mcqs(
     db: Session = Depends(get_db)
 ) -> Dict[str, Any]:
     """
-    Retourne la liste des IDs de MCQ assignés à l'utilisateur depuis la base de données
-    Si aucune assignation n'existe, en crée une par défaut (10 MCQs du modèle par défaut)
+    Retourne la liste des MCQ assignes a l'utilisateur avec leur modele.
+    Format: { assignments: [{mcq_id, model}, ...], total, user }
     """
     try:
-        # Récupérer les assignments depuis la base de données
         db_assignments = db.query(DBMCQAssignment).filter(
             DBMCQAssignment.user_id == current_user.id
         ).all()
 
-        # Si l'utilisateur n'a pas d'assignation, en créer une par défaut
+        # Si aucune assignation, en creer par defaut
         if not db_assignments:
-            print(f"⚠️ Aucune assignation DB pour {current_user.username}, création d'une assignation par défaut de 10 MCQs")
+            print(f"Aucune assignation DB pour {current_user.username}, creation par defaut de 10 MCQs")
             assignment_data = assign_mcqs_to_user(current_user.username, 10)
             model = assignment_data["model"]
             mcq_ids = assignment_data["mcq_ids"]
 
-            # Sauvegarder dans la DB
             for mcq_id in mcq_ids:
                 db_assignment = DBMCQAssignment(
                     user_id=current_user.id,
@@ -513,15 +517,17 @@ async def get_assigned_mcqs(
                 )
                 db.add(db_assignment)
             db.commit()
+
+            assignments_list = [{"mcq_id": mid, "model": model} for mid in mcq_ids]
         else:
-            # Récupérer les mcq_ids et le modèle depuis la DB
-            mcq_ids = [assignment.mcq_id for assignment in db_assignments]
-            model = db_assignments[0].model if db_assignments else "qwen3_4b_pdapt_slerp"
+            assignments_list = [
+                {"mcq_id": a.mcq_id, "model": a.model}
+                for a in db_assignments
+            ]
 
         return {
-            "mcq_ids": mcq_ids,
-            "total": len(mcq_ids),
-            "model": model,
+            "assignments": assignments_list,
+            "total": len(assignments_list),
             "user": current_user.username
         }
 
@@ -596,18 +602,20 @@ async def get_all_assignments(current_user: User = Depends(get_current_user)) ->
 @router.get("/mcq/{mcq_id}")
 async def get_mcq_by_id(
     mcq_id: str,
+    model: str = Query(..., description="Model name"),
     current_user: User = Depends(get_current_user),
     db: Session = Depends(get_db)
 ) -> MCQCard:
     """
-    Retourne une carte MCQ complète avec toutes ses données
-    Le modèle est déterminé depuis l'assignation en base de données
+    Retourne une carte MCQ complete avec toutes ses donnees.
+    Le modele est passe en query param pour distinguer les MCQs de modeles differents.
     """
     try:
-        # Vérifier l'assignation et récupérer le modèle depuis la DB
+        # Verifier l'assignation avec le modele specifique
         assignment = db.query(DBMCQAssignment).filter(
             DBMCQAssignment.user_id == current_user.id,
-            DBMCQAssignment.mcq_id == mcq_id
+            DBMCQAssignment.mcq_id == mcq_id,
+            DBMCQAssignment.model == model
         ).first()
 
         if not assignment:
@@ -733,7 +741,8 @@ async def create_assignment(
         for mcq_id in assignment_data["mcq_ids"]:
             existing = db.query(DBMCQAssignment).filter(
                 DBMCQAssignment.user_id == user_data["id"],
-                DBMCQAssignment.mcq_id == mcq_id
+                DBMCQAssignment.mcq_id == mcq_id,
+                DBMCQAssignment.model == assignment_data["model"]
             ).first()
             if not existing:
                 db_assignment = DBMCQAssignment(

@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, NavigationEnd } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { McqService } from '../../services/mcq.service';
 import { ValidationService } from '../../services/validation.service';
 import { User } from '../../models';
 import { McqSelectionModalComponent } from '../../components/mcq-selection-modal/mcq-selection-modal.component';
@@ -21,7 +20,6 @@ import { filter, Subscription } from 'rxjs';
 })
 export class DashboardPageComponent implements OnInit, OnDestroy {
   private readonly authService = inject(AuthService);
-  private readonly mcqService = inject(McqService);
   private readonly validationService = inject(ValidationService);
   private readonly router = inject(Router);
   private routerSubscription?: Subscription;
@@ -96,27 +94,15 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
         this.loading.set(false);
       },
       error: (error) => {
-        console.error('❌ Erreur lors du chargement des stats:', error);
-        // En cas d'erreur, fallback sur localStorage
-        this.mcqService.getAssignedMcqs().subscribe({
-          next: (response) => {
-            const localStats = this.validationService.getStats(response.mcq_ids);
-            console.log('📊 Stats depuis localStorage (fallback):', localStats);
-            this.stats.set(localStats);
-            this.loading.set(false);
-          },
-          error: () => {
-            // Si tout échoue, stats vides
-            this.stats.set({
-              total: 0,
-              pending: 0,
-              completed: 0,
-              accepted: 0,
-              rejected: 0
-            });
-            this.loading.set(false);
-          }
+        console.error('Erreur lors du chargement des stats:', error);
+        this.stats.set({
+          total: 0,
+          pending: 0,
+          completed: 0,
+          accepted: 0,
+          rejected: 0
         });
+        this.loading.set(false);
       }
     });
   }

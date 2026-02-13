@@ -3,6 +3,11 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MCQCard } from '../models/mcq.model';
 
+export interface AssignedMCQ {
+  mcq_id: string;
+  model: string;
+}
+
 /**
  * MCQ Service - Handles all MCQ-related API calls
  */
@@ -14,19 +19,19 @@ export class McqService {
   private apiUrl = 'http://localhost:8000/api';
 
   /**
-   * Get list of assigned MCQ IDs for current user
+   * Get list of assigned MCQs with their models
    */
-  getAssignedMcqs(): Observable<{ mcq_ids: string[], total: number, user: string }> {
-    return this.http.get<{ mcq_ids: string[], total: number, user: string }>(
+  getAssignedMcqs(): Observable<{ assignments: AssignedMCQ[], total: number, user: string }> {
+    return this.http.get<{ assignments: AssignedMCQ[], total: number, user: string }>(
       `${this.apiUrl}/mcq/assigned`
     );
   }
 
   /**
-   * Get a specific MCQ by ID
+   * Get a specific MCQ by ID and model
    */
-  getMcqById(mcqId: string): Observable<MCQCard> {
-    return this.http.get<MCQCard>(`${this.apiUrl}/mcq/${mcqId}`);
+  getMcqById(mcqId: string, model: string): Observable<MCQCard> {
+    return this.http.get<MCQCard>(`${this.apiUrl}/mcq/${mcqId}?model=${encodeURIComponent(model)}`);
   }
 
   /**
@@ -65,7 +70,7 @@ export class McqService {
   }
 
   /**
-   * Clé localStorage dynamique par utilisateur
+   * Cle localStorage dynamique par utilisateur
    */
   private getProgressKey(): string {
     const userJson = sessionStorage.getItem('mcq_current_user');
@@ -83,7 +88,7 @@ export class McqService {
    */
   saveProgress(data: {
     current_index: number,
-    mcq_list: string[],
+    mcq_list: AssignedMCQ[],
     current_mcq_state?: any
   }): void {
     localStorage.setItem(this.getProgressKey(), JSON.stringify(data));
@@ -94,7 +99,7 @@ export class McqService {
    */
   loadProgress(): {
     current_index: number,
-    mcq_list: string[],
+    mcq_list: AssignedMCQ[],
     current_mcq_state?: any
   } | null {
     const saved = localStorage.getItem(this.getProgressKey());

@@ -168,7 +168,8 @@ async def assign_mcq(
         for mcq_id in result["mcq_ids"]:
             existing = db.query(DBMCQAssignment).filter(
                 DBMCQAssignment.user_id == current_user.id,
-                DBMCQAssignment.mcq_id == mcq_id
+                DBMCQAssignment.mcq_id == mcq_id,
+                DBMCQAssignment.model == model
             ).first()
 
             if not existing:

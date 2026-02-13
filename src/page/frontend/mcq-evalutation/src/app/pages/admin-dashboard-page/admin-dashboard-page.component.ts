@@ -316,6 +316,25 @@ export class AdminDashboardPageComponent implements OnInit {
   }
 
   /**
+   * Remettre a zero toutes les donnees
+   */
+  resetAllData(): void {
+    if (!confirm('ATTENTION : Cela va supprimer toutes les validations, assignments et reinitialiser le tracker. Continuer ?')) {
+      return;
+    }
+
+    this.adminService.resetAllData().subscribe({
+      next: (response) => {
+        alert(`Reset effectue ! ${response.deleted.validations} validations et ${response.deleted.mcq_assignments} assignments supprimes.`);
+        this.loadAllData();
+      },
+      error: (error) => {
+        alert(`Erreur: ${error.error?.detail || error.message}`);
+      }
+    });
+  }
+
+  /**
    * Retourner au dashboard
    */
   goToDashboard(): void {

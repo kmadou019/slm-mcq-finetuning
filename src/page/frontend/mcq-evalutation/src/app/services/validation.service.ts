@@ -4,8 +4,9 @@ import { Observable, of } from 'rxjs';
 import { tap, catchError } from 'rxjs/operators';
 
 /**
- * Service pour gérer les validations
+ * Service pour gerer les validations
  * Synchronise avec le backend et utilise localStorage comme cache
+ * Cle composite mcq_id::model pour distinguer les MCQs de modeles differents
  */
 @Injectable({
   providedIn: 'root'
@@ -13,9 +14,7 @@ import { tap, catchError } from 'rxjs/operators';
 export class ValidationService {
   private http = inject(HttpClient);
   private apiUrl = 'http://localhost:8000/api';
-  /**
-   * Clé localStorage dynamique par utilisateur
-   */
+
   private getStorageKey(): string {
     const userJson = sessionStorage.getItem('mcq_current_user');
     if (userJson) {
@@ -28,11 +27,19 @@ export class ValidationService {
   }
 
   /**
-   * Sauvegarder une validation
+   * Cle composite pour identifier un MCQ unique
    */
-  saveValidation(mcqId: string, decision: 'ACCEPT' | 'REJECT'): void {
+  makeKey(mcqId: string, model: string): string {
+    return `${mcqId}::${model}`;
+  }
+
+  /**
+   * Sauvegarder une validation localement
+   */
+  saveValidation(mcqId: string, model: string, decision: 'ACCEPT' | 'REJECT'): void {
     const validations = this.getAllValidations();
-    validations[mcqId] = {
+    const key = this.makeKey(mcqId, model);
+    validations[key] = {
       decision,
       timestamp: new Date().toISOString()
     };
@@ -40,7 +47,7 @@ export class ValidationService {
   }
 
   /**
-   * Récupérer toutes les validations
+   * Recuperer toutes les validations
    */
   getAllValidations(): Record<string, { decision: string, timestamp: string }> {
     const saved = localStorage.getItem(this.getStorageKey());
@@ -48,55 +55,20 @@ export class ValidationService {
   }
 
   /**
-   * Vérifier si un MCQ a été validé
+   * Verifier si un MCQ a ete valide
    */
-  isValidated(mcqId: string): boolean {
+  isValidated(mcqId: string, model: string): boolean {
     const validations = this.getAllValidations();
-    return mcqId in validations;
+    return this.makeKey(mcqId, model) in validations;
   }
 
   /**
-   * Obtenir la décision pour un MCQ
+   * Obtenir la decision pour un MCQ
    */
-  getDecision(mcqId: string): 'ACCEPT' | 'REJECT' | null {
+  getDecision(mcqId: string, model: string): 'ACCEPT' | 'REJECT' | null {
     const validations = this.getAllValidations();
-    return validations[mcqId]?.decision as 'ACCEPT' | 'REJECT' || null;
-  }
-
-  /**
-   * Obtenir les statistiques de validation
-   */
-  getStats(assignedMcqIds: string[]): {
-    total: number,
-    pending: number,
-    completed: number,
-    accepted: number,
-    rejected: number
-  } {
-    const validations = this.getAllValidations();
-
-    let completed = 0;
-    let accepted = 0;
-    let rejected = 0;
-
-    assignedMcqIds.forEach(mcqId => {
-      if (validations[mcqId]) {
-        completed++;
-        if (validations[mcqId].decision === 'ACCEPT') {
-          accepted++;
-        } else {
-          rejected++;
-        }
-      }
-    });
-
-    return {
-      total: assignedMcqIds.length,
-      pending: assignedMcqIds.length - completed,
-      completed,
-      accepted,
-      rejected
-    };
+    const key = this.makeKey(mcqId, model);
+    return validations[key]?.decision as 'ACCEPT' | 'REJECT' || null;
   }
 
   /**
@@ -107,8 +79,7 @@ export class ValidationService {
   }
 
   /**
-   * Récupérer les stats depuis le backend
-   * Fallback sur localStorage si le backend n'est pas disponible
+   * Recuperer les stats depuis le backend
    */
   getStatsFromBackend(): Observable<{
     total: number,
@@ -118,38 +89,25 @@ export class ValidationService {
     rejected: number
   }> {
     return this.http.get<any>(`${this.apiUrl}/validations/stats`).pipe(
-      tap(stats => {
-        console.log('📊 Stats depuis backend:', stats);
-      }),
-      catchError(error => {
-        console.warn('⚠️ Backend indisponible, utilisation de localStorage', error);
-        // Fallback: retourner des stats vides
-        return of({
-          total: 0,
-          pending: 0,
-          completed: 0,
-          accepted: 0,
-          rejected: 0
-        });
+      catchError(() => {
+        return of({ total: 0, pending: 0, completed: 0, accepted: 0, rejected: 0 });
       })
     );
   }
 
   /**
    * Synchroniser les validations avec le backend
-   * Récupérer toutes les validations de l'utilisateur et mettre à jour localStorage
+   * Le backend renvoie des cles mcq_id::model
    */
   syncWithBackend(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/validations/user`).pipe(
       tap(response => {
-        console.log('🔄 Sync backend → localStorage:', response);
-        // Mettre à jour localStorage avec les données du backend
         if (response.validations) {
           localStorage.setItem(this.getStorageKey(), JSON.stringify(response.validations));
         }
       }),
       catchError(error => {
-        console.warn('⚠️ Erreur sync backend:', error);
+        console.warn('Erreur sync backend:', error);
         return of(null);
       })
     );
@@ -160,23 +118,20 @@ export class ValidationService {
    */
   saveValidationToBackend(
     mcqId: string,
+    model: string,
     decision: 'ACCEPT' | 'REJECT',
     validationData: any
   ): Observable<any> {
-    // Sauvegarder d'abord localement (rapide)
-    this.saveValidation(mcqId, decision);
+    // Sauvegarder localement d'abord
+    this.saveValidation(mcqId, model, decision);
 
-    // Puis envoyer au backend
+    // Envoyer au backend avec model en query param
     return this.http.post<any>(
-      `${this.apiUrl}/validations/${mcqId}/validate`,
+      `${this.apiUrl}/validations/${mcqId}/validate?model=${encodeURIComponent(model)}`,
       validationData
     ).pipe(
-      tap(response => {
-        console.log('✅ Validation sauvegardée sur backend:', response);
-      }),
       catchError(error => {
-        console.warn('⚠️ Backend indisponible, validation reste en local:', error);
-        // Retourner une réponse factice pour ne pas bloquer l'UI
+        console.warn('Backend indisponible, validation reste en local:', error);
         return of({ status: 'local', message: 'Saved locally only' });
       })
     );

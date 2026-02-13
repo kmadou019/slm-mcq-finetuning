@@ -13,7 +13,7 @@ from database import get_db
 from api.models.db_models import Validation, MCQAssignment
 from api.models.auth import User
 from api.routes.auth import get_current_user
-from api.routes.mcq import load_global_tracker, save_global_tracker, GLOBAL_TRACKER_PATH
+from api.routes.mcq import load_global_tracker, save_global_tracker, save_assignments, GLOBAL_TRACKER_PATH
 from api.utils.security import hash_password
 from api.utils.dependencies import USERS_DB, save_users_db
 
@@ -472,4 +472,35 @@ async def export_stats(
         "global_stats": global_stats,
         "stats_by_model": model_stats,
         "users": users
+    }
+
+
+# ============================================================================
+# RESET COMPLET
+# ============================================================================
+
+@router.delete("/reset-all")
+async def reset_all_data(
+    current_user: User = Depends(require_admin),
+    db: Session = Depends(get_db)
+) -> Dict[str, Any]:
+    """
+    Remettre a zero toutes les tables et les fichiers de donnees
+    """
+    # Vider les tables SQLite
+    deleted_validations = db.query(Validation).delete()
+    deleted_assignments = db.query(MCQAssignment).delete()
+    db.commit()
+
+    # Vider les fichiers JSON
+    save_assignments({})
+    save_global_tracker({})
+
+    return {
+        "status": "success",
+        "message": "All data has been reset",
+        "deleted": {
+            "validations": deleted_validations,
+            "mcq_assignments": deleted_assignments
+        }
     }

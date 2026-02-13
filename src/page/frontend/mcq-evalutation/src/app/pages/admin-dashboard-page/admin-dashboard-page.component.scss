@@ -303,6 +303,23 @@
 // BUTTONS
 // ============================================================================
 
+.btn-danger-outline {
+  padding: 0.75rem 1.5rem;
+  border: 2px solid $danger;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: white;
+  color: $danger;
+
+  &:hover {
+    background: $danger;
+    color: white;
+  }
+}
+
 .btn-primary, .btn-secondary, .btn-logout, .btn-danger {
   padding: 0.75rem 1.5rem;
   border: none;
