@@ -54,6 +54,9 @@ pytest_cache/
 *.db
 __pypackages__/
 
+# Sensitive data files
+**/users.json
+
 # Ignore Python package manager files
 poetry.lock
 Pipfile.lock
