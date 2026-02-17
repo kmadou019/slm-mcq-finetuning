@@ -46,6 +46,5 @@ def init_db():
     Initialiser la base de données
     Créer toutes les tables si elles n'existent pas
     """
-    from api.models.db_models import Validation, MCQAssignment
     Base.metadata.create_all(bind=engine)
     print(f"✅ Base de données initialisée : {DATABASE_PATH}")

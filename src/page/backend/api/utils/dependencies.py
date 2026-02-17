@@ -7,7 +7,7 @@ from typing import Optional
 from pathlib import Path
 import json
 from ..models.auth import User
-from .security import decode_access_token, hash_password
+from .security import decode_access_token
 
 # Security scheme
 security = HTTPBearer()
@@ -15,43 +15,13 @@ security = HTTPBearer()
 # Users database file path
 USERS_DB_PATH = Path(__file__).parent.parent.parent.parent / "data" / "users.json"
 
-# Default users for initialization (passwords will be hashed during init)
-DEFAULT_USERS_PLAIN = [
-    {
-        "id": "user-001",
-        "username": "admin",
-        "email": "admin@mcq-eval.com",
-        "role": "admin",
-        "created_at": "2024-01-01T00:00:00Z",
-        "plain_password": "admin123"  # Will be hashed during init
-    },
-    {
-        "id": "user-002",
-        "username": "evaluator",
-        "email": "evaluator@mcq-eval.com",
-        "role": "evaluator",
-        "created_at": "2024-01-01T00:00:00Z",
-        "plain_password": "eval123"  # Will be hashed during init
-    }
-]
-
 # Initialize users database
 def init_users_db():
-    """Initialize users database file if it doesn't exist"""
+    """Load users database file. It must be created first with generate_passwords.py"""
     if not USERS_DB_PATH.exists():
-        USERS_DB_PATH.parent.mkdir(parents=True, exist_ok=True)
-
-        # Hash passwords before saving
-        hashed_users = []
-        for user in DEFAULT_USERS_PLAIN:
-            hashed_user = user.copy()
-            plain_pwd = hashed_user.pop("plain_password")
-            hashed_user["hashed_password"] = hash_password(plain_pwd)
-            hashed_users.append(hashed_user)
-
-        with open(USERS_DB_PATH, 'w') as f:
-            json.dump(hashed_users, f, indent=2)
-        print(f"✅ Users database initialized at {USERS_DB_PATH}")
+        print(f"⚠️ users.json not found at {USERS_DB_PATH}")
+        print(f"   Run: cd backend && python generate_passwords.py")
+        return {}
     return load_users_db()
 
 def load_users_db():
