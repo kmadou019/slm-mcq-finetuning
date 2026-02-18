@@ -416,26 +416,37 @@ async def update_tracker(
 @router.post("/tracker/reset/{model}")
 async def reset_tracker_for_model(
     model: str,
-    current_user: User = Depends(require_admin)
+    current_user: User = Depends(require_admin),
+    db: Session = Depends(get_db)
 ) -> Dict[str, str]:
     """
-    Réinitialiser le tracker pour un modèle spécifique
+    Réinitialiser complètement un modèle : validations, assignments (DB + JSON) et tracker
     """
-    tracker = load_global_tracker()
+    from api.routes.mcq import load_assignments, save_assignments
 
+    # 1. Supprimer les validations du modèle
+    db.query(Validation).filter(Validation.model == model).delete()
+
+    # 2. Supprimer les assignments DB du modèle
+    db.query(MCQAssignment).filter(MCQAssignment.model == model).delete()
+    db.commit()
+
+    # 3. Nettoyer assignments.json pour tous les utilisateurs
+    assignments = load_assignments()
+    for username in assignments:
+        assignments[username] = [
+            batch for batch in assignments[username]
+            if batch.get("model") != model
+        ]
+    save_assignments(assignments)
+
+    # 4. Supprimer l'entrée du tracker (pas d'erreur si absent)
+    tracker = load_global_tracker()
     if model in tracker:
-        tracker[model] = {
-            "last_assigned_index": -1,
-            "total_available": tracker[model].get("total_available", 0),
-            "assigned_count": 0
-        }
-        save_global_tracker(tracker)
-        return {"status": "success", "message": f"Tracker reset for model {model}"}
-    else:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=f"Model {model} not found in tracker"
-        )
+        del tracker[model]
+    save_global_tracker(tracker)
+
+    return {"status": "success", "message": f"Reset complet effectué pour le modèle {model}"}
 
 
 # ============================================================================
