@@ -7,7 +7,7 @@ from sqlalchemy.orm import sessionmaker
 from pathlib import Path
 
 # Déterminer le chemin de la base de données
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = Path(__file__).resolve().parent
 DATABASE_DIR = BASE_DIR / "data"
 DATABASE_DIR.mkdir(exist_ok=True)
 DATABASE_PATH = DATABASE_DIR / "mcq_evaluation.db"

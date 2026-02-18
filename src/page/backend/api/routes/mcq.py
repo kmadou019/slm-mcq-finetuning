@@ -19,12 +19,12 @@ from database import get_db
 router = APIRouter()
 
 # Chemins vers les fichiers
-DATA_DIR = Path(__file__).parent.parent.parent.parent.parent.parent / "data"
-CSV_DIR = DATA_DIR / "dataset_with_quality"  # Fichiers avec résultats de qualité
+BACKEND_DATA_DIR = Path(__file__).parent.parent.parent / "data"  # Données app web (backend/)
+CSV_DIR = BACKEND_DATA_DIR / "mcqs"  # Fichiers CSV des MCQ
 CSV_PATH = CSV_DIR / "qwen3_8b_pdapt_slerp.csv"  # CSV par défaut
-ASSIGNMENTS_PATH = DATA_DIR / "assignments.json"  # Assignations par utilisateur
-GLOBAL_TRACKER_PATH = DATA_DIR / "global_assignment_tracker.json"  # Tracker global par modèle
-LISA_SHEETS_PATH = DATA_DIR / "lisa_sheets.csv"  # Lisa sheets de référence
+ASSIGNMENTS_PATH = BACKEND_DATA_DIR / "assignments.json"  # Assignations par utilisateur
+GLOBAL_TRACKER_PATH = BACKEND_DATA_DIR / "global_assignment_tracker.json"  # Tracker global par modèle
+LISA_SHEETS_PATH = BACKEND_DATA_DIR / "lisa_sheets.csv"  # Lisa sheets de référence
 
 # Cache pour les lisa sheets (chargé une seule fois)
 _lisa_sheets_cache: Dict[str, str] | None = None

@@ -8,9 +8,9 @@ from pathlib import Path
 import pandas as pd
 
 # Configuration des chemins (identique à mcq.py)
-DATA_DIR = Path(__file__).parent.parent.parent.parent / "data"
-CSV_DIR = DATA_DIR / "dataset_with_quality"
-GLOBAL_TRACKER_PATH = DATA_DIR / "global_assignment_tracker.json"
+BACKEND_DATA_DIR = Path(__file__).parent / "data"  # Données app web (backend/)
+CSV_DIR = BACKEND_DATA_DIR / "mcqs"
+GLOBAL_TRACKER_PATH = BACKEND_DATA_DIR / "global_assignment_tracker.json"
 
 def load_global_tracker():
     """Charger le tracker global"""

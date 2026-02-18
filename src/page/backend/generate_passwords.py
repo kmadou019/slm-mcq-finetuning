@@ -9,7 +9,7 @@ import getpass
 from pathlib import Path
 from api.utils.security import hash_password
 
-USERS_DB_PATH = Path(__file__).parent.parent / "data" / "users.json"
+USERS_DB_PATH = Path(__file__).parent / "data" / "users.json"
 
 
 def main():

@@ -1,0 +1,1475 @@
+Unnamed: 0,id,question,option_a,option_b,option_c,option_d,correct_option,content_raw,originality,readability,starts_with_negation,is_question,relevance,ambiguity,disclosure,difficulty,distractor_quality
+1,OIC-005-01-A,Quel est l'élément le plus difficile à prouver pour établir la responsabilité d'un professionnel de santé?,Le dommage,Le fait générateur de responsabilité,Le lien de causalité entre le fait générateur et le dommage,L'indemnisation,c,"{{objectif de connaissance
+|Identifiant=OIC-005-01-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité sanction/indemnisation
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=1}}
+
+La responsabilité d’un professionnel de santé ou d’un établissement de santé peut être recherchée à deux fins : soit la sanction du professionnel ou de l’établissement, soit l’indemnisation de l’usager victime des conséquences d’un événement indésirable associé aux soins. La sanction peut être de nature pénale ou disciplinaire. L’indemnisation incombe au responsable (exercice libéral) ou à son employeur s’il est salarié (public ou privé). Elle peut également être obtenue via la procédure amiable devant les commissions de conciliation et d’indemnisation. L’indemnisation des victimes est assurée par l’obligation de souscription pour les médecins et les établissements de santé (public ou privé) d’une assurance de responsabilité civile professionnelle. En plus d’assurer l’indemnisation des victimes, cette assurance permet de couvrir les médecins salariés lorsque la faute est détachable du service ou lorsque la mission qui leur a été confiée est outrepassée.
+
+L’indemnisation de l’usager s’estimant victime des conséquences dommageables d’un acte médical suppose qu’il apporte la preuve d’un dommage, d’un fait générateur de responsabilité et d’un lien de causalité entre le fait générateur et le dommage.
+
+En matière de responsabilité des professionnels et des établissements de santé, le dommage peut prendre plusieurs formes. Il peut s’agir :
+
+- d’une atteinte à l’intégrité physique ou psychique ;
+
+- d’une perte de chance de survie ou de guérison ;
+
+- d’une perte de chance d’avoir échappé à un risque qui s’est finalement réalisé (en cas de défaut d’information).
+
+Le dommage doit être actuel et certain. Il peut être futur dès lors qu’il est certain (par exemple, la stérilité d’une enfant du fait d’une irradiation fautive).
+
+Le lien de causalité entre le fait générateur de responsabilité (en règle générale, la faute) et le dommage doit être certain. Il n’a pas à être direct ni exclusif.
+
+Parmi les éléments du triptyque fondant l’engagement de la responsabilité, le lien de causalité est habituellement le plus difficile à prouver par le patient. En effet, il est souvent complexe de distinguer les conséquences de la faute de celles de l’évolution spontanée de l’état de santé pathologique. Le juge admet que l’on puisse indemniser la perte de chance de survie ou de guérison. Dans ce cas, l’indemnisation est accordée à proportion de la probabilité de survie ou de guérison perdue du fait de la faute.
+
+Le même raisonnement est appliqué en cas de défaut d’information. Dans cette hypothèse, le patient a perdu une chance de s’échapper au risque qui s’est finalement réalisé. En d’autres termes, s’il avait été informé du risque, il aurait pu choisir de le courir ou de renoncer à l’acte médical. L’indemnisation est accordée à proportion de la probabilité qu’il aurait eu de renoncer à l’acte s’il avait été informé du risque. Il en résulte que si l’acte était indispensable, le juge en déduit que même informé du risque, le patient n’aurait pas renoncé à l’acte. La perte de chance est donc nulle.
+
+Le juge judiciaire comme le juge administratif admettent également qu’un défaut d’information ouvre droit à une indemnisation au titre du préjudice d’impréparation, distinct de la perte de chance. Cette indemnisation répare, lorsque le risque dont le patient n’a pas été informé s’est réalisé, les troubles qu’il a pu subir du fait qu’il n’a pas pu se préparer à cette éventualité, notamment en prenant certaines dispositions personnelles.",0.7142857142857143,11.3,False,True,0.7593255639076233,0.6830644011497498,False,2,False
+2,OIC-005-02-A,Quelle est la principale fonction de la responsabilité pénale envers les médecins?,Sanctionner les erreurs médicales,Indemniser les patients,Réprimer les comportements répréhensibles,Gérer les plaintes des patients,c,"{{objectif de connaissance
+|Identifiant=OIC-005-02-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité pénale
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=2}}
+
+La responsabilité pénale a une fonction répressive ayant pour vocation de sanctionner des individus dont le comportement est réprouvé dans notre société. Elle est toujours personnelle, concernant à l’identique tous les médecins (y compris les internes), quel que soit le cadre de leur exercice. Elle peut également concerner les établissements de santé, en leur qualité de personnes morales.
+
+Les comportements que la société définit comme répréhensibles sont appelés infractions. Celle-ci sont énumérées dans le Code pénal et classées en trois catégories par ordre de gravité : contraventions, délits, crimes.
+
+'''Infractions'''
+
+En dehors de certaines dispositions particulières liées au non-respect des conditions spécifiques à certaines actions de soins (actes d’assistance médicale à la procréation, activités de recherche biomédicale, etc.), les infractions qui peuvent être reprochées à un médecin peuvent également l’être à tout citoyen. Toutefois, les médecins sont exposés à commettre certaines infractions plus que d’autres. On peut en citer trois grands types du fait de l’exercice de soin : celles qui résultent de la violation d’un devoir d’humanisme, les blessures et l’homicide involontaires et les blessures et l’homicide volontaire.
+
+'''Violation d’un devoir d’humanisme'''
+
+La violation d’un devoir d’humanisme concerne principalement 1/ la rédaction de faux certificats (article 441-7 du Code pénal), 2/ la violation du secret professionnel (article 226-13 du Code pénal) et 3/ la non-assistance à personne en péril (article 226-3 du Code pénal, encadré 5.1). Il faut noter que le défaut d’information au patient ne constitue pas une infraction pénale. Ce défaut est par contre une cause potentielle de responsabilité civile.
+
+'''Homicide et blessures involontaires'''
+
+L’homicide et les blessures involontaires recouvrent la majeure partie des infractions reprochées à un médecin (articles 221-6, 222-19 et 222-20 du Code pénal). La mort d’un patient ou ses blessures sont supposées résulter d’une faute par maladresse, imprudence, inattention, négligence ou manquement à une obligation de sécurité. Le médecin mis en cause n’a potentiellement pas respecté les données acquises de la science ou a commis une faute « banale » dans l’élaboration d’un diagnostic, dans la prescription ou la réalisation d’un traitement. Pour que l’infraction existe, il faut que le dommage et le lien de causalité certain avec la faute soient établis. Le lien de causalité peut être soit direct, soit indirect, à condition que la faute commise soit dite qualifiée, c’est-à-dire ayant créé ou contribué à créer la situation qui a contribué au dommage, ou n’ayant pas pris les mesures nécessaires pour l’éviter. On distingue deux types de fautes qualifiées :
+
+- la faute délibérée : il s’agit d’une violation d’une obligation particulière de prudence ou de sécurité prévue par la loi ou le règlement. Elle nécessite de violer délibérément (donc de façon consciente) une règle de prudence ou de sécurité.
+
+- la faute caractérisée : il s’agit d’une faute d’imprudence, de négligence, un manquement à une obligation de prudence ou de sécurité qui expose le patient à un risque d’une particulière gravité, que le médecin ne peut ignorer.
+
+'''Homicide et blessures volontaires'''
+
+Cela reste des infractions rares en responsabilité médicale. Elle se résument pour l’essentiel à la question de :
+
+- l’euthanasie ;
+
+- l’absence d’obtention d’un consentement d’un patient à un acte médical ;
+
+- le non-respect des conditions de licéité de certains actes médicaux, encadrés par des lois spécifiques : interruption de grossesse, stérilisation à but contraceptif, prélèvements d’organes, expérimentation chez l’homme, etc.
+
+'''Mise en œuvre de la responsabilité pénale'''
+
+'''Poursuites'''
+
+L’initiative des poursuites appartient au procureur de la République, qui décide des suites à donner aux plaintes, dénonciations et enquêtes de police. Il peut classer l’affaire sans suite, renvoyer directement l’auteur devant la juridiction de jugement ou requérir l’ouverture d’une information judiciaire.
+
+Si l’affaire n’est pas classée sans suite, l’étape de l’information judiciaire est la règle en matière médicale, compte tenu de la complexité fréquente des dossiers.
+
+'''Jugement'''
+
+Les contraventions sont jugées par le tribunal de police et passibles d’amendes, les délits par le tribunal correctionnel et passibles de peines d’emprisonnement et les crimes par la cour d’assises et passibles de peines de réclusion criminelle.
+
+Les infractions reprochées aux médecins relèvent habituellement du tribunal correctionnel, constituant pour l’essentiel des délits exposant à des peines d’emprisonnement, pouvant être assorties du sursis, et à des amendes.
+
+Le patient victime peut demander en parallèle de la sanction pénale l’indemnisation de son dommage, au cours du même procès, en se constituant partie civile.
+
+<br />",1.0,12.690000000000001,False,True,0.8444706797599792,0.6806211670239767,False,3,False
+3,OIC-005-02-A,Quelle infraction est souvent liée à la violation du secret professionnel par un médecin?,Homicide involontaire,Blessure volontaire,Révélation de données médicales,Non-assistance à personne en péril,c,"{{objectif de connaissance
+|Identifiant=OIC-005-02-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité pénale
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=2}}
+
+La responsabilité pénale a une fonction répressive ayant pour vocation de sanctionner des individus dont le comportement est réprouvé dans notre société. Elle est toujours personnelle, concernant à l’identique tous les médecins (y compris les internes), quel que soit le cadre de leur exercice. Elle peut également concerner les établissements de santé, en leur qualité de personnes morales.
+
+Les comportements que la société définit comme répréhensibles sont appelés infractions. Celle-ci sont énumérées dans le Code pénal et classées en trois catégories par ordre de gravité : contraventions, délits, crimes.
+
+'''Infractions'''
+
+En dehors de certaines dispositions particulières liées au non-respect des conditions spécifiques à certaines actions de soins (actes d’assistance médicale à la procréation, activités de recherche biomédicale, etc.), les infractions qui peuvent être reprochées à un médecin peuvent également l’être à tout citoyen. Toutefois, les médecins sont exposés à commettre certaines infractions plus que d’autres. On peut en citer trois grands types du fait de l’exercice de soin : celles qui résultent de la violation d’un devoir d’humanisme, les blessures et l’homicide involontaires et les blessures et l’homicide volontaire.
+
+'''Violation d’un devoir d’humanisme'''
+
+La violation d’un devoir d’humanisme concerne principalement 1/ la rédaction de faux certificats (article 441-7 du Code pénal), 2/ la violation du secret professionnel (article 226-13 du Code pénal) et 3/ la non-assistance à personne en péril (article 226-3 du Code pénal, encadré 5.1). Il faut noter que le défaut d’information au patient ne constitue pas une infraction pénale. Ce défaut est par contre une cause potentielle de responsabilité civile.
+
+'''Homicide et blessures involontaires'''
+
+L’homicide et les blessures involontaires recouvrent la majeure partie des infractions reprochées à un médecin (articles 221-6, 222-19 et 222-20 du Code pénal). La mort d’un patient ou ses blessures sont supposées résulter d’une faute par maladresse, imprudence, inattention, négligence ou manquement à une obligation de sécurité. Le médecin mis en cause n’a potentiellement pas respecté les données acquises de la science ou a commis une faute « banale » dans l’élaboration d’un diagnostic, dans la prescription ou la réalisation d’un traitement. Pour que l’infraction existe, il faut que le dommage et le lien de causalité certain avec la faute soient établis. Le lien de causalité peut être soit direct, soit indirect, à condition que la faute commise soit dite qualifiée, c’est-à-dire ayant créé ou contribué à créer la situation qui a contribué au dommage, ou n’ayant pas pris les mesures nécessaires pour l’éviter. On distingue deux types de fautes qualifiées :
+
+- la faute délibérée : il s’agit d’une violation d’une obligation particulière de prudence ou de sécurité prévue par la loi ou le règlement. Elle nécessite de violer délibérément (donc de façon consciente) une règle de prudence ou de sécurité.
+
+- la faute caractérisée : il s’agit d’une faute d’imprudence, de négligence, un manquement à une obligation de prudence ou de sécurité qui expose le patient à un risque d’une particulière gravité, que le médecin ne peut ignorer.
+
+'''Homicide et blessures volontaires'''
+
+Cela reste des infractions rares en responsabilité médicale. Elle se résument pour l’essentiel à la question de :
+
+- l’euthanasie ;
+
+- l’absence d’obtention d’un consentement d’un patient à un acte médical ;
+
+- le non-respect des conditions de licéité de certains actes médicaux, encadrés par des lois spécifiques : interruption de grossesse, stérilisation à but contraceptif, prélèvements d’organes, expérimentation chez l’homme, etc.
+
+'''Mise en œuvre de la responsabilité pénale'''
+
+'''Poursuites'''
+
+L’initiative des poursuites appartient au procureur de la République, qui décide des suites à donner aux plaintes, dénonciations et enquêtes de police. Il peut classer l’affaire sans suite, renvoyer directement l’auteur devant la juridiction de jugement ou requérir l’ouverture d’une information judiciaire.
+
+Si l’affaire n’est pas classée sans suite, l’étape de l’information judiciaire est la règle en matière médicale, compte tenu de la complexité fréquente des dossiers.
+
+'''Jugement'''
+
+Les contraventions sont jugées par le tribunal de police et passibles d’amendes, les délits par le tribunal correctionnel et passibles de peines d’emprisonnement et les crimes par la cour d’assises et passibles de peines de réclusion criminelle.
+
+Les infractions reprochées aux médecins relèvent habituellement du tribunal correctionnel, constituant pour l’essentiel des délits exposant à des peines d’emprisonnement, pouvant être assorties du sursis, et à des amendes.
+
+Le patient victime peut demander en parallèle de la sanction pénale l’indemnisation de son dommage, au cours du même procès, en se constituant partie civile.
+
+<br />",0.8333333333333334,11.784285714285716,False,True,0.7337006330490112,0.5669649839401245,False,2,False
+4,OIC-005-03-A,Quelle est la juridiction devant laquelle les professionnels exerçant à titre libéral engagent leur responsabilité civile?,Tribunal administratif,Cour d'appel,Tribunal de grande instance,Cour de cassation,c,"{{objectif de connaissance
+|Identifiant=OIC-005-03-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité civile
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=3}}
+
+Les professionnels exerçant à titre libéral et les établissements de santé privés engagent leur responsabilité civile devant les juridictions de l’ordre judiciaire : tribunal de grande instance, cour d’appel, cour de cassation.
+
+S’agissant des médecins salariés d’établissements, services ou organismes privés, ils n’engagent pas leur responsabilité civile personnelle du fait des dommages causés à un patient dès lors qu’ils n’outrepassent pas la mission qui leur a été confiée par leur employeur. C’est l’application du régime de responsabilité du commettant (l’employeur) du fait de son proposé (le médecin), lequel n’est pas incompatible avec le principe d’indépendance professionnelle du médecin dans l’exercice de son art.
+
+Les praticiens hospitaliers engagent leur responsabilité civile professionnelle à raison des dommages survenus dans le cadre de leur secteur d’activité libérale au sein d’un établissement public de santé.",0.6666666666666666,18.675,False,True,0.7763165831565857,0.5992838939030966,False,4,False
+5,OIC-005-03-A,Quel régime de responsabilité s'applique aux médecins salariés d'établissements privés qui n'outrepassent pas la mission confiée par leur employeur?,Responsabilité civile personnelle,Responsabilité du commettant,Responsabilité pénale,Responsabilité administrative,b,"{{objectif de connaissance
+|Identifiant=OIC-005-03-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité civile
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=3}}
+
+Les professionnels exerçant à titre libéral et les établissements de santé privés engagent leur responsabilité civile devant les juridictions de l’ordre judiciaire : tribunal de grande instance, cour d’appel, cour de cassation.
+
+S’agissant des médecins salariés d’établissements, services ou organismes privés, ils n’engagent pas leur responsabilité civile personnelle du fait des dommages causés à un patient dès lors qu’ils n’outrepassent pas la mission qui leur a été confiée par leur employeur. C’est l’application du régime de responsabilité du commettant (l’employeur) du fait de son proposé (le médecin), lequel n’est pas incompatible avec le principe d’indépendance professionnelle du médecin dans l’exercice de son art.
+
+Les praticiens hospitaliers engagent leur responsabilité civile professionnelle à raison des dommages survenus dans le cadre de leur secteur d’activité libérale au sein d’un établissement public de santé.",0.9,16.04105263157895,False,True,0.747552752494812,0.8601733644803365,False,2,False
+6,OIC-005-04-A,Quelle est la responsabilité engagée devant les juridictions administratives pour les actes réalisés par les médecins hospitaliers?,Responsabilité civile,Responsabilité pénale,Responsabilité administrative,Responsabilité disciplinaire,c,"{{objectif de connaissance
+|Identifiant=OIC-005-04-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité administrative
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=4}}
+
+Il n’existe pas de relation juridique entre le médecin, agent du service public hospitalier, et son patient. Les deux ne sont en effet liés juridiquement qu’à l’établissement public de santé. S’agissant des actes réalisés par les médecins hospitaliers, c’est la responsabilité de l’établissement public de santé qui est engagée devant les juridictions de l’ordre administratif : tribunal administratif, cour administrative d’appel, Conseil d’Etat.
+
+La jurisprudence administrative a défini une typologie des fautes susceptibles d’engager la responsabilité du service public :
+
+- la faute de service : c’est la faute commise par un agent public dans l’exercice de ses fonctions, c’est-à-dire pendant le service, avec les moyens du service et en dehors de tout intérêt personnel ;
+
+- la faute dans l’organisation et le fonctionnement du service : ont pu être qualifiés ainsi une insuffisance dans la surveillance des patients ou des locaux, le mauvais entretien des locaux et du matériel, la mauvaise coordination entre médecins, etc.
+
+Doit être distinguée la faute personnelle ou détachable du service, qui engage la responsabilité civile personnelle de son auteur. Deux cas de figure peuvent être envisagées :
+
+- soit elle a été commise en dehors du service et n’a aucun lien avec le service (exemple de la faute commise par un médecin dans des soins dispensés dans un cadre privé) ;
+
+- soit elle a été commise dans le service mais elle s’en détache en raison de l’intention de nuire de son auteur ou de son exceptionnelle gravité (exemple du refus du chirurgien de garde de se déplacer pour un blessé par balle alors qu’il avait été averti par l’interne de la gravité de son état).",0.625,18.11058823529412,False,True,0.8323346972465515,0.836597720781962,False,2,False
+7,OIC-005-04-A,Quelle est la faute qui engage la responsabilité civile personnelle du médecin?,Faute de service,Faute dans l'organisation et le fonctionnement du service,Faute personnelle ou détachable du service,Faute de négligence,c,"{{objectif de connaissance
+|Identifiant=OIC-005-04-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité administrative
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=4}}
+
+Il n’existe pas de relation juridique entre le médecin, agent du service public hospitalier, et son patient. Les deux ne sont en effet liés juridiquement qu’à l’établissement public de santé. S’agissant des actes réalisés par les médecins hospitaliers, c’est la responsabilité de l’établissement public de santé qui est engagée devant les juridictions de l’ordre administratif : tribunal administratif, cour administrative d’appel, Conseil d’Etat.
+
+La jurisprudence administrative a défini une typologie des fautes susceptibles d’engager la responsabilité du service public :
+
+- la faute de service : c’est la faute commise par un agent public dans l’exercice de ses fonctions, c’est-à-dire pendant le service, avec les moyens du service et en dehors de tout intérêt personnel ;
+
+- la faute dans l’organisation et le fonctionnement du service : ont pu être qualifiés ainsi une insuffisance dans la surveillance des patients ou des locaux, le mauvais entretien des locaux et du matériel, la mauvaise coordination entre médecins, etc.
+
+Doit être distinguée la faute personnelle ou détachable du service, qui engage la responsabilité civile personnelle de son auteur. Deux cas de figure peuvent être envisagées :
+
+- soit elle a été commise en dehors du service et n’a aucun lien avec le service (exemple de la faute commise par un médecin dans des soins dispensés dans un cadre privé) ;
+
+- soit elle a été commise dans le service mais elle s’en détache en raison de l’intention de nuire de son auteur ou de son exceptionnelle gravité (exemple du refus du chirurgien de garde de se déplacer pour un blessé par balle alors qu’il avait été averti par l’interne de la gravité de son état).",0.6,14.656666666666666,False,True,0.801989734172821,0.7738266984621683,False,2,False
+8,OIC-005-06-A,Quelle est la définition de la responsabilité sans faute dans le contexte médical?,La responsabilité est engagée uniquement en cas de faute prouvée.,"La responsabilité est engagée même en l'absence de faute, si un dommage est lié au soin.",La responsabilité est engagée uniquement si l'infection est contractée à l'extérieur de l'hôpital.,La responsabilité est engagée uniquement si le patient a donné son consentement éclairé.,b,"{{objectif de connaissance
+|Identifiant=OIC-005-06-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité sans faute
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=6}}
+
+Dans le cas d'un dommage lié au soins mais survenu sans manquement aux règles professionnelles ou scientifiques, ni erreur, on parle de responsabilité sans faute.
+
+Le législateur a reconnu des systèmes d’indemnisation pour lesquels la responsabilité peut être engagée à partir d’un autre fait générateur que la faute prouvée. C’est le cas de la survenue d’une infection nosocomiale.",0.6,11.264615384615386,False,True,0.8301171660423279,0.8042388558387756,False,2,False
+9,OIC-005-06-A,Dans quel cas la responsabilité sans faute peut-elle être engagée?,En cas de faute professionnelle prouvée.,"En cas d'infection nosocomiale, même sans faute.",En cas de consentement éclairé du patient.,En cas de dommage lié à un acte chirurgical.,b,"{{objectif de connaissance
+|Identifiant=OIC-005-06-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité sans faute
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=6}}
+
+Dans le cas d'un dommage lié au soins mais survenu sans manquement aux règles professionnelles ou scientifiques, ni erreur, on parle de responsabilité sans faute.
+
+Le législateur a reconnu des systèmes d’indemnisation pour lesquels la responsabilité peut être engagée à partir d’un autre fait générateur que la faute prouvée. C’est le cas de la survenue d’une infection nosocomiale.",0.6666666666666666,10.73,False,True,0.7639652490615845,0.7505792180697123,False,2,False
+10,OIC-005-08-A,Quelle est la définition d'une erreur par omission?,Une action mal réalisée,Une action qui n'a pas été faite,Une action qui a été faite mais qui n'était pas utile,Un non-respect d'une recommandation ou d'une règle professionnelle,b,"{{objectif de connaissance
+|Identifiant=OIC-005-08-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de l’erreur médicale
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=8}}
+
+<br />L’être humain est faillible et il est dans sa nature de faire des erreurs. Reconnaitre qu’on peut faire des erreurs est un préalable à l’adoption de comportement de prévention des erreurs. Reconnaître qu’on a fait une erreur est une occasion d’apprendre et de progresser. C’est vrai au niveau des individus mais c’est vrai aussi au niveau des organisations. Quand une organisation met en place des dispositifs d’identification, d’analyse et de prévention des erreurs on parle « d’organisation apprenante ».
+
+On parle d’erreur par omission quand une action nécessaire n’a pas été faite. L’erreur par commission désigne une action qui a été faite mais qui n’était pas utile. L’erreur d’exécution désigne une action mal réalisée.
+
+On parle de violation (ou de non-conformité) en cas de non-respect d’une recommandation ou d’une règle professionnelle. Ce non-respect peut être routinier (mauvaise habitude), issu d’une priorisation personnelle (pour gagner du temps par exemple) ou induite par le contexte (suractivité, urgence, etc.).
+
+Les erreurs dans le domaine des soins peuvent concerner les actions de prévention, de diagnostic ou de traitement. Elles peuvent ou non avoir entraîné un dommage pour le patient. Elles sont involontaires et évitables. On parle d’événement indésirable grave (EIG) lorsque le dommage est un décès, ou une complication grave ou, au minimum, une prolongation d’hospitalisation d’un jour.
+
+L’être humain est faillible et il est dans sa nature de faire des erreurs. Reconnaitre qu’on peut faire des erreurs est un préalable à l’adoption de comportement de prévention des erreurs. Reconnaître qu’on a fait une erreur est une occasion d’apprendre et de progresser. C’est vrai au niveau des individus mais c’est vrai aussi au niveau des organisations. Quand une organisation met en place des dispositifs d’identification, d’analyse et de prévention des erreurs on parle « d’organisation apprenante ».
+
+'''Les types d’erreur : omission, commission, exécution, violation''' 
+
+On parle d’erreur par omission quand une action nécessaire n’a pas été faite. L’erreur par commission désigne une action qui a été faite mais qui n’était pas utile. L’erreur d’exécution désigne une action mal réalisée.
+
+On parle de violation (ou de non-conformité) en cas de non-respect d’une recommandation ou d’une règle professionnelle. Ce non-respect peut être routinier (mauvaise habitude), issu d’une priorisation personnelle (pour gagner du temps par exemple) ou induite par le contexte (suractivité, urgence, etc.).",1.0,9.655000000000001,False,True,0.7026267051696777,0.8496343096097311,False,2,False
+11,OIC-005-08-A,Quelle est la définition d'une erreur d'exécution?,Une action qui n'a pas été faite,Une action qui a été faite mais qui n'était pas utile,Une action mal réalisée,Un non-respect d'une recommandation ou d'une règle professionnelle,c,"{{objectif de connaissance
+|Identifiant=OIC-005-08-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de l’erreur médicale
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=8}}
+
+<br />L’être humain est faillible et il est dans sa nature de faire des erreurs. Reconnaitre qu’on peut faire des erreurs est un préalable à l’adoption de comportement de prévention des erreurs. Reconnaître qu’on a fait une erreur est une occasion d’apprendre et de progresser. C’est vrai au niveau des individus mais c’est vrai aussi au niveau des organisations. Quand une organisation met en place des dispositifs d’identification, d’analyse et de prévention des erreurs on parle « d’organisation apprenante ».
+
+On parle d’erreur par omission quand une action nécessaire n’a pas été faite. L’erreur par commission désigne une action qui a été faite mais qui n’était pas utile. L’erreur d’exécution désigne une action mal réalisée.
+
+On parle de violation (ou de non-conformité) en cas de non-respect d’une recommandation ou d’une règle professionnelle. Ce non-respect peut être routinier (mauvaise habitude), issu d’une priorisation personnelle (pour gagner du temps par exemple) ou induite par le contexte (suractivité, urgence, etc.).
+
+Les erreurs dans le domaine des soins peuvent concerner les actions de prévention, de diagnostic ou de traitement. Elles peuvent ou non avoir entraîné un dommage pour le patient. Elles sont involontaires et évitables. On parle d’événement indésirable grave (EIG) lorsque le dommage est un décès, ou une complication grave ou, au minimum, une prolongation d’hospitalisation d’un jour.
+
+L’être humain est faillible et il est dans sa nature de faire des erreurs. Reconnaitre qu’on peut faire des erreurs est un préalable à l’adoption de comportement de prévention des erreurs. Reconnaître qu’on a fait une erreur est une occasion d’apprendre et de progresser. C’est vrai au niveau des individus mais c’est vrai aussi au niveau des organisations. Quand une organisation met en place des dispositifs d’identification, d’analyse et de prévention des erreurs on parle « d’organisation apprenante ».
+
+'''Les types d’erreur : omission, commission, exécution, violation''' 
+
+On parle d’erreur par omission quand une action nécessaire n’a pas été faite. L’erreur par commission désigne une action qui a été faite mais qui n’était pas utile. L’erreur d’exécution désigne une action mal réalisée.
+
+On parle de violation (ou de non-conformité) en cas de non-respect d’une recommandation ou d’une règle professionnelle. Ce non-respect peut être routinier (mauvaise habitude), issu d’une priorisation personnelle (pour gagner du temps par exemple) ou induite par le contexte (suractivité, urgence, etc.).",1.0,10.740000000000002,False,True,0.7201064229011536,0.8196438948313395,False,3,False
+12,OIC-005-09-A,Quelle est la définition de l'accident médical?,"Un événement indésirable survenu au cours d'un acte de soin, de prévention ou de diagnostic qui entraîne un dommage anormal au regard de l'évolution prévisible de l'état de santé.",Un effet secondaire attendu d'un traitement médical.,Une maladie contractée dans un établissement de santé.,Une erreur de diagnostic par un professionnel de santé.,a,"{{objectif de connaissance
+|Identifiant=OIC-005-09-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de l’accident médical et de l’affection iatrogène
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Patrice François
+|Ordre=9}}
+
+L’accident médical désigne un événement indésirable survenu au cours d’un acte de soin, de prévention ou de diagnostic. Cet accident entraîne un dommage anormal au regard de l’évolution prévisible de l'état de santé. Il peut s’être produit dans n’importe quel lieu de soins : un établissement de santé, public ou privé, un cabinet d’un professionnel de santé exerçant en libéral, un laboratoire d’analyses médicales, de radiologie, une pharmacie, etc. Un accident médical peut être causé par une erreur d’un professionnel de santé ou découler de soins conformes aux bonnes pratiques et s'appelle alors « l’aléa thérapeutique ».
+
+Les affections iatrogènes désignent l’ensemble des effets néfastes qui peuvent être provoqués par un traitement ou un acte médical. On parle d’effets iatrogènes lorsque le traitement déclenche de nouveaux symptômes, distincts de ceux qu’il est censé soigner. L’effet iatrogène peut intervenir avec ou sans mauvais usage du médicament, que ce mauvais usage soit le fait d’un professionnel de santé ou du malade lui-même. Il ne faut donc pas confondre affection iatrogène et erreur médicale. L’affection iatrogène est une conséquence de la prise d’un médicament même si l’indication était correcte et la posologie bonne. Il est donc possible d’être victime d’une affection iatrogène en dehors de toute erreur ou faute du professionnel de santé.",0.5,9.054285714285715,False,True,0.8062411546707153,0.8305680950482687,False,2,False
+13,OIC-005-09-A,Quelle est la différence entre un accident médical et une affection iatrogène?,"Un accident médical est causé par une erreur d'un professionnel de santé, tandis qu'une affection iatrogène peut survenir même si le traitement est conforme aux bonnes pratiques.","Un accident médical est toujours causé par un professionnel de santé, tandis qu'une affection iatrogène peut survenir par mauvais usage du médicament par le patient.","Un accident médical est un effet secondaire attendu d'un traitement médical, tandis qu'une affection iatrogène est un événement indésirable survenu au cours d'un acte de soin.",Un accident médical est une conséquence de la prise d'un médicament même si l'indication était correcte et la posologie bonne.,a,"{{objectif de connaissance
+|Identifiant=OIC-005-09-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de l’accident médical et de l’affection iatrogène
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Patrice François
+|Ordre=9}}
+
+L’accident médical désigne un événement indésirable survenu au cours d’un acte de soin, de prévention ou de diagnostic. Cet accident entraîne un dommage anormal au regard de l’évolution prévisible de l'état de santé. Il peut s’être produit dans n’importe quel lieu de soins : un établissement de santé, public ou privé, un cabinet d’un professionnel de santé exerçant en libéral, un laboratoire d’analyses médicales, de radiologie, une pharmacie, etc. Un accident médical peut être causé par une erreur d’un professionnel de santé ou découler de soins conformes aux bonnes pratiques et s'appelle alors « l’aléa thérapeutique ».
+
+Les affections iatrogènes désignent l’ensemble des effets néfastes qui peuvent être provoqués par un traitement ou un acte médical. On parle d’effets iatrogènes lorsque le traitement déclenche de nouveaux symptômes, distincts de ceux qu’il est censé soigner. L’effet iatrogène peut intervenir avec ou sans mauvais usage du médicament, que ce mauvais usage soit le fait d’un professionnel de santé ou du malade lui-même. Il ne faut donc pas confondre affection iatrogène et erreur médicale. L’affection iatrogène est une conséquence de la prise d’un médicament même si l’indication était correcte et la posologie bonne. Il est donc possible d’être victime d’une affection iatrogène en dehors de toute erreur ou faute du professionnel de santé.",0.6,12.690000000000001,False,True,0.8173984885215759,0.9478566845258077,False,2,False
+14,OIC-005-10-A,Quelle est la définition d'une infection nosocomiale?,Infection contractée à l'extérieur de l'hôpital,Infection contractée au cours d'un séjour dans un établissement de santé,Infection contractée par un patient avant son admission à l'hôpital,Infection contractée par un patient après son départ de l'hôpital,b,"{{objectif de connaissance
+|Identifiant=OIC-005-10-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de l’infection nosocomiale
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=10}}
+
+Les infections nosocomiales sont les infections contractées au cours d’un séjour dans un établissement de santé (hôpital, clinique…). Elle est aussi appelée infection associée aux soins. Ceci veut dire que ces infections sont absentes au moment de l’admission du patient dans l’établissement. Cependant, si l’état infectieux du patient à l’admission est inconnu, l’infection est généralement considérée comme nosocomiale si elle apparaît après 48 heures d’hospitalisation. Si elle apparaît avant un tel délai, on considère en général qu’elle était en incubation lors de l’entrée dans l’établissement.",0.5,15.797142857142859,False,True,0.7747979760169983,0.9317180514335632,False,5,False
+15,OIC-005-10-A,Quel est le délai après l'admission pour considérer une infection comme nosocomiale?,24 heures,48 heures,72 heures,1 semaine,b,"{{objectif de connaissance
+|Identifiant=OIC-005-10-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de l’infection nosocomiale
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=10}}
+
+Les infections nosocomiales sont les infections contractées au cours d’un séjour dans un établissement de santé (hôpital, clinique…). Elle est aussi appelée infection associée aux soins. Ceci veut dire que ces infections sont absentes au moment de l’admission du patient dans l’établissement. Cependant, si l’état infectieux du patient à l’admission est inconnu, l’infection est généralement considérée comme nosocomiale si elle apparaît après 48 heures d’hospitalisation. Si elle apparaît avant un tel délai, on considère en général qu’elle était en incubation lors de l’entrée dans l’établissement.",1.0,12.690000000000001,False,True,0.770039439201355,0.7447782556215922,False,3,False
+16,OIC-005-11-A,Quelle est la définition de l'aléa thérapeutique?,Un événement indésirable causé par une action de soins non conforme,Un accident médical survenu sans faute des professionnels de santé,Un effet secondaire d'un médicament prescrit et administré correctement,Une infection nosocomiale due à une faute des professionnels de santé,b,"{{objectif de connaissance
+|Identifiant=OIC-005-11-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de l’aléa thérapeutique
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=11}}
+
+L’aléa thérapeutique se distingue des erreurs par son inévitabilité. C’est un événement indésirable dont la cause est une action de soins conforme et ne comportant pas d’erreur. Il est lié à la réalisation d’un risque inhérent à l’action de soins. On peut citer comme exemple la survenue d’un effet secondaire d’un médicament correctement prescrit et administré.  L’aléa thérapeutique est défini comme étant un accident médical (événement imprévu causant un dommage ayant un lien de causalité certain avec l’acte médical), une affection iatrogène (les soins délivrés au patient ont causé le dommage) ou une infection nosocomiale (l’infection apparaît après une hospitalisation et était absente le jour de l’admission) qui est survenue sans responsabilité des professionnels de santé ou de l’établissement de santé. D’après la jurisprudence, l’aléa thérapeutique consiste dans « la survenance, en dehors de toute faute du praticien, d’un risque accidentel inhérent à l’acte médical et qui ne pouvait être maîtrisé ».  Tout risque inhérent à l’acte de soin, de diagnostic ou de prévention peut constituer un aléa thérapeutique.",0.5,10.740000000000002,False,True,0.7397467494010925,0.7667458057403564,False,2,False
+17,OIC-005-11-A,Quel est un exemple d'aléa thérapeutique?,Une erreur de prescription médicale,La survenue d'un effet secondaire d'un médicament correctement prescrit et administré,Une infection nosocomiale due à une faute des professionnels de santé,Un accident médical causé par une action de soins non conforme,b,"{{objectif de connaissance
+|Identifiant=OIC-005-11-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de l’aléa thérapeutique
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=11}}
+
+L’aléa thérapeutique se distingue des erreurs par son inévitabilité. C’est un événement indésirable dont la cause est une action de soins conforme et ne comportant pas d’erreur. Il est lié à la réalisation d’un risque inhérent à l’action de soins. On peut citer comme exemple la survenue d’un effet secondaire d’un médicament correctement prescrit et administré.  L’aléa thérapeutique est défini comme étant un accident médical (événement imprévu causant un dommage ayant un lien de causalité certain avec l’acte médical), une affection iatrogène (les soins délivrés au patient ont causé le dommage) ou une infection nosocomiale (l’infection apparaît après une hospitalisation et était absente le jour de l’admission) qui est survenue sans responsabilité des professionnels de santé ou de l’établissement de santé. D’après la jurisprudence, l’aléa thérapeutique consiste dans « la survenance, en dehors de toute faute du praticien, d’un risque accidentel inhérent à l’acte médical et qui ne pouvait être maîtrisé ».  Tout risque inhérent à l’acte de soin, de diagnostic ou de prévention peut constituer un aléa thérapeutique.",1.0,10.350000000000001,False,True,0.7264676094055176,0.7925635973612467,True,2,False
+18,OIC-005-12-B,Quel est le principal facteur lié au patient qui peut conduire à l'ouverture d'un contentieux à la suite d'un accident médical?,État de santé du patient,Gravité des maladies associées,Difficultés de communication,Vulnérabilité de certaines populations de patients,c,"{{objectif de connaissance
+|Identifiant=OIC-005-12-B
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=B
+|Intitulé=Identifier les principaux facteurs conduisant à l’ouverture d’un contentieux à la suite d’un accident médical
+|Description=None
+|Rubrique=Epidémiologie
+|Contributeurs=Bastien Boussat
+|Ordre=12}}
+
+Les facteurs peuvent être liés :
+
+- au patient : état de santé, gravité des maladies associées, difficultés de communication (langue, conflit avec les soignants, etc.), vulnérabilité de certaines populations de patients (personnes âgées, patients atteints de maladies chroniques, enfants, adolescents, personnes atteintes d’un handicap, démunies, etc.) ;
+
+- aux tâches à accomplir ;
+
+- à l’équipe : communication au sein de l’équipe et avec le patient dans la relation thérapeutique, traçabilité de l’information dans le dossier du patient, encadrement des juniors en cours d’apprentissage ;
+
+- à l’environnement de travail : physique (locaux, matériels, fournitures, etc.) ou organisationnel (disponibilité de ressources humaines qualifiées, organisation du travail, horaires, etc.) ;
+
+- à l’organisation et au management : politiques de remplacement du personnel absent (pas de remplacement, intérim, déplacement), de formation continue, de gestion des équipements ;
+
+- au contexte institutionnel : politiques de santé publique nationale et régionale, systèmes de signalement des événements indésirables",0.7,12.828571428571426,False,True,0.7230392694473267,0.6580390930175781,False,2,False
+19,OIC-005-13-A,Quel est un facteur humain individuel qui peut conduire à des erreurs?,La bonne organisation de l'équipe,Le manque de connaissances et de compétences,La communication efficace,Le leadership identifié,b,"{{objectif de connaissance
+|Identifiant=OIC-005-13-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Facteurs humains : connaître la notion d’erreur humaine (typologie et facteurs favorisants)
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=13}}
+
+L’être humain est faillible et il est dans sa nature de faire des erreurs. Reconnaitre qu’on peut faire des erreurs est un préalable à l’adoption de comportement de prévention des erreurs. Reconnaître qu’on a fait une erreur est une occasion d’apprendre et de progresser. C’est vrai au niveau des individus mais c’est vrai aussi au niveau des organisations. Quand une organisation met en place des dispositifs d’identification, d’analyse et de prévention des erreurs on parle « d’organisation apprenante ».
+
+'''Les facteurs humains individuels''' 
+
+Le manque de connaissances, de compétences, d’expérience peut conduire à des erreurs. Il faut savoir qu’on ne peut pas tout savoir. La capacité de mémorisation est limitée et il faut savoir vérifier ou demander de l’aide.
+
+Le stress, le manque de temps, la fatigue, la maladie sont aussi des circonstances qui réduisent la performance de l’individu.
+
+Certains facteurs linguistiques ou culturels qui peuvent perturber la bonne compréhension d’une situation. Enfin, il faut aussi signaler les facteurs liés au patient dont l’attitude ou le comportement influencent le risque d’erreur.
+
+'''Les facteurs humains collectifs'''
+
+La production de soins, surtout à l’hôpital, est un travail d’équipe. Une mauvaise organisation de l’équipe, un manque de communication voire des conflits nuisent à la bonne coopération des acteurs et accroissent le risque d’erreurs.
+
+Une équipe efficace a d’abord la conscience d’être une équipe avec un leadership identifié. Le rôle de chacun est clairement défini. La communication est organisée avec des briefings avant l’action et des débriefings après.",0.8,8.756666666666668,False,True,0.7205256819725037,0.7224264542261759,True,2,False
+20,OIC-005-13-A,Quel est un facteur humain collectif qui peut accroître le risque d'erreurs?,La bonne mémorisation,Le manque de communication et de conflits,La fatigue,La bonne compréhension d'une situation,b,"{{objectif de connaissance
+|Identifiant=OIC-005-13-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Facteurs humains : connaître la notion d’erreur humaine (typologie et facteurs favorisants)
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=13}}
+
+L’être humain est faillible et il est dans sa nature de faire des erreurs. Reconnaitre qu’on peut faire des erreurs est un préalable à l’adoption de comportement de prévention des erreurs. Reconnaître qu’on a fait une erreur est une occasion d’apprendre et de progresser. C’est vrai au niveau des individus mais c’est vrai aussi au niveau des organisations. Quand une organisation met en place des dispositifs d’identification, d’analyse et de prévention des erreurs on parle « d’organisation apprenante ».
+
+'''Les facteurs humains individuels''' 
+
+Le manque de connaissances, de compétences, d’expérience peut conduire à des erreurs. Il faut savoir qu’on ne peut pas tout savoir. La capacité de mémorisation est limitée et il faut savoir vérifier ou demander de l’aide.
+
+Le stress, le manque de temps, la fatigue, la maladie sont aussi des circonstances qui réduisent la performance de l’individu.
+
+Certains facteurs linguistiques ou culturels qui peuvent perturber la bonne compréhension d’une situation. Enfin, il faut aussi signaler les facteurs liés au patient dont l’attitude ou le comportement influencent le risque d’erreur.
+
+'''Les facteurs humains collectifs'''
+
+La production de soins, surtout à l’hôpital, est un travail d’équipe. Une mauvaise organisation de l’équipe, un manque de communication voire des conflits nuisent à la bonne coopération des acteurs et accroissent le risque d’erreurs.
+
+Une équipe efficace a d’abord la conscience d’être une équipe avec un leadership identifié. Le rôle de chacun est clairement défini. La communication est organisée avec des briefings avant l’action et des débriefings après.",1.0,8.756666666666668,False,True,0.7146063446998596,0.6408063769340515,True,2,False
+21,OIC-005-14-B,Quel est le principal objectif de l'analyse approfondie des causes d'erreur en santé?,Identifier les erreurs humaines,Comprendre les causes latentes des accidents,Augmenter le nombre de barrières de sécurité,Diminuer le temps de traitement des patients,b,"{{objectif de connaissance
+|Identifiant=OIC-005-14-B
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=B
+|Intitulé=Prévention : connaître la prévention des erreurs, des EIAS, la notion de barrière de sécurité
+|Description=None
+|Rubrique=Suivi et/ou pronostic
+|Contributeurs=Bastien Boussat
+|Ordre=14}}
+
+La gestion des erreurs et des plaintes est un élément essentiel de la prévention des risques associés aux soins. Il s’agit d’une approche des risques a posteriori. Un risque s’est réalisé débouchant sur un dommage touchant un patient. Ce préjudice peut être réel ou perçu par le patient.
+
+L’analyse en profondeur des erreurs et des motifs de plaintes va permettre d’objectiver des pistes pour la prévention de nouvelles erreurs, par la mise en place d’actions d’amélioration.
+
+'''Bases de l’analyse approfondie des causes d’erreur'''
+
+'''Modèle de Reason'''
+
+Le modèle de Reason (ou modèle du fromage Suisse) est le modèle le plus souvent présenté. Il a l’avantage d’attirer l’attention sur les causes latentes d’un accident distinguant des erreurs actives et des erreurs latentes.
+
+Ceci permet de comprendre que l’erreur humaine n’est le plus souvent qu’une conséquence de défauts organisationnels plus profonds. Ce modèle propose une analyse des événements indésirables par séquences se succédant où les différents niveaux de défense existant à chaque étape ont été franchis. Cette conception de barrières se succédant est maintenant remplacée par un modèle systémique, trop complexe pour être détaillé ici.
+
+'''Les barrières de sécurité'''
+
+Les barrières sont des défenses (protections) en profondeur contre le risque d’erreur. On distingue trois types de barrières de sécurité :
+
+- les barrières de prévention ;
+
+- les barrières de récupération ;
+
+- les barrières d’atténuation.
+
+Un système de sécurité efficace doit posséder les trois. Il ne faut négliger ni les barrières de récupération, ni les barrières d’atténuation.
+
+Ces trois types de barrières peuvent être de nature :
+
+- immatérielle : lois et réglementation, consignes, bonnes pratiques de sécurité, recommandations, procédures et protocoles, programmes de formation, organisation du travail, etc. ;
+
+- matérielle : détrompeur physique (exemple : dessin particulier des bagues des prises de gaz médicaux et de vide interdisant toute connexion inappropriée de couleur différente).
+
+'''Les barrières de prévention'''
+
+Elles sont destinées à empêcher la survenue de l’erreur et de l’accident : par exemple, la check-list chirurgicale, barrière immatérielle qui se décompose en trois temps (encadré 5.4), ou la prescription informatisée dans un système prévoyant des alertes en fonction de doses dangereuses, de l’état clinique et biologique du patient, d’interactions médicamenteuses…
+{| class=""wikitable""
+|'''Encadré  : Check-list du bloc  opératoire adaptée de la grille de check-list de la HAS, version 2011'''
+|-
+|'''''Avant  induction anesthésique'''''
+
+'''''Temps  de pause avant induction'''''
+
+- Vérification  de :
+
+. identité  du patient
+
+. intervention  et site opératoire (patient, dossier)
+
+. disponibilité  de la documentation clinique et paraclinique
+
+. connaissance  du mode d’installation, cohérent avec le site/intervention, non dangereux  pour le patient
+
+. préparation  cutanée de l’opéré documentée dans la fiche de liaison service/bloc  opératoire
+
+. équipement/matériel  nécessaire pour l’intervention, sans dysfonctionnements
+
+- Vérification  croisée par l’équipe des risques :
+
+. allergique
+
+. d’inhalation
+
+. de  difficulté d’intubation
+
+. de  ventilation
+
+. de  saignement
+
+'''Avant intervention chirurgicale'''
+
+'''Temps de pause avant incision'''
+
+- Vérification  « ultime » croisée au sein de l’équipe, en présence des chirurgien(s),  anesthésiste(s)/IADE, IBODE/IDE :
+
+. identité  du patient
+
+. intervention  prévue
+
+. site  opératoire
+
+. installation  correcte
+
+. disponibilité  des documents nécessaires
+
+- Partage  des informations oralement au sein de l’équipe sur les éléments à  risque/étapes critiques de l’intervention (time out) sur le plan :
+
+. chirurgical
+
+. anesthésique
+
+- Selon  les protocoles en vigueur :
+
+. administration  de l’antibioprophylaxie
+
+. préparation  du champ opératoire
+
+'''Après intervention chirurgicale'''
+
+'''Pause avant sortie de salle d’opération'''
+
+- Confirmation  orale par le personnel auprès de l’équipe :
+
+. de  l’intervention enregistrée
+
+. du  compte final correct des compresses, aiguilles, instruments, etc.
+
+. de  l’étiquetage des prélèvements, pièces opératoires, etc.
+
+. si  des événements indésirables ou porteurs de risques médicaux sont survenus :  signalement/déclaration
+
+- Les  prescriptions pour les suites opératoires immédiates sont faites de manière  conjointe entre les équipes chirurgicale et anesthésique
+
+
+N.B :  IADE : infirmier anesthésiste diplômé d’État ; IBODE infirmier de bloc  opératoire diplômé d’État ; IDE : infirmier diplômé d’État
+|}
+'''Les barrières de récupération'''
+
+L’erreur a été commise mais récupérée avant d’avoir des conséquences. Par exemple, le patient est allergique à la pénicilline qui est l’antibioprophylaxie prescrite avant l’intervention chirurgicale, mais l’infirmière en prend connaissance dans le dossier médical et alerte le prescripteur qui modifie la prescription.
+
+'''Les barrières d’atténuation'''
+
+L’erreur a été commise, n’a pas été récupérée. Il s’agit là de limiter ses conséquences pour le patient. Par exemple, un patient fait un arrêt cardiaque à la suite d’une erreur de voie d’administration commise par une infirmière. Elle prévient le médecin senior dès qu’elle constate son erreur. L’équipe médicale est sur place et commence le massage cardiaque pendant que l’équipe SOS arrêt cardiaque appelée immédiatement arrive. Le choc électrique rétablit la fonction cardiaque, le patient est transféré en réanimation pour stabilisation et surveillance. Il en sort le lendemain.
+
+'''Analyse des causes racines'''
+
+Les causes racines d’une erreur médicale sont à rechercher dans l’ensemble du contexte qui entoure l’événement indésirable.
+
+Les méthodes d’analyse sont structurées pour éviter les oublis. Les plus employées sont la méthode ALARM et la méthode Orion®. Les méthodes d’analyses des causes racines comprennent généralement les six étapes suivantes pour une bonne application :
+
+1/ la collecte des données : entretiens semi-directifs de toutes les personnes présentes au moment de l’événement, dossiers, toute autre pièce permettant de comprendre le déroulement des faits ;
+
+2/ la reconstitution de la chronologie de l’événement ;
+
+3/ l’identification des écarts par rapport aux pratiques recommandées, sans jugement par rapport à un référentiel existant ;
+
+4/ l’identification des facteurs contributifs : immédiats et profonds ou causes racines (encadrés 5.5)
+{| class=""wikitable""
+|'''Encadré  : Typologie des  facteurs favorisant ou causes racines (selon la méthode ALARM)''' 
+|-
+|'''''Les  facteurs peuvent être liés :'''''
+
+-  au patient : état de santé, gravité des maladies associées, difficultés de  communication (langue, conflit avec les soignants, etc.), vulnérabilité de  certaines populations de patients (personnes âgées, patients atteints de  maladies chroniques, enfants, adolescents, personnes atteintes d’un handicap,  démunies, etc.) ;
+
+-  aux tâches à accomplir ;
+
+-  à l’équipe : communication au sein de l’équipe et avec le patient dans la  relation thérapeutique, traçabilité de l’information dans le dossier du  patient, encadrement des juniors en cours d’apprentissage ;
+
+-  à l’environnement de travail : physique (locaux, matériels, fournitures,  etc.) ou organisationnel (disponibilité de ressources humaines qualifiées,  organisation du travail, horaires, etc.) ;
+
+-  à l’organisation et au management : politiques de remplacement du personnel  absent (pas de remplacement, intérim, déplacement), de formation continue, de  gestion des équipements ;
+
+-  au contexte institutionnel : politiques de santé publique nationale et  régionale, systèmes de signalement des événements indésirables
+|}
+5/ la proposition d’actions à mettre en œuvre (accompagné par un plan d’actions) ;
+
+6/ la rédaction du rapport d’analyse.",0.6666666666666666,12.172307692307694,False,True,0.792941689491272,0.6831492185592651,False,2,False
+22,OIC-005-14-B,Quelle est la fonction des barrières de prévention dans le système de sécurité?,Permettre la récupération d'une erreur,Empêcher la survenue de l'erreur et de l'accident,Atténuer les conséquences d'une erreur,Améliorer la communication entre les équipes,b,"{{objectif de connaissance
+|Identifiant=OIC-005-14-B
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=B
+|Intitulé=Prévention : connaître la prévention des erreurs, des EIAS, la notion de barrière de sécurité
+|Description=None
+|Rubrique=Suivi et/ou pronostic
+|Contributeurs=Bastien Boussat
+|Ordre=14}}
+
+La gestion des erreurs et des plaintes est un élément essentiel de la prévention des risques associés aux soins. Il s’agit d’une approche des risques a posteriori. Un risque s’est réalisé débouchant sur un dommage touchant un patient. Ce préjudice peut être réel ou perçu par le patient.
+
+L’analyse en profondeur des erreurs et des motifs de plaintes va permettre d’objectiver des pistes pour la prévention de nouvelles erreurs, par la mise en place d’actions d’amélioration.
+
+'''Bases de l’analyse approfondie des causes d’erreur'''
+
+'''Modèle de Reason'''
+
+Le modèle de Reason (ou modèle du fromage Suisse) est le modèle le plus souvent présenté. Il a l’avantage d’attirer l’attention sur les causes latentes d’un accident distinguant des erreurs actives et des erreurs latentes.
+
+Ceci permet de comprendre que l’erreur humaine n’est le plus souvent qu’une conséquence de défauts organisationnels plus profonds. Ce modèle propose une analyse des événements indésirables par séquences se succédant où les différents niveaux de défense existant à chaque étape ont été franchis. Cette conception de barrières se succédant est maintenant remplacée par un modèle systémique, trop complexe pour être détaillé ici.
+
+'''Les barrières de sécurité'''
+
+Les barrières sont des défenses (protections) en profondeur contre le risque d’erreur. On distingue trois types de barrières de sécurité :
+
+- les barrières de prévention ;
+
+- les barrières de récupération ;
+
+- les barrières d’atténuation.
+
+Un système de sécurité efficace doit posséder les trois. Il ne faut négliger ni les barrières de récupération, ni les barrières d’atténuation.
+
+Ces trois types de barrières peuvent être de nature :
+
+- immatérielle : lois et réglementation, consignes, bonnes pratiques de sécurité, recommandations, procédures et protocoles, programmes de formation, organisation du travail, etc. ;
+
+- matérielle : détrompeur physique (exemple : dessin particulier des bagues des prises de gaz médicaux et de vide interdisant toute connexion inappropriée de couleur différente).
+
+'''Les barrières de prévention'''
+
+Elles sont destinées à empêcher la survenue de l’erreur et de l’accident : par exemple, la check-list chirurgicale, barrière immatérielle qui se décompose en trois temps (encadré 5.4), ou la prescription informatisée dans un système prévoyant des alertes en fonction de doses dangereuses, de l’état clinique et biologique du patient, d’interactions médicamenteuses…
+{| class=""wikitable""
+|'''Encadré  : Check-list du bloc  opératoire adaptée de la grille de check-list de la HAS, version 2011'''
+|-
+|'''''Avant  induction anesthésique'''''
+
+'''''Temps  de pause avant induction'''''
+
+- Vérification  de :
+
+. identité  du patient
+
+. intervention  et site opératoire (patient, dossier)
+
+. disponibilité  de la documentation clinique et paraclinique
+
+. connaissance  du mode d’installation, cohérent avec le site/intervention, non dangereux  pour le patient
+
+. préparation  cutanée de l’opéré documentée dans la fiche de liaison service/bloc  opératoire
+
+. équipement/matériel  nécessaire pour l’intervention, sans dysfonctionnements
+
+- Vérification  croisée par l’équipe des risques :
+
+. allergique
+
+. d’inhalation
+
+. de  difficulté d’intubation
+
+. de  ventilation
+
+. de  saignement
+
+'''Avant intervention chirurgicale'''
+
+'''Temps de pause avant incision'''
+
+- Vérification  « ultime » croisée au sein de l’équipe, en présence des chirurgien(s),  anesthésiste(s)/IADE, IBODE/IDE :
+
+. identité  du patient
+
+. intervention  prévue
+
+. site  opératoire
+
+. installation  correcte
+
+. disponibilité  des documents nécessaires
+
+- Partage  des informations oralement au sein de l’équipe sur les éléments à  risque/étapes critiques de l’intervention (time out) sur le plan :
+
+. chirurgical
+
+. anesthésique
+
+- Selon  les protocoles en vigueur :
+
+. administration  de l’antibioprophylaxie
+
+. préparation  du champ opératoire
+
+'''Après intervention chirurgicale'''
+
+'''Pause avant sortie de salle d’opération'''
+
+- Confirmation  orale par le personnel auprès de l’équipe :
+
+. de  l’intervention enregistrée
+
+. du  compte final correct des compresses, aiguilles, instruments, etc.
+
+. de  l’étiquetage des prélèvements, pièces opératoires, etc.
+
+. si  des événements indésirables ou porteurs de risques médicaux sont survenus :  signalement/déclaration
+
+- Les  prescriptions pour les suites opératoires immédiates sont faites de manière  conjointe entre les équipes chirurgicale et anesthésique
+
+
+N.B :  IADE : infirmier anesthésiste diplômé d’État ; IBODE infirmier de bloc  opératoire diplômé d’État ; IDE : infirmier diplômé d’État
+|}
+'''Les barrières de récupération'''
+
+L’erreur a été commise mais récupérée avant d’avoir des conséquences. Par exemple, le patient est allergique à la pénicilline qui est l’antibioprophylaxie prescrite avant l’intervention chirurgicale, mais l’infirmière en prend connaissance dans le dossier médical et alerte le prescripteur qui modifie la prescription.
+
+'''Les barrières d’atténuation'''
+
+L’erreur a été commise, n’a pas été récupérée. Il s’agit là de limiter ses conséquences pour le patient. Par exemple, un patient fait un arrêt cardiaque à la suite d’une erreur de voie d’administration commise par une infirmière. Elle prévient le médecin senior dès qu’elle constate son erreur. L’équipe médicale est sur place et commence le massage cardiaque pendant que l’équipe SOS arrêt cardiaque appelée immédiatement arrive. Le choc électrique rétablit la fonction cardiaque, le patient est transféré en réanimation pour stabilisation et surveillance. Il en sort le lendemain.
+
+'''Analyse des causes racines'''
+
+Les causes racines d’une erreur médicale sont à rechercher dans l’ensemble du contexte qui entoure l’événement indésirable.
+
+Les méthodes d’analyse sont structurées pour éviter les oublis. Les plus employées sont la méthode ALARM et la méthode Orion®. Les méthodes d’analyses des causes racines comprennent généralement les six étapes suivantes pour une bonne application :
+
+1/ la collecte des données : entretiens semi-directifs de toutes les personnes présentes au moment de l’événement, dossiers, toute autre pièce permettant de comprendre le déroulement des faits ;
+
+2/ la reconstitution de la chronologie de l’événement ;
+
+3/ l’identification des écarts par rapport aux pratiques recommandées, sans jugement par rapport à un référentiel existant ;
+
+4/ l’identification des facteurs contributifs : immédiats et profonds ou causes racines (encadrés 5.5)
+{| class=""wikitable""
+|'''Encadré  : Typologie des  facteurs favorisant ou causes racines (selon la méthode ALARM)''' 
+|-
+|'''''Les  facteurs peuvent être liés :'''''
+
+-  au patient : état de santé, gravité des maladies associées, difficultés de  communication (langue, conflit avec les soignants, etc.), vulnérabilité de  certaines populations de patients (personnes âgées, patients atteints de  maladies chroniques, enfants, adolescents, personnes atteintes d’un handicap,  démunies, etc.) ;
+
+-  aux tâches à accomplir ;
+
+-  à l’équipe : communication au sein de l’équipe et avec le patient dans la  relation thérapeutique, traçabilité de l’information dans le dossier du  patient, encadrement des juniors en cours d’apprentissage ;
+
+-  à l’environnement de travail : physique (locaux, matériels, fournitures,  etc.) ou organisationnel (disponibilité de ressources humaines qualifiées,  organisation du travail, horaires, etc.) ;
+
+-  à l’organisation et au management : politiques de remplacement du personnel  absent (pas de remplacement, intérim, déplacement), de formation continue, de  gestion des équipements ;
+
+-  au contexte institutionnel : politiques de santé publique nationale et  régionale, systèmes de signalement des événements indésirables
+|}
+5/ la proposition d’actions à mettre en œuvre (accompagné par un plan d’actions) ;
+
+6/ la rédaction du rapport d’analyse.",1.0,7.633846153846157,False,True,0.6859847903251648,0.8257486422856649,False,3,False
+23,OIC-005-15-B,Quel est le but principal de la démarche de culture positive de l’erreur dans la gestion des risques associés aux soins?,Sanctionner les personnes responsables des erreurs,Non-culpabiliser la personne qui a commis l’erreur et favoriser le signalement,Réduire le nombre de dossiers analysés,Augmenter le coût de l’analyse des dossiers,b,"{{objectif de connaissance
+|Identifiant=OIC-005-15-B
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=B
+|Intitulé=Approche systémique : connaître la démarche de culture positive de l’erreur
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=15}}
+
+Ces informations sont transmises à une cellule de gestion des risques et au coordinateur de la gestion des risques associés aux soins, fonction obligatoire dans chaque établissement de santé.
+
+La troisième grande classe de repérage des erreurs rassemble des systèmes actifs fondés sur l’analyse de dossiers ou de traces électroniques. L’analyse rétrospective de dossiers est un système coûteux en temps et en main-d’œuvre sauf si une fouille informatique utilisant un programme prédéfini recherchant des mots clés est organisée.
+
+Les événements indésirables graves repérés sont analysés soit avec :
+
+- un point de vue extérieur neutre, par la cellule de gestion des risques ;
+- un point de vue intérieur au service hospitalier, qui doit aussi être le plus neutre possible, à l’occasion de revues de morbidité et de mortalité (RMM).Une démarche de culture positive de l’erreur relève de la culture de sécurité du patient. Son fondement est la non-culpabilisation de la personne qui a commis l’erreur. En effet, la tendance naturelle porte à considérer que le responsable est le dernier de la chaîne de personnes engagées dans un processus de soins. Or, la plupart du temps, les causes sont multiples et souvent latentes, non détectables au premier abord.
+
+L’attitude de non-culpabilisation qui doit être partagée par le chef du service clinique et la direction de l’hôpital favorise le signalement des erreurs, leur analyse et la mise en place d’actions d’amélioration prévenant la répétition de telles erreurs. L’attitude inverse fait que les erreurs sont cachées. Leur absence d’analyse en profondeur conduit à créer des secondes victimes. Une seconde victime peut être définie comme : « un soignant impliqué et traumatisé par un événement imprévu et défavorable pour un patient et/ou une erreur médicale dont il se sent souvent personnellement responsable et qui occasionne un sentiment d’échec et remet en question son expérience clinique et ses compétences fondamentales ». Les conséquences peuvent être graves, allant jusqu’au suicide lorsque le soignant, dernier maillon de la chaîne, est personnellement mis en cause.
+
+Élaborer et respecter des règles de fonctionnement constituent l’une des conditions de la confiance dans le système de gestion des risques associés aux soins. Ces règles peuvent être colligées dans une charte qui précise que le signalement d’une erreur ne sera pas sanctionné. Parmi les éléments importants de cette charte figurent les précisions suivantes :
+
+- l’objectivité est de règle. Le signalement repose sur des faits non interprétés ;
+
+- l’anonymat et la confidentialité seront respectés dans l’analyse qui suivra le signalement de l’erreur ou événement indésirable ;
+
+- pour être efficace, le signalement doit être exhaustif pour l’identification de l’ensemble des risques liés à l’activité hospitalière et en évitant que ces risques se reproduisent.
+
+Le repérage des événements indésirables graves survenant dans les hôpitaux qui permet d’exercer une veille sanitaire se fait le plus souvent à partir de systèmes passifs reposant sur :
+
+- le volontariat des médecins et autres professionnels de santé bien que leur déclaration soit selon la loi « Hôpital, patient, santé, territoire » de 2009, obligatoire ;
+
+- la volonté des patients ou de leur famille ou proches d’expliquer les dysfonctionnements qu’ils ont rencontrés ou d’obtenir un dédommagement du préjudice qu’ils estiment avoir subi.
+
+Ces informations sont transmises à une cellule de gestion des risques et au coordinateur de la gestion des risques associés aux soins, fonction obligatoire dans chaque établissement de santé.
+
+La troisième grande classe de repérage des erreurs rassemble des systèmes actifs fondés sur l’analyse de dossiers ou de traces électroniques. L’analyse rétrospective de dossiers est un système coûteux en temps et en main-d’œuvre sauf si une fouille informatique utilisant un programme prédéfini recherchant des mots clés est organisée.
+
+Les événements indésirables graves repérés sont analysés soit avec :
+
+- un point de vue extérieur neutre, par la cellule de gestion des risques ;
+
+- un point de vue intérieur au service hospitalier, qui doit aussi être le plus neutre possible, à l’occasion de revues de morbidité et de mortalité (RMM).<br />",0.5555555555555556,11.704761904761906,False,True,0.7326289415359497,0.687380870183309,False,2,False
+24,OIC-005-15-B,Quel type de système de repérage des erreurs est le plus coûteux en temps et en main-d’œuvre?,Systèmes passifs basés sur le volontariat,Systèmes actifs fondés sur l’analyse de dossiers ou de traces électroniques,Systèmes basés sur la volonté des patients ou de leur famille,Systèmes de fouille informatique utilisant des mots clés,b,"{{objectif de connaissance
+|Identifiant=OIC-005-15-B
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=B
+|Intitulé=Approche systémique : connaître la démarche de culture positive de l’erreur
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=15}}
+
+Ces informations sont transmises à une cellule de gestion des risques et au coordinateur de la gestion des risques associés aux soins, fonction obligatoire dans chaque établissement de santé.
+
+La troisième grande classe de repérage des erreurs rassemble des systèmes actifs fondés sur l’analyse de dossiers ou de traces électroniques. L’analyse rétrospective de dossiers est un système coûteux en temps et en main-d’œuvre sauf si une fouille informatique utilisant un programme prédéfini recherchant des mots clés est organisée.
+
+Les événements indésirables graves repérés sont analysés soit avec :
+
+- un point de vue extérieur neutre, par la cellule de gestion des risques ;
+- un point de vue intérieur au service hospitalier, qui doit aussi être le plus neutre possible, à l’occasion de revues de morbidité et de mortalité (RMM).Une démarche de culture positive de l’erreur relève de la culture de sécurité du patient. Son fondement est la non-culpabilisation de la personne qui a commis l’erreur. En effet, la tendance naturelle porte à considérer que le responsable est le dernier de la chaîne de personnes engagées dans un processus de soins. Or, la plupart du temps, les causes sont multiples et souvent latentes, non détectables au premier abord.
+
+L’attitude de non-culpabilisation qui doit être partagée par le chef du service clinique et la direction de l’hôpital favorise le signalement des erreurs, leur analyse et la mise en place d’actions d’amélioration prévenant la répétition de telles erreurs. L’attitude inverse fait que les erreurs sont cachées. Leur absence d’analyse en profondeur conduit à créer des secondes victimes. Une seconde victime peut être définie comme : « un soignant impliqué et traumatisé par un événement imprévu et défavorable pour un patient et/ou une erreur médicale dont il se sent souvent personnellement responsable et qui occasionne un sentiment d’échec et remet en question son expérience clinique et ses compétences fondamentales ». Les conséquences peuvent être graves, allant jusqu’au suicide lorsque le soignant, dernier maillon de la chaîne, est personnellement mis en cause.
+
+Élaborer et respecter des règles de fonctionnement constituent l’une des conditions de la confiance dans le système de gestion des risques associés aux soins. Ces règles peuvent être colligées dans une charte qui précise que le signalement d’une erreur ne sera pas sanctionné. Parmi les éléments importants de cette charte figurent les précisions suivantes :
+
+- l’objectivité est de règle. Le signalement repose sur des faits non interprétés ;
+
+- l’anonymat et la confidentialité seront respectés dans l’analyse qui suivra le signalement de l’erreur ou événement indésirable ;
+
+- pour être efficace, le signalement doit être exhaustif pour l’identification de l’ensemble des risques liés à l’activité hospitalière et en évitant que ces risques se reproduisent.
+
+Le repérage des événements indésirables graves survenant dans les hôpitaux qui permet d’exercer une veille sanitaire se fait le plus souvent à partir de systèmes passifs reposant sur :
+
+- le volontariat des médecins et autres professionnels de santé bien que leur déclaration soit selon la loi « Hôpital, patient, santé, territoire » de 2009, obligatoire ;
+
+- la volonté des patients ou de leur famille ou proches d’expliquer les dysfonctionnements qu’ils ont rencontrés ou d’obtenir un dédommagement du préjudice qu’ils estiment avoir subi.
+
+Ces informations sont transmises à une cellule de gestion des risques et au coordinateur de la gestion des risques associés aux soins, fonction obligatoire dans chaque établissement de santé.
+
+La troisième grande classe de repérage des erreurs rassemble des systèmes actifs fondés sur l’analyse de dossiers ou de traces électroniques. L’analyse rétrospective de dossiers est un système coûteux en temps et en main-d’œuvre sauf si une fouille informatique utilisant un programme prédéfini recherchant des mots clés est organisée.
+
+Les événements indésirables graves repérés sont analysés soit avec :
+
+- un point de vue extérieur neutre, par la cellule de gestion des risques ;
+
+- un point de vue intérieur au service hospitalier, qui doit aussi être le plus neutre possible, à l’occasion de revues de morbidité et de mortalité (RMM).<br />",0.75,8.39294117647059,False,True,0.6864351034164429,0.7078905502955118,False,2,False
+25,OIC-006-01-A,Quelle est la définition d'une équipe pluriprofessionnelle?,Un groupe de professionnels ayant des qualifications similaires,Un groupe de professionnels ayant des qualifications différentes et complémentaires,Un groupe de professionnels travaillant dans des domaines différents mais sans collaboration,Un groupe de professionnels travaillant uniquement dans le même établissement,b,"{{objectif de connaissance
+|Identifiant=OIC-006-01-A
+|Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Item_parent_short=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Rang=A
+|Intitulé=Connaître la définition du travail en équipe pluriprofessionnelle
+|Description=Connaitre les objectifs du travail en équipe et les principaux
+|Rubrique=Définition
+|Contributeurs=Virginie Migeot
+|Ordre=1}}
+
+Une '''''équipe pluriprofessionnelle''''' est composée de professionnels ayant des qualifications différentes et complémentaires (par exemple médecins, pharmaciens, infirmiers, kinésithérapeutes, sage-femmes, assistant sociale, ergothérapeutes, diététiciens, …)  Le travail en équipe pluriprofessionnelle signifie que ces professionnels travaillant ensemble et unissent leurs efforts dans un même but.
+
+Ce travail en équipe pluriprofessionnelle est considéré comme
+
+–      une barrière de sécurité contre les événements indésirables ;
+
+–       un facteur de qualité de la prise en charge du patient ;
+
+–       un facteur de santé et de bien-être au travail pour les professionnels ;
+
+–      un moyen de répondre de manière collaborative aux besoins du patient.",1.0,17.482857142857146,False,True,0.7327777743339539,0.9191048741340637,False,2,False
+26,OIC-006-01-A,Quel est un des objectifs du travail en équipe pluriprofessionnelle?,Améliorer la qualité de la prise en charge du patient,Réduire le nombre de professionnels dans un établissement,Augmenter les coûts de santé,Diminuer la collaboration entre professionnels,a,"{{objectif de connaissance
+|Identifiant=OIC-006-01-A
+|Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Item_parent_short=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Rang=A
+|Intitulé=Connaître la définition du travail en équipe pluriprofessionnelle
+|Description=Connaitre les objectifs du travail en équipe et les principaux
+|Rubrique=Définition
+|Contributeurs=Virginie Migeot
+|Ordre=1}}
+
+Une '''''équipe pluriprofessionnelle''''' est composée de professionnels ayant des qualifications différentes et complémentaires (par exemple médecins, pharmaciens, infirmiers, kinésithérapeutes, sage-femmes, assistant sociale, ergothérapeutes, diététiciens, …)  Le travail en équipe pluriprofessionnelle signifie que ces professionnels travaillant ensemble et unissent leurs efforts dans un même but.
+
+Ce travail en équipe pluriprofessionnelle est considéré comme
+
+–      une barrière de sécurité contre les événements indésirables ;
+
+–       un facteur de qualité de la prise en charge du patient ;
+
+–       un facteur de santé et de bien-être au travail pour les professionnels ;
+
+–      un moyen de répondre de manière collaborative aux besoins du patient.",0.3333333333333333,11.91,False,True,0.7291111350059509,0.7066242496172587,True,1,False
+27,OIC-006-02-A,Quel est le principal dispositif utilisé pour sécuriser le parcours du patient en milieu hospitalier?,Protocole pluriprofessionnel,Réunion de concertation pluridisciplinaire (RCP),Check-list au bloc opératoire,Réunion de morbi-mortalité (RMM),c,"{{objectif de connaissance
+|Identifiant=OIC-006-02-A
+|Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Item_parent_short=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Rang=A
+|Intitulé=Connaître les principaux dispositifs du travail en équipe pluridisciplinaire
+|Description=Connaitre les principaux dispositifs
+|Rubrique=Définition
+|Contributeurs=Virginie Migeot
+|Ordre=2}}
+
+Différentes méthodes de travail en équipe pluriprofessionnelle existent en '''ambulatoire''' et en '''milieu hospitalier''' :
+
+•       Un protocole pluriprofessionnel
+
+•       Les réunions de concertation pluridisciplinaire (RCP)
+
+•       La ''check-list'' au bloc opératoire ou pour les activités dites « interventionnelles » (endoscopie, radiologie interventionnelle, cathéters veineux centraux, chimiothérapie...).
+
+•       La réunion de morbi-mortalité (RMM)
+
+<br />",0.8571428571428571,13.860000000000003,False,True,0.7485824823379517,0.6159159739812216,False,4,False
+28,OIC-006-02-A,Quelle méthode est utilisée pour sécuriser le parcours du patient en ambulatoire?,Protocole pluriprofessionnel,Réunion de concertation pluridisciplinaire (RCP),Check-list au bloc opératoire,Réunion de morbi-mortalité (RMM),a,"{{objectif de connaissance
+|Identifiant=OIC-006-02-A
+|Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Item_parent_short=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Rang=A
+|Intitulé=Connaître les principaux dispositifs du travail en équipe pluridisciplinaire
+|Description=Connaitre les principaux dispositifs
+|Rubrique=Définition
+|Contributeurs=Virginie Migeot
+|Ordre=2}}
+
+Différentes méthodes de travail en équipe pluriprofessionnelle existent en '''ambulatoire''' et en '''milieu hospitalier''' :
+
+•       Un protocole pluriprofessionnel
+
+•       Les réunions de concertation pluridisciplinaire (RCP)
+
+•       La ''check-list'' au bloc opératoire ou pour les activités dites « interventionnelles » (endoscopie, radiologie interventionnelle, cathéters veineux centraux, chimiothérapie...).
+
+•       La réunion de morbi-mortalité (RMM)
+
+<br />",0.8,13.673333333333336,False,True,0.7538270950317383,0.6761267185211182,True,2,False
+29,OIC-006-03-A,Quelle est la définition du parcours de soins?,La coordination des soins entre différents professionnels de santé,La prise en charge médicale d'un patient dans un seul établissement,L'organisation et la coordination des soins tout au long de la prise en charge d'un patient,La gestion des ressources humaines dans un service de santé,c,"{{objectif de connaissance
+|Identifiant=OIC-006-03-A
+|Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Item_parent_short=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Rang=A
+|Intitulé=Connaître la définition du parcours de soins
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Virginie Migeot
+|Ordre=3}}
+
+[[Fichier:Item 6 Fig1.png|vignette]]
+[[Fichier:Item 6 Fig1.png|centré|vignette]]
+Le '''parcours de soins''' consiste à organiser et à coordonner le juste enchaînement et au bon moment des compétences professionnelles tout au long de la prise en charge d’un patient",0.5,5.230000000000004,False,True,0.6958577036857605,0.8486958742141724,False,2,False
+30,OIC-006-03-A,Quel est l'objectif principal du parcours de soins?,Améliorer la communication entre les professionnels de santé,Réduire les coûts de santé,Organiser et coordonner les soins tout au long de la prise en charge d'un patient,Augmenter le nombre de patients pris en charge,c,"{{objectif de connaissance
+|Identifiant=OIC-006-03-A
+|Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Item_parent_short=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Rang=A
+|Intitulé=Connaître la définition du parcours de soins
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Virginie Migeot
+|Ordre=3}}
+
+[[Fichier:Item 6 Fig1.png|vignette]]
+[[Fichier:Item 6 Fig1.png|centré|vignette]]
+Le '''parcours de soins''' consiste à organiser et à coordonner le juste enchaînement et au bon moment des compétences professionnelles tout au long de la prise en charge d’un patient",1.0,6.705000000000002,False,True,0.6945724487304688,0.7700928250948588,True,3,False
+31,OIC-006-04-B,Quel est l'objectif principal d'un protocole pluriprofessionnel?,Améliorer la communication entre les patients,Faciliter le travail en équipe et la prise en charge des patients,Réduire les coûts des soins,Augmenter le nombre de professionnels de santé,b,"{{objectif de connaissance
+|Identifiant=OIC-006-04-B
+|Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Item_parent_short=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Rang=B
+|Intitulé=Protocoles pluriprofessionnels : connaître la définition, les objectifs et les enjeux des protocoles pluriprofessionnels
+|Description=Transfert de tache
+|Rubrique=Définition
+|Contributeurs=Virginie Migeot
+|Ordre=4}}
+
+Un '''protocole pluriprofessionnel''' est l'expression d'un consensus concernant la prise en charge d’une maladie aigue ou chronique, par plusieurs professionnels, au sein d’une structure de soins ou sur un territoire, et en fonction de l'état de la science du moment. Il comporte des '''aide-mémoires''', des '''checklists''', des '''aides à la prescription''' et facilite le '''travail en équipe'''. Il permet de valider l'obligation de développement professionnel continu (DPC).
+
+Figure 2 : Exemple de protocole de soins pluriprofessionnel - Maison médicale de la Plaine, Val-de-Reuil – source : Faculté de Rouen – Les ateliers de l’exercice coordonné - mars 2018
+[[Fichier:Item 6 Fig 2.png|vignette]]
+<br />",1.0,19.16857142857143,False,True,0.7318450212478638,0.7542717655499777,True,4,False
+32,OIC-006-04-B,Quel élément n'est pas inclus dans un protocole pluriprofessionnel?,Aide-mémoire,Checklist,Aide à la prescription,Formation continue des professionnels,d,"{{objectif de connaissance
+|Identifiant=OIC-006-04-B
+|Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Item_parent_short=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Rang=B
+|Intitulé=Protocoles pluriprofessionnels : connaître la définition, les objectifs et les enjeux des protocoles pluriprofessionnels
+|Description=Transfert de tache
+|Rubrique=Définition
+|Contributeurs=Virginie Migeot
+|Ordre=4}}
+
+Un '''protocole pluriprofessionnel''' est l'expression d'un consensus concernant la prise en charge d’une maladie aigue ou chronique, par plusieurs professionnels, au sein d’une structure de soins ou sur un territoire, et en fonction de l'état de la science du moment. Il comporte des '''aide-mémoires''', des '''checklists''', des '''aides à la prescription''' et facilite le '''travail en équipe'''. Il permet de valider l'obligation de développement professionnel continu (DPC).
+
+Figure 2 : Exemple de protocole de soins pluriprofessionnel - Maison médicale de la Plaine, Val-de-Reuil – source : Faculté de Rouen – Les ateliers de l’exercice coordonné - mars 2018
+[[Fichier:Item 6 Fig 2.png|vignette]]
+<br />",1.0,11.520000000000003,False,True,0.7170367240905762,0.5941903988520304,True,3,False
+33,OIC-006-05-A,Quelle est la définition des réunions de concertation pluridisciplinaire (RCP)?,Réunions entre deux médecins de la même spécialité pour discuter d'un cas particulier,Réunions entre au moins trois médecins de spécialités différentes pour prendre une décision sur la meilleure prise en charge d'un patient,Réunions entre un médecin et un infirmier pour discuter des soins à apporter à un patient,Réunions entre un médecin et un pharmacien pour discuter des traitements à prescrire,b,"{{objectif de connaissance
+|Identifiant=OIC-006-05-A
+|Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Item_parent_short=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Rang=A
+|Intitulé=Réunions de concertation pluridisciplinaire (RCP) : connaître les principes et les objectifs d’une RCP
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Virginie Migeot
+|Ordre=5}}
+
+<br />Les réunions de concertation pluridisciplinaire (RCP) sont des réunions '''collégiales''' qui regroupent '''au moins trois médecins de spécialités différentes''' pour prendre une décision sur la meilleure prise en charge d’un patient et en fonction de l'état de la science du moment. Les RCP permettent de valider l'obligation de développement professionnel continu (DPC).
+
+Systématiquement organisées dans le domaine de la '''cancérologie''' pour définir la stratégie diagnostique, thérapeutique et de suivi des patients atteints de cancer, elles peuvent être organisées dans d’autres domaines toutes les fois où la prise en charge du patient est complexe et nécessite l’avis concerté et collégial, garantissant la meilleure stratégie pour le patient.
+
+'''En lien avec l’item 295''' Prise en charge et accompagnement d'un malade atteint de cancer à tous les stades de la maladie dont le stade de soins palliatifs en abordant les problématiques techniques, relationnelles, sociales et éthiques.",0.5,15.45,False,True,0.77445387840271,0.8738693793614706,False,2,False
+34,OIC-006-05-A,Dans quel domaine les RCP sont-elles systématiquement organisées?,Cardiologie,Neurologie,Cancérologie,Pédiatrie,c,"{{objectif de connaissance
+|Identifiant=OIC-006-05-A
+|Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Item_parent_short=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Rang=A
+|Intitulé=Réunions de concertation pluridisciplinaire (RCP) : connaître les principes et les objectifs d’une RCP
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Virginie Migeot
+|Ordre=5}}
+
+<br />Les réunions de concertation pluridisciplinaire (RCP) sont des réunions '''collégiales''' qui regroupent '''au moins trois médecins de spécialités différentes''' pour prendre une décision sur la meilleure prise en charge d’un patient et en fonction de l'état de la science du moment. Les RCP permettent de valider l'obligation de développement professionnel continu (DPC).
+
+Systématiquement organisées dans le domaine de la '''cancérologie''' pour définir la stratégie diagnostique, thérapeutique et de suivi des patients atteints de cancer, elles peuvent être organisées dans d’autres domaines toutes les fois où la prise en charge du patient est complexe et nécessite l’avis concerté et collégial, garantissant la meilleure stratégie pour le patient.
+
+'''En lien avec l’item 295''' Prise en charge et accompagnement d'un malade atteint de cancer à tous les stades de la maladie dont le stade de soins palliatifs en abordant les problématiques techniques, relationnelles, sociales et éthiques.",1.0,15.555000000000003,False,True,0.7628717422485352,0.650576651096344,True,2,False
+35,OIC-006-06-A,Quel est l'objectif principal d'une check-list de sécurité du patient au bloc opératoire?,Améliorer la communication entre les professionnels de santé,Sécuriser la réalisation d'une intervention chirurgicale,Diminuer le temps d'attente des patients,Augmenter le nombre d'interventions chirurgicales,b,"{{objectif de connaissance
+|Identifiant=OIC-006-06-A
+|Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Item_parent_short=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Rang=A
+|Intitulé=Listes de vérification ou check-lists : connaître les principes et les objectifs des listes de vérification
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Virginie Migeot
+|Ordre=6}}
+
+La '''''check-list'' sécurité du patient au bloc opératoire''' contribuer à '''sécuriser''' la réalisation d’une intervention chirurgicale, en faisant un point entre professionnels, aux '''moments clés''' de cette intervention. Elle favorise comme dans le domaine de l’aviation, le '''partage des informations''' par la '''vérification croisée''', notamment de l'identité du patient, du type d'intervention et du site opératoire, du matériel et des risques envisagés. D’autres ''check-lists'' dans le monde médical existent pour les '''activités dites « interventionnelles''' » (endoscopie, radiologie interventionnelle, cathéters veineux centraux, chimiothérapie...).                              
+
+Figure 3 : Check list sécurité du patient au bloc opératoire - version 2018 Source HAS
+[[Fichier:Item6 Fig3.png|centré|vignette|812x812px]]
+<br />",0.42857142857142855,11.264615384615386,False,True,0.7983856201171875,0.7574090957641602,True,2,False
+36,OIC-006-06-A,À quel moment une check-list de sécurité du patient au bloc opératoire est-elle particulièrement utile?,Avant l'arrivée du patient au bloc opératoire,Lors de la réalisation de l'intervention chirurgicale,Aux moments clés de l'intervention chirurgicale,Après la sortie du patient du bloc opératoire,c,"{{objectif de connaissance
+|Identifiant=OIC-006-06-A
+|Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Item_parent_short=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Rang=A
+|Intitulé=Listes de vérification ou check-lists : connaître les principes et les objectifs des listes de vérification
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Virginie Migeot
+|Ordre=6}}
+
+La '''''check-list'' sécurité du patient au bloc opératoire''' contribuer à '''sécuriser''' la réalisation d’une intervention chirurgicale, en faisant un point entre professionnels, aux '''moments clés''' de cette intervention. Elle favorise comme dans le domaine de l’aviation, le '''partage des informations''' par la '''vérification croisée''', notamment de l'identité du patient, du type d'intervention et du site opératoire, du matériel et des risques envisagés. D’autres ''check-lists'' dans le monde médical existent pour les '''activités dites « interventionnelles''' » (endoscopie, radiologie interventionnelle, cathéters veineux centraux, chimiothérapie...).                              
+
+Figure 3 : Check list sécurité du patient au bloc opératoire - version 2018 Source HAS
+[[Fichier:Item6 Fig3.png|centré|vignette|812x812px]]
+<br />",0.5,15.433333333333337,False,True,0.7814781665802002,0.8202366630236307,False,2,False
+37,OIC-006-07-A,Quel est l'objectif principal d'une réunion de morbi-mortalité (RMM)?,Évaluer les performances individuelles des médecins,Analyser collectivement les événements indésirables associés aux soins,Organiser des formations continues pour les infirmiers,Planifier les horaires des consultations médicales,b,"{{objectif de connaissance
+|Identifiant=OIC-006-07-A
+|Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Item_parent_short=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Rang=A
+|Intitulé=Réunions de morbi-mortalité (RMM) : connaître les principes et les objectifs d’une RMM
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Virginie Migeot
+|Ordre=7}}
+
+La réunion de morbi-mortalité (RMM) est une '''réunion d'analyse collective, rétrospective et systémique''' (c'est-à-dire prenant en compte les composantes organisationnelles, techniques et humaines) de situations cliniques marquées par la survenue d'un événement indésirable associé aux soins (décès, complication…), afin de mettre en œuvre '''des actions de prévention, de récupération ou d'atténuation'''. Les RMM entrent dans le cadre de la '''culture du retour d’expérience''' ou comment apprendre collectivement de ses erreurs. Les RMM permettent de valider l'obligation de développement professionnel continu (DPC).
+
+'''Lien avec l’item 4''' Qualité et sécurité des soins. La sécurité du patient. La gestion des risques. Les événements indésirables associés aux soins (EIAS). Démarche qualité et évaluation des pratiques professionnelles",0.6,12.831111111111113,False,True,0.7435336709022522,0.6475748618443807,True,2,False
+38,OIC-006-07-A,Dans quel cadre les réunions de morbi-mortalité (RMM) entrent-elles?,Culture de la compétition entre professionnels de santé,Culture du retour d’expérience,Culture de l'isolement des erreurs médicales,Culture de la répression des erreurs,b,"{{objectif de connaissance
+|Identifiant=OIC-006-07-A
+|Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Item_parent_short=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Rang=A
+|Intitulé=Réunions de morbi-mortalité (RMM) : connaître les principes et les objectifs d’une RMM
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Virginie Migeot
+|Ordre=7}}
+
+La réunion de morbi-mortalité (RMM) est une '''réunion d'analyse collective, rétrospective et systémique''' (c'est-à-dire prenant en compte les composantes organisationnelles, techniques et humaines) de situations cliniques marquées par la survenue d'un événement indésirable associé aux soins (décès, complication…), afin de mettre en œuvre '''des actions de prévention, de récupération ou d'atténuation'''. Les RMM entrent dans le cadre de la '''culture du retour d’expérience''' ou comment apprendre collectivement de ses erreurs. Les RMM permettent de valider l'obligation de développement professionnel continu (DPC).
+
+'''Lien avec l’item 4''' Qualité et sécurité des soins. La sécurité du patient. La gestion des risques. Les événements indésirables associés aux soins (EIAS). Démarche qualité et évaluation des pratiques professionnelles",0.6666666666666666,11.520000000000003,False,True,0.720297634601593,0.703464130560557,True,2,False
+39,OIC-006-08-A,Quelle est la mission principale d'un Samu-Centre 15?,Assurer la prise en charge des patients dans les hôpitaux,Répondre aux situations d'urgence et déclencher la réponse adaptée,Organiser les transports de patients entre hôpitaux,Former les médecins régulateurs,b,"{{objectif de connaissance
+|Identifiant=OIC-006-08-A
+|Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Item_parent_short=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Rang=A
+|Intitulé=Connaître l’organisation des urgences (SAMU, SMUR, structures d’urgences et spécialisées) et la gestion d’un appel d’urgence
+|Description=None
+|Rubrique=Prise en charge
+|Contributeurs=
+|Ordre=8}}
+Les structures de médecine d’urgence comportent les '''Samu-Centre 15''', les '''services mobiles d’urgence et de réanimation (Smur)''' et les '''Services des urgences ou structures des urgences (SU)'''.
+
+
+'''Les Samu-Centre 15''' est un service hospitalier qui a pour mission de répondre aux situations d'urgence et dans cet objectif :
+
+-       assure une '''écoute médicale permanente''', 24 heures sur 24 et 7 jours sur 7,
+
+-       détermine et déclenche la '''réponse la plus adaptée''' à l'appel dans le délai le plus rapide
+
+-       s'assure de la disponibilité des moyens d'hospitalisation, publics ou privés, adaptés à l'état du patient,
+
+-       organise, le cas échéant le '''transport du patient''' et son '''accueil hospitalier'''.
+
+Par ailleurs, le Samu :
+
+-       participe à l'élaboration des plans de secours et à la prise en charge des situations sanitaires exceptionnelles,
+
+-       contribue à la formation initiale et continue des acteurs en santé au sein des '''centres d’enseignement des soins d’urgence (CESU).''' Pour assurer une écoute médicale permanente, le Samu dispose d'un '''centre de réception et de régulation des appels (CRRA)''' doté d'un '''numéro d'appel national unique''' depuis 1978, le ""15"". On parle alors de Samu-Centre 15.
+
+
+'''Gestion de l’appel en urgence :''' L'appel est initialement pris en compte par un '''assistant de régulation médicale''' (ARM) chargé d'identifier le lieu de la détresse, l'appelant et la nature de l'appel. Cet appel est ensuite pris en charge par un '''médecin régulateur (MR)''' qui, tout en questionnant l'appelant et si possible le patient lui-même, va déterminer le '''besoin de soins et engager les moyens nécessaires''' : c'est ""l'acte I"" de la régulation médicale, acte de télémédecine, reconnu au niveau réglementaire et ordinal. L'engagement de moyens peut se faire pendant le dialogue avec l'appelant, l'interrogatoire médical ne retardant pas l'intervention d'une équipe, qui est déclenchée pendant que la discussion se poursuit. Le MR a également un '''rôle de conseil''' auprès d'un témoin ou du patient lui-même sur des gestes à faire avant l'arrivée des moyens secouristes et/ou sanitaires : cette aide aux gestes par téléphone, à laquelle ARM et MR sont formés, est particulièrement importante lors d'un arrêt cardiaque par exemple. La suite de l'intervention (""acte II"" de la régulation médicale) est assurée par les ARM et les MR afin d'organiser le suivi de l’appel et si besoin, le transport et l'admission du patient en établissement de soins. A ce stade, le MR va pouvoir conseiller les équipes sur place et surtout diriger le patient dans la bonne filière de soins.
+
+'''Lien avec item 17''' Télémédecine, télésanté et téléservices en santé.
+
+
+'''Les Services Mobiles d’Urgence et de Réanimation (SMUR)''' : La mission du SMUR, déclenché par le Samu-Centre 15, est la '''prise en charge, sur place, en dehors de l'hôpital''', des détresses médicales, la réalisation de soins d'urgence avant et pendant le transport du patient vers l'établissement adapté, désigné par le Samu. Les SMUR peuvent spécialisés dans le transport d’enfants (SMUR Pédiatriques).
+
+
+'''Les Structures des urgences (SU)''' : Service hospitalier, la SU assure la '''prise en charge des "" venues non programmées,''' dans un établissement de santé public ou privé, 24 heures sur 24, tous les jours de l'année, de toute personne sans sélection, se présentant en situation d'urgence, y compris psychiatrique"". Les SU sont une porte d'entrée essentielle dans le parcours de soins. Une formalisation de l’accueil est mise en place autour de '''l'infirmière organisatrice de l'accueil''' (IOA), La SU est généralement organisée en filières de prise en charge disposant souvent de locaux et de personnels spécifiques. La salle d'accueil des urgences vitales prend en charge les patients graves. Elle est réglementaire dans une SU tout comme une filière de prise en charge pédiatrique. On retrouve habituellement aussi une filière ""courte"" de prise en charge rapide, une filière ""longue"" (patient nécessitant plusieurs examens complémentaires et devant être hospitalisé).",0.75,11.130000000000003,False,True,0.6676255464553833,0.6340081294377645,False,2,False
+40,OIC-006-08-A,Quel est le rôle d'un SMUR déclenché par le Samu-Centre 15?,Assurer l'écoute médicale permanente,Prise en charge sur place des détresses médicales et transport du patient,Organiser les transports de patients entre hôpitaux,Former les médecins régulateurs,b,"{{objectif de connaissance
+|Identifiant=OIC-006-08-A
+|Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Item_parent_short=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
+|Rang=A
+|Intitulé=Connaître l’organisation des urgences (SAMU, SMUR, structures d’urgences et spécialisées) et la gestion d’un appel d’urgence
+|Description=None
+|Rubrique=Prise en charge
+|Contributeurs=
+|Ordre=8}}
+Les structures de médecine d’urgence comportent les '''Samu-Centre 15''', les '''services mobiles d’urgence et de réanimation (Smur)''' et les '''Services des urgences ou structures des urgences (SU)'''.
+
+
+'''Les Samu-Centre 15''' est un service hospitalier qui a pour mission de répondre aux situations d'urgence et dans cet objectif :
+
+-       assure une '''écoute médicale permanente''', 24 heures sur 24 et 7 jours sur 7,
+
+-       détermine et déclenche la '''réponse la plus adaptée''' à l'appel dans le délai le plus rapide
+
+-       s'assure de la disponibilité des moyens d'hospitalisation, publics ou privés, adaptés à l'état du patient,
+
+-       organise, le cas échéant le '''transport du patient''' et son '''accueil hospitalier'''.
+
+Par ailleurs, le Samu :
+
+-       participe à l'élaboration des plans de secours et à la prise en charge des situations sanitaires exceptionnelles,
+
+-       contribue à la formation initiale et continue des acteurs en santé au sein des '''centres d’enseignement des soins d’urgence (CESU).''' Pour assurer une écoute médicale permanente, le Samu dispose d'un '''centre de réception et de régulation des appels (CRRA)''' doté d'un '''numéro d'appel national unique''' depuis 1978, le ""15"". On parle alors de Samu-Centre 15.
+
+
+'''Gestion de l’appel en urgence :''' L'appel est initialement pris en compte par un '''assistant de régulation médicale''' (ARM) chargé d'identifier le lieu de la détresse, l'appelant et la nature de l'appel. Cet appel est ensuite pris en charge par un '''médecin régulateur (MR)''' qui, tout en questionnant l'appelant et si possible le patient lui-même, va déterminer le '''besoin de soins et engager les moyens nécessaires''' : c'est ""l'acte I"" de la régulation médicale, acte de télémédecine, reconnu au niveau réglementaire et ordinal. L'engagement de moyens peut se faire pendant le dialogue avec l'appelant, l'interrogatoire médical ne retardant pas l'intervention d'une équipe, qui est déclenchée pendant que la discussion se poursuit. Le MR a également un '''rôle de conseil''' auprès d'un témoin ou du patient lui-même sur des gestes à faire avant l'arrivée des moyens secouristes et/ou sanitaires : cette aide aux gestes par téléphone, à laquelle ARM et MR sont formés, est particulièrement importante lors d'un arrêt cardiaque par exemple. La suite de l'intervention (""acte II"" de la régulation médicale) est assurée par les ARM et les MR afin d'organiser le suivi de l’appel et si besoin, le transport et l'admission du patient en établissement de soins. A ce stade, le MR va pouvoir conseiller les équipes sur place et surtout diriger le patient dans la bonne filière de soins.
+
+'''Lien avec item 17''' Télémédecine, télésanté et téléservices en santé.
+
+
+'''Les Services Mobiles d’Urgence et de Réanimation (SMUR)''' : La mission du SMUR, déclenché par le Samu-Centre 15, est la '''prise en charge, sur place, en dehors de l'hôpital''', des détresses médicales, la réalisation de soins d'urgence avant et pendant le transport du patient vers l'établissement adapté, désigné par le Samu. Les SMUR peuvent spécialisés dans le transport d’enfants (SMUR Pédiatriques).
+
+
+'''Les Structures des urgences (SU)''' : Service hospitalier, la SU assure la '''prise en charge des "" venues non programmées,''' dans un établissement de santé public ou privé, 24 heures sur 24, tous les jours de l'année, de toute personne sans sélection, se présentant en situation d'urgence, y compris psychiatrique"". Les SU sont une porte d'entrée essentielle dans le parcours de soins. Une formalisation de l’accueil est mise en place autour de '''l'infirmière organisatrice de l'accueil''' (IOA), La SU est généralement organisée en filières de prise en charge disposant souvent de locaux et de personnels spécifiques. La salle d'accueil des urgences vitales prend en charge les patients graves. Elle est réglementaire dans une SU tout comme une filière de prise en charge pédiatrique. On retrouve habituellement aussi une filière ""courte"" de prise en charge rapide, une filière ""longue"" (patient nécessitant plusieurs examens complémentaires et devant être hospitalisé).",0.4,3.7181818181818187,False,True,0.7011355757713318,0.7656688094139099,False,2,False
+41,OIC-008-02-B,Quel est l'effet principal des discriminations sur l'insertion socio-économique et l'état de santé des individus?,Amélioration de l'insertion socio-économique et de l'état de santé,Diminution de l'insertion socio-économique et de l'état de santé,Aucun effet sur l'insertion socio-économique et l'état de santé,Amélioration de l'état de santé mais pas de l'insertion socio-économique,b,"{{objectif de connaissance
+|Identifiant=OIC-008-02-B
+|Item_parent=Les discriminations
+|Item_parent_short=Les discriminations
+|Rang=B
+|Intitulé=Connaître les principaux effets des discriminations sur les inégalités sociales et inégalités de santé
+|Description=Etre victime de discrimination (liée à sa sexualité, à ses choix de vie, à son apparence physique, à son origine culturelle ...) influe négativement sur l’insertion socio-économique, son état de santé psychique et physique
+|Rubrique=Définition
+|Contributeurs=Nicolas Lechopier,Kessel Nils,
+|Ordre=2}}
+
+'''Les discriminations accentuent les déterminants sociaux de la santé'''
+
+Les inégalités sociales de santé découlent de processus historiques d'exclusion sociale et économique, fondés sur les origines, la religion, le statut socioéconomique, le genre, l'état de santé mentale, l'orientation sexuelle, etc. L'influence du milieu de vie et de l’identité sociale sur la survenue de pathologies crée le gradient social de la santé.
+
+La santé est en effet socialement déterminée : ""Les relations internationales et les politiques nationales déterminent l’organisation de la société aux niveaux national et local et donnent ainsi naissance aux statuts sociaux et à une hiérarchie, en vertu desquels les populations s’organisent selon le niveau de revenu et d’instruction, l’emploi, le sexe, l’origine ethnique et d’autres facteurs. La place des individus dans l’échelle sociale influe sur les conditions dans lesquelles ils grandissent, apprennent,vivent, travaillent et vieillissent et sur leur vulnérabilité face à la maladie et ses conséquences."" (OMS, Commission des Déterminants Sociaux de la Santé).
+
+Par exemple, les difficultés d'accès au logement ou à l'emploi, un environnement de vie pollué et bruyant, l'expérience de l'exclusion ou de l'inégalité ... Tous ces facteurs défavorables à la santé s'additionnent entre eux voire ont un effet multiplicatif.
+
+'''Les discriminations accentuent le stress'''
+
+L'expérience des discriminations contribue au stress des personnes qui les subissent, ce qui peut se traduire par une moins bonne santé cardiovasculaire. Les personnes exposées à la discrimination ethno-raciale sont en moins bonne santé d'après une méta-analyse (Paradies 2015). Cette discrimination est un facteur de risque de symptômes dépressifs, anxieux, psychotiques, mais aussi un facteur de risque de conduites suicidaires (Bardol et al. 2020). Elles peuvent s'accumuler dans l'expérience des personnes et les ""user"" (Wilkinson 2015). L'accumulation de désavantages possède une dimensions corrosive (Pelet, Charles et Dergham 2020).
+
+Les discriminations peuvent également entraîner une difficulté d'exercer pour les professionnels, notamment du fait de la mise en tension entre et les exigences déontologiques et la réalité de terrain. 
+
+'''Les discriminations contribuent largement au ""non-recours"".''' 
+
+On parle de non-recours quand les ressortissants des politiques publiques n’utilisent pas les prestations ou les services auxquels ils ont droit. Le non-recours est un phénomène massif, notamment en santé : Au-delà des facteurs liés à l'éloignement géographique, des disparités territoriales, d'une inégale littératie en santé, les discriminations peuvent y contribuer directement. Anticipant un rejet, des propos stigmatisants, une avance de frais ou un dépassement d’honoraires, les personnes issues de populations vulnérables et/ou en situation de précarité économique peuvent renoncer à se rendre chez un professionnel, retardant leur prise en charge ou aggravant leur état de santé. Au-delà de rencontrer des difficultés pour se soigner ou de faire face à des barrières qui les conduisent à ne pas accéder au soin, certaines personnes ne trouvent plus leur place dans le système de protection sociale et de santé et n’acceptent plus la nature des interactions qu’il propose (https://odenore.msh-alpes.fr/)",0.625,15.433333333333337,False,True,0.8786031007766724,0.9247738520304362,False,2,False
+42,OIC-008-02-B,Comment les discriminations peuvent-elles influencer l'accès aux soins?,En facilitant l'accès aux soins,En augmentant le recours aux soins,En diminuant le recours aux soins,En n'ayant aucun impact sur l'accès aux soins,c,"{{objectif de connaissance
+|Identifiant=OIC-008-02-B
+|Item_parent=Les discriminations
+|Item_parent_short=Les discriminations
+|Rang=B
+|Intitulé=Connaître les principaux effets des discriminations sur les inégalités sociales et inégalités de santé
+|Description=Etre victime de discrimination (liée à sa sexualité, à ses choix de vie, à son apparence physique, à son origine culturelle ...) influe négativement sur l’insertion socio-économique, son état de santé psychique et physique
+|Rubrique=Définition
+|Contributeurs=Nicolas Lechopier,Kessel Nils,
+|Ordre=2}}
+
+'''Les discriminations accentuent les déterminants sociaux de la santé'''
+
+Les inégalités sociales de santé découlent de processus historiques d'exclusion sociale et économique, fondés sur les origines, la religion, le statut socioéconomique, le genre, l'état de santé mentale, l'orientation sexuelle, etc. L'influence du milieu de vie et de l’identité sociale sur la survenue de pathologies crée le gradient social de la santé.
+
+La santé est en effet socialement déterminée : ""Les relations internationales et les politiques nationales déterminent l’organisation de la société aux niveaux national et local et donnent ainsi naissance aux statuts sociaux et à une hiérarchie, en vertu desquels les populations s’organisent selon le niveau de revenu et d’instruction, l’emploi, le sexe, l’origine ethnique et d’autres facteurs. La place des individus dans l’échelle sociale influe sur les conditions dans lesquelles ils grandissent, apprennent,vivent, travaillent et vieillissent et sur leur vulnérabilité face à la maladie et ses conséquences."" (OMS, Commission des Déterminants Sociaux de la Santé).
+
+Par exemple, les difficultés d'accès au logement ou à l'emploi, un environnement de vie pollué et bruyant, l'expérience de l'exclusion ou de l'inégalité ... Tous ces facteurs défavorables à la santé s'additionnent entre eux voire ont un effet multiplicatif.
+
+'''Les discriminations accentuent le stress'''
+
+L'expérience des discriminations contribue au stress des personnes qui les subissent, ce qui peut se traduire par une moins bonne santé cardiovasculaire. Les personnes exposées à la discrimination ethno-raciale sont en moins bonne santé d'après une méta-analyse (Paradies 2015). Cette discrimination est un facteur de risque de symptômes dépressifs, anxieux, psychotiques, mais aussi un facteur de risque de conduites suicidaires (Bardol et al. 2020). Elles peuvent s'accumuler dans l'expérience des personnes et les ""user"" (Wilkinson 2015). L'accumulation de désavantages possède une dimensions corrosive (Pelet, Charles et Dergham 2020).
+
+Les discriminations peuvent également entraîner une difficulté d'exercer pour les professionnels, notamment du fait de la mise en tension entre et les exigences déontologiques et la réalité de terrain. 
+
+'''Les discriminations contribuent largement au ""non-recours"".''' 
+
+On parle de non-recours quand les ressortissants des politiques publiques n’utilisent pas les prestations ou les services auxquels ils ont droit. Le non-recours est un phénomène massif, notamment en santé : Au-delà des facteurs liés à l'éloignement géographique, des disparités territoriales, d'une inégale littératie en santé, les discriminations peuvent y contribuer directement. Anticipant un rejet, des propos stigmatisants, une avance de frais ou un dépassement d’honoraires, les personnes issues de populations vulnérables et/ou en situation de précarité économique peuvent renoncer à se rendre chez un professionnel, retardant leur prise en charge ou aggravant leur état de santé. Au-delà de rencontrer des difficultés pour se soigner ou de faire face à des barrières qui les conduisent à ne pas accéder au soin, certaines personnes ne trouvent plus leur place dans le système de protection sociale et de santé et n’acceptent plus la nature des interactions qu’il propose (https://odenore.msh-alpes.fr/)",1.0,14.080000000000002,False,True,0.7885671854019165,0.8228418429692587,True,3,False
+43,OIC-008-03-B,Quel est un facteur structurel qui peut entraîner des discriminations en santé?,La vigilance des soignants,Le rapport de pouvoir asymétrique dans le soin,La diversité des pratiques,L'absence de discrimination,b,"{{objectif de connaissance
+|Identifiant=OIC-008-03-B
+|Item_parent=Les discriminations
+|Item_parent_short=Les discriminations
+|Rang=B
+|Intitulé=Connaître les discriminations et leurs formes dans le système de santé
+|Description=Causes structurelles et organisationnelles des discriminations en santé
+|Rubrique=Définition
+|Contributeurs=Lechopier Nicolas,Kessel Nils
+|Ordre=3}}
+
+Les discriminations sont dues, non seulement à des représentations sociales ou à un défaut de vigilance des soignants. Elles renvoient à des dysfonctionnements dans le système de santé, un défaut de prise en charge ou un abaissement de la qualité des soins.
+
+Plusieurs facteurs structurels et organisationnels ont été identifiés et sont listés dans la publication de Migration Santé Alsace (Vers plus d’égalité en santé : guide de prévention et de lutte contre les discriminations, 2019). 
+
+1) Rapport de pouvoir asymétrique dans le soin. Les patients peuvent se sentir illégitimes, et donc ne pas poser de question ou exprimer leurs préférences.
+
+2) Hétérogénéité de pratiques. Certaines équipes de soin n'ont pas les conditions suffisantes pour réfléchir aux dysfonctionnement qui peuvent entraîner des discriminations.
+
+3) Inégalités territoriales de l’offre de soin. Dans une situation de désertification de l'offre de soin ou de pénurie, le refus de soin n'est pas réparti équitablement.
+
+4) Manque de coordination, qui explique que des soignants renoncent à prendre en charge certaines patients jugés plus difficiles à soigner.
+
+5) Recours insuffisant à l’interprétariat professionnel, alors que la difficulté à soigner en l'absence de langue commune.
+
+6) Logiques économiques en tension avec les objectifs de soins : la course à la rentabilité peut renforcer l'orientation différentielle des patients, et le fait de moins bien traiter les patients dont on pense qu'ils pourraient être plus compliqués. 
+
+https://www.migrationssante.org/axes-dintervention/discriminations-et-sante/guide/<br />",1.0,9.740000000000002,False,True,0.8726146221160889,0.6967696150143942,True,2,False
+44,OIC-008-03-B,Quel facteur organisationnel peut expliquer le refus de soin non réparti équitablement?,La pénurie de soignants,L'inégalité territoriale de l'offre de soin,Le manque de coordination,Le recours à l'interprétariat professionnel,b,"{{objectif de connaissance
+|Identifiant=OIC-008-03-B
+|Item_parent=Les discriminations
+|Item_parent_short=Les discriminations
+|Rang=B
+|Intitulé=Connaître les discriminations et leurs formes dans le système de santé
+|Description=Causes structurelles et organisationnelles des discriminations en santé
+|Rubrique=Définition
+|Contributeurs=Lechopier Nicolas,Kessel Nils
+|Ordre=3}}
+
+Les discriminations sont dues, non seulement à des représentations sociales ou à un défaut de vigilance des soignants. Elles renvoient à des dysfonctionnements dans le système de santé, un défaut de prise en charge ou un abaissement de la qualité des soins.
+
+Plusieurs facteurs structurels et organisationnels ont été identifiés et sont listés dans la publication de Migration Santé Alsace (Vers plus d’égalité en santé : guide de prévention et de lutte contre les discriminations, 2019). 
+
+1) Rapport de pouvoir asymétrique dans le soin. Les patients peuvent se sentir illégitimes, et donc ne pas poser de question ou exprimer leurs préférences.
+
+2) Hétérogénéité de pratiques. Certaines équipes de soin n'ont pas les conditions suffisantes pour réfléchir aux dysfonctionnement qui peuvent entraîner des discriminations.
+
+3) Inégalités territoriales de l’offre de soin. Dans une situation de désertification de l'offre de soin ou de pénurie, le refus de soin n'est pas réparti équitablement.
+
+4) Manque de coordination, qui explique que des soignants renoncent à prendre en charge certaines patients jugés plus difficiles à soigner.
+
+5) Recours insuffisant à l’interprétariat professionnel, alors que la difficulté à soigner en l'absence de langue commune.
+
+6) Logiques économiques en tension avec les objectifs de soins : la course à la rentabilité peut renforcer l'orientation différentielle des patients, et le fait de moins bien traiter les patients dont on pense qu'ils pourraient être plus compliqués. 
+
+https://www.migrationssante.org/axes-dintervention/discriminations-et-sante/guide/<br />",1.0,13.673333333333336,False,True,0.6862176656723022,0.662756621837616,False,2,False
+45,OIC-009-01-A,Quelle est la principale différence entre l'éthique et la morale?,"L'éthique est une compétence réflexive, tandis que la morale est une norme prescriptive","L'éthique est une norme prescriptive, tandis que la morale est une compétence réflexive","L'éthique est une compétence réflexive, tandis que la morale est une compétence argumentative","L'éthique est une norme prescriptive, tandis que la morale est une norme argumentative",a,"{{objectif de connaissance
+|Identifiant=OIC-009-01-A
+|Item_parent=Introduction à l’éthique médicale
+|Item_parent_short=Introduction à l’éthique médicale
+|Rang=A
+|Intitulé=Connaître la définition de l’éthique
+|Description=L'éthique : notion philosophique qui entend interroger et cerner la conduite juste. En médecine : l'interrogation, en vue de leur justification argumentée, des principes, valeurs et règles des actions du praticien et du chercheur
+|Rubrique=Définition
+|Contributeurs=Guillaume Grandazzi, Mylène Gouriot, Grégoire Moutel
+|Ordre=1}}<br />
+
+=== Sens et définition de la démarche éthique, différente de la morale et de la déontologie ===
+L’éthique est une compétence des individus à réfléchir de façon critique sur la dimension morale de leurs actions et pratiques individuelles et collectives. C’est une capacité réflexive qui permet de questionner la moralité de ses actes et d’interroger la pertinence des valeurs, normes et règles qui enjoignent d’agir de telle ou telle façon. Elle est une compétence qui permet de remettre la morale en question, car elle est à la fois lieu de production des normes morales et lieu de leur remise en question. Là où la morale apporte des réponses et restreint la liberté, l’éthique permet de questionner ses choix, d’arbitrer entre des obligations morales contradictoires. L’éthique reconnait le pluralisme moral (des valeurs) mais aussi la nécessité de s’entendre au-delà de ce pluralisme, par le recours à la raison et la discussion dans un contexte démocratique.
+
+Les questions induites dans la pratique médicale par l'évolution de la science et de notre société (droits des patients, accès aux soins, conception de la famille, usage de la génétique, conservation des gamètes et des embryons, prélèvements d'organes, informatisation des données du dossier médical, recherche biomédicale, perte d'autonomie, fin de la vie, etc.) imposent une réflexion individuelle et collective qui permet de penser les conséquences bonnes ou mauvaises des décisions et d'arbitrer des choix parfois complexes dans les pratiques de soins ou l'organisation du système de santé.
+
+Chaque décision relève aujourd'hui d'un arbitrage pluridisciplinaire entre les données scientifiques médicales, les droits des personnes (protection des personnes, information, consentement), les désirs individuels, les valeurs et normes collectives et les contraintes économiques qui guident notre société.
+
+La démarche éthique vise à organiser, face à chaque situation, la façon dont sont prises les décisions en fonction de ces différents éléments, parfois contradictoires. L'éthique n'est donc pas un jugement de valeur (comme la morale qui prescrit ou interdit), ni un code de bonnes pratiques souvent rattachées à des règles de droit (comme la déontologie), mais une démarche de réflexion et d’analyse permettant une aide à la décision. Ces distinctions sont importantes. La morale reflète l'état de pensée d'une société (ou d'une partie de la société) à un moment donné ou traduit un dogme. Elle découle d'un ensemble de principes qui déterminent le bien au sens d'Aristote : elle est normative, approuve ou réprouve, récompense ou sanctionne. La déontologie réunit, au sein d'un code, les règles de bonnes pratiques professionnelles qui balisent la relation soignant-soigné. Elle définit un cadre pour la responsabilité professionnelle et découle de principes issus du serment d'Hippocrate et de textes législatifs régissant la pratique médicale. Le droit, quant à lui, englobe l'ensemble des règles qui régissent notre société, les obligations et devoirs de chacun. Appliqué au système de soins et de santé publique, on parle de droit de la santé. Il émane de nombreux textes législatifs (loi sur les droits des patients, lois de bioéthique, lois organisant le système de santé…) et trouve place dans des codes (Code de santé publique, Code civil, Code pénal). Il est conçu pour gérer les conflits, décider de sanctions et d'indemnisations. Son application relève de la Justice. Déontologie et droit sont intimement mêlés et peuvent évoluer au fil du temps. L'éthique, quant à elle, est une démarche. Elle a pour but de réinterroger les principes moraux et les règles déontologiques et juridiques, en particulier quand ils ne permettent pas de donner des réponses conformes aux souhaits des personnes concernées ou que la situation qui se présente n'y trouve pas de réponse. L'éthique procède ainsi d'une réflexion active, collective, interactive, sur les valeurs humaines et sur les tensions entre des volontés et d'autres logiques. Elle étudie les valeurs, les tensions, les critères de choix et les différents scénarii possibles. Elle fonctionne par argumentations et débats. Dans la pratique médicale, elle est essentielle, car elle aide à guider les choix vers des décisions concrètes qui concernent au premier plan une personne singulière : le patient.
+
+En tant que questionnement sur la manière dont nous devons agir, l’éthique est donc avant tout une réflexion pluridisciplinaire, au sens où l’ensemble des sciences humaines, le droit, les sciences de la santé et les professionnels du soin participent à la construction de la réflexion par leurs apports variés concernant tant la personne que la société et ses institutions. C’est pourquoi l’éthique n’est pas au sens strict du terme une science, elle ne fait pas l’objet d’un savoir positif, elle ne résulte pas simplement de l’étude des faits et des comportements. Une telle étude, si elle présente un réel intérêt, ne peut suffire pour établir des valeurs ; décrire et expliquer ce qui est, ne suffit pas pour définir ce qui doit être.
+
+=== Ethique de la responsabilité et éthique appliquée ===
+Dans l'éthique de la responsabilité, il s'agit d'aller plus loin en se sentant responsable de toutes les conséquences de nos actes, avec en particulier la nécessité d'une analyse critique d'une règle ou d'une décision si celles-ci ne sont pas acceptées par tous ou adaptées pour tous, ''a fortiori'' si on sait qu'elles peuvent avoir des conséquences néfastes sur l'équilibre d'une personne ou d'un groupe de personnes. Ainsi, l'éthique de la responsabilité débouche sur la volonté d'agir non pas par des choix automatiques, mais à chaque fois de manière singulière et raisonnée, en faveur d'une approche conséquentialiste.
+
+Cela impose de maximiser la connaissance des conséquences des choix et des actions. Ainsi, comme l'exige l'objectif de la responsabilité, toute éthique anticipative devient une branche de la recherche avec une obligation d'analyse collective qu'il convient de cultiver en suscitant la coopération de nombreux experts dans les domaines les plus divers, invitant le plus souvent à une approche de logiques croisées, pluridisciplinaires. Mais il convient aussi de débattre avec les personnes concernées, les patients ou plus largement les citoyens. Il y a donc nécessité que toute décision impliquant l'avenir d'une ou de plusieurs personnes, ''a fortiori'' de tous, soit au cœur d'une démarche qui regarde les conséquences futures, partageant les informations sur les bénéfices, les doutes, les incertitudes et les risques. Toute pratique qui comporte risque ou incertitude, pouvant mettre en cause une valeur particulière de l'humain, doit être débattue.
+
+Cette approche s'applique totalement au domaine médical. Compte tenu des nombreux bouleversements qu'induit la médecine sur le cours de nos vies et sur l'organisation de la société (qualité de vie, avenir de la personne, handicap, mort, souffrance, procréation, dépistage et prédiction, etc.), la question d'un biopouvoir sur les individus a été posée et aujourd'hui, les risques et les pratiques médicales sont regardés à la loupe.
+
+Si l'on souhaite promouvoir une démarche démocratique autour des questions de santé et promouvoir la liberté et la responsabilité des personnes dans ce domaine, il est nécessaire de lier progrès médical et reconnaissance des attentes sociales. Cette liaison est particulièrement importante dès que l'on touche à des pratiques ayant un fort impact sur la vie des citoyens, d'autant plus si les bénéfices sont débattus et/ou qu'il existe des risques.
+
+C’est pourquoi l’éthique en santé se veut pratique, opérationnelle, c'est à dire une éthique qui ne soit pas que conceptuelle, mais qui débouche sur des avis permettant de guider l'action et les choix. C'est pourquoi on parle d'éthique appliquée.
+
+L’éthique appliquée se fonde soit sur des analyses descriptives de cas, soit sur des enquêtes de situations, sur des études sociologiques ou ethno-médicales. Elle propose d'une part l'analyse de pratiques professionnelles, visant à aborder les attitudes et les comportements de tous les acteurs concernés face à une situation qui pose problème, et d'autre part une argumentation sur les conséquences des différents choix possibles. Quand elle s'applique à des cas particuliers, on parle de « micro-éthique », et quand il s'agit de choix de société ou de politiques de soins, on parle de « macro-éthique ». L’éthique appliquée vise à guider la prise de décision.",1.0,11.91,False,True,0.7753559350967407,0.9548113942146301,False,2,False
+46,OIC-009-01-A,Quelle est la principale différence entre l'éthique et la déontologie?,"L'éthique est une compétence réflexive, tandis que la déontologie est un code de bonnes pratiques","L'éthique est un code de bonnes pratiques, tandis que la déontologie est une compétence réflexive","L'éthique est une compétence réflexive, tandis que la déontologie est une norme prescriptive","L'éthique est une norme prescriptive, tandis que la déontologie est une compétence réflexive",c,"{{objectif de connaissance
+|Identifiant=OIC-009-01-A
+|Item_parent=Introduction à l’éthique médicale
+|Item_parent_short=Introduction à l’éthique médicale
+|Rang=A
+|Intitulé=Connaître la définition de l’éthique
+|Description=L'éthique : notion philosophique qui entend interroger et cerner la conduite juste. En médecine : l'interrogation, en vue de leur justification argumentée, des principes, valeurs et règles des actions du praticien et du chercheur
+|Rubrique=Définition
+|Contributeurs=Guillaume Grandazzi, Mylène Gouriot, Grégoire Moutel
+|Ordre=1}}<br />
+
+=== Sens et définition de la démarche éthique, différente de la morale et de la déontologie ===
+L’éthique est une compétence des individus à réfléchir de façon critique sur la dimension morale de leurs actions et pratiques individuelles et collectives. C’est une capacité réflexive qui permet de questionner la moralité de ses actes et d’interroger la pertinence des valeurs, normes et règles qui enjoignent d’agir de telle ou telle façon. Elle est une compétence qui permet de remettre la morale en question, car elle est à la fois lieu de production des normes morales et lieu de leur remise en question. Là où la morale apporte des réponses et restreint la liberté, l’éthique permet de questionner ses choix, d’arbitrer entre des obligations morales contradictoires. L’éthique reconnait le pluralisme moral (des valeurs) mais aussi la nécessité de s’entendre au-delà de ce pluralisme, par le recours à la raison et la discussion dans un contexte démocratique.
+
+Les questions induites dans la pratique médicale par l'évolution de la science et de notre société (droits des patients, accès aux soins, conception de la famille, usage de la génétique, conservation des gamètes et des embryons, prélèvements d'organes, informatisation des données du dossier médical, recherche biomédicale, perte d'autonomie, fin de la vie, etc.) imposent une réflexion individuelle et collective qui permet de penser les conséquences bonnes ou mauvaises des décisions et d'arbitrer des choix parfois complexes dans les pratiques de soins ou l'organisation du système de santé.
+
+Chaque décision relève aujourd'hui d'un arbitrage pluridisciplinaire entre les données scientifiques médicales, les droits des personnes (protection des personnes, information, consentement), les désirs individuels, les valeurs et normes collectives et les contraintes économiques qui guident notre société.
+
+La démarche éthique vise à organiser, face à chaque situation, la façon dont sont prises les décisions en fonction de ces différents éléments, parfois contradictoires. L'éthique n'est donc pas un jugement de valeur (comme la morale qui prescrit ou interdit), ni un code de bonnes pratiques souvent rattachées à des règles de droit (comme la déontologie), mais une démarche de réflexion et d’analyse permettant une aide à la décision. Ces distinctions sont importantes. La morale reflète l'état de pensée d'une société (ou d'une partie de la société) à un moment donné ou traduit un dogme. Elle découle d'un ensemble de principes qui déterminent le bien au sens d'Aristote : elle est normative, approuve ou réprouve, récompense ou sanctionne. La déontologie réunit, au sein d'un code, les règles de bonnes pratiques professionnelles qui balisent la relation soignant-soigné. Elle définit un cadre pour la responsabilité professionnelle et découle de principes issus du serment d'Hippocrate et de textes législatifs régissant la pratique médicale. Le droit, quant à lui, englobe l'ensemble des règles qui régissent notre société, les obligations et devoirs de chacun. Appliqué au système de soins et de santé publique, on parle de droit de la santé. Il émane de nombreux textes législatifs (loi sur les droits des patients, lois de bioéthique, lois organisant le système de santé…) et trouve place dans des codes (Code de santé publique, Code civil, Code pénal). Il est conçu pour gérer les conflits, décider de sanctions et d'indemnisations. Son application relève de la Justice. Déontologie et droit sont intimement mêlés et peuvent évoluer au fil du temps. L'éthique, quant à elle, est une démarche. Elle a pour but de réinterroger les principes moraux et les règles déontologiques et juridiques, en particulier quand ils ne permettent pas de donner des réponses conformes aux souhaits des personnes concernées ou que la situation qui se présente n'y trouve pas de réponse. L'éthique procède ainsi d'une réflexion active, collective, interactive, sur les valeurs humaines et sur les tensions entre des volontés et d'autres logiques. Elle étudie les valeurs, les tensions, les critères de choix et les différents scénarii possibles. Elle fonctionne par argumentations et débats. Dans la pratique médicale, elle est essentielle, car elle aide à guider les choix vers des décisions concrètes qui concernent au premier plan une personne singulière : le patient.
+
+En tant que questionnement sur la manière dont nous devons agir, l’éthique est donc avant tout une réflexion pluridisciplinaire, au sens où l’ensemble des sciences humaines, le droit, les sciences de la santé et les professionnels du soin participent à la construction de la réflexion par leurs apports variés concernant tant la personne que la société et ses institutions. C’est pourquoi l’éthique n’est pas au sens strict du terme une science, elle ne fait pas l’objet d’un savoir positif, elle ne résulte pas simplement de l’étude des faits et des comportements. Une telle étude, si elle présente un réel intérêt, ne peut suffire pour établir des valeurs ; décrire et expliquer ce qui est, ne suffit pas pour définir ce qui doit être.
+
+=== Ethique de la responsabilité et éthique appliquée ===
+Dans l'éthique de la responsabilité, il s'agit d'aller plus loin en se sentant responsable de toutes les conséquences de nos actes, avec en particulier la nécessité d'une analyse critique d'une règle ou d'une décision si celles-ci ne sont pas acceptées par tous ou adaptées pour tous, ''a fortiori'' si on sait qu'elles peuvent avoir des conséquences néfastes sur l'équilibre d'une personne ou d'un groupe de personnes. Ainsi, l'éthique de la responsabilité débouche sur la volonté d'agir non pas par des choix automatiques, mais à chaque fois de manière singulière et raisonnée, en faveur d'une approche conséquentialiste.
+
+Cela impose de maximiser la connaissance des conséquences des choix et des actions. Ainsi, comme l'exige l'objectif de la responsabilité, toute éthique anticipative devient une branche de la recherche avec une obligation d'analyse collective qu'il convient de cultiver en suscitant la coopération de nombreux experts dans les domaines les plus divers, invitant le plus souvent à une approche de logiques croisées, pluridisciplinaires. Mais il convient aussi de débattre avec les personnes concernées, les patients ou plus largement les citoyens. Il y a donc nécessité que toute décision impliquant l'avenir d'une ou de plusieurs personnes, ''a fortiori'' de tous, soit au cœur d'une démarche qui regarde les conséquences futures, partageant les informations sur les bénéfices, les doutes, les incertitudes et les risques. Toute pratique qui comporte risque ou incertitude, pouvant mettre en cause une valeur particulière de l'humain, doit être débattue.
+
+Cette approche s'applique totalement au domaine médical. Compte tenu des nombreux bouleversements qu'induit la médecine sur le cours de nos vies et sur l'organisation de la société (qualité de vie, avenir de la personne, handicap, mort, souffrance, procréation, dépistage et prédiction, etc.), la question d'un biopouvoir sur les individus a été posée et aujourd'hui, les risques et les pratiques médicales sont regardés à la loupe.
+
+Si l'on souhaite promouvoir une démarche démocratique autour des questions de santé et promouvoir la liberté et la responsabilité des personnes dans ce domaine, il est nécessaire de lier progrès médical et reconnaissance des attentes sociales. Cette liaison est particulièrement importante dès que l'on touche à des pratiques ayant un fort impact sur la vie des citoyens, d'autant plus si les bénéfices sont débattus et/ou qu'il existe des risques.
+
+C’est pourquoi l’éthique en santé se veut pratique, opérationnelle, c'est à dire une éthique qui ne soit pas que conceptuelle, mais qui débouche sur des avis permettant de guider l'action et les choix. C'est pourquoi on parle d'éthique appliquée.
+
+L’éthique appliquée se fonde soit sur des analyses descriptives de cas, soit sur des enquêtes de situations, sur des études sociologiques ou ethno-médicales. Elle propose d'une part l'analyse de pratiques professionnelles, visant à aborder les attitudes et les comportements de tous les acteurs concernés face à une situation qui pose problème, et d'autre part une argumentation sur les conséquences des différents choix possibles. Quand elle s'applique à des cas particuliers, on parle de « micro-éthique », et quand il s'agit de choix de société ou de politiques de soins, on parle de « macro-éthique ». L’éthique appliquée vise à guider la prise de décision.",1.0,13.09,False,True,0.7780860662460327,0.9615965684254965,False,2,True
+47,OIC-009-02-A,Quelle est la définition principale de la bioéthique selon le contenu éducatif?,Une branche de la médecine qui traite des maladies infectieuses,Un domaine de recherche philosophique et juridique concernant les sciences de la vie et la santé,Une méthode de diagnostic médical basée sur l'imagerie,Un type de chirurgie orthopédique,b,"{{objectif de connaissance
+|Identifiant=OIC-009-02-A
+|Item_parent=Introduction à l’éthique médicale
+|Item_parent_short=Introduction à l’éthique médicale
+|Rang=A
+|Intitulé=Connaître la définition de la bioéthique
+|Description=Domaine de recherches philosophiques, de débats publics et de règles juridiques concernant l'éthique de la recherche, le développement et l’usage des techniques dans les sciences de la vie et le champ de la santé, les pratiques biomédicales
+|Rubrique=Définition
+|Contributeurs=Guillaume Grandazzi, Mylène Gouriot, Grégoire Moutel
+|Ordre=2}}
+
+
+
+L’émergence de la bioéthique dans la seconde moitié du 20<sup>e</sup> siècle s’inscrit dans un mouvement plus vaste de questionnement sur les sciences et les techniques, sur l’accroissement de nos capacités d’action et les nouvelles dimensions de notre responsabilité.
+
+V.R. Potter, biologiste et cancérologue, qui « inventa » le terme bioéthique au début des années 70, la voyait comme « une éthique globale pour la survie de l’être humain et de la planète ». Il souhaitait une alliance entre sciences biologiques et éthique, entre sciences et humanités, et un contrôle social des savoirs et des progrès scientifiques.
+
+La création en 1971 du ''Kennedy Institute of Ethics'' à l’université de Georgetown aux Etats-Unis a toutefois restreint la bioéthique au domaine médical. La sociologue américaine R. Fox a distingué trois étapes dans le développement de la bioéthique. Dans les années 60, celui-ci s’inscrit d’abord dans le cadre d’une prise de conscience des problèmes (expérimentation médicale, réanimation et transplantations d’organes…), et les acteurs religieux vont investir le champ de la réflexion. Dans les années 70, juristes et philosophes vont séculariser la réflexion et contribuer à l’élaboration de cadres réglementaires : la nécessité d’une réflexion rationnelle et argumentative et la reconnaissance de principes fondamentaux vont être mises en avant. Dans les années 90, les questions et préoccupations économiques s’invitent dans les débats et les enjeux de justice apparaissent de plus en plus importants dans un contexte de ressources de plus en plus contraintes.
+
+Dans les dernières décennies, les questions soulevées par les progrès médicaux (procréation, génétique, médecine prédictive, neurosciences, intelligence artificielle…) portent de plus en plus sur la définition et le devenir de notre humanité. Ainsi, le slogan des Etats Généraux de la Bioéthique en 2018 était-il « ''Quel monde voulons-nous pour demain ?'' »
+
+En effet, l’évolution contemporaine de la médecine a déplacé les frontières de l’intervention thérapeutique : en amont de la maladie (dépistages, prévention, procréation…) et en aval (fin de vie, réanimation, transplantations d’organes…). Dans la plupart de ces domaines, les enjeux sont autant, voire davantage, sociétaux que médicaux ! L’intervention de la médecine aux frontières de l’existence accroit le champ de notre responsabilité collective et transforme les pratiques médicales en problèmes de société à forts enjeux moraux (qui doit naître et mourir et dans quelles conditions ?). Ainsi, les questions soulevées par ces pratiques doivent être discutées de façon rationnelle et pluraliste.
+
+Par ailleurs, la mondialisation de la biomédecine occidentale mondialise également les questions éthiques associées à son développement. En 2005, l’UNESCO publiait une ''Déclaration universelle sur la bioéthique et les droits de l’homme'', et en 2015 un ouvrage intitulé ''Pourquoi une bioéthique globale ?'' En 2005, la World Medical Association publiait un ''Manuel d’éthique médicale'' destiné aux « médecins et étudiants en médecine du monde entier ».
+
+La bioéthique devrait ainsi suivre le développement de la biomédecine à travers le monde et s’imposer comme modèle. Mais ce sont les valeurs occidentales que l’on cherche à diffuser internationalement, soit certaines conceptions de la maladie, de la vie et de la mort, ou des principes comme celui d’autonomie, dans des contextes socio-culturels très différents. Une bioéthique globale ou universelle est-elle possible sans se transformer en imposition d’une pensée dominante ?
+
+Aujourd’hui, contrairement à la vision qu’en avait V.R. Potter, la bioéthique constitue donc un sous-ensemble de l’éthique en santé ; elle concerne les questions soulevées par l’émergence des nouvelles biotechnologies et les questions que posent l’application à l’homme de ces avancées scientifiques. Elle a ainsi pour objet d’explorer des questions suscitées par l’avancement et l’application des technosciences biomédicales, et d'analyser le passage entre ce « qui est possible » et « ce qui doit être ».",1.0,13.673333333333336,False,True,0.7793201804161072,0.6627693772315979,True,2,False
+48,OIC-009-02-A,Quel est l'un des principaux enjeux de la bioéthique dans les dernières décennies selon le contenu éducatif?,La gestion des stocks de médicaments,La définition et le devenir de notre humanité,La création de nouveaux vaccins,L'optimisation des traitements contre le cancer,b,"{{objectif de connaissance
+|Identifiant=OIC-009-02-A
+|Item_parent=Introduction à l’éthique médicale
+|Item_parent_short=Introduction à l’éthique médicale
+|Rang=A
+|Intitulé=Connaître la définition de la bioéthique
+|Description=Domaine de recherches philosophiques, de débats publics et de règles juridiques concernant l'éthique de la recherche, le développement et l’usage des techniques dans les sciences de la vie et le champ de la santé, les pratiques biomédicales
+|Rubrique=Définition
+|Contributeurs=Guillaume Grandazzi, Mylène Gouriot, Grégoire Moutel
+|Ordre=2}}
+
+
+
+L’émergence de la bioéthique dans la seconde moitié du 20<sup>e</sup> siècle s’inscrit dans un mouvement plus vaste de questionnement sur les sciences et les techniques, sur l’accroissement de nos capacités d’action et les nouvelles dimensions de notre responsabilité.
+
+V.R. Potter, biologiste et cancérologue, qui « inventa » le terme bioéthique au début des années 70, la voyait comme « une éthique globale pour la survie de l’être humain et de la planète ». Il souhaitait une alliance entre sciences biologiques et éthique, entre sciences et humanités, et un contrôle social des savoirs et des progrès scientifiques.
+
+La création en 1971 du ''Kennedy Institute of Ethics'' à l’université de Georgetown aux Etats-Unis a toutefois restreint la bioéthique au domaine médical. La sociologue américaine R. Fox a distingué trois étapes dans le développement de la bioéthique. Dans les années 60, celui-ci s’inscrit d’abord dans le cadre d’une prise de conscience des problèmes (expérimentation médicale, réanimation et transplantations d’organes…), et les acteurs religieux vont investir le champ de la réflexion. Dans les années 70, juristes et philosophes vont séculariser la réflexion et contribuer à l’élaboration de cadres réglementaires : la nécessité d’une réflexion rationnelle et argumentative et la reconnaissance de principes fondamentaux vont être mises en avant. Dans les années 90, les questions et préoccupations économiques s’invitent dans les débats et les enjeux de justice apparaissent de plus en plus importants dans un contexte de ressources de plus en plus contraintes.
+
+Dans les dernières décennies, les questions soulevées par les progrès médicaux (procréation, génétique, médecine prédictive, neurosciences, intelligence artificielle…) portent de plus en plus sur la définition et le devenir de notre humanité. Ainsi, le slogan des Etats Généraux de la Bioéthique en 2018 était-il « ''Quel monde voulons-nous pour demain ?'' »
+
+En effet, l’évolution contemporaine de la médecine a déplacé les frontières de l’intervention thérapeutique : en amont de la maladie (dépistages, prévention, procréation…) et en aval (fin de vie, réanimation, transplantations d’organes…). Dans la plupart de ces domaines, les enjeux sont autant, voire davantage, sociétaux que médicaux ! L’intervention de la médecine aux frontières de l’existence accroit le champ de notre responsabilité collective et transforme les pratiques médicales en problèmes de société à forts enjeux moraux (qui doit naître et mourir et dans quelles conditions ?). Ainsi, les questions soulevées par ces pratiques doivent être discutées de façon rationnelle et pluraliste.
+
+Par ailleurs, la mondialisation de la biomédecine occidentale mondialise également les questions éthiques associées à son développement. En 2005, l’UNESCO publiait une ''Déclaration universelle sur la bioéthique et les droits de l’homme'', et en 2015 un ouvrage intitulé ''Pourquoi une bioéthique globale ?'' En 2005, la World Medical Association publiait un ''Manuel d’éthique médicale'' destiné aux « médecins et étudiants en médecine du monde entier ».
+
+La bioéthique devrait ainsi suivre le développement de la biomédecine à travers le monde et s’imposer comme modèle. Mais ce sont les valeurs occidentales que l’on cherche à diffuser internationalement, soit certaines conceptions de la maladie, de la vie et de la mort, ou des principes comme celui d’autonomie, dans des contextes socio-culturels très différents. Une bioéthique globale ou universelle est-elle possible sans se transformer en imposition d’une pensée dominante ?
+
+Aujourd’hui, contrairement à la vision qu’en avait V.R. Potter, la bioéthique constitue donc un sous-ensemble de l’éthique en santé ; elle concerne les questions soulevées par l’émergence des nouvelles biotechnologies et les questions que posent l’application à l’homme de ces avancées scientifiques. Elle a ainsi pour objet d’explorer des questions suscitées par l’avancement et l’application des technosciences biomédicales, et d'analyser le passage entre ce « qui est possible » et « ce qui doit être ».",1.0,11.863529411764706,False,True,0.7891411781311035,0.5620471437772115,True,2,False
+49,OIC-009-03-A,Quelle est la première apparition du mot 'déontologie' en langue française?,1800,1825,1850,1900,b,"{{objectif de connaissance
+|Identifiant=OIC-009-03-A
+|Item_parent=Introduction à l’éthique médicale
+|Item_parent_short=Introduction à l’éthique médicale
+|Rang=A
+|Intitulé=Connaître la définition de la déontologie
+|Description=La déontologie médicale rassemble les éléments d'un discours sur les devoirs des médecins à l’égard des patients, des autres professionnels et de la société. Le Code de déontologie médicale sert de référence aux instances juridictionnelles de l'Ordre des médecins.
+|Rubrique=Définition
+|Contributeurs=Guillaume Grandazzi, Mylène Gouriot, Grégoire Moutel
+|Ordre=3}}
+
+C'est en 1825 que le mot ""déontologie"" apparaît pour la première fois en langue française, dans la traduction de l'ouvrage du philosophe utilitariste anglais Jeremy Bentham intitulée ""''l'Essai sur la nomenclature et la classification des principales branches d'Art et Science''"".
+
+En médecine par exemple, la déontologie sert de référence aux instances juridictionnelles de l'Ordre des médecins, mais d'abord de guide aux médecins dans leur pratique quotidienne, au service des patients.
+
+Le code de déontologie médicale n'est pas seulement établi par la profession. Si celle-ci, représentée en l'occurrence par l'Ordre national des médecins, est chargée de l'élaborer, le texte qui en découle est soumis à l'administration, au Conseil d'Etat et finalement au gouvernement, chacun ayant la charge de vérifier sa conformité avec les lois et autres règlements régissant la société où exercent les médecins et la possibilité d'y apporter des modifications. Enfin, le code est publié au Journal Officiel sous la signature du Premier ministre.
+
+Le code de déontologie précise ainsi des dispositions réglementaires concernant un exercice professionnel. Elles sont subordonnées à d'autres textes plus importants, notamment la Constitution et les lois ; elles doivent être compatibles avec d'autres décrets et commandent d'autres textes de moindre portée, en particulier les arrêtés. Comme les autres citoyens, les médecins sont soumis aux lois - concernant par exemple le respect de la vie ou le secret professionnel - mais le bon fonctionnement de leur corps professionnel est favorisé par des règles propres.
+
+* Voir le texte du code de déontologie des médecins <nowiki>https://www.conseil-national.medecin.fr/code-deontologie</nowiki>",1.0,13.372727272727271,False,True,0.7087565660476685,0.6288583079973856,True,2,False
+50,OIC-009-03-A,Qui est chargé de l'élaboration du code de déontologie médicale?,Le gouvernement,Le Conseil d'Etat,L'Ordre national des médecins,Le Premier ministre,c,"{{objectif de connaissance
+|Identifiant=OIC-009-03-A
+|Item_parent=Introduction à l’éthique médicale
+|Item_parent_short=Introduction à l’éthique médicale
+|Rang=A
+|Intitulé=Connaître la définition de la déontologie
+|Description=La déontologie médicale rassemble les éléments d'un discours sur les devoirs des médecins à l’égard des patients, des autres professionnels et de la société. Le Code de déontologie médicale sert de référence aux instances juridictionnelles de l'Ordre des médecins.
+|Rubrique=Définition
+|Contributeurs=Guillaume Grandazzi, Mylène Gouriot, Grégoire Moutel
+|Ordre=3}}
+
+C'est en 1825 que le mot ""déontologie"" apparaît pour la première fois en langue française, dans la traduction de l'ouvrage du philosophe utilitariste anglais Jeremy Bentham intitulée ""''l'Essai sur la nomenclature et la classification des principales branches d'Art et Science''"".
+
+En médecine par exemple, la déontologie sert de référence aux instances juridictionnelles de l'Ordre des médecins, mais d'abord de guide aux médecins dans leur pratique quotidienne, au service des patients.
+
+Le code de déontologie médicale n'est pas seulement établi par la profession. Si celle-ci, représentée en l'occurrence par l'Ordre national des médecins, est chargée de l'élaborer, le texte qui en découle est soumis à l'administration, au Conseil d'Etat et finalement au gouvernement, chacun ayant la charge de vérifier sa conformité avec les lois et autres règlements régissant la société où exercent les médecins et la possibilité d'y apporter des modifications. Enfin, le code est publié au Journal Officiel sous la signature du Premier ministre.
+
+Le code de déontologie précise ainsi des dispositions réglementaires concernant un exercice professionnel. Elles sont subordonnées à d'autres textes plus importants, notamment la Constitution et les lois ; elles doivent être compatibles avec d'autres décrets et commandent d'autres textes de moindre portée, en particulier les arrêtés. Comme les autres citoyens, les médecins sont soumis aux lois - concernant par exemple le respect de la vie ou le secret professionnel - mais le bon fonctionnement de leur corps professionnel est favorisé par des règles propres.
+
+* Voir le texte du code de déontologie des médecins <nowiki>https://www.conseil-national.medecin.fr/code-deontologie</nowiki>",0.6666666666666666,10.73,False,True,0.8326811790466309,0.6245671113332113,True,2,False

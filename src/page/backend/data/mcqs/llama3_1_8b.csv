@@ -1,0 +1,65 @@
+Unnamed: 0,id,question,option_a,option_b,option_c,option_d,correct_option,content_raw,originality,readability,starts_with_negation,is_question,relevance,ambiguity,disclosure,difficulty,distractor_quality
+0,OIC-005-01-A,Quel est l'objectif de la responsabilité civile professionnelle des médecins et des établissements de santé?,Assurer la sanction du professionnel ou de l'établissement,Indemniser les victimes d'événements indésirables associés aux soins,Couvrir les coûts des traitements médicaux,Favoriser la transparence dans les soins,b,"{{objectif de connaissance
+|Identifiant=OIC-005-01-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité sanction/indemnisation
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=1}}
+
+La responsabilité d’un professionnel de santé ou d’un établissement de santé peut être recherchée à deux fins : soit la sanction du professionnel ou de l’établissement, soit l’indemnisation de l’usager victime des conséquences d’un événement indésirable associé aux soins. La sanction peut être de nature pénale ou disciplinaire. L’indemnisation incombe au responsable (exercice libéral) ou à son employeur s’il est salarié (public ou privé). Elle peut également être obtenue via la procédure amiable devant les commissions de conciliation et d’indemnisation. L’indemnisation des victimes est assurée par l’obligation de souscription pour les médecins et les établissements de santé (public ou privé) d’une assurance de responsabilité civile professionnelle. En plus d’assurer l’indemnisation des victimes, cette assurance permet de couvrir les médecins salariés lorsque la faute est détachable du service ou lorsque la mission qui leur a été confiée est outrepassée.
+
+L’indemnisation de l’usager s’estimant victime des conséquences dommageables d’un acte médical suppose qu’il apporte la preuve d’un dommage, d’un fait générateur de responsabilité et d’un lien de causalité entre le fait générateur et le dommage.
+
+En matière de responsabilité des professionnels et des établissements de santé, le dommage peut prendre plusieurs formes. Il peut s’agir :
+
+- d’une atteinte à l’intégrité physique ou psychique ;
+
+- d’une perte de chance de survie ou de guérison ;
+
+- d’une perte de chance d’avoir échappé à un risque qui s’est finalement réalisé (en cas de défaut d’information).
+
+Le dommage doit être actuel et certain. Il peut être futur dès lors qu’il est certain (par exemple, la stérilité d’une enfant du fait d’une irradiation fautive).
+
+Le lien de causalité entre le fait générateur de responsabilité (en règle générale, la faute) et le dommage doit être certain. Il n’a pas à être direct ni exclusif.
+
+Parmi les éléments du triptyque fondant l’engagement de la responsabilité, le lien de causalité est habituellement le plus difficile à prouver par le patient. En effet, il est souvent complexe de distinguer les conséquences de la faute de celles de l’évolution spontanée de l’état de santé pathologique. Le juge admet que l’on puisse indemniser la perte de chance de survie ou de guérison. Dans ce cas, l’indemnisation est accordée à proportion de la probabilité de survie ou de guérison perdue du fait de la faute.
+
+Le même raisonnement est appliqué en cas de défaut d’information. Dans cette hypothèse, le patient a perdu une chance de s’échapper au risque qui s’est finalement réalisé. En d’autres termes, s’il avait été informé du risque, il aurait pu choisir de le courir ou de renoncer à l’acte médical. L’indemnisation est accordée à proportion de la probabilité qu’il aurait eu de renoncer à l’acte s’il avait été informé du risque. Il en résulte que si l’acte était indispensable, le juge en déduit que même informé du risque, le patient n’aurait pas renoncé à l’acte. La perte de chance est donc nulle.
+
+Le juge judiciaire comme le juge administratif admettent également qu’un défaut d’information ouvre droit à une indemnisation au titre du préjudice d’impréparation, distinct de la perte de chance. Cette indemnisation répare, lorsque le risque dont le patient n’a pas été informé s’est réalisé, les troubles qu’il a pu subir du fait qu’il n’a pas pu se préparer à cette éventualité, notamment en prenant certaines dispositions personnelles.",0.6666666666666666,14.646666666666672,False,True,0.8243858814239502,0.7073444525400797,False,2,False
+1,OIC-005-01-A,Quelle est la fonction répressive de la responsabilité pénale ?,Sanctionner les comportements répréhensibles dans notre société.,Protéger les droits des patients.,Favoriser l'exercice de soins de qualité.,Encourager la recherche médicale.,a,"{{objectif de connaissance
+|Identifiant=OIC-005-01-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité sanction/indemnisation
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=1}}
+
+La responsabilité d’un professionnel de santé ou d’un établissement de santé peut être recherchée à deux fins : soit la sanction du professionnel ou de l’établissement, soit l’indemnisation de l’usager victime des conséquences d’un événement indésirable associé aux soins. La sanction peut être de nature pénale ou disciplinaire. L’indemnisation incombe au responsable (exercice libéral) ou à son employeur s’il est salarié (public ou privé). Elle peut également être obtenue via la procédure amiable devant les commissions de conciliation et d’indemnisation. L’indemnisation des victimes est assurée par l’obligation de souscription pour les médecins et les établissements de santé (public ou privé) d’une assurance de responsabilité civile professionnelle. En plus d’assurer l’indemnisation des victimes, cette assurance permet de couvrir les médecins salariés lorsque la faute est détachable du service ou lorsque la mission qui leur a été confiée est outrepassée.
+
+L’indemnisation de l’usager s’estimant victime des conséquences dommageables d’un acte médical suppose qu’il apporte la preuve d’un dommage, d’un fait générateur de responsabilité et d’un lien de causalité entre le fait générateur et le dommage.
+
+En matière de responsabilité des professionnels et des établissements de santé, le dommage peut prendre plusieurs formes. Il peut s’agir :
+
+- d’une atteinte à l’intégrité physique ou psychique ;
+
+- d’une perte de chance de survie ou de guérison ;
+
+- d’une perte de chance d’avoir échappé à un risque qui s’est finalement réalisé (en cas de défaut d’information).
+
+Le dommage doit être actuel et certain. Il peut être futur dès lors qu’il est certain (par exemple, la stérilité d’une enfant du fait d’une irradiation fautive).
+
+Le lien de causalité entre le fait générateur de responsabilité (en règle générale, la faute) et le dommage doit être certain. Il n’a pas à être direct ni exclusif.
+
+Parmi les éléments du triptyque fondant l’engagement de la responsabilité, le lien de causalité est habituellement le plus difficile à prouver par le patient. En effet, il est souvent complexe de distinguer les conséquences de la faute de celles de l’évolution spontanée de l’état de santé pathologique. Le juge admet que l’on puisse indemniser la perte de chance de survie ou de guérison. Dans ce cas, l’indemnisation est accordée à proportion de la probabilité de survie ou de guérison perdue du fait de la faute.
+
+Le même raisonnement est appliqué en cas de défaut d’information. Dans cette hypothèse, le patient a perdu une chance de s’échapper au risque qui s’est finalement réalisé. En d’autres termes, s’il avait été informé du risque, il aurait pu choisir de le courir ou de renoncer à l’acte médical. L’indemnisation est accordée à proportion de la probabilité qu’il aurait eu de renoncer à l’acte s’il avait été informé du risque. Il en résulte que si l’acte était indispensable, le juge en déduit que même informé du risque, le patient n’aurait pas renoncé à l’acte. La perte de chance est donc nulle.
+
+Le juge judiciaire comme le juge administratif admettent également qu’un défaut d’information ouvre droit à une indemnisation au titre du préjudice d’impréparation, distinct de la perte de chance. Cette indemnisation répare, lorsque le risque dont le patient n’a pas été informé s’est réalisé, les troubles qu’il a pu subir du fait qu’il n’a pas pu se préparer à cette éventualité, notamment en prenant certaines dispositions personnelles.",1.0,10.73,False,True,0.7608007192611694,0.677024245262146,False,5,False

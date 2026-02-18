@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 from sys import argv
-from card import generer_mcq_multi_cartes, construire_params_depuis_csv
 
 if len(argv) >= 2:
     # Vérifier le modèle (premier paramètre)
@@ -116,7 +115,7 @@ def main():
         # Load the JSON data from the file
         system_prompts = json.load(file)
 
-    df_mcq = pd.read_csv(os.environ.get('MODEL_MCQ_PATH') + "/" + generated_qcm_file)
+    df_mcq = pd.read_csv(os.environ.get('MODEL_MCQ_PATH') + "/" + generated_qcm_file)[:100]
     if indexes:
         df_mcq = df_mcq.loc[indexes]
     df_lisa_sheets = pd.read_csv(os.environ.get('LISA_SHEETS_PATH'))
@@ -152,9 +151,6 @@ def main():
                                       merge=True # set to True if your dataframe does not have the Lisa Sheet content
                                       )
     
-
-    params_list = construire_params_depuis_csv(df_eval,model)
-    generer_mcq_multi_cartes(params_list, "mcq_cards.html")
 
     df_eval.to_csv(os.environ.get('MODEL_MCQ_EVAL_EXPORT_PATH') + "/" +  generated_qcm_file, index=False)
 

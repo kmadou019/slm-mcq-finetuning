@@ -13,7 +13,7 @@ from .security import decode_access_token
 security = HTTPBearer()
 
 # Users database file path
-USERS_DB_PATH = Path(__file__).parent.parent.parent.parent / "data" / "users.json"
+USERS_DB_PATH = Path(__file__).parent.parent.parent / "data" / "users.json"
 
 # Initialize users database
 def init_users_db():
