@@ -1,16 +1,24 @@
+import threading
 import torch
 import torch.nn.functional as F
 from transformers import AutoTokenizer, AutoModel
 
+_model_cache = {}
+_model_lock = threading.Lock()
+
 def load_model(model_name="BAAI/bge-base-en-v1.5"):
     """
-    Loads the model and tokenizer once and returns them.
+    Loads the model and tokenizer once and returns them (thread-safe).
     """
-    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
-    
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModel.from_pretrained(model_name).to(device)
-    return model, tokenizer, device
+    if model_name not in _model_cache:
+        with _model_lock:
+            if model_name not in _model_cache:  # double-checked locking
+                device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+                tokenizer = AutoTokenizer.from_pretrained(model_name)
+                model = AutoModel.from_pretrained(model_name).to(device)
+                model.eval()
+                _model_cache[model_name] = (model, tokenizer, device)
+    return _model_cache[model_name]
 
 def generate_embedding(text, model, tokenizer, device):
     """

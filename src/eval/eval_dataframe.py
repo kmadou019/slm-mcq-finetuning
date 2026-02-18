@@ -11,7 +11,7 @@ from eval.readability import calculate_readability_for_df
 from eval.relevance import calculate_relevance_for_df
 from eval.difficulty import compute_difficulty_for_df
 
-from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import ThreadPoolExecutor
 from tqdm import tqdm
 import logging
 import math
@@ -215,7 +215,7 @@ def eval_dataframe_parallel(df_mcqs: pd.DataFrame,
 
     # Process batches in parallel
     results = []
-    with ProcessPoolExecutor(max_workers=num_workers) as executor:
+    with ThreadPoolExecutor(max_workers=num_workers) as executor:
         # Use tqdm to show progress
         futures = list(tqdm(
             executor.map(process_batch, batches),

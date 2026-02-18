@@ -1,7 +1,7 @@
 {
-  "gemma2_9b": {
-    "last_assigned_index": 1,
-    "total_available": 2,
-    "assigned_count": 2
+  "apertus_8B": {
+    "last_assigned_index": -1,
+    "total_available": 100,
+    "assigned_count": 0
   }
 }

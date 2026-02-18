@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 models=(
-        "llama3_1_8b"
-        "openbiollm_8b"
-        "gemma2_9b"
+        #"llama3_1_8b"
+        #"openbiollm_8b"
+        #"gemma2_9b"
         "medGemma_4b"
         "medGemma_27b"
         "qwen3_8b"

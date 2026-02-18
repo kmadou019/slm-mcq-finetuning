@@ -7,6 +7,8 @@ from nltk import word_tokenize
 
 lemmatizer = WordNetLemmatizer()
 stop_words = set(stopwords.words('french'))
+# Force WordNet to fully load now (not lazily) to avoid thread-safety issues
+lemmatizer.lemmatize("init")
 
 def calculate_originality_for_df(df: pd.DataFrame,
                                  originality_col: str,

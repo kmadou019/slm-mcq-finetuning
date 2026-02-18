@@ -43,6 +43,7 @@ class Validation(Base):
     human_feedback = Column(Text, nullable=True)
     section_a_checks = Column(Text, nullable=True)  # JSON string
     section_b_checks = Column(Text, nullable=True)  # JSON string
+    validated_fields = Column(Text, nullable=True)  # JSON string - {"check_description": true/false}
     validation_duration_seconds = Column(Integer, nullable=True)
     mcq_data = Column(Text, nullable=True)  # JSON string - full MCQ content
     validated_at = Column(DateTime(timezone=True), server_default=func.now())
@@ -66,6 +67,7 @@ class Validation(Base):
             "model": self.model,
             "decision": self.decision,
             "human_feedback": self.human_feedback,
+            "validated_fields": _json.loads(self.validated_fields) if self.validated_fields else {},
             "validation_duration_seconds": self.validation_duration_seconds,
             "validated_at": self.validated_at.isoformat() if self.validated_at else None
         }

@@ -136,11 +136,24 @@ async def create_validation(
     if validation_data.get("mcq_data"):
         mcq_data_json = json.dumps(validation_data["mcq_data"], ensure_ascii=False)
 
+    # Build validated_fields from section checks if not provided explicitly
+    validated_fields = validation_data.get("validated_fields")
+    if not validated_fields:
+        validated_fields = {}
+        for check in validation_data.get("section_a_checks", []):
+            desc = check.get("description", check.get("check_id", "unknown"))
+            validated_fields[desc] = check.get("status") == "validated"
+        for check in validation_data.get("section_b_checks", []):
+            desc = check.get("description", check.get("check_id", "unknown"))
+            validated_fields[desc] = check.get("status") == "validated"
+    validated_fields_json = json.dumps(validated_fields, ensure_ascii=False) if validated_fields else None
+
     if existing_validation:
         existing_validation.decision = validation_data.get("human_decision", "REJECT")
         existing_validation.human_feedback = validation_data.get("human_feedback", "")
         existing_validation.section_a_checks = json.dumps(validation_data.get("section_a_checks", []))
         existing_validation.section_b_checks = json.dumps(validation_data.get("section_b_checks", []))
+        existing_validation.validated_fields = validated_fields_json
         existing_validation.validation_duration_seconds = validation_data.get("validation_duration_seconds")
         if mcq_data_json:
             existing_validation.mcq_data = mcq_data_json
@@ -163,6 +176,7 @@ async def create_validation(
             human_feedback=validation_data.get("human_feedback", ""),
             section_a_checks=json.dumps(validation_data.get("section_a_checks", [])),
             section_b_checks=json.dumps(validation_data.get("section_b_checks", [])),
+            validated_fields=validated_fields_json,
             validation_duration_seconds=validation_data.get("validation_duration_seconds"),
             mcq_data=mcq_data_json
         )
