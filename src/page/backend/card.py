@@ -95,7 +95,7 @@ def construire_params_depuis_csv(df, model):
              "≥ 0.75", 
              f"Score: {row.get('originality', 'N/A')}"),
             ("Readability (FK grade)", 
-             evaluation_to_pass_warn(row.get('readability'), 12), 
+             evaluation_to_pass_warn(round(row.get('readability'),2), 12), 
              "≥ 12", 
              f"Score: {row.get('readability')}")
         ]
@@ -116,7 +116,7 @@ def construire_params_depuis_csv(df, model):
              "True/False", 
              f"Score: {row.get('disclosure', 'N/A')}"),
             ("Relevance to material", 
-             evaluation_to_pass_warn(row.get('relevance'), 0.8),
+             evaluation_to_pass_warn(round(row.get('relevance'),2), 0.8),
              "0-1", 
              f"Score: {row.get('relevance', 'N/A')}"),
             ("Distractor plausibility", 
