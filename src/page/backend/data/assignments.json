@@ -1,7 +1,7 @@
 {
   "admin": [
     {
-      "model": "qwen3_4b_pdapt_slerp",
+      "model": "llama3_1_8b",
       "mcq_ids": [
         "MCQ-000001",
         "MCQ-000002",
@@ -14,7 +14,7 @@
         "MCQ-000009",
         "MCQ-000010"
       ],
-      "assigned_at": "2026-02-18T14:21:16.809290"
+      "assigned_at": "2026-02-24T12:29:09.964694"
     }
   ]
 }
