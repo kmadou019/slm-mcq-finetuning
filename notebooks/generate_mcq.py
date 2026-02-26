@@ -2,6 +2,7 @@
 
 # # Prerequisite
 
+from sys import argv
 import os
 from pydantic import BaseModel
 import json
@@ -17,8 +18,6 @@ import json
 from huggingface_hub import login
 import ollama
 from openai import OpenAI
-
-
 
 class MCQQuestion(BaseModel):
     question1: str
@@ -56,6 +55,7 @@ def flatten(df: DataFrame, mcq_column_name: str):
     
     for idx, row in df.iterrows():
         mcq = row[mcq_column_name]
+        print(mcq)
         
         # Ajouter question1 et ses options
         ids.append(row["id"])
@@ -195,16 +195,16 @@ def get_checkpoint():
     try:
         with open("../data/checkpoints/start", "r") as start:
             start = start.readline()
-            df_in_construction = pd.read_csv("../data/checkpoints/df_in_construction_.csv")
+            df_in_construction = pd.read_csv("../data/checkpoints/df_in_construction.csv")
     except FileNotFoundError:
         df_in_construction = pd.DataFrame()
         start = 0
     return int(start), df_in_construction
 
 def save_checkpoint(start, df_in_construction):
-    with open("../data/checkpoints/start_", "w") as fic:
+    with open("../data/checkpoints/start", "w") as fic:
         fic.write(str(start))
-    df_in_construction.to_csv("../data/checkpoints/df_in_construction_.csv", index=False)
+    df_in_construction.to_csv("../data/checkpoints/df_in_construction.csv", index=False)
 
 def for_a_model(df_test, model_name, save_name, use_ollama=False):
     if not use_ollama:
@@ -217,7 +217,7 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
         tokenizer = None
     
     start, df_in_construction = get_checkpoint()
-    pas = 400
+    pas = 1
     
     for idx in range(start, len(df_test)):
         content = df_test.loc[idx, "content_raw"]
@@ -231,7 +231,7 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
                 )
                 df_in_construction.loc[idx, f"generated_{save_name}"] = generated
                 break
-            except SyntaxError:
+            except Exception:
                 print("SyntaxError détectée, relance...")
                 nb_try += 1
                 if nb_try == 5:
@@ -245,8 +245,8 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
     df = flatten(df_test, save_name)
     
     # Clean for other model
-    os.remove("../data/checkpoints/df_in_construction_.csv")
-    os.remove("../data/checkpoints/start_")
+    os.remove("../data/checkpoints/df_in_construction.csv")
+    os.remove("../data/checkpoints/start")
 
     return df
 
@@ -317,7 +317,7 @@ file_path = "../data/train_test_split/test_folders.json"
 with open(file_path, "r", encoding="utf-8") as file:
     test_folders = json.load(file)
 
-df_test = df[df.folder.isin(test_folders)].reset_index(drop=True)
+df_test = df[:1]#[df.folder.isin(test_folders)].reset_index(drop=True)
 print("Number of lisa sheets :", len(df_test))
 
 # # How many output are incorrect
@@ -351,29 +351,42 @@ def correctness(df,save_name,file):
     df = df.drop(indices_to_drop).reset_index(drop=True)
     df.to_csv("../data/correct_mcqs_dataset/"+ save_name + ".csv")
     print(f"Number of correct MCQs for {save_name} {len(df)} / {initial_len}",file=file)
+    return df
+
+# ## Quality distribution
+
+def quality_distribution(df, save_name,file):
+    print(f"{save_name} quality distribution:",file=file)
+    print(df['distractor_quality'].round(0).value_counts(normalize=True, sort=True)*100,file=file)
 
 # # MCQs Generation
 
 models = {
-    #"qwen3_8b_pdapt_slerp": "PARTAGES-dev/Qwen3-8B-PDAPT-SLERP",
-    "qwen3_4b_pdapt_slerp": "PARTAGES-dev/Qwen3-4B-PDAPT-SLERP",
-    "qwen3_1.7b_pdapt_slerp": "PARTAGES-dev/Qwen3-1.7B-PDAPT-SLERP",
     "qwen3_0.6b_pdapt_slerp": "PARTAGES-dev/Qwen3-0.6B-PDAPT-SLERP",
-    #"llama3_1_8b": "meta-llama/Llama-3.1-8B-Instruct",
-    #"gemma2_9b": "google/gemma-2-9b-it",
-    #"medGemma_4b": "google/medgemma-4b-it",
-    #"medGemma_27b": "google/medgemma-27b-it",
-    #"openbiollm_8b": "hf.co/mradermacher/Llama3-Instruct-OpenBioLLM-8B-merged-i1-GGUF:latest",
-    #"qwen3_0.6b": "Qwen/Qwen3-0.6B",
-    #"mistral_7b": "mistralai/Mistral-7B-Instruct-v0.3",
-    #"eurollm_9b": "utter-project/EuroLLM-9B-Instruct",
-    #"apertus_8b": "swiss-ai/Apertus-8B-Instruct-2509",
+    "qwen3_1_7b_pdapt_slerp": "PARTAGES-dev/Qwen3-1.7B-PDAPT-SLERP",
+    "qwen3_4b_pdapt_slerp": "PARTAGES-dev/Qwen3-4B-PDAPT-SLERP",
+    "qwen3_8b_pdapt_slerp": "PARTAGES-dev/Qwen3-8B-PDAPT-SLERP",
+    "llama3_1_8b": "meta-llama/Llama-3.1-8B-Instruct",
+    "gemma2_9b": "google/gemma-2-9b-it",
+    "medGemma_4b": "google/medgemma-4b-it",
+    "medGemma_27b": "google/medgemma-27b-it",
+    "openbiollm_8b": "hf.co/mradermacher/Llama3-Instruct-OpenBioLLM-8B-merged-i1-GGUF:latest",
+    "qwen3_0.6b": "Qwen/Qwen3-0.6B",
+    "mistral_7b": "mistralai/Mistral-7B-Instruct-v0.3",
+    "eurollm_9b": "utter-project/EuroLLM-9B-Instruct",
+    "apertus_8b": "swiss-ai/Apertus-8B-Instruct-2509",
 }
 
+if len(argv) < 2 or argv[1] not in models:
+    print("Usage: generate_mcq.py <save_name>")
+    print("Valid save names:", list(models.keys()))
+    exit(1)
+
+save_name = argv[1]
+model_name = models[save_name]
+
 with open("correctness.output", mode="a") as f:
-    for save_name,model_name in models.items():
-        df = for_a_model(df_test,model_name,save_name)
-        df = correct_output(df,save_name,f)
-        correctness(df,save_name,f)
-
-
+    df = for_a_model(df_test, model_name, save_name)
+    df = correct_output(df, save_name, f)
+    df = correctness(df, save_name, f)
+    #quality_distribution(df,save_name,f)

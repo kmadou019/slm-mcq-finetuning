@@ -76,11 +76,11 @@ else:
     for model in valid_models:
         print(f"  - {model}")
     print("\nExamples:")
-    print("  ./code.py llama3_1_8b")
-    print("  ./code.py llama3_1_8b 1 2 3")
-    print("  ./code.py llama3_1_8b 1-10")
-    print("  ./code.py openbiollm_8b 0-5 8 10-15")
-    print("  ./code.py gemma2_9b 0 5 10 15")
+    print("  ./main.py llama3_1_8b")
+    print("  ./main.py llama3_1_8b 1 2 3")
+    print("  ./main.py llama3_1_8b 1-10")
+    print("  ./main.py openbiollm_8b 0-5 8 10-15")
+    print("  ./main.py gemma2_9b 0 5 10 15")
     exit(1)
 
 from dotenv import load_dotenv

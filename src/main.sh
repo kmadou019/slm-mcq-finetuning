@@ -21,6 +21,7 @@ models=(
 
 for model in "${models[@]}";
 do
+    ../notebooks/generate_mcq.py $model
     ./main.py $model
     cp ../data/dataset_with_quality/$model.csv page/backend/data/mcqs
 done
