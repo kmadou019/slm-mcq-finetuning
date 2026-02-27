@@ -30,9 +30,15 @@
             <div class="mcq-section">
               <h3>MCQ:</h3>
               <p>{{ currentMcq()?.mcq_question }}</p>
+              @if (currentMcq()?.question_comment) {
+                <p class="mcq-comment">💡 {{ currentMcq()?.question_comment }}</p>
+              }
               <div class="options">
                 @for (option of ['A', 'B', 'C', 'D']; track option) {
                   <p><strong>{{ option }})</strong> {{ currentMcq()?.options?.[option] }}</p>
+                  @if (currentMcq()?.option_comments?.[option]) {
+                    <p class="option-comment">↳ {{ currentMcq()?.option_comments?.[option] }}</p>
+                  }
                 }
               </div>
               <p class="correct-option"><strong>Correct option:</strong> {{ currentMcq()?.correct_option }}</p>

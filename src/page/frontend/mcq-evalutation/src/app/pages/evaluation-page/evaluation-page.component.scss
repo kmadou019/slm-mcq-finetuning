@@ -137,6 +137,28 @@
   margin-top: 8px;
 }
 
+.mcq-comment {
+  font-style: italic;
+  color: #5a6c7d;
+  font-size: 12px;
+  margin: 4px 0 10px 0;
+  padding: 6px 10px;
+  background-color: #eef4fb;
+  border-left: 3px solid #7aadda;
+  border-radius: 3px;
+}
+
+.option-comment {
+  font-style: italic;
+  color: #6b7b8d;
+  font-size: 12px;
+  margin: 2px 0 6px 12px;
+  padding: 4px 8px;
+  background-color: #f4f7f9;
+  border-left: 2px solid #b0c4d8;
+  border-radius: 2px;
+}
+
 .section-title {
   font-size: 14px;
   font-weight: bold;

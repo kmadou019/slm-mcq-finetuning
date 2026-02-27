@@ -37,7 +37,9 @@ export interface MCQCard {
   generator_info: string;
   output_format: string;
   mcq_question: string;
+  question_comment?: string;
   options: MCQOption;
+  option_comments?: { [key: string]: string };
   correct_option: string;
   section_a_checks: SectionCheck[];
   section_b_checks: SectionCheck[];

@@ -90,7 +90,9 @@ class MCQCard(BaseModel):
     generator_info: str
     output_format: str
     mcq_question: str
+    question_comment: str = ""
     options: Dict[str, str]
+    option_comments: Dict[str, str] = {}
     correct_option: str
     section_a_checks: List[SectionCheck]
     section_b_checks: List[SectionCheck]
@@ -456,11 +458,18 @@ def build_mcq_card_from_row(row: pd.Series, index: int, model: str) -> Dict[str,
         "generator_info": model,
         "output_format": "JSON",
         "mcq_question": str(row.get('question', '')),
+        "question_comment": str(row.get('question_comment', '') or ''),
         "options": {
             "A": str(row.get('option_a', '')),
             "B": str(row.get('option_b', '')),
             "C": str(row.get('option_c', '')),
             "D": str(row.get('option_d', ''))
+        },
+        "option_comments": {
+            "A": str(row.get('option_a_comment', '') or ''),
+            "B": str(row.get('option_b_comment', '') or ''),
+            "C": str(row.get('option_c_comment', '') or ''),
+            "D": str(row.get('option_d_comment', '') or '')
         },
         "correct_option": str(row.get('correct_option', 'A')).upper(),
         "section_a_checks": section_a_checks,
