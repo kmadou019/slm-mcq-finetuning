@@ -30,7 +30,7 @@ Parmi les éléments du triptyque fondant l’engagement de la responsabilité, 
 
 Le même raisonnement est appliqué en cas de défaut d’information. Dans cette hypothèse, le patient a perdu une chance de s’échapper au risque qui s’est finalement réalisé. En d’autres termes, s’il avait été informé du risque, il aurait pu choisir de le courir ou de renoncer à l’acte médical. L’indemnisation est accordée à proportion de la probabilité qu’il aurait eu de renoncer à l’acte s’il avait été informé du risque. Il en résulte que si l’acte était indispensable, le juge en déduit que même informé du risque, le patient n’aurait pas renoncé à l’acte. La perte de chance est donc nulle.
 
-Le juge judiciaire comme le juge administratif admettent également qu’un défaut d’information ouvre droit à une indemnisation au titre du préjudice d’impréparation, distinct de la perte de chance. Cette indemnisation répare, lorsque le risque dont le patient n’a pas été informé s’est réalisé, les troubles qu’il a pu subir du fait qu’il n’a pas pu se préparer à cette éventualité, notamment en prenant certaines dispositions personnelles.",0.75,8.756666666666668,False,True,0.7945498824119568,0.8298813899358114,False,2,False
+Le juge judiciaire comme le juge administratif admettent également qu’un défaut d’information ouvre droit à une indemnisation au titre du préjudice d’impréparation, distinct de la perte de chance. Cette indemnisation répare, lorsque le risque dont le patient n’a pas été informé s’est réalisé, les troubles qu’il a pu subir du fait qu’il n’a pas pu se préparer à cette éventualité, notamment en prenant certaines dispositions personnelles.",0.75,8.756666666666668,False,True,0.7945497035980225,0.8298813303311666,False,2,False
 1,OIC-005-01-A,Quelle est la caractéristique principale de la responsabilité pénale en matière médicale?,Elle est toujours individuelle et appliquée uniquement aux médecins professionnels,Elle est applicable aux établissements de santé en tant que personnes morales,Elle est limitée aux actes de soins dans les cas de non-respect des conditions spécifiques,"Elle est toujours personnelle et appliquée à tous les médecins, y compris les internes",d,"{{objectif de connaissance
 |Identifiant=OIC-005-01-A
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -62,7 +62,7 @@ Parmi les éléments du triptyque fondant l’engagement de la responsabilité, 
 
 Le même raisonnement est appliqué en cas de défaut d’information. Dans cette hypothèse, le patient a perdu une chance de s’échapper au risque qui s’est finalement réalisé. En d’autres termes, s’il avait été informé du risque, il aurait pu choisir de le courir ou de renoncer à l’acte médical. L’indemnisation est accordée à proportion de la probabilité qu’il aurait eu de renoncer à l’acte s’il avait été informé du risque. Il en résulte que si l’acte était indispensable, le juge en déduit que même informé du risque, le patient n’aurait pas renoncé à l’acte. La perte de chance est donc nulle.
 
-Le juge judiciaire comme le juge administratif admettent également qu’un défaut d’information ouvre droit à une indemnisation au titre du préjudice d’impréparation, distinct de la perte de chance. Cette indemnisation répare, lorsque le risque dont le patient n’a pas été informé s’est réalisé, les troubles qu’il a pu subir du fait qu’il n’a pas pu se préparer à cette éventualité, notamment en prenant certaines dispositions personnelles.",1.0,17.606666666666666,False,True,0.8295274376869202,0.8008825977643331,False,2,False
+Le juge judiciaire comme le juge administratif admettent également qu’un défaut d’information ouvre droit à une indemnisation au titre du préjudice d’impréparation, distinct de la perte de chance. Cette indemnisation répare, lorsque le risque dont le patient n’a pas été informé s’est réalisé, les troubles qu’il a pu subir du fait qu’il n’a pas pu se préparer à cette éventualité, notamment en prenant certaines dispositions personnelles.",1.0,17.606666666666666,False,True,0.8295271396636963,0.8008823990821838,False,3,False
 2,OIC-005-02-A,Quelle est la responsabilité engagée devant les juridictions administratives en cas d'acte réalisé par un médecin hospitalier?,La responsabilité du médecin seul,La responsabilité du service public de santé,La responsabilité du patient,La responsabilité du médecin privé,b,"{{objectif de connaissance
 |Identifiant=OIC-005-02-A
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -120,7 +120,7 @@ Les infractions reprochées aux médecins relèvent habituellement du tribunal c
 
 Le patient victime peut demander en parallèle de la sanction pénale l’indemnisation de son dommage, au cours du même procès, en se constituant partie civile.
 
-<br />",1.0,18.11058823529412,False,True,0.7996122241020203,0.8944722016652426,False,2,False
+<br />",1.0,18.11058823529412,False,True,0.7996121048927307,0.8944721221923828,False,2,False
 3,OIC-005-03-A,Quelle est la définition d'une faute disciplinaire selon le contenu du texte?,Un manquement à une règle de déontologie médicale,Une violation d'une règle juridique inscrite dans le Code pénal,Un acte de la vie privée pouvant porter atteinte à l'honneur de la profession,Une erreur médicale non liée à l'activité professionnelle,a,"{{objectif de connaissance
 |Identifiant=OIC-005-03-A
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -136,7 +136,7 @@ Les professionnels exerçant à titre libéral et les établissements de santé 
 
 S’agissant des médecins salariés d’établissements, services ou organismes privés, ils n’engagent pas leur responsabilité civile personnelle du fait des dommages causés à un patient dès lors qu’ils n’outrepassent pas la mission qui leur a été confiée par leur employeur. C’est l’application du régime de responsabilité du commettant (l’employeur) du fait de son proposé (le médecin), lequel n’est pas incompatible avec le principe d’indépendance professionnelle du médecin dans l’exercice de son art.
 
-Les praticiens hospitaliers engagent leur responsabilité civile professionnelle à raison des dommages survenus dans le cadre de leur secteur d’activité libérale au sein d’un établissement public de santé.",1.0,13.673333333333336,False,True,0.6327487230300903,0.7822669744491577,False,2,False
+Les praticiens hospitaliers engagent leur responsabilité civile professionnelle à raison des dommages survenus dans le cadre de leur secteur d’activité libérale au sein d’un établissement public de santé.",1.0,13.673333333333336,False,True,0.632748544216156,0.7822669744491577,False,2,False
 4,OIC-005-03-A,Quel est le cas où la responsabilité sans faute peut être engagée même si il n'y a pas d'erreur professionnelle?,Un dommage causé par un accident de la route,Un dommage lié à une mauvaise technique chirurgicale,Une infection nosocomiale,Un dommage due à un manque de précaution,c,"{{objectif de connaissance
 |Identifiant=OIC-005-03-A
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -152,7 +152,7 @@ Les professionnels exerçant à titre libéral et les établissements de santé 
 
 S’agissant des médecins salariés d’établissements, services ou organismes privés, ils n’engagent pas leur responsabilité civile personnelle du fait des dommages causés à un patient dès lors qu’ils n’outrepassent pas la mission qui leur a été confiée par leur employeur. C’est l’application du régime de responsabilité du commettant (l’employeur) du fait de son proposé (le médecin), lequel n’est pas incompatible avec le principe d’indépendance professionnelle du médecin dans l’exercice de son art.
 
-Les praticiens hospitaliers engagent leur responsabilité civile professionnelle à raison des dommages survenus dans le cadre de leur secteur d’activité libérale au sein d’un établissement public de santé.",1.0,11.090000000000003,False,True,0.7449585199356079,0.7029886047045389,False,2,False
+Les praticiens hospitaliers engagent leur responsabilité civile professionnelle à raison des dommages survenus dans le cadre de leur secteur d’activité libérale au sein d’un établissement public de santé.",1.0,11.090000000000003,False,True,0.7449585199356079,0.7029885848363241,False,2,False
 5,OIC-005-04-A,Quelle est la définition de la faute selon le texte?,L'atteinte à un droit du patient,La violation d'un devoir d'humanisme,Le défaut d'un produit de santé,L'absence de soins appropriés,b,"{{objectif de connaissance
 |Identifiant=OIC-005-04-A
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -176,7 +176,7 @@ Doit être distinguée la faute personnelle ou détachable du service, qui engag
 
 - soit elle a été commise en dehors du service et n’a aucun lien avec le service (exemple de la faute commise par un médecin dans des soins dispensés dans un cadre privé) ;
 
-- soit elle a été commise dans le service mais elle s’en détache en raison de l’intention de nuire de son auteur ou de son exceptionnelle gravité (exemple du refus du chirurgien de garde de se déplacer pour un blessé par balle alors qu’il avait été averti par l’interne de la gravité de son état).",1.0,7.190000000000001,False,True,0.5800740718841553,0.7083569566408793,True,2,False
+- soit elle a été commise dans le service mais elle s’en détache en raison de l’intention de nuire de son auteur ou de son exceptionnelle gravité (exemple du refus du chirurgien de garde de se déplacer pour un blessé par balle alors qu’il avait été averti par l’interne de la gravité de son état).",1.0,7.190000000000001,False,True,0.5800739526748657,0.7083568771680196,True,2,False
 6,OIC-005-04-A,Quel type d'erreur correspond à une action nécessaire non faite?,Omission,Commission,Exécution,Violation,a,"{{objectif de connaissance
 |Identifiant=OIC-005-04-A
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -200,7 +200,7 @@ Doit être distinguée la faute personnelle ou détachable du service, qui engag
 
 - soit elle a été commise en dehors du service et n’a aucun lien avec le service (exemple de la faute commise par un médecin dans des soins dispensés dans un cadre privé) ;
 
-- soit elle a été commise dans le service mais elle s’en détache en raison de l’intention de nuire de son auteur ou de son exceptionnelle gravité (exemple du refus du chirurgien de garde de se déplacer pour un blessé par balle alors qu’il avait été averti par l’interne de la gravité de son état).",1.0,10.73,False,True,0.67234206199646,0.5725506941477457,False,5,False
+- soit elle a été commise dans le service mais elle s’en détache en raison de l’intention de nuire de son auteur ou de son exceptionnelle gravité (exemple du refus du chirurgien de garde de se déplacer pour un blessé par balle alors qu’il avait été averti par l’interne de la gravité de son état).",1.0,10.73,False,True,0.67234206199646,0.5725507338841757,False,5,False
 7,OIC-005-05-A,Quel est le définition d'un accident médical?,"Un événement indésirable survenu au cours d'un acte de soin, entraînant un dommage anormal au regard de l'évolution prévisible de l'état de santé",Un effet secondaire d'un traitement médical,Un malaise causé par une erreur d'un professionnel de santé,Un événement normal dans un établissement de santé,a,"{{objectif de connaissance
 |Identifiant=OIC-005-05-A
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -246,7 +246,7 @@ En cas d’échec, le conseil départemental de l’Ordre a l’obligation de tr
 
 '''Procédure'''
 
-Le patient est l’une des parties à l’instance, il peut donc exercer des voies de recours (appel, pourvoi en cassation) et peut être accompagné d’un avocat. Le médecin, quant à lui, peut être assisté devant la juridiction par un avocat du barreau ou un confrère. La procédure devant les juridictions de l’Ordre est contradictoire ; l’audience est publique",1.0,7.368571428571428,False,True,0.7562653422355652,0.802778959274292,False,2,False
+Le patient est l’une des parties à l’instance, il peut donc exercer des voies de recours (appel, pourvoi en cassation) et peut être accompagné d’un avocat. Le médecin, quant à lui, peut être assisté devant la juridiction par un avocat du barreau ou un confrère. La procédure devant les juridictions de l’Ordre est contradictoire ; l’audience est publique",1.0,7.368571428571428,False,True,0.7562650442123413,0.802778959274292,False,2,False
 8,OIC-005-05-A,Quand est-ce qu'une infection est considérée comme nosocomiale selon le texte?,Après 48 heures d'hospitalisation si le patient est malade à l'admission,Après 48 heures d'hospitalisation si le patient est en incubation lors de l'admission,Avant 48 heures d'hospitalisation si le patient est malade à l'admission,Avant 48 heures d'hospitalisation si le patient est en incubation lors de l'admission,b,"{{objectif de connaissance
 |Identifiant=OIC-005-05-A
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -292,7 +292,7 @@ En cas d’échec, le conseil départemental de l’Ordre a l’obligation de tr
 
 '''Procédure'''
 
-Le patient est l’une des parties à l’instance, il peut donc exercer des voies de recours (appel, pourvoi en cassation) et peut être accompagné d’un avocat. Le médecin, quant à lui, peut être assisté devant la juridiction par un avocat du barreau ou un confrère. La procédure devant les juridictions de l’Ordre est contradictoire ; l’audience est publique",1.0,15.518181818181823,False,True,0.6795382499694824,0.9528627792994181,True,2,False
+Le patient est l’une des parties à l’instance, il peut donc exercer des voies de recours (appel, pourvoi en cassation) et peut être accompagné d’un avocat. Le médecin, quant à lui, peut être assisté devant la juridiction par un avocat du barreau ou un confrère. La procédure devant les juridictions de l’Ordre est contradictoire ; l’audience est publique",1.0,15.518181818181823,False,True,0.6795380711555481,0.9528627395629883,True,2,False
 9,OIC-005-07-A,Quel est le type de barrière de sécurité destinée à empêcher l'erreur?,Les barrières de prévention,Les barrières de récupération,Les barrières d’atténuation,Toutes les trois,a,"{{objectif de connaissance
 |Identifiant=OIC-005-07-A
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -341,7 +341,7 @@ Le fait générateur de responsabilité doit donc être une faute prouvée. Cett
 
 - la violation d’un devoir d’humanisme, qui renvoie à la dimension « humaine » de la pratique médicale, et peut notamment résulter de l’atteinte au secret professionnel ou d’un défaut d’information ne permettant pas un consentement libre et éclairé.
 
-Dans certains cas, le fait générateur peut prendre d’autres formes : il peut s’agir du défaut d’un produit de santé, le produit étant considéré comme défectueux lorsqu’il n’offre pas la sécurité à laquelle on peut légitimement s’attendre.",1.0,8.756666666666668,False,True,0.6193104386329651,0.766712506612142,False,2,False
+Dans certains cas, le fait générateur peut prendre d’autres formes : il peut s’agir du défaut d’un produit de santé, le produit étant considéré comme défectueux lorsqu’il n’offre pas la sécurité à laquelle on peut légitimement s’attendre.",1.0,8.756666666666668,False,True,0.6193103790283203,0.766712486743927,False,2,True
 10,OIC-005-09-A,Quelle est la définition du parcours de soins?,Le parcours de soins est la suite de soins administrés à un patient sans coordination.,Le parcours de soins est la coordination des compétences professionnelles tout au long de la prise en charge d'un patient.,Le parcours de soins est la liste des médicaments prescrits à un patient.,Le parcours de soins est la durée de traitement d'un patient.,b,"{{objectif de connaissance
 |Identifiant=OIC-005-09-A
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -355,7 +355,7 @@ Dans certains cas, le fait générateur peut prendre d’autres formes : il peut
 
 L’accident médical désigne un événement indésirable survenu au cours d’un acte de soin, de prévention ou de diagnostic. Cet accident entraîne un dommage anormal au regard de l’évolution prévisible de l'état de santé. Il peut s’être produit dans n’importe quel lieu de soins : un établissement de santé, public ou privé, un cabinet d’un professionnel de santé exerçant en libéral, un laboratoire d’analyses médicales, de radiologie, une pharmacie, etc. Un accident médical peut être causé par une erreur d’un professionnel de santé ou découler de soins conformes aux bonnes pratiques et s'appelle alors « l’aléa thérapeutique ».
 
-Les affections iatrogènes désignent l’ensemble des effets néfastes qui peuvent être provoqués par un traitement ou un acte médical. On parle d’effets iatrogènes lorsque le traitement déclenche de nouveaux symptômes, distincts de ceux qu’il est censé soigner. L’effet iatrogène peut intervenir avec ou sans mauvais usage du médicament, que ce mauvais usage soit le fait d’un professionnel de santé ou du malade lui-même. Il ne faut donc pas confondre affection iatrogène et erreur médicale. L’affection iatrogène est une conséquence de la prise d’un médicament même si l’indication était correcte et la posologie bonne. Il est donc possible d’être victime d’une affection iatrogène en dehors de toute erreur ou faute du professionnel de santé.",1.0,5.230000000000004,False,True,0.6162104606628418,0.865247905254364,False,5,False
+Les affections iatrogènes désignent l’ensemble des effets néfastes qui peuvent être provoqués par un traitement ou un acte médical. On parle d’effets iatrogènes lorsque le traitement déclenche de nouveaux symptômes, distincts de ceux qu’il est censé soigner. L’effet iatrogène peut intervenir avec ou sans mauvais usage du médicament, que ce mauvais usage soit le fait d’un professionnel de santé ou du malade lui-même. Il ne faut donc pas confondre affection iatrogène et erreur médicale. L’affection iatrogène est une conséquence de la prise d’un médicament même si l’indication était correcte et la posologie bonne. Il est donc possible d’être victime d’une affection iatrogène en dehors de toute erreur ou faute du professionnel de santé.",1.0,5.230000000000004,False,True,0.616210401058197,0.8652479648590088,False,2,False
 11,OIC-005-11-A,Quel est l'objectif principal des check-lists de sécurité du patient au bloc opératoire?,Sécuriser la réalisation d'une intervention chirurgicale,Améliorer la communication entre les professionnels,Réduire le temps d'opération,Prévenir les complications post-opératoires,a,"{{objectif de connaissance
 |Identifiant=OIC-005-11-A
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -367,7 +367,7 @@ Les affections iatrogènes désignent l’ensemble des effets néfastes qui peuv
 |Contributeurs=Bastien Boussat
 |Ordre=11}}
 
-L’aléa thérapeutique se distingue des erreurs par son inévitabilité. C’est un événement indésirable dont la cause est une action de soins conforme et ne comportant pas d’erreur. Il est lié à la réalisation d’un risque inhérent à l’action de soins. On peut citer comme exemple la survenue d’un effet secondaire d’un médicament correctement prescrit et administré.  L’aléa thérapeutique est défini comme étant un accident médical (événement imprévu causant un dommage ayant un lien de causalité certain avec l’acte médical), une affection iatrogène (les soins délivrés au patient ont causé le dommage) ou une infection nosocomiale (l’infection apparaît après une hospitalisation et était absente le jour de l’admission) qui est survenue sans responsabilité des professionnels de santé ou de l’établissement de santé. D’après la jurisprudence, l’aléa thérapeutique consiste dans « la survenance, en dehors de toute faute du praticien, d’un risque accidentel inhérent à l’acte médical et qui ne pouvait être maîtrisé ».  Tout risque inhérent à l’acte de soin, de diagnostic ou de prévention peut constituer un aléa thérapeutique.",1.0,10.356923076923078,False,True,0.6889777183532715,0.7148253719011942,False,3,False
+L’aléa thérapeutique se distingue des erreurs par son inévitabilité. C’est un événement indésirable dont la cause est une action de soins conforme et ne comportant pas d’erreur. Il est lié à la réalisation d’un risque inhérent à l’action de soins. On peut citer comme exemple la survenue d’un effet secondaire d’un médicament correctement prescrit et administré.  L’aléa thérapeutique est défini comme étant un accident médical (événement imprévu causant un dommage ayant un lien de causalité certain avec l’acte médical), une affection iatrogène (les soins délivrés au patient ont causé le dommage) ou une infection nosocomiale (l’infection apparaît après une hospitalisation et était absente le jour de l’admission) qui est survenue sans responsabilité des professionnels de santé ou de l’établissement de santé. D’après la jurisprudence, l’aléa thérapeutique consiste dans « la survenance, en dehors de toute faute du praticien, d’un risque accidentel inhérent à l’acte médical et qui ne pouvait être maîtrisé ».  Tout risque inhérent à l’acte de soin, de diagnostic ou de prévention peut constituer un aléa thérapeutique.",1.0,10.356923076923078,False,True,0.6889777183532715,0.7148252725601196,False,3,False
 12,OIC-005-12-B,Quelle est la mission principale du Samu-Centre 15?,Assurer une écoute médicale permanente 24/7,Gérer les transports des patients vers les établissements de soins,Organiser les formations des acteurs en santé,Préparer les plans de secours pour les urgences,a,"{{objectif de connaissance
 |Identifiant=OIC-005-12-B
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -391,7 +391,7 @@ Les facteurs peuvent être liés :
 
 - à l’organisation et au management : politiques de remplacement du personnel absent (pas de remplacement, intérim, déplacement), de formation continue, de gestion des équipements ;
 
-- au contexte institutionnel : politiques de santé publique nationale et régionale, systèmes de signalement des événements indésirables",1.0,11.130000000000003,False,True,0.5438476800918579,0.6936970154444376,False,2,False
+- au contexte institutionnel : politiques de santé publique nationale et régionale, systèmes de signalement des événements indésirables",1.0,11.130000000000003,False,True,0.5438474416732788,0.6936969757080078,False,2,False
 13,OIC-005-12-B,Quels critères sont interdits de s'appuyer pour traiter différemment les personnes?,"Appartenance ethnique, opinions politiques, identité de genre, orientation sexuelle, nationalité","Appartenance ethnique, opinions politiques, identité de genre, orientation sexuelle, nationalité, capacité à s'exprimer en français","Appartenance ethnique, opinions politiques, identité de genre, orientation sexuelle, nationalité, lieu de résidence","Appartenance ethnique, opinions politiques, identité de genre, orientation sexuelle, nationalité, capacité à s'exprimer en français",a,"{{objectif de connaissance
 |Identifiant=OIC-005-12-B
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -415,7 +415,7 @@ Les facteurs peuvent être liés :
 
 - à l’organisation et au management : politiques de remplacement du personnel absent (pas de remplacement, intérim, déplacement), de formation continue, de gestion des équipements ;
 
-- au contexte institutionnel : politiques de santé publique nationale et régionale, systèmes de signalement des événements indésirables",1.0,10.154545454545456,False,True,0.6470600366592407,0.9768211245536804,True,2,True
+- au contexte institutionnel : politiques de santé publique nationale et régionale, systèmes de signalement des événements indésirables",1.0,10.154545454545456,False,True,0.6470600366592407,0.9768210252126058,True,2,False
 14,OIC-005-13-A,Quel est l'effet principal des discriminations sur les inégalités sociales et de santé?,Elles réduisent les inégalités sociales de santé,Elles accentuent les déterminants sociaux de la santé,Elles augmentent la santé mentale des personnes,Elles améliorent l'accès aux soins de santé,b,"{{objectif de connaissance
 |Identifiant=OIC-005-13-A
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -441,7 +441,7 @@ Certains facteurs linguistiques ou culturels qui peuvent perturber la bonne comp
 
 La production de soins, surtout à l’hôpital, est un travail d’équipe. Une mauvaise organisation de l’équipe, un manque de communication voire des conflits nuisent à la bonne coopération des acteurs et accroissent le risque d’erreurs.
 
-Une équipe efficace a d’abord la conscience d’être une équipe avec un leadership identifié. Le rôle de chacun est clairement défini. La communication est organisée avec des briefings avant l’action et des débriefings après.",1.0,11.264615384615386,False,True,0.6638803482055664,0.8159358302752177,True,1,False
+Une équipe efficace a d’abord la conscience d’être une équipe avec un leadership identifié. Le rôle de chacun est clairement défini. La communication est organisée avec des briefings avant l’action et des débriefings après.",1.0,11.264615384615386,False,True,0.6638802886009216,0.8159356514612833,False,2,False
 15,OIC-005-14-B,Quelle est la principale différence entre l'éthique et la morale selon le texte?,L'éthique est une science basée sur des faits et des comportements,L'éthique est une réflexion critique sur les valeurs morales,L'éthique est un code de bonnes pratiques régissant le droit médical,L'éthique est une norme juridique imposant des obligations à tous,b,"{{objectif de connaissance
 |Identifiant=OIC-005-14-B
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -606,7 +606,7 @@ Les méthodes d’analyse sont structurées pour éviter les oublis. Les plus em
 |}
 5/ la proposition d’actions à mettre en œuvre (accompagné par un plan d’actions) ;
 
-6/ la rédaction du rapport d’analyse.",1.0,12.172307692307694,False,True,0.6503408551216125,0.7768271962801615,False,2,False
+6/ la rédaction du rapport d’analyse.",1.0,12.172307692307694,False,True,0.6503406167030334,0.7768271168073019,True,2,False
 16,OIC-005-14-B,Quelle est la principale fonction de la bioéthique selon le texte?,Un domaine scientifique strictement médical,Une discipline juridique internationale,Une éthique globale pour la survie de l'homme et de la planète,Une science des technologies de la vie,c,"{{objectif de connaissance
 |Identifiant=OIC-005-14-B
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -771,7 +771,7 @@ Les méthodes d’analyse sont structurées pour éviter les oublis. Les plus em
 |}
 5/ la proposition d’actions à mettre en œuvre (accompagné par un plan d’actions) ;
 
-6/ la rédaction du rapport d’analyse.",1.0,10.154545454545456,False,True,0.7135674953460693,0.7323559522628784,False,2,False
+6/ la rédaction du rapport d’analyse.",1.0,10.154545454545456,False,True,0.7135674953460693,0.7323558131853739,False,3,False
 17,OIC-005-15-B,Quelle est la définition principale de la déontologie médicale selon le texte?,Le code de déontologie médicale est un texte juridique établi par la profession et soumis à l'administration.,La déontologie médicale est un guide éthique indépendant des lois et des règlements.,La déontologie médicale est un texte établi par l'Ordre national des médecins et soumis au gouvernement.,La déontologie médicale est un code de conduite établi par le gouvernement et publié au Journal Officiel.,a,"{{objectif de connaissance
 |Identifiant=OIC-005-15-B
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -816,7 +816,7 @@ Les événements indésirables graves repérés sont analysés soit avec :
 
 - un point de vue extérieur neutre, par la cellule de gestion des risques ;
 
-- un point de vue intérieur au service hospitalier, qui doit aussi être le plus neutre possible, à l’occasion de revues de morbidité et de mortalité (RMM).<br />",1.0,13.673333333333336,False,True,0.7021530866622925,0.906779408454895,True,2,False
+- un point de vue intérieur au service hospitalier, qui doit aussi être le plus neutre possible, à l’occasion de revues de morbidité et de mortalité (RMM).<br />",1.0,13.673333333333336,False,True,0.7021529674530029,0.9067794481913248,False,2,False
 18,OIC-005-15-B,Quel principe éthique est lié à la prévention des dommages et à l'obligation de ne pas nuire à un patient?,La bienfaisance,La non-malfaisance,L'autonomie,La justice,b,"{{objectif de connaissance
 |Identifiant=OIC-005-15-B
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -861,7 +861,7 @@ Les événements indésirables graves repérés sont analysés soit avec :
 
 - un point de vue extérieur neutre, par la cellule de gestion des risques ;
 
-- un point de vue intérieur au service hospitalier, qui doit aussi être le plus neutre possible, à l’occasion de revues de morbidité et de mortalité (RMM).<br />",1.0,10.500000000000004,False,True,0.7046834230422974,0.6729337771733602,True,5,False
+- un point de vue intérieur au service hospitalier, qui doit aussi être le plus neutre possible, à l’occasion de revues de morbidité et de mortalité (RMM).<br />",1.0,10.500000000000004,False,True,0.7046833038330078,0.6729336778322855,False,2,False
 19,OIC-006-01-A,Quelle est la principale exigence liée au respect de l'autonomie du patient dans les pratiques médicales?,L'obligation de fournir des informations détaillées sans aucune ambiguïté,L'absence de nécessité de consulter un médecin avant de prendre une décision,La reconnaissance du droit du patient à exprimer ses préférences sans contrainte,L'interdiction de discuter des choix du patient avec d'autres professionnels,c,"{{objectif de connaissance
 |Identifiant=OIC-006-01-A
 |Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
@@ -883,7 +883,7 @@ Ce travail en équipe pluriprofessionnelle est considéré comme
 
 –       un facteur de santé et de bien-être au travail pour les professionnels ;
 
-–      un moyen de répondre de manière collaborative aux besoins du patient.",1.0,14.9875,False,True,0.7281543612480164,0.7814945975939432,True,3,False
+–      un moyen de répondre de manière collaborative aux besoins du patient.",1.0,14.9875,False,True,0.728154182434082,0.7814945379892985,True,3,False
 20,OIC-006-01-A,Quelle situation justifie l'exception du devoir d'information pour un patient qui exprime clairement son désir d'ignorer un diagnostic ou un pronostic grave?,Lorsqu'un patient a reçu des informations sur un diagnostic non confirmé,Lorsqu'un patient a refusé un traitement médical reconnu,Lorsqu'un patient a exprimé clairement son désir d'ignorer un diagnostic ou un pronostic grave et que des risques de contamination sont présents,Lorsqu'un patient a été informé de tous les risques liés à un traitement,c,"{{objectif de connaissance
 |Identifiant=OIC-006-01-A
 |Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
@@ -905,7 +905,7 @@ Ce travail en équipe pluriprofessionnelle est considéré comme
 
 –       un facteur de santé et de bien-être au travail pour les professionnels ;
 
-–      un moyen de répondre de manière collaborative aux besoins du patient.",1.0,17.12636363636364,False,True,0.6454818844795227,0.8865923285484314,False,2,False
+–      un moyen de répondre de manière collaborative aux besoins du patient.",1.0,17.12636363636364,False,True,0.6454819440841675,0.8865923285484314,False,2,False
 21,OIC-006-02-A,Quelle loi est-elle la plus récente concernant les droits des patients en matière de refus de soins?,Loi Veil sur l’interruption volontaire de grossesse (1975),Loi n° 2002-303 du 4 mars 2002 (Code de la santé publique),Loi Clayes-Léonetti de 2016,Loi n° 2005-370 du 22 avril 2005 (fin de vie),c,"{{objectif de connaissance
 |Identifiant=OIC-006-02-A
 |Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
@@ -927,7 +927,7 @@ Différentes méthodes de travail en équipe pluriprofessionnelle existent en ''
 
 •       La réunion de morbi-mortalité (RMM)
 
-<br />",1.0,9.781176470588235,False,True,0.6594215631484985,0.6331416368484497,False,2,False
+<br />",1.0,9.781176470588235,False,True,0.659421443939209,0.6331415176391602,False,2,False
 22,OIC-006-02-A,Quelle est la condition légale requise pour la désignation d'une personne de confiance selon le CSP?,L'écriture signée par le patient et la personne désignée,La présence d'un proche médical,La validation par un médecin,L'absence de secret,a,"{{objectif de connaissance
 |Identifiant=OIC-006-02-A
 |Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
@@ -949,7 +949,7 @@ Différentes méthodes de travail en équipe pluriprofessionnelle existent en ''
 
 •       La réunion de morbi-mortalité (RMM)
 
-<br />",1.0,12.775000000000002,False,True,0.6487493515014648,0.7295651038487753,False,4,False
+<br />",1.0,12.775000000000002,False,True,0.6487493515014648,0.7295649846394857,False,2,False
 23,OIC-006-03-A,Quelle est la principale caractéristique des mesures de protection juridique selon le texte?,Elles sont toujours proportionnées et applicables à tous les cas de nécessité,Elles sont instaurées sans considération des libertés individuelles,Elles sont individualisées et adaptées au contexte de la personne protégée,Elles sont appliquées indépendamment des droits fondamentaux de la personne,c,"{{objectif de connaissance
 |Identifiant=OIC-006-03-A
 |Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
@@ -963,7 +963,7 @@ Différentes méthodes de travail en équipe pluriprofessionnelle existent en ''
 
 [[Fichier:Item 6 Fig1.png|vignette]]
 [[Fichier:Item 6 Fig1.png|centré|vignette]]
-Le '''parcours de soins''' consiste à organiser et à coordonner le juste enchaînement et au bon moment des compétences professionnelles tout au long de la prise en charge d’un patient",1.0,16.710769230769234,False,True,0.659160852432251,0.7350249687830607,True,2,True
+Le '''parcours de soins''' consiste à organiser et à coordonner le juste enchaînement et au bon moment des compétences professionnelles tout au long de la prise en charge d’un patient",1.0,16.710769230769234,False,True,0.6591604948043823,0.7350248694419861,True,2,True
 24,OIC-006-04-B,Quelle est la principale caractéristique de la sauvegarde de justice?,Une mesure de protection temporaire et limitée,Une mesure de protection permanente et sans effets,Une mesure de protection basée sur la demande du juge des tutelles,Une mesure de protection déterminée par le médecin de la personne protégée,a,"{{objectif de connaissance
 |Identifiant=OIC-006-04-B
 |Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
@@ -979,7 +979,7 @@ Un '''protocole pluriprofessionnel''' est l'expression d'un consensus concernant
 
 Figure 2 : Exemple de protocole de soins pluriprofessionnel - Maison médicale de la Plaine, Val-de-Reuil – source : Faculté de Rouen – Les ateliers de l’exercice coordonné - mars 2018
 [[Fichier:Item 6 Fig 2.png|vignette]]
-<br />",1.0,15.45,False,True,0.5467302203178406,0.8693653543790182,False,2,False
+<br />",1.0,15.45,False,True,0.5467302203178406,0.869365374247233,False,2,False
 25,OIC-006-04-B,Le demandeur d’un dossier d’ouverture d’une mesure de protection peut être :,le majeur concerné lui-même,"son conjoint (époux, concubin …)",la personne qui exerce déjà à l’égard du majeur concerné une mesure de protection juridique,"le procureur de la République, de lui-même ou sur demande d’un tiers",a,"{{objectif de connaissance
 |Identifiant=OIC-006-04-B
 |Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
@@ -995,7 +995,7 @@ Un '''protocole pluriprofessionnel''' est l'expression d'un consensus concernant
 
 Figure 2 : Exemple de protocole de soins pluriprofessionnel - Maison médicale de la Plaine, Val-de-Reuil – source : Faculté de Rouen – Les ateliers de l’exercice coordonné - mars 2018
 [[Fichier:Item 6 Fig 2.png|vignette]]
-<br />",1.0,,False,False,0.6706454753875732,0.7349513570467631,False,2,True
+<br />",1.0,,False,False,0.6706452369689941,0.7349512974421183,True,2,True
 26,OIC-006-05-A,Quel est l'objectif principal de la loi Veil de 1975 en matière d'éthique médicale?,Reconnaître le droit à l'IVG comme un droit naturel des femmes,Limiter l'accès à l'IVG pour protéger la vie du fœtus,Garantir un accès égal et sécurisé à l'IVG en tant que politique de santé publique,Établir des normes strictes pour les professionnels de santé en matière d'IVG,c,"{{objectif de connaissance
 |Identifiant=OIC-006-05-A
 |Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
@@ -1011,7 +1011,7 @@ Figure 2 : Exemple de protocole de soins pluriprofessionnel - Maison médicale d
 
 Systématiquement organisées dans le domaine de la '''cancérologie''' pour définir la stratégie diagnostique, thérapeutique et de suivi des patients atteints de cancer, elles peuvent être organisées dans d’autres domaines toutes les fois où la prise en charge du patient est complexe et nécessite l’avis concerté et collégial, garantissant la meilleure stratégie pour le patient.
 
-'''En lien avec l’item 295''' Prise en charge et accompagnement d'un malade atteint de cancer à tous les stades de la maladie dont le stade de soins palliatifs en abordant les problématiques techniques, relationnelles, sociales et éthiques.",1.0,9.255714285714287,False,True,0.6410180926322937,0.839307169119517,False,2,False
+'''En lien avec l’item 295''' Prise en charge et accompagnement d'un malade atteint de cancer à tous les stades de la maladie dont le stade de soins palliatifs en abordant les problématiques techniques, relationnelles, sociales et éthiques.",1.0,9.255714285714287,False,True,0.6410178542137146,0.8393072485923767,False,2,False
 27,OIC-006-06-A,"Quel critère est utilisé pour déterminer si une maladie est considérée comme incurable au moment du diagnostic prénatal, selon la loi?",La probabilité de guérison du patient,L'absence de thérapeutique disponible,La gravité de la maladie pour l'enfant et les parents,La disponibilité d'un accueil d'enfants handicapés,b,"{{objectif de connaissance
 |Identifiant=OIC-006-06-A
 |Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
@@ -1027,7 +1027,7 @@ La '''''check-list'' sécurité du patient au bloc opératoire''' contribuer à 
 
 Figure 3 : Check list sécurité du patient au bloc opératoire - version 2018 Source HAS
 [[Fichier:Item6 Fig3.png|centré|vignette|812x812px]]
-<br />",1.0,15.07619047619048,False,True,0.6167848110198975,0.690602978070577,False,2,False
+<br />",1.0,15.07619047619048,False,True,0.6167847514152527,0.6906028985977173,False,2,False
 28,OIC-006-07-A,Quelle est la principale exigence éthique liée à la prise en soin en fin de vie?,Respecter la dignité de la personne,S'assurer de l'accompagnement du patient,Pratiquer des soins palliatifs,Conformité aux directives anticipées,a,"{{objectif de connaissance
 |Identifiant=OIC-006-07-A
 |Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
@@ -1041,7 +1041,7 @@ Figure 3 : Check list sécurité du patient au bloc opératoire - version 2018 S
 
 La réunion de morbi-mortalité (RMM) est une '''réunion d'analyse collective, rétrospective et systémique''' (c'est-à-dire prenant en compte les composantes organisationnelles, techniques et humaines) de situations cliniques marquées par la survenue d'un événement indésirable associé aux soins (décès, complication…), afin de mettre en œuvre '''des actions de prévention, de récupération ou d'atténuation'''. Les RMM entrent dans le cadre de la '''culture du retour d’expérience''' ou comment apprendre collectivement de ses erreurs. Les RMM permettent de valider l'obligation de développement professionnel continu (DPC).
 
-'''Lien avec l’item 4''' Qualité et sécurité des soins. La sécurité du patient. La gestion des risques. Les événements indésirables associés aux soins (EIAS). Démarche qualité et évaluation des pratiques professionnelles",1.0,9.825,False,True,0.6080219745635986,0.7223885854085287,False,2,True
+'''Lien avec l’item 4''' Qualité et sécurité des soins. La sécurité du patient. La gestion des risques. Les événements indésirables associés aux soins (EIAS). Démarche qualité et évaluation des pratiques professionnelles",1.0,9.825,False,True,0.6080217957496643,0.7223883867263794,False,3,False
 29,OIC-006-07-A,Quelle est la définition de l'obstination déraisonnable selon les lois Leonetti et Clayes-Leonetti?,Le refus de continuer des traitements qui ne contribuent pas au maintien des fonctions vitales,L'arrêt de traitements nécessaires pour prolonger la vie du patient,La suspension des soins palliatifs en cas de souffrance insupportable,L'obligation de suivre les directives anticipées de la personne malade,a,"{{objectif de connaissance
 |Identifiant=OIC-006-07-A
 |Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
@@ -1055,7 +1055,7 @@ La réunion de morbi-mortalité (RMM) est une '''réunion d'analyse collective, 
 
 La réunion de morbi-mortalité (RMM) est une '''réunion d'analyse collective, rétrospective et systémique''' (c'est-à-dire prenant en compte les composantes organisationnelles, techniques et humaines) de situations cliniques marquées par la survenue d'un événement indésirable associé aux soins (décès, complication…), afin de mettre en œuvre '''des actions de prévention, de récupération ou d'atténuation'''. Les RMM entrent dans le cadre de la '''culture du retour d’expérience''' ou comment apprendre collectivement de ses erreurs. Les RMM permettent de valider l'obligation de développement professionnel continu (DPC).
 
-'''Lien avec l’item 4''' Qualité et sécurité des soins. La sécurité du patient. La gestion des risques. Les événements indésirables associés aux soins (EIAS). Démarche qualité et évaluation des pratiques professionnelles",1.0,14.895384615384618,False,True,0.48493650555610657,0.7401711940765381,False,2,False
+'''Lien avec l’item 4''' Qualité et sécurité des soins. La sécurité du patient. La gestion des risques. Les événements indésirables associés aux soins (EIAS). Démarche qualité et évaluation des pratiques professionnelles",1.0,14.895384615384618,False,True,0.4849362373352051,0.7401712536811829,False,2,False
 30,OIC-006-08-A,Qui a la charge de prendre la décision finale dans une procédure collégiale lorsqu'une personne ne peut pas s'exprimer?,Le médecin en charge,La famille,Le consultant,Le patient,a,"{{objectif de connaissance
 |Identifiant=OIC-006-08-A
 |Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
@@ -1094,7 +1094,7 @@ Par ailleurs, le Samu :
 '''Les Services Mobiles d’Urgence et de Réanimation (SMUR)''' : La mission du SMUR, déclenché par le Samu-Centre 15, est la '''prise en charge, sur place, en dehors de l'hôpital''', des détresses médicales, la réalisation de soins d'urgence avant et pendant le transport du patient vers l'établissement adapté, désigné par le Samu. Les SMUR peuvent spécialisés dans le transport d’enfants (SMUR Pédiatriques).
 
 
-'''Les Structures des urgences (SU)''' : Service hospitalier, la SU assure la '''prise en charge des "" venues non programmées,''' dans un établissement de santé public ou privé, 24 heures sur 24, tous les jours de l'année, de toute personne sans sélection, se présentant en situation d'urgence, y compris psychiatrique"". Les SU sont une porte d'entrée essentielle dans le parcours de soins. Une formalisation de l’accueil est mise en place autour de '''l'infirmière organisatrice de l'accueil''' (IOA), La SU est généralement organisée en filières de prise en charge disposant souvent de locaux et de personnels spécifiques. La salle d'accueil des urgences vitales prend en charge les patients graves. Elle est réglementaire dans une SU tout comme une filière de prise en charge pédiatrique. On retrouve habituellement aussi une filière ""courte"" de prise en charge rapide, une filière ""longue"" (patient nécessitant plusieurs examens complémentaires et devant être hospitalisé).",1.0,14.177894736842106,False,True,0.6328606605529785,0.6760838429133097,False,4,False
+'''Les Structures des urgences (SU)''' : Service hospitalier, la SU assure la '''prise en charge des "" venues non programmées,''' dans un établissement de santé public ou privé, 24 heures sur 24, tous les jours de l'année, de toute personne sans sélection, se présentant en situation d'urgence, y compris psychiatrique"". Les SU sont une porte d'entrée essentielle dans le parcours de soins. Une formalisation de l’accueil est mise en place autour de '''l'infirmière organisatrice de l'accueil''' (IOA), La SU est généralement organisée en filières de prise en charge disposant souvent de locaux et de personnels spécifiques. La salle d'accueil des urgences vitales prend en charge les patients graves. Elle est réglementaire dans une SU tout comme une filière de prise en charge pédiatrique. On retrouve habituellement aussi une filière ""courte"" de prise en charge rapide, une filière ""longue"" (patient nécessitant plusieurs examens complémentaires et devant être hospitalisé).",1.0,14.177894736842106,False,True,0.632860541343689,0.6760836839675903,False,4,False
 31,OIC-008-01-A,Quel principe éthique est central dans la recherche impliquant la personne humaine (RIPH)?,Principe de bienfaisance,Principe de non-malfaisance,Principe d'autonomie,Principe de justice,c,"{{objectif de connaissance
 |Identifiant=OIC-008-01-A
 |Item_parent=Les discriminations
@@ -1174,7 +1174,7 @@ Les discriminations ne sont pas seulement directes et conscientes, elles peuvent
 
 *Les discriminations affectent en premier lieu les populations vulnérables, c'est-à-dire ""les sous-groupes de la population générale qui, à cause de facteurs sociaux, économiques, historiques, politiques, géographiques, sont exposés à plus de risques et donc susceptibles d'être désavantagés du point de vue de leur état de santé et/ou leur accès aux soins""<ref>Frohlich, K.L. and Potvin, L. (2008) Transcending the known in public health practice, the inequality paradox, the population approach and vulnerable populations. American Journal of Public Health, 98, 216-221. doi:10.2105/AJPH.2007.114777</ref>.
 *Les discriminations (selon l'origine, le lieu de vie, le genre, l'âge) existent dans l'accès au logement, à l'emploi, aux loisirs, etc. Ces discriminations ont elles-mêmes un effet défavorable sur la santé (déterminants sociaux de la santé). Il y a donc des discriminations qui ne relèvent pas du champ de la santé, et qui pourtant affectent la santé des personnes.
-*Les discriminations sont enfin à mettre en lien avec les politiques sociales. Rendre plus difficile l'accès à certains droits, notamment en durcissant les conditions d'accès à un titre de séjour, ou en restreignant l'accès à certaines aides sociales, renforce les inégalités face à la santé. Paradoxalement, certaines politiques qui visent plus spécifiquement à permettre l'accès aux soins ou aux droits les catégories les plus défavorisées peuvent avoir l'effet pervers de cibler ces catégories, et de ce fait d'induire une stigmatisation.",1.0,12.172307692307694,False,True,0.6520749926567078,0.7140154242515564,True,2,True
+*Les discriminations sont enfin à mettre en lien avec les politiques sociales. Rendre plus difficile l'accès à certains droits, notamment en durcissant les conditions d'accès à un titre de séjour, ou en restreignant l'accès à certaines aides sociales, renforce les inégalités face à la santé. Paradoxalement, certaines politiques qui visent plus spécifiquement à permettre l'accès aux soins ou aux droits les catégories les plus défavorisées peuvent avoir l'effet pervers de cibler ces catégories, et de ce fait d'induire une stigmatisation.",1.0,12.172307692307694,False,True,0.652074933052063,0.714015265305837,True,2,True
 32,OIC-008-01-A,Quel est le type de recherche qui est classé comme'recherche interventionnelle avec risque' selon la loi Jardé?,Recherche non interventionnelle,Recherche interventionnelle à risque négligeable,Recherche interventionnelle avec risque,Recherche non interventionnelle à risque négligeable,c,"{{objectif de connaissance
 |Identifiant=OIC-008-01-A
 |Item_parent=Les discriminations
@@ -1254,7 +1254,7 @@ Les discriminations ne sont pas seulement directes et conscientes, elles peuvent
 
 *Les discriminations affectent en premier lieu les populations vulnérables, c'est-à-dire ""les sous-groupes de la population générale qui, à cause de facteurs sociaux, économiques, historiques, politiques, géographiques, sont exposés à plus de risques et donc susceptibles d'être désavantagés du point de vue de leur état de santé et/ou leur accès aux soins""<ref>Frohlich, K.L. and Potvin, L. (2008) Transcending the known in public health practice, the inequality paradox, the population approach and vulnerable populations. American Journal of Public Health, 98, 216-221. doi:10.2105/AJPH.2007.114777</ref>.
 *Les discriminations (selon l'origine, le lieu de vie, le genre, l'âge) existent dans l'accès au logement, à l'emploi, aux loisirs, etc. Ces discriminations ont elles-mêmes un effet défavorable sur la santé (déterminants sociaux de la santé). Il y a donc des discriminations qui ne relèvent pas du champ de la santé, et qui pourtant affectent la santé des personnes.
-*Les discriminations sont enfin à mettre en lien avec les politiques sociales. Rendre plus difficile l'accès à certains droits, notamment en durcissant les conditions d'accès à un titre de séjour, ou en restreignant l'accès à certaines aides sociales, renforce les inégalités face à la santé. Paradoxalement, certaines politiques qui visent plus spécifiquement à permettre l'accès aux soins ou aux droits les catégories les plus défavorisées peuvent avoir l'effet pervers de cibler ces catégories, et de ce fait d'induire une stigmatisation.",1.0,13.251764705882355,False,True,0.7001513242721558,0.8629560271898905,False,5,False
+*Les discriminations sont enfin à mettre en lien avec les politiques sociales. Rendre plus difficile l'accès à certains droits, notamment en durcissant les conditions d'accès à un titre de séjour, ou en restreignant l'accès à certaines aides sociales, renforce les inégalités face à la santé. Paradoxalement, certaines politiques qui visent plus spécifiquement à permettre l'accès aux soins ou aux droits les catégories les plus défavorisées peuvent avoir l'effet pervers de cibler ces catégories, et de ce fait d'induire une stigmatisation.",1.0,13.251764705882355,False,True,0.7001513242721558,0.8629559874534607,False,5,False
 33,OIC-008-02-B,Quel principe éthique est présumé pour un donneur décédé en France?,L'autonomie,Le consentement présumé,L'anonymat,La gratuité,b,"{{objectif de connaissance
 |Identifiant=OIC-008-02-B
 |Item_parent=Les discriminations
@@ -1282,7 +1282,7 @@ Les discriminations peuvent également entraîner une difficulté d'exercer pour
 
 '''Les discriminations contribuent largement au ""non-recours"".''' 
 
-On parle de non-recours quand les ressortissants des politiques publiques n’utilisent pas les prestations ou les services auxquels ils ont droit. Le non-recours est un phénomène massif, notamment en santé : Au-delà des facteurs liés à l'éloignement géographique, des disparités territoriales, d'une inégale littératie en santé, les discriminations peuvent y contribuer directement. Anticipant un rejet, des propos stigmatisants, une avance de frais ou un dépassement d’honoraires, les personnes issues de populations vulnérables et/ou en situation de précarité économique peuvent renoncer à se rendre chez un professionnel, retardant leur prise en charge ou aggravant leur état de santé. Au-delà de rencontrer des difficultés pour se soigner ou de faire face à des barrières qui les conduisent à ne pas accéder au soin, certaines personnes ne trouvent plus leur place dans le système de protection sociale et de santé et n’acceptent plus la nature des interactions qu’il propose (https://odenore.msh-alpes.fr/)",1.0,5.863636363636363,False,True,0.6253055930137634,0.6454431811968485,False,2,False
+On parle de non-recours quand les ressortissants des politiques publiques n’utilisent pas les prestations ou les services auxquels ils ont droit. Le non-recours est un phénomène massif, notamment en santé : Au-delà des facteurs liés à l'éloignement géographique, des disparités territoriales, d'une inégale littératie en santé, les discriminations peuvent y contribuer directement. Anticipant un rejet, des propos stigmatisants, une avance de frais ou un dépassement d’honoraires, les personnes issues de populations vulnérables et/ou en situation de précarité économique peuvent renoncer à se rendre chez un professionnel, retardant leur prise en charge ou aggravant leur état de santé. Au-delà de rencontrer des difficultés pour se soigner ou de faire face à des barrières qui les conduisent à ne pas accéder au soin, certaines personnes ne trouvent plus leur place dans le système de protection sociale et de santé et n’acceptent plus la nature des interactions qu’il propose (https://odenore.msh-alpes.fr/)",1.0,5.863636363636363,False,True,0.6253054141998291,0.6454430222511292,False,2,False
 34,OIC-008-02-B,Quelle est la définition de la mort encéphalique selon le contenu éducatif?,La mort encéphalique est la mort du corps inanimé.,La mort encéphalique est la mort par arrêt cardio circulatoire.,La mort encéphalique est la mort irréversible du cerveau sans arrêt cardiaque.,La mort encéphalique est la mort du corps ventilé en réanimation.,c,"{{objectif de connaissance
 |Identifiant=OIC-008-02-B
 |Item_parent=Les discriminations
@@ -1310,7 +1310,7 @@ Les discriminations peuvent également entraîner une difficulté d'exercer pour
 
 '''Les discriminations contribuent largement au ""non-recours"".''' 
 
-On parle de non-recours quand les ressortissants des politiques publiques n’utilisent pas les prestations ou les services auxquels ils ont droit. Le non-recours est un phénomène massif, notamment en santé : Au-delà des facteurs liés à l'éloignement géographique, des disparités territoriales, d'une inégale littératie en santé, les discriminations peuvent y contribuer directement. Anticipant un rejet, des propos stigmatisants, une avance de frais ou un dépassement d’honoraires, les personnes issues de populations vulnérables et/ou en situation de précarité économique peuvent renoncer à se rendre chez un professionnel, retardant leur prise en charge ou aggravant leur état de santé. Au-delà de rencontrer des difficultés pour se soigner ou de faire face à des barrières qui les conduisent à ne pas accéder au soin, certaines personnes ne trouvent plus leur place dans le système de protection sociale et de santé et n’acceptent plus la nature des interactions qu’il propose (https://odenore.msh-alpes.fr/)",1.0,11.706666666666667,False,True,0.6301950216293335,0.913723091284434,True,3,False
+On parle de non-recours quand les ressortissants des politiques publiques n’utilisent pas les prestations ou les services auxquels ils ont droit. Le non-recours est un phénomène massif, notamment en santé : Au-delà des facteurs liés à l'éloignement géographique, des disparités territoriales, d'une inégale littératie en santé, les discriminations peuvent y contribuer directement. Anticipant un rejet, des propos stigmatisants, une avance de frais ou un dépassement d’honoraires, les personnes issues de populations vulnérables et/ou en situation de précarité économique peuvent renoncer à se rendre chez un professionnel, retardant leur prise en charge ou aggravant leur état de santé. Au-delà de rencontrer des difficultés pour se soigner ou de faire face à des barrières qui les conduisent à ne pas accéder au soin, certaines personnes ne trouvent plus leur place dans le système de protection sociale et de santé et n’acceptent plus la nature des interactions qu’il propose (https://odenore.msh-alpes.fr/)",1.0,11.706666666666667,False,True,0.6301947832107544,0.9137230316797892,False,3,False
 35,OIC-008-03-B,Qui peut être donneur vivant selon la loi?,Seul le conjoint du receveur,"Les frères et sœurs, les fils et filles, les grands-parents, les oncles et tantes",Le conjoint de son père ou de sa mère (couples recomposés),Toute personne apportant la preuve d'une vie commune d'au moins deux ans avec le receveur,d,"{{objectif de connaissance
 |Identifiant=OIC-008-03-B
 |Item_parent=Les discriminations
@@ -1338,7 +1338,7 @@ Plusieurs facteurs structurels et organisationnels ont été identifiés et sont
 
 6) Logiques économiques en tension avec les objectifs de soins : la course à la rentabilité peut renforcer l'orientation différentielle des patients, et le fait de moins bien traiter les patients dont on pense qu'ils pourraient être plus compliqués. 
 
-https://www.migrationssante.org/axes-dintervention/discriminations-et-sante/guide/<br />",1.0,3.7550000000000026,False,True,0.5374632477760315,0.768247147401174,False,2,False
+https://www.migrationssante.org/axes-dintervention/discriminations-et-sante/guide/<br />",1.0,3.7550000000000026,False,True,0.5374631881713867,0.7682470281918844,True,2,False
 36,OIC-009-01-A,"En France, selon la loi, l'identification par empreintes génétiques est autorisée uniquement dans quel cadre?",Dans le cadre de mesures d'enquête ou d'instruction diligentées lors d'une procédure judiciaire,À des fins médicales ou de recherche scientifique,Aux fins d'établir l'identité d'une personne décédée,Dans les conditions prévues à l'article L.2381-1 du Code de la défense,a,"{{objectif de connaissance
 |Identifiant=OIC-009-01-A
 |Item_parent=Introduction à l’éthique médicale
@@ -1372,7 +1372,7 @@ Si l'on souhaite promouvoir une démarche démocratique autour des questions de 
 
 C’est pourquoi l’éthique en santé se veut pratique, opérationnelle, c'est à dire une éthique qui ne soit pas que conceptuelle, mais qui débouche sur des avis permettant de guider l'action et les choix. C'est pourquoi on parle d'éthique appliquée.
 
-L’éthique appliquée se fonde soit sur des analyses descriptives de cas, soit sur des enquêtes de situations, sur des études sociologiques ou ethno-médicales. Elle propose d'une part l'analyse de pratiques professionnelles, visant à aborder les attitudes et les comportements de tous les acteurs concernés face à une situation qui pose problème, et d'autre part une argumentation sur les conséquences des différents choix possibles. Quand elle s'applique à des cas particuliers, on parle de « micro-éthique », et quand il s'agit de choix de société ou de politiques de soins, on parle de « macro-éthique ». L’éthique appliquée vise à guider la prise de décision.",1.0,15.433333333333337,False,True,0.6318591237068176,0.6747255325317383,False,2,False
+L’éthique appliquée se fonde soit sur des analyses descriptives de cas, soit sur des enquêtes de situations, sur des études sociologiques ou ethno-médicales. Elle propose d'une part l'analyse de pratiques professionnelles, visant à aborder les attitudes et les comportements de tous les acteurs concernés face à une situation qui pose problème, et d'autre part une argumentation sur les conséquences des différents choix possibles. Quand elle s'applique à des cas particuliers, on parle de « micro-éthique », et quand il s'agit de choix de société ou de politiques de soins, on parle de « macro-éthique ». L’éthique appliquée vise à guider la prise de décision.",1.0,15.433333333333337,False,True,0.6318591237068176,0.6747253139813741,False,2,False
 37,OIC-009-01-A,Quel facteur social influence le plus la perception de la santé corporelle selon le texte?,L'industrialisation,L'urbanisation,Les normes esthétiques,Les traditions religieuses,c,"{{objectif de connaissance
 |Identifiant=OIC-009-01-A
 |Item_parent=Introduction à l’éthique médicale
@@ -1406,7 +1406,7 @@ Si l'on souhaite promouvoir une démarche démocratique autour des questions de 
 
 C’est pourquoi l’éthique en santé se veut pratique, opérationnelle, c'est à dire une éthique qui ne soit pas que conceptuelle, mais qui débouche sur des avis permettant de guider l'action et les choix. C'est pourquoi on parle d'éthique appliquée.
 
-L’éthique appliquée se fonde soit sur des analyses descriptives de cas, soit sur des enquêtes de situations, sur des études sociologiques ou ethno-médicales. Elle propose d'une part l'analyse de pratiques professionnelles, visant à aborder les attitudes et les comportements de tous les acteurs concernés face à une situation qui pose problème, et d'autre part une argumentation sur les conséquences des différents choix possibles. Quand elle s'applique à des cas particuliers, on parle de « micro-éthique », et quand il s'agit de choix de société ou de politiques de soins, on parle de « macro-éthique ». L’éthique appliquée vise à guider la prise de décision.",1.0,10.713333333333338,False,True,0.7297870516777039,0.6137132247289022,False,2,False
+L’éthique appliquée se fonde soit sur des analyses descriptives de cas, soit sur des enquêtes de situations, sur des études sociologiques ou ethno-médicales. Elle propose d'une part l'analyse de pratiques professionnelles, visant à aborder les attitudes et les comportements de tous les acteurs concernés face à une situation qui pose problème, et d'autre part une argumentation sur les conséquences des différents choix possibles. Quand elle s'applique à des cas particuliers, on parle de « micro-éthique », et quand il s'agit de choix de société ou de politiques de soins, on parle de « macro-éthique ». L’éthique appliquée vise à guider la prise de décision.",1.0,10.713333333333338,False,True,0.7297871112823486,0.6137132247289022,False,2,False
 38,OIC-009-02-A,Quelle est la principale différence entre l'expérience du corps du patient et celle du soignant?,Le patient perçoit son corps de manière plus subjective.,Le soignant a une perception physique de son corps.,Le soignant a une perception morale de son corps.,Le patient a une perception plus objective de son corps.,a,"{{objectif de connaissance
 |Identifiant=OIC-009-02-A
 |Item_parent=Introduction à l’éthique médicale
@@ -1434,7 +1434,7 @@ Par ailleurs, la mondialisation de la biomédecine occidentale mondialise égale
 
 La bioéthique devrait ainsi suivre le développement de la biomédecine à travers le monde et s’imposer comme modèle. Mais ce sont les valeurs occidentales que l’on cherche à diffuser internationalement, soit certaines conceptions de la maladie, de la vie et de la mort, ou des principes comme celui d’autonomie, dans des contextes socio-culturels très différents. Une bioéthique globale ou universelle est-elle possible sans se transformer en imposition d’une pensée dominante ?
 
-Aujourd’hui, contrairement à la vision qu’en avait V.R. Potter, la bioéthique constitue donc un sous-ensemble de l’éthique en santé ; elle concerne les questions soulevées par l’émergence des nouvelles biotechnologies et les questions que posent l’application à l’homme de ces avancées scientifiques. Elle a ainsi pour objet d’explorer des questions suscitées par l’avancement et l’application des technosciences biomédicales, et d'analyser le passage entre ce « qui est possible » et « ce qui doit être ».",1.0,11.500000000000004,False,True,0.6521759629249573,0.8401520450909933,False,2,False
+Aujourd’hui, contrairement à la vision qu’en avait V.R. Potter, la bioéthique constitue donc un sous-ensemble de l’éthique en santé ; elle concerne les questions soulevées par l’émergence des nouvelles biotechnologies et les questions que posent l’application à l’homme de ces avancées scientifiques. Elle a ainsi pour objet d’explorer des questions suscitées par l’avancement et l’application des technosciences biomédicales, et d'analyser le passage entre ce « qui est possible » et « ce qui doit être ».",1.0,11.500000000000004,False,True,0.6521759033203125,0.840151846408844,False,2,False
 39,OIC-009-04-A,Quels sont les principaux sources de financement de la protection sociale?,Les cotisations sociales,Les impôts,Les contributions publiques,Les ressources fiscales,a,"{{objectif de connaissance
 |Identifiant=OIC-009-04-A
 |Item_parent=Introduction à l’éthique médicale
@@ -1472,7 +1472,7 @@ Derrière le concept de justice, celle de responsabilité professionnelle est pr
 
 La démarche de l’éthique par principes doit donc interroger chacun d’entre eux, en particulier la bienfaisance, la non-malfaisance, le respect de l’autonomie et la justice. Tout d’abord cette démarche n’interdit en rien que d’autres principes s’y ajoutent. Par ailleurs, l’idée n’est pas que ces quatre principes soient forcément respectés dans un choix ou une action, mais qu’ils soient systématiquement interrogés de manière à voir, d’une part, pourquoi et comment ils ne peuvent être tous respectés et, d’autre part, comment ils se compensent l’un l’autre.
 
-Une décision peut être acceptable si l’un des principes est mis en défaut mais compensé par la force des trois autres. L’exemple le plus classique est le cas de la perte d’autonomie du sujet, où l’action est néanmoins possible sans le consentement de la personne, car la démarche sera bienfaisante, non malfaisante et jugée juste. Des philosophes comme Emmanuel Levinas ou Hans Jonas mettent en avant le principe de bienfaisance et de responsabilité pour autrui, qui fonde la moralité de l’action vis-à-vis de la fragilité de l’autre. Hans Jonas revendique un principe de responsabilité à l’égard des plus fragiles et l’action au nom de la seule bienfaisance. Cette prise de position évite l’abandon de ceux qui sont en perte d’autonomie. Mais cette action doit être réalisée dans le respect d’une compréhension mutuelle, d’un accompagnement digne et de la recherche permanente, non du consentement, mais de l’as- sentiment de l’autre, c’est-à-dire la construction d’un chemin vers une forme d’adhésion. Ainsi, dans l’approche du principisme, il ne faut donc pas concevoir chaque principe comme un absolu, mais comme un point à débattre, dont l’éventuelle transgression ou adaptation doit être éthiquement validée.",1.0,11.22727272727273,False,True,0.6333858966827393,0.6836616595586141,False,2,True
+Une décision peut être acceptable si l’un des principes est mis en défaut mais compensé par la force des trois autres. L’exemple le plus classique est le cas de la perte d’autonomie du sujet, où l’action est néanmoins possible sans le consentement de la personne, car la démarche sera bienfaisante, non malfaisante et jugée juste. Des philosophes comme Emmanuel Levinas ou Hans Jonas mettent en avant le principe de bienfaisance et de responsabilité pour autrui, qui fonde la moralité de l’action vis-à-vis de la fragilité de l’autre. Hans Jonas revendique un principe de responsabilité à l’égard des plus fragiles et l’action au nom de la seule bienfaisance. Cette prise de position évite l’abandon de ceux qui sont en perte d’autonomie. Mais cette action doit être réalisée dans le respect d’une compréhension mutuelle, d’un accompagnement digne et de la recherche permanente, non du consentement, mais de l’as- sentiment de l’autre, c’est-à-dire la construction d’un chemin vers une forme d’adhésion. Ainsi, dans l’approche du principisme, il ne faut donc pas concevoir chaque principe comme un absolu, mais comme un point à débattre, dont l’éventuelle transgression ou adaptation doit être éthiquement validée.",1.0,11.22727272727273,False,True,0.6333857774734497,0.6836614410082499,False,2,True
 40,OIC-009-05-A,Quelle branche de la sécurité sociale est pilotée par la Caisse nationale des allocations familiales (Cnaf)?,"Branche Maladie, Accidents du travail et Risques professionnels",Branche Vieillesse,Branche Famille,Branche Recouvrement des cotisations sociales,c,"{{objectif de connaissance
 |Identifiant=OIC-009-05-A
 |Item_parent=Introduction à l’éthique médicale
@@ -1581,7 +1581,7 @@ De nombreuses situations rentrent dans ce cadre : l’opposition aux vaccination
 
 Il existe aussi pour la médecine une nécessité de prévenir, de soigner, de porter assistance dans une logique fondée sur le bien public, et non sur le respect formel de convictions individuelles par lequel le patient marque ses différences avec la collectivité, éventuellement au détriment de soi-même et des autres. Une conception autonomiste, individualiste légitimerait le refus de vaccinations (pourtant bénéfique à la collectivité et qui perd son sens si tous n’y souscrivent pas), le refus de césarienne par choix maternel (au détriment de l’enfant), le refus de sauver le père ou la mère d’un enfant au nom d’une croyance ou religion (mettant en jeu certes l’équilibre familial mais aussi la solidarité collective envers ceux qui restent à charge), le refus de soins lors d’épidémies graves (mettant en jeu la vie d’autres personnes) etc.
 
-Ainsi, dans une acception universelle de la médecine, il est difficile de considérer que le patient puisse avoir des droits, mais pas de devoirs. Une conception autonomiste, poussée à l’extrême, respecterait ces mises en danger, les considérant comme un droit et plaçant le malade en situation d’usager, voire de client, imposant ses choix au professionnel de santé considéré alors comme prestataire de service. Notre analyse est à mettre en regard des écrits de Hans Georg Gadamer dans Philosophie de la santé où il rappelle que l’éthique de la responsabilité peut venir contrecarrer les convictions individuelles, et qu’il en va du bien commun. En regard de son analyse, un système de santé doit pouvoir définir des règles et devoirs applicables à tous ; en regard tous reçoivent des droits : protection sociale, égalité d’accès aux soins. Que dirait-on d’un système qui permettrait à un usager du transport aérien de s’opposer, pour des motifs individuels, aux règles d’atterrissage et aux instruments appliquées par un pilote de ligne ? Si la santé devenait une simple donnée consumériste régie par de tels choix individuels, loin des notions complexes que nous venons d’exposer et des représentations du lien social, la visée éthique de la médecine devrait alors être redéfinie. Il faudrait alors se demander si elle ne serait pas dès lors contraire à la visée éthique définie par Paul Ricoeur comme « la visée de la vie bonne, avec et pour autrui, dans des institutions justes ».",1.0,14.9875,False,True,0.6154232025146484,0.6635021169980367,False,5,False
+Ainsi, dans une acception universelle de la médecine, il est difficile de considérer que le patient puisse avoir des droits, mais pas de devoirs. Une conception autonomiste, poussée à l’extrême, respecterait ces mises en danger, les considérant comme un droit et plaçant le malade en situation d’usager, voire de client, imposant ses choix au professionnel de santé considéré alors comme prestataire de service. Notre analyse est à mettre en regard des écrits de Hans Georg Gadamer dans Philosophie de la santé où il rappelle que l’éthique de la responsabilité peut venir contrecarrer les convictions individuelles, et qu’il en va du bien commun. En regard de son analyse, un système de santé doit pouvoir définir des règles et devoirs applicables à tous ; en regard tous reçoivent des droits : protection sociale, égalité d’accès aux soins. Que dirait-on d’un système qui permettrait à un usager du transport aérien de s’opposer, pour des motifs individuels, aux règles d’atterrissage et aux instruments appliquées par un pilote de ligne ? Si la santé devenait une simple donnée consumériste régie par de tels choix individuels, loin des notions complexes que nous venons d’exposer et des représentations du lien social, la visée éthique de la médecine devrait alors être redéfinie. Il faudrait alors se demander si elle ne serait pas dès lors contraire à la visée éthique définie par Paul Ricoeur comme « la visée de la vie bonne, avec et pour autrui, dans des institutions justes ».",1.0,14.9875,False,True,0.6154230833053589,0.6635018587112427,False,5,False
 41,OIC-009-05-A,La loi de financement de la sécurité sociale (LFSS) est votée par le Parlement en tant que quelle catégorie de loi?,Loi de finances,Loi de santé,Loi de financement et non de finances,Loi de protection sociale,c,"{{objectif de connaissance
 |Identifiant=OIC-009-05-A
 |Item_parent=Introduction à l’éthique médicale
@@ -1690,7 +1690,7 @@ De nombreuses situations rentrent dans ce cadre : l’opposition aux vaccination
 
 Il existe aussi pour la médecine une nécessité de prévenir, de soigner, de porter assistance dans une logique fondée sur le bien public, et non sur le respect formel de convictions individuelles par lequel le patient marque ses différences avec la collectivité, éventuellement au détriment de soi-même et des autres. Une conception autonomiste, individualiste légitimerait le refus de vaccinations (pourtant bénéfique à la collectivité et qui perd son sens si tous n’y souscrivent pas), le refus de césarienne par choix maternel (au détriment de l’enfant), le refus de sauver le père ou la mère d’un enfant au nom d’une croyance ou religion (mettant en jeu certes l’équilibre familial mais aussi la solidarité collective envers ceux qui restent à charge), le refus de soins lors d’épidémies graves (mettant en jeu la vie d’autres personnes) etc.
 
-Ainsi, dans une acception universelle de la médecine, il est difficile de considérer que le patient puisse avoir des droits, mais pas de devoirs. Une conception autonomiste, poussée à l’extrême, respecterait ces mises en danger, les considérant comme un droit et plaçant le malade en situation d’usager, voire de client, imposant ses choix au professionnel de santé considéré alors comme prestataire de service. Notre analyse est à mettre en regard des écrits de Hans Georg Gadamer dans Philosophie de la santé où il rappelle que l’éthique de la responsabilité peut venir contrecarrer les convictions individuelles, et qu’il en va du bien commun. En regard de son analyse, un système de santé doit pouvoir définir des règles et devoirs applicables à tous ; en regard tous reçoivent des droits : protection sociale, égalité d’accès aux soins. Que dirait-on d’un système qui permettrait à un usager du transport aérien de s’opposer, pour des motifs individuels, aux règles d’atterrissage et aux instruments appliquées par un pilote de ligne ? Si la santé devenait une simple donnée consumériste régie par de tels choix individuels, loin des notions complexes que nous venons d’exposer et des représentations du lien social, la visée éthique de la médecine devrait alors être redéfinie. Il faudrait alors se demander si elle ne serait pas dès lors contraire à la visée éthique définie par Paul Ricoeur comme « la visée de la vie bonne, avec et pour autrui, dans des institutions justes ».",1.0,11.142857142857142,False,True,0.5929054617881775,0.7162968317667643,False,3,False
+Ainsi, dans une acception universelle de la médecine, il est difficile de considérer que le patient puisse avoir des droits, mais pas de devoirs. Une conception autonomiste, poussée à l’extrême, respecterait ces mises en danger, les considérant comme un droit et plaçant le malade en situation d’usager, voire de client, imposant ses choix au professionnel de santé considéré alors comme prestataire de service. Notre analyse est à mettre en regard des écrits de Hans Georg Gadamer dans Philosophie de la santé où il rappelle que l’éthique de la responsabilité peut venir contrecarrer les convictions individuelles, et qu’il en va du bien commun. En regard de son analyse, un système de santé doit pouvoir définir des règles et devoirs applicables à tous ; en regard tous reçoivent des droits : protection sociale, égalité d’accès aux soins. Que dirait-on d’un système qui permettrait à un usager du transport aérien de s’opposer, pour des motifs individuels, aux règles d’atterrissage et aux instruments appliquées par un pilote de ligne ? Si la santé devenait une simple donnée consumériste régie par de tels choix individuels, loin des notions complexes que nous venons d’exposer et des représentations du lien social, la visée éthique de la médecine devrait alors être redéfinie. Il faudrait alors se demander si elle ne serait pas dès lors contraire à la visée éthique définie par Paul Ricoeur comme « la visée de la vie bonne, avec et pour autrui, dans des institutions justes ».",1.0,11.142857142857142,False,True,0.5929054021835327,0.7162967324256897,False,3,False
 42,OIC-009-06-A,Quel pourcentage de la population française est couvert par le régime général de la sécurité sociale?,88 %,5 %,10 %,20 %,a,"{{objectif de connaissance
 |Identifiant=OIC-009-06-A
 |Item_parent=Introduction à l’éthique médicale
@@ -1764,7 +1764,7 @@ Depuis cette décision on a vu se développer des brochures ou des fiches d’in
 
 Il est important que tous ces temps d’information soient notés dans le dossier médical (par qui, en présence de qui, à quelle date), ainsi que les difficultés éventuellement rencontrées lors de leur délivrance. Il est important également de mentionner les situations où les démarches d’information auront été impossibles ou complexes, en argumentant en fonction de la situation clinique et sociale du patient.
 
-Il convient donc de ne pas oublier qu’un document écrit n’affranchit pas le médecin de tous les autres modes d’information qu’il jugera nécessaire et en particulier que le temps oral relationnel passé avec ce dernier est majeur.",1.0,12.037500000000005,False,True,0.6349685192108154,0.733516534169515,False,1,False
+Il convient donc de ne pas oublier qu’un document écrit n’affranchit pas le médecin de tous les autres modes d’information qu’il jugera nécessaire et en particulier que le temps oral relationnel passé avec ce dernier est majeur.",1.0,12.037500000000005,False,True,0.6349684000015259,0.7335163950920105,False,1,False
 43,OIC-009-07-A,Quel est le pourcentage du ticket modérateur dans l'exemple donné pour une consultation de 25€?,25%,30%,40%,50%,b,"{{objectif de connaissance
 |Identifiant=OIC-009-07-A
 |Item_parent=Introduction à l’éthique médicale
@@ -1826,7 +1826,7 @@ Au plan éthique, un refus de traitement ne saurait être considéré comme un r
 
 [[Refus de soin OIC-009-07-A#sdfootnote6anc|6]]	La fin de vie est définie par la loi n° 2005-370 du 22 avril 2005	comme « la phase avancée ou terminale d’une affection grave	et incurable quelle qu’en soit la cause ».
 
-[[Refus de soin OIC-009-07-A#sdfootnote7anc|7]]	Voir P. Ricoeur, « Accompagner la vie jusqu’à la mort »	rééd. dans ''Esprit'',	n° 323, mars-avril 2006, p. 316-321.",1.0,11.500000000000004,False,True,0.6154349446296692,0.8019507527351379,False,2,False
+[[Refus de soin OIC-009-07-A#sdfootnote7anc|7]]	Voir P. Ricoeur, « Accompagner la vie jusqu’à la mort »	rééd. dans ''Esprit'',	n° 323, mars-avril 2006, p. 316-321.",1.0,11.500000000000004,False,True,0.6154349446296692,0.8019506931304932,True,2,False
 44,OIC-009-08-A,Qui est le pivot du parcours de soins coordonnés?,Le médecin généraliste,Le médecin spécialiste,Le médecin traitant,Le médecin hospitalier,c,"{{objectif de connaissance
 |Identifiant=OIC-009-08-A
 |Item_parent=Introduction à l’éthique médicale
@@ -1854,7 +1854,7 @@ Le rôle du soignant est de conseiller le patient en fonction du vécu de la mal
 
 Concernant les personnes désignées, plusieurs points importants seront à évoquer, en particulier ceux de la disponibilité, de leur volonté de remplir cette mission, essentiels pour donner sens à la démarche. Une explication sur la durée de validité de la désignation d’une personne de confiance sera donnée : la loi ne prévoit pas de limite de validité de la désignation effectuée. Cependant, les aléas relationnels de la vie et l’évolution du vécu de la maladie par un patient impliquent que les choses peuvent évoluer et changer au fil du temps. L’esprit de la loi et la variabilité légitime des choix d’une personne amènent à dire qu’il convient d’informer le patient sur le changement possible de personne désignée. La désignation est en effet révocable à tout moment par le patient. Pour les professionnels de santé la recommandation est qu’il convient d’interroger le patient à chaque nouvelle hospitalisation ou à chaque nouveau cycle de prise en charge sur la pérennité de la personne désignée.
 
-La désignation devra ''in fine'' se faire par écrit signé par le patient et par la personne désignée et être notée dans le dossier médical, avec les coordonnées précises et la nature des liens entre patient et personne désignée, incluant les mises à jour.",1.0,3.653333333333336,False,True,0.6088427901268005,0.8403248985608419,True,2,False
+La désignation devra ''in fine'' se faire par écrit signé par le patient et par la personne désignée et être notée dans le dossier médical, avec les coordonnées précises et la nature des liens entre patient et personne désignée, incluant les mises à jour.",1.0,3.653333333333336,False,True,0.6088426113128662,0.840324878692627,True,2,False
 45,OIC-009-08-A,Quelle condition permet l'exonération du ticket modérateur pour un patient souffrant d'une affection de longue durée?,Une affection inscrite sur la liste ALD 30,Une affection non présente sur la liste ALD 30,Une affection grave ou invalidante non présente sur la liste ALD 30,Une affection avec traitement prolongé de 6 mois,a,"{{objectif de connaissance
 |Identifiant=OIC-009-08-A
 |Item_parent=Introduction à l’éthique médicale
@@ -1882,7 +1882,7 @@ Le rôle du soignant est de conseiller le patient en fonction du vécu de la mal
 
 Concernant les personnes désignées, plusieurs points importants seront à évoquer, en particulier ceux de la disponibilité, de leur volonté de remplir cette mission, essentiels pour donner sens à la démarche. Une explication sur la durée de validité de la désignation d’une personne de confiance sera donnée : la loi ne prévoit pas de limite de validité de la désignation effectuée. Cependant, les aléas relationnels de la vie et l’évolution du vécu de la maladie par un patient impliquent que les choses peuvent évoluer et changer au fil du temps. L’esprit de la loi et la variabilité légitime des choix d’une personne amènent à dire qu’il convient d’informer le patient sur le changement possible de personne désignée. La désignation est en effet révocable à tout moment par le patient. Pour les professionnels de santé la recommandation est qu’il convient d’interroger le patient à chaque nouvelle hospitalisation ou à chaque nouveau cycle de prise en charge sur la pérennité de la personne désignée.
 
-La désignation devra ''in fine'' se faire par écrit signé par le patient et par la personne désignée et être notée dans le dossier médical, avec les coordonnées précises et la nature des liens entre patient et personne désignée, incluant les mises à jour.",1.0,14.9875,False,True,0.7157938480377197,0.8967911203702291,False,2,False
+La désignation devra ''in fine'' se faire par écrit signé par le patient et par la personne désignée et être notée dans le dossier médical, avec les coordonnées précises et la nature des liens entre patient et personne désignée, incluant les mises à jour.",1.0,14.9875,False,True,0.7157939076423645,0.8967910011609396,False,2,False
 46,OIC-009-10-B,Quels sont les trois catégories de recherches impliquant la personne humaine (RIPH) définies par la loi Jardé?,"Recherches interventionnelles (RIPH catégorie 1), Recherches interventionnelles à risques et contraintes minimes (RIPH catégorie 2), Recherches non interventionnelles (RIPH catégorie 3)","Recherches expérimentales, Recherches observationnelles, Recherches non interventionnelles","Recherches interventionnelles, Recherches non interventionnelles, Recherches de type expérimentale","Recherches interventionnelles, Recherches observationnelles, Recherches de type expérimentale",a,"{{objectif de connaissance
 |Identifiant=OIC-009-10-B
 |Item_parent=Introduction à l’éthique médicale
@@ -1937,7 +1937,7 @@ Dans la situation de tutelle, en principe, le dossier médical ne peut pas être
 
 [[Principes et finalités des mesures de protection des personnes OIC-009-10-B#sdfootnote1anc|1]]	Ce texte emprunte à plusieurs	documents publiés par le Ministère de la Justice, le Ministère	des Solidarités, de l’Autonomie et des Personnes handicapées et	le Ministère de la Santé et de la Prévention, et des	consultations sur justice.fr, solidarités-santé.gouv.fr,	service-public.fr.
 
-[[Principes et finalités des mesures de protection des personnes OIC-009-10-B#sdfootnote2anc|2]]	Pour aller plus loin, consulter la ''Charte	des droits et libertés de la personne majeure protégée''.",1.0,10.47529411764706,False,True,0.6419751644134521,0.7692174315452576,True,2,False
+[[Principes et finalités des mesures de protection des personnes OIC-009-10-B#sdfootnote2anc|2]]	Pour aller plus loin, consulter la ''Charte	des droits et libertés de la personne majeure protégée''.",1.0,10.47529411764706,False,True,0.6419750452041626,0.7692174514134725,False,2,False
 47,OIC-009-11-A,Quels sont les deux arguments principaux utilisés pour justifier l'utilité et la pertinence d'une problématique de recherche?,Épidémiologie et état actuel des connaissances,Méthodologie et résultats expérimentaux,Coûts et implications sociales,Hypothèses de recherche et méthodologie,a,"{{objectif de connaissance
 |Identifiant=OIC-009-11-A
 |Item_parent=Introduction à l’éthique médicale
@@ -1984,7 +1984,7 @@ La tutelle d’un mineur est la mesure de protection juridique par laquelle une 
 
 '''Pour connaître les implications principales de ces mesures de protection, notamment concernant les droits des patients majeurs protégés, se référer à l’objectif de connaissance précédant (OIC-009-10-B Principes et finalités des mesures de protection des personnes).'''
 
-[[Connaître les trois principales mesures de protection OIC-009-11-A#sdfootnote1anc|1]]	Ce texte emprunte à plusieurs	documents publiés par le Ministère de la Justice, le Ministère	des Solidarités, de l’Autonomie et des Personnes handicapées et	le Ministère de la Santé et de la Prévention, et des	consultations sur justice.fr, solidarités-santé.gouv.fr,	service-public.fr.",1.0,16.028235294117646,False,True,0.6917228102684021,0.707741379737854,False,2,False
+[[Connaître les trois principales mesures de protection OIC-009-11-A#sdfootnote1anc|1]]	Ce texte emprunte à plusieurs	documents publiés par le Ministère de la Justice, le Ministère	des Solidarités, de l’Autonomie et des Personnes handicapées et	le Ministère de la Santé et de la Prévention, et des	consultations sur justice.fr, solidarités-santé.gouv.fr,	service-public.fr.",1.0,16.028235294117646,False,True,0.691722571849823,0.7077412207921346,False,2,False
 48,OIC-009-11-A,Quelle est la relation entre les hypothèses de recherche et les objectifs de la recherche?,Les objectifs viennent de la méthodologie,Les objectifs sont déterminés par la population,Les objectifs sont directement liés aux hypothèses,Les objectifs sont indépendants des hypothèses,c,"{{objectif de connaissance
 |Identifiant=OIC-009-11-A
 |Item_parent=Introduction à l’éthique médicale
@@ -2031,7 +2031,7 @@ La tutelle d’un mineur est la mesure de protection juridique par laquelle une 
 
 '''Pour connaître les implications principales de ces mesures de protection, notamment concernant les droits des patients majeurs protégés, se référer à l’objectif de connaissance précédant (OIC-009-10-B Principes et finalités des mesures de protection des personnes).'''
 
-[[Connaître les trois principales mesures de protection OIC-009-11-A#sdfootnote1anc|1]]	Ce texte emprunte à plusieurs	documents publiés par le Ministère de la Justice, le Ministère	des Solidarités, de l’Autonomie et des Personnes handicapées et	le Ministère de la Santé et de la Prévention, et des	consultations sur justice.fr, solidarités-santé.gouv.fr,	service-public.fr.",1.0,11.500000000000004,False,True,0.6346780061721802,0.8562487959861755,False,2,False
+[[Connaître les trois principales mesures de protection OIC-009-11-A#sdfootnote1anc|1]]	Ce texte emprunte à plusieurs	documents publiés par le Ministère de la Justice, le Ministère	des Solidarités, de l’Autonomie et des Personnes handicapées et	le Ministère de la Santé et de la Prévention, et des	consultations sur justice.fr, solidarités-santé.gouv.fr,	service-public.fr.",1.0,11.500000000000004,False,True,0.6346777677536011,0.8562487562497457,True,2,False
 49,OIC-009-12-B,Quelle est la première étape essentielle pour déterminer la méthodologie adaptée à un objectif de recherche?,Préciser la question posée,Définir la population cible,Identifier les facteurs de risque,Choisir l'approche expérimentale,a,"{{objectif de connaissance
 |Identifiant=OIC-009-12-B
 |Item_parent=Introduction à l’éthique médicale
@@ -2104,7 +2104,7 @@ L’amélioration ou la dégradation de la situation du majeur protégé rend to
 
 
 
-[[Connaître les éléments des procédures de mise en œuvre de ces mesures de protection ou de mandat de protection OIC-009-12-B#sdfootnote1anc|1]]	Ce texte emprunte à plusieurs	documents publiés par le Ministère de la Justice, le Ministère	des Solidarités, de l’Autonomie et des Personnes handicapées et	le Ministère de la Santé et de la Prévention, et des	consultations sur justice.fr, solidarités-santé.gouv.fr,	service-public.fr.",1.0,15.725000000000005,False,True,0.6047015190124512,0.681402583916982,False,3,False
+[[Connaître les éléments des procédures de mise en œuvre de ces mesures de protection ou de mandat de protection OIC-009-12-B#sdfootnote1anc|1]]	Ce texte emprunte à plusieurs	documents publiés par le Ministère de la Justice, le Ministère	des Solidarités, de l’Autonomie et des Personnes handicapées et	le Ministère de la Santé et de la Prévention, et des	consultations sur justice.fr, solidarités-santé.gouv.fr,	service-public.fr.",1.0,15.725000000000005,False,True,0.6047012209892273,0.6814025640487671,False,3,False
 50,OIC-009-13-A,Quelle est la méthode de recueil de données qui permet une surveillance continue des indicateurs de santé en France?,Les registres de morbidité,Les déclarations obligatoires,Les réseaux sentinelles,Les statistiques vitales,c,"{{objectif de connaissance
 |Identifiant=OIC-009-13-A
 |Item_parent=Introduction à l’éthique médicale
@@ -2135,7 +2135,7 @@ De même, la clause de conscience que peuvent faire valoir les professionnels de
 
 Certaines personnes et organisations se sont donné pour but d’entraver par différents moyens l’accès à l’IVG, par exemple en diffusant des fausses informations, en intimidant les professionnels de santé et en faisant pression sur les établissements de santé. Le « délit d’entrave à l’IVG » qui existait depuis 1993 a été précisé et élargi en 2017, et ces actes sont passibles de lourdes sanctions. En parallèle, des initiatives ont été prises par les pouvoirs publics pour permettre l’accès à des informations fiables (numéro vert 0800 08 11 11 ; Site officiel <nowiki>https://ivg.gouv.fr/</nowiki>). 
 
-Il reste que l’accès ''effectif'' à l'IVG, pour toutes les femmes qui le souhaitent, où qu’elles soient, reste fragile. D’autant que le principe même de ce droit est loin d'être reconnu partout, et même remis en question dans des pays où il semblait pourtant acquis (comme l’a montré l’exemple récent des États-Unis).",1.0,12.935789473684213,False,True,0.6768156886100769,0.5824880401293436,False,3,False
+Il reste que l’accès ''effectif'' à l'IVG, pour toutes les femmes qui le souhaitent, où qu’elles soient, reste fragile. D’autant que le principe même de ce droit est loin d'être reconnu partout, et même remis en question dans des pays où il semblait pourtant acquis (comme l’a montré l’exemple récent des États-Unis).",1.0,12.935789473684213,False,True,0.6768157482147217,0.5824879010518392,False,3,False
 51,OIC-009-13-A,Quel est le critère de jugement principal dans une étude de santé?,La mortalité,Le taux de cholestérol,La qualité de vie,Le taux de cholestérol comme surrogate de la mortalité,a,"{{objectif de connaissance
 |Identifiant=OIC-009-13-A
 |Item_parent=Introduction à l’éthique médicale
@@ -2166,7 +2166,7 @@ De même, la clause de conscience que peuvent faire valoir les professionnels de
 
 Certaines personnes et organisations se sont donné pour but d’entraver par différents moyens l’accès à l’IVG, par exemple en diffusant des fausses informations, en intimidant les professionnels de santé et en faisant pression sur les établissements de santé. Le « délit d’entrave à l’IVG » qui existait depuis 1993 a été précisé et élargi en 2017, et ces actes sont passibles de lourdes sanctions. En parallèle, des initiatives ont été prises par les pouvoirs publics pour permettre l’accès à des informations fiables (numéro vert 0800 08 11 11 ; Site officiel <nowiki>https://ivg.gouv.fr/</nowiki>). 
 
-Il reste que l’accès ''effectif'' à l'IVG, pour toutes les femmes qui le souhaitent, où qu’elles soient, reste fragile. D’autant que le principe même de ce droit est loin d'être reconnu partout, et même remis en question dans des pays où il semblait pourtant acquis (comme l’a montré l’exemple récent des États-Unis).",1.0,7.773333333333333,False,True,0.6896613240242004,0.6328280170758566,True,3,False
+Il reste que l’accès ''effectif'' à l'IVG, pour toutes les femmes qui le souhaitent, où qu’elles soient, reste fragile. D’autant que le principe même de ce droit est loin d'être reconnu partout, et même remis en question dans des pays où il semblait pourtant acquis (comme l’a montré l’exemple récent des États-Unis).",1.0,7.773333333333333,False,True,0.6896611452102661,0.6328278382619222,False,3,False
 52,OIC-009-14-B,Quelle est la définition d'une variable aléatoire?,Une fonction qui attribue un nombre à toutes les issues possibles d'un événement.,"Une fonction qui attribue un nombre à toutes les issues possibles d'un événement, mais qui ne peut pas être déterminée.","Une fonction qui attribue un nombre à toutes les issues possibles d'un événement, mais qui est toujours continue.","Une fonction qui attribue un nombre à toutes les issues possibles d'un événement, mais qui est toujours discrète.",a,"{{objectif de connaissance
 |Identifiant=OIC-009-14-B
 |Item_parent=Introduction à l’éthique médicale
@@ -2208,7 +2208,7 @@ Trois différences entre IVG et IMG :
 
 * L'interruption	de grossesse pour motif médical ne peut être pratiquée que par un	médecin ;
 * Il	n'y a pas de limitation de délai pour l'IMG : elle peut avoir lieu	durant toute la grossesse ;
-* Les	principes concernant le recueil de la demande de la femme et son	consentement sont les mêmes que pour l'IVG, mais l'acceptation de	la demande d'IMG incombe au CPDPN, après une procédure rigoureuse	à respecter.",1.0,14.111428571428572,False,True,0.6202498078346252,0.9690344929695129,False,2,False
+* Les	principes concernant le recueil de la demande de la femme et son	consentement sont les mêmes que pour l'IVG, mais l'acceptation de	la demande d'IMG incombe au CPDPN, après une procédure rigoureuse	à respecter.",1.0,14.111428571428572,False,True,0.6202497482299805,0.9690346121788025,False,2,False
 53,OIC-009-14-B,Quel paramètre statistique mesure la valeur la plus fréquemment retrouvée dans un ensemble de données?,Moyenne,Mode,Médiane,Variance,b,"{{objectif de connaissance
 |Identifiant=OIC-009-14-B
 |Item_parent=Introduction à l’éthique médicale
@@ -2250,7 +2250,7 @@ Trois différences entre IVG et IMG :
 
 * L'interruption	de grossesse pour motif médical ne peut être pratiquée que par un	médecin ;
 * Il	n'y a pas de limitation de délai pour l'IMG : elle peut avoir lieu	durant toute la grossesse ;
-* Les	principes concernant le recueil de la demande de la femme et son	consentement sont les mêmes que pour l'IVG, mais l'acceptation de	la demande d'IMG incombe au CPDPN, après une procédure rigoureuse	à respecter.",1.0,13.073333333333338,False,True,0.5894452929496765,0.5103133916854858,False,5,False
+* Les	principes concernant le recueil de la demande de la femme et son	consentement sont les mêmes que pour l'IVG, mais l'acceptation de	la demande d'IMG incombe au CPDPN, après une procédure rigoureuse	à respecter.",1.0,13.073333333333338,False,True,0.5894453525543213,0.5103132824103037,False,2,False
 54,OIC-009-15-B,Quelle méthode permet d'estimer la probabilité de survie à chaque instant et de représenter la courbe de survie?,Le test du log-rank,La méthode de Kaplan-Meier,Le modèle de Cox,L'analyse multivariable,b,"{{objectif de connaissance
 |Identifiant=OIC-009-15-B
 |Item_parent=Introduction à l’éthique médicale
@@ -2307,7 +2307,7 @@ Du côté des professionnels de santé, le statut du DPNI à l'avenir devra inco
 
    • Lorsqu'une anomalie fœtale est détectée, il appartient au CPDPN (centre pluridisciplinaire de diagnostic prénatal) d'attester qu'il existe une forte probabilité que l'enfant à naître soit atteint d'une affection d'une particulière gravité incurable au moment du diagnostic. Cette attestation permet, si la femme enceinte le décide, de réaliser une interruption volontaire de la grossesse pour motif médical.
 
-La technique du DPNI (dépistage prénatal non invasif) permettrait précocement dans la grossesse de sélectionner le sexe fœtal ou l'accès au dépistage génétique de marqueurs de pathologies ou de risques. On comprend pourquoi, tout en soutenant l'émergence du DPNI, il peut apparaître nécessaire de bien en cibler les indications et éventuellement de discuter du moment du retour de résultats avant ou au-delà du délai possible pour une interruption volontaire de grossesse.",1.0,13.063333333333333,False,True,0.6006757020950317,0.7112425963083903,True,2,False
+La technique du DPNI (dépistage prénatal non invasif) permettrait précocement dans la grossesse de sélectionner le sexe fœtal ou l'accès au dépistage génétique de marqueurs de pathologies ou de risques. On comprend pourquoi, tout en soutenant l'émergence du DPNI, il peut apparaître nécessaire de bien en cibler les indications et éventuellement de discuter du moment du retour de résultats avant ou au-delà du délai possible pour une interruption volontaire de grossesse.",1.0,13.063333333333333,False,True,0.6006755828857422,0.7112424174944559,False,2,False
 55,OIC-009-16-B,Quelle méthode permet d'ajuster les facteurs de confusion dans une analyse statistique?,Régression linéaire,Analyse univariée,Analyse multivariée,Corrélation simple,c,"{{objectif de connaissance
 |Identifiant=OIC-009-16-B
 |Item_parent=Introduction à l’éthique médicale
@@ -2328,7 +2328,7 @@ La technique du DPNI (dépistage prénatal non invasif) permettrait précocement
 
 [[Diagnostic préimplantatoire OIC-009-16-B#sdfootnote1anc|1]]	Le diagnostic prénatal (DPN) correspond aux pratiques médicales	ayant pour objectif de détecter ''in utero'', chez l’embryon	ou le fœtus, une affection d’une particulière gravité.
 
-[[Diagnostic préimplantatoire OIC-009-16-B#sdfootnote2anc|2]]	Anomalie chromosomique, risque d'aneuploïdie, maladies autosomiques	récessives (dont mucoviscidose, B-thalassémie, amyotrophie	spinale), maladies autosomiques dominantes (dont maladie de	steinert, chorée de Huntington, maladie de Charcot-Marie-Tooth) et	maladie liée à I’X (dont myopathie de Duchenne et Becker,	hémophilie, X fragile). Le DPI peut également être sollicité par	les parents pour choisir le sexe de l’enfant à naître.",1.0,15.64,False,True,0.5967069864273071,0.7106064955393473,True,2,False
+[[Diagnostic préimplantatoire OIC-009-16-B#sdfootnote2anc|2]]	Anomalie chromosomique, risque d'aneuploïdie, maladies autosomiques	récessives (dont mucoviscidose, B-thalassémie, amyotrophie	spinale), maladies autosomiques dominantes (dont maladie de	steinert, chorée de Huntington, maladie de Charcot-Marie-Tooth) et	maladie liée à I’X (dont myopathie de Duchenne et Becker,	hémophilie, X fragile). Le DPI peut également être sollicité par	les parents pour choisir le sexe de l’enfant à naître.",1.0,15.64,False,True,0.5967068076133728,0.7106063365936279,True,2,False
 56,OIC-009-16-B,Quelle législation protège particulièrement les données personnelles des patients dans le domaine de la santé?,RGPD,Loi Informatique et Libertés,Code de la santé publique,Loi sur la protection des données,a,"{{objectif de connaissance
 |Identifiant=OIC-009-16-B
 |Item_parent=Introduction à l’éthique médicale
@@ -2349,7 +2349,7 @@ La technique du DPNI (dépistage prénatal non invasif) permettrait précocement
 
 [[Diagnostic préimplantatoire OIC-009-16-B#sdfootnote1anc|1]]	Le diagnostic prénatal (DPN) correspond aux pratiques médicales	ayant pour objectif de détecter ''in utero'', chez l’embryon	ou le fœtus, une affection d’une particulière gravité.
 
-[[Diagnostic préimplantatoire OIC-009-16-B#sdfootnote2anc|2]]	Anomalie chromosomique, risque d'aneuploïdie, maladies autosomiques	récessives (dont mucoviscidose, B-thalassémie, amyotrophie	spinale), maladies autosomiques dominantes (dont maladie de	steinert, chorée de Huntington, maladie de Charcot-Marie-Tooth) et	maladie liée à I’X (dont myopathie de Duchenne et Becker,	hémophilie, X fragile). Le DPI peut également être sollicité par	les parents pour choisir le sexe de l’enfant à naître.",1.0,14.646666666666672,False,True,0.6774681210517883,0.5069903135299683,False,2,False
+[[Diagnostic préimplantatoire OIC-009-16-B#sdfootnote2anc|2]]	Anomalie chromosomique, risque d'aneuploïdie, maladies autosomiques	récessives (dont mucoviscidose, B-thalassémie, amyotrophie	spinale), maladies autosomiques dominantes (dont maladie de	steinert, chorée de Huntington, maladie de Charcot-Marie-Tooth) et	maladie liée à I’X (dont myopathie de Duchenne et Becker,	hémophilie, X fragile). Le DPI peut également être sollicité par	les parents pour choisir le sexe de l’enfant à naître.",1.0,14.646666666666672,False,True,0.6774681210517883,0.5069902737935384,False,2,False
 57,OIC-009-17-A,"Dans une étude analytique, quel terme désigne un facteur associé à une probabilité plus élevée de survenue du phénomène de santé étudié?",Facteur de risque,Facteur étiologique,Facteur pronostique,Déterminants de santé,a,"{{objectif de connaissance
 |Identifiant=OIC-009-17-A
 |Item_parent=Introduction à l’éthique médicale
@@ -2388,7 +2388,7 @@ J. -M. Mouillie, « L’euthanasie et la question de la mort », in Collège des
 
 P. Ricoeur, « La souffrance n’est pas la douleur », in C. Marin, N. Zaccaï-Reyners (dir.), Souffrance et douleur. Autour de Paul Ricoeur, PUF, 2013.
 
-A. Zielinski, Deuxième partie : Les enjeux éthiques des soins palliatifs, in Bioy, A., Van Lander, A., Mallet, D. & Belloir, M. (2020). Soins palliatifs: En 54 notions, Dunod, p. 33-56.",1.0,15.51727272727273,False,True,0.7427063584327698,0.6816467046737671,False,2,False
+A. Zielinski, Deuxième partie : Les enjeux éthiques des soins palliatifs, in Bioy, A., Van Lander, A., Mallet, D. & Belloir, M. (2020). Soins palliatifs: En 54 notions, Dunod, p. 33-56.",1.0,15.51727272727273,False,True,0.7427064180374146,0.6816467642784119,False,2,False
 58,OIC-009-17-A,Quelle est la définition de la population cible?,La population cible est celle à laquelle on s'interroge et à propos de laquelle on veut obtenir des informations pour mieux la connaître et adapter sa prise en charge dans la vraie vie.,La population source est celle à partir de laquelle l'étude va concrètement se dérouler et au sein de laquelle on va identifier les individus à inclure pour l’étude.,L'échantillon est un sous-ensemble de la population source.,La population source est la même que la population cible.,a,"{{objectif de connaissance
 |Identifiant=OIC-009-17-A
 |Item_parent=Introduction à l’éthique médicale
@@ -2427,7 +2427,7 @@ J. -M. Mouillie, « L’euthanasie et la question de la mort », in Collège des
 
 P. Ricoeur, « La souffrance n’est pas la douleur », in C. Marin, N. Zaccaï-Reyners (dir.), Souffrance et douleur. Autour de Paul Ricoeur, PUF, 2013.
 
-A. Zielinski, Deuxième partie : Les enjeux éthiques des soins palliatifs, in Bioy, A., Van Lander, A., Mallet, D. & Belloir, M. (2020). Soins palliatifs: En 54 notions, Dunod, p. 33-56.",1.0,9.655000000000001,False,True,0.6220771670341492,0.8327589631080627,False,2,False
+A. Zielinski, Deuxième partie : Les enjeux éthiques des soins palliatifs, in Bioy, A., Van Lander, A., Mallet, D. & Belloir, M. (2020). Soins palliatifs: En 54 notions, Dunod, p. 33-56.",1.0,9.655000000000001,False,True,0.6220771074295044,0.8327589631080627,False,2,False
 59,OIC-009-18-A,Quelle étude utilise des cas et témoins sélectionnés parmi une cohorte déjà constituée?,Étude cas-témoins nichée,Étude cas-cohorte,Étude quasi-expérimentale,Étude sur données groupées,a,"{{objectif de connaissance
 |Identifiant=OIC-009-18-A
 |Item_parent=Introduction à l’éthique médicale
@@ -2482,7 +2482,7 @@ Cependant, la fin de vie appelle l’anticipation autant qu’elle y résiste. E
 
 Van Lander, A. (2022). Les soins palliatifs ou une bienveillante prédiction assassine. ''Cliniques méditerranéennes'', 106, 105-113. 
 
-J. -M. Mouillie, « L’euthanasie et la question de la mort », in Collège des Humanités médicales, ''Médecine, santé et sciences humaines. Manuel'', Paris, Les Belles Lettres, p. 302-319.",1.0,13.080000000000002,False,True,0.6602534651756287,0.757558802763621,False,2,False
+J. -M. Mouillie, « L’euthanasie et la question de la mort », in Collège des Humanités médicales, ''Médecine, santé et sciences humaines. Manuel'', Paris, Les Belles Lettres, p. 302-319.",1.0,13.080000000000002,False,True,0.6602532863616943,0.7575588623682658,False,1,False
 60,OIC-009-19-B,Quel est l'objectif de la standardisation dans les enquêtes descriptives?,Permettre la comparaison de mesures de fréquence entre populations avec structures d'âge et de sexe différentes,Calculer la moyenne pondérée des mesures de fréquence spécifiques,Estimer la fréquence d'un problème de santé dans une population donnée,Simplifier les données pour une analyse statistique,a,"{{objectif de connaissance
 |Identifiant=OIC-009-19-B
 |Item_parent=Introduction à l’éthique médicale
@@ -2500,7 +2500,7 @@ Pour l’aider à prendre la meilleure décision pour cette personne, la législ
 
 Le CCNE (avis 139 rendu publique le 13 septembre 2022) met l’accent sur deux principes fondamentaux qu’il faut s’efforcer de concilier : le '''devoir de solidarité''' envers les personnes les plus fragiles, et '''le respect de l’autonomie de la personne'''. La délibération éthique se situe au niveau de l’appréciation de la valeur du droit à la vie. Si on accorde une valeur suprême et indiscutable au droit à la vie, tout compromis est inenvisageable. Le débat est clos. Si le respect du ''droit à la vie'' ne vaut pas ''devoir de vivre'' une vie jugée insupportable par celui ou celle qui la traverse, alors il n’y a pas d’obligation à vivre. Le débat reste ouvert.
 
-''Bonnes pratiques''. « La procédure collégiale doit toujours consister en un processus délibératif et ne pas être réduite à sa dimension procédurale. Dans cet esprit, chaque participant à cette procédure collégiale doit pouvoir argumenter puis débattre au sein d’une concertation interdisciplinaire, sans hiérarchisation des arguments en fonction du rôle des professionnels présents. La position de chacun doit pouvoir évoluer sous l’influence des arguments d’autrui pour aboutir à une appréciation juste et proportionnée dans l’intérêt de la personne soignée. Ce processus exige des compétences plurielles, nécessite du temps et de la disponibilité. Il doit faire l’objet d’une mention écrite et argumentée dans le dossier médical du patient » (p. 22).",1.0,13.09,False,True,0.6606090664863586,0.7793410420417786,False,1,False
+''Bonnes pratiques''. « La procédure collégiale doit toujours consister en un processus délibératif et ne pas être réduite à sa dimension procédurale. Dans cet esprit, chaque participant à cette procédure collégiale doit pouvoir argumenter puis débattre au sein d’une concertation interdisciplinaire, sans hiérarchisation des arguments en fonction du rôle des professionnels présents. La position de chacun doit pouvoir évoluer sous l’influence des arguments d’autrui pour aboutir à une appréciation juste et proportionnée dans l’intérêt de la personne soignée. Ce processus exige des compétences plurielles, nécessite du temps et de la disponibilité. Il doit faire l’objet d’une mention écrite et argumentée dans le dossier médical du patient » (p. 22).",1.0,13.09,False,True,0.6606090664863586,0.7793410619099935,False,1,False
 61,OIC-009-20-B,Quelle étude permet d'estimer l'Odds Ratio (OR)?,Un essai contrôlé randomisé,Une étude de cohorte exposé/non exposé,Une étude cas-témoins,Une étude cross-sectional,c,"{{objectif de connaissance
 |Identifiant=OIC-009-20-B
 |Item_parent=Introduction à l’éthique médicale
@@ -2590,7 +2590,7 @@ Mais des questions perdurent, en particulier quand les patient n’ont pas rédi
 
 • Le fait que les directives anticipées inscrites dans la loi sont désormais opposables, c’est-à-dire que les médecins référents d’un malade inconscient doivent suivre les perspectives écrites dans ce document si celles-ci sont appropriées à la situation médicale. 
 
-• Le fait qu’il existe un hiérarchie concernant les moyens de tracer la volonté d’un patient ; d’abord les directives anticipées, puis à défaut le témoignage de la personne de confiance, puis à défaut tout autre témoignage de la famille ou des proches.  ",1.0,9.054285714285715,False,True,0.6543300151824951,0.756486157576243,True,2,False
+• Le fait qu’il existe un hiérarchie concernant les moyens de tracer la volonté d’un patient ; d’abord les directives anticipées, puis à défaut le témoignage de la personne de confiance, puis à défaut tout autre témoignage de la famille ou des proches.  ",1.0,9.054285714285715,False,True,0.6543298363685608,0.7564859191576639,True,2,False
 62,OIC-009-21-A,Quel paramètre a une influence directe sur la puissance d'une étude?,La taille de l'échantillon analysé N,La différence à détecter d,La variabilité des observations (variance),Le risque alpha,a,"{{objectif de connaissance
 |Identifiant=OIC-009-21-A
 |Item_parent=Introduction à l’éthique médicale
@@ -2663,7 +2663,7 @@ Au début du XX<sup>e</sup> siècle, les mentalités évoluent. Dans le domaine 
 Cette directive reprend les principes des déclarations d'Helsinki et de Manille sur le volet protection des personnes. Elle vise également à harmoniser les législations européennes en matière d'essais cliniques sur les médicaments sur la recherche de qualité des essais et à faciliter les procédures et les échanges d'informations sous la forme de bases de données européennes.
 
 == E Révision de la déclaration d'Helsinki (2014) ==
-C'est la dixième révision de cette déclaration. Elle instaure la consultation publique en méthode de travail, évoque la question de l'indemnisation pour les populations vulnérables et rappelle l'obligation en post-étude de la communication des résultats globaux et individuels.",1.0,12.3,False,True,0.6304726600646973,0.6683716376622518,False,2,True
+C'est la dixième révision de cette déclaration. Elle instaure la consultation publique en méthode de travail, évoque la question de l'indemnisation pour les populations vulnérables et rappelle l'obligation en post-étude de la communication des résultats globaux et individuels.",1.0,12.3,False,True,0.6304725408554077,0.6683714985847473,False,2,True
 63,OIC-009-22-B,Quelles sont deux sources d’erreur dans l’estimation d’un paramètre?,Erreur aléatoire et biais,Erreur systématique et biais,Erreur aléatoire et erreur systématique,Erreur systématique et biais de sélection,c,"{{objectif de connaissance
 |Identifiant=OIC-009-22-B
 |Item_parent=Introduction à l’éthique médicale
@@ -2798,7 +2798,7 @@ Bien des questions demeurent encore, malgré toute l'attention portée aux sujet
 *Depuis	2012, il existe un cadre législatif unique pour toutes les	recherches impliquant la personne. Les recherches sont classées en	trois types selon le caractère interventionnel ou non de cette	recherche et selon le risque encouru.
 *Le	rôle des acteurs impliqués dans un protocole de recherche est bien	défini (investigateur, promoteur).
 *Les	Comités de protection des personnes ont un rôle important et	rendent un avis décisionnel.
-*L'autorité	compétente est l'Agence nationale de sécurité du médicament.",1.0,10.208888888888893,False,True,0.600239098072052,0.9072034955024719,False,2,False
+*L'autorité	compétente est l'Agence nationale de sécurité du médicament.",1.0,10.208888888888893,False,True,0.6002390384674072,0.907203475634257,False,2,True
 64,OIC-009-23-A,Quelle est la définition d'interaction dans le contexte de la recherche en santé?,Un facteur qui ne modifie pas l'association entre une exposition et un phénomène de santé,Une variation de l'effet d'une exposition en fonction d'un autre facteur,Un facteur qui est un confondu,Un facteur qui est un médiateur,b,"{{objectif de connaissance
 |Identifiant=OIC-009-23-A
 |Item_parent=Introduction à l’éthique médicale
@@ -2862,7 +2862,7 @@ La question du témoignage de la famille et des proches a été cadré par une l
 De plus ceci pose souvent une question au quotidien : qui privilégier dans la famille ou parmi les proches ? Quid en cas de désaccord ? Quelle hiérarchie ? C’est pourquoi la loi incite à promouvoir la désignation d’une personne de confiance par chaque citoyen, y compris en bonne santé, pour lui confier également ce rôle de témoin. S’il existe une personne de confiance désignée, elle prime sur tout autre proche. Enfin signalons, même si elle ne figure pas dans la loi, la place importante de l’écrit du patient ou le fait que celui-ci dispose sur lui d’une carte de donneur signée.
 
 On voit à travers cette délicate question du consentement des défunts le rôle majeur pédagogique et psychologique que doivent jouer les équipes de coordination en charge des prélèvements et du dialogue avec les proches.
-<br />",1.0,10.356923076923078,False,True,0.6813710927963257,0.7742030421892802,False,2,False
+<br />",1.0,10.356923076923078,False,True,0.6813709735870361,0.7742029428482056,False,2,False
 65,OIC-009-23-A,Quelle condition doit être remplie pour que le résultat d'un test statistique soit considéré comme significatif?,"La valeur de p doit être inférieure à 0,05","La valeur de p doit être supérieure à 0,05","Le risque alpha doit être inférieur à 0,05",Le paramètre doit être estimé par une moyenne,a,"{{objectif de connaissance
 |Identifiant=OIC-009-23-A
 |Item_parent=Introduction à l’éthique médicale
@@ -2926,7 +2926,7 @@ La question du témoignage de la famille et des proches a été cadré par une l
 De plus ceci pose souvent une question au quotidien : qui privilégier dans la famille ou parmi les proches ? Quid en cas de désaccord ? Quelle hiérarchie ? C’est pourquoi la loi incite à promouvoir la désignation d’une personne de confiance par chaque citoyen, y compris en bonne santé, pour lui confier également ce rôle de témoin. S’il existe une personne de confiance désignée, elle prime sur tout autre proche. Enfin signalons, même si elle ne figure pas dans la loi, la place importante de l’écrit du patient ou le fait que celui-ci dispose sur lui d’une carte de donneur signée.
 
 On voit à travers cette délicate question du consentement des défunts le rôle majeur pédagogique et psychologique que doivent jouer les équipes de coordination en charge des prélèvements et du dialogue avec les proches.
-<br />",1.0,12.775000000000002,False,True,0.6710595488548279,0.8831276496251425,False,2,False
+<br />",1.0,12.775000000000002,False,True,0.6710594892501831,0.8831275900204977,False,2,False
 66,OIC-009-24-B,Quelle affirmation est correcte concernant la causalité selon les critères de Bradford Hill?,L'association statistique entre l'exposition et le phénomène étudié est suffisante pour conclure à une causalité,L'absence d'association statistique élimine toute possibilité de causalité,L'absence d'association statistique ne préjuge pas la causalité,La spécificité de la relation est un critère essentiel pour la causalité,c,"{{objectif de connaissance
 |Identifiant=OIC-009-24-B
 |Item_parent=Introduction à l’éthique médicale
@@ -2974,7 +2974,7 @@ La mort encéphalique est peu connue du grand public ; elle véhicule des repré
 * MAIS :
 ** Accord	Procureur de la République+++ (rôle du	dialogue	médecin légiste+++) /	La démarche de don peut être parfois compatible avec la démarche	médico légale.
 ** Le	ou les prélèvements en vue du don ne doivent pas intéresser des		zones ou organes nécessaires à la démarche d’expertise liée à	l’autopsie.
-** La	question de la preuve et de la Justice passe avant la logique du	don.",1.0,13.080000000000002,False,True,0.6341521739959717,0.8764747579892477,False,3,False
+** La	question de la preuve et de la Justice passe avant la logique du	don.",1.0,13.080000000000002,False,True,0.6341519355773926,0.8764747381210327,False,3,False
 67,OIC-009-24-B,Quelle est la définition de l'exposome?,L'ensemble des modifications épigénétiques dans un échantillon,L'ensemble des caractères observables d'un individu,L'ensemble des facteurs environnementaux auxquels un individu est exposé au cours de sa vie,L'ensemble des transcrits ARN dans un échantillon,c,"{{objectif de connaissance
 |Identifiant=OIC-009-24-B
 |Item_parent=Introduction à l’éthique médicale
@@ -3022,7 +3022,7 @@ La mort encéphalique est peu connue du grand public ; elle véhicule des repré
 * MAIS :
 ** Accord	Procureur de la République+++ (rôle du	dialogue	médecin légiste+++) /	La démarche de don peut être parfois compatible avec la démarche	médico légale.
 ** Le	ou les prélèvements en vue du don ne doivent pas intéresser des		zones ou organes nécessaires à la démarche d’expertise liée à	l’autopsie.
-** La	question de la preuve et de la Justice passe avant la logique du	don.",1.0,10.350000000000001,False,True,0.5901694297790527,0.6683776179949442,False,2,False
+** La	question de la preuve et de la Justice passe avant la logique du	don.",1.0,10.350000000000001,False,True,0.5901690721511841,0.6683774590492249,True,2,False
 68,OIC-009-25-B,Quel est le rôle principal des pairs relecteurs dans le processus de publication?,Évaluer la qualité de l'article,S'assurer de la validité des données,Préciser les modifications à apporter,Rédiger le manuscrit en leur nom,a,"{{objectif de connaissance
 |Identifiant=OIC-009-25-B
 |Item_parent=Introduction à l’éthique médicale
@@ -3056,7 +3056,7 @@ Concernant le consentement du donneur vivant, le consentement doit être explici
 * Consentement	formulé et recueilli par la suite devant un magistrat (Président	du Tribunal Judiciaire) + intervention du juge des tutelles pour les	majeurs protégés (pour lesquels uniquement le don de moelle est	autorisé).
 
 Il convient de noter cependant que le don est interdit en cas de donneurs vivants mineurs ou sous tutelle ou curatelle à l’exception de la moelle. Il faut alors le consentement des parents (titulaires de l’autorité parentale) ou du représentant légal comme décrit ci-dessus. 
-<br />",1.0,9.44923076923077,False,True,0.5923123955726624,0.7365935444831848,False,2,False
+<br />",1.0,9.44923076923077,False,True,0.592312216758728,0.7365934650103251,False,2,False
 69,OIC-009-26-B,Quelle est la définition d'une maladie rares selon le Règlement européen?,Une maladie qui atteint moins d'une personne sur 2000 en population générale,Une maladie qui atteint plus d'une personne sur 2000 en population générale,Une maladie qui atteint moins d'une personne sur 1000 en population générale,Une maladie qui atteint moins d'une personne sur 2000 en population générale,a,"{{objectif de connaissance
 |Identifiant=OIC-009-26-B
 |Item_parent=Introduction à l’éthique médicale
@@ -3104,7 +3104,7 @@ Thibert, J.-B. « Les limites d’une approche principiste dans l’éthique du 
 ==== Lectures complémentaires ====
 Despret, Vinciane. ''Au bonheur des morts. Récits de ceux qui restent''. Éditions La Découverte, 2015, notamment p. 121-129.
 
-Kerangal, Maylis de. ''Réparer les vivants.'' Éditions Verticales, 2014 (désormais disponible en poche, dans la collection Folio des éditions Gallimard).",1.0,12.3,False,True,0.6444331407546997,0.9763807455698649,False,2,False
+Kerangal, Maylis de. ''Réparer les vivants.'' Éditions Verticales, 2014 (désormais disponible en poche, dans la collection Folio des éditions Gallimard).",1.0,12.3,False,True,0.6444330811500549,0.9763807058334351,True,2,False
 70,OIC-009-27-B,Quelle est la forme de l'hémochromatose la plus fréquente liée au gène HFE?,HFE C282Y,HFE C282T,HFE C282Y à l’état homozygote,HFE C282Y à l’état hétérozygote,c,"{{objectif de connaissance
 |Identifiant=OIC-009-27-B
 |Item_parent=Introduction à l’éthique médicale
@@ -3256,7 +3256,7 @@ Sauf	accord exprès de la personne manifesté de son vivant, aucune	identificati
 En	cas de maladie génétique, le médecin prescripteur d'un examen des	caractéristiques génétiques informe le patient des risques qu'un	silence ferait courir aux membres de sa famille potentiellement	concernés.
 
 Le	médecin prévoit avec le patient, dans un document écrit, les	modalités de l'information destinée aux membres de la famille	potentiellement concernés.
-<br />",1.0,8.541538461538462,False,True,0.6964661478996277,0.8728383779525757,False,2,True
+<br />",1.0,8.541538461538462,False,True,0.6964661478996277,0.8728383183479309,False,2,True
 71,OIC-010-01-A,Quelle est la définition de l'errance diagnostique?,La période entre l'apparition des premiers symptômes et la date de diagnostic précis,L'échec à diagnostiquer une maladie connue,La durée entre la première symptomatologie et la prise en charge,L'absence de tests diagnostiques effectués,a,"{{objectif de connaissance
 |Identifiant=OIC-010-01-A
 |Item_parent=Approches transversales du corps
@@ -3277,7 +3277,7 @@ Pour les sociologues, notamment Pierre Bourdieu, le corps exerce au moins trois 
 
 Au-delà des différences sociales, et de manière intriquée, se trouvent également des différences culturelles. Les transformations volontaires du corps telles que par exemple les tatouages, piercings et scarifications n’ont pas les mêmes fonctions selon les époques et sociétés où elles s’opèrent. On observe également une production différenciée des normes et des règles corporelles selon les cultes. 
 
-Aborder la question du corps est intrinsèquement corrélé à la question de l’identité et notamment la construction de l’identité sexuée. Le fait de devenir homme ou femme s’envisage ainsi également sous l’angle de la construction du genre sociale et pas uniquement celui de la différenciation biologique (voir item 58).",1.0,12.425714285714289,False,True,0.5982416868209839,0.7728267709414164,False,2,False
+Aborder la question du corps est intrinsèquement corrélé à la question de l’identité et notamment la construction de l’identité sexuée. Le fait de devenir homme ou femme s’envisage ainsi également sous l’angle de la construction du genre sociale et pas uniquement celui de la différenciation biologique (voir item 58).",1.0,12.425714285714289,False,True,0.5982416272163391,0.7728267510732015,False,2,False
 72,OIC-010-01-A,Quel est le principal dispositif administratif destiné à aider les professionnels à s'informer sur les maladies rares?,Orphanet,Filières de santé,Centres de référence,Plateformes d’expertise maladies rares dans les territoires,a,"{{objectif de connaissance
 |Identifiant=OIC-010-01-A
 |Item_parent=Approches transversales du corps
@@ -3298,7 +3298,7 @@ Pour les sociologues, notamment Pierre Bourdieu, le corps exerce au moins trois 
 
 Au-delà des différences sociales, et de manière intriquée, se trouvent également des différences culturelles. Les transformations volontaires du corps telles que par exemple les tatouages, piercings et scarifications n’ont pas les mêmes fonctions selon les époques et sociétés où elles s’opèrent. On observe également une production différenciée des normes et des règles corporelles selon les cultes. 
 
-Aborder la question du corps est intrinsèquement corrélé à la question de l’identité et notamment la construction de l’identité sexuée. Le fait de devenir homme ou femme s’envisage ainsi également sous l’angle de la construction du genre sociale et pas uniquement celui de la différenciation biologique (voir item 58).",1.0,16.028235294117646,False,True,0.5792561173439026,0.5174355308214823,False,2,False
+Aborder la question du corps est intrinsèquement corrélé à la question de l’identité et notamment la construction de l’identité sexuée. Le fait de devenir homme ou femme s’envisage ainsi également sous l’angle de la construction du genre sociale et pas uniquement celui de la différenciation biologique (voir item 58).",1.0,16.028235294117646,False,True,0.5792560577392578,0.5174352924029032,False,2,False
 73,OIC-010-02-B,Quelle est une cause possible de saignement pendant la grossesse du premier trimestre?,Une grossesse extra-utérine,Une grossesse intra-utérine évolutive avec un hématome décidual,Une grossesse intra-utérine non évolutive,"Lysé d'un jumeau, grossesse môlante, cancer du col, ectropion",a,"{{objectif de connaissance
 |Identifiant=OIC-010-02-B
 |Item_parent=Approches transversales du corps
@@ -3314,7 +3314,7 @@ L’expérience corporelle est la conscience immédiate et intime que nous avons
 
 L’analyse de l’expérience de la douleur permet de comprendre comment la maladie modifie l’expérience du corps. 
 
-La douleur n’est pas seulement un fait physiologique, mais elle est d’abord un fait d’existence. Ce n’est pas le corps qui souffre, mais l’individu tout entier, dans le sens et dans la valeur de sa vie. La douleur atteint ainsi le sentiment d’identité. La personne ne se reconnait plus pour ce qu’elle était. Son entourage change de comportements vis-à-vis d’elle. La douleur transforme en profondeur, pour le meilleur et pour le pire, la personne qui est frappée par elle. Elle n’est pas cantonnée à un organe ou à une fonction, elle est aussi morale. Le mal de dents n’est pas que dans la dent, il altère toutes les activités de l’homme.",1.0,13.080000000000002,False,True,0.5568695664405823,0.820766826470693,True,2,True
+La douleur n’est pas seulement un fait physiologique, mais elle est d’abord un fait d’existence. Ce n’est pas le corps qui souffre, mais l’individu tout entier, dans le sens et dans la valeur de sa vie. La douleur atteint ainsi le sentiment d’identité. La personne ne se reconnait plus pour ce qu’elle était. Son entourage change de comportements vis-à-vis d’elle. La douleur transforme en profondeur, pour le meilleur et pour le pire, la personne qui est frappée par elle. Elle n’est pas cantonnée à un organe ou à une fonction, elle est aussi morale. Le mal de dents n’est pas que dans la dent, il altère toutes les activités de l’homme.",1.0,13.080000000000002,False,True,0.556869626045227,0.8207666873931885,False,2,True
 74,OIC-010-02-B,Quelle méthode est utilisée pour les sacs de petite taille et les hémorragies peu importantes en cas de fausse couche?,Traitement chirurgical,Traitement médical,Ambulance,Sous anesthésie locale,b,"{{objectif de connaissance
 |Identifiant=OIC-010-02-B
 |Item_parent=Approches transversales du corps
@@ -3330,7 +3330,7 @@ L’expérience corporelle est la conscience immédiate et intime que nous avons
 
 L’analyse de l’expérience de la douleur permet de comprendre comment la maladie modifie l’expérience du corps. 
 
-La douleur n’est pas seulement un fait physiologique, mais elle est d’abord un fait d’existence. Ce n’est pas le corps qui souffre, mais l’individu tout entier, dans le sens et dans la valeur de sa vie. La douleur atteint ainsi le sentiment d’identité. La personne ne se reconnait plus pour ce qu’elle était. Son entourage change de comportements vis-à-vis d’elle. La douleur transforme en profondeur, pour le meilleur et pour le pire, la personne qui est frappée par elle. Elle n’est pas cantonnée à un organe ou à une fonction, elle est aussi morale. Le mal de dents n’est pas que dans la dent, il altère toutes les activités de l’homme.",1.0,12.860000000000003,False,True,0.5964167714118958,0.7054975827534994,True,3,False
+La douleur n’est pas seulement un fait physiologique, mais elle est d’abord un fait d’existence. Ce n’est pas le corps qui souffre, mais l’individu tout entier, dans le sens et dans la valeur de sa vie. La douleur atteint ainsi le sentiment d’identité. La personne ne se reconnait plus pour ce qu’elle était. Son entourage change de comportements vis-à-vis d’elle. La douleur transforme en profondeur, pour le meilleur et pour le pire, la personne qui est frappée par elle. Elle n’est pas cantonnée à un organe ou à une fonction, elle est aussi morale. Le mal de dents n’est pas que dans la dent, il altère toutes les activités de l’homme.",1.0,12.860000000000003,False,True,0.5964169502258301,0.7054975827534994,False,3,False
 75,OIC-010-03-B,Quand est-il indiqué de réaliser une chirurgie pour une GEU symptomatique?,Dans les cas où la patiente présente des symptômes cliniques,Après conditionnement de la patiente et bilan préopératoire,En l'absence de trois critères de gravité,Dans les cas d'asympathie et taux de β-hCG inférieur à 5 000 UI/L,b,"{{objectif de connaissance
 |Identifiant=OIC-010-03-B
 |Item_parent=Approches transversales du corps
@@ -3346,7 +3346,7 @@ Depuis l’essor des techniques en médecine, les signes corporels de la maladie
 
 L’observation qui en résulte s’est accompagnée d’une terminologie propre pouvant induire également une mise à distance et créer un écart entre ce qui est vécu par le patient (son vécu subjectif) et la manière dont la médecine objective son corps.
 
-Lorsqu’il est question du corps humain, les sciences humaines distinguent le plus souvent un corps-objet et un corps-sujet. Le premier est un simple corps parmi les corps, impersonnel, régi par des lois naturelles, dépourvu de caractéristiques spécifiquement humaines, objet d’action ou de contemplation. Le deuxième, le corps-sujet, désigne à la fois le corps subjectif, en tant que substrat psychophysiologique de l’expérience individuelle du corps, et le corps du sujet, en tant que dimension de la corporéité sur laquelle s’exerce l’action du sujet humain. Dans le monde de la santé, cette distinction permet de relativiser et de préciser les connaissances sur le corps, sain ou malade, sans tomber dans un réductionnisme facile, qui consisterait à diriger l’attention du soignant sur un seul aspect de la corporéité. Le corps ne peut être réduit à une batterie d’organes, ni à un ensemble de chiffres ou d’images de laboratoire, ni au récit que le patient fait de sa propre vie.",1.0,14.445454545454545,False,True,0.7131507396697998,0.6734165151913961,False,2,False
+Lorsqu’il est question du corps humain, les sciences humaines distinguent le plus souvent un corps-objet et un corps-sujet. Le premier est un simple corps parmi les corps, impersonnel, régi par des lois naturelles, dépourvu de caractéristiques spécifiquement humaines, objet d’action ou de contemplation. Le deuxième, le corps-sujet, désigne à la fois le corps subjectif, en tant que substrat psychophysiologique de l’expérience individuelle du corps, et le corps du sujet, en tant que dimension de la corporéité sur laquelle s’exerce l’action du sujet humain. Dans le monde de la santé, cette distinction permet de relativiser et de préciser les connaissances sur le corps, sain ou malade, sans tomber dans un réductionnisme facile, qui consisterait à diriger l’attention du soignant sur un seul aspect de la corporéité. Le corps ne peut être réduit à une batterie d’organes, ni à un ensemble de chiffres ou d’images de laboratoire, ni au récit que le patient fait de sa propre vie.",1.0,14.445454545454545,False,True,0.7131505012512207,0.6734164357185364,False,2,False
 76,OIC-010-03-B,Quels sont les signes cliniques principaux en faveur d'un placenta praevia (PP)?,Hémorragie abondante sans douleurs utérines permanentes,Utérus souple et indolore avec présence de cœur fœtal,Hémorragie peu abondante avec douleurs utérines permanentes,Placenta bas inséré à proximité du col utérin,a,"{{objectif de connaissance
 |Identifiant=OIC-010-03-B
 |Item_parent=Approches transversales du corps
@@ -3362,7 +3362,7 @@ Depuis l’essor des techniques en médecine, les signes corporels de la maladie
 
 L’observation qui en résulte s’est accompagnée d’une terminologie propre pouvant induire également une mise à distance et créer un écart entre ce qui est vécu par le patient (son vécu subjectif) et la manière dont la médecine objective son corps.
 
-Lorsqu’il est question du corps humain, les sciences humaines distinguent le plus souvent un corps-objet et un corps-sujet. Le premier est un simple corps parmi les corps, impersonnel, régi par des lois naturelles, dépourvu de caractéristiques spécifiquement humaines, objet d’action ou de contemplation. Le deuxième, le corps-sujet, désigne à la fois le corps subjectif, en tant que substrat psychophysiologique de l’expérience individuelle du corps, et le corps du sujet, en tant que dimension de la corporéité sur laquelle s’exerce l’action du sujet humain. Dans le monde de la santé, cette distinction permet de relativiser et de préciser les connaissances sur le corps, sain ou malade, sans tomber dans un réductionnisme facile, qui consisterait à diriger l’attention du soignant sur un seul aspect de la corporéité. Le corps ne peut être réduit à une batterie d’organes, ni à un ensemble de chiffres ou d’images de laboratoire, ni au récit que le patient fait de sa propre vie.",1.0,9.740000000000002,False,True,0.6329572796821594,0.8247846762339274,False,2,False
+Lorsqu’il est question du corps humain, les sciences humaines distinguent le plus souvent un corps-objet et un corps-sujet. Le premier est un simple corps parmi les corps, impersonnel, régi par des lois naturelles, dépourvu de caractéristiques spécifiquement humaines, objet d’action ou de contemplation. Le deuxième, le corps-sujet, désigne à la fois le corps subjectif, en tant que substrat psychophysiologique de l’expérience individuelle du corps, et le corps du sujet, en tant que dimension de la corporéité sur laquelle s’exerce l’action du sujet humain. Dans le monde de la santé, cette distinction permet de relativiser et de préciser les connaissances sur le corps, sain ou malade, sans tomber dans un réductionnisme facile, qui consisterait à diriger l’attention du soignant sur un seul aspect de la corporéité. Le corps ne peut être réduit à une batterie d’organes, ni à un ensemble de chiffres ou d’images de laboratoire, ni au récit que le patient fait de sa propre vie.",1.0,9.740000000000002,False,True,0.6329571008682251,0.8247846961021423,False,2,False
 77,OIC-019-01-A,Quelle est la définition de l'hémorragie post-partum (HPP)?,Plus de 500 mL dans les 24h après l'accouchement,Plus de 1000 mL dans les 24h après l'accouchement,Plus de 500 mL dans les 24h après l'accouchement,Plus de 1000 mL dans les 24h après l'accouchement,a,"{{objectif de connaissance
 |Identifiant=OIC-019-01-A
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -3378,7 +3378,7 @@ Lorsqu’il est question du corps humain, les sciences humaines distinguent le p
 
 '''Les risques sociaux''' sont des situations susceptibles de compromettre la sécurité financière d'un individu ou de sa famille en provoquant une baisse de ses ressources ou une hausse des dépenses (vieillesse, maladie, chômage, charges de famille, etc.).
 
-'''Quatre logiques de protection sociale coexistent :''' la '''logique d'assurance sociale obligatoire''' vise à prémunir les assurés contre une perte de revenus liée aux risques sociaux. L'assurance sociale repose sur des mécanismes de transfert de type contribution/prestations : les prestations sociales sont financées par des cotisations sociales prélevées sur les revenus et sont réservées à ceux qui cotisent ou à leurs ayants droit. La '''logique d'assistance sociale''' permet d'instaurer une solidarité entre les individus pour lutter contre la pauvreté et l'exclusion. La prestation assure un revenu minimum et ne couvre pas forcément un risque spécifique (par exemple, dans le cadre de ce qui est appelé les minima sociaux comme le revenu de solidarité active [RSA], l’allocation adulte handicapé [AAH] ou le fonds de solidarité vieillesse [FSV]). '''La logique de protection universelle''' couvre certaines catégories de dépenses pour tous les individus. Les prestations sont accordées sans condition de ressources et sont identiques pour tous (cas des prestations familiales). La '''logique de prévoyance individuelle''' repose sur l'épargne (par exemple décision d'achat d'implants dentaires) et l'assurance privée, tandis que '''la prévoyance collective''' repose sur la mutualisation des risques.",1.0,9.655000000000001,False,True,0.5456445217132568,0.9497522115707397,False,2,False
+'''Quatre logiques de protection sociale coexistent :''' la '''logique d'assurance sociale obligatoire''' vise à prémunir les assurés contre une perte de revenus liée aux risques sociaux. L'assurance sociale repose sur des mécanismes de transfert de type contribution/prestations : les prestations sociales sont financées par des cotisations sociales prélevées sur les revenus et sont réservées à ceux qui cotisent ou à leurs ayants droit. La '''logique d'assistance sociale''' permet d'instaurer une solidarité entre les individus pour lutter contre la pauvreté et l'exclusion. La prestation assure un revenu minimum et ne couvre pas forcément un risque spécifique (par exemple, dans le cadre de ce qui est appelé les minima sociaux comme le revenu de solidarité active [RSA], l’allocation adulte handicapé [AAH] ou le fonds de solidarité vieillesse [FSV]). '''La logique de protection universelle''' couvre certaines catégories de dépenses pour tous les individus. Les prestations sont accordées sans condition de ressources et sont identiques pour tous (cas des prestations familiales). La '''logique de prévoyance individuelle''' repose sur l'épargne (par exemple décision d'achat d'implants dentaires) et l'assurance privée, tandis que '''la prévoyance collective''' repose sur la mutualisation des risques.",1.0,9.655000000000001,False,True,0.5456441640853882,0.9497522513071696,False,1,False
 78,OIC-019-02-A,Quelle est la dose recommandée d'oxytocine (APO) administrée lors de la délivrance dirigée?,10 UI IVL,5 UI IVL,20 UI IVL,15 UI IVL,b,"{{objectif de connaissance
 |Identifiant=OIC-019-02-A
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -3417,7 +3417,7 @@ Il existe six catégories de prestations correspondant à autant de risques :
 ** Il recouvre les      différentes aides versées aux ménages pour faire face à leurs dépenses de      loyer ou de remboursement d’emprunt.
 
 * le risque « pauvreté-exclusion     sociale »
-** Il s’agit essentiellement      pris en charge du revenu de solidarité active (RSA).",1.0,16.710769230769234,False,True,0.5919912457466125,0.8905279040336609,True,2,False
+** Il s’agit essentiellement      pris en charge du revenu de solidarité active (RSA).",1.0,16.710769230769234,False,True,0.5919910669326782,0.8905279040336609,False,2,False
 79,OIC-019-02-A,Quelle est la définition de l'hypertension artérielle gravidique (HTAg)?,"HTA apparue après 20 SA, sans protéinurie associée et disparaissant avant la fin de la 6<sup>e</sup> semaine du post-partum","HTA apparue après 20 SA, avec protéinurie associée et disparaissant avant la fin de la 6<sup>e</sup> semaine du post-partum","HTA apparue avant 20 SA, avec protéinurie associée et persistant à plus de 6 semaines du post-partum","HTA apparue après 20 SA, sans protéinurie associée et persistant à plus de 6 semaines du post-partum",a,"{{objectif de connaissance
 |Identifiant=OIC-019-02-A
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -3456,7 +3456,7 @@ Il existe six catégories de prestations correspondant à autant de risques :
 ** Il recouvre les      différentes aides versées aux ménages pour faire face à leurs dépenses de      loyer ou de remboursement d’emprunt.
 
 * le risque « pauvreté-exclusion     sociale »
-** Il s’agit essentiellement      pris en charge du revenu de solidarité active (RSA).",1.0,14.142222222222227,False,True,0.5946534276008606,0.9755611419677734,False,2,False
+** Il s’agit essentiellement      pris en charge du revenu de solidarité active (RSA).",1.0,14.142222222222227,False,True,0.5946532487869263,0.9755610624949137,False,2,False
 80,OIC-019-03-B,Quelle est la fréquence de l'HTA pendant la grossesse?,5 à 10 %,1 à 2 %,15 à 20 %,30 à 40 %,a,"{{objectif de connaissance
 |Identifiant=OIC-019-03-B
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -3494,7 +3494,7 @@ Les prestations du risque maladie augmentent cependant en France de 4,3 % (aprè
 
 Cette augmentation s’explique :
 
-·       par les hausses des prestations de soins du secteur hospitalier et, dans une moindre mesure, des soins de ville. Malgré une baisse globale du volume de soins en dehors des soins liés à la covid 19, les dépenses de l’hôpital public sont augmentées en raison de la hausse des rémunérations (primes Covid-19, mesures du Ségur de la santé) et par les surcoûts liés à la prise en charge des patients atteints de la Covid-19. Les soins en ville augmentent aussi malgré les baisses de consultations de médecins généralistes et spécialistes en raison de l’épidémie, mais on observe une hausse spectaculaire des actes de laboratoire (tests de dépistage Covid-19). Enfin, les indemnités journalières (IJ) ont augmenté de 24,4 % en 2020 pour deux raisons. D’une part, les IJ dites dérogatoires ont servi à indemniser les personnes ayant dû arrêter leur activité professionnelle pendant le premier confinement (parents sans solution de garde d’enfants, personnes vulnérables, travailleurs indépendants). D’autre part, les IJ maladie augmentent aussi, du fait des arrêts maladie liés aux vagues épidémiques. Les prestations médico-sociales (santé et invalidité) progressent également en 2020. Comme pour le secteur hospitalier, cette augmentation résulte avant tout des hausses de rémunérations des salariés travaillant dans les structures, ainsi que des financements supplémentaires versés pour faire face à la crise sanitaire. Les prestations versées au titre de l’invalidité progressent de 3,6 % (après +3,3 % en 2019), du fait de la prolongation automatique des droits pour les assurés des prestations de compensation du handicap. En revanche, les prestations du risque accidents du travail et maladies professionnelles diminuent en 2020 avec la baisse du nombre d’accidents du travail, elle-même induite par la réduction des activités professionnelles ainsi que le recours massif au télétravail pendant la pandémie.",1.0,6.2755555555555596,False,True,0.5381535887718201,0.74798450867335,False,2,False
+·       par les hausses des prestations de soins du secteur hospitalier et, dans une moindre mesure, des soins de ville. Malgré une baisse globale du volume de soins en dehors des soins liés à la covid 19, les dépenses de l’hôpital public sont augmentées en raison de la hausse des rémunérations (primes Covid-19, mesures du Ségur de la santé) et par les surcoûts liés à la prise en charge des patients atteints de la Covid-19. Les soins en ville augmentent aussi malgré les baisses de consultations de médecins généralistes et spécialistes en raison de l’épidémie, mais on observe une hausse spectaculaire des actes de laboratoire (tests de dépistage Covid-19). Enfin, les indemnités journalières (IJ) ont augmenté de 24,4 % en 2020 pour deux raisons. D’une part, les IJ dites dérogatoires ont servi à indemniser les personnes ayant dû arrêter leur activité professionnelle pendant le premier confinement (parents sans solution de garde d’enfants, personnes vulnérables, travailleurs indépendants). D’autre part, les IJ maladie augmentent aussi, du fait des arrêts maladie liés aux vagues épidémiques. Les prestations médico-sociales (santé et invalidité) progressent également en 2020. Comme pour le secteur hospitalier, cette augmentation résulte avant tout des hausses de rémunérations des salariés travaillant dans les structures, ainsi que des financements supplémentaires versés pour faire face à la crise sanitaire. Les prestations versées au titre de l’invalidité progressent de 3,6 % (après +3,3 % en 2019), du fait de la prolongation automatique des droits pour les assurés des prestations de compensation du handicap. En revanche, les prestations du risque accidents du travail et maladies professionnelles diminuent en 2020 avec la baisse du nombre d’accidents du travail, elle-même induite par la réduction des activités professionnelles ainsi que le recours massif au télétravail pendant la pandémie.",1.0,6.2755555555555596,False,True,0.538153350353241,0.7479843099912008,False,2,False
 81,OIC-019-04-B,Quelle complication maternelle est associée à la prééclampsie?,Eclampsie,Preeclampsie,Hématome rétroplacentaire,Insuffisance rénale aiguë,a,"{{objectif de connaissance
 |Identifiant=OIC-019-04-B
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -3516,7 +3516,7 @@ Fichier:Item 19 Fig 1.png
 
 En 2020, la répartition des ressources de la protection sociale par type de prélèvement figure au graphique 2. L’on constate une baisse de la part des cotisations sociales en raison de la baisse de l’activité professionnelle pendant l’année 2020 (confinements). Cela illustre l’importance de l’activité économique dans la génération de ressources financières destinées à la protection sociale.<gallery>
 Fichier:19 G2 ressources.png
-</gallery>",1.0,15.555000000000003,False,True,0.6288899183273315,0.6568260987599691,False,2,True
+</gallery>",1.0,15.555000000000003,False,True,0.628889799118042,0.6568260788917542,False,2,True
 82,OIC-019-04-B,Quel est le critère de sévérité pour l'HTA sévère?,HTA ≥160 mmHg et/ou PAD ≥110 mmHg,Protéinurie > 3g/24h,Créatinémie ≥ 90 µmol/L,Oligurie ≤ 500 mL/24h ou ≤ 25 mL/h,a,"{{objectif de connaissance
 |Identifiant=OIC-019-04-B
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -3538,7 +3538,7 @@ Fichier:Item 19 Fig 1.png
 
 En 2020, la répartition des ressources de la protection sociale par type de prélèvement figure au graphique 2. L’on constate une baisse de la part des cotisations sociales en raison de la baisse de l’activité professionnelle pendant l’année 2020 (confinements). Cela illustre l’importance de l’activité économique dans la génération de ressources financières destinées à la protection sociale.<gallery>
 Fichier:19 G2 ressources.png
-</gallery>",1.0,1.0311111111111124,False,True,0.5647898316383362,0.6598419348398844,False,4,False
+</gallery>",1.0,1.0311111111111124,False,True,0.5647896528244019,0.6598418951034546,False,2,False
 83,OIC-019-05-A,Quand sont indiqués les antihypertenseurs en cas d'hypertension artérielle aiguë (HTA) chez une femme enceinte?,Dans tous les cas d'hypertension artérielle sévère (PAS ≥ 160 mmHg et/ou PAD ≥ 110 mmHg),Dans les cas d'hypertension artérielle légère (PAS < 160 mmHg et/ou PAD < 110 mmHg),Dans les cas de prééclampsie ou de grossesse multiple,Dans les cas de prééclampsie ou de grossesse multiple,a,"{{objectif de connaissance
 |Identifiant=OIC-019-05-A
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -3599,7 +3599,7 @@ Fichier:Item 19 Fig2.jpg
 
 Source : assurance maladie. <nowiki>https://assurance-maladie.ameli.fr/qui-sommes-nous/organisation/securite-sociale/securite-sociale</nowiki>
 
-À la tête de chacune des branches est placée une caisse nationale (établissement public à caractère administratif) qui coordonne et gère un réseau de caisses territoriales. Les caisses territoriales sont des organismes de droit privé en charge d'un service public, soumis au contrôle et à la tutelle de l'État.",1.0,15.433333333333337,False,True,0.5880395770072937,0.7988360325495402,False,2,False
+À la tête de chacune des branches est placée une caisse nationale (établissement public à caractère administratif) qui coordonne et gère un réseau de caisses territoriales. Les caisses territoriales sont des organismes de droit privé en charge d'un service public, soumis au contrôle et à la tutelle de l'État.",1.0,15.433333333333337,False,True,0.5880394577980042,0.7988359133402506,False,2,False
 84,OIC-019-05-A,Quelle est la fréquence recommandée des consultations lors de la surveillance renforcée en cas d'HTA pendant la grossesse?,Tous les 5 jours,Tous les 10 jours,Tous les 20 jours,Tous les 4 semaines,b,"{{objectif de connaissance
 |Identifiant=OIC-019-05-A
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -3660,7 +3660,7 @@ Fichier:Item 19 Fig2.jpg
 
 Source : assurance maladie. <nowiki>https://assurance-maladie.ameli.fr/qui-sommes-nous/organisation/securite-sociale/securite-sociale</nowiki>
 
-À la tête de chacune des branches est placée une caisse nationale (établissement public à caractère administratif) qui coordonne et gère un réseau de caisses territoriales. Les caisses territoriales sont des organismes de droit privé en charge d'un service public, soumis au contrôle et à la tutelle de l'État.",1.0,13.718888888888891,False,True,0.6381464004516602,0.8297211527824402,False,2,False
+À la tête de chacune des branches est placée une caisse nationale (établissement public à caractère administratif) qui coordonne et gère un réseau de caisses territoriales. Les caisses territoriales sont des organismes de droit privé en charge d'un service public, soumis au contrôle et à la tutelle de l'État.",1.0,13.718888888888891,False,True,0.6381463408470154,0.8297212322552999,False,2,False
 85,OIC-019-06-B,Quelle mesure préconisation est recommandée pour les femmes à risque de récidive en grossesse?,Arrêt du tabac,Suivi direct dans une maternité,Consultation préconceptionnelle,Utilisation d'aspirine à faibles doses,c,"{{objectif de connaissance
 |Identifiant=OIC-019-06-B
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -3683,7 +3683,7 @@ La LFSS est votée par le Parlement tous les ans, en même temps que la loi de f
 Depuis 1996, le Parlement a donc un droit de regard sur l’équilibre financier de la sécurité sociale. Il peut se prononcer sur les grandes orientations des politiques de santé et de sécurité sociale, ainsi que sur leur mode de financement.
 
 Pour donner des exemples, on peut citer comme nouvelles mesures l’allongement du congé paternité avec 28 jours au lieu de 14 jours et est obligatoire pour 7 jours ; la revalorisation des salaires des personnels hospitaliers et des Etablissements d’hébergement pour les personnes âgées dépendantes (EHPAD) ;  le financement des dépenses de tests, vaccins et masques pour répondre à la crise sanitaire et la creation d’une 5ème branche de la sécurité sociale pour le soutien à l’autonomie.
-----[1] <nowiki>https://www.gouvernement.fr/presentation-du-projet-de-loi-de-financement-de-la-securite-sociale-2022</nowiki>",1.0,14.312857142857148,False,True,0.6057683825492859,0.5956792235374451,True,3,False
+----[1] <nowiki>https://www.gouvernement.fr/presentation-du-projet-de-loi-de-financement-de-la-securite-sociale-2022</nowiki>",1.0,14.312857142857148,False,True,0.6057682037353516,0.5956790645917257,False,2,False
 86,OIC-019-07-B,Quelle est la définition de la menace d'accouchement prématuré (MAP)?,Association de modifications cervicales et de contractions utérines régulières et douloureuses avant 37 SA,Modifications cervicales et contractions utérines régulières et douloureuses avant 22 SA,Contractions utérines et modifications cervicales avant 36 SA + 6 jours,Modifications cervicales et contractions utérines avant 37 SA,a,"{{objectif de connaissance
 |Identifiant=OIC-019-07-B
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -3720,7 +3720,7 @@ La crise sanitaire a conduit à une forte augmentation de l’ONDAM 2020. Il en 
 Graphique 1 :  Niveaux de dépassement de l’ONDAM depuis 2004<gallery>
 Fichier:19 Gx Ondam.png
 </gallery>
-----[1] Source : <nowiki>https://www.securite-sociale.fr/files/live/sites/SSFR/files/medias/PLFSS/2021/PLFSS-2021-ANNEXE%207.pdf</nowiki>",1.0,10.73,False,True,0.6303709745407104,0.9391561349232992,False,2,False
+----[1] Source : <nowiki>https://www.securite-sociale.fr/files/live/sites/SSFR/files/medias/PLFSS/2021/PLFSS-2021-ANNEXE%207.pdf</nowiki>",1.0,10.73,False,True,0.6303709745407104,0.939156154791514,False,2,False
 87,OIC-019-09-A,Quel est le traitement recommandé en cas de rupture des membranes lors d'une menace d'accouchement prématurée?,Antibiothérapie uniquement si infection diagnostiquée,Antibiothérapie systématique après rupture des membranes,Antibiothérapie uniquement en cas d'infection materno-fœtale,Aucune antibiothérapie nécessaire après rupture des membranes,b,"{{objectif de connaissance
 |Identifiant=OIC-019-09-A
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -3744,7 +3744,7 @@ L'assurance maladie contribue à une '''meilleure adéquation de l'offre de soin
 
 L'assurance maladie contribue à la '''diffusion des recommandations de la HAS auprès des professionnels''' (assurée par les délégués de l'assurance maladie) et élabore des '''profils comparatifs d'activité et de prescriptions'''.
 
-Enfin, l’assurance maladie a en charge la '''maîtrise médicalisée des dépenses'''. Au sein de chaque région, l'assurance maladie participe à l'élaboration, sous l'égide de l'ARS, d'un programme pluriannuel régional de gestion du risque qui complète les programmes nationaux de gestion du risque.",1.0,14.250000000000004,False,True,0.6538163423538208,0.857113262017568,False,2,False
+Enfin, l’assurance maladie a en charge la '''maîtrise médicalisée des dépenses'''. Au sein de chaque région, l'assurance maladie participe à l'élaboration, sous l'égide de l'ARS, d'un programme pluriannuel régional de gestion du risque qui complète les programmes nationaux de gestion du risque.",1.0,14.250000000000004,False,True,0.653816282749176,0.8571131428082784,False,2,False
 88,OIC-019-09-A,Quelle mesure est considérée comme prévention primaire pour réduire les risques fœtaux?,"Supprimer les facteurs de risque (tabac, toxiques, arrêt de travail)",Prélever un échantillon de sang pour évaluer le bilan morphologique de la cavité utérine,Appliquer un cerclage en cas d'antécédent d'accouchement prématuré,Utiliser des antibiotiques pour traiter une vaginose bactérienne,a,"{{objectif de connaissance
 |Identifiant=OIC-019-09-A
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -3768,7 +3768,7 @@ L'assurance maladie contribue à une '''meilleure adéquation de l'offre de soin
 
 L'assurance maladie contribue à la '''diffusion des recommandations de la HAS auprès des professionnels''' (assurée par les délégués de l'assurance maladie) et élabore des '''profils comparatifs d'activité et de prescriptions'''.
 
-Enfin, l’assurance maladie a en charge la '''maîtrise médicalisée des dépenses'''. Au sein de chaque région, l'assurance maladie participe à l'élaboration, sous l'égide de l'ARS, d'un programme pluriannuel régional de gestion du risque qui complète les programmes nationaux de gestion du risque.",1.0,11.706666666666667,False,True,0.641830325126648,0.5719135999679565,False,2,False
+Enfin, l’assurance maladie a en charge la '''maîtrise médicalisée des dépenses'''. Au sein de chaque région, l'assurance maladie participe à l'élaboration, sous l'égide de l'ARS, d'un programme pluriannuel régional de gestion du risque qui complète les programmes nationaux de gestion du risque.",1.0,11.706666666666667,False,True,0.6418302059173584,0.5719134012858073,False,2,False
 89,OIC-019-10-A,Quelle est l'indication principale pour l'analyse ECU (ECBU) lors d'une fièvre pendant la grossesse?,Pour détecter la liste rachitique,Pour évaluer le bien-être fœtal,Pour rechercher la liste rachitique et les bactéries urinaires,Pour mesurer la pression artérielle,c,"{{objectif de connaissance
 |Identifiant=OIC-019-10-A
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -3804,7 +3804,7 @@ Une '''franchise''' est déduite des remboursements au patient et s'applique sur
 
 La franchise est plafonnée à 50 euros par an au total et ne peut pas dépasser 2 euros par jour pour les actes paramédicaux et 4 euros par jour pour les transports sanitaires. Sont dispensés de la franchise médicale les patients âgés de moins de 18 ans, les bénéficiaires de la complémentaire santé solidaire, les bénéficiaires de l'AME, les femmes enceintes à partir du sixième mois de grossesse. Elle ne peut pas être prise en charge par un organisme complémentaire d'assurance maladie.
 
-Le '''dispositif de tiers payant''' dispense l'assuré de l'avance des frais pris en charge par l'assurance maladie. Ce dernier ne paie que le ticket modérateur, l'assurance maladie versant directement aux structures de soins et aux professionnels de santé les sommes qui leur sont dues. Si l'assuré dispose d'une couverture complémentaire (mutuelle, assurance, institution de prévoyance, complémentaire santé solidaire), il peut bénéficier du tiers payant en présentant sa carte vitale et son attestation de complémentaire. Le dispositif de tiers payant s'applique également dans le cadre d'un accident du travail ou d'une maladie professionnelle, ainsi qu'aux bénéficiaires de la complémentaire santé solidaire et de l'AME",1.0,15.99857142857143,False,True,0.6225252151489258,0.6647147734959921,False,4,False
+Le '''dispositif de tiers payant''' dispense l'assuré de l'avance des frais pris en charge par l'assurance maladie. Ce dernier ne paie que le ticket modérateur, l'assurance maladie versant directement aux structures de soins et aux professionnels de santé les sommes qui leur sont dues. Si l'assuré dispose d'une couverture complémentaire (mutuelle, assurance, institution de prévoyance, complémentaire santé solidaire), il peut bénéficier du tiers payant en présentant sa carte vitale et son attestation de complémentaire. Le dispositif de tiers payant s'applique également dans le cadre d'un accident du travail ou d'une maladie professionnelle, ainsi qu'aux bénéficiaires de la complémentaire santé solidaire et de l'AME",1.0,15.99857142857143,False,True,0.6225249171257019,0.6647147734959921,False,3,False
 90,OIC-019-11-A,Quelle est l'etiologie principale de l'hémorragie génitale pendant la grossesse?,Rupture utérine,Chorioamniotite,Hématome rétroplacentaire,Pré-eclampsie,c,"{{objectif de connaissance
 |Identifiant=OIC-019-11-A
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -3846,7 +3846,7 @@ Certains médecins sont accessibles directement :
 
 '''Le stomatologue''', pour les actes bucco-dentaires (soins de prévention bucco-dentaire, soins conservateurs, soins chirurgicaux, soins de prothèses dentaires, traitements d'orthopédie dento-maxillo-faciale).
 
-Ce médecin spécialiste cochera  la case « Accès direct spécifique » sur la feuille de soins. Le patient sera remboursé normalement.",1.0,16.63,False,True,0.5681141018867493,0.541403611501058,False,3,False
+Ce médecin spécialiste cochera  la case « Accès direct spécifique » sur la feuille de soins. Le patient sera remboursé normalement.",1.0,16.63,False,True,0.5681141018867493,0.5414035320281982,False,2,False
 91,OIC-019-12-A,Quelle est la cause gynécologique la plus probable d'une douleur abdominale aiguë chez une femme enceinte en danger d'accouchement prématuré?,Nécrobiose aseptique de fibrome,Torsion de kyste,Rupture hémorragique ou non de kyste,Hémorragie intrakystique,a,"{{objectif de connaissance
 |Identifiant=OIC-019-12-A
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -3866,7 +3866,7 @@ Chaque médecin qui dispense des soins à ce patient, en ville ou en établissem
 
 Le patient bénéficie d'un '''accès direct aux spécialistes mentionnés dans le protocole de soins.''' En contrepartie de l'avantage lié à l'exonération du ticket modérateur, le patient a l'obligation de présenter son '''volet personnel du protocole de soins à tous les professionnels qu'il consulte, sauf cas d'urgence'''. Il doit se conformer au projet thérapeutique établi par le médecin traitant et se présenter aux contrôles et visites médicales organisés par l'assurance maladie.
 ----[[Protocole de soins ALD avec exonération du ticket modérateur 2C-019-DE-A08#%20ftnref1|[1]]] <nowiki>https://www.ameli.fr/medecin/exercice-liberal/presciption-prise-charge/situation-patient-ald-affection-longue-duree/definition-ald</nowiki>
-<br />",1.0,18.170000000000005,False,True,0.6114214062690735,0.5975463589032491,False,2,False
+<br />",1.0,18.170000000000005,False,True,0.6114212274551392,0.5975464383761088,False,2,False
 92,OIC-019-13-B,Quelle est la localisation la plus fréquente de la douleur abdominale aiguë chez une femme enceinte?,Droite inférieure,Gauche inférieure,Cervicale,Épigastrique,a,"{{objectif de connaissance
 |Identifiant=OIC-019-13-B
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -3948,7 +3948,7 @@ Exonération du ticket modérateur
 |-
 |Risque décès
 |Capital décès versé aux ayants droit sous  certaines conditions et si la personne décède alors qu'elle est en activité
-|}",1.0,14.250000000000004,False,True,0.5846341848373413,0.6246152718861898,False,3,False
+|}",1.0,14.250000000000004,False,True,0.5846342444419861,0.6246151129404703,False,2,False
 93,OIC-020-01-A,Quelle est la définition de l'infection materno-fœtale (IMF)?,L'infection materno-fœtale est une infection bactérienne qui affecte le fœtus lors de la grossesse ou à l'accouchement.,L'infection materno-fœtale est une infection du placenta lors de la grossesse.,L'infection materno-fœtale est une infection du fœtus uniquement lors de l'accouchement.,L'infection materno-fœtale est une infection du fœtus causée par des germes de l'utérus.,a,"{{objectif de connaissance
 |Identifiant=OIC-020-01-A
 |Item_parent=La méthodologie de la recherche en santé
@@ -3966,7 +3966,7 @@ Organisation en France autour de trois niveaux :
 
 *'''décision''' (ministères de la santé et ministère de la recherche, leurs intitulés exacts pouvant varier selon les gouvernements) pour définir les grandes orientations stratégiques, l’organisation et l’allocation des moyens macroscopiques ;
 *'''programmation''' pour répartir les moyens (agences généralistes comme l’Agence Nationale de la Recherche ANR, ou spécifiques comme l’Institut National du Cancer INCa, ou l’Agence Nationale de Recherche sur le sida et les hépatites virales | maladies infectieuses émergentes ANRS-MIE, par exemple)
-*'''opérateurs''' pour gérer les laboratoires et organiser les recherches (les organismes nationaux de recherche comme l'INSERM et le CNRS par exemple, les universités, les CHU, etc.)",1.0,12.605000000000004,False,True,0.6764042377471924,0.9413437247276306,False,2,False
+*'''opérateurs''' pour gérer les laboratoires et organiser les recherches (les organismes nationaux de recherche comme l'INSERM et le CNRS par exemple, les universités, les CHU, etc.)",1.0,12.605000000000004,False,True,0.6764039993286133,0.9413436452547709,False,2,False
 94,OIC-020-01-A,Quelle est la première cause d'infection néonatale bactérienne précoce?,Streptocoque groupe B,Escherichia coli,Listériose,Treponema pallidum,a,"{{objectif de connaissance
 |Identifiant=OIC-020-01-A
 |Item_parent=La méthodologie de la recherche en santé
@@ -3984,7 +3984,7 @@ Organisation en France autour de trois niveaux :
 
 *'''décision''' (ministères de la santé et ministère de la recherche, leurs intitulés exacts pouvant varier selon les gouvernements) pour définir les grandes orientations stratégiques, l’organisation et l’allocation des moyens macroscopiques ;
 *'''programmation''' pour répartir les moyens (agences généralistes comme l’Agence Nationale de la Recherche ANR, ou spécifiques comme l’Institut National du Cancer INCa, ou l’Agence Nationale de Recherche sur le sida et les hépatites virales | maladies infectieuses émergentes ANRS-MIE, par exemple)
-*'''opérateurs''' pour gérer les laboratoires et organiser les recherches (les organismes nationaux de recherche comme l'INSERM et le CNRS par exemple, les universités, les CHU, etc.)",1.0,15.453333333333337,False,True,0.6065129041671753,0.5235584775606791,False,2,False
+*'''opérateurs''' pour gérer les laboratoires et organiser les recherches (les organismes nationaux de recherche comme l'INSERM et le CNRS par exemple, les universités, les CHU, etc.)",1.0,15.453333333333337,False,True,0.6065126657485962,0.5235584179560343,False,1,False
 95,OIC-020-02-A,Quelle est la transmission materno-fœtale au 3e trimestre?,72 %,40 %,61 %,25 %,a,"{{objectif de connaissance
 |Identifiant=OIC-020-02-A
 |Item_parent=La méthodologie de la recherche en santé
@@ -4015,7 +4015,7 @@ Organisation en France autour de trois niveaux :
 
 Le protocole est élaboré dans le but de répondre à un objectif principal généralement unique et d’aboutir à un résultat principal fiable, valide et pertinent. 
 
-'''Le protocole ne devrait pas être modifié en cours d’étude'''. Toute modification en cours d’étude doit être clairement et scientifiquement justifiée, et décrite de manière transparente dans le document rapportant les résultats de l’étude (notamment dans l’article scientifique).<br />",1.0,12.605000000000004,False,True,0.6166540384292603,0.7501013278961182,False,2,False
+'''Le protocole ne devrait pas être modifié en cours d’étude'''. Toute modification en cours d’étude doit être clairement et scientifiquement justifiée, et décrite de manière transparente dans le document rapportant les résultats de l’étude (notamment dans l’article scientifique).<br />",1.0,12.605000000000004,False,True,0.6166539192199707,0.7501012881596884,False,2,False
 96,OIC-020-03-A,Quelle est la méthode de surveillance recommandée pour une femme enceinte non immunisée envers la toxoplasmose?,Dépistage sérologique mensuel avec IgG et IgM,Test de PCR annuel,Sérologie uniquement à la première grossesse,Sérologie une fois pendant la grossesse,a,"{{objectif de connaissance
 |Identifiant=OIC-020-03-A
 |Item_parent=La méthodologie de la recherche en santé
@@ -4060,7 +4060,7 @@ Des autorisations auprès d’autres structures ou organismes (CNIL, ANSM, etc) 
 
 '''Recherches non-RIPH''': les recherches n'appartenant à aucun type de RIPH n’entrent pas dans le cadre de la loi Jardé. Elles ne sont donc pas soumises à l’obtention d’une autorisation par un CPP mais lorsqu’elles mobilisent l’exploitation de données individuelles à caractère personnel, elles relèvent et nécessitent des démarches auprès de la CNIL. C'est notamment le cas des recherches effectuées à partir de données rétrospectives déjà collectées lors du soin ou de recherches antérieures, les recherches portant sur les cosmétiques, les enquêtes de satisfaction liées au soin ou non, les expérimentations en sciences humaines et sociales dans domaine santé, les évaluation des modalités d’exercice des professionnels de santé, des pratiques d’enseignement dans le domaine de la santé, etc.
 
-<br />",1.0,17.2,False,True,0.6708165407180786,0.7963976462682089,False,2,False
+<br />",1.0,17.2,False,True,0.6708165407180786,0.7963975667953491,False,2,False
 97,OIC-020-04-B,Quel est le risque d'infection fœtale lors d'une infection rubéoleuse avant 11 SA?,10 %,25 %,90 %,50 %,c,"{{objectif de connaissance
 |Identifiant=OIC-020-04-B
 |Item_parent=La méthodologie de la recherche en santé
@@ -4078,7 +4078,7 @@ La justification de l’utilité et de la pertinence d’une étude repose sur u
 
 -      '''état actuel des connaissances''' (hypothèse physiopathologique plausible, faible niveau de preuve des études précédemment menées, résultats contradictoires des études disponibles dans la littérature, etc.)
 
-C'est l'ensemble de ces éléments qui permettent de justifier l'hypothèse émise ''a priori'' par le chercheur (cf. [[Hypothèses de recherche 2C-020-DE-B02]]) et qu'il souhaite vérifier via cette étude. Ils sont notamment décrits dans le rationnel d’un protocole d’étude clinique (cf. [[Méthodologie de la recherche en santé]]), ou encore dans l’introduction d’un article scientifique.",1.0,11.264615384615386,False,True,0.6541231274604797,0.7742089827855428,False,2,False
+C'est l'ensemble de ces éléments qui permettent de justifier l'hypothèse émise ''a priori'' par le chercheur (cf. [[Hypothèses de recherche 2C-020-DE-B02]]) et qu'il souhaite vérifier via cette étude. Ils sont notamment décrits dans le rationnel d’un protocole d’étude clinique (cf. [[Méthodologie de la recherche en santé]]), ou encore dans l’introduction d’un article scientifique.",1.0,11.264615384615386,False,True,0.6541231870651245,0.7742089231808981,False,2,False
 98,OIC-020-05-B,Quelle conséquence fœtale est liée à la rougeole maternelle pendant la grossesse?,Augmentation du risque de malformations congénitales,Risque accru de prématurité,Risque accru de mort fœtale in utero,Risque accru de pneumonie maternelle,b,"{{objectif de connaissance
 |Identifiant=OIC-020-05-B
 |Item_parent=La méthodologie de la recherche en santé
@@ -4092,7 +4092,7 @@ C'est l'ensemble de ces éléments qui permettent de justifier l'hypothèse émi
 
 L'objectif d’une recherche découle directement de la formulation d’une hypothèse ''a priori'' que l’on souhaite vérifier au travers d’une étude. Il peut y avoir plusieurs objectifs à une recherche mais ils doivent alors être hiérarchisés en objectif principal (unique, clair, précis, consensuel, raisonnable) et objectif(s) secondaire(s) (cf. [[Méthodologie de la recherche en santé]]).
 
-La définition des hypothèses de recherche est en lien direct avec l’estimation de la puissance d’une étude et le calcul du nombre de sujets nécessaires (cf. [[Facteurs susceptibles d'influencer la puissance d'une étude 2C-020-DE-A10]] et [[Calcul du nombre de sujets necessaire 2C-020-DE-A11]]). L’hypothèse doit alors décrire ce qui est attendu en terme de taille d’effet.",1.0,13.673333333333336,False,True,0.5956249237060547,0.790181299050649,True,3,False
+La définition des hypothèses de recherche est en lien direct avec l’estimation de la puissance d’une étude et le calcul du nombre de sujets nécessaires (cf. [[Facteurs susceptibles d'influencer la puissance d'une étude 2C-020-DE-A10]] et [[Calcul du nombre de sujets necessaire 2C-020-DE-A11]]). L’hypothèse doit alors décrire ce qui est attendu en terme de taille d’effet.",1.0,13.673333333333336,False,True,0.5956248044967651,0.7901812593142191,False,2,False
 99,OIC-020-06-B,Quelle est la définition de l'infection maternelle à CMV?,La 1ère cause d'infection congénitale virale et la 1ère cause non héréditaire de perte auditive neurosensorielle et de retard mental dans la petite enfance,La 2ème cause d'infection congénitale virale et la 2ème cause non héréditaire de perte auditive neurosensorielle et de retard mental dans la petite enfance,La 1ère cause d'infection congénitale virale et la 2ème cause non héréditaire de perte auditive neurosensorielle et de retard mental dans la petite enfance,La 2ème cause d'infection congénitale virale et la 1ère cause non héréditaire de perte auditive neurosensorielle et de retard mental dans la petite enfance,a,"{{objectif de connaissance
 |Identifiant=OIC-020-06-B
 |Item_parent=La méthodologie de la recherche en santé
@@ -4121,4 +4121,4 @@ Le choix de la méthodologie d'une étude dépend de l'objectif poursuivi.  Pour
 **'''les études à visée descriptive (études descriptives)''' : toujours observationnelles, leur objectif est de décrire la distribution ou l'évolution de la fréquence des événements de santé et de leurs déterminants dans la population.
 **'''les études à visée explicative''' '''(études analytiques)''' : toujours observationnelles, leur objectif est d’identifier l'existence d'une association entre un facteur de risque et un phénomène de santé.
 **'''les études expérimentales''' : l’approche est expérimentale par définition, le facteur d’exposition étudié est une intervention expérimentale réalisée pour l’étude (maîtrisée par l'expérimentateur) dont on veut évaluer l'effet sur un phénomène de santé. Lorsqu’elles sont randomisées, contrôlées et correctement menées, elles ont le plus haut niveau de preuve pour établir un lien de causalité entre le facteur d'exposition (médicament, stratégie chirurgicale, de dépistage, intervention de promotion de la santé, etc.) et le phénomène de santé (décès, guérison, rechute, survenue d'une maladie, etc.). (cf. [[Critère de jugement de causalité et niveau de preuve des différentes études 2C-020-DE-A14]] et [[Analyser et utiliser les résultats des études cliniques dans la perspective du bon usage - analyse critique, recherche clinique et niveaux de preuve (voir item 3)|Item 323 - Analyser et utiliser les résultats des études cliniques dans la perspective du bon usage - analyse critique, recherche clinique et niveaux de preuve (voir item 3)]].)
-**'''les études visant à évaluer les performances d’une méthode diagnostique ou de dépistage (études diagnostiques)''' : toujours observationnelles, l’objectif est d'évaluer (ou de comparer) les performances d'un (de plusieurs) test(s) clinique(s) ou paraclinique(s) (entre eux) pour le dépistage ou le diagnostic d'un phénomène de santé.<br />",1.0,10.208888888888893,False,True,0.6083521246910095,0.9874636729558309,False,2,True
+**'''les études visant à évaluer les performances d’une méthode diagnostique ou de dépistage (études diagnostiques)''' : toujours observationnelles, l’objectif est d'évaluer (ou de comparer) les performances d'un (de plusieurs) test(s) clinique(s) ou paraclinique(s) (entre eux) pour le dépistage ou le diagnostic d'un phénomène de santé.<br />",1.0,10.208888888888893,False,True,0.60835200548172,0.9874638120333353,False,2,True

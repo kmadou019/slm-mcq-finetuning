@@ -3,34 +3,44 @@
 # # Prerequisite
 
 from sys import argv
-import os
-from pydantic import BaseModel
-import json
-import pandas as pd
-from pydantic import ValidationError
-from pandas import DataFrame
-from ollama import generate
-from transformers import AutoTokenizer, pipeline
-from dotenv import load_dotenv
+from typing import Optional
 import os
 import ast
 import json
+
+import pandas as pd
+from pandas import DataFrame
+from pydantic import BaseModel, ValidationError
+from ollama import generate
+from transformers import AutoTokenizer, pipeline
+from dotenv import load_dotenv
 from huggingface_hub import login
 import ollama
 from openai import OpenAI
 
+
 class MCQQuestion(BaseModel):
     question1: str
+    question1_comment: Optional[str] = ""
     option_a1: str
+    option_a1_comment: Optional[str] = ""
     option_b1: str
+    option_b1_comment: Optional[str] = ""
     option_c1: str
+    option_c1_comment: Optional[str] = ""
     option_d1: str
+    option_d1_comment: Optional[str] = ""
     correct_option1: str
     question2: str
+    question2_comment: Optional[str] = ""
     option_a2: str
+    option_a2_comment: Optional[str] = ""
     option_b2: str
+    option_b2_comment: Optional[str] = ""
     option_c2: str
+    option_c2_comment: Optional[str] = ""
     option_d2: str
+    option_d2_comment: Optional[str] = ""
     correct_option2: str
 
 
@@ -40,58 +50,65 @@ def validate_mcq(mcq_json):
     except ValidationError as e:
         print(f"Validation failed: {e}")
         return None
-        
 
 
 def flatten(df: DataFrame, mcq_column_name: str):
-    # Créer les listes de données en intercalant question1/question2
-    ids = []
-    questions = []
-    option_as = []
-    option_bs = []
-    option_cs = []
-    option_ds = []
-    correct_options = []
-    
+    ids, questions, option_as, option_bs, option_cs, option_ds, correct_options = [], [], [], [], [], [], []
+    q_comments = []
+    a_comments, b_comments, c_comments, d_comments = [], [], [], []
+
     for idx, row in df.iterrows():
         mcq = row[mcq_column_name]
-        print(mcq)
-        
-        # Ajouter question1 et ses options
+
+        # question1
         ids.append(row["id"])
         questions.append(mcq.question1 if mcq else "")
+        q_comments.append(mcq.question1_comment if mcq else "")
         option_as.append(mcq.option_a1 if mcq else "")
+        a_comments.append(mcq.option_a1_comment if mcq else "")
         option_bs.append(mcq.option_b1 if mcq else "")
+        b_comments.append(mcq.option_b1_comment if mcq else "")
         option_cs.append(mcq.option_c1 if mcq else "")
+        c_comments.append(mcq.option_c1_comment if mcq else "")
         option_ds.append(mcq.option_d1 if mcq else "")
+        d_comments.append(mcq.option_d1_comment if mcq else "")
         correct_options.append(mcq.correct_option1 if mcq else "")
-        
-        # Ajouter question2 et ses options
+
+        # question2
         ids.append(f"{row['id']}-")
         questions.append(mcq.question2 if mcq else "")
+        q_comments.append(mcq.question2_comment if mcq else "")
         option_as.append(mcq.option_a2 if mcq else "")
+        a_comments.append(mcq.option_a2_comment if mcq else "")
         option_bs.append(mcq.option_b2 if mcq else "")
+        b_comments.append(mcq.option_b2_comment if mcq else "")
         option_cs.append(mcq.option_c2 if mcq else "")
+        c_comments.append(mcq.option_c2_comment if mcq else "")
         option_ds.append(mcq.option_d2 if mcq else "")
+        d_comments.append(mcq.option_d2_comment if mcq else "")
         correct_options.append(mcq.correct_option2 if mcq else "")
-    
-    # Créer le DataFrame avec les listes intercalées
-    result_df = pd.DataFrame({
+
+    return pd.DataFrame({
         "id": ids,
         "question": questions,
+        "question_comment": q_comments,
         "option_a": option_as,
+        "option_a_comment": a_comments,
         "option_b": option_bs,
+        "option_b_comment": b_comments,
         "option_c": option_cs,
+        "option_c_comment": c_comments,
         "option_d": option_ds,
-        "correct_option": correct_options
+        "option_d_comment": d_comments,
+        "correct_option": correct_options,
     })
-    
-    return result_df
+
 
 def extract_json(text):
     start = text.find("{")
-    end = text.find("}")
+    end = text.rfind("}")
     text = text[start:end+1]
+    print(text)
     return json.dumps(ast.literal_eval(text), ensure_ascii=False)
 
 
@@ -112,63 +129,78 @@ def generate_mcq(content, model_name, temperature):
         **Contenu éducatif :**
         {content}
     """
-    
+
     generate_params = {
         'model': model_name,
-        'options': {'temperature': temperature, 'num_ctx': 8192, 'top_p': 1}, 
+        'options': {'temperature': temperature, 'num_ctx': 8192, 'top_p': 1},
         'prompt': prompt,
         'format': MCQQuestion.model_json_schema()
     }
-    
-    # Get a response
+
     response = generate(**generate_params)
     return response['response']
 
-def generate_mcq_hf(content, model_name,tokenizer, temperature):
+
+def generate_mcq_hf(content, model_name, tokenizer, temperature):
     prompt = f"""
-        À partir du contenu éducatif suivant, générez exactement deux questions à choix multiple avec quatre options de réponse chacune (a, b, c, d), dont une seule est correcte.
+     À partir du contenu éducatif suivant, générez exactement deux questions à choix multiple avec quatre options de réponse chacune (a, b, c, d), dont une seule est correcte.
 
-        OBJECTIFS :
-        - Les questions doivent évaluer la compréhension des idées principales.
-        - Les distracteurs doivent être plausibles mais incorrects.
-        - Les options doivent être courtes.
-        - Les deux questions doivent être fournies dans un seul et unique objet JSON.
-        - Aucun texte hors JSON n’est autorisé.
+    OBJECTIFS :
+    - Les questions doivent évaluer la compréhension des idées principales.
+    - Les distracteurs doivent être plausibles mais incorrects.
+    - Les options doivent être courtes.
+    - Fournir une justification pédagogique pour chaque option.
+    - Fournir un commentaire global pour chaque question.
 
-        CONTRAINTES STRICTES DE SORTIE :
-        1. La sortie doit être STRICTEMENT un unique objet JSON valide.
-        2. Interdiction ABSOLUE d’ajouter :
-        - des blocs ```json
-        - plusieurs objets JSON
-        - du texte avant ou après le JSON
-        - des explications ou commentaires
-        3. Les champs "correct_option1" et "correct_option2" doivent contenir EXACTEMENT une lettre minuscule parmi : "a", "b", "c", "d".
-        4. il faut utiliser des doubles quotes : "..." et NON '...'
-        5. Le JSON doit contenir EXACTEMENT les 12 champs suivants :
+    CONTRAINTES STRICTES DE SORTIE :
+    1. La sortie doit être STRICTEMENT un unique objet JSON valide.
+    2. Interdiction ABSOLUE d'ajouter :
+    - des blocs ```json
+    - plusieurs objets JSON
+    - du texte avant ou après le JSON
+    - des explications hors champs JSON
+    3. Les champs "correct_option1" et "correct_option2" doivent contenir EXACTEMENT une lettre minuscule parmi : "a", "b", "c", "d".
+    4. Utiliser uniquement des doubles quotes : "..."
+    5. Le JSON doit contenir EXACTEMENT les 22 champs suivants :
 
-        {{
-            "question1": "...",
-            "option_a1": "...",
-            "option_b1": "...",
-            "option_c1": "...",
-            "option_d1": "...",
-            "correct_option1": "a",
-            "question2": "...",
-            "option_a2": "...",
-            "option_b2": "...",
-            "option_c2": "...",
-            "option_d2": "...",
-            "correct_option2": "c"
-        }}
+    {{
+    "question1": "...",
+    "question1_comment": "...",
+    "option_a1": "...",
+    "option_a1_comment": "...",
+    "option_b1": "...",
+    "option_b1_comment": "...",
+    "option_c1": "...",
+    "option_c1_comment": "...",
+    "option_d1": "...",
+    "option_d1_comment": "...",
+    "correct_option1": "a",
 
-        CONTENU ÉDUCATIF :
-            {content}
+    "question2": "...",
+    "question2_comment": "...",
+    "option_a2": "...",
+    "option_a2_comment": "...",
+    "option_b2": "...",
+    "option_b2_comment": "...",
+    "option_c2": "...",
+    "option_c2_comment": "...",
+    "option_d2": "...",
+    "option_d2_comment": "...",
+    "correct_option2": "c"
+    }}
 
-            INSTRUCTION FINALE :
-            Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.
-        """
+    RÈGLES POUR LES COMMENTAIRES :
+    - Chaque commentaire d'option doit expliquer brièvement pourquoi l'option est correcte ou incorrecte.
+    - Le commentaire global de la question doit expliquer ce que la question évalue ou signaler un piège courant.
+    - Les commentaires doivent être factuels, concis et pédagogiques.
 
-    
+    CONTENU ÉDUCATIF :
+    {content}
+
+    INSTRUCTION FINALE :
+    Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.
+"""
+
     pipe = pipeline(
         "text-generation",
         model=model_name,
@@ -176,9 +208,9 @@ def generate_mcq_hf(content, model_name,tokenizer, temperature):
         device_map="cuda",
         dtype="bfloat16"
     )
-    
+
     messages = [{"role": "user", "content": prompt}]
-    
+
     response = pipe(
         messages,
         max_new_tokens=2048,
@@ -188,23 +220,25 @@ def generate_mcq_hf(content, model_name,tokenizer, temperature):
         return_full_text=False
     )
 
-    
     return extract_json(response[0]['generated_text'])
+
 
 def get_checkpoint():
     try:
-        with open("../data/checkpoints/start", "r") as start:
+        with open("../data/checkpoints/start_", "r") as start:
             start = start.readline()
-            df_in_construction = pd.read_csv("../data/checkpoints/df_in_construction.csv")
+            df_in_construction = pd.read_csv("../data/checkpoints/df_in_construction_.csv")
     except FileNotFoundError:
         df_in_construction = pd.DataFrame()
         start = 0
     return int(start), df_in_construction
 
+
 def save_checkpoint(start, df_in_construction):
-    with open("../data/checkpoints/start", "w") as fic:
+    with open("../data/checkpoints/start_", "w") as fic:
         fic.write(str(start))
-    df_in_construction.to_csv("../data/checkpoints/df_in_construction.csv", index=False)
+    df_in_construction.to_csv("../data/checkpoints/df_in_construction_.csv", index=False)
+
 
 def for_a_model(df_test, model_name, save_name, use_ollama=False):
     if not use_ollama:
@@ -215,10 +249,10 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
         )
     else:
         tokenizer = None
-    
+
     start, df_in_construction = get_checkpoint()
-    pas = 1
-    
+    pas = 400
+
     for idx in range(start, len(df_test)):
         content = df_test.loc[idx, "content_raw"]
         nb_try = 0
@@ -231,24 +265,25 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
                 )
                 df_in_construction.loc[idx, f"generated_{save_name}"] = generated
                 break
-            except Exception:
-                print("SyntaxError détectée, relance...")
+            except (ValueError, SyntaxError, KeyError, IndexError) as e:
+                print(f"Erreur détectée ({type(e).__name__}), relance...")
                 nb_try += 1
                 if nb_try == 5:
-                    print("Nombre d'essai depassé, passage au Lisa Sheet suivant")
+                    print("Nombre d'essais dépassé, passage au Lisa Sheet suivant")
                     break
-        
+
         if idx % pas == 0:
             save_checkpoint(idx, df_in_construction)
-    
+
     df_test[save_name] = df_in_construction[f'generated_{save_name}'].apply(validate_mcq)
     df = flatten(df_test, save_name)
-    
+
     # Clean for other model
-    os.remove("../data/checkpoints/df_in_construction.csv")
-    os.remove("../data/checkpoints/start")
+    os.remove("../data/checkpoints/df_in_construction_.csv")
+    os.remove("../data/checkpoints/start_")
 
     return df
+
 
 def create_mcq_text(mcq_dict):
     return (
@@ -259,14 +294,15 @@ def create_mcq_text(mcq_dict):
         f"d) {mcq_dict['option_d']}"
     )
 
-def llama_answer_qcm(mcq_text,system_prompt):
+
+def llama_answer_qcm(mcq_text, system_prompt):
     user_prompt = f"""Répond STRICTEMENT à ce QCM :
         {mcq_text}
         CONTRAINTE ABSOLUE :
         - Ta sortie doit être UNIQUEMENT la lettre de la bonne réponse (A, B, C, D, etc.).
         - AUCUN autre texte, aucune explication, aucun point, aucun saut de ligne, aucun espace.
-        - Ne préfixe pas la réponse, n’ajoute rien avant ou après.
-        - Répond par une seule lettre et rien d’autre.
+        - Ne préfixe pas la réponse, n'ajoute rien avant ou après.
+        - Répond par une seule lettre et rien d'autre.
 
         FORMAT DE SORTIE OBLIGATOIRE :
         <lettre>
@@ -278,14 +314,15 @@ def llama_answer_qcm(mcq_text,system_prompt):
 
     return response["response"][0]
 
+
 def call_openai_api(client, system_prompt, mcq_text, temp=0.5, max_completion_tokens=1):
     user_prompt = f"""Répond STRICTEMENT à ce QCM :
         {mcq_text}
         CONTRAINTE ABSOLUE :
         - Ta sortie doit être UNIQUEMENT la lettre de la bonne réponse (A, B, C, D, etc.).
         - AUCUN autre texte, aucune explication, aucun point, aucun saut de ligne, aucun espace.
-        - Ne préfixe pas la réponse, n’ajoute rien avant ou après.
-        - Répond par une seule lettre et rien d’autre.
+        - Ne préfixe pas la réponse, n'ajoute rien avant ou après.
+        - Répond par une seule lettre et rien d'autre.
 
         FORMAT DE SORTIE OBLIGATOIRE :
         <lettre>
@@ -305,8 +342,9 @@ def call_openai_api(client, system_prompt, mcq_text, temp=0.5, max_completion_to
         print(f"Error occurred: {e}")
         return None
 
-load_dotenv()                  
-HF_TOKEN = os.getenv("HF_TOKEN")  
+
+load_dotenv()
+HF_TOKEN = os.getenv("HF_TOKEN")
 OPENAI_KEY = os.environ.get("OPENAI_API_KEY")
 login(token=HF_TOKEN)
 
@@ -317,64 +355,70 @@ file_path = "../data/train_test_split/test_folders.json"
 with open(file_path, "r", encoding="utf-8") as file:
     test_folders = json.load(file)
 
-df_test = df[:1]#[df.folder.isin(test_folders)].reset_index(drop=True)
+df_test = df[df.folder.isin(test_folders)].reset_index(drop=True)
 print("Number of lisa sheets :", len(df_test))
 
 # # How many output are incorrect
 
-def correct_output(df,save_name,file):
+def correct_output(df, save_name, file):
     initial_len = len(df)
     df = df[df["correct_option"].astype(str).str.lower().isin(list("abcd"))]
-    
+
     incorrect_output = initial_len - len(df)
-    print(initial_len-incorrect_output)
-    print(f"Incorrect output for {save_name}: {round((incorrect_output/initial_len)*100,2)}%",file=file)
+    print(initial_len - incorrect_output)
+    print(f"Incorrect output for {save_name}: {round((incorrect_output/initial_len)*100,2)}%", file=file)
     return df
+
 
 # ## Correctness
 
 system_prompt = "Tu es un expert dans le domaine médical"
 client = OpenAI(api_key=OPENAI_KEY)
 
-def correctness(df,save_name,file):
+
+def correctness(df, save_name, file):
     initial_len = len(df)
     indices_to_drop = []
     for idx, row in df.iterrows():
         mcq_text = create_mcq_text(row)
         correct_option = row["correct_option"]
-        correct_reeval = call_openai_api(client=client,system_prompt=system_prompt,mcq_text=mcq_text)
-        if  not(isinstance(correct_option, str)):
-            continue 
+        correct_reeval = call_openai_api(client=client, system_prompt=system_prompt, mcq_text=mcq_text)
+        if not isinstance(correct_option, str):
+            continue
+        if correct_reeval is None:
+            continue
         if correct_option.lower() != correct_reeval.lower():
             indices_to_drop.append(idx)
 
     df = df.drop(indices_to_drop).reset_index(drop=True)
-    df.to_csv("../data/correct_mcqs_dataset/"+ save_name + ".csv")
-    print(f"Number of correct MCQs for {save_name} {len(df)} / {initial_len}",file=file)
+    df.to_csv("../data/correct_mcqs_dataset/" + save_name + ".csv")
+    print(f"Number of correct MCQs for {save_name} {len(df)} / {initial_len}", file=file)
     return df
+
 
 # ## Quality distribution
 
-def quality_distribution(df, save_name,file):
-    print(f"{save_name} quality distribution:",file=file)
-    print(df['distractor_quality'].round(0).value_counts(normalize=True, sort=True)*100,file=file)
+def quality_distribution(df, save_name, file):
+    print(f"{save_name} quality distribution:", file=file)
+    print(df['distractor_quality'].round(0).value_counts(normalize=True, sort=True)*100, file=file)
+
 
 # # MCQs Generation
 
 models = {
-    "qwen3_0.6b_pdapt_slerp": "PARTAGES-dev/Qwen3-0.6B-PDAPT-SLERP",
-    "qwen3_1_7b_pdapt_slerp": "PARTAGES-dev/Qwen3-1.7B-PDAPT-SLERP",
-    "qwen3_4b_pdapt_slerp": "PARTAGES-dev/Qwen3-4B-PDAPT-SLERP",
-    "qwen3_8b_pdapt_slerp": "PARTAGES-dev/Qwen3-8B-PDAPT-SLERP",
+    #"qwen3_0.6b_pdapt_slerp": "PARTAGES-dev/Qwen3-0.6B-PDAPT-SLERP",
+    #"qwen3_1_7b_pdapt_slerp": "PARTAGES-dev/Qwen3-1.7B-PDAPT-SLERP",
+    #"qwen3_4b_pdapt_slerp": "PARTAGES-dev/Qwen3-4B-PDAPT-SLERP",
+    #"qwen3_8b_pdapt_slerp": "PARTAGES-dev/Qwen3-8B-PDAPT-SLERP",
     "llama3_1_8b": "meta-llama/Llama-3.1-8B-Instruct",
-    "gemma2_9b": "google/gemma-2-9b-it",
-    "medGemma_4b": "google/medgemma-4b-it",
-    "medGemma_27b": "google/medgemma-27b-it",
-    "openbiollm_8b": "hf.co/mradermacher/Llama3-Instruct-OpenBioLLM-8B-merged-i1-GGUF:latest",
-    "qwen3_0.6b": "Qwen/Qwen3-0.6B",
-    "mistral_7b": "mistralai/Mistral-7B-Instruct-v0.3",
-    "eurollm_9b": "utter-project/EuroLLM-9B-Instruct",
-    "apertus_8b": "swiss-ai/Apertus-8B-Instruct-2509",
+    #"gemma2_9b": "google/gemma-2-9b-it",
+    #"medGemma_4b": "google/medgemma-4b-it",
+    #"medGemma_27b": "google/medgemma-27b-it",
+    #"openbiollm_8b": "hf.co/mradermacher/Llama3-Instruct-OpenBioLLM-8B-merged-i1-GGUF:latest",
+    #"qwen3_0.6b": "Qwen/Qwen3-0.6B",
+    #"mistral_7b": "mistralai/Mistral-7B-Instruct-v0.3",
+    #"eurollm_9b": "utter-project/EuroLLM-9B-Instruct",
+    #"apertus_8b": "swiss-ai/Apertus-8B-Instruct-2509",
 }
 
 if len(argv) < 2 or argv[1] not in models:

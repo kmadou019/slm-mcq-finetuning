@@ -1,5 +1,5 @@
-Unnamed: 0,id,question,option_a,option_b,option_c,option_d,correct_option,content_raw,originality,readability,starts_with_negation,is_question,relevance,ambiguity,disclosure,difficulty,distractor_quality
-0,OIC-001-01-A,Quelle est l'approche de la relation médecin-malade avant les changements récents?,Globale et centrée sur le patient,Paternaliste et biomédicale,Centrée sur l'auto-détermination,Patient partenaire de soins,b,"{{objectif de connaissance
+Unnamed: 0,id,question,question_comment,option_a,option_a_comment,option_b,option_b_comment,option_c,option_c_comment,option_d,option_d_comment,correct_option,content_raw,originality,readability,starts_with_negation,is_question,relevance,ambiguity,disclosure,difficulty,distractor_quality
+0,OIC-001-01-A,Quelle est l'approche actuelle de la relation médecin-malade?,Cette question évalue la compréhension de l'évolution de la relation médecin-malade.,Paternaliste et biomédicale,Cette option est incorrecte car elle décrit l'approche initiale de la relation médecin-malade.,Globale et centrée sur la maladie,Cette option est incorrecte car elle décrit l'opposé de l'approche actuelle de la relation médecin-malade.,Bio-médico-psychosociale et centrée sur le patient,Cette option est correcte car elle décrit l'approche actuelle de la relation médecin-malade.,Centrée sur le soignant et non le patient,Cette option est incorrecte car elle décrit l'opposé de l'approche actuelle de la relation médecin-malade.,c,"{{objectif de connaissance
 |Identifiant=OIC-001-01-A
 |Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
 |Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
@@ -16,22 +16,53 @@ Rencontre entre un soignant et une personne soignée :
 
 -       Dorénavant globale c’est-à-dire bio-médico-psychosociale, centrée sur le patient et non sa/ses maladies(s).
 
-Le patient est un partenaire du soin : son expérience et son vécu sont intégrés à la démarche du soignant.<br />",0.8333333333333334,13.372727272727271,False,True,0.7896757125854492,0.7162175973256429,False,2,False
-1,OIC-001-01-A,Quelle est la caractéristique de la relation médecin-malade actuelle?,Paternaliste et centrée sur la maladie,Globale et centrée sur le patient,Centrée sur l'auto-détermination,Patient partenaire de soins,b,"{{objectif de connaissance
-|Identifiant=OIC-001-01-A
+Le patient est un partenaire du soin : son expérience et son vécu sont intégrés à la démarche du soignant.<br />",0.75,15.555000000000003,False,True,0.843379020690918,0.7646031975746155,True,3,False
+1,OIC-001-02-A,Quels sont les domaines qui influencent la relation médecin-malade?,Cette question évalue la compréhension des déterminants de la relation médecin-malade. Attention aux options plausibles mais incorrectes.,Seul l'éthique,"Incorrect, car l'éthique n'est qu'un des domaines.","L'éthique, le social et le psychologique","Correct, car ces trois domaines sont mentionnés dans le texte.",Le social et le psychologique,"Incorrect, car l'éthique est également un domaine.",Seul le psychologique,"Incorrect, car l'éthique et le social sont également des domaines.",b,"{{objectif de connaissance
+|Identifiant=OIC-001-02-A
 |Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
 |Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
 |Rang=A
-|Intitulé=Connaître la définition de la relation médecin-malade
-|Description=Principales caractéristiques de la relation médecin-malade. Ex. Modèle paternaliste/centré sur l'auto-détermination/patient partenaire de soins
+|Intitulé=Connaître les principaux déterminants de la relation médecin-malade
+|Description=Déterminants psychologiques, éthiques, sociaux, etc.
 |Rubrique=Définition
 |Contributeurs=
-|Ordre=1}}
+|Ordre=2}}
+L’acte médical est le moment de convergence de 3 finalités : celle du patient, celle du médecin, celle de la société. Ces finalités induisent des interactions entre différents déterminants de la relation qui relèvent des domaines :
 
-Rencontre entre un soignant et une personne soignée :
+-       éthique : le respect, la dignité et la liberté de l'individu lui-même, dans son groupe et dans la collectivité
 
--       Approche antérieurement surtout paternaliste et biomédicale.
+-       sociaux : les difficultés linguistiques, les éléments culturels, voire religieux, le niveau éducatif, les déficits sensoriels
 
--       Dorénavant globale c’est-à-dire bio-médico-psychosociale, centrée sur le patient et non sa/ses maladies(s).
+psychologiques : les perspectives du patient et du médecin au moment de la consultation, la mise à distance des événements de vie.<br />",0.75,12.831111111111113,False,True,0.8008192181587219,0.8339701493581136,True,2,False
+2,OIC-001-02-A,Quelle est la finalité de l'acte médical?,Cette question évalue la compréhension des finalités de l'acte médical. Attention aux options plausibles mais incorrectes.,Seule la finalité du patient,"Incorrect, car il y a trois finalités.",La finalité du médecin et de la société,"Incorrect, car la finalité du patient est également importante.","La finalité du patient, du médecin et de la société","Correct, car les trois finalités sont mentionnées dans le texte.",Seule la finalité de la société,"Incorrect, car les finalités du patient et du médecin sont également importantes.",c,"{{objectif de connaissance
+|Identifiant=OIC-001-02-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
+|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
+|Rang=A
+|Intitulé=Connaître les principaux déterminants de la relation médecin-malade
+|Description=Déterminants psychologiques, éthiques, sociaux, etc.
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=2}}
+L’acte médical est le moment de convergence de 3 finalités : celle du patient, celle du médecin, celle de la société. Ces finalités induisent des interactions entre différents déterminants de la relation qui relèvent des domaines :
 
-Le patient est un partenaire du soin : son expérience et son vécu sont intégrés à la démarche du soignant.<br />",0.75,16.764444444444447,False,True,0.8493554592132568,0.7658182581265768,True,2,True
+-       éthique : le respect, la dignité et la liberté de l'individu lui-même, dans son groupe et dans la collectivité
+
+-       sociaux : les difficultés linguistiques, les éléments culturels, voire religieux, le niveau éducatif, les déficits sensoriels
+
+psychologiques : les perspectives du patient et du médecin au moment de la consultation, la mise à distance des événements de vie.<br />",1.0,7.368571428571428,False,True,0.6936165690422058,0.9051338235537211,True,2,False
+3,OIC-001-03-A,Quels sont les principaux corrélats cliniques de la relation médecin-malade?,Cette question évalue la compréhension des idées principales de l'objectif de connaissance OIC-001-03-A. Attention aux options plausibles mais incorrectes!,La qualité de la relation médecin-patient n'a aucun impact sur la santé,Cette option est incorrecte car la relation médecin-patient a démontré son importance sur différents indicateurs de santé.,La performance dans la démarche diagnostique et l'amélioration des indicateurs de santé,Cette option est correcte car elle mentionne deux des principaux corrélats cliniques de la relation médecin-malade.,La relation médecin-malade n'a aucun impact sur la santé,Cette option est incorrecte car la relation médecin-malade a démontré son importance sur différents indicateurs de santé.,La qualité de la relation médecin-patient n'est pas importante,Cette option est incorrecte car la relation médecin-patient a démontré son importance sur différents indicateurs de santé.,b,"{{objectif de connaissance
+|Identifiant=OIC-001-03-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
+|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
+|Rang=A
+|Intitulé=Connaître les principaux corrélats cliniques de la relation médecin-malade
+|Description=Ex. Performance dans la démarche diagnostique, amélioration des indicateurs de santé, etc.
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=3}}
+La qualité de la relation médecin-patient a démontré son importance sur différents indicateurs de santé :
+
+-       performance dans la démarche diagnostique
+
+-       amélioration et stabilisation de paramètres biocliniques de suivi des maladies chroniques<br />",0.2,13.09,False,True,0.8333479166030884,0.7259375254313151,True,3,False
