@@ -70,6 +70,29 @@ export class McqService {
   }
 
   /**
+   * Lancer la génération de MCQs depuis un contenu custom (mode évaluateur)
+   */
+  startGeneration(content: string, modelSaveName: string, promptTemplate?: string): Observable<{ job_id: string }> {
+    return this.http.post<{ job_id: string }>(`${this.apiUrl}/generate`, {
+      content,
+      model_save_name: modelSaveName,
+      prompt_template: promptTemplate
+    });
+  }
+
+  /**
+   * Interroger l'état d'un job de génération (polling)
+   */
+  getGenerationStatus(jobId: string): Observable<{
+    job_id: string;
+    status: 'pending' | 'running' | 'done' | 'error';
+    mcq_count: number;
+    error: string | null;
+  }> {
+    return this.http.get<any>(`${this.apiUrl}/generate/${jobId}`);
+  }
+
+  /**
    * Cle localStorage dynamique par utilisateur
    */
   private getProgressKey(): string {

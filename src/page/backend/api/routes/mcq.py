@@ -632,6 +632,30 @@ async def get_mcq_by_id(
 
         model = assignment.model
 
+        # --- Cas spécial : MCQ généré depuis contenu personnalisé ---
+        if model == "custom":
+            # mcq_id format: "CSTM-XXXXXXX-1" or "CSTM-XXXXXXX-2"
+            parts = mcq_id.rsplit("-", 1)
+            if len(parts) != 2:
+                raise HTTPException(status_code=400, detail="Invalid custom MCQ ID format")
+            job_id = parts[0]
+            mcq_index = int(parts[1]) - 1
+
+            custom_mcqs_dir = Path(__file__).parent.parent.parent / "data" / "custom_mcqs"
+            job_file = custom_mcqs_dir / f"{job_id}.json"
+            if not job_file.exists():
+                raise HTTPException(status_code=404, detail="Custom MCQ data not found")
+
+            with open(job_file, "r", encoding="utf-8") as f:
+                mock_mcqs = json.load(f)
+
+            if mcq_index < 0 or mcq_index >= len(mock_mcqs):
+                raise HTTPException(status_code=404, detail="Custom MCQ index out of range")
+
+            return MCQCard(**mock_mcqs[mcq_index])
+
+        # --- Cas standard : MCQ depuis CSV de modèle ---
+
         # Obtenir le chemin du CSV pour ce modèle
         csv_path = get_csv_path_for_model(model)
 

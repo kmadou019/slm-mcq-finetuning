@@ -13,7 +13,7 @@ from slowapi.util import get_remote_address
 from slowapi.errors import RateLimitExceeded
 from slowapi.middleware import SlowAPIMiddleware
 from dotenv import load_dotenv
-from api.routes import auth, mcq, validations, admin
+from api.routes import auth, mcq, validations, admin, generation
 from database import init_db
 
 # Load environment variables
@@ -76,6 +76,7 @@ app.include_router(auth.router, prefix="/api")
 app.include_router(mcq.router, prefix="/api")
 app.include_router(validations.router, prefix="/api")
 app.include_router(admin.router, prefix="/api")
+app.include_router(generation.router, prefix="/api")
 
 # Root endpoint
 @app.get("/")

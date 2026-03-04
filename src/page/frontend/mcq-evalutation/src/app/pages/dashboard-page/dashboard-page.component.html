@@ -137,6 +137,17 @@
         </button>
       </div>
 
+      <div class="action-card generate-card">
+        <h2>Générer depuis mon contenu</h2>
+        <p>Collez votre propre matériau pédagogique pour générer et évaluer des MCQs personnalisés</p>
+        <button class="btn-generate" (click)="onGenerateFromMaterial()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+          Générer des MCQs
+        </button>
+      </div>
+
       @if (currentUser()?.role === 'admin') {
         <div class="action-card admin-card">
           <h2>🔧 Dashboard Admin</h2>
@@ -160,6 +171,14 @@
       (close)="onModalClose()"
       (confirm)="onModalConfirm($event)"
     ></app-mcq-selection-modal>
+  }
+
+  <!-- Generate from Material Modal -->
+  @if (showGenerateModal()) {
+    <app-generate-from-material-modal
+      (close)="onGenerateModalClose()"
+      (confirm)="onGenerateModalConfirm()"
+    ></app-generate-from-material-modal>
   }
 
   <!-- Password Change Modal -->

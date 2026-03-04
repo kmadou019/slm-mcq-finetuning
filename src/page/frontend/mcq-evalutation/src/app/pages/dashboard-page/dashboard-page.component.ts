@@ -6,6 +6,7 @@ import { AuthService } from '../../services/auth.service';
 import { ValidationService } from '../../services/validation.service';
 import { User } from '../../models';
 import { McqSelectionModalComponent } from '../../components/mcq-selection-modal/mcq-selection-modal.component';
+import { GenerateFromMaterialModalComponent } from '../../components/generate-from-material-modal/generate-from-material-modal.component';
 import { filter, Subscription } from 'rxjs';
 
 /**
@@ -14,7 +15,7 @@ import { filter, Subscription } from 'rxjs';
 @Component({
   selector: 'app-dashboard-page',
   standalone: true,
-  imports: [CommonModule, FormsModule, McqSelectionModalComponent],
+  imports: [CommonModule, FormsModule, McqSelectionModalComponent, GenerateFromMaterialModalComponent],
   templateUrl: './dashboard-page.component.html',
   styleUrl: './dashboard-page.component.scss'
 })
@@ -28,6 +29,7 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
   currentUser = signal<User | null>(null);
   loading = signal(true);
   showMcqModal = signal(false);
+  showGenerateModal = signal(false);
   showPasswordModal = signal(false);
   passwordForm = {
     currentPassword: '',
@@ -140,6 +142,28 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
    */
   onRequestNewMcqs(): void {
     this.showMcqModal.set(true);
+  }
+
+  /**
+   * Ouvrir la modal de génération depuis contenu custom
+   */
+  onGenerateFromMaterial(): void {
+    this.showGenerateModal.set(true);
+  }
+
+  /**
+   * Fermer la modal de génération
+   */
+  onGenerateModalClose(): void {
+    this.showGenerateModal.set(false);
+  }
+
+  /**
+   * Génération terminée : recharger les stats
+   */
+  onGenerateModalConfirm(): void {
+    this.showGenerateModal.set(false);
+    this.router.navigate(['/evaluation']);
   }
 
   /**

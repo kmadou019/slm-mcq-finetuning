@@ -1,0 +1,228 @@
+<div class="modal-overlay" (click)="onClose()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+
+    <!-- ================================================================ -->
+    <!-- HEADER                                                            -->
+    <!-- ================================================================ -->
+    <div class="modal-header">
+      <div class="header-title">
+        <div class="header-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+        </div>
+        @if (view === 'form')      { <h2>Générer depuis votre contenu</h2> }
+        @if (view === 'generating') { <h2>Génération en cours...</h2> }
+        @if (view === 'done')       { <h2>Génération terminée !</h2> }
+        @if (view === 'error')      { <h2>Erreur de génération</h2> }
+      </div>
+      <button class="btn-close" (click)="onClose()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- ================================================================ -->
+    <!-- VUE : FORMULAIRE                                                  -->
+    <!-- ================================================================ -->
+    @if (view === 'form') {
+      <div class="modal-body">
+
+        @if (errorMessage) {
+          <div class="alert alert-error">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            <span>{{ errorMessage }}</span>
+          </div>
+        }
+
+        <!-- Sélection du modèle -->
+        <div class="form-section">
+          <label for="gen-model-select">Modèle de génération</label>
+          @if (loadingModels()) {
+            <div class="loading-models">
+              <span class="spinner-small"></span>
+              <span>Chargement des modèles...</span>
+            </div>
+          } @else {
+            <select
+              id="gen-model-select"
+              class="model-select"
+              [(ngModel)]="selectedModel"
+            >
+              @for (modelInfo of availableModels(); track modelInfo.model) {
+                <option [value]="modelInfo.model">{{ modelInfo.model }}</option>
+              }
+            </select>
+          }
+        </div>
+
+        <!-- Contenu éducatif -->
+        <div class="form-section">
+          <div class="label-row">
+            <label for="gen-content">Contenu éducatif</label>
+            <span class="char-counter" [class.valid]="isContentValid" [class.invalid]="charCount > 0 && !isContentValid">
+              {{ charCount }} / min. 100 caractères
+            </span>
+          </div>
+          <textarea
+            id="gen-content"
+            class="content-textarea"
+            [(ngModel)]="content"
+            placeholder="Collez ici votre contenu pédagogique (cours, fiche, extrait de manuel...).&#10;&#10;Le modèle génèrera 2 questions à choix multiple à partir de ce texte."
+            rows="9"
+          ></textarea>
+        </div>
+
+        <!-- Prompt de génération (collapsible) -->
+        <div class="prompt-section">
+          <button type="button" class="prompt-header" (click)="togglePromptEditor()">
+            <span class="prompt-header-left">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+              Prompt de génération
+              @if (!showPromptEditor) {
+                <span class="prompt-badge" [class.modified]="isPromptModified">
+                  {{ isPromptModified ? 'Modifié' : 'Défaut' }}
+                </span>
+              }
+            </span>
+            <svg class="chevron" [class.open]="showPromptEditor"
+                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+
+          @if (showPromptEditor) {
+            <div class="prompt-body">
+              <p class="prompt-hint">
+                Le placeholder <code>&#123;content&#125;</code> sera remplacé par votre contenu éducatif avant envoi au modèle.
+              </p>
+              <textarea
+                class="prompt-textarea"
+                [(ngModel)]="promptTemplate"
+                rows="14"
+                spellcheck="false"
+              ></textarea>
+              @if (isPromptModified) {
+                <button type="button" class="btn-reset-prompt" (click)="resetPrompt()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="23 4 23 10 17 10"></polyline>
+                    <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+                  </svg>
+                  Réinitialiser le prompt
+                </button>
+              }
+            </div>
+          }
+        </div>
+
+        <p class="info-note">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="12" y1="8" x2="12" y2="12"></line>
+            <line x1="12" y1="16" x2="12.01" y2="16"></line>
+          </svg>
+          2 MCQs seront générés et ajoutés à votre file d'évaluation. La génération peut prendre quelques minutes.
+        </p>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-cancel" (click)="onClose()">Annuler</button>
+        <button class="btn-generate" (click)="onSubmit()" [disabled]="!isContentValid || loadingModels()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+          Générer 2 MCQs
+        </button>
+      </div>
+    }
+
+    <!-- ================================================================ -->
+    <!-- VUE : GÉNÉRATION EN COURS                                         -->
+    <!-- ================================================================ -->
+    @if (view === 'generating') {
+      <div class="modal-body status-body">
+        <div class="status-icon generating">
+          <span class="spinner-large"></span>
+        </div>
+        <div class="status-text">
+          <p class="status-label">Génération et évaluation en cours</p>
+          <p class="status-model">Modèle : <strong>{{ selectedModel }}</strong></p>
+          <p class="status-hint">Cette opération peut prendre quelques minutes.<br>Vous pouvez fermer cette fenêtre, les MCQs apparaîtront dans votre file dès qu'ils seront prêts.</p>
+        </div>
+        <div class="progress-dots">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-cancel" (click)="onClose()">Fermer</button>
+      </div>
+    }
+
+    <!-- ================================================================ -->
+    <!-- VUE : TERMINÉ                                                     -->
+    <!-- ================================================================ -->
+    @if (view === 'done') {
+      <div class="modal-body status-body">
+        <div class="status-icon done">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+        </div>
+        <div class="status-text">
+          <p class="status-label">{{ mcqCount }} MCQ{{ mcqCount > 1 ? 's' : '' }} générés et assignés !</p>
+          <p class="status-hint">Vos questions ont été ajoutées à votre file d'évaluation. Vous pouvez commencer l'évaluation dès maintenant.</p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-cancel" (click)="onClose()">Fermer</button>
+        <button class="btn-generate" (click)="onGoToEvaluation()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          Commencer l'évaluation
+        </button>
+      </div>
+    }
+
+    <!-- ================================================================ -->
+    <!-- VUE : ERREUR                                                      -->
+    <!-- ================================================================ -->
+    @if (view === 'error') {
+      <div class="modal-body status-body">
+        <div class="status-icon error">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </div>
+        <div class="status-text">
+          <p class="status-label">La génération a échoué</p>
+          <p class="status-error-detail">{{ errorMessage }}</p>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn-cancel" (click)="onClose()">Fermer</button>
+        <button class="btn-retry" (click)="onRetry()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+          </svg>
+          Réessayer
+        </button>
+      </div>
+    }
+
+  </div>
+</div>

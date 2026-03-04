@@ -1,9 +1,4 @@
 {
-  "llama3_1_8b __": {
-    "last_assigned_index": 3,
-    "total_available": 4,
-    "assigned_count": 4
-  },
   "qwen3_4b_pdapt_slerp": {
     "last_assigned_index": 9,
     "total_available": 100,

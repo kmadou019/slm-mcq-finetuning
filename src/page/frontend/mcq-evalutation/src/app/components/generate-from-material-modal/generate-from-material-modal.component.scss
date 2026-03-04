@@ -1,0 +1,531 @@
+@use '../../../styles/colors' as *;
+
+// Violet spécifique à la génération (non présent dans la palette globale)
+$generate: #7c3aed;
+$generate-dark: #6d28d9;
+$generate-bg: #f5f3ff;
+$generate-border: #ddd6fe;
+
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal-content {
+  background: white;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+// ============================================================================
+// HEADER
+// ============================================================================
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+  border-bottom: 1px solid $gray-200;
+
+  .header-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .header-icon {
+    width: 40px;
+    height: 40px;
+    background: $generate-bg;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $generate;
+    flex-shrink: 0;
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: $gray-900;
+    margin: 0;
+  }
+
+  .btn-close {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: $gray-400;
+    padding: 4px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    &:hover { background: $gray-100; color: $gray-700; }
+  }
+}
+
+// ============================================================================
+// BODY — FORMULAIRE
+// ============================================================================
+
+.modal-body {
+  padding: 24px;
+}
+
+.alert {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 14px;
+
+  &.alert-error {
+    background: $danger-bg;
+    color: $danger-dark;
+    border: 1px solid #fc8181;
+    svg { flex-shrink: 0; }
+  }
+}
+
+.form-section {
+  margin-bottom: 20px;
+
+  label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: $gray-700;
+    margin-bottom: 8px;
+  }
+}
+
+.label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+
+  label { margin-bottom: 0; }
+}
+
+.char-counter {
+  font-size: 12px;
+  color: $gray-400;
+  transition: color 0.2s;
+  &.valid   { color: $success; font-weight: 600; }
+  &.invalid { color: $warning; }
+}
+
+.model-select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 2px solid $gray-200;
+  border-radius: 8px;
+  font-size: 14px;
+  background: white;
+  color: $gray-700;
+  cursor: pointer;
+  transition: border-color 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: $generate;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+  }
+}
+
+.loading-models {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: $gray-50;
+  border-radius: 8px;
+  font-size: 14px;
+  color: $gray-500;
+}
+
+.content-textarea {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid $gray-200;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  line-height: 1.6;
+  color: $gray-700;
+  resize: vertical;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+
+  &::placeholder { color: $gray-400; }
+
+  &:focus {
+    outline: none;
+    border-color: $generate;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+  }
+}
+
+// ============================================================================
+// PROMPT SECTION
+// ============================================================================
+
+.prompt-section {
+  margin-bottom: 20px;
+  border: 1px solid $gray-200;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.prompt-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: $gray-50;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: $gray-600;
+  text-align: left;
+  transition: background 0.15s;
+
+  &:hover { background: $gray-100; }
+
+  .prompt-header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    svg { color: $gray-400; flex-shrink: 0; }
+  }
+
+  .chevron {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    color: $gray-400;
+    &.open { transform: rotate(180deg); }
+  }
+}
+
+.prompt-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+  background: $gray-200;
+  color: $gray-500;
+
+  &.modified {
+    background: $generate-bg;
+    color: $generate;
+  }
+}
+
+.prompt-body {
+  padding: 14px 16px 12px;
+  border-top: 1px solid $gray-200;
+}
+
+.prompt-hint {
+  font-size: 12px;
+  color: $gray-400;
+  margin: 0 0 10px;
+  line-height: 1.5;
+
+  code {
+    background: $generate-bg;
+    color: $generate;
+    padding: 1px 5px;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 11px;
+  }
+}
+
+.prompt-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid $gray-200;
+  border-radius: 8px;
+  font-size: 12px;
+  font-family: 'Courier New', Courier, monospace;
+  line-height: 1.6;
+  color: $gray-700;
+  background: $gray-50;
+  resize: vertical;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+
+  &:focus {
+    outline: none;
+    border-color: $generate;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.08);
+  }
+}
+
+.btn-reset-prompt {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 10px;
+  padding: 6px 12px;
+  background: white;
+  border: 1px solid $gray-300;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: $gray-500;
+  cursor: pointer;
+  transition: all 0.15s;
+
+  &:hover {
+    border-color: $generate;
+    color: $generate;
+    background: $generate-bg;
+  }
+}
+
+.info-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 12px;
+  color: $gray-400;
+  margin: 0;
+  line-height: 1.5;
+
+  svg { flex-shrink: 0; margin-top: 1px; }
+}
+
+// ============================================================================
+// BODY — ÉTATS (GENERATING / DONE / ERROR)
+// ============================================================================
+
+.status-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 48px 32px 32px;
+  gap: 24px;
+}
+
+.status-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &.generating {
+    background: $generate-bg;
+    border: 2px solid $generate-border;
+  }
+  &.done {
+    background: $success-bg;
+    color: $success;
+    border: 2px solid #6ee7b7;
+  }
+  &.error {
+    background: $danger-bg;
+    color: $danger;
+    border: 2px solid #fca5a5;
+  }
+}
+
+.status-text {
+  .status-label {
+    font-size: 18px;
+    font-weight: 700;
+    color: $gray-900;
+    margin: 0 0 8px;
+  }
+  .status-model {
+    font-size: 14px;
+    color: $gray-500;
+    margin: 0 0 12px;
+    strong { color: $generate; }
+  }
+  .status-hint {
+    font-size: 14px;
+    color: $gray-400;
+    line-height: 1.6;
+    margin: 0;
+    max-width: 420px;
+  }
+  .status-error-detail {
+    font-size: 13px;
+    color: $danger;
+    background: $danger-bg;
+    border-radius: 8px;
+    padding: 10px 16px;
+    margin: 8px 0 0;
+    max-width: 480px;
+    line-height: 1.5;
+  }
+}
+
+// Spinner large (cercle tournant)
+.spinner-large {
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(124, 58, 237, 0.2);
+  border-top-color: $generate;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+// Spinner small (dans le dropdown)
+.spinner-small {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-top-color: $primary;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+// Dots animés sous le spinner
+.progress-dots {
+  display: flex;
+  gap: 8px;
+
+  span {
+    width: 8px;
+    height: 8px;
+    background: $generate-border;
+    border-radius: 50%;
+    animation: pulse 1.2s ease-in-out infinite;
+
+    &:nth-child(2) { animation-delay: 0.2s; }
+    &:nth-child(3) { animation-delay: 0.4s; }
+  }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40%           { transform: scale(1);   opacity: 1;   }
+}
+
+// ============================================================================
+// FOOTER
+// ============================================================================
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid $gray-200;
+}
+
+.btn-cancel {
+  padding: 11px 22px;
+  background: white;
+  border: 2px solid $gray-200;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: $gray-500;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover { border-color: $gray-300; background: $gray-50; }
+}
+
+.btn-generate {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: linear-gradient(135deg, $generate 0%, $generate-dark 100%);
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.4);
+  }
+
+  &:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+  }
+}
+
+.btn-retry {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: white;
+  border: 2px solid $danger;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: $danger;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    background: $danger;
+    color: white;
+  }
+}
+
+// ============================================================================
+// RESPONSIVE
+// ============================================================================
+
+@media (max-width: 640px) {
+  .modal-footer {
+    flex-direction: column;
+    button { width: 100%; justify-content: center; }
+  }
+
+  .status-body { padding: 32px 20px 24px; }
+}

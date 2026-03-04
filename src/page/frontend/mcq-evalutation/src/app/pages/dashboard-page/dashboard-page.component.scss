@@ -299,6 +299,35 @@
     }
   }
 
+  &.generate-card {
+    border: 2px solid #ddd6fe;
+    background: linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%);
+
+    h2 { color: #6d28d9; }
+
+    .btn-generate {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px 24px;
+      background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(124, 58, 237, 0.4);
+      }
+    }
+  }
+
   &.admin-card {
     border: 2px solid $secondary;
     background: linear-gradient(135deg, #f0fdfa 0%, #e0f7fa 100%);
