@@ -67,3 +67,5 @@ lisa_sheets.csv
 lisa_sheets/
 data/lisa_sheets.csv
 .claude
+.ssh
+node_modules/
