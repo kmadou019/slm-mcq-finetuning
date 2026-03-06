@@ -1,0 +1,112 @@
+[
+  {
+    "item_id": "CSTM-F87FD4D-1",
+    "source_material": "CSTM-F87FD4D",
+    "generator_info": "hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0",
+    "output_format": "JSON",
+    "mcq_question": "Quel type de diabète est principalement lié à la résistance à l'insuline et à l'obésité?",
+    "question_comment": "La question évalue la compréhension des formes de diabète et de leurs causes principales.",
+    "options": {
+      "A": "Type 1",
+      "B": "Type 2",
+      "C": "Diabète gestationnel",
+      "D": "Diabète de type 3"
+    },
+    "option_comments": {
+      "A": "Incorrect : le type 1 est dû à une absence d'insuline, pas à une résistance.",
+      "B": "Correct : le type 2 est caractérisé par une résistance à l'insuline et est souvent associé à l'obésité.",
+      "C": "Incorrect : le diabète gestationnel survient pendant la grossesse et n'est pas lié à l'obésité chronique.",
+      "D": "Incorrect : il n'existe pas de type 3 reconnu comme forme principale de diabète dans ce contexte."
+    },
+    "correct_option": "B",
+    "section_a_checks": [
+      {
+        "check_id": "A1",
+        "description": "Is a question",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": "True",
+        "notes": "Yes"
+      },
+      {
+        "check_id": "A2",
+        "description": "No leading negation",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": "False",
+        "notes": "Negation: False"
+      },
+      {
+        "check_id": "A3",
+        "description": "Originality",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": ">= 0.75",
+        "notes": "Score: 1.0"
+      },
+      {
+        "check_id": "A4",
+        "description": "Readability (FK grade)",
+        "result": "FAIL",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": ">= 12",
+        "notes": "Score: 11.5"
+      }
+    ],
+    "section_b_checks": [
+      {
+        "check_id": "B1",
+        "description": "Disclosure (answer leakage)",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "True/False",
+        "notes": "Score: False"
+      },
+      {
+        "check_id": "B2",
+        "description": "Relevance to material",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "0-1",
+        "notes": "Score: 0.82"
+      },
+      {
+        "check_id": "B3",
+        "description": "Distractor plausibility",
+        "result": "FAIL",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "True/False",
+        "notes": "Score: False"
+      },
+      {
+        "check_id": "B4",
+        "description": "Difficulty appropriateness",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "low/med/high",
+        "notes": "Judge: 5"
+      }
+    ],
+    "decision_policy": "Accept if all hard constraints pass and no critical AI-judge dimension fails.",
+    "final_decision": "REJECT",
+    "audit_trail": "Généré depuis contenu personnalisé. Modèle : hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0. Job : CSTM-F87FD4D.",
+    "lisa_texte_brut": "Le diabète est une maladie chronique caractérisée par un excès de sucre (glucose) dans le sang, appelé hyperglycémie. Il existe deux formes principales :\n\nType 1 : le pancréas ne produit plus d'insuline, souvent d'origine auto-immune. Il touche surtout les jeunes.\nType 2 : le corps résiste à l'insuline ou n'en produit pas suffisamment, lié principalement au mode de vie (alimentation, sédentarité). C'est la forme la plus répandue (90% des cas).\n\nLes principaux symptômes sont la fatigue, la soif intense, les urines fréquentes et une cicatrisation lente. Sans traitement, il peut entraîner des complications graves (maladies cardiaques, cécité, insuffisance rénale). Il se gère par l'alimentation, l'activité physique et/ou des médicaments comme l'insuline.",
+    "lisa_metadata": {
+      "identifiant": "CSTM-F87FD4D",
+      "rang": "B",
+      "rubrique": "Contenu personnalisé",
+      "intitule": "Question générée depuis votre contenu",
+      "item_parent": "Contenu évaluateur",
+      "description": "MCQ généré automatiquement depuis le matériel pédagogique fourni par l'évaluateur.",
+      "contenu": "Le diabète est une maladie chronique caractérisée par un excès de sucre (glucose) dans le sang, appelé hyperglycémie. Il existe deux formes principales :\n\nType 1 : le pancréas ne produit plus d'insuline, souvent d'origine auto-immune. Il touche surtout les jeunes.\nType 2 : le corps résiste à l'insuline ou n'en produit pas suffisamment, lié principalement au mode de vie (alimentation, sédentarité). C'est la forme la plus répandue (90% des cas).\n\nLes principaux symptômes sont la fatigue, la soif intense, les urines fréquentes et une cicatrisation lente. Sans traitement, il peut entraîner des complications graves (maladies cardiaques, cécité, insuffisance rénale). Il se gère par l'alimentation, l'activité physique et/ou des médicaments comme l'insuline."
+    }
+  }
+]

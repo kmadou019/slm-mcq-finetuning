@@ -13,7 +13,7 @@ export interface MCQOption {
 export interface SectionCheck {
   check_id: string;
   description: string;
-  result: 'PASS' | 'WARN';  // Result from backend (read-only)
+  result: 'PASS' | 'WARN' | 'FAIL' | 'N/A';  // Result from backend (read-only)
   status: 'not_checked' | 'validated' | 'rejected';  // Expert validation status
   confidence: 'high' | 'medium' | 'low' | null;
   threshold?: string;  // For Section A

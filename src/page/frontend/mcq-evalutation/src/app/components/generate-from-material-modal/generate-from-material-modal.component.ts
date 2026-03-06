@@ -1,53 +1,41 @@
-import { Component, EventEmitter, Output, signal, inject, OnInit, OnDestroy } from '@angular/core';
+import { Component, EventEmitter, Output, inject, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { McqService } from '../../services/mcq.service';
 
 type ModalView = 'form' | 'generating' | 'done' | 'error';
 
-export const DEFAULT_PROMPT = `À partir du contenu éducatif suivant, générez exactement deux questions à choix multiple avec quatre options de réponse chacune (a, b, c, d), dont une seule est correcte.
+export const DEFAULT_PROMPT = `À partir du contenu éducatif suivant, générez exactement une question à choix multiple avec quatre options de réponse (a, b, c, d), dont une seule est correcte.
 
 OBJECTIFS :
-- Les questions doivent évaluer la compréhension des idées principales.
+- La question doit évaluer la compréhension des idées principales.
 - Les distracteurs doivent être plausibles mais incorrects.
 - Les options doivent être courtes.
 - Fournir une justification pédagogique pour chaque option.
-- Fournir un commentaire global pour chaque question.
+- Fournir un commentaire global pour la question.
 
 CONTRAINTES STRICTES DE SORTIE :
 1. La sortie doit être STRICTEMENT un unique objet JSON valide.
 2. Interdiction ABSOLUE d'ajouter :
    - des blocs \`\`\`json
-   - plusieurs objets JSON
    - du texte avant ou après le JSON
    - des explications hors champs JSON
-3. Les champs "correct_option1" et "correct_option2" doivent contenir EXACTEMENT une lettre minuscule parmi : "a", "b", "c", "d".
+3. Le champ "correct_option" doit contenir EXACTEMENT une lettre minuscule parmi : "a", "b", "c", "d".
 4. Utiliser uniquement des doubles quotes : "..."
-5. Le JSON doit contenir EXACTEMENT les 22 champs suivants :
+5. Le JSON doit contenir EXACTEMENT les 11 champs suivants :
 
 {
-  "question1": "...",
-  "question1_comment": "...",
-  "option_a1": "...",
-  "option_a1_comment": "...",
-  "option_b1": "...",
-  "option_b1_comment": "...",
-  "option_c1": "...",
-  "option_c1_comment": "...",
-  "option_d1": "...",
-  "option_d1_comment": "...",
-  "correct_option1": "a",
-  "question2": "...",
-  "question2_comment": "...",
-  "option_a2": "...",
-  "option_a2_comment": "...",
-  "option_b2": "...",
-  "option_b2_comment": "...",
-  "option_c2": "...",
-  "option_c2_comment": "...",
-  "option_d2": "...",
-  "option_d2_comment": "...",
-  "correct_option2": "c"
+  "question": "...",
+  "question_comment": "...",
+  "option_a": "...",
+  "option_a_comment": "...",
+  "option_b": "...",
+  "option_b_comment": "...",
+  "option_c": "...",
+  "option_c_comment": "...",
+  "option_d": "...",
+  "option_d_comment": "...",
+  "correct_option": "a"
 }
 
 RÈGLES POUR LES COMMENTAIRES :
@@ -68,19 +56,23 @@ Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehor
   templateUrl: './generate-from-material-modal.component.html',
   styleUrl: './generate-from-material-modal.component.scss'
 })
-export class GenerateFromMaterialModalComponent implements OnInit, OnDestroy {
+export class GenerateFromMaterialModalComponent implements OnDestroy {
   private readonly mcqService = inject(McqService);
+  private readonly cdr = inject(ChangeDetectorRef);
 
   @Output() close = new EventEmitter<void>();
   @Output() confirm = new EventEmitter<void>();
 
-  // Modèles disponibles
-  availableModels = signal<{ model: string, count: number, available: number }[]>([]);
-  loadingModels = signal(true);
+  // Modèles disponibles pour la génération depuis contenu personnalisé
+  readonly generationModels = [
+    { label: 'Nemotron 30B (Q8)', value: 'hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0' },
+    { label: 'Qwen 3.5 35B', value: 'qwen3.5:35b' },
+  ];
 
   // Champs du formulaire (propriétés simples pour ngModel)
   content = '';
-  selectedModel = 'llama3_1_8b';
+  fileName = '';
+  selectedModel = 'hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0';
   promptTemplate = DEFAULT_PROMPT;
 
   // Prompt editor
@@ -104,26 +96,6 @@ export class GenerateFromMaterialModalComponent implements OnInit, OnDestroy {
 
   get isPromptModified(): boolean {
     return this.promptTemplate !== DEFAULT_PROMPT;
-  }
-
-  ngOnInit(): void {
-    this.mcqService.getAvailableModels().subscribe({
-      next: (models) => {
-        this.availableModels.set(models);
-        if (models.length > 0) {
-          this.selectedModel = models[0].model;
-        }
-        this.loadingModels.set(false);
-      },
-      error: () => {
-        const fallback = [
-          'llama3_1_8b', 'gemma2_9b', 'medGemma_4b', 'medGemma_27b',
-          'qwen3_8b', 'mistral_7b', 'eurollm_9b', 'qwen3_4b_pdapt_slerp'
-        ].map(model => ({ model, count: 0, available: 0 }));
-        this.availableModels.set(fallback);
-        this.loadingModels.set(false);
-      }
-    });
   }
 
   ngOnDestroy(): void {
@@ -173,10 +145,12 @@ export class GenerateFromMaterialModalComponent implements OnInit, OnDestroy {
             this.stopPolling();
             this.mcqCount = status.mcq_count;
             this.view = 'done';
+            this.cdr.detectChanges();
           } else if (status.status === 'error') {
             this.stopPolling();
             this.view = 'error';
             this.errorMessage = status.error || 'La génération a échoué.';
+            this.cdr.detectChanges();
           }
         },
         error: () => { /* erreurs réseau transitoires ignorées */ }
@@ -195,11 +169,23 @@ export class GenerateFromMaterialModalComponent implements OnInit, OnDestroy {
     this.confirm.emit();  // le dashboard gère la navigation
   }
 
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    const file = input.files?.[0];
+    if (!file) return;
+    this.fileName = file.name;
+    const reader = new FileReader();
+    reader.onload = (e) => { this.content = e.target?.result as string; };
+    reader.readAsText(file, 'utf-8');
+    input.value = '';
+  }
+
   onRetry(): void {
     this.stopPolling();
     this.view = 'form';
     this.errorMessage = '';
     this.jobId = null;
+    this.fileName = '';
   }
 
   onClose(): void {

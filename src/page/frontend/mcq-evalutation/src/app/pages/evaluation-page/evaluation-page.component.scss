@@ -219,6 +219,15 @@ table {
   &.warn {
     color: $warning;
   }
+
+  &.fail {
+    color: $danger;
+  }
+
+  &.na {
+    color: $gray-400;
+    font-style: italic;
+  }
 }
 
 .decision-section {

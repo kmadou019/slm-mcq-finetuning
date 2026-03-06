@@ -127,10 +127,40 @@ $generate-border: #ddd6fe;
 .label-row {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   margin-bottom: 8px;
 
   label { margin-bottom: 0; }
+}
+
+.label-row-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-upload-file {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border: 1px solid $generate-border;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: $generate;
+  background: $generate-bg;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  &:hover {
+    background: $generate-border;
+    border-color: $generate;
+  }
 }
 
 .char-counter {
@@ -159,16 +189,6 @@ $generate-border: #ddd6fe;
   }
 }
 
-.loading-models {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px 14px;
-  background: $gray-50;
-  border-radius: 8px;
-  font-size: 14px;
-  color: $gray-500;
-}
 
 .content-textarea {
   width: 100%;

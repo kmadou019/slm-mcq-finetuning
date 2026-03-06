@@ -1,12 +1,25 @@
-# FastAPI and web server (minimal for testing)
+# FastAPI and web server
 fastapi>=0.100.0
 uvicorn>=0.23.0
+python-multipart>=0.0.12
+slowapi>=0.1.9
 
 # Database
 sqlalchemy>=2.0.0
 pandas>=2.0.0
 
-# Optional: Add these for production
-python-jose[cryptography]  # For JWT
-passlib[bcrypt]            # For password hashing
-python-dotenv              # For environment variables
+# Auth / security
+python-jose[cryptography]
+passlib[bcrypt]
+python-dotenv
+
+# MCQ generation (Ollama GPU)
+ollama>=0.6.0
+pydantic>=2.9.0
+
+# Eval pipeline
+openai>=2.0.0
+torch>=2.0.0
+transformers>=4.50.0
+nltk>=3.9.0
+tqdm>=4.60.0

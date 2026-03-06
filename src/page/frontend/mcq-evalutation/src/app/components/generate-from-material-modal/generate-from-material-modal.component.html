@@ -44,31 +44,31 @@
         <!-- Sélection du modèle -->
         <div class="form-section">
           <label for="gen-model-select">Modèle de génération</label>
-          @if (loadingModels()) {
-            <div class="loading-models">
-              <span class="spinner-small"></span>
-              <span>Chargement des modèles...</span>
-            </div>
-          } @else {
-            <select
-              id="gen-model-select"
-              class="model-select"
-              [(ngModel)]="selectedModel"
-            >
-              @for (modelInfo of availableModels(); track modelInfo.model) {
-                <option [value]="modelInfo.model">{{ modelInfo.model }}</option>
-              }
-            </select>
-          }
+          <select id="gen-model-select" class="model-select" [(ngModel)]="selectedModel">
+            @for (m of generationModels; track m.value) {
+              <option [value]="m.value">{{ m.label }}</option>
+            }
+          </select>
         </div>
 
         <!-- Contenu éducatif -->
         <div class="form-section">
           <div class="label-row">
             <label for="gen-content">Contenu éducatif</label>
-            <span class="char-counter" [class.valid]="isContentValid" [class.invalid]="charCount > 0 && !isContentValid">
-              {{ charCount }} / min. 100 caractères
-            </span>
+            <div class="label-row-right">
+              <label class="btn-upload-file" for="file-upload">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                  <polyline points="17 8 12 3 7 8"></polyline>
+                  <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                {{ fileName || 'Charger un fichier' }}
+              </label>
+              <input type="file" id="file-upload" accept=".txt,.md,.csv" (change)="onFileSelected($event)" style="display:none">
+              <span class="char-counter" [class.valid]="isContentValid" [class.invalid]="charCount > 0 && !isContentValid">
+                {{ charCount }} / min. 100 caractères
+              </span>
+            </div>
           </div>
           <textarea
             id="gen-content"
@@ -130,17 +130,17 @@
             <line x1="12" y1="8" x2="12" y2="12"></line>
             <line x1="12" y1="16" x2="12.01" y2="16"></line>
           </svg>
-          2 MCQs seront générés et ajoutés à votre file d'évaluation. La génération peut prendre quelques minutes.
+          1 MCQ sera généré et ajouté à votre file d'évaluation. La génération peut prendre quelques minutes.
         </p>
       </div>
 
       <div class="modal-footer">
         <button class="btn-cancel" (click)="onClose()">Annuler</button>
-        <button class="btn-generate" (click)="onSubmit()" [disabled]="!isContentValid || loadingModels()">
+        <button class="btn-generate" (click)="onSubmit()" [disabled]="!isContentValid">
           <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
           </svg>
-          Générer 2 MCQs
+          Générer 1 MCQ
         </button>
       </div>
     }

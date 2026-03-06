@@ -17,7 +17,7 @@ from api.routes import auth, mcq, validations, admin, generation
 from database import init_db
 
 # Load environment variables
-load_dotenv()
+load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
 
 # Create FastAPI app
 app = FastAPI(
@@ -53,22 +53,22 @@ class SecurityHeadersMiddleware(BaseHTTPMiddleware):
         return response
 
 # Get allowed origins from environment
-ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "http://localhost:4200,http://localhost:3000").split(",")
+ALLOWED_ORIGINS = [origin.strip() for origin in os.getenv("ALLOWED_ORIGINS", "http://localhost:4200,http://localhost:4201,http://localhost:3000,http://127.0.0.1:4200").split(",")]
 
-# Configure CORS - RESTRICTIVE
+# Configure CORS first (innermost) so it always adds CORS headers, even on error responses
 app.add_middleware(
     CORSMiddleware,
     allow_origins=ALLOWED_ORIGINS,
     allow_credentials=True,
-    allow_methods=["GET", "POST", "PUT", "DELETE"],  # Explicit methods only
-    allow_headers=["Content-Type", "Authorization"],  # Only required headers
+    allow_methods=["GET", "POST", "PUT", "DELETE"],
+    allow_headers=["*"],
     max_age=3600,
 )
 
 # Add security headers middleware
 app.add_middleware(SecurityHeadersMiddleware)
 
-# Add rate limiting middleware
+# Add rate limiting middleware (outermost)
 app.add_middleware(SlowAPIMiddleware)
 
 # Include routers

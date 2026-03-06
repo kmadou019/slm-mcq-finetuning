@@ -60,7 +60,7 @@
                 @for (check of currentMcq()?.section_a_checks; track check.check_id; let i = $index) {
                   <tr>
                     <td>{{ check.description }}</td>
-                    <td class="result" [class.pass]="check.result === 'PASS'" [class.warn]="check.result === 'WARN'">
+                    <td class="result" [class.pass]="check.result === 'PASS'" [class.warn]="check.result === 'WARN'" [class.fail]="check.result === 'FAIL'" [class.na]="check.result === 'N/A'">
                       {{ check.result }}
                     </td>
                     <td>{{ check.threshold || 'required' }}</td>
@@ -94,7 +94,7 @@
                 @for (check of currentMcq()?.section_b_checks; track check.check_id; let i = $index) {
                   <tr>
                     <td>{{ check.description }}</td>
-                    <td class="result" [class.pass]="check.result === 'PASS'" [class.warn]="check.result === 'WARN'">
+                    <td class="result" [class.pass]="check.result === 'PASS'" [class.warn]="check.result === 'WARN'" [class.fail]="check.result === 'FAIL'" [class.na]="check.result === 'N/A'">
                       {{ check.result }}
                     </td>
                     <td>{{ check.score || '0-1' }}</td>
