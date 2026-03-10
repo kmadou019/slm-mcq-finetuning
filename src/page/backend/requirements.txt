@@ -15,6 +15,7 @@ python-dotenv
 
 # MCQ generation (Ollama GPU)
 ollama>=0.6.0
+pypdf>=4.0.0
 pydantic>=2.9.0
 
 # Eval pipeline

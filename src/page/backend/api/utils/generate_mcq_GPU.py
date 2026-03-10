@@ -20,8 +20,10 @@ import json
 from typing import Optional
 
 from pydantic import BaseModel, ValidationError
-from ollama import generate
+from ollama import Client
 from transformers import AutoTokenizer, pipeline
+
+_ollama = Client(timeout=600)  # 10 min max
 
 
 # ---------------------------------------------------------------------------
@@ -58,9 +60,13 @@ def validate_mcq(mcq_json: str) -> Optional[MCQQuestion]:
 
 
 def extract_json(text: str) -> str:
-    """Extrait le premier objet JSON valide d'une chaîne de texte."""
+    """Extrait le dernier objet JSON valide d'une chaîne de texte (après un éventuel bloc <think>)."""
+    if "</think>" in text:
+        text = text[text.rfind("</think>") + len("</think>"):]
     start = text.find("{")
     end = text.rfind("}")
+    if start == -1 or end == -1 or end < start:
+        raise ValueError(f"Aucun objet JSON trouvé dans la réponse: {text[:200]}")
     text = text[start:end + 1]
     return json.dumps(ast.literal_eval(text), ensure_ascii=False)
 
@@ -84,10 +90,10 @@ def generate_mcq(full_prompt: str, model_name: str, temperature: float = 0.1) ->
         "model": model_name,
         "options": {"temperature": temperature, "num_ctx": 8192, "top_p": 1},
         "prompt": full_prompt,
-        "format": MCQQuestion.model_json_schema(),
     }
-    response = generate(**generate_params)
-    return response["response"]
+    response = _ollama.generate(**generate_params)
+    print(f"[generate_mcq] raw response: {response.response}")
+    return extract_json(response.response)
 
 
 # ---------------------------------------------------------------------------

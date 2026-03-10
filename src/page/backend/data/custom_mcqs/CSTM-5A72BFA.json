@@ -1,0 +1,112 @@
+[
+  {
+    "item_id": "CSTM-5A72BFA-1",
+    "source_material": "CSTM-5A72BFA",
+    "generator_info": "hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0",
+    "output_format": "JSON",
+    "mcq_question": "What is the primary reason hypertension is called the 'silent killer'?",
+    "question_comment": "The question assesses understanding of hypertension's asymptomatic nature, a key concept.",
+    "options": {
+      "A": "It causes immediate and severe symptoms",
+      "B": "It often has no noticeable symptoms for years",
+      "C": "It can be cured with a single dose of medication",
+      "D": "It only affects older adults"
+    },
+    "option_comments": {
+      "A": "Incorrect; hypertension is typically asymptomatic, not associated with immediate severe symptoms.",
+      "B": "Correct; many individuals remain unaware of their condition for years due to lack of symptoms.",
+      "C": "Incorrect; hypertension requires ongoing management and cannot be cured with a single dose.",
+      "D": "Incorrect; while more common in older adults, hypertension can affect people of all ages."
+    },
+    "correct_option": "B",
+    "section_a_checks": [
+      {
+        "check_id": "A1",
+        "description": "Is a question",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": "True",
+        "notes": "Yes"
+      },
+      {
+        "check_id": "A2",
+        "description": "No leading negation",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": "False",
+        "notes": "Negation: False"
+      },
+      {
+        "check_id": "A3",
+        "description": "Originality",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": ">= 0.75",
+        "notes": "Score: 0.778"
+      },
+      {
+        "check_id": "A4",
+        "description": "Readability (FK grade)",
+        "result": "FAIL",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": ">= 12",
+        "notes": "Score: 10.2"
+      }
+    ],
+    "section_b_checks": [
+      {
+        "check_id": "B1",
+        "description": "Disclosure (answer leakage)",
+        "result": "FAIL",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "True/False",
+        "notes": "Score: True"
+      },
+      {
+        "check_id": "B2",
+        "description": "Relevance to material",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "0-1",
+        "notes": "Score: 0.737"
+      },
+      {
+        "check_id": "B3",
+        "description": "Distractor plausibility",
+        "result": "FAIL",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "True/False",
+        "notes": "Score: False"
+      },
+      {
+        "check_id": "B4",
+        "description": "Difficulty appropriateness",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "low/med/high",
+        "notes": "Judge: 5"
+      }
+    ],
+    "decision_policy": "Accept if all hard constraints pass and no critical AI-judge dimension fails.",
+    "final_decision": "REJECT",
+    "audit_trail": "Généré depuis contenu personnalisé. Modèle : hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0. Job : CSTM-5A72BFA.",
+    "lisa_texte_brut": "Hypertension (High Blood Pressure)\n1. Definition\n\nHypertension is a chronic medical condition in which the arterial blood pressure is persistently elevated.\nIt is usually defined as ≥140/90 mmHg in repeated measurements in adults.\n\n2. Why It Matters\n\nUntreated hypertension increases the risk of:\n\nStroke\n\nHeart attack\n\nKidney disease\n\nHeart failure\n\nIt is often called the “silent killer” because many patients have no symptoms.\n\n3. Risk Factors\n\nCommon factors that increase the risk include:\n\nAge\n\nFamily history\n\nObesity\n\nHigh salt intake\n\nSedentary lifestyle\n\nSmoking\n\nExcess alcohol consumption\n\n4. Symptoms\n\nMost patients are asymptomatic, but severe hypertension may cause:\n\nHeadache\n\nDizziness\n\nBlurred vision\n\nChest pain\n\n5. Diagnosis\n\nDiagnosis is based on:\n\nRepeated blood pressure measurements\n\nAmbulatory or home blood pressure monitoring\n\nEvaluation of cardiovascular risk\n\n6. Treatment\n\nManagement includes lifestyle changes and medication.\n\nLifestyle measures\n\nReduce salt intake\n\nExercise regularly\n\nMaintain healthy weight\n\nStop smoking\n\nLimit alcohol\n\nMedications (examples)\n\nACE inhibitors\n\nBeta blockers\n\nCalcium channel blockers\n\nDiuretics\n\n7. Key Takeaway\n\nEarly detection and long-term management of hypertension significantly reduce cardiovascular complications.",
+    "lisa_metadata": {
+      "identifiant": "CSTM-5A72BFA",
+      "rang": "B",
+      "rubrique": "Contenu personnalisé",
+      "intitule": "Question générée depuis votre contenu",
+      "item_parent": "Contenu évaluateur",
+      "description": "MCQ généré automatiquement depuis le matériel pédagogique fourni par l'évaluateur.",
+      "contenu": "Hypertension (High Blood Pressure)\n1. Definition\n\nHypertension is a chronic medical condition in which the arterial blood pressure is persistently elevated.\nIt is usually defined as ≥140/90 mmHg in repeated measurements in adults.\n\n2. Why It Matters\n\nUntreated hypertension increases the risk of:\n\nStroke\n\nHeart attack\n\nKidney disease\n\nHeart failure\n\nIt is often called the “silent killer” because many patients have no symptoms.\n\n3. Risk Factors\n\nCommon factors that increase the risk include:\n\nAge\n\nFamily history\n\nObesity\n\nHigh salt intake\n\nSedentary lifestyle\n\nSmoking\n\nExcess alcohol consumption\n\n4. Symptoms\n\nMost patients are asymptomatic, but severe hypertension may cause:\n\nHeadache\n\nDizziness\n\nBlurred vision\n\nChest pain\n\n5. Diagnosis\n\nDiagnosis is based on:\n\nRepeated blood pressure measurements\n\nAmbulatory or home blood pressure monitoring\n\nEvaluation of cardiovascular risk\n\n6. Treatment\n\nManagement includes lifestyle changes and medication.\n\nLifestyle measures\n\nReduce salt intake\n\nExercise regularly\n\nMaintain healthy weight\n\nStop smoking\n\nLimit alcohol\n\nMedications (examples)\n\nACE inhibitors\n\nBeta blockers\n\nCalcium channel blockers\n\nDiuretics\n\n7. Key Takeaway\n\nEarly detection and long-term management of hypertension significantly reduce cardiovascular complications."
+    }
+  }
+]

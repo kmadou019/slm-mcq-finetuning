@@ -64,7 +64,7 @@
                 </svg>
                 {{ fileName || 'Charger un fichier' }}
               </label>
-              <input type="file" id="file-upload" accept=".txt,.md,.csv" (change)="onFileSelected($event)" style="display:none">
+              <input type="file" id="file-upload" accept=".txt,.md,.csv,.pdf" (change)="onFileSelected($event)" style="display:none">
               <span class="char-counter" [class.valid]="isContentValid" [class.invalid]="charCount > 0 && !isContentValid">
                 {{ charCount }} / min. 100 caractères
               </span>

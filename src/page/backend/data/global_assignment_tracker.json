@@ -1,12 +1,7 @@
 {
-  "gemma2_9b": {
-    "last_assigned_index": 1,
-    "total_available": 2,
-    "assigned_count": 2
-  },
   "qwen3_4b_pdapt_slerp": {
-    "last_assigned_index": 29,
+    "last_assigned_index": 99,
     "total_available": 100,
-    "assigned_count": 30
+    "assigned_count": 100
   }
 }

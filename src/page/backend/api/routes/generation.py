@@ -2,6 +2,7 @@
 Generation Routes - API endpoints for custom MCQ generation via Ollama GPU.
 """
 import asyncio
+import io
 import json
 import os
 import uuid
@@ -9,8 +10,9 @@ from pathlib import Path
 from typing import Dict, Any
 
 import pandas as pd
-from fastapi import APIRouter, Depends, HTTPException, BackgroundTasks
+from fastapi import APIRouter, Depends, HTTPException, BackgroundTasks, UploadFile, File
 from pydantic import BaseModel, ConfigDict
+from pypdf import PdfReader
 from sqlalchemy.orm import Session
 
 from ..utils.dependencies import get_current_user
@@ -244,7 +246,6 @@ async def _run_generation(job_id: str, user_id: int, content: str, model_save_na
     try:
         full_prompt = (prompt_template or "").replace("{content}", content)
         raw_response = await asyncio.to_thread(generate_mcq, full_prompt, model_name=model_save_name)
-
         mcq = validate_mcq(raw_response)
         if mcq is None:
             raise ValueError(f"Ollama response failed validation: {raw_response}")
@@ -294,6 +295,20 @@ async def _run_generation(job_id: str, user_id: int, content: str, model_save_na
 # ============================================================================
 # ROUTES
 # ============================================================================
+
+@router.post("/extract-pdf")
+async def extract_pdf(file: UploadFile = File(...)):
+    """Extrait le texte brut d'un fichier PDF uploadé."""
+    if file.content_type != "application/pdf":
+        raise HTTPException(status_code=400, detail="Le fichier doit être un PDF.")
+    content = await file.read()
+    reader = PdfReader(io.BytesIO(content))
+    text = "\n".join(page.extract_text() or "" for page in reader.pages)
+    text = text.strip()
+    if not text:
+        raise HTTPException(status_code=422, detail="Impossible d'extraire du texte de ce PDF (peut-être scanné).")
+    return {"text": text}
+
 
 @router.post("/generate")
 async def start_generation(

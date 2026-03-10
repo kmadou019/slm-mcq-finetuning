@@ -1,0 +1,112 @@
+[
+  {
+    "item_id": "CSTM-1037AA0-1",
+    "source_material": "CSTM-1037AA0",
+    "generator_info": "hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0",
+    "output_format": "JSON",
+    "mcq_question": "Quel est le principal facteur différenciant le diabète de type 1 du diabète de type 2 ?",
+    "question_comment": "Évalue la compréhension de la distinction étiologique entre les deux types ; piège fréquent de confondre l’âge d’apparition.",
+    "options": {
+      "A": "Le diabète de type 1 est causé par une auto‑immunité, alors que le type 2 est lié à la résistance à l'insuline.",
+      "B": "Le diabète de type 1 apparaît uniquement chez les adultes, tandis que le type 2 touche les enfants.",
+      "C": "Le diabète de type 1 se traite uniquement par l'alimentation, alors que le type 2 nécessite toujours de l'insuline.",
+      "D": "Le diabète de type 1 est plus fréquent que le type 2 dans la population générale."
+    },
+    "option_comments": {
+      "A": "Correct – le type 1 résulte d’une perte d’insuline due à une attaque auto‑immune, le type 2 provient de la résistance à l’insuline.",
+      "B": "Incorrect – le type 1 touche souvent les jeunes, mais le type 2 peut également apparaître chez les enfants.",
+      "C": "Incorrect – le type 1 nécessite généralement de l’insuline, le type 2 peut être géré par l’alimentation et d’autres médicaments.",
+      "D": "Incorrect – le type 2 représente environ 90 % des cas, donc il est plus fréquent."
+    },
+    "correct_option": "A",
+    "section_a_checks": [
+      {
+        "check_id": "A1",
+        "description": "Is a question",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": "True",
+        "notes": "Yes"
+      },
+      {
+        "check_id": "A2",
+        "description": "No leading negation",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": "False",
+        "notes": "Negation: False"
+      },
+      {
+        "check_id": "A3",
+        "description": "Originality",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": ">= 0.75",
+        "notes": "Score: 1.0"
+      },
+      {
+        "check_id": "A4",
+        "description": "Readability (FK grade)",
+        "result": "FAIL",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": ">= 12",
+        "notes": "Score: 9.1"
+      }
+    ],
+    "section_b_checks": [
+      {
+        "check_id": "B1",
+        "description": "Disclosure (answer leakage)",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "True/False",
+        "notes": "Score: False"
+      },
+      {
+        "check_id": "B2",
+        "description": "Relevance to material",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "0-1",
+        "notes": "Score: 0.827"
+      },
+      {
+        "check_id": "B3",
+        "description": "Distractor plausibility",
+        "result": "FAIL",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "True/False",
+        "notes": "Score: False"
+      },
+      {
+        "check_id": "B4",
+        "description": "Difficulty appropriateness",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "low/med/high",
+        "notes": "Judge: 1"
+      }
+    ],
+    "decision_policy": "Accept if all hard constraints pass and no critical AI-judge dimension fails.",
+    "final_decision": "REJECT",
+    "audit_trail": "Généré depuis contenu personnalisé. Modèle : hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0. Job : CSTM-1037AA0.",
+    "lisa_texte_brut": "Le diabète est une maladie chronique caractérisée par un excès de sucre (glucose) dans le sang, appelé hyperglycémie. Il existe deux formes principales :\n\nType 1 : le pancréas ne produit plus d'insuline, souvent d'origine auto-immune. Il touche surtout les jeunes.\nType 2 : le corps résiste à l'insuline ou n'en produit pas suffisamment, lié principalement au mode de vie (alimentation, sédentarité). C'est la forme la plus répandue (90% des cas).\n\nLes principaux symptômes sont la fatigue, la soif intense, les urines fréquentes et une cicatrisation lente. Sans traitement, il peut entraîner des complications graves (maladies cardiaques, cécité, insuffisance rénale). Il se gère par l'alimentation, l'activité physique et/ou des médicaments comme l'insuline.",
+    "lisa_metadata": {
+      "identifiant": "CSTM-1037AA0",
+      "rang": "B",
+      "rubrique": "Contenu personnalisé",
+      "intitule": "Question générée depuis votre contenu",
+      "item_parent": "Contenu évaluateur",
+      "description": "MCQ généré automatiquement depuis le matériel pédagogique fourni par l'évaluateur.",
+      "contenu": "Le diabète est une maladie chronique caractérisée par un excès de sucre (glucose) dans le sang, appelé hyperglycémie. Il existe deux formes principales :\n\nType 1 : le pancréas ne produit plus d'insuline, souvent d'origine auto-immune. Il touche surtout les jeunes.\nType 2 : le corps résiste à l'insuline ou n'en produit pas suffisamment, lié principalement au mode de vie (alimentation, sédentarité). C'est la forme la plus répandue (90% des cas).\n\nLes principaux symptômes sont la fatigue, la soif intense, les urines fréquentes et une cicatrisation lente. Sans traitement, il peut entraîner des complications graves (maladies cardiaques, cécité, insuffisance rénale). Il se gère par l'alimentation, l'activité physique et/ou des médicaments comme l'insuline."
+    }
+  }
+]

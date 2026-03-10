@@ -81,6 +81,15 @@ export class McqService {
   }
 
   /**
+   * Extraire le texte d'un PDF côté serveur
+   */
+  extractPdfText(file: File): Observable<{ text: string }> {
+    const formData = new FormData();
+    formData.append('file', file);
+    return this.http.post<{ text: string }>(`${this.apiUrl}/extract-pdf`, formData);
+  }
+
+  /**
    * Interroger l'état d'un job de génération (polling)
    */
   getGenerationStatus(jobId: string): Observable<{

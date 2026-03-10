@@ -67,6 +67,8 @@ export class GenerateFromMaterialModalComponent implements OnDestroy {
   readonly generationModels = [
     { label: 'Nemotron 30B (Q8)', value: 'hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0' },
     { label: 'Qwen 3.5 35B', value: 'qwen3.5:35b' },
+    { label: 'Qwcen3 80B Thinking (UD-Q4_K_XL)', value: 'hf.co/unsloth/Qwen3-Next-80B-A3B-Thinking-GGUF:UD-Q4_K_XL' },
+
   ];
 
   // Champs du formulaire (propriétés simples pour ngModel)
@@ -174,10 +176,18 @@ export class GenerateFromMaterialModalComponent implements OnDestroy {
     const file = input.files?.[0];
     if (!file) return;
     this.fileName = file.name;
-    const reader = new FileReader();
-    reader.onload = (e) => { this.content = e.target?.result as string; };
-    reader.readAsText(file, 'utf-8');
     input.value = '';
+
+    if (file.type === 'application/pdf') {
+      this.mcqService.extractPdfText(file).subscribe({
+        next: (result) => { this.content = result.text; this.cdr.detectChanges(); },
+        error: () => { this.errorMessage = 'Impossible d\'extraire le texte de ce PDF.'; this.cdr.detectChanges(); }
+      });
+    } else {
+      const reader = new FileReader();
+      reader.onload = (e) => { this.content = e.target?.result as string; this.cdr.detectChanges(); };
+      reader.readAsText(file, 'utf-8');
+    }
   }
 
   onRetry(): void {
