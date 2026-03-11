@@ -1,12 +1,18 @@
 import { Component, inject, OnInit, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Router, NavigationEnd } from '@angular/router';
+import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { McqService, AssignedMCQ } from '../../services/mcq.service';
 import { ValidationService } from '../../services/validation.service';
 import { MCQCard, SectionCheck } from '../../models';
 import { filter, Subscription } from 'rxjs';
+
+interface SessionSummary {
+  total: number;
+  accepted: number;
+  rejected: number;
+}
 
 /**
  * EvaluationPage Component - Page d'evaluation des MCQ
@@ -24,12 +30,22 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
   private readonly mcqService = inject(McqService);
   private readonly validationService = inject(ValidationService);
   private readonly router = inject(Router);
+  private readonly route = inject(ActivatedRoute);
   private routerSubscription?: Subscription;
 
   loading = signal(true);
   currentIndex = signal(0);
   currentMcq = signal<MCQCard | null>(null);
   mcqList = signal<AssignedMCQ[]>([]);
+  sessionSummary = signal<SessionSummary | null>(null);
+
+  // Review mode (Feature 4)
+  reviewMode = signal(false);
+  previousDecision = signal<'ACCEPT' | 'REJECT' | null>(null);
+
+  // Session counters (Feature 3)
+  private sessionAccepted = 0;
+  private sessionRejected = 0;
 
   validationForm: FormGroup;
 
@@ -40,7 +56,16 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.initializeEvaluation();
+    // Feature 4 — Check for review mode query params
+    const mcqId = this.route.snapshot.queryParamMap.get('mcq_id');
+    const model = this.route.snapshot.queryParamMap.get('model');
+
+    if (mcqId && model) {
+      this.reviewMode.set(true);
+      this.loadReviewMode(mcqId, model);
+    } else {
+      this.initializeEvaluation();
+    }
 
     this.routerSubscription = this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
@@ -55,7 +80,38 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
     this.routerSubscription?.unsubscribe();
   }
 
+  // Feature 4 — Load a specific MCQ for review
+  private loadReviewMode(mcqId: string, model: string): void {
+    this.loading.set(true);
+    this.mcqService.getMcqById(mcqId, model).subscribe({
+      next: (mcq) => {
+        this.currentMcq.set(mcq);
+        this.mcqList.set([{ mcq_id: mcqId, model }]);
+        this.currentIndex.set(0);
+        this.loading.set(false);
+
+        // Pre-fill feedback from history
+        this.mcqService.getValidationHistory(200).subscribe({
+          next: (history) => {
+            const entry = history.find((h: any) => h.mcq_id === mcqId && h.model === model);
+            if (entry) {
+              this.previousDecision.set(entry.decision as 'ACCEPT' | 'REJECT');
+              this.validationForm.patchValue({ feedback: entry.human_feedback || '' });
+            }
+          },
+          error: () => {}
+        });
+      },
+      error: () => { this.loading.set(false); }
+    });
+  }
+
   private initializeEvaluation(): void {
+    this.reviewMode.set(false);
+    this.previousDecision.set(null);
+    this.sessionSummary.set(null);
+    this.sessionAccepted = 0;
+    this.sessionRejected = 0;
     this.loading.set(true);
     this.validationService.syncWithBackend().subscribe({
       next: () => this.loadAssignedMCQs(),
@@ -104,7 +160,7 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
         } else {
           this.loading.set(false);
           this.mcqService.clearProgress();
-          alert('Toutes les evaluations sont terminees ! Vous pouvez demander de nouveaux MCQ depuis le dashboard.');
+          alert('Toutes les evaluations sont terminees ! Vous pouvez demander de nouveaux QCMs depuis le dashboard.');
           this.router.navigate(['/dashboard']);
         }
       },
@@ -155,13 +211,13 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
   }
 
   onAccept(): void {
-    if (confirm('Accepter ce MCQ ?')) {
+    if (confirm('Accepter ce QCM ?')) {
       this.submitValidation('ACCEPT');
     }
   }
 
   onReject(): void {
-    if (confirm('Rejeter ce MCQ ?')) {
+    if (confirm('Rejeter ce QCM ?')) {
       this.submitValidation('REJECT');
     }
   }
@@ -188,8 +244,15 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
         source_material: mcq.source_material,
         generator_info: mcq.generator_info,
         final_decision: mcq.final_decision
-      }
+      },
+      content_raw: (mcq as any).lisa_texte_brut || ''
     };
+
+    // Feature 3 — count session decisions (not in review mode)
+    if (!this.reviewMode()) {
+      if (decision === 'ACCEPT') this.sessionAccepted++;
+      else this.sessionRejected++;
+    }
 
     this.validationService.saveValidationToBackend(
       mcq.item_id,
@@ -203,13 +266,31 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
   }
 
   private navigateAfterValidation(): void {
+    // Feature 4 — review mode: go back to history
+    if (this.reviewMode()) {
+      this.router.navigate(['/history']);
+      return;
+    }
+
     if (this.hasNext()) {
       this.onNext();
     } else {
-      alert('Toutes les evaluations sont terminees !');
+      // Feature 3 — show session summary overlay instead of alert
       this.mcqService.clearProgress();
-      this.router.navigate(['/dashboard']);
+      this.sessionSummary.set({
+        total: this.sessionAccepted + this.sessionRejected,
+        accepted: this.sessionAccepted,
+        rejected: this.sessionRejected,
+      });
     }
+  }
+
+  onGoToDashboard(): void {
+    this.router.navigate(['/dashboard']);
+  }
+
+  onGoToHistory(): void {
+    this.router.navigate(['/history']);
   }
 
   onPrevious(): void {

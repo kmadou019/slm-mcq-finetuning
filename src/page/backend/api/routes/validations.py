@@ -148,6 +148,8 @@ async def create_validation(
             validated_fields[desc] = check.get("status") == "validated"
     validated_fields_json = json.dumps(validated_fields, ensure_ascii=False) if validated_fields else None
 
+    content_raw = validation_data.get("content_raw") or None
+
     if existing_validation:
         existing_validation.decision = validation_data.get("human_decision", "REJECT")
         existing_validation.human_feedback = validation_data.get("human_feedback", "")
@@ -157,6 +159,8 @@ async def create_validation(
         existing_validation.validation_duration_seconds = validation_data.get("validation_duration_seconds")
         if mcq_data_json:
             existing_validation.mcq_data = mcq_data_json
+        if content_raw:
+            existing_validation.content_raw = content_raw
         existing_validation.validated_at = func.now()
 
         db.commit()
@@ -178,7 +182,8 @@ async def create_validation(
             section_b_checks=json.dumps(validation_data.get("section_b_checks", [])),
             validated_fields=validated_fields_json,
             validation_duration_seconds=validation_data.get("validation_duration_seconds"),
-            mcq_data=mcq_data_json
+            mcq_data=mcq_data_json,
+            content_raw=content_raw
         )
 
         db.add(new_validation)

@@ -1,0 +1,44 @@
+<div class="history-container">
+  <header class="history-header">
+    <button class="back-btn" (click)="onBack()">← Tableau de bord</button>
+    <h1>Mon historique d'évaluations</h1>
+  </header>
+
+  @if (loading()) {
+    <div class="loading">
+      <div class="spinner"></div>
+      <p>Chargement de l'historique…</p>
+    </div>
+  } @else if (error()) {
+    <div class="error-msg">{{ error() }}</div>
+  } @else if (history().length === 0) {
+    <div class="empty-msg">
+      <p>Aucune évaluation trouvée. Commencez à évaluer des QCM(s) !</p>
+      <button class="btn-primary" (click)="onBack()">Retour au dashboard</button>
+    </div>
+  } @else {
+    <p class="history-count">{{ history().length }} évaluation(s) au total</p>
+    <div class="history-list">
+      @for (entry of history(); track entry.mcq_id + entry.model) {
+        <div class="history-card">
+          <div class="history-card-body">
+            <p class="question-text">{{ truncate(entry.mcq_data?.mcq_question || entry.mcq_id, 120) }}</p>
+            <div class="meta">
+              <span class="meta-model">{{ entry.model }}</span>
+              <span class="meta-date">{{ formatDate(entry.validated_at) }}</span>
+            </div>
+            @if (entry.human_feedback) {
+              <p class="feedback-text">💬 {{ truncate(entry.human_feedback, 80) }}</p>
+            }
+          </div>
+          <div class="history-card-actions">
+            <span [class]="entry.decision === 'ACCEPT' ? 'badge-accept' : 'badge-reject'">
+              {{ entry.decision === 'ACCEPT' ? 'ACCEPTÉ' : 'REFUSÉ' }}
+            </span>
+            <button class="btn-review" (click)="onReview(entry)">Revoir</button>
+          </div>
+        </div>
+      }
+    </div>
+  }
+</div>

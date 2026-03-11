@@ -1,0 +1,32 @@
+[
+  {
+    "job_id": "ANS-B3FFC58",
+    "model_name": "llama3.1:8b",
+    "model_type": "ollama",
+    "dataset_name": "openlifescienceai/medmcqa",
+    "sample_size": 10,
+    "accuracy": 0.0,
+    "correct": 0,
+    "date": "2026-03-11T09:57:49.628323"
+  },
+  {
+    "job_id": "ANS-CD6D63F",
+    "model_name": "llama3.1:8b",
+    "model_type": "ollama",
+    "dataset_name": "uness",
+    "sample_size": 30,
+    "accuracy": 60.0,
+    "correct": 18,
+    "date": "2026-03-11T10:09:09.594732"
+  },
+  {
+    "job_id": "ANS-34CB7C1",
+    "model_name": "Qwen/Qwen3.5-9B",
+    "model_type": "hf",
+    "dataset_name": "uness",
+    "sample_size": 10,
+    "accuracy": 20.0,
+    "correct": 2,
+    "date": "2026-03-11T11:16:16.549745"
+  }
+]

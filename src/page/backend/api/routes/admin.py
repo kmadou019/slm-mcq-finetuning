@@ -2,10 +2,14 @@
 Admin routes - Endpoints pour le dashboard administrateur
 """
 from fastapi import APIRouter, Depends, HTTPException, status
+from fastapi.responses import StreamingResponse
 from sqlalchemy.orm import Session
 from sqlalchemy import func
 from typing import List, Dict, Any
+import csv
+import io
 import json
+from datetime import datetime
 from pathlib import Path
 from pydantic import BaseModel
 
@@ -453,17 +457,170 @@ async def reset_tracker_for_model(
 # EXPORT DONNÉES
 # ============================================================================
 
-@router.get("/export/validations")
-async def export_validations(
+@router.get("/export/csv")
+async def export_csv(
     current_user: User = Depends(require_admin),
     db: Session = Depends(get_db)
-) -> List[Dict[str, Any]]:
+):
     """
-    Exporter toutes les validations (format JSON)
+    Exporter toutes les validations au format CSV enrichi (avec content_raw)
+    """
+    validations = db.query(Validation).order_by(Validation.validated_at.desc()).all()
+
+    output = io.StringIO()
+    writer = csv.writer(output)
+    writer.writerow([
+        'id', 'user_id', 'mcq_id', 'model', 'decision',
+        'content_raw', 'mcq_question', 'options', 'correct_option',
+        'human_feedback', 'validation_duration_seconds', 'validated_at'
+    ])
+
+    for val in validations:
+        mcq_data = {}
+        if val.mcq_data:
+            try:
+                mcq_data = json.loads(val.mcq_data)
+            except (ValueError, TypeError):
+                pass
+        writer.writerow([
+            val.id, val.user_id, val.mcq_id, val.model, val.decision,
+            val.content_raw or '',
+            mcq_data.get('mcq_question', ''),
+            json.dumps(mcq_data.get('options', {}), ensure_ascii=False),
+            mcq_data.get('correct_option', ''),
+            val.human_feedback or '',
+            val.validation_duration_seconds or '',
+            val.validated_at.isoformat() if val.validated_at else ''
+        ])
+
+    filename = f"validations_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.csv"
+    return StreamingResponse(
+        io.BytesIO(output.getvalue().encode('utf-8-sig')),
+        media_type="text/csv",
+        headers={"Content-Disposition": f"attachment; filename={filename}"}
+    )
+
+
+@router.get("/export/sft")
+async def export_sft(
+    current_user: User = Depends(require_admin),
+    db: Session = Depends(get_db)
+):
+    """
+    Exporter les MCQ acceptés au format JSONL pour le fine-tuning supervisé (SFT)
+    """
+    validations = db.query(Validation).filter(
+        Validation.decision == 'ACCEPT'
+    ).order_by(Validation.validated_at.desc()).all()
+
+    lines = []
+    for val in validations:
+        content_raw = val.content_raw or ''
+        if not content_raw:
+            continue
+
+        mcq_data = {}
+        if val.mcq_data:
+            try:
+                mcq_data = json.loads(val.mcq_data)
+            except (ValueError, TypeError):
+                pass
+
+        question = mcq_data.get('mcq_question', '')
+        options = mcq_data.get('options', {})
+        correct = mcq_data.get('correct_option', '')
+        options_text = "\n".join([f"{k}. {v}" for k, v in options.items()])
+        assistant_content = f"{question}\n\n{options_text}\n\nRéponse correcte : {correct}"
+
+        entry = {
+            "messages": [
+                {
+                    "role": "user",
+                    "content": f"Génère une question à choix multiple (QCM) à partir du texte médical suivant :\n\n{content_raw}"
+                },
+                {
+                    "role": "assistant",
+                    "content": assistant_content
+                }
+            ]
+        }
+        lines.append(json.dumps(entry, ensure_ascii=False))
+
+    content = "\n".join(lines)
+    filename = f"sft_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.jsonl"
+    return StreamingResponse(
+        io.BytesIO(content.encode('utf-8')),
+        media_type="application/x-ndjson",
+        headers={"Content-Disposition": f"attachment; filename={filename}"}
+    )
+
+
+@router.get("/export/dpo")
+async def export_dpo(
+    current_user: User = Depends(require_admin),
+    db: Session = Depends(get_db)
+):
+    """
+    Exporter les paires DPO au format JSONL (même mcq_id, ACCEPT vs REJECT de modèles différents)
     """
     validations = db.query(Validation).all()
 
-    return [val.to_dict() for val in validations]
+    # Grouper par mcq_id
+    by_mcq: Dict[str, Dict[str, list]] = {}
+    for val in validations:
+        if val.mcq_id not in by_mcq:
+            by_mcq[val.mcq_id] = {'ACCEPT': [], 'REJECT': []}
+        if val.decision in ('ACCEPT', 'REJECT'):
+            by_mcq[val.mcq_id][val.decision].append(val)
+
+    def format_mcq_response(mcq_data: dict) -> str:
+        question = mcq_data.get('mcq_question', '')
+        options = mcq_data.get('options', {})
+        correct = mcq_data.get('correct_option', '')
+        options_text = "\n".join([f"{k}. {v}" for k, v in options.items()])
+        return f"{question}\n\n{options_text}\n\nRéponse correcte : {correct}"
+
+    lines = []
+    for mcq_id, groups in by_mcq.items():
+        accepts = groups['ACCEPT']
+        rejects = groups['REJECT']
+
+        if not accepts or not rejects:
+            continue
+
+        accepted = accepts[0]
+        rejected = rejects[0]
+
+        content_raw = accepted.content_raw or rejected.content_raw or ''
+
+        accepted_mcq = {}
+        if accepted.mcq_data:
+            try:
+                accepted_mcq = json.loads(accepted.mcq_data)
+            except (ValueError, TypeError):
+                pass
+
+        rejected_mcq = {}
+        if rejected.mcq_data:
+            try:
+                rejected_mcq = json.loads(rejected.mcq_data)
+            except (ValueError, TypeError):
+                pass
+
+        entry = {
+            "prompt": f"Génère une question à choix multiple (QCM) à partir du texte médical suivant :\n\n{content_raw}",
+            "chosen": format_mcq_response(accepted_mcq),
+            "rejected": format_mcq_response(rejected_mcq)
+        }
+        lines.append(json.dumps(entry, ensure_ascii=False))
+
+    content = "\n".join(lines)
+    filename = f"dpo_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.jsonl"
+    return StreamingResponse(
+        io.BytesIO(content.encode('utf-8')),
+        media_type="application/x-ndjson",
+        headers={"Content-Disposition": f"attachment; filename={filename}"}
+    )
 
 
 @router.get("/export/stats")

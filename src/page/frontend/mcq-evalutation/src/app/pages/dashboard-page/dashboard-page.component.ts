@@ -233,4 +233,12 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
   onGoToAdmin(): void {
     this.router.navigate(['/admin']);
   }
+
+  onGoToHistory(): void {
+    this.router.navigate(['/history']);
+  }
+
+  onGoToAnswerability(): void {
+    this.router.navigate(['/answerability']);
+  }
 }

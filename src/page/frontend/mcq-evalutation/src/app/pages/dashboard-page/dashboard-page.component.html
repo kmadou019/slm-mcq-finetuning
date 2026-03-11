@@ -43,7 +43,7 @@
           </svg>
         </div>
         <div class="stat-content">
-          <p class="stat-label">Total MCQ</p>
+          <p class="stat-label">Total QCM</p>
           <p class="stat-value">{{ stats().total }}</p>
         </div>
       </div>
@@ -126,7 +126,7 @@
       </div>
 
       <div class="action-card">
-        <h2>Demander de nouveaux MCQ</h2>
+        <h2>Demander de nouveaux QCMs</h2>
         <p>Recevez de nouvelles questions à évaluer</p>
         <button class="btn-secondary" (click)="onRequestNewMcqs()">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -139,12 +139,37 @@
 
       <div class="action-card generate-card">
         <h2>Générer depuis mon contenu</h2>
-        <p>Collez votre propre matériau pédagogique pour générer et évaluer des MCQs personnalisés</p>
+        <p>Collez votre propre matériau pédagogique pour générer et évaluer des QCMs personnalisés</p>
         <button class="btn-generate" (click)="onGenerateFromMaterial()">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
           </svg>
-          Générer des MCQs
+          Générer des QCMs
+        </button>
+      </div>
+
+      <div class="action-card history-card">
+        <h2>Mon historique</h2>
+        <p>Consultez et révisez vos évaluations passées</p>
+        <button class="btn-history" (click)="onGoToHistory()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="12 8 12 12 14 14"></polyline>
+            <path d="M3.05 11a9 9 0 1 1 .5 4m-.5 5v-5h5"></path>
+          </svg>
+          Voir l'historique
+        </button>
+      </div>
+
+      <div class="action-card answerability-card">
+        <h2>Answerability</h2>
+        <p>Évaluez la capacité d'un modèle à répondre aux QCMs médicaux depuis ses propres connaissances</p>
+        <button class="btn-answerability" (click)="onGoToAnswerability()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+          </svg>
+          Lancer un test
         </button>
       </div>
 

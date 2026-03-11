@@ -1,22 +1,37 @@
 <!-- Progress bar at top (fixed) -->
 <div class="progress-bar" [style.width.%]="((currentIndex() + 1) / mcqList().length) * 100"></div>
 
+<!-- Feature 4 — Review mode banner -->
+@if (reviewMode()) {
+  <div class="review-banner">
+    <span class="review-icon">✏️</span>
+    <strong>Mode révision</strong>
+    @if (previousDecision()) {
+      &nbsp;— verdict précédent :
+      <span [class]="previousDecision() === 'ACCEPT' ? 'badge-accept' : 'badge-reject'">
+        {{ previousDecision() === 'ACCEPT' ? 'ACCEPTÉ' : 'REFUSÉ' }}
+      </span>
+    }
+    <button class="review-back-btn" (click)="onGoToHistory()">← Retour à l'historique</button>
+  </div>
+}
+
 <div class="evaluation-container">
   @if (loading()) {
     <div class="loading">
       <div class="spinner"></div>
-      <p>Chargement du MCQ...</p>
+      <p>Chargement du QCM...</p>
     </div>
   } @else if (currentMcq()) {
     <!-- Main slide container -->
     <div class="slide">
       <div class="main-container">
 
-        <!-- LEFT COLUMN: MCQ Card -->
+        <!-- LEFT COLUMN: QCM Card -->
         <div class="column">
           <div class="card">
-            <!-- Header MCQ (gray background) -->
-            <div class="header">MCQ Acceptance Card</div>
+            <!-- Header QCM (gray background) -->
+            <div class="header">QCM Acceptance Card</div>
 
             <!-- Header info -->
             <div class="header-info">
@@ -26,9 +41,9 @@
               <p><strong>Output Format:</strong> {{ currentMcq()?.output_format }}</p>
             </div>
 
-            <!-- MCQ Section -->
+            <!-- QCM Section -->
             <div class="mcq-section">
-              <h3>MCQ:</h3>
+              <h3>QCM :</h3>
               <p>{{ currentMcq()?.mcq_question }}</p>
               @if (currentMcq()?.question_comment) {
                 <p class="mcq-comment">💡 {{ currentMcq()?.question_comment }}</p>
@@ -187,7 +202,7 @@
     </div>
   } @else {
     <div class="loading">
-      <p>Aucun MCQ à afficher. Retournez au dashboard.</p>
+      <p>Aucun QCM à afficher. Retournez au dashboard.</p>
       <button class="nav-button" (click)="onBackToDashboard()">Retour au Dashboard</button>
     </div>
   }
@@ -197,8 +212,44 @@
 <div class="navigation">
   <button class="nav-button" [disabled]="!hasPrevious()" (click)="onPrevious()">← Précédent</button>
   <div class="slide-counter">
-    <span>MCQ {{ currentIndex() + 1 }} / {{ mcqList().length }}</span>
+    <span>QCM {{ currentIndex() + 1 }} / {{ mcqList().length }}</span>
   </div>
   <button class="nav-button" [disabled]="!hasNext()" (click)="onNext()">Suivant →</button>
-  <button class="nav-button nav-button-pause" (click)="onPause()">⏸ Pause</button>
+  @if (!reviewMode()) {
+    <button class="nav-button nav-button-pause" (click)="onPause()">⏸ Pause</button>
+  }
 </div>
+
+<!-- Feature 3 — Session summary overlay -->
+@if (sessionSummary()) {
+  <div class="session-overlay">
+    <div class="session-card">
+      <h2>Session terminée</h2>
+      <p class="session-subtitle">Vous avez évalué tous les QCMs disponibles.</p>
+      <div class="session-stats">
+        <div class="session-stat">
+          <span class="session-stat-value">{{ sessionSummary()!.total }}</span>
+          <span class="session-stat-label">Total évalués</span>
+        </div>
+        <div class="session-stat accepted-stat">
+          <span class="session-stat-value">{{ sessionSummary()!.accepted }}</span>
+          <span class="session-stat-label">Acceptés</span>
+        </div>
+        <div class="session-stat rejected-stat">
+          <span class="session-stat-value">{{ sessionSummary()!.rejected }}</span>
+          <span class="session-stat-label">Refusés</span>
+        </div>
+        @if (sessionSummary()!.total > 0) {
+          <div class="session-stat">
+            <span class="session-stat-value">{{ (sessionSummary()!.accepted / sessionSummary()!.total * 100) | number:'1.0-0' }}%</span>
+            <span class="session-stat-label">Taux d'acceptation</span>
+          </div>
+        }
+      </div>
+      <div class="session-actions">
+        <button class="btn-history" (click)="onGoToHistory()">Voir l'historique</button>
+        <button class="btn-dashboard" (click)="onGoToDashboard()">Retour au dashboard</button>
+      </div>
+    </div>
+  </div>
+}

@@ -90,6 +90,13 @@ export class McqService {
   }
 
   /**
+   * Récupérer l'historique des validations de l'utilisateur connecté
+   */
+  getValidationHistory(limit: number = 50): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/validations/history?limit=${limit}`);
+  }
+
+  /**
    * Interroger l'état d'un job de génération (polling)
    */
   getGenerationStatus(jobId: string): Observable<{

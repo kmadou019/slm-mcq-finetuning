@@ -271,47 +271,43 @@ export class AdminDashboardPageComponent implements OnInit {
   // EXPORT
   // ============================================================================
 
-  /**
-   * Exporter les validations
-   */
-  exportValidations(): void {
-    this.adminService.exportValidations().subscribe({
-      next: (data) => {
-        const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-        const url = window.URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = `validations_${new Date().toISOString()}.json`;
-        link.click();
-        window.URL.revokeObjectURL(url);
-        console.log('✅ Validations exportées');
-      },
-      error: (error) => {
-        console.error('❌ Erreur export validations:', error);
-        alert('Erreur lors de l\'export');
-      }
+  private downloadBlob(blob: Blob, filename: string): void {
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = filename;
+    link.click();
+    window.URL.revokeObjectURL(url);
+  }
+
+  exportCsv(): void {
+    this.adminService.exportCsv().subscribe({
+      next: (blob) => this.downloadBlob(blob, `validations_${new Date().toISOString().slice(0, 10)}.csv`),
+      error: () => alert('Erreur lors de l\'export CSV')
     });
   }
 
-  /**
-   * Exporter le rapport complet
-   */
+  exportSft(): void {
+    this.adminService.exportSft().subscribe({
+      next: (blob) => this.downloadBlob(blob, `sft_${new Date().toISOString().slice(0, 10)}.jsonl`),
+      error: () => alert('Erreur lors de l\'export SFT')
+    });
+  }
+
+  exportDpo(): void {
+    this.adminService.exportDpo().subscribe({
+      next: (blob) => this.downloadBlob(blob, `dpo_${new Date().toISOString().slice(0, 10)}.jsonl`),
+      error: () => alert('Erreur lors de l\'export DPO')
+    });
+  }
+
   exportFullReport(): void {
     this.adminService.exportStats().subscribe({
       next: (data) => {
         const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
-        const url = window.URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = url;
-        link.download = `rapport_complet_${new Date().toISOString()}.json`;
-        link.click();
-        window.URL.revokeObjectURL(url);
-        console.log('✅ Rapport complet exporté');
+        this.downloadBlob(blob, `rapport_complet_${new Date().toISOString()}.json`);
       },
-      error: (error) => {
-        console.error('❌ Erreur export rapport:', error);
-        alert('Erreur lors de l\'export');
-      }
+      error: () => alert('Erreur lors de l\'export du rapport')
     });
   }
 

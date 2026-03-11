@@ -1,0 +1,221 @@
+<div class="page-container">
+
+  <!-- Header -->
+  <header class="page-header">
+    <div class="header-content">
+      <h1>Answerability</h1>
+      <p class="subtitle">Évaluer la capacité d'un modèle à répondre aux QCMs médicaux depuis ses propres connaissances</p>
+    </div>
+    <div class="header-actions">
+      <button class="btn-secondary" (click)="goToDashboard()">← Dashboard</button>
+      <button class="btn-logout" (click)="onLogout()">Déconnexion</button>
+    </div>
+  </header>
+
+  <div class="page-body">
+
+    <!-- ================================================================ -->
+    <!-- LEFT: Formulaire de lancement                                     -->
+    <!-- ================================================================ -->
+    <section class="card form-card">
+      <h2>Lancer une évaluation</h2>
+
+      <!-- Type de modèle -->
+      <div class="form-group">
+        <label>Type de modèle</label>
+        <div class="radio-group">
+          <label class="radio-label">
+            <input type="radio" name="model_type" value="ollama" [(ngModel)]="form.model_type" />
+            Ollama (local)
+          </label>
+          <label class="radio-label">
+            <input type="radio" name="model_type" value="hf" [(ngModel)]="form.model_type" />
+            HuggingFace
+          </label>
+        </div>
+      </div>
+
+      <!-- Modèle Ollama -->
+      @if (form.model_type === 'ollama') {
+        <div class="form-group">
+          <label for="ollama-model">Modèle Ollama</label>
+          @if (ollamaModels().length > 0) {
+            <select id="ollama-model" [(ngModel)]="form.model_name">
+              <option value="" disabled>-- Choisir un modèle --</option>
+              @for (m of ollamaModels(); track m) {
+                <option [value]="m">{{ m }}</option>
+              }
+            </select>
+          } @else {
+            <input
+              type="text"
+              id="ollama-model"
+              [(ngModel)]="form.model_name"
+              placeholder="ex: llama3.1:8b (Ollama non détecté)" />
+          }
+        </div>
+      }
+
+      <!-- Modèle HuggingFace -->
+      @if (form.model_type === 'hf') {
+        <div class="form-group">
+          <label for="hf-model">Modèle HuggingFace</label>
+          <input
+            type="text"
+            id="hf-model"
+            [(ngModel)]="form.model_name"
+            placeholder="ex: Qwen/Qwen3-0.6B" />
+          <span class="hint">Nécessite un GPU disponible</span>
+        </div>
+      }
+
+      <!-- Dataset -->
+      <div class="form-group">
+        <label>Dataset</label>
+        <div class="preset-buttons">
+          @for (preset of presets; track preset.label) {
+            <button
+              class="btn-preset"
+              [class.active]="form.dataset_name === preset.dataset_name"
+              (click)="applyPreset(preset)">
+              {{ preset.label }}
+            </button>
+          }
+        </div>
+        @if (!isInternalDataset) {
+          <input
+            type="text"
+            [(ngModel)]="form.dataset_name"
+            placeholder="ex: openlifescienceai/medmcqa" />
+        } @else {
+          <div class="internal-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+            </svg>
+            Dataset interne sécurisée — chargée côté serveur
+          </div>
+        }
+      </div>
+
+      <!-- Split (uniquement pour les datasets HF non-internes) -->
+      @if (!isInternalDataset && form.preprocess_mode !== 'medmcqa_stratified') {
+        <div class="form-group">
+          <label for="split">Split</label>
+          <input type="text" id="split" [(ngModel)]="form.dataset_split" placeholder="train" />
+        </div>
+      }
+      @if (form.preprocess_mode === 'medmcqa_stratified') {
+        <div class="hint-box">
+          Prétraitement activé : train + test + validation, max 200 questions par spécialité (~4000 total)
+        </div>
+      }
+
+      <!-- Mapping colonnes (caché pour les datasets internes) -->
+      @if (!isInternalDataset) {
+        <details class="collapsible">
+          <summary>Mapping des colonnes</summary>
+          <div class="columns-grid">
+            <div class="form-group">
+              <label>Question</label>
+              <input type="text" [(ngModel)]="form.question_col" />
+            </div>
+            <div class="form-group">
+              <label>Option A</label>
+              <input type="text" [(ngModel)]="form.option_a_col" />
+            </div>
+            <div class="form-group">
+              <label>Option B</label>
+              <input type="text" [(ngModel)]="form.option_b_col" />
+            </div>
+            <div class="form-group">
+              <label>Option C</label>
+              <input type="text" [(ngModel)]="form.option_c_col" />
+            </div>
+            <div class="form-group">
+              <label>Option D</label>
+              <input type="text" [(ngModel)]="form.option_d_col" />
+            </div>
+            <div class="form-group">
+              <label>Bonne réponse</label>
+              <input type="text" [(ngModel)]="form.correct_col" />
+            </div>
+          </div>
+        </details>
+      }
+
+      <!-- Sample size -->
+      <div class="form-group">
+        <label for="sample">Nombre de QCMs (optionnel)</label>
+        <input
+          type="number"
+          id="sample"
+          [(ngModel)]="form.sample_size"
+          min="10"
+          max="10000"
+          placeholder="Laisser vide = tout le dataset" />
+        <span class="hint">Échantillon aléatoire reproductible (seed 42)</span>
+      </div>
+
+      <!-- Erreur -->
+      @if (errorMsg()) {
+        <div class="error-banner">{{ errorMsg() }}</div>
+      }
+
+      <!-- Bouton -->
+      <button
+        class="btn-primary btn-launch"
+        (click)="launch()"
+        [disabled]="isRunning()">
+        @if (isRunning()) {
+          Évaluation en cours...
+        } @else {
+          Lancer l'évaluation
+        }
+      </button>
+
+      <!-- Progression -->
+      @if (currentJob()) {
+        <div class="job-status"
+          [class.done]="currentJob()!.status === 'done'"
+          [class.error]="currentJob()!.status === 'error'"
+          [class.cancelled]="currentJob()!.status === 'cancelled'">
+          <div class="job-controls">
+            <p class="status-label">{{ statusLabel }}</p>
+            @if (isRunning()) {
+              <button class="btn-cancel" (click)="cancelJob()">Annuler</button>
+            }
+          </div>
+          @if (currentJob()!.status === 'running' || currentJob()!.status === 'done') {
+            <div class="progress-bar-container">
+              <div class="progress-bar-fill" [style.width.%]="progressPercent"></div>
+            </div>
+            <span class="progress-text">{{ progressPercent }}% ({{ currentJob()!.correct }} correctes)</span>
+          }
+          @if (currentJob()!.status === 'done') {
+            <div class="accuracy-badge">
+              {{ currentJob()!.accuracy?.toFixed(2) }}%
+            </div>
+          }
+        </div>
+      }
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- RIGHT: Histogramme groupé Chart.js                               -->
+    <!-- ================================================================ -->
+    <section class="card chart-card">
+      <h2>Résultats par dataset et par modèle</h2>
+
+      @if (results().length === 0) {
+        <p class="empty-state">Aucun résultat pour l'instant. Lancez une évaluation pour commencer.</p>
+      }
+
+      <!-- Canvas toujours présent pour que ViewChild soit résolu -->
+      <div class="canvas-wrapper" [class.hidden]="results().length === 0">
+        <canvas #chartCanvas></canvas>
+      </div>
+    </section>
+
+  </div>
+</div>

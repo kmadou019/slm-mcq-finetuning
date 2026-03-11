@@ -46,6 +46,7 @@ class Validation(Base):
     validated_fields = Column(Text, nullable=True)  # JSON string - {"check_description": true/false}
     validation_duration_seconds = Column(Integer, nullable=True)
     mcq_data = Column(Text, nullable=True)  # JSON string - full MCQ content
+    content_raw = Column(Text, nullable=True)  # Texte brut source (pour SFT/DPO)
     validated_at = Column(DateTime(timezone=True), server_default=func.now())
 
     # Contraintes - unique par (user, mcq, model)

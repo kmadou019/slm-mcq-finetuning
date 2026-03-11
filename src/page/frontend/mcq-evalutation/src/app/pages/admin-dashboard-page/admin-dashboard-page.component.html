@@ -234,18 +234,34 @@
 
         <div class="export-actions">
           <div class="export-card">
-            <h3>📋 Validations</h3>
-            <p>Exporter toutes les validations au format JSON</p>
-            <button class="btn-primary" (click)="exportValidations()">
-              ⬇️ Télécharger les validations
+            <h3>📋 CSV Validations</h3>
+            <p>Toutes les validations enrichies avec le texte source (<code>content_raw</code>) — format tabulaire.</p>
+            <button class="btn-primary" (click)="exportCsv()">
+              ⬇️ Télécharger le CSV
+            </button>
+          </div>
+
+          <div class="export-card">
+            <h3>🎓 SFT Fine-tuning</h3>
+            <p>QCM acceptés au format JSONL pour l'entraînement supervisé (messages user / assistant).</p>
+            <button class="btn-primary" (click)="exportSft()">
+              ⬇️ Télécharger le JSONL SFT
+            </button>
+          </div>
+
+          <div class="export-card">
+            <h3>⚖️ DPO Fine-tuning</h3>
+            <p>Paires ACCEPT / REJECT par <code>QCM_id</code> au format JSONL pour l'entraînement DPO.</p>
+            <button class="btn-primary" (click)="exportDpo()">
+              ⬇️ Télécharger le JSONL DPO
             </button>
           </div>
 
           <div class="export-card">
             <h3>📊 Rapport Complet</h3>
-            <p>Exporter un rapport complet avec toutes les statistiques</p>
+            <p>Statistiques globales, par modèle et par utilisateur au format JSON.</p>
             <button class="btn-primary" (click)="exportFullReport()">
-              ⬇️ Télécharger le rapport complet
+              ⬇️ Télécharger le rapport
             </button>
           </div>
         </div>
@@ -375,7 +391,7 @@
     </div>
 
     <div class="modal-body">
-      <p class="warning-text">⚠️ Attention : Modifier le tracker peut affecter l'attribution des MCQs</p>
+      <p class="warning-text">⚠️ Attention : Modifier le tracker peut affecter l'attribution des QCMs</p>
       <div class="form-group">
         <label for="trackerJson">JSON du Tracker</label>
         <textarea

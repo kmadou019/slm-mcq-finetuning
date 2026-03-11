@@ -47,4 +47,17 @@ def init_db():
     Créer toutes les tables si elles n'existent pas
     """
     Base.metadata.create_all(bind=engine)
+    _migrate_add_content_raw()
     print(f"✅ Base de données initialisée : {DATABASE_PATH}")
+
+
+def _migrate_add_content_raw():
+    """Ajouter la colonne content_raw à validations si absente (migration SQLite)"""
+    from sqlalchemy import inspect, text
+    inspector = inspect(engine)
+    cols = [c["name"] for c in inspector.get_columns("validations")]
+    if "content_raw" not in cols:
+        with engine.connect() as conn:
+            conn.execute(text("ALTER TABLE validations ADD COLUMN content_raw TEXT"))
+            conn.commit()
+        print("✅ Migration : colonne content_raw ajoutée à validations")

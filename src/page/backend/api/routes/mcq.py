@@ -529,6 +529,8 @@ async def get_assigned_mcqs(
 
             assignments_list = [{"mcq_id": mid, "model": model} for mid in mcq_ids]
         else:
+            # Les MCQ custom (générés par l'utilisateur) passent en tête de file
+            db_assignments.sort(key=lambda a: (0 if a.model == "custom" else 1, a.id))
             assignments_list = [
                 {"mcq_id": a.mcq_id, "model": a.model}
                 for a in db_assignments

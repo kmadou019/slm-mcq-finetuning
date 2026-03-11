@@ -138,16 +138,18 @@ export class AdminService {
   // EXPORT
   // ============================================================================
 
-  /**
-   * Exporter toutes les validations
-   */
-  exportValidations(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiUrl}/export/validations`);
+  exportCsv(): Observable<Blob> {
+    return this.http.get(`${this.apiUrl}/export/csv`, { responseType: 'blob' });
   }
 
-  /**
-   * Exporter un rapport complet
-   */
+  exportSft(): Observable<Blob> {
+    return this.http.get(`${this.apiUrl}/export/sft`, { responseType: 'blob' });
+  }
+
+  exportDpo(): Observable<Blob> {
+    return this.http.get(`${this.apiUrl}/export/dpo`, { responseType: 'blob' });
+  }
+
   exportStats(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/export/stats`);
   }
