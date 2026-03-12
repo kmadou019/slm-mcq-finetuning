@@ -17,13 +17,15 @@ Fonctions publiques
 
 import ast
 import json
+import os
+import random
 from typing import Optional
 
 from pydantic import BaseModel, ValidationError
 from ollama import Client
 from transformers import AutoTokenizer, pipeline
 
-_ollama = Client(timeout=600)  # 10 min max
+_ollama = Client(host=os.getenv("OLLAMA_HOST", "http://localhost:11434"), timeout=600)
 
 
 # ---------------------------------------------------------------------------
@@ -47,6 +49,38 @@ class MCQQuestion(BaseModel):
 # ---------------------------------------------------------------------------
 # Utilitaires
 # ---------------------------------------------------------------------------
+
+def shuffle_distractors(mcq: MCQQuestion) -> MCQQuestion:
+    """Shuffles all 4 option positions randomly, updating correct_option accordingly.
+
+    Neutralises position bias introduced by the generation model (which often
+    places the correct answer in position 'a') and by GPT-4o as evaluator
+    (which tends to over-score options presented first).
+    """
+    letters = ['a', 'b', 'c', 'd']
+    options = [
+        (mcq.option_a, mcq.option_a_comment),
+        (mcq.option_b, mcq.option_b_comment),
+        (mcq.option_c, mcq.option_c_comment),
+        (mcq.option_d, mcq.option_d_comment),
+    ]
+    correct_idx = letters.index(mcq.correct_option.lower())
+
+    indices = list(range(4))
+    random.shuffle(indices)
+    shuffled = [options[i] for i in indices]
+    new_correct_idx = indices.index(correct_idx)
+
+    return MCQQuestion(
+        question=mcq.question,
+        question_comment=mcq.question_comment,
+        option_a=shuffled[0][0], option_a_comment=shuffled[0][1],
+        option_b=shuffled[1][0], option_b_comment=shuffled[1][1],
+        option_c=shuffled[2][0], option_c_comment=shuffled[2][1],
+        option_d=shuffled[3][0], option_d_comment=shuffled[3][1],
+        correct_option=letters[new_correct_idx],
+    )
+
 
 def validate_mcq(mcq_json: str) -> Optional[MCQQuestion]:
     """Valide et désérialise un JSON brut en MCQQuestion.

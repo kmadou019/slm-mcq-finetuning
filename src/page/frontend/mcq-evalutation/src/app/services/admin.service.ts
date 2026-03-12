@@ -150,6 +150,10 @@ export class AdminService {
     return this.http.get(`${this.apiUrl}/export/dpo`, { responseType: 'blob' });
   }
 
+  exportKto(): Observable<Blob> {
+    return this.http.get(`${this.apiUrl}/export/kto`, { responseType: 'blob' });
+  }
+
   exportStats(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/export/stats`);
   }

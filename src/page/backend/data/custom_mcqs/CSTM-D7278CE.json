@@ -1,0 +1,130 @@
+[
+  {
+    "item_id": "CSTM-D7278CE-1",
+    "source_material": "CSTM-D7278CE",
+    "generator_info": "hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0",
+    "output_format": "JSON",
+    "mcq_question": "Quel type de diabète est principalement lié à la résistance à l'insuline et au mode de vie ?",
+    "question_comment": "Évalue la compréhension des deux formes principales de diabète et de leurs causes.",
+    "options": {
+      "A": "Diabète gestationnel",
+      "B": "Diabète de type 3",
+      "C": "Type 1",
+      "D": "Type 2"
+    },
+    "option_comments": {
+      "A": "Incorrect : le diabète gestationnel survient pendant la grossesse et n'est pas la forme principale décrite.",
+      "B": "Incorrect : le diabète de type 3 n'est pas mentionné dans le texte.",
+      "C": "Incorrect : le type 1 est dû à une absence d'insuline, pas à une résistance.",
+      "D": "Correct : le type 2 résulte de la résistance à l'insuline ou d'une production insuffisante, lié au mode de vie."
+    },
+    "correct_option": "D",
+    "section_a_checks": [
+      {
+        "check_id": "A1",
+        "description": "Is a question",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": "True",
+        "notes": "Yes"
+      },
+      {
+        "check_id": "A2",
+        "description": "No leading negation",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": "False",
+        "notes": "Negation: False"
+      },
+      {
+        "check_id": "A3",
+        "description": "Originality",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": ">= 0.75",
+        "notes": "Score: 1.0"
+      },
+      {
+        "check_id": "A4",
+        "description": "Readability (FK grade)",
+        "result": "FAIL",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": ">= 12",
+        "notes": "Score: 11.1"
+      }
+    ],
+    "section_b_checks": [
+      {
+        "check_id": "B1",
+        "description": "Disclosure (answer leakage)",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "True/False",
+        "notes": "Score: False"
+      },
+      {
+        "check_id": "B2",
+        "description": "Relevance to material",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "0-1",
+        "notes": "Score: 0.965"
+      },
+      {
+        "check_id": "B3",
+        "description": "Distractor plausibility",
+        "result": "FAIL",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "majority ≥ threshold & min ≥ 2",
+        "notes": "Rang B | avg=1.67 | scores=[2, 1, 2]"
+      },
+      {
+        "check_id": "B4",
+        "description": "Difficulty appropriateness",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "low/med/high",
+        "notes": "Judge: 4"
+      },
+      {
+        "check_id": "B5",
+        "description": "Answerability (expert + context)",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "correct/incorrect",
+        "notes": "GPT-4o answered 'D', correct is 'D'"
+      },
+      {
+        "check_id": "B6",
+        "description": "Ambiguity",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "0-1 (≥ 0.3 = plausible)",
+        "notes": "Score: 0.981"
+      }
+    ],
+    "decision_policy": "Accept if all hard constraints pass and no critical AI-judge dimension fails.",
+    "final_decision": "REJECT",
+    "audit_trail": "Généré depuis contenu personnalisé. Modèle : hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0. Job : CSTM-D7278CE.",
+    "lisa_texte_brut": "Le diabète est une maladie chronique caractérisée par un excès de sucre (glucose) dans le sang, appelé hyperglycémie. Il existe deux formes principales :\n\nType 1 : le pancréas ne produit plus d'insuline, souvent d'origine auto-immune. Il touche surtout les jeunes.\nType 2 : le corps résiste à l'insuline ou n'en produit pas suffisamment, lié principalement au mode de vie (alimentation, sédentarité). C'est la forme la plus répandue (90% des cas).\n\nLes principaux symptômes sont la fatigue, la soif intense, les urines fréquentes et une cicatrisation lente. Sans traitement, il peut entraîner des complications graves (maladies cardiaques, cécité, insuffisance rénale). Il se gère par l'alimentation, l'activité physique et/ou des médicaments comme l'insuline.",
+    "lisa_metadata": {
+      "identifiant": "CSTM-D7278CE",
+      "rang": "B",
+      "rubrique": "Contenu personnalisé",
+      "intitule": "Question générée depuis votre contenu",
+      "item_parent": "Contenu évaluateur",
+      "description": "MCQ généré automatiquement depuis le matériel pédagogique fourni par l'évaluateur.",
+      "contenu": "Le diabète est une maladie chronique caractérisée par un excès de sucre (glucose) dans le sang, appelé hyperglycémie. Il existe deux formes principales :\n\nType 1 : le pancréas ne produit plus d'insuline, souvent d'origine auto-immune. Il touche surtout les jeunes.\nType 2 : le corps résiste à l'insuline ou n'en produit pas suffisamment, lié principalement au mode de vie (alimentation, sédentarité). C'est la forme la plus répandue (90% des cas).\n\nLes principaux symptômes sont la fatigue, la soif intense, les urines fréquentes et une cicatrisation lente. Sans traitement, il peut entraîner des complications graves (maladies cardiaques, cécité, insuffisance rénale). Il se gère par l'alimentation, l'activité physique et/ou des médicaments comme l'insuline."
+    }
+  }
+]

@@ -142,7 +142,9 @@ def eval_dataframe(df_merged: pd.DataFrame,
                                                           distractor_quality_col=distractors_quality_col,
                                                           system_prompt=distractors_quality_system_prompt,
                                                           temp=temp,
-                                                          max_completion_tokens=max_completion_tokens)
+                                                          max_completion_tokens=max_completion_tokens,
+                                                          context_col=lisa_sheet_col,
+                                                          lisa_sheet_col=lisa_sheet_col)
     except Exception as e:
         print(e)
     finally:

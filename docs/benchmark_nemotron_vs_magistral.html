@@ -1,0 +1,1635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MCQ Benchmark — Nemotron 30B vs Magistral 24B</title>
+<style>
+  :root {
+    --radius: 10px;
+    --shadow: 0 2px 8px rgba(0,0,0,.08);
+    --good:    #16a34a;
+    --bad:     #dc2626;
+    --warn:    #d97706;
+    --neutral: #374151;
+    --na:      #9ca3af;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: system-ui, sans-serif; background: #f8fafc; color: #1e293b; padding: 2rem; }
+
+  h1 { font-size: 1.7rem; font-weight: 700; margin-bottom: .25rem; }
+  .subtitle { color: #64748b; font-size: .95rem; margin-bottom: 2rem; }
+  h2 { font-size: 1.2rem; font-weight: 600; margin: 2rem 0 1rem; color: #334155; }
+
+  /* Summary table */
+  .summary-table { width: 100%; border-collapse: collapse; background: white;
+                    border-radius: var(--radius); overflow: hidden;
+                    box-shadow: var(--shadow); margin-bottom: 2.5rem; }
+  .summary-table th { background: #1e293b; color: white; padding: .75rem 1rem;
+                       text-align: left; font-size: .95rem; }
+  .summary-table td { padding: .65rem 1rem; border-bottom: 1px solid #f1f5f9; }
+  .summary-table tr:last-child td { border-bottom: none; }
+  .summary-table tr:hover td { background: #f8fafc; }
+  .summary-table .section-header td { background: #f1f5f9; color: #64748b;
+                                        font-size: .8rem; font-weight: 700;
+                                        text-transform: uppercase; letter-spacing: .05em;
+                                        padding: .4rem 1rem; }
+  .metric-name { font-weight: 500; color: #374151; }
+
+  /* Score classes */
+  .good    { color: var(--good);    font-weight: 600; }
+  .bad     { color: var(--bad);     font-weight: 600; }
+  .warn    { color: var(--warn);    font-weight: 600; }
+  .neutral { color: var(--neutral); }
+  .na      { color: var(--na); }
+
+  /* Cards */
+  .card { background: white; border-radius: var(--radius); box-shadow: var(--shadow);
+           margin-bottom: 1.5rem; overflow: hidden; }
+  .card-header { display: flex; align-items: center; gap: .75rem;
+                  padding: .85rem 1.25rem; background: #1e293b; color: white; }
+  .folder-badge { background: #0ea5e9; padding: .2rem .6rem; border-radius: 4px;
+                   font-size: .8rem; font-weight: 700; }
+  .lisa-id { font-size: .9rem; color: #94a3b8; }
+
+  .lisa-details { padding: .5rem 1.25rem; border-bottom: 1px solid #f1f5f9; }
+  .lisa-details summary { cursor: pointer; font-size: .85rem; color: #64748b;
+                            padding: .4rem 0; user-select: none; }
+  .lisa-content { font-size: .78rem; color: #475569; background: #f8fafc;
+                   padding: .75rem; border-radius: 6px; margin-top: .5rem;
+                   white-space: pre-wrap; word-break: break-word; max-height: 200px;
+                   overflow-y: auto; }
+
+  .model-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+  .model-col { padding: 1.25rem; border-right: 1px solid #f1f5f9; }
+  .model-col:last-child { border-right: none; }
+  .model-col-header { font-weight: 700; font-size: 1rem; margin-bottom: .75rem; }
+
+  .question-text { font-size: .97rem; font-weight: 600; line-height: 1.5;
+                    color: #1e293b; margin-bottom: .5rem; }
+  .question-comment { font-size: .82rem; color: #64748b; font-style: italic;
+                        margin-bottom: .75rem; padding-left: .75rem;
+                        border-left: 3px solid #e2e8f0; }
+
+  .options-list { margin-bottom: 1rem; }
+  .option { padding: .4rem .6rem; border-radius: 6px; font-size: .88rem;
+             margin-bottom: .35rem; line-height: 1.4; }
+  .correct-option { background: #dcfce7; }
+  .opt-letter { font-weight: 700; color: #475569; }
+  .correct-badge { background: #16a34a; color: white; font-size: .7rem;
+                    padding: .1rem .4rem; border-radius: 4px; margin-left: .4rem; }
+  .opt-comment { font-size: .78rem; color: #64748b; margin-top: .2rem;
+                  padding-left: 1.1rem; font-style: italic; }
+
+  .metrics-list { border-top: 1px solid #f1f5f9; padding-top: .75rem; }
+  .metric-row { display: flex; flex-wrap: wrap; align-items: baseline;
+                 gap: .5rem; padding: .3rem 0;
+                 border-bottom: 1px dotted #f1f5f9; }
+  .metric-row:last-child { border-bottom: none; }
+  .metric-label { font-size: .8rem; color: #94a3b8; flex: 0 0 140px; }
+  .metric-value { font-size: .85rem; font-weight: 600; }
+  .distractor-detail { flex: 1 0 100%; font-size: .78rem; padding-left: 140px;
+                         padding-top: .15rem; }
+
+  .error { color: #dc2626; font-style: italic; font-size: .9rem; padding: 1rem 0; }
+
+  @media (max-width: 700px) {
+    .model-columns { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<h1>MCQ Benchmark — Nemotron 30B vs Magistral 24B</h1>
+<p class="subtitle">Generated 2026-03-12 10:51 · 10 LISA rows · all metrics enabled</p>
+
+<h2>Summary</h2>
+
+    <table class="summary-table">
+      <thead><tr><th>Metric</th><th style="color:#0ea5e9">Nemotron 30B</th><th style="color:#8b5cf6">Magistral 24B</th></tr></thead>
+      <tbody><tr class="section-header"><td colspan="3">Section A</td></tr><tr><td class='metric-name'>Is a Question</td><td class='good'>100%</td><td class='good'>89%</td></tr><tr><td class='metric-name'>Starts with Negation</td><td class='good'>0%</td><td class='good'>0%</td></tr><tr><td class='metric-name'>Originality</td><td class='good'>1.00</td><td class='good'>0.67</td></tr><tr><td class='metric-name'>Readability (FK)</td><td class='good'>15.5</td><td class='good'>13.3</td></tr><tr class="section-header"><td colspan="3">Section B</td></tr><tr><td class='metric-name'>Relevance</td><td class='good'>0.66</td><td class='good'>0.80</td></tr><tr><td class='metric-name'>Ambiguity</td><td class='bad'>0.59</td><td class='bad'>0.71</td></tr><tr><td class='metric-name'>Answerability</td><td class='good'>100%</td><td class='good'>100%</td></tr><tr><td class='metric-name'>Disclosure</td><td class='good'>20%</td><td class='good'>0%</td></tr><tr><td class='metric-name'>Difficulty</td><td class='na'>—</td><td class='na'>—</td></tr><tr><td class='metric-name'>Distractor Quality</td><td class='na'>—</td><td class='na'>—</td></tr></tbody>
+    </table>
+    
+
+<h2>Per-Question Detail</h2>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="folder-badge">IC-001</span>
+            <span class="lisa-id">OIC-001-01-A</span>
+          </div>
+          <details class="lisa-details">
+            <summary>LISA source content</summary>
+            <pre class="lisa-content">{{objectif de connaissance
+|Identifiant=OIC-001-01-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage as…</pre>
+          </details>
+          <div class="model-columns">
+        
+            <div class="model-col" style="border-top:3px solid #0ea5e9;background:#e0f2fe10">
+              <div class="model-col-header" style="color:#0ea5e9">Nemotron 30B</div>
+              <p class="question-text">According to the educational content, which statement best describes the modern doctor‑patient relationship?</p>
+              <div class="question-comment">Assesses understanding of the shift from paternalism to patient‑centered care; a common trap is confusing historical and current models.</div>
+              <div class="options-list">
+                <div class="option">
+                  <span class="opt-letter">A.</span> It remains primarily paternalistic, with the physician making decisions for the patient. 
+                  <div class="opt-comment">Incorrect; the paternalistic model is described as historical, not current.</div>
+                </div>
+                <div class="option correct-option">
+                  <span class="opt-letter">B.</span> It is now centered on the patient, integrating their experience and lived reality into care. <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Correct; the modern relationship is patient‑centered and holistic.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> It focuses solely on biomedical factors without considering psychosocial aspects. 
+                  <div class="opt-comment">Incorrect; psychosocial dimensions are emphasized, not excluded.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">D.</span> It eliminates communication with the patient’s family or entourage. 
+                  <div class="opt-comment">Incorrect; communication with family is still part of the approach.</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value good">Yes ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value good">1.00</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value good">17.6</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.63</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value bad">0.54</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value bad">Disclosed ✗</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">2</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">False</span>
+                  
+                </div></div>
+            </div>
+            <div class="model-col" style="border-top:3px solid #8b5cf6;background:#ede9fe10">
+              <div class="model-col-header" style="color:#8b5cf6">Magistral 24B</div>
+              <p class="question-text">Quelle est la caractéristique principale de la relation médecin-malade moderne ?</p>
+              <div class="question-comment">Cette question évalue la compréhension de l'évolution de la relation médecin-malade et l'importance de centrer les soins sur le patient plutôt que sur la maladie.</div>
+              <div class="options-list">
+                <div class="option correct-option">
+                  <span class="opt-letter">A.</span> Centrée sur le patient et non sa/ses maladies(s) <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Cette option est correcte car elle reflète l'approche moderne de la relation médecin-malade, qui est globale et centrée sur le patient.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">B.</span> Purement biomédicale et paternaliste 
+                  <div class="opt-comment">Cette option est incorrecte car elle décrit une approche antérieure et non plus utilisée.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> Axée uniquement sur les aspects psychologiques 
+                  <div class="opt-comment">Cette option est incorrecte car la relation médecin-malade moderne est globale et inclut des aspects biomédicaux, psychologiques et sociaux.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">D.</span> Basée sur les préférences du médecin 
+                  <div class="opt-comment">Cette option est incorrecte car la relation médecin-malade moderne est centrée sur le patient et non sur les préférences du médecin.</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value good">Yes ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value good">0.80</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value good">17.7</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.81</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value bad">0.69</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value good">Safe ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">4</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">False</span>
+                  
+                </div></div>
+            </div></div></div>
+        <div class="card">
+          <div class="card-header">
+            <span class="folder-badge">IC-001</span>
+            <span class="lisa-id">OIC-001-02-A</span>
+          </div>
+          <details class="lisa-details">
+            <summary>LISA source content</summary>
+            <pre class="lisa-content">{{objectif de connaissance
+|Identifiant=OIC-001-02-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage as…</pre>
+          </details>
+          <div class="model-columns">
+        
+            <div class="model-col" style="border-top:3px solid #0ea5e9;background:#e0f2fe10">
+              <div class="model-col-header" style="color:#0ea5e9">Nemotron 30B</div>
+              <p class="question-text">Which of the following best describes a key determinant of the doctor‑patient relationship according to the educational content?</p>
+              <div class="question-comment">Evaluates understanding of ethical, social, and psychological determinants; distractors introduce unrelated concepts.</div>
+              <div class="options-list">
+                <div class="option correct-option">
+                  <span class="opt-letter">A.</span> Ethical considerations such as respect for patient autonomy <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Correct – ethical determinants like respect and dignity are highlighted.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">B.</span> The cost of medical procedures 
+                  <div class="opt-comment">Incorrect – cost is not listed as a determinant in the provided material.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> The physician's personal hobbies 
+                  <div class="opt-comment">Incorrect – personal hobbies are irrelevant to the described determinants.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">D.</span> The hospital's architectural design 
+                  <div class="opt-comment">Incorrect – architectural design is not mentioned as a factor.</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value good">Yes ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value good">1.00</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value good">16.3</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.66</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value bad">0.54</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value good">Safe ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">5</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">False</span>
+                  
+                </div></div>
+            </div><div class="model-col" style="border-top:3px solid #8b5cf6"><p class="error">Generation failed</p></div></div></div>
+        <div class="card">
+          <div class="card-header">
+            <span class="folder-badge">IC-001</span>
+            <span class="lisa-id">OIC-001-03-A</span>
+          </div>
+          <details class="lisa-details">
+            <summary>LISA source content</summary>
+            <pre class="lisa-content">{{objectif de connaissance
+|Identifiant=OIC-001-03-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage as…</pre>
+          </details>
+          <div class="model-columns">
+        
+            <div class="model-col" style="border-top:3px solid #0ea5e9;background:#e0f2fe10">
+              <div class="model-col-header" style="color:#0ea5e9">Nemotron 30B</div>
+              <p class="question-text">According to the excerpt, which health outcomes are directly linked to the quality of the doctor‑patient relationship?</p>
+              <div class="question-comment">Tests recall of the specific outcomes mentioned; a common trap is selecting generic satisfaction or financial results.</div>
+              <div class="options-list">
+                <div class="option correct-option">
+                  <span class="opt-letter">A.</span> Improved performance in the diagnostic process and better stabilization of chronic disease bioclinical parameters <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Correct – the excerpt explicitly cites these performance improvements as linked to relationship quality.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">B.</span> Increased patient satisfaction regardless of clinical outcomes 
+                  <div class="opt-comment">Incorrect – patient satisfaction is not mentioned as a direct outcome in the excerpt.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> Faster surgical recovery times 
+                  <div class="opt-comment">Incorrect – surgical recovery times are unrelated to the described clinical indicators.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">D.</span> Higher hospital revenue due to longer stays 
+                  <div class="opt-comment">Incorrect – financial metrics are not discussed in the excerpt.</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value good">Yes ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value good">1.00</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value good">14.6</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.61</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value bad">0.60</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value good">Safe ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">2</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">False</span>
+                  
+                </div></div>
+            </div>
+            <div class="model-col" style="border-top:3px solid #8b5cf6;background:#ede9fe10">
+              <div class="model-col-header" style="color:#8b5cf6">Magistral 24B</div>
+              <p class="question-text">Quel est un impact de la qualité de la relation médecin-patient sur la santé, selon le texte ?</p>
+              <div class="question-comment">La question évalue la compréhension des impacts spécifiques de la relation médecin-patient sur la santé, en se concentrant sur les indicateurs mentionnés dans le texte.</div>
+              <div class="options-list">
+                <div class="option correct-option">
+                  <span class="opt-letter">A.</span> Amélioration et stabilisation de paramètres biocliniques de suivi des maladies chroniques <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Cette option est correcte car elle correspond directement au contenu éducatif.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">B.</span> Augmentation de la durée des hospitalisations 
+                  <div class="opt-comment">Cette option est incorrecte car elle n'est pas mentionnée dans le texte, bien qu'elle soit plausible.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> Diminution de la compliance des patients aux traitements 
+                  <div class="opt-comment">Cette option est incorrecte car elle n'est pas mentionnée dans le texte, bien qu'elle soit plausible.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">D.</span> Réduction des coûts des soins médicaux 
+                  <div class="opt-comment">Cette option est incorrecte car elle n'est pas mentionnée dans le texte, bien qu'elle soit plausible.</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value good">Yes ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value bad">0.71</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value bad">9.1</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.81</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value bad">0.72</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value good">Safe ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">2</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">False</span>
+                  
+                </div></div>
+            </div></div></div>
+        <div class="card">
+          <div class="card-header">
+            <span class="folder-badge">IC-001</span>
+            <span class="lisa-id">OIC-001-04-A</span>
+          </div>
+          <details class="lisa-details">
+            <summary>LISA source content</summary>
+            <pre class="lisa-content">{{objectif de connaissance
+|Identifiant=OIC-001-04-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage as…</pre>
+          </details>
+          <div class="model-columns">
+        
+            <div class="model-col" style="border-top:3px solid #0ea5e9;background:#e0f2fe10">
+              <div class="model-col-header" style="color:#0ea5e9">Nemotron 30B</div>
+              <p class="question-text">Which statement best captures the core principle of the patient‑centered approach (ACP) described in the text?</p>
+              <div class="question-comment">Assesses understanding of the partnership and personalization central to ACP; a typical trap is to view it as purely physician‑driven.</div>
+              <div class="options-list">
+                <div class="option correct-option">
+                  <span class="opt-letter">A.</span> It emphasizes a partnership where clinicians and patients share expertise to tailor care. <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Correct – ACP is defined as a partnership based on complementary expertise, leading to personalized care.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">B.</span> It focuses solely on the biomedical expertise of the physician. 
+                  <div class="opt-comment">Incorrect – ACP also values the patient's lived experience and psychosocial context.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> It requires patients to follow medical instructions without discussion. 
+                  <div class="opt-comment">Incorrect – ACP encourages dialogue and shared decision‑making, not unilateral instruction.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">D.</span> It limits communication to written information only. 
+                  <div class="opt-comment">Incorrect – ACP involves interactive, verbal communication, not just written material.</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value good">Yes ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value good">1.00</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value good">12.8</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.67</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value bad">0.53</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value good">Safe ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">1</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">False</span>
+                  
+                </div></div>
+            </div>
+            <div class="model-col" style="border-top:3px solid #8b5cf6;background:#ede9fe10">
+              <div class="model-col-header" style="color:#8b5cf6">Magistral 24B</div>
+              <p class="question-text">Quelle est une caractéristique essentielle de l'approche centrée sur le patient (ACP) ?</p>
+              <div class="question-comment">Cette question évalue la compréhension des idées principales de l'ACP, en particulier la nature de la relation médecin-patient.</div>
+              <div class="options-list">
+                <div class="option correct-option">
+                  <span class="opt-letter">A.</span> Une relation de partenariat basée sur la complémentarité entre l’expertise des professionnels et l’expérience des patients <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Cette option est correcte car elle correspond à la définition de l'ACP donnée dans le contenu.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">B.</span> Une relation où le médecin prend toutes les décisions sans tenir compte de l'opinion du patient 
+                  <div class="opt-comment">Cette option est incorrecte car elle ne correspond pas à l'ACP, qui met l'accent sur la participation active du patient.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> Une relation où le patient est passif et ne participe pas aux décisions concernant sa santé 
+                  <div class="opt-comment">Cette option est incorrecte car elle ne correspond pas à l'ACP, qui met l'accent sur la participation active du patient.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">D.</span> Une relation où le médecin et le patient travaillent ensemble pour trouver la meilleure solution 
+                  <div class="opt-comment">Cette option est plausible mais moins précise que l'option a, car elle ne mentionne pas la complémentarité entre l'expertise des professionnels et l'expérience des patients.</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value good">Yes ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value bad">0.60</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value good">13.1</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.80</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value bad">0.76</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value good">Safe ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">2</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">True</span>
+                  <div class="distractor-detail">True</div>
+                </div></div>
+            </div></div></div>
+        <div class="card">
+          <div class="card-header">
+            <span class="folder-badge">IC-001</span>
+            <span class="lisa-id">OIC-001-05-A</span>
+          </div>
+          <details class="lisa-details">
+            <summary>LISA source content</summary>
+            <pre class="lisa-content">{{objectif de connaissance
+|Identifiant=OIC-001-05-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage as…</pre>
+          </details>
+          <div class="model-columns">
+        
+            <div class="model-col" style="border-top:3px solid #0ea5e9;background:#e0f2fe10">
+              <div class="model-col-header" style="color:#0ea5e9">Nemotron 30B</div>
+              <p class="question-text">According to the educational content, what is a key aspect of disease representation in the doctor-patient encounter?</p>
+              <div class="question-comment">Tests understanding that patient and physician views of illness can differ.</div>
+              <div class="options-list">
+                <div class="option">
+                  <span class="opt-letter">A.</span> The doctor's representation always matches the patient's view. 
+                  <div class="opt-comment">Incorrect; the content states representations may differ.</div>
+                </div>
+                <div class="option correct-option">
+                  <span class="opt-letter">B.</span> Representations of illness can differ between patient and physician. <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Correct; it highlights that patient and physician views can vary.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> Only the physician's representation influences treatment decisions. 
+                  <div class="opt-comment">Incorrect; the content emphasizes both perspectives matter.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">D.</span> Disease representation is irrelevant to patient outcomes. 
+                  <div class="opt-comment">Incorrect; representation is discussed as having impact.</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value good">Yes ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value good">1.00</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value good">16.0</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.69</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value bad">0.69</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value bad">Disclosed ✗</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">2</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">False</span>
+                  
+                </div></div>
+            </div>
+            <div class="model-col" style="border-top:3px solid #8b5cf6;background:#ede9fe10">
+              <div class="model-col-header" style="color:#8b5cf6">Magistral 24B</div>
+              <p class="question-text">Quelle est la raison principale pour laquelle les représentations de la maladie peuvent différer entre le médecin et le patient ?</p>
+              <div class="question-comment">Cette question évalue la compréhension des raisons des différences dans les représentations de la maladie entre le médecin et le patient.</div>
+              <div class="options-list">
+                <div class="option correct-option">
+                  <span class="opt-letter">A.</span> Les expériences personnelles positives ou négatives vécues par chacun. <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Correcte, car le texte mentionne que les expériences personnelles peuvent différer.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">B.</span> La formation médicale du médecin. 
+                  <div class="opt-comment">Incorrecte, car la formation médicale n'est pas mentionnée comme raison des différences.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> L'âge du patient. 
+                  <div class="opt-comment">Incorrecte, car l'âge n'est pas mentionné comme raison des différences.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">D.</span> La gravité de la maladie. 
+                  <div class="opt-comment">Incorrecte, car la gravité de la maladie n'est pas mentionnée comme raison des différences.</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value good">Yes ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value good">1.00</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value good">14.0</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.85</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value bad">0.67</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value good">Safe ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">2</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">False</span>
+                  
+                </div></div>
+            </div></div></div>
+        <div class="card">
+          <div class="card-header">
+            <span class="folder-badge">IC-001</span>
+            <span class="lisa-id">OIC-001-06-A</span>
+          </div>
+          <details class="lisa-details">
+            <summary>LISA source content</summary>
+            <pre class="lisa-content">{{objectif de connaissance
+|Identifiant=OIC-001-06-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage as…</pre>
+          </details>
+          <div class="model-columns">
+        
+            <div class="model-col" style="border-top:3px solid #0ea5e9;background:#e0f2fe10">
+              <div class="model-col-header" style="color:#0ea5e9">Nemotron 30B</div>
+              <p class="question-text">Which factor most directly influences the information delivered to a patient during a clinical encounter?</p>
+              <div class="question-comment">Evaluates recognition that contextual and communication factors are key; a common mistake is selecting unrelated administrative factors.</div>
+              <div class="options-list">
+                <div class="option correct-option">
+                  <span class="opt-letter">A.</span> Verbal, non‑verbal cues and contextual factors (e.g., setting, timing) <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Correct – communication style and context shape how information is conveyed to the patient.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">B.</span> The provider's personal hobbies and interests 
+                  <div class="opt-comment">Incorrect – personal hobbies do not affect the delivery of medical information.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> The patient's insurance coverage level 
+                  <div class="opt-comment">Incorrect – insurance details are unrelated to the communication process.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">D.</span> The number of pages in the patient's medical record 
+                  <div class="opt-comment">Incorrect – the length of the medical record does not determine information delivery.</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value good">Yes ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value good">1.00</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value good">15.4</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.67</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value good">0.49</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value good">Safe ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">1</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">False</span>
+                  
+                </div></div>
+            </div>
+            <div class="model-col" style="border-top:3px solid #8b5cf6;background:#ede9fe10">
+              <div class="model-col-header" style="color:#8b5cf6">Magistral 24B</div>
+              <p class="question-text">Quels sont les facteurs influençant l'information délivrée au patient ?</p>
+              <div class="question-comment">Cette question évalue la compréhension des idées principales concernant les facteurs influençant l'information délivrée au patient.</div>
+              <div class="options-list">
+                <div class="option correct-option">
+                  <span class="opt-letter">A.</span> La communication verbale et non verbale, ainsi que les facteurs contextuels. <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Correcte, car elle inclut tous les facteurs mentionnés (verbale, non verbale et contextuels).</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">B.</span> La communication verbale uniquement. 
+                  <div class="opt-comment">Incorrecte, car elle ne tient pas compte des autres facteurs (non verbale et contextuels).</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> La communication non verbale uniquement. 
+                  <div class="opt-comment">Incorrecte, car elle ne tient pas compte des autres facteurs (verbale et contextuels).</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">D.</span> Les facteurs contextuels uniquement. 
+                  <div class="opt-comment">Incorrecte, car elle ne tient pas compte des autres facteurs (verbale et non verbale).</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value good">Yes ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value bad">0.25</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value bad">9.6</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.78</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value bad">0.84</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value good">Safe ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">2</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">False</span>
+                  
+                </div></div>
+            </div></div></div>
+        <div class="card">
+          <div class="card-header">
+            <span class="folder-badge">IC-001</span>
+            <span class="lisa-id">OIC-001-07-A</span>
+          </div>
+          <details class="lisa-details">
+            <summary>LISA source content</summary>
+            <pre class="lisa-content">{{objectif de connaissance
+|Identifiant=OIC-001-07-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage as…</pre>
+          </details>
+          <div class="model-columns">
+        
+            <div class="model-col" style="border-top:3px solid #0ea5e9;background:#e0f2fe10">
+              <div class="model-col-header" style="color:#0ea5e9">Nemotron 30B</div>
+              <p class="question-text">Which of the following best describes the concept of coping in the context of stress adaptation?</p>
+              <div class="question-comment">Assesses understanding of coping as strategies to manage stressors; common trap is confusing coping with physiological stress responses.</div>
+              <div class="options-list">
+                <div class="option">
+                  <span class="opt-letter">A.</span> Behaviors that eliminate all stress sources permanently. 
+                  <div class="opt-comment">Incorrect; coping does not remove all stress but manages its impact.</div>
+                </div>
+                <div class="option correct-option">
+                  <span class="opt-letter">B.</span> Thoughts and actions used to handle perceived threats or challenges. <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Correct; coping includes cognitive and behavioral efforts to manage stressors.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> Biological reactions such as increased heart rate during stress. 
+                  <div class="opt-comment">Incorrect; these are physiological stress responses, not coping strategies.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">D.</span> Fixed personality traits that determine how one feels. 
+                  <div class="opt-comment">Incorrect; coping is situational and can be learned, not a fixed trait.</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value good">Yes ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value good">1.00</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value bad">9.8</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.67</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value bad">0.63</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value good">Safe ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">2</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">False</span>
+                  
+                </div></div>
+            </div>
+            <div class="model-col" style="border-top:3px solid #8b5cf6;background:#ede9fe10">
+              <div class="model-col-header" style="color:#8b5cf6">Magistral 24B</div>
+              <p class="question-text">L'ajustement au stress :</p>
+              <div class="question-comment">Évalue la compréhension du rôle de l'ajustement au stress.</div>
+              <div class="options-list">
+                <div class="option">
+                  <span class="opt-letter">A.</span> Inutile. 
+                  <div class="opt-comment">Incorrecte, car l'ajustement au stress est utile.</div>
+                </div>
+                <div class="option correct-option">
+                  <span class="opt-letter">B.</span> Central. <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Correcte, car c'est ce que dit le texte.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> Biologique. 
+                  <div class="opt-comment">Incorrecte, car l'ajustement au stress n'est pas uniquement biologique.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">D.</span> Automatique. 
+                  <div class="opt-comment">Incorrecte, car l'ajustement au stress n'est pas un processus automatique.</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value bad">No ✗</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value bad">0.00</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value na">—</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.79</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value bad">0.60</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value good">Safe ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">2</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">False</span>
+                  
+                </div></div>
+            </div></div></div>
+        <div class="card">
+          <div class="card-header">
+            <span class="folder-badge">IC-001</span>
+            <span class="lisa-id">OIC-001-08-A</span>
+          </div>
+          <details class="lisa-details">
+            <summary>LISA source content</summary>
+            <pre class="lisa-content">{{objectif de connaissance
+|Identifiant=OIC-001-08-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage as…</pre>
+          </details>
+          <div class="model-columns">
+        
+            <div class="model-col" style="border-top:3px solid #0ea5e9;background:#e0f2fe10">
+              <div class="model-col-header" style="color:#0ea5e9">Nemotron 30B</div>
+              <p class="question-text">Which defense mechanism described involves unconsciously attributing one's own unacceptable feelings to another person?</p>
+              <div class="question-comment">Assesses recognition of projection as a defense mechanism; a common trap is confusing it with displacement.</div>
+              <div class="options-list">
+                <div class="option">
+                  <span class="opt-letter">A.</span> Isolation – separating thoughts from emotions to reduce distress. 
+                  <div class="opt-comment">Incorrect; isolation involves separating cognition from emotion, not attributing feelings to others.</div>
+                </div>
+                <div class="option correct-option">
+                  <span class="opt-letter">B.</span> Projection – attributing one's own uncomfortable feelings to someone else. <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Correct; projection entails unconsciously assigning one's own unacceptable emotions to another person.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> Displacement – redirecting emotions from the original source to a safer target. 
+                  <div class="opt-comment">Incorrect; displacement redirects emotions to a different target, not about attributing feelings.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">D.</span> Regression – reverting to earlier developmental behaviors under stress. 
+                  <div class="opt-comment">Incorrect; regression involves reverting to earlier developmental stages, unrelated to attribution.</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value good">Yes ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value good">1.00</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value good">21.1</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.59</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value bad">0.66</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value good">Safe ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">2</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">False</span>
+                  
+                </div></div>
+            </div>
+            <div class="model-col" style="border-top:3px solid #8b5cf6;background:#ede9fe10">
+              <div class="model-col-header" style="color:#8b5cf6">Magistral 24B</div>
+              <p class="question-text">Quel mécanisme de défense consiste à refuser de reconnaître la réalité traumatisante ?</p>
+              <div class="question-comment">Cette question évalue la compréhension des mécanismes de défense, en particulier la capacité à identifier le déni parmi d'autres mécanismes similaires.</div>
+              <div class="options-list">
+                <div class="option">
+                  <span class="opt-letter">A.</span> Isolation 
+                  <div class="opt-comment">Incorrect, car l'isolement consiste à distancier les cognitions pénibles des sentiments.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">B.</span> Déplacement 
+                  <div class="opt-comment">Incorrect, car le déplacement consiste à déplacer la souffrance mentale sur des symptômes physiques.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> Projection 
+                  <div class="opt-comment">Incorrect, car la projection consiste à attribuer ses propres sentiments à autrui de manière inconsciente.</div>
+                </div>
+                <div class="option correct-option">
+                  <span class="opt-letter">D.</span> Déni <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Correct, car le déni consiste à refuser de reconnaître la réalité traumatisante.</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value good">Yes ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value good">1.00</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value good">14.9</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.73</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value bad">0.50</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value good">Safe ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">2</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">False</span>
+                  
+                </div></div>
+            </div></div></div>
+        <div class="card">
+          <div class="card-header">
+            <span class="folder-badge">IC-001</span>
+            <span class="lisa-id">OIC-001-09-A</span>
+          </div>
+          <details class="lisa-details">
+            <summary>LISA source content</summary>
+            <pre class="lisa-content">{{objectif de connaissance
+|Identifiant=OIC-001-09-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage as…</pre>
+          </details>
+          <div class="model-columns">
+        
+            <div class="model-col" style="border-top:3px solid #0ea5e9;background:#e0f2fe10">
+              <div class="model-col-header" style="color:#0ea5e9">Nemotron 30B</div>
+              <p class="question-text">Which statement best describes clinical empathy?</p>
+              <div class="question-comment">The question tests understanding of empathy as perspective‑taking without losing professional distance, a common source of confusion with sympathy.</div>
+              <div class="options-list">
+                <div class="option">
+                  <span class="opt-letter">A.</span> It means the clinician experiences the same emotions as the patient. 
+                  <div class="opt-comment">Incorrect; empathy is about understanding, not sharing identical feelings.</div>
+                </div>
+                <div class="option correct-option">
+                  <span class="opt-letter">B.</span> It involves understanding the patient's emotional state while maintaining professional boundaries. <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Correct; it captures perspective‑taking while preserving clinical objectivity.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> It requires the clinician to solve the patient's problems as if they were their own. 
+                  <div class="opt-comment">Incorrect; this describes over‑identification or paternalism, not empathy.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">D.</span> It is about providing the patient with personal advice based on the clinician's own values. 
+                  <div class="opt-comment">Incorrect; advice based on personal values reflects bias, not empathetic understanding.</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value good">Yes ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value good">1.00</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value good">14.3</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.64</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value bad">0.73</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value good">Safe ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">4</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">False</span>
+                  
+                </div></div>
+            </div>
+            <div class="model-col" style="border-top:3px solid #8b5cf6;background:#ede9fe10">
+              <div class="model-col-header" style="color:#8b5cf6">Magistral 24B</div>
+              <p class="question-text">Qu'est-ce que l'empathie clinique implique pour le médecin ?</p>
+              <div class="question-comment">Cette question évalue la compréhension de la notion d'empathie clinique et la distinction entre empathie et sympatie.</div>
+              <div class="options-list">
+                <div class="option">
+                  <span class="opt-letter">A.</span> Vivre la situation du patient 
+                  <div class="opt-comment">Incorrect, car l'empathie clinique ne consiste pas à vivre la situation du patient, mais à comprendre et accepter son état émotionnel.</div>
+                </div>
+                <div class="option correct-option">
+                  <span class="opt-letter">B.</span> Comprendre et accepter l'état émotionnel du patient sans se substituer à lui <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Correct, car c'est la définition exacte de l'empathie clinique.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> Ignorer les émotions du patient pour rester objectif 
+                  <div class="opt-comment">Incorrect, car l'empathie clinique implique de prendre en compte les émotions du patient.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">D.</span> Donner des conseils basés sur l'expérience personnelle du médecin 
+                  <div class="opt-comment">Incorrect, car l'empathie clinique ne consiste pas à donner des conseils basés sur l'expérience personnelle.</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value good">Yes ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value good">1.00</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value bad">11.5</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.80</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value bad">0.78</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value good">Safe ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">2</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">False</span>
+                  
+                </div></div>
+            </div></div></div>
+        <div class="card">
+          <div class="card-header">
+            <span class="folder-badge">IC-001</span>
+            <span class="lisa-id">OIC-001-10-A</span>
+          </div>
+          <details class="lisa-details">
+            <summary>LISA source content</summary>
+            <pre class="lisa-content">{{objectif de connaissance
+|Identifiant=OIC-001-10-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage as…</pre>
+          </details>
+          <div class="model-columns">
+        
+            <div class="model-col" style="border-top:3px solid #0ea5e9;background:#e0f2fe10">
+              <div class="model-col-header" style="color:#0ea5e9">Nemotron 30B</div>
+              <p class="question-text">Which statement best describes the therapeutic alliance in the context of patient‑physician relationship?</p>
+              <div class="question-comment">Assesses understanding of the definition and key feature of therapeutic alliance; common trap is confusing it with a legal contract.</div>
+              <div class="options-list">
+                <div class="option correct-option">
+                  <span class="opt-letter">A.</span> It results from practicing ACP during successive consultations, enabling the patient to become an active health actor. <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Correct – the alliance emerges from ongoing consultations and empowers the patient.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">B.</span> It is a legally binding contract that obliges the physician to follow the patient's wishes. 
+                  <div class="opt-comment">Incorrect – the alliance is not a legal contract but a collaborative relationship.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> It requires the physician to present all possible treatment options, even those with no proven benefit. 
+                  <div class="opt-comment">Incorrect – the alliance does not require offering all treatments, only those appropriate.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">D.</span> It is only relevant in surgical specialties and not in general practice. 
+                  <div class="opt-comment">Incorrect – the alliance is relevant across all medical fields, not just surgery.</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value good">Yes ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value good">1.00</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value good">16.7</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.74</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value bad">0.52</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value good">Safe ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">2</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">False</span>
+                  
+                </div></div>
+            </div>
+            <div class="model-col" style="border-top:3px solid #8b5cf6;background:#ede9fe10">
+              <div class="model-col-header" style="color:#8b5cf6">Magistral 24B</div>
+              <p class="question-text">Qu'est-ce que l'alliance thérapeutique dans la relation médecin-malade ?</p>
+              <div class="question-comment">Cette question évalue la compréhension de la notion d'alliance thérapeutique et sa distinction avec d'autres types de relations ou méthodes de traitement.</div>
+              <div class="options-list">
+                <div class="option">
+                  <span class="opt-letter">A.</span> Une relation de pouvoir où le médecin prend toutes les décisions pour le patient. 
+                  <div class="opt-comment">Incorrecte car l'alliance thérapeutique ne se base pas sur une relation de pouvoir, mais sur une collaboration où le patient est un acteur de sa santé.</div>
+                </div>
+                <div class="option correct-option">
+                  <span class="opt-letter">B.</span> Le résultat de la mise en pratique de l'ACP au cours des consultations successives, amenant le patient à être un acteur de sa santé. <span class="correct-badge">✓ correct</span>
+                  <div class="opt-comment">Correcte car elle correspond exactement à la description de l'alliance thérapeutique donnée dans le contenu éducatif.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">C.</span> Une méthode de traitement où le médecin prescrit des médicaments sans consulter le patient. 
+                  <div class="opt-comment">Incorrecte car l'alliance thérapeutique ne se limite pas à la prescription de médicaments, mais implique une relation de collaboration et de participation active du patient.</div>
+                </div>
+                <div class="option">
+                  <span class="opt-letter">D.</span> Une technique de communication où le médecin donne des ordres clairs au patient. 
+                  <div class="opt-comment">Incorrecte car l'alliance thérapeutique ne se base pas sur des ordres clairs, mais sur une posture facilitatrice et une communication collaborative.</div>
+                </div></div>
+              <div class="metrics-list">
+                <div class="metric-row">
+                  <span class="metric-label">Is a Question</span>
+                  <span class="metric-value good">Yes ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Starts with Negation</span>
+                  <span class="metric-value good">No ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Originality</span>
+                  <span class="metric-value bad">0.67</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Readability (FK)</span>
+                  <span class="metric-value good">16.8</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Relevance</span>
+                  <span class="metric-value good">0.84</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Ambiguity</span>
+                  <span class="metric-value bad">0.82</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Answerability</span>
+                  <span class="metric-value good">Correct ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Disclosure</span>
+                  <span class="metric-value good">Safe ✓</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Difficulty</span>
+                  <span class="metric-value neutral">2</span>
+                  
+                </div>
+                <div class="metric-row">
+                  <span class="metric-label">Distractor Quality</span>
+                  <span class="metric-value neutral">False</span>
+                  
+                </div></div>
+            </div></div></div>
+
+</body>
+</html>

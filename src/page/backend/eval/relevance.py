@@ -8,7 +8,7 @@ def calculate_relevance_for_df(df: pd.DataFrame,
                                relevance_col: str,
                                question_col: str,
                                lisa_sheet_col: str,
-                               model_name="BAAI/bge-base-en-v1.5"):
+                               model_name="almanach/moderncamembert-base"):
     model, tokenizer, device = load_model(model_name)
 
     def relevance_score(row):

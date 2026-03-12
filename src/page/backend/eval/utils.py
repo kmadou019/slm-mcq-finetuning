@@ -6,7 +6,7 @@ from transformers import AutoTokenizer, AutoModel
 _model_cache = {}
 _model_lock = threading.Lock()
 
-def load_model(model_name="BAAI/bge-base-en-v1.5"):
+def load_model(model_name="almanach/moderncamembert-base"):
     """
     Loads the model and tokenizer once and returns them (thread-safe).
     """

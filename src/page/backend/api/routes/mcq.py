@@ -406,6 +406,34 @@ def build_mcq_card_from_row(row: pd.Series, index: int, model: str) -> Dict[str,
         5: "high"
     }
 
+    # B3 — enrich with per-distractor scores if detail available
+    distractor_detail_raw = row.get('distractors_quality_detail') or row.get('distractor_quality_detail')
+    try:
+        distractor_detail = json.loads(distractor_detail_raw) if distractor_detail_raw else None
+    except Exception:
+        distractor_detail = None
+
+    if distractor_detail:
+        scores  = distractor_detail.get("scores", [])
+        justifs = distractor_detail.get("justifs", [])
+        avg     = distractor_detail.get("avg", None)
+        rang    = distractor_detail.get("rang", "B")
+        b3_notes = f"Rang {rang} | avg={avg:.2f} | scores={scores}"
+    else:
+        b3_notes = f"Pass: {row.get('distractors_quality', 'N/A')}"
+
+    # B5 — answerability: GPT-4o answered correctly from LISA context
+    gpt_answer      = str(row.get('gpt_answer', '') or '').strip().lower()
+    correct_opt     = str(row.get('correct_option', '') or '').strip().lower()
+    answerability_ok = (gpt_answer == correct_opt) if gpt_answer else None
+
+    # B6 — ambiguity: semantic similarity between correct answer and distractors
+    ambiguity_val = row.get('ambiguity')
+    try:
+        ambiguity_float = float(ambiguity_val) if ambiguity_val is not None else None
+    except (TypeError, ValueError):
+        ambiguity_float = None
+
     section_b_checks = [
         {
             "check_id": "B1",
@@ -428,11 +456,11 @@ def build_mcq_card_from_row(row: pd.Series, index: int, model: str) -> Dict[str,
         {
             "check_id": "B3",
             "description": "Distractor plausibility",
-            "result": evaluation_to_pass_warn(row.get('distractor_quality'), True),
+            "result": evaluation_to_pass_warn(row.get('distractors_quality', row.get('distractor_quality')), True),
             "status": "not_checked",
             "confidence": None,
-            "score": "True/False",
-            "notes": f"Score: {row.get('distractor_quality', 'N/A')}"
+            "score": "majority ≥ threshold & min ≥ 2",
+            "notes": b3_notes,
         },
         {
             "check_id": "B4",
@@ -442,7 +470,26 @@ def build_mcq_card_from_row(row: pd.Series, index: int, model: str) -> Dict[str,
             "confidence": None,
             "score": "low/med/high",
             "notes": f"Judge: {difficulty_mapping.get(difficulty, 'medium')}"
-        }
+        },
+        {
+            "check_id": "B5",
+            "description": "Answerability (expert + context)",
+            "result": ("PASS" if answerability_ok else ("FAIL" if answerability_ok is False else "N/A")),
+            "status": "not_checked",
+            "confidence": None,
+            "score": "correct/incorrect",
+            "notes": f"GPT-4o answered '{gpt_answer.upper()}', correct is '{correct_opt.upper()}'" if gpt_answer else "N/A",
+        },
+        {
+            "check_id": "B6",
+            "description": "Ambiguity",
+            "result": ("PASS" if ambiguity_float is not None and ambiguity_float >= 0.3 else
+                       ("FAIL" if ambiguity_float is not None else "N/A")),
+            "status": "not_checked",
+            "confidence": None,
+            "score": "0-1 (≥ 0.3 = plausible)",
+            "notes": f"Score: {round(ambiguity_float, 3) if ambiguity_float is not None else 'N/A'}",
+        },
     ]
 
     # Parser LISA Sheet - utiliser content_raw du CSV, sinon fallback sur lisa_sheets.csv

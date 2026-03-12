@@ -149,8 +149,10 @@ def _parse_letter(text: str) -> str:
 
 
 def _answer_ollama(mcq_text: str, model_name: str) -> str:
-    from ollama import chat
-    response = chat(
+    import os
+    from ollama import Client
+    client = Client(host=os.getenv("OLLAMA_HOST", "http://localhost:11434"), timeout=120)
+    response = client.chat(
         model=model_name,
         messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
@@ -158,16 +160,26 @@ def _answer_ollama(mcq_text: str, model_name: str) -> str:
         ],
         options={"temperature": 0.1, "num_ctx": 2048},
     )
-    return _parse_letter(response["message"]["content"])
+    return _parse_letter(response.message.content)
 
 
-def _answer_hf(mcq_text: str, outlines_model) -> str:
-    from typing import Literal
-    response = outlines_model(
-        f"{SYSTEM_PROMPT}\n\n{mcq_text}",
-        Literal["a", "b", "c", "d"]
+def _answer_hf(mcq_text: str, model_name: str) -> str:
+    import os
+    from openai import OpenAI
+    client = OpenAI(
+        base_url=os.getenv("VLLM_HOST", "http://localhost:8001") + "/v1",
+        api_key="na",
     )
-    return response.lower()
+    response = client.chat.completions.create(
+        model=model_name,
+        messages=[
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user", "content": mcq_text},
+        ],
+        temperature=0.1,
+        extra_body={"guided_choice": ["a", "b", "c", "d"]},
+    )
+    return response.choices[0].message.content.strip().lower()
 
 
 def _normalize_correct(val) -> int:
@@ -231,25 +243,6 @@ def _run_answerability(job_id: str, req: AnswerabilityRequest):
 
         job["total"] = len(df)
 
-        # ---- Load HF model if needed ----
-        outlines_model = None
-        if req.model_type == "hf":
-            job["status"] = "loading_model"
-            import outlines
-            from transformers import AutoTokenizer, AutoModelForCausalLM
-            tokenizer = AutoTokenizer.from_pretrained(
-                req.model_name, use_fast=True, trust_remote_code=True
-            )
-            outlines_model = outlines.from_transformers(
-                AutoModelForCausalLM.from_pretrained(req.model_name, device_map="auto"),
-                tokenizer,
-            )
-            # Check cancellation after model loading (peut prendre plusieurs minutes)
-            if job.get("cancelled"):
-                job["status"] = "cancelled"
-                job["error"] = "Annulé par l'utilisateur."
-                return
-
         # ---- Evaluate ----
         job["status"] = "running"
         conv = {"a": 0, "b": 1, "c": 2, "d": 3}
@@ -272,7 +265,7 @@ def _run_answerability(job_id: str, req: AnswerabilityRequest):
                     if req.model_type == "ollama":
                         letter = _answer_ollama(mcq_text, req.model_name)
                     else:
-                        letter = _answer_hf(mcq_text, outlines_model)
+                        letter = _answer_hf(mcq_text, req.model_name)
                     generated = conv[letter]  # KeyError si lettre invalide → retry
                     break
                 except (SyntaxError, KeyError) as e:

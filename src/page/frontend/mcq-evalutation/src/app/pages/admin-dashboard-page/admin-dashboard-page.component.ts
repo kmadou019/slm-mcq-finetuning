@@ -301,6 +301,13 @@ export class AdminDashboardPageComponent implements OnInit {
     });
   }
 
+  exportKto(): void {
+    this.adminService.exportKto().subscribe({
+      next: (blob) => this.downloadBlob(blob, `kto_${new Date().toISOString().slice(0, 10)}.jsonl`),
+      error: () => alert('Erreur lors de l\'export KTO')
+    });
+  }
+
   exportFullReport(): void {
     this.adminService.exportStats().subscribe({
       next: (data) => {

@@ -10,7 +10,7 @@ def calculate_ambiguity_for_df(df: pd.DataFrame,
                                option_c_col: str,
                                option_d_col: str,
                                ambiguity_col: str,
-                               model_name="BAAI/bge-base-en-v1.5"
+                               model_name="almanach/moderncamembert-base"
 ):
     model, tokenizer, device = load_model(model_name)
 

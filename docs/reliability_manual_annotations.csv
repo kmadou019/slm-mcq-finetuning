@@ -1,0 +1,341 @@
+lisa_id,content_raw,question,option_a,option_b,option_c,option_d,correct_option,manual_score_b,manual_score_c,manual_score_d,manual_notes,gpt4o_scores,gpt4o_avg,gpt4o_pass,gpt4o_justifs
+OIC-001-01-A,"{{objectif de connaissance
+|Identifiant=OIC-001-01-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
+|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
+|Rang=A
+|Intitulé=Connaître la définition de la relation médecin-malade
+|Description=Principales caractéristiques de la relation médecin-malade. Ex. Modèle paternaliste/centré sur l'auto-détermination/patient partenaire de soins
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=1}}
+
+Rencontre entre un soignant et une personne soignée :
+
+-       Approche antérieurement surtout paternaliste et biomédicale.
+
+-       Dorénavant globale c’est-à-dire bio-médico-psychosociale, centrée sur le patient et non sa/ses maladies(s).
+
+Le patient est un partenaire du soin : son expérience et son vécu sont intégrés à la démarche du soignant.<br />",Quelle est la caractéristique principale de la relation médecin-malade actuelle ?,Biomédicale,Centrée sur le patient et non sur sa maladie,Centrée sur la maladie,Paternaliste,b,,,,,"[2, 1, 2]",1.6666666666666667,False,"[""The term 'biomedical' is outdated in the context of modern patient-centered care, making it easy to eliminate."", 'This option directly contradicts the current understanding of patient-centered care, making it implausible.', ""While 'paternalistic' reflects a historical approach, it is clearly not aligned with the modern patient-centered model.""]"
+OIC-001-02-A,"{{objectif de connaissance
+|Identifiant=OIC-001-02-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
+|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
+|Rang=A
+|Intitulé=Connaître les principaux déterminants de la relation médecin-malade
+|Description=Déterminants psychologiques, éthiques, sociaux, etc.
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=2}}
+L’acte médical est le moment de convergence de 3 finalités : celle du patient, celle du médecin, celle de la société. Ces finalités induisent des interactions entre différents déterminants de la relation qui relèvent des domaines :
+
+-       éthique : le respect, la dignité et la liberté de l'individu lui-même, dans son groupe et dans la collectivité
+
+-       sociaux : les difficultés linguistiques, les éléments culturels, voire religieux, le niveau éducatif, les déficits sensoriels
+
+psychologiques : les perspectives du patient et du médecin au moment de la consultation, la mise à distance des événements de vie.<br />",Quels sont les principaux domaines des déterminants de la relation médecin-malade ?,"Éthique, sociaux, culturels","Éthique, sociaux, psychologiques","Éthique, économiques, psychologiques","Sociaux, psychologiques, culturels",b,,,,,"[3, 1, 2]",2.0,False,"[""This distractor is somewhat plausible as 'culturels' could be mistakenly seen as a separate domain, but it is actually a subset of 'sociaux'."", ""This distractor is implausible because 'économiques' is not mentioned as a domain in the context provided."", ""This distractor is easy to eliminate because it omits 'éthique', which is a key domain mentioned in the context.""]"
+OIC-001-03-A,"{{objectif de connaissance
+|Identifiant=OIC-001-03-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
+|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
+|Rang=A
+|Intitulé=Connaître les principaux corrélats cliniques de la relation médecin-malade
+|Description=Ex. Performance dans la démarche diagnostique, amélioration des indicateurs de santé, etc.
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=3}}
+La qualité de la relation médecin-patient a démontré son importance sur différents indicateurs de santé :
+
+-       performance dans la démarche diagnostique
+
+-       amélioration et stabilisation de paramètres biocliniques de suivi des maladies chroniques<br />",Quels sont les impacts de la qualité de la relation médecin-patient ?,Augmentation de la durée des hospitalisations,Réduction des coûts des soins,Amélioration de la performance diagnostique et des indicateurs biocliniques,Diminution de la compliance des patients aux traitements,c,,,,,"[2, 4, 1]",2.3333333333333335,False,"['This option is easy to eliminate as it contradicts the positive impacts typically associated with a good doctor-patient relationship.', 'This option is plausible as a good doctor-patient relationship can lead to more efficient care, potentially reducing costs.', 'This option is implausible as a good doctor-patient relationship generally increases patient compliance, not decreases it.']"
+OIC-001-04-A,"{{objectif de connaissance
+|Identifiant=OIC-001-04-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
+|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
+|Rang=A
+|Intitulé=Connaître les principes de « l’approche centrée sur le patient »
+|Description=relation de partenariat basée sur la complémentarité entre l’expertise des professionnels et l’expérience des patients, entraînant une personnalisation des soins (écoute, dialogue, adaptation), le développement de compétences, et la continuité des soins (HAS)
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=4}}
+L’approche centrée sur le patient (ACP) est une relation de partenariat basée sur la complémentarité entre l’expertise des professionnels et l’expérience des patients, entraînant une personnalisation des soins (écoute, dialogue, adaptation), le développement de compétences, et la continuité des soins.
+
+L’ACP associe les perspectives :
+
+-       du médecin : démarche biomédicale, raisonnement clinique, diagnostic, thérapeutique
+
+-       du patient : expérience vécue de la maladie
+
+La démarche clinique ACP comprend 4 dimensions :
+
+•              Explorer la maladie et l’expérience qu’elle fait vivre au patient
+
+•              Comprendre la personne dans sa globalité biomédicale, psychosociale et son contexte
+
+•              Trouver un terrain d’entente, une compréhension commune sur le problème de santé et les solutions afin d’aboutir à une décision partagée
+
+•              Développer une alliance avec le patient (alliance thérapeutique)<br />",Quelle est la base de l'approche centrée sur le patient (ACP) ?,Une relation de partenariat basée sur la complémentarité entre l’expertise des professionnels et l’expérience des patients,Une relation où le patient prend toutes les décisions sans tenir compte de l’avis du médecin,"Une relation où le médecin et le patient ont un rapport de force égal, sans complémentarité",Une relation où le médecin prend toutes les décisions sans tenir compte de l’opinion du patient,a,,,,,"[2, 3, 2]",2.3333333333333335,False,"['This option is easy to eliminate as it contradicts the core principle of ACP, which involves collaboration and shared decision-making.', 'This option is somewhat plausible as it suggests equality, but it lacks the essential element of complementarity and shared decision-making.', 'This option is easy to eliminate as it directly opposes the patient-centered approach by excluding patient input.']"
+OIC-001-05-A,"{{objectif de connaissance
+|Identifiant=OIC-001-05-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
+|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
+|Rang=A
+|Intitulé=Connaître la notion de représentation de la maladie
+|Description=Savoir que celles du patient peuvent différer de celles du médecin
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=5}}
+La rencontre entre le soignant et le soigné concernant une maladie correspond à la rencontre des représentations c’est-à-dire l’image que chacun se fait de cette maladie. Les représentations du médecin et du patient peuvent différer du fait de leurs expériences personnelles positives ou négatives vécues. Les représentations de la maladie ont des conséquences biomédicales ou psychosociales, l’impact ou la vision de l’entourage du patient, etc.",Quelle est la particularité des représentations de la maladie entre le médecin et le patient ?,Elles peuvent différer en raison des expériences personnelles.,Elles sont toujours identiques.,Elles sont uniquement basées sur des faits biomédicaux.,Elles n'ont pas d'impact sur la prise en charge.,a,,,,,"[1, 3, 2]",2.0,False,"['The idea that representations are always identical is implausible given the context of differing personal experiences.', 'This option is somewhat plausible as it might reflect a misunderstanding that medical knowledge is purely objective, ignoring personal experiences.', 'This option is easy to eliminate as it contradicts the notion that representations influence medical care, but it may reflect a misunderstanding of their importance.']"
+OIC-001-06-A,"{{objectif de connaissance
+|Identifiant=OIC-001-06-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
+|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
+|Rang=A
+|Intitulé=Connaître les facteurs influençant l’information délivrée au patient
+|Description=None
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=6}}
+L’information du patient fait partie de la qualité de la relation. La compétence de communication du soignant sert la mise en forme de l’information au service de cette relation.
+
+Les facteurs liés à la communication verbale, non verbale et les facteurs contextuels (lieu, temporalité, interférences…) influencent l’information délivrée.
+
+Une relation complémentaire nécessite que les 2 interlocuteurs se placent dans un processus constructif de collaboration : les rétroactions influencent la qualité de l’information échangée.<br />",Quels sont les facteurs influençant l'information délivrée au patient ?,Les facteurs contextuels uniquement.,"La communication verbale et non verbale, ainsi que les facteurs contextuels.",La communication non verbale uniquement.,La communication verbale uniquement.,b,,,,,"[2, 5, 2]",3.0,False,"['This option is easy to eliminate as it ignores the role of communication, which is a key aspect of the information delivery process.', 'This option is highly plausible as it includes all relevant factors mentioned in the context, making it a subtle misconception if chosen.', 'This option is easy to eliminate because it overlooks the importance of verbal communication and context, which are crucial in the information delivery process.']"
+OIC-001-07-A,"{{objectif de connaissance
+|Identifiant=OIC-001-07-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
+|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
+|Rang=A
+|Intitulé=Connaître la notion d’ajustement au stress
+|Description=Notamment facteurs sociaux (p. ex. position sociale perçue du patient)
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=7}}
+
+
+L'adaptation joue un rôle central dans la gestion du stress. En sus des manifestations biologiques et physiologiques de la réaction au stress, l’individu dispose de moyens complémentaires nommés stratégies d’adaptation, stratégies d’ajustement, regroupées sous le nom de ''coping''. Ce terme regroupe l’ensemble des procédures et des processus qu'un individu peut imaginer et installer entre lui et un événement jugé inquiétant ou dangereux, afin d'en maîtriser les conséquences potentielles sur son bien-être physique et psychique.
+
+<br />",Qu'est-ce que le 'coping' dans le contexte de la gestion du stress ?,Une réaction biologique et physiologique au stress.,Une maladie grave ou létale associée aux soins.,L'ensemble des procédures et processus pour maîtriser les conséquences d'un événement stressant.,Un facteur social influençant la perception du stress.,c,,,,,"[3, 1, 2]",2.0,False,"['This distractor is somewhat plausible as it relates to stress, but it is clearly flawed because it describes a reaction rather than a strategy for managing stress.', 'This distractor is implausible and unrelated to the concept of coping, as it describes a disease rather than a stress management strategy.', 'This distractor is weakly plausible as it mentions a factor influencing stress perception, but it does not align with the definition of coping as a strategy or process.']"
+OIC-001-08-A,"{{objectif de connaissance
+|Identifiant=OIC-001-08-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
+|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
+|Rang=A
+|Intitulé=Connaître les principaux mécanismes de défense observés chez les patients / leurs proches / les professionnels de santé dans le cadre de l’annonce d’une mauvaise nouvelle en santé
+|Description=
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=8}}Lorsqu’il est confronté à une souffrance psychique la personne peut être en difficulté pour y faire face et se « défendre » : elle adopte alors de façon plus ou moins consciente une attitude qui lui permet vivre moins douloureusement la situation. C’est une forme d’adaptation aux angoisses. Il n’existe pas de liste consensuelle des mécanismes de défenses, la personne pourra par exemple tenter de distancier les cognitions pénibles ou menaçantes de ses sentiment (Isolation), déplacer sur des symptômes physiques sa souffrance mentale (Déplacement), projeter de manière inconsciente ses propres sentiment en les attribuant à autrui (Projection), régresser vers un stage de développement antérieur (Régression) ou encore être dans le Déni (en refusant de façon inconsciente de reconnaitre la réalité traumatisante).",Quel est un mécanisme de défense où la personne refuse de façon inconsciente de reconnaître la réalité traumatisante ?,Projection,Isolation,Déplacement,Déni,d,,,,,"[3, 2, 2]",2.3333333333333335,False,"['Projection is somewhat plausible as it involves unconscious processes, but it does not involve refusing to recognize reality.', 'Isolation is less plausible as it involves separating emotions from thoughts, not refusing to recognize reality.', 'Déplacement is weakly plausible as it involves shifting emotions, not refusing to recognize reality.']"
+OIC-001-09-A,"{{objectif de connaissance
+|Identifiant=OIC-001-09-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
+|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
+|Rang=A
+|Intitulé=Connaître la notion d’empathie clinique
+|Description=
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=9}}
+<br />L’empathie sert à apprécier et accepter l’état émotionnel d’autrui afin de mieux le comprendre.
+
+Le médecin met de côté son propre schéma de pensée sur la situation vécue par le patient (compréhension) sans pour autant vivre la situation à la place du patient.
+
+<br />",Qu'est-ce que l'empathie clinique implique pour le médecin ?,Vivre la situation du patient,Ignorer les émotions du patient,Comprendre et accepter l'état émotionnel du patient sans se substituer à lui,Donner des conseils médicaux sans tenir compte des émotions du patient,c,,,,,"[3, 1, 2]",2.0,False,"[""This distractor is somewhat plausible as it reflects a misunderstanding of empathy, confusing it with sympathy, but it is clearly flawed as empathy does not mean living the patient's situation."", 'This distractor is implausible as it directly contradicts the concept of empathy, which involves acknowledging and understanding emotions.', 'This distractor is easy to eliminate because it ignores the emotional aspect, which is central to empathy, making it weakly plausible.']"
+OIC-001-10-A,"{{objectif de connaissance
+|Identifiant=OIC-001-10-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
+|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
+|Rang=A
+|Intitulé=Connaître la notion d’alliance thérapeutique
+|Description=None
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=10}}
+L’alliance avec le patient, dite aussi alliance thérapeutique, est le résultat de la mise en pratique de l’ACP au cours des consultations successives. L’ensemble de la relation au cours du temps devient thérapeutique en amenant le patient à être un véritable acteur de sa santé. La posture du médecin est facilitatrice et propose aux patients de réfléchir à de nouvelles informations pour l’amener au changement.",Qu'est-ce que l'alliance thérapeutique dans la relation médecin-malade ?,Une relation où le médecin transmet uniquement des informations techniques au patient.,Une relation où la communication est limitée pour éviter les malentendus.,Une relation où le médecin prend toutes les décisions sans l'avis du patient.,Une relation où le patient est un acteur de sa santé et le médecin facilite ce processus.,d,,,,,"[2, 1, 2]",1.6666666666666667,False,"['This option is easy to eliminate as it contradicts the concept of an alliance, which involves collaboration rather than one-way communication.', 'This option is implausible as it suggests limiting communication, which is contrary to the principles of building an alliance.', 'This option is easy to eliminate because it describes a paternalistic approach, which is the opposite of an alliance where the patient is involved in decision-making.']"
+OIC-001-11-A,"{{objectif de connaissance
+|Identifiant=OIC-001-11-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
+|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
+|Rang=A
+|Intitulé=Connaître les principales étapes du processus de changement
+|Description=None
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=11}}
+Prochaska et Di Clemente ont modélisé un cycle de motivation au changement de comportement qui peut être parcouru par les patients le plus souvent étape par étape :
+
+-       Précontemplation ou préintention : le problème de santé est inconnu ou s’il l’est, le patient évolue d’une absence d’envie de changer de comportement vers une évocation de le faire
+
+-       Contemplation ou intention : le problème est identifié, le patient envisage de changer de comportement
+
+-       Préparation : il essaie de changer il planifie le changement
+
+-       Action : il change de comportement, comportant alors deux issues :
+
+o   Maintien du changement (résiste aux rechutes)
+
+o   Rechute vers l’absence d’envie de changement ou la préintention. Alors le cycle préintention, intention, préparation, action reprend.
+
+
+Ce processus permet de comprendre l’importance du repérage du stade motivationnel du patient afin d’adapter le discours du soignant à chaque étape",Quelle étape du processus de changement de comportement est caractérisée par l'identification du problème et l'envisagement de changer de comportement ?,Contemplation,Action,Préparation,Précontemplation,a,,,,,"[4, 3, 2]",3.0,True,"[""This distractor is plausible as students might confuse 'action' with the stage where the problem is identified and change is considered."", ""This distractor is somewhat plausible as students might think 'preparation' involves identifying the problem, but it is more about planning the change."", ""This distractor is weak because 'precontemplation' is clearly before the problem is identified, making it easy to eliminate.""]"
+OIC-001-12-A,"{{objectif de connaissance
+|Identifiant=OIC-001-12-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
+|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
+|Rang=A
+|Intitulé=Connaître les indications et principes de l’entretien motivationnel
+|Description=None
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=12}}
+L’entretien motivationnel est une méthode de communication :
+
+-       centrée sur la personne à aider
+
+-       utilisée pour augmenter la motivation intrinsèque au changement
+
+-       collaborative (soignant soigné) et orientée vers le but du renforcement de la motivation et de l’engagement du patient vers un objectif partagé
+
+
+L’entretien motivationnel est un outil au service de l’éducation du patient dans une approche centrée sur lui et son environnement. Cette éducation s’effectue dans une logique d’apprentissage. Le médecin adopte une posture facilitatrice des apprentissages pour que le patient développe des compétences, dans le cadre d’objectifs partagés.",Quel est l'objectif principal de l'entretien motivationnel ?,Fournir des informations médicales,Renforcer la relation médecin-patient,Faire un diagnostic médical,Augmenter la motivation intrinsèque au changement,d,,,,,"[2, 4, 1]",2.3333333333333335,False,"['This option is easy to eliminate as the primary goal of motivational interviewing is not to provide medical information, but it may seem relevant in a broader educational context.', 'This option is plausible as strengthening the doctor-patient relationship is a component of motivational interviewing, reflecting a common misconception about its primary goal.', 'This option is implausible as motivational interviewing is not used for making medical diagnoses, making it obviously incorrect.']"
+OIC-001-13-A,"{{objectif de connaissance
+|Identifiant=OIC-001-13-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
+|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
+|Rang=A
+|Intitulé=Savoir comment se montrer empathique à l’égard du patient
+|Description=Aspects verbaux (ex. de formulations) et non-verbaux
+|Rubrique=Prise en charge
+|Contributeurs=
+|Ordre=13}}
+Adopter une attitude empathique permet au patient de se sentir écouté, compris et aidé. Cela permet au médecin par son attitude professionnelle de se protéger de la sympathie ou de l’antipathie en renforçant l’alliance avec le patient.
+
+La compréhension de ce que vit le patient lui est exprimée : « Je comprends que c’est difficile pour vous ».
+
+L’empathie nécessite un minimum d’engagement verbal et non verbal, et de conviction du médecin dans la souffrance de son patient, pour que cette attitude prenne une fonction soignante.
+
+*
+*",Quelle phrase montre une attitude empathique de la part du médecin ?,Je comprends que c’est difficile pour vous,"Vous devez suivre ce traitement, c’est pour votre bien",Dites-moi ce qui vous dérange,"C’est normal, tout le monde passe par là",a,,,,,"[3, 2, 3]",2.6666666666666665,True,"['This option is somewhat plausible as it invites the patient to share their concerns, but lacks the explicit empathy shown in the correct answer.', ""This option is easy to eliminate as it is directive and lacks empathy, focusing on compliance rather than understanding the patient's feelings."", ""This option is somewhat plausible as it attempts to normalize the patient's experience, but it minimizes individual feelings and lacks personalized empathy.""]"
+OIC-001-14-A,"{{objectif de connaissance
+|Identifiant=OIC-001-14-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
+|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
+|Rang=A
+|Intitulé=Connaître les principes d’une communication adaptée, verbale et non verbale, avec le patient et son entourage
+|Description=Citer expliciter et donner l’intérêt des principales habilites communicationnelles (questions ouvertes, respect des silence, questions fermées et reformulations)
+|Rubrique=Prise en charge
+|Contributeurs=
+|Ordre=14}}
+
+
+Une communication adaptée, verbale et non verbale, permet de développer une relation d’aide et une écoute active du patient et de ses accompagnants. Il est estimé qu’environ 30 % d’un message en santé passe par les mots, et 70 % par le non verbal entre le patient et le médecin (regard, sourire, tenue, accessoires, tout est langage)
+
+
+Principales habilités communicationnelles mobilisables :
+
+-       questions ouvertes (Comment envisagez-vous… ? Que pensez-vous de… ?) : le patient ne peut pas répondre par oui ou non. Ces questions amènent le patient à réfléchir par lui-même à partir de ses propres ressources.
+
+-       respect des silences lors des réponses du patient ou entre deux questions permet de favoriser la réflexion et lui laisse le temps de libérer ses émotions
+
+-       questions fermées auxquelles le patient répond par oui ou non pour préciser des éléments d’entretien ou de l’examen physique
+
+-       reformulations : répéter ce qui vient d’être dit par le patient, comme le médecin pense l’avoir entendu et/ou compris ou bien répéter ce que dit le patient avec ses propres mots, permettant de verbaliser sa réalité. Le patient prend conscience de ce qu’il dit, de ce qu’il pense, se sent écouté et compris.<br />
+<br />
+<br />",Quelle habileté communicationnelle n'est pas mentionnée comme principale dans la communication avec le patient ?,reformulations,utilisation de jargon médical,questions ouvertes,respect des silences,b,,,,,"[4, 5, 4]",4.333333333333333,True,"['Reformulations are explicitly mentioned as a principal communication skill, making this option plausible for those who might not recall the specific list.', 'The use of medical jargon is a common misconception as it is often mistakenly thought to be a communication skill, making it highly plausible.', 'Questions open-ended are explicitly mentioned, making this option plausible for those who might not recall the specific list.']"
+OIC-001-15-A,"{{objectif de connaissance
+|Identifiant=OIC-001-15-A
+|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
+|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...
+|Rang=A
+|Intitulé=Connaître les enjeux et les modalités de l’annonce d’une mauvaise nouvelle en santé
+|Description=Se comporter de façon appropriée lors de l'annonce d'un diagnostic de maladie grave, de l'incertitude sur l'efficacité d'un traitement, de l'échec d'un projet thérapeutique, d'un handicap, d'un décès ou d'un évènement indésirable associé aux soins
+Connaître les besoins psychologiques et sociaux du patient en situation d'incertitude
+|Rubrique=Prise en charge
+|Contributeurs=
+|Ordre=15}}
+Une mauvaise nouvelle est une nouvelle qui change radicalement et négativement l’idée que se fait le patient de son être et de son avenir. Annoncer signifie « faire savoir » : il ne s’agit pas uniquement d’informer, mais aussi de cheminer avec le patient vers la connaissance qui le concerne pour construire un projet personnalisé d’attitudes à adopter face à cet événement.
+
+
+La structuration de l’annonce en trois étapes permet d’adopter une posture appropriée :
+
+1.    avant la rencontre avec le patient, le médecin interroge sa propre représentation du diagnostic et les informations certaines et incertaines dont il dispose sur la maladie et les différents projets thérapeutiques à envisager
+
+2.    lors de la rencontre avec le patient, le médecin adapte l’information aux représentations, attentes, vécus et besoins psychologiques et sociaux exprimés par le patient
+
+3.    fin de rencontre avec le patient : le médecin se questionne sur le déroulé de la consultation et la préparation des prochaines rencontres
+
+
+Annoncer c’est donner au patient les informations dont il a besoin tout au long du processus d’accompagnement. L’annonce a un effet traumatique. La plupart du temps, le patient n’entend qu’une petite partie de ce qui est dit. Lors de la consultation de première annonce, tout n’est pas abordé, le patient a besoin de temps. En pratique : il est essentiel à la démarche de se donner le temps, d’être à l’écoute, d’être attentif aux mots choisis et d’assurer un suivi de l’annonce.
+
+*",Quelle est la première étape pour structurer l'annonce d'une mauvaise nouvelle en santé ?,Se questionner sur le déroulé de la consultation,Adapter l’information aux représentations du patient,Interroger sa propre représentation du diagnostic,Fournir toutes les informations en une seule fois,c,,,,,"[1, 2, 1]",1.3333333333333333,False,"['This option is implausible as it refers to the final step, not the first step, making it obviously incorrect.', 'This option is somewhat related to the process but is not the first step, making it easy to eliminate.', 'This option is implausible as it contradicts the need for a structured and gradual approach, making it obviously incorrect.']"
+OIC-002-01-A,"{{objectif de connaissance
+|Identifiant=OIC-002-01-A
+|Item_parent=Les valeurs professionnelles du médecin et des autres professions de santé
+|Item_parent_short=Les valeurs professionnelles du médecin et des autres professions de santé
+|Rang=A
+|Intitulé=Identifier les professionnels, compétences et ressources liées à un rôle particulier dans une organisation de santé
+|Description=2.10 Rôles et ressources professionnelles dans une organisation de santé
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=1}}
+Quel que soit leur mode d’exercice, les médecins collaborent avec de nombreux acteurs de santé. La qualité des soins et la sécurité des patients ne sont plus considérées comme relevant essentiellement des connaissances et des compétences individuelles mais reconnues comme dépendant de l’organisation des soins et de la capacité des acteurs à travailler ensemble.
+
+Des expérimentations de coopérations entre professionnels de santé, de transferts de compétences et de délégation d’actes médicaux à d’autres professionnels de santé ont été développées, pour optimiser les prises en charge, la surveillance, et pallier aux carences de la démographie médicale (par exemple, suivi des patients en cours de chimiothérapie ou en dialyse).",Quel est l'objectif principal de la collaboration entre professionnels de santé selon le texte ?,Optimiser les prises en charge et pallier aux carences de la démographie médicale.,Réduire le nombre de patients par médecin.,Augmenter les salaires des médecins.,Limiter l'accès aux soins aux patients les plus riches.,a,,,,,"[3, 1, 1]",1.6666666666666667,False,"['This distractor is somewhat plausible as reducing patient load could be seen as a way to optimize care, but it is not directly mentioned in the text.', 'This distractor is implausible and unrelated as the text does not mention increasing salaries as an objective of collaboration.', 'This distractor is implausible and unrelated as the text does not suggest limiting access to care based on wealth.']"
+OIC-002-02-A,"{{objectif de connaissance
+|Identifiant=OIC-002-02-A
+|Item_parent=Les valeurs professionnelles du médecin et des autres professions de santé
+|Item_parent_short=Les valeurs professionnelles du médecin et des autres professions de santé
+|Rang=A
+|Intitulé=Connaître la définition de la pratique médicale et connaitre la signification de l’éthique
+|Description=None
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=2}}
+La '''pratique médicale''' est une activité technique et relationnelle qui répond, par des connaissances et des compétences spécifiques, aux besoins de santé des individus et de la population.
+
+'''L’éthique''' désigne la réflexion de quelqu’un qui agit et qui se pose la question : « comment faire pour agir au mieux dans cette situation ? ». L’éthique en médecine n’est pas dissociable de la technique. 
+
+<br />",Quelle est la définition de la pratique médicale ?,Une activité technique et relationnelle qui répond aux besoins de santé des individus et de la population.,Une activité relationnelle qui ignore les besoins de santé des individus.,Une activité technique et relationnelle qui répond aux besoins économiques des individus.,Une activité technique qui se concentre uniquement sur la technique médicale.,a,,,,,"[2, 3, 3]",2.6666666666666665,True,"['This distractor is easy to eliminate as it contradicts the fundamental purpose of medical practice, which is to address health needs, not ignore them.', 'This distractor is somewhat plausible as it includes both technical and relational aspects, but it misleads by focusing on economic needs rather than health needs.', 'This distractor is somewhat plausible as it focuses on the technical aspect, but it is flawed because it ignores the relational component essential to medical practice.']"
+OIC-002-03-A,"{{objectif de connaissance
+|Identifiant=OIC-002-03-A
+|Item_parent=Les valeurs professionnelles du médecin et des autres professions de santé
+|Item_parent_short=Les valeurs professionnelles du médecin et des autres professions de santé
+|Rang=A
+|Intitulé=Connaître les définitions de normes et de valeurs professionnelles
+|Description=None
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=3}}
+Les '''valeurs''' relatives à une pratique décrivent ce qui est digne d’estime, souhaitable et recommandé pour atteindre ses objectifs. Les '''normes''' sont des principes généraux et des règles plus spécifiques qui énoncent des devoirs, des obligations, auxquelles on se réfère pour juger et agir en référence à des valeurs.
+
+Les normes professionnelles traduisent les '''valeurs professionnelles''' en principes concret faisant référence à la pratique, dans ses relations avec les patients et avec les collègues.
+
+Des valeurs cardinales de la profession médicale sont par exemple : la responsabilité, le dévouement, la compassion, le respect de l’autonomie des personnes, l’indépendance, la probité, la discrétion, la confraternité, la solidarité…",Quelle est la relation entre les valeurs professionnelles et les normes professionnelles ?,Les valeurs professionnelles traduisent les normes professionnelles en principes concrets.,Les normes professionnelles traduisent les valeurs professionnelles en principes concrets.,Les valeurs professionnelles sont des règles plus spécifiques que les normes professionnelles.,Les normes professionnelles et les valeurs professionnelles sont des concepts identiques.,b,,,,,"[3, 2, 1]",2.0,False,"['This distractor is somewhat plausible as it reverses the correct relationship, which could confuse students who misunderstand the direction of translation between values and norms.', 'This distractor is easy to eliminate because it incorrectly suggests that values are more specific than norms, which contradicts the definitions provided.', 'This distractor is implausible as it suggests that norms and values are identical, which is clearly incorrect based on the definitions given.']"
+OIC-002-04-A,"{{objectif de connaissance
+|Identifiant=OIC-002-04-A
+|Item_parent=Les valeurs professionnelles du médecin et des autres professions de santé
+|Item_parent_short=Les valeurs professionnelles du médecin et des autres professions de santé
+|Rang=A
+|Intitulé=Connaître l’organisation sociale et politique de la profession médicale et sa régulation étatique
+|Description=None
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=4}}
+
+Le cout et les risques de certains traitements ont justifié une régulation étatique des dépenses de santé. L’autonomie et la liberté du médecin sont partiellement remises en question au profit d’autres valeurs comme la qualité des soins, l’évaluation de leur efficience, l’équilibre entre santé individuelle et santé publique…<br />",Quelle est la raison principale de la régulation étatique des dépenses de santé selon le texte ?,L'autonomie et la liberté du médecin,Le coût et les risques de certains traitements,La qualité des soins,L'équilibre entre santé individuelle et santé publique,b,,,,,"[2, 4, 3]",3.0,True,"['This option is easy to eliminate as it does not directly relate to the regulation of health expenditures, but rather to the values affected by such regulation.', 'This option is plausible as it reflects a common misconception that quality of care is the primary reason for regulation, rather than cost and risk.', 'This option is somewhat plausible as it relates to the broader goals of health regulation, but it is not the primary reason mentioned in the text.']"
+OIC-002-05-A,"{{objectif de connaissance
+|Identifiant=OIC-002-05-A
+|Item_parent=Les valeurs professionnelles du médecin et des autres professions de santé
+|Item_parent_short=Les valeurs professionnelles du médecin et des autres professions de santé
+|Rang=A
+|Intitulé=Connaître les principes de la médecine fondée sur les preuves et de la médecine basée sur la responsabilité et l’expérience du malade
+|Description=None
+|Rubrique=Définition
+|Contributeurs=
+|Ordre=5}}
+La '''médecine fondée sur les preuves''' (EBM = evidence based medicine) promeut une pratique conforme aux données actuelle de la science, interprétées à la lumière de l’expérience personnelle et appliquées dans le respect des préférences et valeurs du patient.
+
+La '''médecine basée sur la responsabilité et l’expérience du malade''' prend acte des compétences pratiques du patient et de son expérience quotidienne de la maladie. Cette expérience fonde le patient à intervenir dans les décisions de prise en charge et lui donne, de ce fait, des responsabilités. Les droits du malade ont été renforcés, la décision partagée est prônée comme un idéal relationnel.
+
+<br />",Qu'est-ce que la médecine fondée sur les preuves (EBM) promeut ?,"Une pratique qui ne tient pas compte de l'expérience du patient, se basant uniquement sur les données scientifiques et l'expérience du médecin.","Une pratique conforme aux données actuelles de la science, interprétées à la lumière de l’expérience personnelle et appliquées dans le respect des préférences et valeurs du patient.","Une pratique basée uniquement sur l'expérience personnelle du médecin, sans tenir compte des données scientifiques.","Une pratique qui ignore les préférences et valeurs du patient, se concentrant uniquement sur les données scientifiques.",b,,,,,"[4, 1, 3]",2.6666666666666665,False,"['This distractor reflects a common misconception that EBM disregards patient experience, which can mislead students who misunderstand the integration of patient values in EBM.', 'This distractor is implausible as it suggests EBM ignores scientific data, which is a fundamental component of EBM, making it obviously incorrect.', 'This distractor is somewhat plausible as it suggests a focus solely on scientific data, which might confuse students who overlook the importance of patient values in EBM.']"

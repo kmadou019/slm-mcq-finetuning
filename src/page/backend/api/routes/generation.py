@@ -16,7 +16,7 @@ from pypdf import PdfReader
 from sqlalchemy.orm import Session
 
 from ..utils.dependencies import get_current_user
-from ..utils.generate_mcq_GPU import generate_mcq, validate_mcq, MCQQuestion
+from ..utils.generate_mcq_GPU import generate_mcq, validate_mcq, shuffle_distractors, MCQQuestion
 from ..models.auth import User
 from ..models.db_models import MCQAssignment as DBMCQAssignment
 from database import get_db, SessionLocal
@@ -160,14 +160,33 @@ def _evaluate_mcqs(mcq_cards: list, content: str) -> list:
             v = row.get(col, default) if hasattr(row, "get") else row[col] if col in df.columns else default
             return v if pd.notna(v) else default
 
-        is_q       = bool(_get("is_question", True))
-        negation   = bool(_get("starts_with_negation", False))
-        orig       = _get("originality", None)
-        readab     = _get("readability", None)
-        disclosure = _get("disclosure", None)
-        relevance  = _get("relevance", None)
-        distractors= _get("distractors_quality", None)
-        difficulty = _get("difficulty", None)
+        is_q        = bool(_get("is_question", True))
+        negation    = bool(_get("starts_with_negation", False))
+        orig        = _get("originality", None)
+        readab      = _get("readability", None)
+        disclosure  = _get("disclosure", None)
+        relevance   = _get("relevance", None)
+        distractors = _get("distractors_quality", None)
+        difficulty  = _get("difficulty", None)
+        ambiguity   = _get("ambiguity", None)
+        gpt_answer  = str(_get("gpt_answer", "") or "").strip().lower()
+        correct_opt = str(card.get("correct_option", "")).strip().lower()
+
+        # B3 — enrich with per-distractor detail if available
+        distractor_detail_raw = _get("distractors_quality_detail", None)
+        try:
+            distractor_detail = json.loads(distractor_detail_raw) if distractor_detail_raw else None
+        except Exception:
+            distractor_detail = None
+
+        if distractor_detail:
+            scores  = distractor_detail.get("scores", [])
+            justifs = distractor_detail.get("justifs", [])
+            avg     = distractor_detail.get("avg", None)
+            rang    = distractor_detail.get("rang", "B")
+            b3_notes = f"Rang {rang} | avg={avg:.2f} | scores={scores}"
+        else:
+            b3_notes = f"Pass: {distractors}" if has_openai else "N/A (no OpenAI key)"
 
         def _result(condition, checked=True):
             if not checked:
@@ -222,8 +241,8 @@ def _evaluate_mcqs(mcq_cards: list, content: str) -> list:
                 "check_id": "B3", "description": "Distractor plausibility",
                 "result": _result(distractors) if has_openai else "N/A",
                 "status": "not_checked",
-                "confidence": None, "score": "True/False",
-                "notes": f"Score: {distractors}" if has_openai else "N/A (no OpenAI key)",
+                "confidence": None, "score": "majority ≥ threshold & min ≥ 2",
+                "notes": b3_notes,
             },
             {
                 "check_id": "B4", "description": "Difficulty appropriateness",
@@ -231,6 +250,22 @@ def _evaluate_mcqs(mcq_cards: list, content: str) -> list:
                 "status": "not_checked",
                 "confidence": None, "score": "low/med/high",
                 "notes": f"Judge: {difficulty}" if has_openai else "N/A (no OpenAI key)",
+            },
+            {
+                "check_id": "B5", "description": "Answerability (expert + context)",
+                "result": _result(gpt_answer == correct_opt, checked=has_openai and bool(gpt_answer)),
+                "status": "not_checked",
+                "confidence": None, "score": "correct/incorrect",
+                "notes": (f"GPT-4o answered '{gpt_answer.upper()}', correct is '{correct_opt.upper()}'"
+                          if gpt_answer else "N/A (no OpenAI key)"),
+            },
+            {
+                "check_id": "B6", "description": "Ambiguity",
+                "result": (_result(ambiguity is not None and float(ambiguity) >= 0.3)
+                           if ambiguity is not None else "N/A"),
+                "status": "not_checked",
+                "confidence": None, "score": "0-1 (≥ 0.3 = plausible)",
+                "notes": f"Score: {round(float(ambiguity), 3) if ambiguity is not None else 'N/A'}",
             },
         ]
 
@@ -249,6 +284,7 @@ async def _run_generation(job_id: str, user_id: int, content: str, model_save_na
         mcq = validate_mcq(raw_response)
         if mcq is None:
             raise ValueError(f"Ollama response failed validation: {raw_response}")
+        mcq = shuffle_distractors(mcq)
 
         real_mcqs = _build_mcqs_from_response(job_id, content, model_save_name, mcq)
 

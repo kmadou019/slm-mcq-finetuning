@@ -623,6 +623,59 @@ async def export_dpo(
     )
 
 
+@router.get("/export/kto")
+async def export_kto(
+    current_user: User = Depends(require_admin),
+    db: Session = Depends(get_db)
+):
+    """
+    Exporter les validations au format KTO JSONL.
+    Chaque validation individuelle devient une entrée : label=true (ACCEPT) ou label=false (REJECT).
+    Les doublons par completion sont supprimés, puis mélangés (comme le notebook).
+    """
+    validations = db.query(Validation).filter(Validation.decision.in_(['ACCEPT', 'REJECT'])).all()
+
+    def format_mcq_response(mcq_data: dict) -> str:
+        question = mcq_data.get('mcq_question', '')
+        options = mcq_data.get('options', {})
+        correct = mcq_data.get('correct_option', '')
+        options_text = "\n".join([f"{k}. {v}" for k, v in options.items()])
+        return f"{question}\n\n{options_text}\n\nRéponse correcte : {correct}"
+
+    import random
+    entries = []
+    seen_completions = set()
+
+    for val in validations:
+        mcq_data = {}
+        if val.mcq_data:
+            try:
+                mcq_data = json.loads(val.mcq_data)
+            except (ValueError, TypeError):
+                pass
+
+        completion = format_mcq_response(mcq_data)
+        if completion in seen_completions:
+            continue
+        seen_completions.add(completion)
+
+        content_raw = val.content_raw or ''
+        entries.append({
+            "prompt": f"Génère une question à choix multiple (QCM) à partir du texte médical suivant :\n\n{content_raw}",
+            "completion": completion,
+            "label": val.decision == 'ACCEPT',
+        })
+
+    random.shuffle(entries)
+    content = "\n".join(json.dumps(e, ensure_ascii=False) for e in entries)
+    filename = f"kto_{datetime.utcnow().strftime('%Y%m%d_%H%M%S')}.jsonl"
+    return StreamingResponse(
+        io.BytesIO(content.encode('utf-8')),
+        media_type="application/x-ndjson",
+        headers={"Content-Disposition": f"attachment; filename={filename}"}
+    )
+
+
 @router.get("/export/stats")
 async def export_stats(
     current_user: User = Depends(require_admin),

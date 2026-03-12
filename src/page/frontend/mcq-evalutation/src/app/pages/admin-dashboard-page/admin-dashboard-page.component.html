@@ -258,6 +258,14 @@
           </div>
 
           <div class="export-card">
+            <h3>🎯 KTO Fine-tuning</h3>
+            <p>Validations individuelles avec <code>label: true/false</code> au format JSONL pour l'entraînement KTO (TRL <code>KTOTrainer</code>).</p>
+            <button class="btn-primary" (click)="exportKto()">
+              ⬇️ Télécharger le JSONL KTO
+            </button>
+          </div>
+
+          <div class="export-card">
             <h3>📊 Rapport Complet</h3>
             <p>Statistiques globales, par modèle et par utilisateur au format JSON.</p>
             <button class="btn-primary" (click)="exportFullReport()">
