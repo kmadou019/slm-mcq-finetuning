@@ -23,21 +23,41 @@ Current pipeline uses standard instruction-tuned models (e.g. `llama3.1:8b`, `me
 
 ---
 
-## Evaluation Pipeline — Corrections Made
+## Evaluation Pipeline — Scientific Review & Corrections
 
-Following a scientific review of the distractor quality evaluation approach, the following issues were identified and fixed:
+Following a scientific review of the evaluation approach (conducted from the perspective of a senior psychometrician and medical examiner), three metrics were identified as problematic: **Distractor Quality**, **Ambiguity**, and **Relevance**.
 
-### Fixes implemented
+### Metrics with issues
+
+#### Distractor Quality (B3) — 3 problems fixed
+| Problem | Fix |
+|---------|-----|
+| Binarisation prématurée : un seul booléen masquait les scores individuels — un distractor catastrophique [4,4,1] passait inaperçu | `distractors_quality.py` stocke désormais les scores bruts + avg dans `distractors_quality_detail`. La card B3 affiche `Rang X \| avg=X.XX \| scores=[x,x,x]` |
+| GPT-4o évaluait sans accès au contenu LISA — ne pouvait pas juger la pertinence médicale des misconceptions | `context_col='content_raw'` passé à `generate_prompt_for_question()` |
+| Seuil fixe `≥ 4` indépendant du Rang LISA — pénalisait injustement les items Rang A (connaissance de base) | Seuil adaptatif : `≥ 3` pour Rang A (éviter la variance construct-irrelevante), `≥ 4` pour Rang B (raisonnement discriminant). Règle additionnelle : `min(scores) ≥ 2` (aucun distractor catastrophique). |
+
+**Bibliographic justification for rang-adaptive threshold:** Haladyna & Rodriguez (2013), Gierl et al. (2017, *Review of Educational Research*), Bloom's taxonomy levels 1–2 vs 3–4.
+
+#### Ambiguity (B6) — 2 problems, 1 fixed
+| Problem | Status |
+|---------|--------|
+| Modèle d'embedding `BAAI/bge-base-en-v1.5` anglais sur corpus français — qualité dégradée | ✓ Remplacé par `almanach/moderncamembert-base` |
+| Seuil unique `≥ 0.3` : ne capture que la borne basse (distractor trivial). La borne haute (distractor trop similaire = ambigu) manque | ⏳ Fenêtre `[0.3 – 0.75]` à implémenter |
+
+**Bibliographic justification for window:** Mitkov et al. (2009) — intermediate similarity → highest item discrimination; Yeung & Lee et al. (2019) — `STS < 80%` upper filter; ArXiv 2025 (Student Choice Prediction) — best distractors cluster at intermediate cosine similarity.
+
+#### Relevance (B2) — 1 problem fixed
+| Problem | Fix |
+|---------|-----|
+| Même modèle d'embedding anglais que Ambiguity | ✓ Remplacé par `almanach/moderncamembert-base` |
+
+### Other fixes
 
 | # | Issue | Fix |
 |---|-------|-----|
-| 1.1 | Position bias: generation model always puts correct answer in position `a`; GPT-4o over-scores first distractor | `shuffle_distractors()` added in `generate_mcq_GPU.py`, called after every `validate_mcq()` in generation pipeline and benchmark |
-| 2.1 | Embedding model `BAAI/bge-base-en-v1.5` is English-only; corpus is French | Replaced with `almanach/moderncamembert-base` in `utils.py`, `ambiguity.py`, `relevance.py` |
-| 2.3 | GPT-4o evaluated distractor quality without access to the LISA source content | `context_col='content_raw'` now passed to `generate_prompt_for_question()` in `distractors_quality.py` |
-| 2.4 | Distractor quality binarised too early (single boolean), no per-distractor detail, fixed seuil regardless of LISA Rang | `distractors_quality.py` now stores raw scores + avg + justifications in `distractors_quality_detail` column. Threshold is rang-adaptive: `≥ 3` for Rang A, `≥ 4` for Rang B. Added rule `min(scores) ≥ 2` (no catastrophic distractor). |
-| 3.1 | Answerability not shown in evaluation card | Added as **B5** in `section_b_checks` (both `mcq.py` and `generation.py`) |
-| 3.2 | Ambiguity not shown in evaluation card | Added as **B6** in `section_b_checks` |
-| 3.3 | B3 (Distractor plausibility) showed only `True/False` | Now shows `Rang X \| avg=X.XX \| scores=[x, x, x]` |
+| Position bias | Generation model places correct answer in position `a`; GPT-4o over-scores first distractor | `shuffle_distractors()` added in `generate_mcq_GPU.py`, called after every `validate_mcq()` |
+| Answerability absent de la card | Métrique calculée mais non affichée | Added as **B5** in `section_b_checks` |
+| Ambiguity absent de la card | Métrique calculée mais non affichée | Added as **B6** in `section_b_checks` |
 
 ### Pending — ambiguity window threshold (Option A)
 
@@ -61,19 +81,46 @@ The reliability of the GPT-4o distractor quality metric has not yet been validat
 
 ---
 
-## Benchmark Script
+## Benchmark Scripts
 
-`notebooks/benchmark_nemotron_vs_magistral.py` — compares **Nemotron 30B** vs **Magistral 24B** on 10 LISA rows.
+### benchmark_nemotron_vs_magistral.py (legacy)
+Compares **Nemotron 30B** vs **Magistral 24B** on 10 LISA rows.
+
+### benchmark_thinking_vs_nothinking.py (new — 2026-03-13)
+Compares **6 thinking/non-thinking model pairs** on **1000 LISA rows**. All metrics evaluated simultaneously.
 
 ```bash
 cd notebooks
-python benchmark_nemotron_vs_magistral.py
-# → docs/benchmark_nemotron_vs_magistral.html
+python benchmark_thinking_vs_nothinking.py
+# → docs/benchmark_thinking_vs_nothinking.html
+# Checkpoints in docs/checkpoints/ — resumable on crash
 ```
 
-**Metrics evaluated:** Originality, Readability (FK), Negation, Is-question, Relevance, Ambiguity (B6), Answerability (B5, GPT-4o), Disclosure (GPT-4o), Difficulty (GPT-4o), Distractor Quality with raw scores (GPT-4o).
+**Model pairs:**
 
-**Output:** self-contained HTML — summary table (averages per metric) + per-question cards side by side.
+| Pair | Thinking | Non-thinking | Mechanism |
+|------|----------|--------------|-----------|
+| Qwen3 14B | `qwen3:14b` (think=True) | `qwen3:14b` (think=False) | Same weights, Ollama `think` flag |
+| Mistral ~24B | `magistral:latest` (think=True) | `mistral-small3.1:24b` | Same family |
+| Nemotron 30B | `Nemotron-3-Nano-30B` | `Nemotron-3-Nano-30B` | Internal `<think>` tags |
+| Phi-4 14B | `phi4-reasoning:14b` | `phi4:14b` | Same base, R1-style SFT |
+| Qwen2.5 14B | `deepseek-r1:14b` | `qwen2.5:14b` | Same weights, R1 distillation |
+| Qwen2.5 32B | `qwq:32b` | `qwen2.5:32b` | Same family |
+
+**Key finding — Ollama `think` flag support:**
+
+| Model | think=True via /api/chat | Fallback |
+|-------|--------------------------|---------|
+| `qwen3:14b` | ✓ supported | — |
+| `magistral:latest` | ✓ supported | — |
+| `nemotron-30b` | ✗ HTTP 400 | Uses internal `<think>` tags stripped by `extract_json()` |
+| `phi4-reasoning:14b` | ✗ HTTP 400 | Same |
+| `deepseek-r1:14b` | ✗ HTTP 400 but generates fine | Same |
+| `qwq:32b` | ✗ HTTP 400 | Same |
+
+→ Added `generate_mcq_chat(prompt, model, think: bool)` to `generate_mcq_GPU.py` — uses `/api/chat` instead of `/api/generate`, controls thinking via Ollama flag.
+
+**B6 Ambiguity** set to informative-only (`result: N/A`) pending empirical calibration of the `[0.3–0.75]` window on French medical corpus.
 
 ---
 
@@ -89,12 +136,13 @@ python benchmark_nemotron_vs_magistral.py
 
 ## Next Steps (incremental)
 
-1. ~~Run both models on a real LISA sheet prompt and compare MCQ output quality~~ → benchmark script done
+1. ~~Run both models on a real LISA sheet prompt and compare MCQ output quality~~ → done
 2. ~~Fix evaluation pipeline issues (embedding model, context, position bias, raw scores)~~ → done
-3. Run reliability tests (`reliability_test.py`) before interpreting benchmark results
-4. Implement ambiguity window `[0.3 – 0.75]` once calibration data is available
-5. Benchmark latency: magistral 24B vs Nemotron 30B
-6. Decide whether to store `thinking` trace in the custom MCQ JSON schema
+3. ~~Build thinking vs non-thinking benchmark (6 pairs, 1000 LISA rows)~~ → script ready, end-to-end tested on 1 row
+4. **Run full benchmark** (`N_LISA_ROWS=1000`) — set overnight
+5. Run reliability tests (`reliability_test.py`) before interpreting benchmark results
+6. Implement ambiguity window `[0.3 – 0.75]` once calibration data is available
+7. Decide whether to store `thinking` trace in the custom MCQ JSON schema
 
 ---
 

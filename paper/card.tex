@@ -1,0 +1,149 @@
+
+\hfuzz=3pt
+\setlength{\tabcolsep}{4pt}
+
+\begin{footnotesize}
+\begin{tcolorbox}[
+  enhanced,
+  colback=white,
+  colframe=gray!40,
+  arc=4pt,
+  boxrule=0.8pt,
+  title={\textbf{\textcolor{white}{MCQ Acceptance Card}}},
+  colbacktitle=headerblue,
+  fonttitle=\bfseries\large,
+  attach boxed title to top left={yshift=-2mm, xshift=4mm},
+  top=6mm, left=4pt, right=4pt,
+  breakable
+]
+
+% --- Header info ---
+\textbf{Item ID:} MCQ-000123 \\
+\textbf{Source Material:} LISA Sheet \#842 (Depression) \\
+\textbf{Generator:} Llama3.1-8B (temp=0.1, top\_p=1, ctx=4096) \\
+\textbf{Output Format:} JSON schema v1
+
+\smallskip
+
+% --- MCQ block ---
+\begin{tcolorbox}[
+  colback=gray!4,
+  colframe=gray!30,
+  arc=2pt,
+  boxrule=0.5pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt
+]
+\textbf{MCQ:}\\
+Which of the following best defines a major depressive episode (MDE)?\\[4pt]
+\textbf{A)} \ldots \\
+\textbf{B)} \ldots \\
+\textbf{C)} \ldots \\
+\textbf{D)} \ldots \\[4pt]
+\textcolor{correctblue}{\textbf{Correct option: C}}
+\end{tcolorbox}
+
+\smallskip
+
+% === Section A ===
+\textbf{Section A --- Deterministic Checks}
+\vspace{4pt}
+
+\begin{tabular}{@{}p{95pt}p{40pt}p{64pt}p{187pt}p{25pt}@{}}
+\toprule
+\textbf{Dimension} & \textbf{Result} & \textbf{Threshold} & \textbf{Notes} & \textbf{Val.} \\
+\midrule
+Valid JSON schema         & \pass & required   & Parsed and validated             & $\square$ \\
+Question mark present     & \pass & required   & Ends with `?'                    & $\square$ \\
+No leading negat.       & \pass & required   & No ``Which is \emph{not}\ldots'' & $\square$ \\
+Originality (trigram)     & \pass & $\ge 0.75$ & Options not copied from stem     & $\square$ \\
+Readability (FK gr.)    & \warn & $\ge 12$   & FK=11.7 (borderline)             & $\square$ \\
+\bottomrule
+\end{tabular}
+
+\smallskip
+
+% === Section B ===
+\textbf{Section B --- Judgment-Based Checks}
+\vspace{4pt}
+
+\begin{tabular}{@{}p{95pt}p{40pt}p{64pt}p{187pt}p{25pt}@{}}
+\toprule
+\textbf{Dimension} & \textbf{Result} & \textbf{Score} & \textbf{Notes} & \textbf{Val.} \\
+\midrule
+Disclosure (leakage) & \pass & True/False   & Judge: not guessable by cues     & $\square$ \\
+Relevance to material       & \pass & 0--1         & Judge: aligned with LISA content & $\square$ \\
+Distractor plausibility     & \warn & True/False   & Judge: 3/5 average               & $\square$ \\
+Difficulty appropriateness  & \pass & l/m/h        & Judge: medium                    & $\square$ \\
+\bottomrule
+\end{tabular}
+
+\smallskip
+
+% === Decision Policy ===
+\begin{tcolorbox}[
+  colback=decisionbg,
+  colframe=decisionborder,
+  arc=2pt,
+  boxrule=0.8pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt
+]
+\textbf{Decision Policy}\\
+\emph{Accept if all hard constraints pass and no critical AI-judge dimension fails.}
+\end{tcolorbox}
+
+\smallskip
+
+% === Audit Trail ===
+\begin{tcolorbox}[
+  colback=gray!5,
+  colframe=gray!30,
+  arc=2pt,
+  boxrule=0.5pt,
+  left=6pt, right=6pt, top=4pt, bottom=4pt
+]
+\textbf{Audit Trail}\\
+Judge model: GPT-4o (version/date), prompt template: JUDGE\_DISTR\_V2, seed: 42,
+order-swap: enabled, consistency: 2/2 stable.
+\end{tcolorbox}
+
+\smallskip
+
+% === Accept / Refuse buttons ===
+\noindent
+\begin{tabularx}{\linewidth}{@{}XX@{}}
+\begin{tcolorbox}[
+  colback=passgreen, colframe=passgreen,
+  arc=4pt, boxrule=0pt,
+  halign=center, valign=center,
+  height=0.8cm, left=0pt, right=0pt
+]
+\textcolor{white}{\Large\checkmark\ \textbf{Accept}}
+\end{tcolorbox}
+&
+\begin{tcolorbox}[
+  colback=red!75!black, colframe=red!75!black,
+  arc=4pt, boxrule=0pt,
+  halign=center, valign=center,
+  height=0.8cm, left=0pt, right=0pt
+]
+\textcolor{white}{\Large$\times$\ \textbf{Refuse}}
+\end{tcolorbox}
+\end{tabularx}
+
+\smallskip
+
+% === Feedback ===
+\begin{tcolorbox}[
+  colback=white,
+  colframe=gray!50,
+  arc=2pt,
+  boxrule=0.6pt,
+  left=6pt, right=6pt, top=4pt, bottom=12pt
+]
+\textbf{Feedback:}\\[4pt]
+\textcolor{gray!60}{\emph{Enter your feedback here\ldots}}
+\end{tcolorbox}
+
+
+\end{tcolorbox}
+\end{footnotesize}

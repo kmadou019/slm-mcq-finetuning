@@ -483,12 +483,11 @@ def build_mcq_card_from_row(row: pd.Series, index: int, model: str) -> Dict[str,
         {
             "check_id": "B6",
             "description": "Ambiguity",
-            "result": ("PASS" if ambiguity_float is not None and ambiguity_float >= 0.3 else
-                       ("FAIL" if ambiguity_float is not None else "N/A")),
+            "result": "N/A",
             "status": "not_checked",
             "confidence": None,
-            "score": "0-1 (≥ 0.3 = plausible)",
-            "notes": f"Score: {round(ambiguity_float, 3) if ambiguity_float is not None else 'N/A'}",
+            "score": "informative — calibration pending",
+            "notes": f"Score: {round(ambiguity_float, 3) if ambiguity_float is not None else 'N/A'} (window [0.3–0.75] not yet calibrated on French medical corpus)",
         },
     ]
 

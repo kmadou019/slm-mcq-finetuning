@@ -64,7 +64,10 @@ def shuffle_distractors(mcq: MCQQuestion) -> MCQQuestion:
         (mcq.option_c, mcq.option_c_comment),
         (mcq.option_d, mcq.option_d_comment),
     ]
-    correct_idx = letters.index(mcq.correct_option.lower())
+    try:
+        correct_idx = letters.index(mcq.correct_option.lower())
+    except ValueError:
+        return mcq  # invalid correct_option (e.g. 'e') — return unchanged
 
     indices = list(range(4))
     random.shuffle(indices)
@@ -94,15 +97,26 @@ def validate_mcq(mcq_json: str) -> Optional[MCQQuestion]:
 
 
 def extract_json(text: str) -> str:
-    """Extrait le dernier objet JSON valide d'une chaîne de texte (après un éventuel bloc <think>)."""
+    """Extrait le dernier objet JSON valide d'une chaîne de texte (après un éventuel bloc <think>).
+    Si </think> n'est pas fermé (génération tronquée par num_predict), cherche dans le texte entier.
+    """
+    search_text = text
     if "</think>" in text:
-        text = text[text.rfind("</think>") + len("</think>"):]
-    start = text.find("{")
-    end = text.rfind("}")
+        search_text = text[text.rfind("</think>") + len("</think>"):]
+
+    start = search_text.find("{")
+    end   = search_text.rfind("}")
+    # Fallback: think block unclosed — search whole text
+    if start == -1 or end == -1 or end < start:
+        start = text.find("{")
+        end   = text.rfind("}")
     if start == -1 or end == -1 or end < start:
         raise ValueError(f"Aucun objet JSON trouvé dans la réponse: {text[:200]}")
-    text = text[start:end + 1]
-    return json.dumps(ast.literal_eval(text), ensure_ascii=False)
+    text = search_text[start:end + 1]
+    try:
+        return json.dumps(json.loads(text), ensure_ascii=False)
+    except json.JSONDecodeError:
+        return json.dumps(ast.literal_eval(text), ensure_ascii=False)
 
 
 # ---------------------------------------------------------------------------
@@ -110,7 +124,7 @@ def extract_json(text: str) -> str:
 # ---------------------------------------------------------------------------
 
 def generate_mcq(full_prompt: str, model_name: str, temperature: float = 0.1) -> str:
-    """Génère un QCM au format JSON structuré via Ollama.
+    """Génère un QCM au format JSON structuré via Ollama /api/generate.
 
     Args:
         full_prompt:  Prompt complet envoyé au modèle.
@@ -128,6 +142,47 @@ def generate_mcq(full_prompt: str, model_name: str, temperature: float = 0.1) ->
     response = _ollama.generate(**generate_params)
     print(f"[generate_mcq] raw response: {response.response}")
     return extract_json(response.response)
+
+
+def generate_mcq_chat(full_prompt: str, model_name: str, think: bool = False,
+                      temperature: float = 0.1, num_predict: int = 8192) -> str:
+    """Génère un QCM via Ollama /api/chat avec contrôle du mode thinking.
+
+    Utiliser cette fonction pour les modèles qui supportent think:true/false
+    (Qwen3, Magistral, Nemotron, QwQ, DeepSeek-R1, Phi-4-Reasoning...).
+
+    Args:
+        full_prompt:  Prompt complet.
+        model_name:   Nom du modèle Ollama.
+        think:        True  → active le raisonnement interne.
+                      False → désactive le raisonnement (réponse directe).
+        temperature:  Température d'échantillonnage (défaut 0.1).
+        num_predict:  Nombre max de tokens à générer (thinking trace + JSON).
+
+    Returns:
+        Chaîne JSON brute extraite de message.content.
+    """
+    import re
+    response = _ollama.chat(
+        model=model_name,
+        messages=[{"role": "user", "content": full_prompt}],
+        think=think,
+        options={"temperature": temperature, "num_ctx": 8192, "top_p": 1, "num_predict": num_predict},
+    )
+    content = response.message.content
+
+    # Print thinking trace — two sources depending on model:
+    # 1. Ollama think flag supported (Qwen3, Magistral): trace in message.thinking
+    # 2. Inline <think> tags (Nemotron, Phi4-R, QwQ, DeepSeek-R1): trace in content
+    thinking = getattr(response.message, "thinking", None)
+    if thinking:
+        print(f"[THINKING TRACE]\n{thinking}\n[/THINKING TRACE]")
+    else:
+        m = re.search(r"<think>(.*?)</think>", content, re.DOTALL)
+        if m:
+            print(f"[THINKING TRACE]\n{m.group(1).strip()}\n[/THINKING TRACE]")
+
+    return extract_json(content)
 
 
 # ---------------------------------------------------------------------------

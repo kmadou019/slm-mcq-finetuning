@@ -261,11 +261,10 @@ def _evaluate_mcqs(mcq_cards: list, content: str) -> list:
             },
             {
                 "check_id": "B6", "description": "Ambiguity",
-                "result": (_result(ambiguity is not None and float(ambiguity) >= 0.3)
-                           if ambiguity is not None else "N/A"),
+                "result": "N/A",
                 "status": "not_checked",
-                "confidence": None, "score": "0-1 (≥ 0.3 = plausible)",
-                "notes": f"Score: {round(float(ambiguity), 3) if ambiguity is not None else 'N/A'}",
+                "confidence": None, "score": "informative — calibration pending",
+                "notes": f"Score: {round(float(ambiguity), 3) if ambiguity is not None else 'N/A'} (window [0.3–0.75] not yet calibrated on French medical corpus)",
             },
         ]
 
