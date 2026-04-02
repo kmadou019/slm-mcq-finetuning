@@ -97,6 +97,16 @@ export class McqService {
   }
 
   /**
+   * Construire un prompt enrichi depuis le contenu (item LISA déduit automatiquement)
+   */
+  buildPrompt(content: string): Observable<{ prompt: string; item_ref: string | null; objectives_count: number }> {
+    return this.http.post<{ prompt: string; item_ref: string | null; objectives_count: number }>(
+      `${this.apiUrl}/build-prompt`,
+      { content }
+    );
+  }
+
+  /**
    * Interroger l'état d'un job de génération (polling)
    */
   getGenerationStatus(jobId: string): Observable<{

@@ -1,0 +1,130 @@
+[
+  {
+    "item_id": "CSTM-B79A7C4-1",
+    "source_material": "CSTM-B79A7C4",
+    "generator_info": "hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0",
+    "output_format": "JSON",
+    "mcq_question": "Selon le texte fourni, quelle affirmation décrit correctement la notion d’empathie clinique ?",
+    "question_comment": "Cette question évalue la connaissance de la définition de l’empathie clinique ; le piège fréquent est de confondre empathie avec identification ou imitation de la situation du patient.",
+    "options": {
+      "A": "L’empathie clinique signifie que le médecin doit partager les mêmes opinions que le patient sur sa maladie.",
+      "B": "L’empathie clinique consiste à apprécier et accepter l’état émotionnel d’autrui afin de mieux le comprendre.",
+      "C": "L’empathie clinique implique que le médecin ignore les émotions du patient pour rester objectif.",
+      "D": "L’empathie clinique nécessite que le médecin vive exactement la même situation que le patient."
+    },
+    "option_comments": {
+      "A": "Incorrect – l’empathie ne requiert pas de partager les opinions du patient, seulement de comprendre ses émotions.",
+      "B": "Correct – l’empathie clinique est définie comme l’appréciation et l’acceptation de l’état émotionnel d’autrui pour mieux le comprendre.",
+      "C": "Incorrect – l’empathie ne consiste pas à ignorer les émotions du patient, au contraire elle les reconnaît.",
+      "D": "Incorrect – l’empathie ne consiste pas à vivre la situation du patient, mais à la comprendre sans s’y identifier."
+    },
+    "correct_option": "B",
+    "section_a_checks": [
+      {
+        "check_id": "A1",
+        "description": "Is a question",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": "True",
+        "notes": "Yes"
+      },
+      {
+        "check_id": "A2",
+        "description": "No leading negation",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": "False",
+        "notes": "Negation: False"
+      },
+      {
+        "check_id": "A3",
+        "description": "Originality",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": ">= 0.75",
+        "notes": "Score: 0.875"
+      },
+      {
+        "check_id": "A4",
+        "description": "Readability (FK grade)",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": ">= 12",
+        "notes": "Score: 14.9"
+      }
+    ],
+    "section_b_checks": [
+      {
+        "check_id": "B1",
+        "description": "Disclosure (answer leakage)",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "True/False",
+        "notes": "Score: False"
+      },
+      {
+        "check_id": "B2",
+        "description": "Relevance to material",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "0-1",
+        "notes": "Score: 0.932"
+      },
+      {
+        "check_id": "B3",
+        "description": "Distractor plausibility",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "majority ≥ threshold & min ≥ 2",
+        "notes": "Rang A | avg=3.00 | scores=[3, 2, 4]"
+      },
+      {
+        "check_id": "B4",
+        "description": "Difficulty appropriateness",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "low/med/high",
+        "notes": "Judge: 2"
+      },
+      {
+        "check_id": "B5",
+        "description": "Answerability (expert + context)",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "correct/incorrect",
+        "notes": "GPT-4o answered 'B', correct is 'B'"
+      },
+      {
+        "check_id": "B6",
+        "description": "Ambiguity",
+        "result": "N/A",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "informative — calibration pending",
+        "notes": "Score: 0.994 (window [0.3–0.75] not yet calibrated on French medical corpus)"
+      }
+    ],
+    "decision_policy": "Accept if all hard constraints pass and no critical AI-judge dimension fails.",
+    "final_decision": "ACCEPT",
+    "audit_trail": "Généré depuis contenu personnalisé. Modèle : hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0. Job : CSTM-B79A7C4.",
+    "lisa_texte_brut": "{{objectif de connaissance\n|Identifiant=OIC-001-09-A\n|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.\n|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...\n|Rang=A\n|Intitulé=Connaître la notion d’empathie clinique\n|Description=\n|Rubrique=Définition\n|Contributeurs=\n|Ordre=9}}\n<br />L’empathie sert à apprécier et accepter l’état émotionnel d’autrui afin de mieux le comprendre.\n\nLe médecin met de côté son propre schéma de pensée sur la situation vécue par le patient (compréhension) sans pour autant vivre la situation à la place du patient.\n\n<br />",
+    "lisa_metadata": {
+      "identifiant": "CSTM-B79A7C4",
+      "rang": "B",
+      "rubrique": "Contenu personnalisé",
+      "intitule": "Question générée depuis votre contenu",
+      "item_parent": "Contenu évaluateur",
+      "description": "MCQ généré automatiquement depuis le matériel pédagogique fourni par l'évaluateur.",
+      "contenu": "{{objectif de connaissance\n|Identifiant=OIC-001-09-A\n|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.\n|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...\n|Rang=A\n|Intitulé=Connaître la notion d’empathie clinique\n|Description=\n|Rubrique=Définition\n|Contributeurs=\n|Ordre=9}}\n<br />L’empathie sert à apprécier et accepter l’état émotionnel d’autrui afin de mieux le comprendre.\n\nLe médecin met de côté son propre schéma de pensée sur la situation vécue par le patient (compréhension) sans pour autant vivre la situation à la place du patient.\n\n<br />"
+    }
+  }
+]

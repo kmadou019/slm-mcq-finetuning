@@ -40,7 +40,7 @@
         <div class="form-group">
           <label for="ollama-model">Modèle Ollama</label>
           @if (ollamaModels().length > 0) {
-            <select id="ollama-model" [(ngModel)]="form.model_name">
+            <select id="ollama-model" [(ngModel)]="form.model_name" (change)="onHfModelBlur()">
               <option value="" disabled>-- Choisir un modèle --</option>
               @for (m of ollamaModels(); track m) {
                 <option [value]="m">{{ m }}</option>
@@ -51,6 +51,7 @@
               type="text"
               id="ollama-model"
               [(ngModel)]="form.model_name"
+              (blur)="onHfModelBlur()"
               placeholder="ex: llama3.1:8b (Ollama non détecté)" />
           }
         </div>
@@ -64,8 +65,78 @@
             type="text"
             id="hf-model"
             [(ngModel)]="form.model_name"
+            (input)="modelCard.set(null); modelCardError.set(null)"
+            (blur)="onHfModelBlur()"
             placeholder="ex: Qwen/Qwen3-0.6B" />
           <span class="hint">Nécessite un GPU disponible</span>
+        </div>
+      }
+
+      <!-- Model Card Panel (HF et Ollama) -->
+      @if (modelCardLoading()) {
+        <div class="mc-panel mc-loading">
+          <span class="mc-spinner"></span>
+          Récupération de la model card…
+        </div>
+      }
+
+      @if (modelCardError()) {
+        <div class="mc-panel mc-error">
+          <strong>Model card indisponible</strong> — {{ modelCardError() }}
+        </div>
+      }
+
+      @if (modelCard() && !modelCardLoading()) {
+        <div class="mc-panel">
+
+          <!-- Header -->
+          <div class="mc-header">
+            <span class="mc-title">{{ modelCard()!.model_id }}</span>
+            <span class="mc-badge">HuggingFace</span>
+          </div>
+
+          <!-- Metadata chips -->
+          <div class="mc-meta">
+            @if (modelCard()!.metadata.pipeline_tag) {
+              <span class="mc-chip mc-chip-blue">{{ modelCard()!.metadata.pipeline_tag }}</span>
+            }
+            @if (modelCard()!.metadata.license) {
+              <span class="mc-chip mc-chip-gray">{{ modelCard()!.metadata.license }}</span>
+            }
+            @for (lang of modelCard()!.metadata.language; track lang) {
+              <span class="mc-chip mc-chip-teal">{{ lang }}</span>
+            }
+            @if (modelCard()!.metadata.downloads_last_month !== null) {
+              <span class="mc-chip mc-chip-gray">
+                ↓ {{ modelCard()!.metadata.downloads_last_month | number }}
+              </span>
+            }
+            @if (modelCard()!.metadata.likes !== null) {
+              <span class="mc-chip mc-chip-gray">
+                ♥ {{ modelCard()!.metadata.likes | number }}
+              </span>
+            }
+          </div>
+
+          <!-- Extracted sections -->
+          @if (modelCardSections.length > 0) {
+            <div class="mc-sections">
+              @for (section of modelCardSections; track section.key) {
+                <div class="mc-section">
+                  <div class="mc-section-label">{{ section.label }}</div>
+                  <div class="mc-section-content">{{ section.content }}</div>
+                </div>
+              }
+            </div>
+          } @else {
+            <p class="mc-empty">Aucune section extraite — la model card est peut-être vide ou non structurée.</p>
+          }
+
+          @if (modelCard()!.extractor_error) {
+            <p class="mc-extractor-warn">
+              ⚠ Extraction partielle ({{ modelCard()!.extractor_error }})
+            </p>
+          }
         </div>
       }
 

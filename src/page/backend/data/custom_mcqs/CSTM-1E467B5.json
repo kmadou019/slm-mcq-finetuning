@@ -1,0 +1,130 @@
+[
+  {
+    "item_id": "CSTM-1E467B5-1",
+    "source_material": "CSTM-1E467B5",
+    "generator_info": "hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0",
+    "output_format": "JSON",
+    "mcq_question": "Quel mécanisme de défense consiste à transférer la souffrance psychique sur des symptômes physiques ?",
+    "question_comment": "Cette question teste la reconnaissance du mécanisme de défense du déplacement lors de l'annonce d'une mauvaise nouvelle.",
+    "options": {
+      "A": "Le patient utilise la projection pour attribuer ses propres sentiments à autrui.",
+      "B": "Le patient utilise l'isolation pour séparer les pensées douloureuses de ses émotions.",
+      "C": "Le patient utilise la régression pour revenir à un stade de développement antérieur.",
+      "D": "Le patient utilise le déplacement pour transformer sa détresse psychique en symptômes physiques."
+    },
+    "option_comments": {
+      "A": "Incorrect : la projection consiste à attribuer ses sentiments à autrui, pas à les transformer en symptômes physiques.",
+      "B": "Incorrect : l'isolation consiste à séparer les pensées pénibles, pas à les projeter sur le corps.",
+      "C": "Incorrect : la régression implique un retour à un stade de développement précédent, pas une transformation en symptômes.",
+      "D": "Correct : le déplacement décrit exactement le transfert de la détresse psychique sur des symptômes physiques."
+    },
+    "correct_option": "D",
+    "section_a_checks": [
+      {
+        "check_id": "A1",
+        "description": "Is a question",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": "True",
+        "notes": "Yes"
+      },
+      {
+        "check_id": "A2",
+        "description": "No leading negation",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": "False",
+        "notes": "Negation: False"
+      },
+      {
+        "check_id": "A3",
+        "description": "Originality",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": ">= 0.75",
+        "notes": "Score: 1.0"
+      },
+      {
+        "check_id": "A4",
+        "description": "Readability (FK grade)",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": ">= 12",
+        "notes": "Score: 12.3"
+      }
+    ],
+    "section_b_checks": [
+      {
+        "check_id": "B1",
+        "description": "Disclosure (answer leakage)",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "True/False",
+        "notes": "Score: False"
+      },
+      {
+        "check_id": "B2",
+        "description": "Relevance to material",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "0-1",
+        "notes": "Score: 0.927"
+      },
+      {
+        "check_id": "B3",
+        "description": "Distractor plausibility",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "majority ≥ threshold & min ≥ 2",
+        "notes": "Rang A | avg=2.67 | scores=[2, 3, 3]"
+      },
+      {
+        "check_id": "B4",
+        "description": "Difficulty appropriateness",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "low/med/high",
+        "notes": "Judge: 3"
+      },
+      {
+        "check_id": "B5",
+        "description": "Answerability (expert + context)",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "correct/incorrect",
+        "notes": "GPT-4o answered 'D', correct is 'D'"
+      },
+      {
+        "check_id": "B6",
+        "description": "Ambiguity",
+        "result": "N/A",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "informative — calibration pending",
+        "notes": "Score: 0.992 (window [0.3–0.75] not yet calibrated on French medical corpus)"
+      }
+    ],
+    "decision_policy": "Accept if all hard constraints pass and no critical AI-judge dimension fails.",
+    "final_decision": "ACCEPT",
+    "audit_trail": "Généré depuis contenu personnalisé. Modèle : hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0. Job : CSTM-1E467B5.",
+    "lisa_texte_brut": "{{objectif de connaissance\n|Identifiant=OIC-001-08-A\n|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.\n|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...\n|Rang=A\n|Intitulé=Connaître les principaux mécanismes de défense observés chez les patients / leurs proches / les professionnels de santé dans le cadre de l’annonce d’une mauvaise nouvelle en santé\n|Description=\n|Rubrique=Définition\n|Contributeurs=\n|Ordre=8}}Lorsqu’il est confronté à une souffrance psychique la personne peut être en difficulté pour y faire face et se « défendre » : elle adopte alors de façon plus ou moins consciente une attitude qui lui permet vivre moins douloureusement la situation. C’est une forme d’adaptation aux angoisses. Il n’existe pas de liste consensuelle des mécanismes de défenses, la personne pourra par exemple tenter de distancier les cognitions pénibles ou menaçantes de ses sentiment (Isolation), déplacer sur des symptômes physiques sa souffrance mentale (Déplacement), projeter de manière inconsciente ses propres sentiment en les attribuant à autrui (Projection), régresser vers un stage de développement antérieur (Régression) ou encore être dans le Déni (en refusant de façon inconsciente de reconnaitre la réalité traumatisante).",
+    "lisa_metadata": {
+      "identifiant": "CSTM-1E467B5",
+      "rang": "B",
+      "rubrique": "Contenu personnalisé",
+      "intitule": "Question générée depuis votre contenu",
+      "item_parent": "Contenu évaluateur",
+      "description": "MCQ généré automatiquement depuis le matériel pédagogique fourni par l'évaluateur.",
+      "contenu": "{{objectif de connaissance\n|Identifiant=OIC-001-08-A\n|Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.\n|Item_parent_short=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un ...\n|Rang=A\n|Intitulé=Connaître les principaux mécanismes de défense observés chez les patients / leurs proches / les professionnels de santé dans le cadre de l’annonce d’une mauvaise nouvelle en santé\n|Description=\n|Rubrique=Définition\n|Contributeurs=\n|Ordre=8}}Lorsqu’il est confronté à une souffrance psychique la personne peut être en difficulté pour y faire face et se « défendre » : elle adopte alors de façon plus ou moins consciente une attitude qui lui permet vivre moins douloureusement la situation. C’est une forme d’adaptation aux angoisses. Il n’existe pas de liste consensuelle des mécanismes de défenses, la personne pourra par exemple tenter de distancier les cognitions pénibles ou menaçantes de ses sentiment (Isolation), déplacer sur des symptômes physiques sa souffrance mentale (Déplacement), projeter de manière inconsciente ses propres sentiment en les attribuant à autrui (Projection), régresser vers un stage de développement antérieur (Régression) ou encore être dans le Déni (en refusant de façon inconsciente de reconnaitre la réalité traumatisante)."
+    }
+  }
+]

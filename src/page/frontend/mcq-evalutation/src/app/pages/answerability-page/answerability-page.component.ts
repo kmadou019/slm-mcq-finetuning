@@ -2,7 +2,7 @@ import {
   Component, signal, OnInit, OnDestroy, AfterViewInit,
   inject, ViewChild, ElementRef, effect,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DecimalPipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { interval, Subscription } from 'rxjs';
@@ -16,6 +16,7 @@ import {
   AnswerabilityRequest,
   AnswerabilityJob,
   AnswerabilityResult,
+  ModelCardInfo,
 } from '../../services/answerability.service';
 import { AuthService } from '../../services/auth.service';
 
@@ -79,7 +80,7 @@ const BAR_COLORS = [
 @Component({
   selector: 'app-answerability-page',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, DecimalPipe],
   templateUrl: './answerability-page.component.html',
   styleUrl: './answerability-page.component.scss',
 })
@@ -91,11 +92,35 @@ export class AnswerabilityPageComponent implements OnInit, AfterViewInit, OnDest
   @ViewChild('chartCanvas') chartCanvasRef!: ElementRef<HTMLCanvasElement>;
 
   // --- UI state ---
-  ollamaModels = signal<string[]>([]);
-  results = signal<AnswerabilityResult[]>([]);
-  currentJob = signal<AnswerabilityJob | null>(null);
-  isRunning = signal(false);
-  errorMsg = signal<string | null>(null);
+  ollamaModels       = signal<string[]>([]);
+  results            = signal<AnswerabilityResult[]>([]);
+  currentJob         = signal<AnswerabilityJob | null>(null);
+  isRunning          = signal(false);
+  errorMsg           = signal<string | null>(null);
+  modelCard          = signal<ModelCardInfo | null>(null);
+  modelCardLoading   = signal(false);
+  modelCardError     = signal<string | null>(null);
+
+  readonly sectionLabels: Record<string, string> = {
+    intended_use:           'Usage prévu',
+    factors:                'Facteurs',
+    training_data:          "Données d'entraînement",
+    evaluation_data:        "Données d'évaluation",
+    quantitative_analyses:  'Analyses quantitatives',
+    ethical_considerations: 'Considérations éthiques',
+    caveats:                'Mises en garde',
+  };
+
+  get modelCardSections(): Array<{ key: string; label: string; content: string }> {
+    const sections = this.modelCard()?.sections ?? {};
+    return Object.entries(sections)
+      .filter(([, v]) => typeof v === 'string' && v.trim().length > 0)
+      .map(([k, v]) => ({
+        key:     k,
+        label:   this.sectionLabels[k] ?? k,
+        content: v as string,
+      }));
+  }
 
   readonly presets = DATASET_PRESETS;
 
@@ -145,6 +170,28 @@ export class AnswerabilityPageComponent implements OnInit, AfterViewInit, OnDest
     this.service.getResults().subscribe({
       next: (res) => this.results.set(res.results),
       error: () => {},
+    });
+  }
+
+  onHfModelBlur(): void {
+    const modelId = this.form.model_name.trim();
+    if (!modelId) return;
+
+    this.modelCard.set(null);
+    this.modelCardError.set(null);
+    this.modelCardLoading.set(true);
+
+    this.service.getModelCard(modelId).subscribe({
+      next: (card) => {
+        this.modelCard.set(card);
+        this.modelCardLoading.set(false);
+      },
+      error: (err) => {
+        this.modelCardError.set(
+          err?.error?.detail ?? 'Impossible de récupérer la model card.'
+        );
+        this.modelCardLoading.set(false);
+      },
     });
   }
 

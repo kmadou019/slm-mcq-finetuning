@@ -146,6 +146,62 @@ python benchmark_thinking_vs_nothinking.py
 
 ---
 
+## LISA Prompt Enrichment (2026-04-02)
+
+### Contexte
+
+Les prompts de génération étaient statiques (codés en dur). Un pipeline dynamique a été implémenté pour enrichir automatiquement le prompt avec les objectifs officiels LISA ECNi récupérés depuis GraphDB.
+
+### Architecture
+
+```
+content (PDF / wiki / texte libre)
+    ↓
+_extract_via_regex()   → |Item_parent= ou première ligne significative
+    ↓ (fallback)
+_extract_via_ollama()  → mot-clé médical via Nemotron 30B
+    ↓
+_fetch_objectives()    → 3-hop SPARQL via MCP (GraphDB SIDES3)
+    Hop 0 : KnowledgeItem matching search_term
+    Hop 1 : URIs des KnowledgeObjectives de l'item
+    Hop 2 : attributs (label, rank A/B, order)
+    ↓
+_build_enriched_prompt()  → prompt avec item + objectifs + guidelines QCM
+    ou _build_fallback_prompt() si GraphDB injoignable
+```
+
+### Fichiers concernés
+
+| Fichier | Rôle |
+|---------|------|
+| `src/page/backend/api/utils/prompt_builder.py` | Module principal (web app) |
+| `src/page/backend/api/routes/generation.py` | Endpoint `POST /api/build-prompt` |
+| `notebooks/generate_mcq.py` | Copie autonome pour le pipeline batch |
+| `notebooks/generate_mcq.ipynb` | Même logique dans le notebook |
+
+### Guidelines QCM intégrées dans le prompt
+
+- Pas de "Toutes les réponses sont correctes" / "Aucune des réponses"
+- Pas de combinaisons de propositions (A et C sont correctes)
+- Longueur homogène entre propositions (pas de cluing par la longueur)
+- Pas de reprise des mots du stem dans la bonne réponse
+- Stem compréhensible sans lire les propositions
+- Pas de négation dans le stem
+
+### Variables d'environnement requises
+
+```
+GRAPHDB_MCP_URL=https://mcp-graphdb.sides3.network/mcp
+GRAPHDB_BEARER_TOKEN=<token>
+OLLAMA_HOST=http://localhost:11434   # pour le fallback Ollama keyword
+```
+
+### Note importante — ordre des imports dans main.py
+
+Les variables `GRAPHDB_MCP_URL` et `GRAPHDB_BEARER_TOKEN` sont lues à l'appel (via `_cfg()`) et non à l'import du module, pour éviter le problème d'ordre `import routes` avant `load_dotenv()`.
+
+---
+
 ## References
 
 - Ollama chat API: `POST /api/chat` with `think: true`

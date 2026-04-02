@@ -28,5 +28,35 @@
     "accuracy": 20.0,
     "correct": 2,
     "date": "2026-03-11T11:16:16.549745"
+  },
+  {
+    "job_id": "ANS-3ACA7A4",
+    "model_name": "qwen2.5:32b",
+    "model_type": "ollama",
+    "dataset_name": "openlifescienceai/medmcqa",
+    "sample_size": 10,
+    "accuracy": 80.0,
+    "correct": 8,
+    "date": "2026-04-01T12:47:55.724099"
+  },
+  {
+    "job_id": "ANS-74F4B6E",
+    "model_name": "qwen2.5:32b",
+    "model_type": "ollama",
+    "dataset_name": "uness",
+    "sample_size": 10,
+    "accuracy": 90.0,
+    "correct": 9,
+    "date": "2026-04-01T12:48:14.488290"
+  },
+  {
+    "job_id": "ANS-F405AAF",
+    "model_name": "Qwen/Qwen3-0.6B",
+    "model_type": "hf",
+    "dataset_name": "uness",
+    "sample_size": 10,
+    "accuracy": 0.0,
+    "correct": 0,
+    "date": "2026-04-01T12:50:47.919320"
   }
 ]

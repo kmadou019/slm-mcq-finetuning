@@ -79,6 +79,10 @@ export class GenerateFromMaterialModalComponent implements OnDestroy {
 
   // Prompt editor
   showPromptEditor = false;
+  promptState: 'default' | 'enriched' | 'modified' = 'default';
+  builtItemRef: string | null = null;
+  builtObjectivesCount = 0;
+  isBuilding = false;
 
   // État de la vue
   view: ModalView = 'form';
@@ -97,7 +101,7 @@ export class GenerateFromMaterialModalComponent implements OnDestroy {
   }
 
   get isPromptModified(): boolean {
-    return this.promptTemplate !== DEFAULT_PROMPT;
+    return this.promptState !== 'default';
   }
 
   ngOnDestroy(): void {
@@ -110,6 +114,42 @@ export class GenerateFromMaterialModalComponent implements OnDestroy {
 
   resetPrompt(): void {
     this.promptTemplate = DEFAULT_PROMPT;
+    this.promptState = 'default';
+    this.builtItemRef = null;
+    this.builtObjectivesCount = 0;
+  }
+
+  onPromptChange(value: string): void {
+    this.promptTemplate = value;
+    if (value === DEFAULT_PROMPT) {
+      this.promptState = 'default';
+      this.builtItemRef = null;
+      this.builtObjectivesCount = 0;
+    } else {
+      this.promptState = 'modified';
+    }
+  }
+
+  onBuildPrompt(): void {
+    this.isBuilding = true;
+    this.mcqService.buildPrompt(this.content).subscribe({
+      next: (result) => {
+        console.log('[buildPrompt] result:', result);
+        this.promptTemplate = result.prompt;
+        this.builtItemRef = result.item_ref;
+        this.builtObjectivesCount = result.objectives_count;
+        this.promptState = result.item_ref ? 'enriched' : 'modified';
+        this.isBuilding = false;
+        this.showPromptEditor = true;
+        console.log('[buildPrompt] showPromptEditor:', this.showPromptEditor, 'promptTemplate length:', this.promptTemplate?.length);
+        this.cdr.detectChanges();
+      },
+      error: (err) => {
+        this.isBuilding = false;
+        this.errorMessage = err?.error?.detail || err?.message || 'Échec de l\'enrichissement LISA.';
+        this.cdr.detectChanges();
+      }
+    });
   }
 
   onSubmit(): void {

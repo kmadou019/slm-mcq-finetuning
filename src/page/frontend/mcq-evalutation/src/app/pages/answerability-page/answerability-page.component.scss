@@ -402,3 +402,131 @@
     color: $white;
   }
 }
+
+// ============================================================
+// Model Card Panel
+// ============================================================
+
+.mc-panel {
+  margin-top: 0.75rem;
+  border: 1px solid $gray-200;
+  border-radius: 8px;
+  background: $white;
+  overflow: hidden;
+  font-size: 0.82rem;
+
+  &.mc-loading {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1rem;
+    color: $gray-500;
+    background: $gray-50;
+  }
+
+  &.mc-error {
+    padding: 0.75rem 1rem;
+    background: $danger-bg;
+    color: $danger-dark;
+    border-color: $danger;
+  }
+}
+
+.mc-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid $gray-300;
+  border-top-color: $primary;
+  border-radius: 50%;
+  animation: mc-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes mc-spin {
+  to { transform: rotate(360deg); }
+}
+
+.mc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.6rem 0.9rem;
+  background: $primary-bg;
+  border-bottom: 1px solid $gray-200;
+}
+
+.mc-title {
+  font-weight: 600;
+  color: $primary-dark;
+  font-size: 0.85rem;
+  word-break: break-all;
+}
+
+.mc-badge {
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 99px;
+  background: $primary;
+  color: $white;
+  flex-shrink: 0;
+}
+
+.mc-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid $gray-100;
+}
+
+.mc-chip {
+  display: inline-block;
+  font-size: 0.72rem;
+  padding: 0.15rem 0.55rem;
+  border-radius: 99px;
+  font-weight: 500;
+
+  &.mc-chip-blue  { background: $info-bg;     color: $primary-dark; }
+  &.mc-chip-teal  { background: #ccfbf1;       color: #0f766e; }
+  &.mc-chip-gray  { background: $gray-100;     color: $gray-600; }
+}
+
+.mc-sections {
+  padding: 0.5rem 0.9rem 0.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.mc-section {
+  border-left: 3px solid $primary-light;
+  padding-left: 0.6rem;
+}
+
+.mc-section-label {
+  font-weight: 600;
+  color: $gray-700;
+  margin-bottom: 0.2rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.mc-section-content {
+  color: $gray-600;
+  line-height: 1.5;
+  font-size: 0.8rem;
+}
+
+.mc-empty {
+  padding: 0.75rem 0.9rem;
+  color: $gray-400;
+  font-style: italic;
+}
+
+.mc-extractor-warn {
+  padding: 0.4rem 0.9rem 0.6rem;
+  color: $warning-dark;
+  font-size: 0.75rem;
+}

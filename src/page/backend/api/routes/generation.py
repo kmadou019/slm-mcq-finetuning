@@ -17,6 +17,7 @@ from sqlalchemy.orm import Session
 
 from ..utils.dependencies import get_current_user
 from ..utils.generate_mcq_GPU import generate_mcq, validate_mcq, shuffle_distractors, MCQQuestion
+from ..utils.prompt_builder import build_prompt as _build_prompt
 from ..models.auth import User
 from ..models.db_models import MCQAssignment as DBMCQAssignment
 from database import get_db, SessionLocal
@@ -36,6 +37,10 @@ class GenerationRequest(BaseModel):
     content: str
     model_save_name: str
     prompt_template: str | None = None
+
+
+class BuildPromptRequest(BaseModel):
+    content: str
 
 
 
@@ -330,6 +335,22 @@ async def _run_generation(job_id: str, user_id: int, content: str, model_save_na
 # ============================================================================
 # ROUTES
 # ============================================================================
+
+@router.post("/build-prompt")
+async def build_prompt_endpoint(
+    request: BuildPromptRequest,
+    current_user: User = Depends(get_current_user),
+):
+    """
+    Build an enriched generation prompt from educational content.
+    Deduces the LISA item automatically and fetches official objectives via GraphDB.
+    Always returns a prompt (graceful fallback if SPARQL is unavailable).
+    """
+    if len(request.content.strip()) < 100:
+        raise HTTPException(status_code=400, detail="Le contenu doit contenir au moins 100 caractères.")
+    result = await asyncio.to_thread(_build_prompt, request.content)
+    return result
+
 
 @router.post("/extract-pdf")
 async def extract_pdf(file: UploadFile = File(...)):

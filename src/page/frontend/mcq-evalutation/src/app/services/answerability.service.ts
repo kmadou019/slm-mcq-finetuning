@@ -38,6 +38,22 @@ export interface AnswerabilityResult {
   date: string;
 }
 
+export interface ModelCardMetadata {
+  license: string | null;
+  language: string[];
+  pipeline_tag: string | null;
+  downloads_last_month: number | null;
+  likes: number | null;
+  tags: string[];
+}
+
+export interface ModelCardInfo {
+  model_id: string;
+  metadata: ModelCardMetadata;
+  sections: Record<string, string>;
+  extractor_error: string | null;
+}
+
 @Injectable({ providedIn: 'root' })
 export class AnswerabilityService {
   private http = inject(HttpClient);
@@ -64,6 +80,12 @@ export class AnswerabilityService {
   cancelJob(jobId: string): Observable<{ job_id: string; message: string }> {
     return this.http.delete<{ job_id: string; message: string }>(
       `${this.apiUrl}/answerability/job/${jobId}`
+    );
+  }
+
+  getModelCard(modelId: string): Observable<ModelCardInfo> {
+    return this.http.get<ModelCardInfo>(
+      `${this.apiUrl}/model-card/${encodeURIComponent(modelId)}`
     );
   }
 }

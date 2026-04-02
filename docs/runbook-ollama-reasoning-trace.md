@@ -91,6 +91,21 @@ python reliability_test.py --n 20
 python reliability_test.py --kappa
 ```
 
+## MCQ Prompt Builder (LISA enrichment)
+
+The prompt sent to Ollama is now built dynamically via `prompt_builder.py` — it fetches official LISA objectives from GraphDB and injects them into the prompt before generation.
+
+```python
+# Web app (via FastAPI endpoint)
+POST /api/build-prompt  { "content": "..." }
+→ { "prompt": "...", "item_ref": "Item 234", "objectives_count": 23 }
+
+# Batch pipeline (notebooks/generate_mcq.py)
+full_prompt = _build_prompt(content)  # autonome, sans import de src/page/
+```
+
+See spike section **"LISA Prompt Enrichment"** for full architecture.
+
 ## Related Files
 
 | File | Role |
@@ -99,4 +114,6 @@ python reliability_test.py --kappa
 | `notebooks/reliability_test.py` | GPT-4o evaluator reliability validation |
 | `docs/benchmark_nemotron_vs_magistral.html` | Benchmark HTML output |
 | `src/page/backend/api/utils/generate_mcq_GPU.py` | Generation + shuffle logic |
+| `src/page/backend/api/utils/prompt_builder.py` | LISA prompt enrichment (web app) |
+| `notebooks/generate_mcq.py` | LISA prompt enrichment (batch, autonome) |
 | `src/page/backend/eval/` | All evaluation metrics |
