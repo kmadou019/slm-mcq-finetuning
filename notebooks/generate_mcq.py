@@ -396,13 +396,6 @@ def correctness(df, save_name, file):
     return df
 
 
-# ## Quality distribution
-
-def quality_distribution(df, save_name, file):
-    print(f"{save_name} quality distribution:", file=file)
-    print(df['distractor_quality'].round(0).value_counts(normalize=True, sort=True)*100, file=file)
-
-
 # # MCQs Generation
 
 models = {
@@ -433,4 +426,3 @@ with open("correctness.output", mode="a") as f:
     df = for_a_model(df_test, model_name, save_name)
     df = correct_output(df, save_name, f)
     df = correctness(df, save_name, f)
-    #quality_distribution(df,save_name,f)

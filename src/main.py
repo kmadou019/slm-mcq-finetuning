@@ -134,15 +134,15 @@ def main():
                                       num_workers=10,
                                       lisa_sheet_id_col='id',
                                       lisa_sheet_col='content_raw',
-                                      compute_answerability      =True,
-                                      compute_originality        =True,
-                                      compute_readability        =True,
-                                      compute_negation           =True,
-                                      compute_is_question        =True,
-                                      compute_relevance          =True,
-                                      compute_ambiguity          =True,
-                                      compute_disclosure         =True,
-                                      compute_difficulty         =True,
+                                      compute_answerability      =False,
+                                      compute_originality        =False,
+                                      compute_readability        =False,
+                                      compute_negation           =False,
+                                      compute_is_question        =False,
+                                      compute_relevance          =False,
+                                      compute_ambiguity          =False,
+                                      compute_disclosure         =False,
+                                      compute_difficulty         =False,
                                       compute_distractors_quality=True,
                                       disclosure_system_prompt=system_prompts['disclosure_prompt'],
                                       difficulty_system_prompt=system_prompts['difficulty_prompt'],
@@ -153,6 +153,10 @@ def main():
     
 
     df_eval.to_csv(os.environ.get('MODEL_MCQ_EVAL_EXPORT_PATH') + "/" +  generated_qcm_file, index=False)
+
+    with open("distribution.output", "a") as f:
+        print(f"\n{generated_qcm_file} quality distribution:", file=f)
+        print(df_eval['distractor_quality'].round(0).value_counts(normalize=True, sort=True) * 100, file=f)
 
 
 if __name__ == '__main__':
