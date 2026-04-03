@@ -262,22 +262,35 @@ def _extract_via_regex(content):
 
 
 def _extract_via_ollama(content):
+    lines = content.splitlines()
+    title_lines = [l.strip() for l in lines if l.strip() and 5 < len(l.strip()) < 150]
+    excerpt = "\n".join(title_lines[:30]) if title_lines else content[:3000]
     try:
         _, _, ollama_host = _cfg()
-        client = OllamaClient(host=ollama_host, timeout=15)
+        client = OllamaClient(host=ollama_host, timeout=30)
         prompt = (
-            "Extrait le mot-clé médical principal de ce contenu pédagogique, "
-            "adapté à une recherche dans la base LISA ECNi. "
-            "Réponds UNIQUEMENT avec un seul mot ou groupe nominal court, "
-            "sans ponctuation finale ni explication.\n\n"
-            f"CONTENU :\n{content[:800]}"
+            "Tu es un assistant spécialisé dans le curriculum médical français ECNi/LISA.\n"
+            "Lis ce contenu pédagogique et identifie les 3 termes de recherche les plus pertinents "
+            "pour retrouver l'item LISA correspondant dans la base de données LISA ECNi.\n\n"
+            "Les labels LISA sont des phrases nominales comme :\n"
+            "- \"Insuffisance cardiaque de l'adulte\"\n"
+            "- \"Relation médecin-malade\"\n"
+            "- \"Facteurs de risque cardio-vasculaire\"\n\n"
+            "Réponds UNIQUEMENT avec 3 termes de recherche, un par ligne, du plus au moins spécifique. "
+            "Pas de numérotation, pas d'explication, pas de ponctuation finale.\n\n"
+            f"CONTENU :\n{excerpt}"
         )
         response = client.generate(model=_KEYWORD_MODEL, prompt=prompt,
-                                   options={"temperature": 0.0, "num_predict": 20})
-        return response.response.strip().strip(".,;:\"'\n") or None
+                                   options={"temperature": 0.0, "num_predict": 60})
+        raw = response.response.strip()
+        return [
+            line.strip().strip(".,;:-\"'\n")
+            for line in raw.splitlines()
+            if line.strip() and len(line.strip()) > 3
+        ][:3]
     except Exception as e:
         print(f"[prompt_builder] Ollama keyword extraction failed: {e}")
-        return None
+        return []
 
 
 def _build_enriched_prompt(item_ref, item_label, objectives):
@@ -328,9 +341,10 @@ def _build_prompt(content: str) -> str:
     if search_term:
         item_ref, item_label, objectives = _fetch_objectives(search_term)
     if not objectives:
-        search_term = _extract_via_ollama(content)
-        if search_term:
-            item_ref, item_label, objectives = _fetch_objectives(search_term)
+        for candidate in _extract_via_ollama(content):
+            item_ref, item_label, objectives = _fetch_objectives(candidate)
+            if objectives:
+                break
 
     if objectives:
         return _build_enriched_prompt(item_ref, item_label, objectives).replace("{content}", content)

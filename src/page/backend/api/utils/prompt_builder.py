@@ -25,7 +25,7 @@ from ollama import Client as OllamaClient
 # Configuration (from environment — read at call time, not import time)
 # ---------------------------------------------------------------------------
 
-_KEYWORD_MODEL: str = "hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0"
+_KEYWORD_MODEL: str = "mistral-small3.2"
 
 
 def _cfg() -> tuple[str, str, str]:
@@ -349,28 +349,42 @@ def _extract_via_regex(content: str) -> Optional[str]:
     return None
 
 
-def _extract_via_ollama(content: str) -> Optional[str]:
-    """Option B: ask Ollama (plain text) for the main medical keyword."""
+def _extract_via_ollama(content: str) -> list[str]:
+    """Option B: ask Ollama to produce 3 LISA-style search candidates.
+
+    Returns a list of 0–3 candidate strings, ordered by relevance.
+    The caller tries them sequentially until one yields SPARQL results.
+    """
     try:
         _, _, ollama_host = _cfg()
-        client = OllamaClient(host=ollama_host, timeout=15)
+        client = OllamaClient(host=ollama_host, timeout=30)
         prompt = (
-            "Extrait le mot-clé médical principal de ce contenu pédagogique, "
-            "adapté à une recherche dans la base LISA ECNi. "
-            "Réponds UNIQUEMENT avec un seul mot ou groupe nominal court, "
-            "sans ponctuation finale ni explication.\n\n"
-            f"CONTENU :\n{content[:800]}"
+            "Tu es un assistant spécialisé dans le curriculum médical français ECNi/LISA.\n"
+            "Lis ce contenu pédagogique et identifie les 3 termes de recherche les plus pertinents "
+            "pour retrouver l'item LISA correspondant dans la base de données LISA ECNi.\n\n"
+            "Les labels LISA sont des phrases nominales comme :\n"
+            "- \"Insuffisance cardiaque de l'adulte\"\n"
+            "- \"Relation médecin-malade\"\n"
+            "- \"Facteurs de risque cardio-vasculaire\"\n\n"
+            "Réponds UNIQUEMENT avec 3 termes de recherche, un par ligne, du plus au moins spécifique. "
+            "Pas de numérotation, pas d'explication, pas de ponctuation finale.\n\n"
+            f"CONTENU :\n{content}"
         )
         response = client.generate(
             model=_KEYWORD_MODEL,
             prompt=prompt,
-            options={"temperature": 0.0, "num_predict": 20},
+            options={"temperature": 0.0, "num_predict": 60},
         )
-        keyword = response.response.strip().strip(".,;:\"'\n")
-        return keyword or None
+        raw = response.response.strip()
+        candidates = [
+            line.strip().strip(".,;:-\"'\n")
+            for line in raw.splitlines()
+            if line.strip() and len(line.strip()) > 3
+        ]
+        return candidates[:3]
     except Exception as e:
         print(f"[prompt_builder] Ollama keyword extraction failed: {e}")
-        return None
+        return []
 
 
 # ---------------------------------------------------------------------------
@@ -465,12 +479,15 @@ def build_prompt(content: str) -> dict:
 
     # Step 1B — Ollama fallback if regex gave no SPARQL results
     if not objectives:
-        search_term = _extract_via_ollama(content)
-        if search_term:
-            item_ref, item_label, objectives = _fetch_objectives(search_term)
+        for candidate in _extract_via_ollama(content):
+            print("objectives", candidate)
+            a = _fetch_objectives(candidate)
+            print("fetch",a)
+            item_ref, item_label, objectives = a
+            if objectives:
+                break
 
     # Step 2 — build prompt
-    print("###################",objectives)
     if objectives:
         prompt = _build_enriched_prompt(item_ref, item_label, objectives)
     else:
