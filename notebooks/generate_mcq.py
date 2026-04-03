@@ -20,28 +20,17 @@ from openai import OpenAI
 
 
 class MCQQuestion(BaseModel):
-    question1: str
-    question1_comment: Optional[str] = ""
-    option_a1: str
-    option_a1_comment: Optional[str] = ""
-    option_b1: str
-    option_b1_comment: Optional[str] = ""
-    option_c1: str
-    option_c1_comment: Optional[str] = ""
-    option_d1: str
-    option_d1_comment: Optional[str] = ""
-    correct_option1: str
-    question2: str
-    question2_comment: Optional[str] = ""
-    option_a2: str
-    option_a2_comment: Optional[str] = ""
-    option_b2: str
-    option_b2_comment: Optional[str] = ""
-    option_c2: str
-    option_c2_comment: Optional[str] = ""
-    option_d2: str
-    option_d2_comment: Optional[str] = ""
-    correct_option2: str
+    question: str
+    question_comment: Optional[str] = ""
+    option_a: str
+    option_a_comment: Optional[str] = ""
+    option_b: str
+    option_b_comment: Optional[str] = ""
+    option_c: str
+    option_c_comment: Optional[str] = ""
+    option_d: str
+    option_d_comment: Optional[str] = ""
+    correct_option: str
 
 
 def validate_mcq(mcq_json):
@@ -60,33 +49,18 @@ def flatten(df: DataFrame, mcq_column_name: str):
     for idx, row in df.iterrows():
         mcq = row[mcq_column_name]
 
-        # question1
         ids.append(row["id"])
-        questions.append(mcq.question1 if mcq else "")
-        q_comments.append(mcq.question1_comment if mcq else "")
-        option_as.append(mcq.option_a1 if mcq else "")
-        a_comments.append(mcq.option_a1_comment if mcq else "")
-        option_bs.append(mcq.option_b1 if mcq else "")
-        b_comments.append(mcq.option_b1_comment if mcq else "")
-        option_cs.append(mcq.option_c1 if mcq else "")
-        c_comments.append(mcq.option_c1_comment if mcq else "")
-        option_ds.append(mcq.option_d1 if mcq else "")
-        d_comments.append(mcq.option_d1_comment if mcq else "")
-        correct_options.append(mcq.correct_option1 if mcq else "")
-
-        # question2
-        ids.append(f"{row['id']}-")
-        questions.append(mcq.question2 if mcq else "")
-        q_comments.append(mcq.question2_comment if mcq else "")
-        option_as.append(mcq.option_a2 if mcq else "")
-        a_comments.append(mcq.option_a2_comment if mcq else "")
-        option_bs.append(mcq.option_b2 if mcq else "")
-        b_comments.append(mcq.option_b2_comment if mcq else "")
-        option_cs.append(mcq.option_c2 if mcq else "")
-        c_comments.append(mcq.option_c2_comment if mcq else "")
-        option_ds.append(mcq.option_d2 if mcq else "")
-        d_comments.append(mcq.option_d2_comment if mcq else "")
-        correct_options.append(mcq.correct_option2 if mcq else "")
+        questions.append(mcq.question if mcq else "")
+        q_comments.append(mcq.question_comment if mcq else "")
+        option_as.append(mcq.option_a if mcq else "")
+        a_comments.append(mcq.option_a_comment if mcq else "")
+        option_bs.append(mcq.option_b if mcq else "")
+        b_comments.append(mcq.option_b_comment if mcq else "")
+        option_cs.append(mcq.option_c if mcq else "")
+        c_comments.append(mcq.option_c_comment if mcq else "")
+        option_ds.append(mcq.option_d if mcq else "")
+        d_comments.append(mcq.option_d_comment if mcq else "")
+        correct_options.append(mcq.correct_option if mcq else "")
 
     return pd.DataFrame({
         "id": ids,
@@ -114,16 +88,16 @@ def extract_json(text):
 
 def generate_mcq(content, model_name, temperature):
     prompt = f"""
-        À partir du contenu éducatif suivant, générez deux questions à choix multiple avec quatre options de réponse dont une seule est correcte.
+        À partir du contenu éducatif suivant, générez une question à choix multiple avec quatre options de réponse dont une seule est correcte.
         La question doit évaluer la compréhension des idées principales, et les options doivent être claires, informatives et pertinentes.
         Assurez-vous que les distracteurs (options incorrectes) suivent une interprétation logique mais incorrecte, basée sur des idées reçues ou des incompréhensions courantes du sujet.
         Les options de réponse doivent être aussi courtes que possible.
 
-        IMPORTANT — FORMAT ABSOLU POUR LES CHAMPS 'correct_option1' ET 'correct_option2' :
-        - Ces champs doivent contenir exactement **une seule lettre minuscule** parmi : a, b, c ou d.
+        IMPORTANT — FORMAT ABSOLU POUR LE CHAMP 'correct_option' :
+        - Ce champ doit contenir exactement **une seule lettre minuscule** parmi : a, b, c ou d.
         - **Exemples valides** : "a", "b", "c", "d".
         - **Interdits** : "a)", "A", "a.", "a )", "le texte de la réponse correcte", 1, true, etc.
-        - La sortie JSON doit conserver ces champs comme chaînes (`"correct_option1": "a"`).
+        - La sortie JSON doit conserver ce champ comme chaîne (`"correct_option": "a"`).
 
         Fournissez la sortie strictement au format JSON correspondant au schéma demandé (ne pas produire de texte hors-du-JSON).
         **Contenu éducatif :**
@@ -143,50 +117,37 @@ def generate_mcq(content, model_name, temperature):
 
 def generate_mcq_hf(content, model_name, tokenizer, temperature):
     prompt = f"""
-     À partir du contenu éducatif suivant, générez exactement deux questions à choix multiple avec quatre options de réponse chacune (a, b, c, d), dont une seule est correcte.
+     À partir du contenu éducatif suivant, générez exactement une question à choix multiple avec quatre options de réponse (a, b, c, d), dont une seule est correcte.
 
     OBJECTIFS :
-    - Les questions doivent évaluer la compréhension des idées principales.
+    - La question doit évaluer la compréhension des idées principales.
     - Les distracteurs doivent être plausibles mais incorrects.
     - Les options doivent être courtes.
     - Fournir une justification pédagogique pour chaque option.
-    - Fournir un commentaire global pour chaque question.
+    - Fournir un commentaire global pour la question.
 
     CONTRAINTES STRICTES DE SORTIE :
     1. La sortie doit être STRICTEMENT un unique objet JSON valide.
     2. Interdiction ABSOLUE d'ajouter :
     - des blocs ```json
-    - plusieurs objets JSON
     - du texte avant ou après le JSON
     - des explications hors champs JSON
-    3. Les champs "correct_option1" et "correct_option2" doivent contenir EXACTEMENT une lettre minuscule parmi : "a", "b", "c", "d".
+    3. Le champ "correct_option" doit contenir EXACTEMENT une lettre minuscule parmi : "a", "b", "c", "d".
     4. Utiliser uniquement des doubles quotes : "..."
-    5. Le JSON doit contenir EXACTEMENT les 22 champs suivants :
+    5. Le JSON doit contenir EXACTEMENT les 11 champs suivants :
 
     {{
-    "question1": "...",
-    "question1_comment": "...",
-    "option_a1": "...",
-    "option_a1_comment": "...",
-    "option_b1": "...",
-    "option_b1_comment": "...",
-    "option_c1": "...",
-    "option_c1_comment": "...",
-    "option_d1": "...",
-    "option_d1_comment": "...",
-    "correct_option1": "a",
-
-    "question2": "...",
-    "question2_comment": "...",
-    "option_a2": "...",
-    "option_a2_comment": "...",
-    "option_b2": "...",
-    "option_b2_comment": "...",
-    "option_c2": "...",
-    "option_c2_comment": "...",
-    "option_d2": "...",
-    "option_d2_comment": "...",
-    "correct_option2": "c"
+    "question": "...",
+    "question_comment": "...",
+    "option_a": "...",
+    "option_a_comment": "...",
+    "option_b": "...",
+    "option_b_comment": "...",
+    "option_c": "...",
+    "option_c_comment": "...",
+    "option_d": "...",
+    "option_d_comment": "...",
+    "correct_option": "a"
     }}
 
     RÈGLES POUR LES COMMENTAIRES :
