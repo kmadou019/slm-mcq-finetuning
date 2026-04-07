@@ -26,7 +26,7 @@ from openai import OpenAI
 # LISA prompt builder
 # ---------------------------------------------------------------------------
 
-_KEYWORD_MODEL = "hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0"
+_KEYWORD_MODEL = "mistral-small3.2"
 
 
 def _cfg():
