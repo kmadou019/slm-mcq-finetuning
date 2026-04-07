@@ -5,18 +5,350 @@
 from sys import argv
 from typing import Optional
 import os
+import re
+import unicodedata
 import ast
 import json
 
+import requests
 import pandas as pd
 from pandas import DataFrame
 from pydantic import BaseModel, ValidationError
-from ollama import generate
+from ollama import generate, Client as OllamaClient
 from transformers import AutoTokenizer, pipeline
 from dotenv import load_dotenv
 from huggingface_hub import login
 import ollama
 from openai import OpenAI
+
+
+# ---------------------------------------------------------------------------
+# LISA prompt builder
+# ---------------------------------------------------------------------------
+
+_KEYWORD_MODEL = "hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0"
+
+
+def _cfg():
+    return (
+        os.getenv("GRAPHDB_MCP_URL", ""),
+        os.getenv("GRAPHDB_BEARER_TOKEN", ""),
+        os.getenv("OLLAMA_HOST", "http://localhost:11434"),
+    )
+
+
+_QCM_GUIDELINES = """\
+Règles pour la question (stem) :
+- La question doit être compréhensible sans lire les propositions
+- Rédiger à la forme affirmative — éviter la négation ("laquelle n'est PAS…")
+- Ne pas surcharger le stem d'informations non pertinentes à l'objectif évalué
+
+Règles pour les propositions :
+- 4 propositions (a, b, c, d), une seule exacte (QRU)
+- Propositions homogènes, parallèles, d'un niveau de granularité similaire
+- Propositions exprimées à la forme affirmative
+- Longueur et précision similaires entre toutes les propositions — la bonne réponse ne doit pas se distinguer par sa longueur
+- La bonne réponse ne doit pas reprendre les mots du stem (cluing)
+- Distracteurs plausibles mais factuellement incorrects
+- Propositions courtes et concises
+
+Propositions INTERDITES :
+- "Toutes les propositions précédentes sont correctes"
+- "Aucune des propositions précédentes"
+- "A et C sont correctes" (combinaison de propositions)
+- Toute proposition absurde ou trivialement éliminable
+
+Justifications :
+- Fournir une justification pédagogique pour chaque proposition (correcte ou incorrecte)
+- Fournir un commentaire global sur ce que la question évalue ou un piège courant"""
+
+_JSON_OUTPUT_BLOCK = """\
+CONTRAINTES STRICTES DE SORTIE :
+1. La sortie doit être STRICTEMENT un unique objet JSON valide.
+2. Interdiction ABSOLUE d'ajouter :
+   - des blocs ```json
+   - du texte avant ou après le JSON
+   - des explications hors champs JSON
+3. Le champ "correct_option" doit contenir EXACTEMENT une lettre minuscule parmi : "a", "b", "c", "d".
+4. Utiliser uniquement des doubles quotes : "..."
+5. Le JSON doit contenir EXACTEMENT les 11 champs suivants :
+
+{
+  "question": "...",
+  "question_comment": "...",
+  "option_a": "...",
+  "option_a_comment": "...",
+  "option_b": "...",
+  "option_b_comment": "...",
+  "option_c": "...",
+  "option_c_comment": "...",
+  "option_d": "...",
+  "option_d_comment": "...",
+  "correct_option": "a"
+}
+
+RÈGLES POUR LES COMMENTAIRES :
+- Chaque commentaire d'option doit expliquer brièvement pourquoi l'option est correcte ou incorrecte.
+- Le commentaire global de la question doit expliquer ce que la question évalue ou signaler un piège courant.
+- Les commentaires doivent être factuels, concis et pédagogiques."""
+
+
+def _mcp_headers(session_id=""):
+    _, token, _ = _cfg()
+    h = {"Authorization": f"Bearer {token}", "Content-Type": "application/json",
+         "Accept": "application/json, text/event-stream"}
+    if session_id:
+        h["mcp-session-id"] = session_id
+    return h
+
+
+def _parse_sse_data(text):
+    for line in text.splitlines():
+        if line.startswith("data: "):
+            try:
+                return json.loads(line[6:])
+            except json.JSONDecodeError:
+                pass
+    return {}
+
+
+def _mcp_init_session():
+    mcp_url, _, _ = _cfg()
+    payload = {"jsonrpc": "2.0", "id": 1, "method": "initialize",
+               "params": {"protocolVersion": "2024-11-05", "capabilities": {},
+                          "clientInfo": {"name": "prompt-builder", "version": "1.0"}}}
+    resp = requests.post(mcp_url, json=payload, headers=_mcp_headers(), timeout=10)
+    resp.raise_for_status()
+    return resp.headers.get("mcp-session-id", "")
+
+
+def _mcp_sparql(sparql, session_id):
+    mcp_url, _, _ = _cfg()
+    payload = {"jsonrpc": "2.0", "id": 2, "method": "tools/call",
+               "params": {"name": "sparqlQuery", "arguments": {"query": sparql, "format": "json"}}}
+    resp = requests.post(mcp_url, json=payload, headers=_mcp_headers(session_id), timeout=15)
+    resp.raise_for_status()
+    data = _parse_sse_data(resp.text)
+    text_content = data.get("result", {}).get("content", [{}])[0].get("text", "{}")
+    return json.loads(text_content).get("results", {}).get("bindings", [])
+
+
+def _search_items(term, session_id):
+    escaped = term.replace('"', '\\"').replace("\\", "\\\\")
+    sparql = f"""
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX lisa: <https://uness.fr/lisa/ontology/>
+SELECT ?item ?label WHERE {{
+  ?item rdfs:label ?label .
+  ?item rdf:type lisa:KnowledgeItem .
+  FILTER(regex(?label, "{escaped}", "i"))
+}} LIMIT 10
+"""
+    return _mcp_sparql(sparql, session_id)
+
+
+def _get_objective_uris(item_uri, session_id):
+    sparql = f"""
+PREFIX lisa: <https://uness.fr/lisa/ontology/>
+SELECT ?objective WHERE {{
+  <{item_uri}> lisa:hasKnowledgeObjective ?objective .
+}}
+"""
+    return [b["objective"]["value"] for b in _mcp_sparql(sparql, session_id) if "objective" in b]
+
+
+def _get_objective_attrs(uri, session_id):
+    sparql = f"""
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX lisa: <https://uness.fr/lisa/ontology/>
+SELECT ?property ?value WHERE {{
+  <{uri}> ?property ?value .
+}}
+"""
+    attrs = {}
+    for b in _mcp_sparql(sparql, session_id):
+        prop = b.get("property", {}).get("value", "")
+        val = b.get("value", {}).get("value", "")
+        if prop.endswith("#label") or prop.endswith("/label"):
+            attrs["label"] = val
+        elif prop.endswith("rank"):
+            attrs["rank"] = val
+        elif prop.endswith("order"):
+            try:
+                attrs["order"] = int(val)
+            except ValueError:
+                pass
+    return attrs
+
+
+def _remove_accents(text):
+    return "".join(c for c in unicodedata.normalize("NFD", text) if unicodedata.category(c) != "Mn")
+
+
+def _fetch_objectives(search_term):
+    try:
+        session_id = _mcp_init_session()
+    except Exception as e:
+        print(f"[prompt_builder] MCP session init failed: {e}")
+        return None, None, []
+
+    candidates = [search_term]
+    first_word = search_term.split()[0] if search_term.split() else ""
+    if first_word and first_word != search_term:
+        candidates.append(first_word)
+    no_accent = _remove_accents(search_term)
+    if no_accent != search_term:
+        candidates.append(no_accent)
+    m = re.search(r"\d+", search_term)
+    if m:
+        candidates.append(m.group())
+
+    items = []
+    for term in candidates:
+        try:
+            items = _search_items(term, session_id)
+        except Exception as e:
+            print(f"[prompt_builder] SPARQL search failed for '{term}': {e}")
+        if items:
+            break
+
+    if not items:
+        return None, None, []
+
+    first = items[0]
+    item_uri = first["item"]["value"]
+    item_label = first.get("label", {}).get("value", "")
+    m2 = re.search(r"KnowledgeItem(\d+)$", item_uri)
+    item_ref = f"Item {m2.group(1)}" if m2 else item_uri.split("/")[-1]
+
+    try:
+        obj_uris = _get_objective_uris(item_uri, session_id)
+    except Exception as e:
+        print(f"[prompt_builder] Get objectives failed: {e}")
+        return item_ref, item_label, []
+
+    objectives = []
+    for uri in obj_uris:
+        try:
+            attrs = _get_objective_attrs(uri, session_id)
+        except Exception:
+            continue
+        if "label" in attrs:
+            objectives.append({"label": attrs["label"], "rank": attrs.get("rank", "B"),
+                                "order": attrs.get("order", 999)})
+    objectives.sort(key=lambda x: x["order"])
+    return item_ref, item_label, objectives
+
+
+def _extract_via_regex(content):
+    head = content[:2000]
+    m = re.search(r"\|Item_parent\s*=\s*([^\n|]+)", head)
+    if m:
+        val = re.split(r"[.|]", m.group(1).strip())[0].strip()
+        if len(val) > 3:
+            return val[:120]
+    for line in head.splitlines():
+        line = re.sub(r"^#+\s*", "", line.strip())
+        line = re.sub(r"^\d+[\.\)]\s*", "", line).strip()
+        if len(line) < 5:
+            continue
+        cleaned = re.sub(r"\bitem\s+\d+\b", "", line, flags=re.IGNORECASE)
+        cleaned = re.sub(r"\s*[-–—]\s*", " ", cleaned).strip()
+        cleaned = re.sub(r"\s+", " ", cleaned).strip()
+        if len(cleaned) > 3:
+            return cleaned[:80]
+    return None
+
+
+def _extract_via_ollama(content):
+    lines = content.splitlines()
+    title_lines = [l.strip() for l in lines if l.strip() and 5 < len(l.strip()) < 150]
+    excerpt = "\n".join(title_lines[:30]) if title_lines else content[:3000]
+    try:
+        _, _, ollama_host = _cfg()
+        client = OllamaClient(host=ollama_host, timeout=30)
+        prompt = (
+            "Tu es un assistant spécialisé dans le curriculum médical français ECNi/LISA.\n"
+            "Lis ce contenu pédagogique et identifie les 3 termes de recherche les plus pertinents "
+            "pour retrouver l'item LISA correspondant dans la base de données LISA ECNi.\n\n"
+            "Les labels LISA sont des phrases nominales comme :\n"
+            "- \"Insuffisance cardiaque de l'adulte\"\n"
+            "- \"Relation médecin-malade\"\n"
+            "- \"Facteurs de risque cardio-vasculaire\"\n\n"
+            "Réponds UNIQUEMENT avec 3 termes de recherche, un par ligne, du plus au moins spécifique. "
+            "Pas de numérotation, pas d'explication, pas de ponctuation finale.\n\n"
+            f"CONTENU :\n{excerpt}"
+        )
+        response = client.generate(model=_KEYWORD_MODEL, prompt=prompt,
+                                   options={"temperature": 0.0, "num_predict": 60})
+        raw = response.response.strip()
+        return [
+            line.strip().strip(".,;:-\"'\n")
+            for line in raw.splitlines()
+            if line.strip() and len(line.strip()) > 3
+        ][:3]
+    except Exception as e:
+        print(f"[prompt_builder] Ollama keyword extraction failed: {e}")
+        return []
+
+
+def _build_enriched_prompt(item_ref, item_label, objectives):
+    obj_lines = [f"- {o['label']} [Rang {o['rank'].upper()}]" for o in objectives]
+    objectives_str = "\n".join(obj_lines)
+    item_line = item_ref + (f" — {item_label}" if item_label else "")
+    rang_a = [o for o in objectives if o.get("rank", "").upper() == "A"]
+    rang_a_str = "\n".join(f"- {o['label']} [Rang A]" for o in rang_a) or objectives_str
+
+    return (
+        f"### ITEM ET RÉFÉRENCE\n\n{item_line}\n\n"
+        f"### OBJECTIFS DE CONNAISSANCE\n\n"
+        f"La question doit évaluer l'un des objectifs officiels de cet item.\n"
+        f"Priorité absolue aux objectifs de Rang A.\n\n{objectives_str}\n\n"
+        f"### OBJECTIF CIBLÉ\n\n"
+        f"Sélectionner l'objectif de Rang A le plus pertinent au regard du contenu fourni.\n"
+        f"La question doit évaluer exclusivement cet objectif — toute information hors périmètre est à écarter.\n\n"
+        f"Objectifs Rang A disponibles :\n{rang_a_str}\n\n"
+        f"### CONSIGNES DE RÉDACTION\n\n"
+        f"Respecter exclusivement les informations et objectifs présents dans le contenu fourni.\n"
+        f"Rédiger en français clair, précis et sans ambiguïté.\n"
+        f"La question est indépendante (Question Isolée) — aucun contexte clinique narratif n'est requis.\n\n"
+        f"{_QCM_GUIDELINES}\n\n{_JSON_OUTPUT_BLOCK}\n\n"
+        f"### CONTENU SOURCE\n\n{{content}}\n\n"
+        f"INSTRUCTION FINALE :\nRépondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors."
+    )
+
+
+def _build_fallback_prompt():
+    return (
+        f"À partir du contenu éducatif suivant, générez exactement une question à choix unique "
+        f"avec quatre options de réponse (a, b, c, d), dont une seule est correcte.\n\n"
+        f"CONSIGNES DE RÉDACTION :\n"
+        f"La question doit évaluer la compréhension des idées principales du contenu fourni.\n\n"
+        f"{_QCM_GUIDELINES}\n\n{_JSON_OUTPUT_BLOCK}\n\n"
+        f"CONTENU ÉDUCATIF :\n{{content}}\n\n"
+        f"INSTRUCTION FINALE :\nRépondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors."
+    )
+
+
+def _build_prompt(content):
+    mcp_url, _, _ = _cfg()
+    if not mcp_url:
+        return _build_fallback_prompt().replace("{content}", content)
+
+    search_term = _extract_via_regex(content)
+    item_ref, item_label, objectives = (None, None, [])
+    if search_term:
+        item_ref, item_label, objectives = _fetch_objectives(search_term)
+    if not objectives:
+        for candidate in _extract_via_ollama(content):
+            item_ref, item_label, objectives = _fetch_objectives(candidate)
+            if objectives:
+                break
+
+    if objectives:
+        return _build_enriched_prompt(item_ref, item_label, objectives).replace("{content}", content)
+    return _build_fallback_prompt().replace("{content}", content)
 
 
 class MCQQuestion(BaseModel):
@@ -87,27 +419,12 @@ def extract_json(text):
 
 
 def generate_mcq(content, model_name, temperature):
-    prompt = f"""
-        À partir du contenu éducatif suivant, générez une question à choix multiple avec quatre options de réponse dont une seule est correcte.
-        La question doit évaluer la compréhension des idées principales, et les options doivent être claires, informatives et pertinentes.
-        Assurez-vous que les distracteurs (options incorrectes) suivent une interprétation logique mais incorrecte, basée sur des idées reçues ou des incompréhensions courantes du sujet.
-        Les options de réponse doivent être aussi courtes que possible.
-
-        IMPORTANT — FORMAT ABSOLU POUR LE CHAMP 'correct_option' :
-        - Ce champ doit contenir exactement **une seule lettre minuscule** parmi : a, b, c ou d.
-        - **Exemples valides** : "a", "b", "c", "d".
-        - **Interdits** : "a)", "A", "a.", "a )", "le texte de la réponse correcte", 1, true, etc.
-        - La sortie JSON doit conserver ce champ comme chaîne (`"correct_option": "a"`).
-
-        Fournissez la sortie strictement au format JSON correspondant au schéma demandé (ne pas produire de texte hors-du-JSON).
-        **Contenu éducatif :**
-        {content}
-    """
+    full_prompt = _build_prompt(content)
 
     generate_params = {
         'model': model_name,
         'options': {'temperature': temperature, 'num_ctx': 8192, 'top_p': 1},
-        'prompt': prompt,
+        'prompt': full_prompt,
         'format': MCQQuestion.model_json_schema()
     }
 
@@ -116,51 +433,7 @@ def generate_mcq(content, model_name, temperature):
 
 
 def generate_mcq_hf(content, model_name, tokenizer, temperature):
-    prompt = f"""
-     À partir du contenu éducatif suivant, générez exactement une question à choix multiple avec quatre options de réponse (a, b, c, d), dont une seule est correcte.
-
-    OBJECTIFS :
-    - La question doit évaluer la compréhension des idées principales.
-    - Les distracteurs doivent être plausibles mais incorrects.
-    - Les options doivent être courtes.
-    - Fournir une justification pédagogique pour chaque option.
-    - Fournir un commentaire global pour la question.
-
-    CONTRAINTES STRICTES DE SORTIE :
-    1. La sortie doit être STRICTEMENT un unique objet JSON valide.
-    2. Interdiction ABSOLUE d'ajouter :
-    - des blocs ```json
-    - du texte avant ou après le JSON
-    - des explications hors champs JSON
-    3. Le champ "correct_option" doit contenir EXACTEMENT une lettre minuscule parmi : "a", "b", "c", "d".
-    4. Utiliser uniquement des doubles quotes : "..."
-    5. Le JSON doit contenir EXACTEMENT les 11 champs suivants :
-
-    {{
-    "question": "...",
-    "question_comment": "...",
-    "option_a": "...",
-    "option_a_comment": "...",
-    "option_b": "...",
-    "option_b_comment": "...",
-    "option_c": "...",
-    "option_c_comment": "...",
-    "option_d": "...",
-    "option_d_comment": "...",
-    "correct_option": "a"
-    }}
-
-    RÈGLES POUR LES COMMENTAIRES :
-    - Chaque commentaire d'option doit expliquer brièvement pourquoi l'option est correcte ou incorrecte.
-    - Le commentaire global de la question doit expliquer ce que la question évalue ou signaler un piège courant.
-    - Les commentaires doivent être factuels, concis et pédagogiques.
-
-    CONTENU ÉDUCATIF :
-    {content}
-
-    INSTRUCTION FINALE :
-    Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.
-"""
+    full_prompt = _build_prompt(content)
 
     pipe = pipeline(
         "text-generation",
@@ -170,7 +443,7 @@ def generate_mcq_hf(content, model_name, tokenizer, temperature):
         dtype="bfloat16"
     )
 
-    messages = [{"role": "user", "content": prompt}]
+    messages = [{"role": "user", "content": full_prompt}]
 
     response = pipe(
         messages,
