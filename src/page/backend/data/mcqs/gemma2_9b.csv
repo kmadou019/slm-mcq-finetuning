@@ -1,4 +1,4 @@
-Unnamed: 0,id,question,option_a,option_b,option_c,option_d,correct_option,content_raw,originality,readability,starts_with_negation,is_question,relevance,ambiguity,disclosure,difficulty,distractor_quality
+Unnamed: 0,id,question,option_a,option_b,option_c,option_d,correct_option,content_raw,distractor_quality
 0,OIC-001-01-A,Quelle est la caractéristique principale de la relation médecin-malade actuelle?,Paternaliste et biomédicale,Centrée sur la maladie du patient,Globale et centrée sur le patient,Exclusivement psychosociale,c,"{{objectif de connaissance
 |Identifiant=OIC-001-01-A
 |Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
@@ -16,7 +16,7 @@ Rencontre entre un soignant et une personne soignée :
 
 -       Dorénavant globale c’est-à-dire bio-médico-psychosociale, centrée sur le patient et non sa/ses maladies(s).
 
-Le patient est un partenaire du soin : son expérience et son vécu sont intégrés à la démarche du soignant.<br />",0.8,18.990000000000006,False,True,0.8507863283157349,0.755440870920817,True,3,False
+Le patient est un partenaire du soin : son expérience et son vécu sont intégrés à la démarche du soignant.<br />",False
 1,OIC-001-01-A,"Selon le texte, comment le patient est-il considéré dans la relation médecin-malade actuelle?",Comme un simple bénéficiaire des soins,Comme un sujet à soigner sans prise en compte de son vécu,Comme un partenaire du soin,Comme un expert médical,c,"{{objectif de connaissance
 |Identifiant=OIC-001-01-A
 |Item_parent=La relation médecin-malade dans le cadre du colloque singulier ou au sein d’une équipe, le cas échéant pluriprofessionnelle. La communication avec le patient et son entourage. L’annonce d’une maladie grave ou létale ou d’un dommage associé aux soins. La formation du patient. La personnalisation de la prise en charge médicale.
@@ -34,4 +34,4 @@ Rencontre entre un soignant et une personne soignée :
 
 -       Dorénavant globale c’est-à-dire bio-médico-psychosociale, centrée sur le patient et non sa/ses maladies(s).
 
-Le patient est un partenaire du soin : son expérience et son vécu sont intégrés à la démarche du soignant.<br />",0.8571428571428571,13.98769230769231,False,True,0.8244404792785645,0.7723634044329325,False,2,False
+Le patient est un partenaire du soin : son expérience et son vécu sont intégrés à la démarche du soignant.<br />",False

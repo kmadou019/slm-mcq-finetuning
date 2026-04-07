@@ -1,5 +1,0 @@
-
-llama3_1_8b.csv quality distribution:
-distractor_quality
-False    100.0
-Name: proportion, dtype: float64

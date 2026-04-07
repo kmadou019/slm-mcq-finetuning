@@ -115,7 +115,7 @@ def main():
         # Load the JSON data from the file
         system_prompts = json.load(file)
 
-    df_mcq = pd.read_csv(os.environ.get('MODEL_MCQ_PATH') + "/" + generated_qcm_file)[:100]
+    df_mcq = pd.read_csv(os.environ.get('MODEL_MCQ_PATH') + "/" + generated_qcm_file)
     if indexes:
         df_mcq = df_mcq.loc[indexes]
     df_lisa_sheets = pd.read_csv(os.environ.get('LISA_SHEETS_PATH'))

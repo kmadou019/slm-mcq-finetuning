@@ -1,4 +1,4 @@
-Unnamed: 0,id,question,option_a,option_b,option_c,option_d,correct_option,content_raw,originality,readability,starts_with_negation,is_question,relevance,ambiguity,disclosure,difficulty,distractor_quality
+Unnamed: 0,id,question,option_a,option_b,option_c,option_d,correct_option,content_raw,distractor_quality
 0,OIC-364-12-B,Quel est le principal risque associé à une fracture décollement épiphysaire de cheville chez un adolescent?,Une augmentation de la densité osseuse.,Un risque élevé d'épiphysiodèse.,Une amélioration de la mobilité articulaire.,Une diminution de la croissance de l'os.,b,"{{objectif de connaissance
 |Identifiant=OIC-364-12-B
 |Item_parent=Fractures chez l’enfant : particularités épidémiologiques, diagnostiques et thérapeutiques
@@ -9,7 +9,7 @@ Unnamed: 0,id,question,option_a,option_b,option_c,option_d,correct_option,conten
 |Rubrique=Suivi et/ou pronostic
 |Contributeurs=
 |Ordre=12}}
-Connaitre le risque élevé d'épiphysiodèse  après fracture décollement épiphysaire de cheville chez l'adolescent. Connaitre le risque de trouble de croissance consécutif.<br />",0.5,15.725000000000005,False,True,0.8621748685836792,0.6988078951835632,False,2,False
+Connaitre le risque élevé d'épiphysiodèse  après fracture décollement épiphysaire de cheville chez l'adolescent. Connaitre le risque de trouble de croissance consécutif.<br />",False
 1,OIC-364-12-B,Quel est le risque de complication lié à une fracture de cheville chez l'enfant?,Une amélioration de la fonction motrice.,Un risque de troubles de croissance.,Une diminution de la douleur.,Une augmentation de la force musculaire.,b,"{{objectif de connaissance
 |Identifiant=OIC-364-12-B
 |Item_parent=Fractures chez l’enfant : particularités épidémiologiques, diagnostiques et thérapeutiques
@@ -20,4 +20,4 @@ Connaitre le risque élevé d'épiphysiodèse  après fracture décollement épi
 |Rubrique=Suivi et/ou pronostic
 |Contributeurs=
 |Ordre=12}}
-Connaitre le risque élevé d'épiphysiodèse  après fracture décollement épiphysaire de cheville chez l'adolescent. Connaitre le risque de trouble de croissance consécutif.<br />",1.0,10.098571428571429,False,True,0.8154717087745667,0.7071188688278198,False,2,False
+Connaitre le risque élevé d'épiphysiodèse  après fracture décollement épiphysaire de cheville chez l'adolescent. Connaitre le risque de trouble de croissance consécutif.<br />",False

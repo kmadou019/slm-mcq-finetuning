@@ -1,0 +1,324 @@
+Number of lisa sheets : 1592
+[prompt_builder] MCP session init failed: HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] Ollama keyword extraction failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+{
+  "question": "Quel est le principal mécanisme physiopathologique du diabète de type 2?",
+  "question_comment": "Cette question évalue la compréhension des mécanismes physiopathologiques du diabète de type 2. Un piège courant est de ne pas distinguer entre les différentes causes de l'insulinorésistance et de l'insulinosécrétion.",
+  "option_a": "Une altération des capacités d'insulinosécrétion et une insulinorésistance",
+  "option_a_comment": "C'est la bonne réponse car le diabète de type 2 est caractérisé par une mauvaise utilisation de l'insuline par les cellules de l'organisme.",
+  "option_b": "Une seule altération des capacités d'insulinosécrétion",
+  "option_b_comment": "C'est incorrect car le diabète de type 2 est également caractérisé par une insulinorésistance.",
+  "option_c": "Une seule insulinorésistance",
+  "option_c_comment": "C'est incorrect car le diabète de type 2 est également caractérisé par une altération des capacités d'insulinosécrétion.",
+  "option_d": "Une altération des capacités d'insulinosécrétion uniquement",
+  "option_d_comment": "C'est incorrect car le diabète de type 2 est également caractérisé par une insulinorésistance.",
+  "correct_option": "a"
+}
+[prompt_builder] MCP session init failed: HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] Ollama keyword extraction failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+{
+  "question": "Quels sont les facteurs de risque de survenue de plaies de pied chez les patients atteints de diabète?",
+  "question_comment": "Cette question évalue la compréhension des facteurs de risque de survenue de plaies de pied chez les patients atteints de diabète.",
+  "option_a": "La seule cause de plaies de pied chez les patients atteints de diabète est la précarité sociale.",
+  "option_a_comment": "Cette option est incorrecte car la précarité sociale est un facteur de risque mais pas la seule cause.",
+  "option_b": "Les facteurs de risque de survenue de plaies de pied chez les patients atteints de diabète incluent l'AOMI, la neuropathie, l'artériopathie et la précarité sociale.",
+  "option_b_comment": "Cette option est correcte car elle inclut plusieurs facteurs de risque de survenue de plaies de pied chez les patients atteints de diabète.",
+  "option_c": "La neuropathie est le seul facteur de risque de survenue de plaies de pied chez les patients atteints de diabète.",
+  "option_c_comment": "Cette option est incorrecte car la neuropathie est un facteur de risque mais pas le seul.",
+  "option_d": "Les facteurs de risque de survenue de plaies de pied chez les patients atteints de diabète incluent uniquement l'AOMI et la précarité sociale.",
+  "option_d_comment": "Cette option est incorrecte car elle ne prend pas en compte la neuropathie et l'artériopathie.",
+  "correct_option": "b"
+}
+[prompt_builder] SPARQL search failed for 'Diabète sucré de type 1 et 2 de l’enfant et de l’adulte': HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] Get objectives failed: HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] Ollama keyword extraction failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+{
+  "question": "Quel est le risque de progression de la rétinopathie diabétique non proliférante (RDNP) sévère à 5 ans?",
+  "question_comment": "Cette question évalue la compréhension des risques associés à la rétinopathie diabétique non proliférante (RDNP) sévère.",
+  "option_a": "15%",
+  "option_a_comment": "C'est le risque de progression pour la RDNP minime, mais pas pour la RDNP sévère.",
+  "option_b": "33%",
+  "option_b_comment": "C'est le risque de progression pour la RDNP modérée, mais pas pour la RDNP sévère.",
+  "option_c": "60%",
+  "option_c_comment": "C'est le risque de progression pour la RDNP sévère.",
+  "option_d": "80%",
+  "option_d_comment": "Ce risque est trop élevé pour la RDNP sévère.",
+  "correct_option": "c"
+}
+{
+  "question": "Quel est l'objectif de connaissance le plus pertinent au regard du contenu fourni?",
+  "question_comment": "La question évalue l'objectif de connaissance le plus pertinent au regard du contenu fourni sur la néphropathie diabétique.",
+  "option_a": "Connaître la classification et les principales caractéristiques des différents diabètes sucrés",
+  "option_a_comment": "Cette option est incorrecte car le contenu fourni se concentre sur la néphropathie diabétique et non sur la classification des diabètes sucrés.",
+  "option_b": "Connaître les circonstances et les différents critères diagnostiques (avec les particularités chez l'enfant) du diabète",
+  "option_b_comment": "Cette option est incorrecte car le contenu fourni se concentre sur la néphropathie diabétique et non sur les critères diagnostiques du diabète.",
+  "option_c": "Connaître les différents stades de la néphropathie diabétique",
+  "option_c_comment": "Cette option est correcte car le contenu fourni décrit les différents stades de la néphropathie diabétique.",
+  "option_d": "Connaître les moyens d'évaluation du risque cardiovasculaire (scores de risque)",
+  "option_d_comment": "Cette option est incorrecte car le contenu fourni se concentre sur la néphropathie diabétique et non sur l'évaluation du risque cardiovasculaire.",
+  "correct_option": "c"
+}
+[prompt_builder] Get objectives failed: HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] Ollama keyword extraction failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+{
+  "question": "Quel est le type de neuropathie diabétique qui est caractérisé par des troubles sensitifs tels que l'épicritique, la thermoalgique, la diaspason et la proprioception?",
+  "question_comment": "Cette question évalue la compréhension des différents stades de la neuropathie diabétique et leurs modes de présentation.",
+  "option_a": "Neuropathie autonome",
+  "option_a_comment": "Cette option est incorrecte car la neuropathie autonome est caractérisée par des troubles de la régulation autonome, tels que la tachycardie sinusale ou la bradycardie permanente.",
+  "option_b": "Neuropathie sensorimotrice",
+  "option_b_comment": "Cette option est correcte car la neuropathie sensorimotrice est caractérisée par des troubles sensitifs tels que l'épicritique, la thermoalgique, la diaspason et la proprioception.",
+  "option_c": "Polyradiculopathie thoracique",
+  "option_c_comment": "Cette option est incorrecte car la polyradiculopathie thoracique est caractérisée par des douleurs abdominales aggravées la nuit et une perte de poids.",
+  "option_d": "Mononévrite",
+  "option_d_comment": "Cette option est incorrecte car la mononévrite est caractérisée par une description du trajet douloureux selon le nerf atteint.",
+  "correct_option": "b"
+}
+{
+  "question": "Quels sont les moyens d'évaluation et de diagnostic des complications macrovasculaires du diabète sucré de type 1 et 2 de l'enfant et de l'adulte?",
+  "question_comment": "Cette question évalue la capacité à identifier les méthodes d'évaluation et de diagnostic des complications macrovasculaires du diabète. Un piège courant est de ne pas considérer l'importance de l'interrogatoire ciblé et de l'ECG de repos annuel systématique.",
+  "option_a": "Interrogatoire ciblé, ECG de repos annuel systématique, test de recherche d'ischémie myocardique",
+  "option_a_comment": "Cette option est correcte car elle inclut l'interrogatoire ciblé, l'ECG de repos annuel systématique et le test de recherche d'ischémie myocardique, qui sont tous des méthodes d'évaluation et de diagnostic des complications macrovasculaires.",
+  "option_b": "Échographie-doppler des carotides, échographie-doppler des artères des membres inférieurs",
+  "option_b_comment": "Cette option est incorrecte car elle ne prend pas en compte l'interrogatoire ciblé et l'ECG de repos annuel systématique, qui sont également des méthodes importantes d'évaluation et de diagnostic.",
+  "option_c": "Interrogatoire ciblé, test de recherche d'ischémie myocardique, mesure de l'indice de pression systolique",
+  "option_c_comment": "Cette option est incorrecte car elle ne prend pas en compte l'ECG de repos annuel systématique, qui est également une méthode importante d'évaluation et de diagnostic.",
+  "option_d": "Échographie-doppler des carotides, échographie-doppler des artères des membres inférieurs, test de recherche d'ischémie myocardique",
+  "option_d_comment": "Cette option est incorrecte car elle inclut l'échographie-doppler des carotides et des artères des membres inférieurs, qui ne sont pas systématiques et ne sont pas mentionnées dans le contenu source.",
+  "correct_option": "a"
+}
+[prompt_builder] MCP session init failed: HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] Ollama keyword extraction failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+{
+  "question": "Quel est le niveau de risque coronarien considéré comme important?",
+  "question_comment": "Cette question évalue la compréhension des critères d'évaluation du risque cardiovasculaire.",
+  "option_a": "Un risque d'événement voisin de 10 % à 10 ans",
+  "option_a_comment": "Ce niveau de risque est considéré comme faible.",
+  "option_b": "Un risque entre 10 et 20 %",
+  "option_b_comment": "Ce niveau de risque est considéré comme intermédiaire.",
+  "option_c": "Un risque supérieur à 20 %",
+  "option_c_comment": "Ce niveau de risque est considéré comme important.",
+  "option_d": "Un risque supérieur à 30 %",
+  "option_d_comment": "Ce niveau de risque est considéré comme majeur.",
+  "correct_option": "c"
+}
+{
+  "question": "Quels sont les signes cliniques d'un coma hyperosmolaire?",
+  "question_comment": "La question évalue la capacité à reconnaître les signes cliniques d'un coma hyperosmolaire, qui est une complication du diabète.",
+  "option_a": "Troubles de vigilance, déshydratation intense, insuffisance rénale aiguë",
+  "option_a_comment": "Cette option est correcte car les troubles de vigilance, la déshydratation intense et l'insuffisance rénale aiguë sont des signes cliniques d'un coma hyperosmolaire.",
+  "option_b": "Fievre, douleurs abdominales, nausées et vomissements",
+  "option_b_comment": "Cette option est incorrecte car ces symptômes sont plus couramment associés à une infection ou à une maladie gastro-intestinale.",
+  "option_c": "Cétonémie positive, bicarbonate et pH normal",
+  "option_c_comment": "Cette option est incorrecte car elle décrit la phase de cétose d'une acido-cétose diabétique, et non les signes cliniques d'un coma hyperosmolaire.",
+  "option_d": "Dyspnée de Kussmaul, troubles de la conscience et déshydratation mixte",
+  "option_d_comment": "Cette option est incorrecte car elle décrit les symptômes d'une acido-cétose diabétique, et non les signes cliniques d'un coma hyperosmolaire.",
+  "correct_option": "a"
+}
+[prompt_builder] MCP session init failed: HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] Ollama keyword extraction failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+{
+  "question": "Quelle complication métabolique aiguë doit-on penser lorsqu'un patient diabétique présente des douleurs abdominales et des nausées?",
+  "question_comment": "Cette question évalue la capacité à identifier les complications métaboliques aigues chez les patients diabétiques. Un piège courant est de ne pas considérer les symptômes gastro-intestinaux comme des signes d'hyperglycémie.",
+  "option_a": "Hyperglycémie",
+  "option_a_comment": "Cette option est incorrecte car les douleurs abdominales et les nausées ne sont pas des signes directs d'hyperglycémie.",
+  "option_b": "Cétose",
+  "option_b_comment": "Cette option est correcte car la cétose est une complication métabolique aiguë qui peut présenter des symptômes gastro-intestinaux tels que des douleurs abdominales et des nausées.",
+  "option_c": "Hypoglycémie",
+  "option_c_comment": "Cette option est incorrecte car la hypoglycémie est une complication métabolique aiguë qui présente des symptômes différents tels que des sueurs, des pâleurs et une tachycardie.",
+  "option_d": "Deshydratation",
+  "option_d_comment": "Cette option est incorrecte car la déshydratation est une complication métabolique aiguë qui peut présenter des symptômes tels que des troubles de la vigilance, mais pas nécessairement des douleurs abdominales et des nausées.",
+  "correct_option": "b"
+}
+[prompt_builder] MCP session init failed: HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] Ollama keyword extraction failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+{
+  "question": "Quel est le diagnostic biologique de l'acidocétose diabétique chez l'enfant?",
+  "question_comment": "Cette question évalue la capacité à identifier les signes biologiques de l'acidocétose diabétique, une complication du diabète sucré chez l'enfant.",
+  "option_a": "Ionogramme sanguin : calculer une natrémie corrigée; évaluer une kaliémie",
+  "option_a_comment": "L'ionogramme sanguin est un examen essentiel pour diagnostiquer l'acidocétose diabétique, car il permet de calculer la natrémie corrigée et d'évaluer la kaliémie.",
+  "option_b": "NFS, CRP : parfois hyperleucocytose sans infection",
+  "option_b_comment": "L'analyse des NFS et CRP peut aider à diagnostiquer l'acidocétose diabétique, mais ce n'est pas le diagnostic biologique principal.",
+  "option_c": "ECG : recherche de signes de dyskaliémie",
+  "option_c_comment": "L'ECG peut aider à diagnostiquer les complications de l'acidocétose diabétique, mais ce n'est pas le diagnostic biologique principal.",
+  "option_d": "cf. chapitre  « Savoir reconnaître une hypoglycémie, un coma hyperosmolaire ou une acido-cétose diabétique »",
+  "option_d_comment": "Ce chapitre fournit des informations générales sur les diagnostics de différentes complications du diabète, mais il ne constitue pas le diagnostic biologique spécifique de l'acidocétose diabétique.",
+  "correct_option": "a"
+}
+[prompt_builder] MCP session init failed: HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] Ollama keyword extraction failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+{
+  "question": "Quels sont les examens d'urgence à réaliser en cas de suspicion de déséquilibre hyperglycémique?",
+  "question_comment": "Cette question évalue la capacité à identifier les examens essentiels pour diagnostiquer et comprendre les causes d'une hyperglycémie.",
+  "option_a": "Cétonémie capillaire, ionogramme sanguin, urée, créatinine et calcul du trou anionique",
+  "option_a_comment": "Ces examens sont réalisés pour diagnostiquer la présence d'une hyperglycémie et identifier les causes potentielles.",
+  "option_b": "ECG, BU, recherche clinique de foyer infectieux et examen clinique à la recherche de plaie",
+  "option_b_comment": "Ces examens sont réalisés pour comprendre les causes potentielles de l'hyperglycémie, notamment les infections et les plaies.",
+  "option_c": "pH veineux, cétonémie capillaire et ionogramme sanguin",
+  "option_c_comment": "Ces examens sont réalisés pour diagnostiquer la présence d'une hyperglycémie et identifier les causes potentielles.",
+  "option_d": "Calcul de l'osmolarité, urée et créatinine",
+  "option_d_comment": "Ces examens sont réalisés pour comprendre les causes potentielles de l'hyperglycémie, notamment les troubles du métabolisme.",
+  "correct_option": "a"
+}
+[prompt_builder] MCP session init failed: HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] Ollama keyword extraction failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+{
+  "question": "Quels sont les objectifs du traitement du diabète de type 1?",
+  "question_comment": "Cette question évalue la compréhension des principes généraux et des objectifs thérapeutiques du diabète de type 1. Le piège courant est de ne pas considérer le compromis entre l'équilibre glycémique, la survenue des hypoglycémies et la qualité de vie.",
+  "option_a": "Réduire l'hémoglobine glyquée et prévenir les complications micro- et macroangiopathiques",
+  "option_a_comment": "Cette option est correcte car l'insulinothérapie intensifiée a pour objectif de réduire l'hémoglobine glyquée et de retarder et réduire la gravité des complications micro- et macroangiopathiques.",
+  "option_b": "Augmenter le risque d'hypoglycémie sévère",
+  "option_b_comment": "Cette option est incorrecte car l'insulinothérapie intensifiée augmente effectivement le risque d'hypoglycémie sévère, mais ce n'est pas l'objectif principal du traitement.",
+  "option_c": "Assurer la vie la plus libre possible et prévenir les complications aiguës ou chroniques de la maladie",
+  "option_c_comment": "Cette option est correcte car les objectifs du traitement sont un compromis entre la vie la plus libre possible et la prévention des complications aiguës ou chroniques de la maladie.",
+  "option_d": "Augmenter l'hémoglobine glyquée",
+  "option_d_comment": "Cette option est incorrecte car l'objectif du traitement est de réduire l'hémoglobine glyquée, pas de l'augmenter.",
+  "correct_option": "c"
+}
+[prompt_builder] MCP session init failed: HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] Ollama keyword extraction failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+{
+  "question": "Quel est le but principal de l'autosurveillance glycémique pour le patient diabétique?",
+  "question_comment": "Cette question évalue la compréhension des principes et des moyens de l'autosurveillance dans le diabète de type 1. Le patient doit savoir que l'autosurveillance glycémique est essentielle pour suivre son diabète, adapter ses doses d'insuline et gérer les situations d'urgence.",
+  "option_a": "Suivre les symptômes du diabète",
+  "option_a_comment": "Cette option est incorrecte car l'autosurveillance glycémique vise à suivre les niveaux de glucose dans le sang, pas les symptômes du diabète.",
+  "option_b": "Suivre son diabète, adapter ses doses d'insuline et gérer les situations d'urgence",
+  "option_b_comment": "Cette option est correcte car elle décrit les buts principaux de l'autosurveillance glycémique pour le patient diabétique.",
+  "option_c": "Mesurer uniquement les niveaux de glucose dans le sang",
+  "option_c_comment": "Cette option est incorrecte car l'autosurveillance glycémique vise à suivre les niveaux de glucose dans le sang, mais également à adapter les doses d'insuline et à gérer les situations d'urgence.",
+  "option_d": "Évaluer uniquement l'HbA1c",
+  "option_d_comment": "Cette option est incorrecte car l'autosurveillance glycémique vise à suivre les niveaux de glucose dans le sang, pas uniquement à évaluer l'HbA1c.",
+  "correct_option": "b"
+}
+{
+  "question": "Quel est l'objectif principal de la diététique du diabète de type 1?",
+  "question_comment": "La question évalue la connaissance de l'objectif principal de la diététique du diabète de type 1. Le piège courant est de choisir une option qui n'est pas directement liée à l'objectif principal.",
+  "option_a": "Éviter les trop grandes fluctuations glycémiques",
+  "option_a_comment": "Cette option est correcte car elle correspond à l'objectif principal de la diététique du diabète de type 1, qui est d'éviter les fluctuations glycémiques trop importantes.",
+  "option_b": "Améliorer la qualité de la vie des patients",
+  "option_b_comment": "Cette option est incorrecte car elle est un bénéfice secondaire de la diététique du diabète de type 1, mais pas l'objectif principal.",
+  "option_c": "Réduire les besoins en insuline",
+  "option_c_comment": "Cette option est incorrecte car elle n'est pas directement liée à l'objectif principal de la diététique du diabète de type 1.",
+  "option_d": "Améliorer la tolérance au glucose",
+  "option_d_comment": "Cette option est incorrecte car elle est un bénéfice secondaire de la diététique du diabète de type 1, mais pas l'objectif principal.",
+  "correct_option": "a"
+}
+[prompt_builder] Get objectives failed: HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] Ollama keyword extraction failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+{
+  "question": "Quels sont les objectifs thérapeutiques de la prise en charge multifactorielle du diabète de type 2?",
+  "question_comment": "Cette question évalue la compréhension des principes généraux de prise en charge multifactorielle du diabète de type 2 et de l'approche centrée sur le patient.",
+  "option_a": "L'équilibre glycémique seul",
+  "option_a_comment": "Cette option est incorrecte car la prise en charge multifactorielle du diabète de type 2 prend en compte plusieurs facteurs de risque CV, non seulement l'équilibre glycémique.",
+  "option_b": "L'arrêt du tabagisme, le contrôle du bilan lipidique, de la tension artérielle, l'observance de règles diététiques, de l'activité physique et des prises médicamenteuses",
+  "option_b_comment": "Cette option est correcte car elle décrit les objectifs thérapeutiques de la prise en charge multifactorielle du diabète de type 2.",
+  "option_c": "L'équilibre glycémique et le contrôle du bilan lipidique",
+  "option_c_comment": "Cette option est incorrecte car elle ne prend en compte que deux facteurs de risque CV, alors que la prise en charge multifactorielle du diabète de type 2 prend en compte plusieurs facteurs.",
+  "option_d": "L'arrêt du tabagisme seul",
+  "option_d_comment": "Cette option est incorrecte car elle ne décrit qu'un seul objectif thérapeutique de la prise en charge multifactorielle du diabète de type 2.",
+  "correct_option": "b"
+}
+[prompt_builder] Get objectives failed: HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] Ollama keyword extraction failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+{
+  "question": "Quelle classe de traitements antidiabétiques n'a pas de contre-indication en cas d'insuffisance rénale terminale?",
+  "question_comment": "Cette question évalue la compréhension des classes de traitements antidiabétiques et leurs contre-indications en cas d'insuffisance rénale.",
+  "option_a": "Les Biguanides",
+  "option_a_comment": "Les Biguanides ont une contre-indication en cas d'insuffisance rénale terminale.",
+  "option_b": "Les Sulfamides hypoglycémiants",
+  "option_b_comment": "Les Sulfamides hypoglycémiants ont une contre-indication en cas d'insuffisance rénale terminale.",
+  "option_c": "Les Glinides",
+  "option_c_comment": "Les Glinides n'ont pas de contre-indication en cas d'insuffisance rénale terminale.",
+  "option_d": "Les Inhibiteurs de SGLT2",
+  "option_d_comment": "Les Inhibiteurs de SGLT2 ont une contre-indication en cas d'insuffisance rénale terminale.",
+  "correct_option": "c"
+}
+[prompt_builder] MCP session init failed: HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] Ollama keyword extraction failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+{
+  "question": "Quels sont les deux premiers gestes à effectuer pour traiter l'hypoglycémie chez un patient inconscient?",
+  "question_comment": "Cette question évalue la compréhension des modalités de prise en charge de l'hypoglycémie, en particulier pour les patients inconscients. Un piège courant est de ne pas considérer les situations d'urgence et les mesures à prendre pour éviter les complications.",
+  "option_a": "Ingestion de sucre et injection de glucagon en IM ou SC",
+  "option_a_comment": "Cette option est correcte car elle correspond aux deux premiers gestes à effectuer pour traiter l'hypoglycémie chez un patient inconscient, selon les consignes fournies.",
+  "option_b": "Ingestion de sucre et glucagon par voie nasale",
+  "option_b_comment": "Cette option est incorrecte car le glucagon par voie nasale n'est pas remboursé et n'est pas recommandé en cas de sulfamide hypoglycémiante.",
+  "option_c": "Injection de glucagon en IM ou SC et injection intraveineuse directe d'une ou deux ampoules de soluté de glucose à 30 %",
+  "option_c_comment": "Cette option est incorrecte car elle ne correspond pas aux deux premiers gestes à effectuer pour traiter l'hypoglycémie chez un patient inconscient.",
+  "option_d": "Ingestion de sucre et injection intraveineuse directe d'une ou deux ampoules de soluté de glucose à 30 %",
+  "option_d_comment": "Cette option est incorrecte car elle ne correspond pas aux deux premiers gestes à effectuer pour traiter l'hypoglycémie chez un patient inconscient.",
+  "correct_option": "a"
+}
+{
+  "question": "Quel est l'objectif de la prise en charge du diabète de type 1 et 2 en ce qui concerne la prévention des complications rénales?",
+  "question_comment": "Cette question évalue la capacité à identifier les principes de prise en charge du diabète de type 1 et 2 en ce qui concerne la prévention des complications rénales.",
+  "option_a": "Connaître les principes du traitement néphroprotecteur chez le diabétique",
+  "option_a_comment": "Cette option est correcte car elle correspond à l'objectif de connaissance mentionné dans le contenu source.",
+  "option_b": "Connaître les principes de prise en charge du pied du diabétique",
+  "option_b_comment": "Cette option est incorrecte car elle ne correspond pas à l'objectif de connaissance mentionné dans le contenu source.",
+  "option_c": "Connaître les principes de prévention et de traitement de la céto-acidose",
+  "option_c_comment": "Cette option est incorrecte car elle ne correspond pas à l'objectif de connaissance mentionné dans le contenu source.",
+  "option_d": "Connaître les principes de prévention et de traitement du coma hyperosmolaire",
+  "option_d_comment": "Cette option est incorrecte car elle ne correspond pas à l'objectif de connaissance mentionné dans le contenu source.",
+  "correct_option": "a"
+}
+[prompt_builder] MCP session init failed: HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] Ollama keyword extraction failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+{
+  "question": "Quel est l'objectif d'équilibre glycémique dans le traitement de la rétinopathie diabétique?",
+  "question_comment": "Cette question évalue la compréhension des principes du traitement de la rétinopathie diabétique, en particulier l'importance de l'équilibre glycémique.",
+  "option_a": "Réduire les complications diabétiques générales",
+  "option_a_comment": "Cette option est incorrecte car, même si la réduction des complications diabétiques générales est importante, elle n'est pas l'objectif principal de l'équilibre glycémique dans le traitement de la rétinopathie diabétique.",
+  "option_b": "Maintenir un taux d'HbA1c inférieur à 7 %",
+  "option_b_comment": "Cette option est correcte car l'objectif d'HbA1c < 7 % est un critère clé pour l'équilibre glycémique dans le traitement de la rétinopathie diabétique.",
+  "option_c": "Réduire les risques de complications cardiaques",
+  "option_c_comment": "Cette option est incorrecte car, même si la réduction des risques de complications cardiaques est importante, elle n'est pas l'objectif principal de l'équilibre glycémique dans le traitement de la rétinopathie diabétique.",
+  "option_d": "Améliorer la vision",
+  "option_d_comment": "Cette option est incorrecte car, même si l'amélioration de la vision est un résultat souhaitable, elle n'est pas l'objectif principal de l'équilibre glycémique dans le traitement de la rétinopathie diabétique.",
+  "correct_option": "b"
+}
+[prompt_builder] SPARQL search failed for 'Diabète sucré de type 1 et 2 de l’enfant et de l’adulte': HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] SPARQL search failed for 'Diabète': HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+{
+  "question": "Quel est l'objectif de connaissance le plus pertinent au regard du contenu fourni?",
+  "question_comment": "Cette question évalue la capacité à sélectionner l'objectif de connaissance le plus pertinent en fonction du contenu fourni.",
+  "option_a": "Connaître le développement psychomoteur normal du nourrisson (3 semaines - 2 ans)",
+  "option_a_comment": "Cet objectif est pertinent car il est directement lié au contenu fourni qui traite du développement psychomoteur du nourrisson.",
+  "option_b": "Développement psychomoteur du nourrisson (3 semaines - 2 ans) : connaître les modalités de repérage des situations anormales",
+  "option_b_comment": "Cet objectif est également pertinent car il est lié au contenu fourni qui traite du développement psychomoteur du nourrisson.",
+  "option_c": "Connaître le développement psychomoteur normal du petit enfant (2 ans – 6 ans)",
+  "option_c_comment": "Cet objectif est moins pertinent car il n'est pas directement lié au contenu fourni qui traite du développement psychomoteur du nourrisson.",
+  "option_d": "Développement psychomoteur du petit enfant (2 ans - 6 ans) : connaître les modalités de repérage des situations anormales",
+  "option_d_comment": "Cet objectif est également moins pertinent car il n'est pas directement lié au contenu fourni qui traite du développement psychomoteur du nourrisson.",
+  "correct_option": "a"
+}
+{
+  "question": "Quels sont les principes de traitement de la céto-acidose diabétique?",
+  "question_comment": "Cette question évalue la connaissance des principes de traitement de la céto-acidose diabétique, un aspect important de la prise en charge du diabète.",
+  "option_a": "Réhydratation sérum salé 0.9%, biologie et recherche d'un foyer infectieux",
+  "option_a_comment": "Cette option est partiellement correcte, car la réhydratation et la biologie sont des étapes importantes dans le traitement de la céto-acidose. Cependant, elle ne mentionne pas la perfusion d'insuline rapide ou ultrarapide, qui est un élément clé du traitement.",
+  "option_b": "Perfusion continue d'insuline rapide ou ultrarapide, réhydratation par sérum salé isotonique et ajout de potassium",
+  "option_b_comment": "Cette option est correcte, car elle mentionne les principaux éléments du traitement de la céto-acidose diabétique : perfusion d'insuline rapide ou ultrarapide, réhydratation par sérum salé isotonique et ajout de potassium.",
+  "option_c": "Traitement du facteur déclenchant éventuel et éducation du patient",
+  "option_c_comment": "Cette option est partiellement correcte, car l'éducation du patient est importante pour la prévention de la céto-acidose. Cependant, elle ne mentionne pas les principaux éléments du traitement de la céto-acidose.",
+  "option_d": "ECG systématique et traitement en diabétologie ou en soins intensifs",
+  "option_d_comment": "Cette option est partiellement correcte, car l'ECG systématique est une étape importante dans le traitement de la céto-acidose. Cependant, elle ne mentionne pas les principaux éléments du traitement de la céto-acidose.",
+  "correct_option": "b"
+}
+[prompt_builder] MCP session init failed: HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] Ollama keyword extraction failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
+{
+  "question": "Quel est le traitement initial du coma hyperosmolaire?",
+  "question_comment": "Cette question évalue la compréhension des principes de traitement du coma hyperosmolaire, un aspect crucial de la prise en charge du diabète sucré.",
+  "option_a": "Réhydratation rapide avec des solutions hypotoniales",
+  "option_a_comment": "Cette option est incorrecte car la réhydratation rapide peut entraîner des complications telles que la myélinose centropontique et l'insuffisance cardiaque.",
+  "option_b": "Réhydratation lente avec du sérum salé NaCl 0.9% (10% du poids du corps)",
+  "option_b_comment": "Cette option est correcte car la réhydratation lente avec du sérum salé NaCl 0.9% permet d'éviter les complications et de rétablir l'équilibre hydrique.",
+  "option_c": "Insulinothérapie à haute dose sans réhydratation",
+  "option_c_comment": "Cette option est incorrecte car l'insulinothérapie à haute dose sans réhydratation peut entraîner des complications telles que l'hypokaliémie et l'insuffisance rénale.",
+  "option_d": "Réhydratation orale immédiate",
+  "option_d_comment": "Cette option est incorrecte car la réhydratation orale immédiate peut être insuffisante pour rétablir l'équilibre hydrique et peut entraîner des complications.",
+  "correct_option": "b"
+}
+[prompt_builder] SPARQL search failed for 'Diabète sucré de type 1 et 2 de l’enfant et de l’adulte': HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] SPARQL search failed for 'Diabète': HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] SPARQL search failed for '1': HTTPSConnectionPool(host='mcp-graphdb.sides3.network', port=443): Max retries exceeded with url: /mcp (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1029)')))
+[prompt_builder] Ollama keyword extraction failed: Failed to connect to Ollama. Please check that Ollama is downloaded, running and accessible. https://ollama.com/download
