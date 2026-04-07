@@ -117,7 +117,7 @@ def _mcp_init_session():
     payload = {"jsonrpc": "2.0", "id": 1, "method": "initialize",
                "params": {"protocolVersion": "2024-11-05", "capabilities": {},
                           "clientInfo": {"name": "prompt-builder", "version": "1.0"}}}
-    resp = requests.post(mcp_url, json=payload, headers=_mcp_headers(), timeout=10)
+    resp = requests.post(mcp_url, json=payload, headers=_mcp_headers(), timeout=10, verify=False)
     resp.raise_for_status()
     return resp.headers.get("mcp-session-id", "")
 
@@ -126,7 +126,7 @@ def _mcp_sparql(sparql, session_id):
     mcp_url, _, _ = _cfg()
     payload = {"jsonrpc": "2.0", "id": 2, "method": "tools/call",
                "params": {"name": "sparqlQuery", "arguments": {"query": sparql, "format": "json"}}}
-    resp = requests.post(mcp_url, json=payload, headers=_mcp_headers(session_id), timeout=15)
+    resp = requests.post(mcp_url, json=payload, headers=_mcp_headers(session_id), timeout=15, verify=False)
     resp.raise_for_status()
     data = _parse_sse_data(resp.text)
     text_content = data.get("result", {}).get("content", [{}])[0].get("text", "{}")
@@ -414,7 +414,6 @@ def extract_json(text):
     start = text.find("{")
     end = text.rfind("}")
     text = text[start:end+1]
-    print(text)
     return json.dumps(ast.literal_eval(text), ensure_ascii=False)
 
 
@@ -434,6 +433,7 @@ def generate_mcq(content, model_name, temperature):
 
 def generate_mcq_hf(content, model_name, tokenizer, temperature):
     full_prompt = _build_prompt(content)
+    print(full_prompt)
 
     pipe = pipeline(
         "text-generation",
