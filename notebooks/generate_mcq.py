@@ -334,11 +334,13 @@ def _build_fallback_prompt():
 def _build_prompt(content):
     mcp_url, _, _ = _cfg()
     if not mcp_url:
+        print("[prompt_builder] GRAPHDB_MCP_URL not set → fallback prompt")
         return _build_fallback_prompt().replace("{content}", content)
 
     search_term = _extract_via_regex(content)
     item_ref, item_label, objectives = (None, None, [])
     if search_term:
+        print(f"[prompt_builder] searching GraphDB for: '{search_term}'")
         item_ref, item_label, objectives = _fetch_objectives(search_term)
     if not objectives:
         for candidate in _extract_via_ollama(content):
@@ -347,7 +349,9 @@ def _build_prompt(content):
                 break
 
     if objectives:
+        print(f"[prompt_builder] enriched prompt → {item_ref} ({len(objectives)} objectives)")
         return _build_enriched_prompt(item_ref, item_label, objectives).replace("{content}", content)
+    print("[prompt_builder] no objectives found → fallback prompt")
     return _build_fallback_prompt().replace("{content}", content)
 
 
