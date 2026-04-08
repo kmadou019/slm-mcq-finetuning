@@ -1336,7 +1336,7 @@ Figure 3 : Check list sécurité du patient au bloc opératoire - version 2018 S
 
 La réunion de morbi-mortalité (RMM) est une '''réunion d'analyse collective, rétrospective et systémique''' (c'est-à-dire prenant en compte les composantes organisationnelles, techniques et humaines) de situations cliniques marquées par la survenue d'un événement indésirable associé aux soins (décès, complication…), afin de mettre en œuvre '''des actions de prévention, de récupération ou d'atténuation'''. Les RMM entrent dans le cadre de la '''culture du retour d’expérience''' ou comment apprendre collectivement de ses erreurs. Les RMM permettent de valider l'obligation de développement professionnel continu (DPC).
 
-'''Lien avec l’item 4''' Qualité et sécurité des soins. La sécurité du patient. La gestion des risques. Les événements indésirables associés aux soins (EIAS). Démarche qualité et évaluation des pratiques professionnelles",True
+'''Lien avec l’item 4''' Qualité et sécurité des soins. La sécurité du patient. La gestion des risques. Les événements indésirables associés aux soins (EIAS). Démarche qualité et évaluation des pratiques professionnelles",False
 42,OIC-006-07-A,Quel est le principal objectif des lois Léonetti et Claeys-Léonetti en matière de fin de vie?,De prolonger la vie par tous les moyens possibles,De garantir le droit à un accompagnement de fin de vie et au refus de l’obstination déraisonnable,De permettre l’euthanasie active dans tous les cas,De supprimer les soins palliatifs en faveur des traitements actifs,b,"{{objectif de connaissance
 |Identifiant=OIC-006-07-A
 |Item_parent=L’organisation de l’exercice clinique et les méthodes qui permettent de sécuriser le parcours du patient
@@ -4886,7 +4886,7 @@ L'assurance maladie contribue à une '''meilleure adéquation de l'offre de soin
 
 L'assurance maladie contribue à la '''diffusion des recommandations de la HAS auprès des professionnels''' (assurée par les délégués de l'assurance maladie) et élabore des '''profils comparatifs d'activité et de prescriptions'''.
 
-Enfin, l’assurance maladie a en charge la '''maîtrise médicalisée des dépenses'''. Au sein de chaque région, l'assurance maladie participe à l'élaboration, sous l'égide de l'ARS, d'un programme pluriannuel régional de gestion du risque qui complète les programmes nationaux de gestion du risque.",False
+Enfin, l’assurance maladie a en charge la '''maîtrise médicalisée des dépenses'''. Au sein de chaque région, l'assurance maladie participe à l'élaboration, sous l'égide de l'ARS, d'un programme pluriannuel régional de gestion du risque qui complète les programmes nationaux de gestion du risque.",True
 121,OIC-019-10-A,Quels signes urinaires doivent être recherchés en cas de fièvre pendant la grossesse?,Douleurs abdominales et nausées,Frissons et douleurs lombaires,Brûlures mictionnelles et douleurs lombaires,Saignements et écoulement vaginal,c,"{{objectif de connaissance
 |Identifiant=OIC-019-10-A
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -5256,7 +5256,7 @@ Des autorisations auprès d’autres structures ou organismes (CNIL, ANSM, etc) 
 
 '''Recherches non-RIPH''': les recherches n'appartenant à aucun type de RIPH n’entrent pas dans le cadre de la loi Jardé. Elles ne sont donc pas soumises à l’obtention d’une autorisation par un CPP mais lorsqu’elles mobilisent l’exploitation de données individuelles à caractère personnel, elles relèvent et nécessitent des démarches auprès de la CNIL. C'est notamment le cas des recherches effectuées à partir de données rétrospectives déjà collectées lors du soin ou de recherches antérieures, les recherches portant sur les cosmétiques, les enquêtes de satisfaction liées au soin ou non, les expérimentations en sciences humaines et sociales dans domaine santé, les évaluation des modalités d’exercice des professionnels de santé, des pratiques d’enseignement dans le domaine de la santé, etc.
 
-<br />",True
+<br />",False
 131,OIC-020-03-A,Quel est un conseil principal de prévention de la toxoplasmose lors de la manipulation d'aliments?,Consommer de la viande crus,Se laver les mains avant et après manipuler les aliments,Manger des fruits et légumes sans les laver,Éviter de cuisiner la viande,b,"{{objectif de connaissance
 |Identifiant=OIC-020-03-A
 |Item_parent=La méthodologie de la recherche en santé
@@ -9087,7 +9087,7 @@ o   VIH (incidence < 1% lorsque la charge virale est bien contrôlée)
 
 o   Parvovirus B19
 
-o   SARS-CoV-2 (incidence : 3-5% des naissances après infection maternelle)",True
+o   SARS-CoV-2 (incidence : 3-5% des naissances après infection maternelle)",False
 244,OIC-027-02-B,Quel est le principal signe clinique de la scoliose chez l'enfant non douloureux?,Douleur au dos,Gibbosité de la colonne,Raideur du dos,Tremblement des membres,b,"{{objectif de connaissance
 |Identifiant=OIC-027-02-B
 |Item_parent=Prévention des risques fœtaux : infection, médicaments, toxiques, irradiation
@@ -10315,7 +10315,7 @@ En cas d'oubli d'administration des immunoglobulines dans les premières 72 heur
 
 En cas d'injection systématique d'immunoglobulines anti-D chez la mère à 28 SA, le test de Coombs peut être positif chez le nouveau-né RhD + (près de 10 % des cas). En l'absence de symptomatologie associée (ictère, anémie), aucune exploration complémentaire n'est à prévoir (élution, identification des anticorps fixés). Un contact avec le néonatalogiste est utile.
 
-'''312. [[Prévention des risques fœtaux SD-312|Prévention des risques foetaux]]'''",False
+'''312. [[Prévention des risques fœtaux SD-312|Prévention des risques foetaux]]'''",True
 286,OIC-027-30-A,Quel est le traitement de référence pour la cryptorchidie?,Injection d'HCG,Traitement médical par hormone,Abaissement du testicule,Observation sans intervention,c,"{{objectif de connaissance
 |Identifiant=OIC-027-30-A
 |Item_parent=Prévention des risques fœtaux : infection, médicaments, toxiques, irradiation
@@ -10838,7 +10838,7 @@ Cas particulier de la coqueluche (vaccin inactivé) autorisé dans certains pays
 
 '''348. [[Suspicion d'un effet indésirable des médicaments ou d'un soin SD-348|Suspicion d'un effet indésirable des médicaments ou d'un soin]]'''
 
-'''352. [[Expliquer un traitement au patient (adulte/enfant/adolescent) SD-352|Expliquer un traitement au patient (adulte/enfant/adolescent)]]'''",True
+'''352. [[Expliquer un traitement au patient (adulte/enfant/adolescent) SD-352|Expliquer un traitement au patient (adulte/enfant/adolescent)]]'''",False
 293,OIC-027-33-A,Quel examen est nécessaire pour exclure une infection urinaire et suspecter une hyperconcentration des urines?,Échographie de l'appareil urinaire,Bandelette urinaire (complétée par ECBU si besoin),Bilan urodynamique,Analyse de sang complet,b,"{{objectif de connaissance
 |Identifiant=OIC-027-33-A
 |Item_parent=Prévention des risques fœtaux : infection, médicaments, toxiques, irradiation
@@ -12971,7 +12971,7 @@ Il faut savoir que 2/3 des femmes ayant recours à une IVG avaient une contracep
 |Contributeurs=Arthur Foulon,Philippe Deruelle,Aubert Agostini
 |Ordre=3}}
 
-Globalement le nombre d’IVG varie entre 200 000 et 250 000 par an en France. Ce chiffre est stable depuis 2006. En moyenne, 2 femmes sur 5 sont concernées au cours de leur vie.",True
+Globalement le nombre d’IVG varie entre 200 000 et 250 000 par an en France. Ce chiffre est stable depuis 2006. En moyenne, 2 femmes sur 5 sont concernées au cours de leur vie.",False
 341,OIC-037-04-A,Quelles sont les indications principales du méthylphénidate chez l'enfant et l'adulte?,Trouble de l'attention avec ou sans hyperactivité (TDAH) chez l'enfant après 6 ans et TDAH de l'adulte avec RITALINE LP,Narcolepsie et hypersomnie idiopathique chez l'adulte,Traitement de l'insuffisance cardiaque et des troubles cardiovasculaires,Grossesse et allaitement chez la femme enceinte,a,"{{objectif de connaissance
 |Identifiant=OIC-037-04-A
 |Item_parent=Interruption volontaire de grossesse
@@ -16842,7 +16842,7 @@ Anomalies très fréquentes: 1 enfant sur 5 de moins de 6 ans",False
 * Malformation du crâne ou de la face (craniosténoses, dysostoses craniofaciales
 * Surdité
 
-'''Facteurs de risques familiaux''' : strabisme ; troubles sévères de la réfraction : myopies sévères et précoces ; amblyopie ; astigmatisme ; maladie ophtalmologique héréditaire…",True
+'''Facteurs de risques familiaux''' : strabisme ; troubles sévères de la réfraction : myopies sévères et précoces ; amblyopie ; astigmatisme ; maladie ophtalmologique héréditaire…",False
 436,OIC-047-05-B,Quel est le risque associé à la migraine avec aura par rapport à l'infarctus cérébral?,Le risque est multiplié par trois,Le risque est multiplié par deux,Le risque est divisé par deux,Le risque est identique,b,"{{objectif de connaissance
 |Identifiant=OIC-047-05-B
 |Item_parent=Suivi d’un nourrisson, d’un enfant et d’un adolescent normal. Dépistage des anomalies orthopédiques, des troubles visuels, auditifs et dentaires. Examens de santé obligatoires. Médecine scolaire. Mortalité et morbidité infantiles
@@ -17238,7 +17238,7 @@ Définition selon
 * les organes affectés
 ** de transmission du son (surtout acquis) : oreille externe et oreille moyenne
 ** de perception (surtout congénital, parfois acquis comme après certaines méningites bactériennes): oreille interne, plus rarement système auditif central.
-** mixte",False
+** mixte",True
 452,OIC-047-14-A,Quelle est l'évolution la plus fréquente d'une paralysie faciale a frigore?,Déficit sévère persistant avec déformation invalidante,Réinnervation aberrante avec larmoiements lors des repas,"Recovery complète en moins de 2 mois, surtout si initialement incomplète",Hémi-spasme facial post-paralytique avec contracture permanente,c,"{{objectif de connaissance
 |Identifiant=OIC-047-14-A
 |Item_parent=Suivi d’un nourrisson, d’un enfant et d’un adolescent normal. Dépistage des anomalies orthopédiques, des troubles visuels, auditifs et dentaires. Examens de santé obligatoires. Médecine scolaire. Mortalité et morbidité infantiles
@@ -18490,7 +18490,7 @@ Il est côté de 1 (aucun signe) à 5 (aspect adulte)
 
 OGE : organes génitaux externes
 
-Dessins Tanner Filles et Garçons",True
+Dessins Tanner Filles et Garçons",False
 517,OIC-049-05-B,Quelle est la définition officielle de la ménopause selon l'OMS 1996?,Un arrêt permanent des menstruations causé par une maladie ovarienne,Une perte d'activité folliculaire ovarienne entraînant un arrêt permanent des menstruations,Une période de troubles hormonaux avant l'âge de 45 ans,Une augmentation des niveaux d'estradiol plasmatique,b,"{{objectif de connaissance
 |Identifiant=OIC-049-05-B
 |Item_parent=Puberté normale et pathologique
@@ -19414,7 +19414,7 @@ La radio du poignet a pour objectif de mesurer l'âge osseux
 
 *Le paraphimosis est une urgence chirurgicale qui constitue un étranglement du gland exposant à une nécrose du gland et du fourreau de la verge. Une réduction manuelle avec recalotage en urgence est nécessaire.
 
-<br />",False
+<br />",True
 560,OIC-050-02-A,Quelle est la principale utilité de l'échelle ADL?,Évaluer la capacité à gérer un budget personnel,Mesurer la capacité à utiliser un téléphone,Déterminer la capacité à réaliser des gestes de la vie quotidienne corporels,Évaluer la capacité à préparer un repas,c,"{{objectif de connaissance
 |Identifiant=OIC-050-02-A
 |Item_parent=Pathologie génito-scrotale chez le garçon et chez l’homme
@@ -21088,7 +21088,7 @@ Pas de spécificité du trouble lié à l’usage de médicaments, mais risque d
 Idées délirantes soit à type de persécution soit à type de perturbations de l’identification. Hallucinations visuelles les plus fréquentes. Les symptômes dépressifs, L’apathie, Les symptômes anxieux et L’euphorie[[Sémiologie des symptômes psycho-comportementaux chez le sujet âgé dément 2C-070-DP-A02#%20msocom%201|[mt1]]] , de même l’agitation, l’agressivité, l’inversion du rythme nycthéméral sont classiques.
 
 '''Évaluation des SCPD systématique''' dans les démences. Démarche diagnostique avec identification du type de SCPD, du contexte, de la sévérité et du retentissement. Enquête étiologique car souvent multifactoriel. Examen clinique médical général et paracliniques. Penser aux douleurs, globe vésical, fécalome, infection, changement d’environnement et facteurs de stress…
-----[[Sémiologie des symptômes psycho-comportementaux chez le sujet âgé dément 2C-070-DP-A02#%20msoanchor%201|[mt1]]]On ne met pas dedans l’agitation, l’agressivité, l’inversion du rythme nycthéméral ?",False
+----[[Sémiologie des symptômes psycho-comportementaux chez le sujet âgé dément 2C-070-DP-A02#%20msoanchor%201|[mt1]]]On ne met pas dedans l’agitation, l’agressivité, l’inversion du rythme nycthéméral ?",True
 623,OIC-070-06-A,Quel élément clinique est essentiel pour déterminer le site infectieux lors d'une bactériémie ou d'une fongémie?,L'analyse des hémocultures dans les 24 heures,La présence d'une fièvre persistante,La recherche de la porte d'entrée et du foyer infectieux,L'administration d'antibiotiques immédiate,c,"{{objectif de connaissance
 |Identifiant=OIC-070-06-A
 |Item_parent=Troubles psychiques du sujet âgé
@@ -25706,7 +25706,7 @@ Coronaropathie
 Otite, Asthme de l’enfant
 
 Bronchite
-|}",False
+|}",True
 738,OIC-075-23-B,Quel est le principal allergène du venin d'abeille?,Hyaluronidase,Phospholipase A1,Phospholipase A2,Proteine de coagulation,c,"{{objectif de connaissance
 |Identifiant=OIC-075-23-B
 |Item_parent=Addiction au tabac
@@ -28483,7 +28483,7 @@ Les principales '''causes''' des hémorragies intravitréennes sont les suivante
 *rétinopathie diabétique proliférante
 *occlusions de forme ischémique de la veine centrale de la rétine ou d'une de ses branches
 *déchirure rétinienne : une déchirure rétinienne, compliquée ou non de décollement de la rétine, peut entraîner lors de sa survenue une hémorragie intravitréenne par rupture d'un vaisseau rétinien
-*syndrome de Terson : hémorragie intravitréenne uni- ou bilatérale associée à une hémorra- gie méningée par rupture d'anévrisme intracrânien (le syndrome de Terson peut également être associé à une hémorragie méningée d'origine traumatique)",False
+*syndrome de Terson : hémorragie intravitréenne uni- ou bilatérale associée à une hémorra- gie méningée par rupture d'anévrisme intracrânien (le syndrome de Terson peut également être associé à une hémorragie méningée d'origine traumatique)",True
 817,OIC-082-17-B,Quel est le seuil de concentration en urate de sodium dans le plasma à 35 °C qui déclenche la formation de cristaux d'urate?,300 µmol/l,320 µmol/l,360 µmol/l,400 µmol/l,c,"{{objectif de connaissance
 |Identifiant=OIC-082-17-B
 |Item_parent=Altération aiguë de la vision
@@ -29035,7 +29035,7 @@ Classement selon l’'''évolution''' : nouvelle classification
 
 - Affection la plus invalidante au monde (nb j de douleurs, de handicap ou d'arrêt de travail) '''[[Situation de handicap SDD-345|(situation de handicap)]]'''
 
-→ Coût majeur pour la société (formes chroniques 10 % = 80 % des coûts)",True
+→ Coût majeur pour la société (formes chroniques 10 % = 80 % des coûts)",False
 841,OIC-094-03-A,Quel est le principal domaine de transplantation avec donneur vivant?,Transplantation hépatique,Transplantation cardiaque,Transplantation rénale,Transplantation pulmonaire,c,"{{objectif de connaissance
 |Identifiant=OIC-094-03-A
 |Item_parent=Rachialgie
@@ -29361,7 +29361,7 @@ Complications = canal lombaire rétréci avec claudication radiculaire (appariti
 *'''si radiculalgie ou geste invasif envisagé''' : IRM cervicale
 *'''si contexte d’entorse cervicale''' : clichés dynamiques à distance (profil en flexion et extension) + charnière cervico-occipitale
 
-<br />",False
+<br />",True
 849,OIC-094-07-A,Quel est le signe direct d'une atélectasie sur une radiographie de thorax?,Hyperinflation du poumon sain,Présence d'un bronchogramme aérique,Opacité avec bords nets et absence de bronchogramme aérique,Déviation trachéale vers le côté sain,c,"{{objectif de connaissance
 |Identifiant=OIC-094-07-A
 |Item_parent=Rachialgie
@@ -35835,7 +35835,7 @@ Le diagnostic positif de tic repose sur la clinique, de même que le diagnostic 
 |Ordre=6}}
 Les tics peuvent être bénins et isolés, survenant le plus souvent dans l'enfance et ne pas compromettre l'adaptation socioprofessionnelle, ou correspondre à la maladie de Gilles de la Tourette définie par la combinaison de tics moteurs et vocaux simples et complexes présents tous les jours, ayant un retentissement sur le fonctionnement du patient et son adaptation socioprofessionnelle, et parfois associés à des comorbidités (troubles obsessionnels compulsifs, dépression, anxiété, syndrome d'hyperactivité avec déficit attentionnel, automutilation ou autisme).
 
-Le diagnostic positif de tic repose sur la clinique, de même que le diagnostic de syndrome de Gilles de la Tourette.",True
+Le diagnostic positif de tic repose sur la clinique, de même que le diagnostic de syndrome de Gilles de la Tourette.",False
 975,OIC-107-07-B,Quel est l'objectif principal d'un régime pauvre en sel pour un patient souffrant d'insuffisance cardiaque?,Augmenter la consommation d'aliments salés pour maintenir l'appétit,Réduire la consommation de sel à 5 à 6 g par jour,Éviter tout aliment contenant du sel pour prévenir les complications,Accroître la consommation d'eau pour éliminer le sel,b,"{{objectif de connaissance
 |Identifiant=OIC-107-07-B
 |Item_parent=Mouvements anormaux
@@ -36819,7 +36819,7 @@ Hydrocéphalie chronique de l’adulte '''([[Découverte d'une anomalie du cerve
 
 ·        Suffusion de liquide dans le parenchyme périventriculaire ('''résorption transépendymaire''') entraînant des anomalies radiologiques de la substance blanche périventriculaire (hypodensité au scanner ou hypersignal en pondération T2 en IRM).
 
-<br />",False
+<br />",True
 1003,OIC-108-16-B,Quel est l'objectif principal du test d'Allen?,Évaluer la fréquence cardiaque du patient,Mesurer la pression artérielle des doigts,Évaluer la perméabilité des artères digitales et le fonctionnement des arcades palmaires,Déterminer la température des extrémités,c,"{{objectif de connaissance
 |Identifiant=OIC-108-16-B
 |Item_parent=Confusion, démences. (voir item 132)
@@ -37234,7 +37234,7 @@ de la marche d’origine neurologique
 
 ·        réponse au placebo, à la suggestion ou la psychothérapie
 
-Les incongruences qui peuvent être relevées au cours de l’examen clinique et le cours évolutif permettent d’évoquer le diagnostic en évitant de considérer comme psychogène un trouble somatique dont l’origine est considérée comme « organique ».",True
+Les incongruences qui peuvent être relevées au cours de l’examen clinique et le cours évolutif permettent d’évoquer le diagnostic en évitant de considérer comme psychogène un trouble somatique dont l’origine est considérée comme « organique ».",False
 1022,OIC-109-10-B,Quelle est la valeur du cortisol à 8h qui indique une insuffisance surrénale?,180 ng/ml,50 ng/ml,100 ng/ml,200 ng/ml,b,"{{objectif de connaissance
 |Identifiant=OIC-109-10-B
 |Item_parent=Troubles de la marche et de l’équilibre
@@ -37263,7 +37263,7 @@ de la marche d’origine neurologique
 
 ·        réponse au placebo, à la suggestion ou la psychothérapie
 
-Les incongruences qui peuvent être relevées au cours de l’examen clinique et le cours évolutif permettent d’évoquer le diagnostic en évitant de considérer comme psychogène un trouble somatique dont l’origine est considérée comme « organique ».",True
+Les incongruences qui peuvent être relevées au cours de l’examen clinique et le cours évolutif permettent d’évoquer le diagnostic en évitant de considérer comme psychogène un trouble somatique dont l’origine est considérée comme « organique ».",False
 1023,OIC-109-11-B,À quelle heure est effectuée la mesure de l’ACTH pour diagnostiquer l’insuffisance surrénale?,À 12h,À 18h,À 8h,À 20h,c,"{{objectif de connaissance
 |Identifiant=OIC-109-11-B
 |Item_parent=Troubles de la marche et de l’équilibre
@@ -37353,7 +37353,7 @@ Bilan biologique (Hypoglycémies, troubles ioniques : dyskaliémie, hypercalcém
 
 ECG : troubles du rythme 
 
-Scanner cérébral sans injection : (hématome sous dural, hématome extra dural, AVC)",False
+Scanner cérébral sans injection : (hématome sous dural, hématome extra dural, AVC)",True
 1029,OIC-112-01-A,Quel est le traitement initial à administrer au domicile d'un patient présentant une insuffisance surrénale aiguë?,100 mg d'hydrocortisone par voie IV ou IM,100 mg d'hydrocortisone par voie or,50 mg d'hydrocortisone par voie IV toutes les 6 heures,100 mg d'hydrocortisone par voie SC uniquement,a,"{{objectif de connaissance
 |Identifiant=OIC-112-01-A
 |Item_parent=Dermatose bulleuse touchant la peau et/ou les muqueuses externes
@@ -39586,7 +39586,7 @@ Pour les patients ayant  une HBP compliquée (rétention aigue d’urine, lithi
 *Rapport AFU 2018 : hypertrophie bénigne de la prostate, G. Robert, A. De La Taille, A. Descazeau, Prog Urol  2018 28, 803—812
 *Guide de prise en charge en médecine générale des symptômes du bas appareil urinaire de l’homme liés à une hyperplasie bénigne de la prostate, A Descazeaud, N Barry
 
-Delongchamps, J-N Cornu , A R Azzouzi , D Buchon , A Benchikh , et al. Prog Urol 2015 Jun;25(7):404-12",True
+Delongchamps, J-N Cornu , A R Azzouzi , D Buchon , A Benchikh , et al. Prog Urol 2015 Jun;25(7):404-12",False
 1104,OIC-127-09-A,Quel est le premier pas dans l'arbre diagnostique des hématuries?,Évaluer la présence de douleurs abdominales,Effectuer un examen physique complet,Identifier la cause de l'hématurie (hématurie glaire ou non glaire),Faire un examen d'urine standard,d,"{{objectif de connaissance
 |Identifiant=OIC-127-09-A
 |Item_parent=Hypertrophie bénigne de la prostate
@@ -39672,7 +39672,7 @@ Les lésions histopathologiques cérébrales de la maladie d’Alzheimer sont ca
 
 -        Et finalement d’une '''perte neuronale.'''
 
-Chez les personnes âgées de plus de 75 ans, on retrouve fréquemment la co-existence de lésions de pathologies différentes (ex : lésions caractéristiques de la malade d’Alzheimer et des lésions vasculaires ischémiques diffuses ou lacunaires, des micro-hémorragies).",True
+Chez les personnes âgées de plus de 75 ans, on retrouve fréquemment la co-existence de lésions de pathologies différentes (ex : lésions caractéristiques de la malade d’Alzheimer et des lésions vasculaires ischémiques diffuses ou lacunaires, des micro-hémorragies).",False
 1107,OIC-132-02-A,Quel est le syndrome glomérulaire caractérisé par une hématurie macroscopique récidivante et une néphropathie à IgA primitive?,Syndrome de glomérulonéphrite chronique,Syndrome néphrotique,Syndrome d’hématurie macroscopique récidivante,Syndrome néphritique aigu,c,"{{objectif de connaissance
 |Identifiant=OIC-132-02-A
 |Item_parent=Troubles cognitifs du sujet âgé. (voir item 108)
@@ -40625,7 +40625,7 @@ L’analyse fonctionnelle des maladies de Wood distingue :
 
 ·      '''L'incapacité''' représente une des conséquences de la déficience et en est l'expression en termes de fonction ou de performance.
 
-·      '''Le handicap''' est le désavantage résultant de l'incapacité. Il traduit l'écart entre l'incapacité physique et intellectuelle de la personne et les normes habituelles de qualité de vie. Le handicap est proportionnel aux ressources matérielles et sociales disponibles pour pallier l'incapacité́.",False
+·      '''Le handicap''' est le désavantage résultant de l'incapacité. Il traduit l'écart entre l'incapacité physique et intellectuelle de la personne et les normes habituelles de qualité de vie. Le handicap est proportionnel aux ressources matérielles et sociales disponibles pour pallier l'incapacité́.",True
 1139,OIC-133-04-A,"Quel symptôme est fréquemment associé à un calcul urinaire, en particulier lorsqu'il est détecté par hasard?",Colique néphrétique,Hématurie,Infection urinaire,Aucun symptôme,d,"{{objectif de connaissance
 |Identifiant=OIC-133-04-A
 |Item_parent=Autonomie et dépendance chez le sujet âgé
@@ -40638,7 +40638,7 @@ L’analyse fonctionnelle des maladies de Wood distingue :
 |Ordre=4}}
 ·       '''ADL''' : ''Activities of daily living''. Elle permet de déterminer la capacité de la personne évaluée à réaliser les gestes courants de la vie quotidienne intéressant le corps. C’est une échelle courte, facile à utiliser et fortement prédictive de morbi-mortalité. Les items étudiés sont les soins corporels, l’habillement, l’utilisation des toilettes, les transferts, la continence et l’alimentation. Un score de 6 montre une autonomie complète, toute perte de point montre une dépendance, plus à risque d’événements péjoratifs.
 
-·       '''IADL''' : ''Instrumental activities of daily living.'' Les activités instrumentales de la vie quotidienne nécessitent une utilisation des fonctions cognitives dites instrumentales : calcul, élaboration de stratégies exécutives par exemple. Cette échelle est fortement prédictive de la capacité d’une personne âgée à vivre seule à son domicile. Les items étudiés sont la capacité à utiliser un téléphone, faire ses courses, préparer un repas, faire le ménage, laver le linge, préparer un voyage, effectuer un déplacement, prendre un traitement médicamenteux ou gérer son budget personnel. Le sujet évalue lui-même ses capacités, la vérification auprès des proches ou la mise en situation peuvent être utiles.",True
+·       '''IADL''' : ''Instrumental activities of daily living.'' Les activités instrumentales de la vie quotidienne nécessitent une utilisation des fonctions cognitives dites instrumentales : calcul, élaboration de stratégies exécutives par exemple. Cette échelle est fortement prédictive de la capacité d’une personne âgée à vivre seule à son domicile. Les items étudiés sont la capacité à utiliser un téléphone, faire ses courses, préparer un repas, faire le ménage, laver le linge, préparer un voyage, effectuer un déplacement, prendre un traitement médicamenteux ou gérer son budget personnel. Le sujet évalue lui-même ses capacités, la vérification auprès des proches ou la mise en situation peuvent être utiles.",False
 1140,OIC-133-04-A,Quel examen d’imagerie est recommandé en urgence pour confirmer une colique néphrétique simple?,Échographie abdominale sans préparation,TDM avec injection de produit de contraste,Scanner abdomino-pelvien faible dose sans injection,Couple ASP-échographie réno-vésicale,c,"{{objectif de connaissance
 |Identifiant=OIC-133-04-A
 |Item_parent=Autonomie et dépendance chez le sujet âgé
@@ -48101,7 +48101,7 @@ Infections urinaires nosocomiales cf Connaître les règles de prévention des i
 
 ●     Une irradiation de la douleur (douleur de colique néphrétique) doit faire évoquer un obstacle des voies urinaires qui est une urgence diagnostique et thérapeutique
 
-●     La [[Septicémie/Bactériémie/Fongémie de l'adulte et de l'enfant|gravité clinique 157]] et [[Sepsis et choc septique de l’enfant et de l’adulte|158]] étant défini par les critères précédemment décrits (obstacle, sepsis, choc septique, qSOFA 2 ou 3, nécessité d'un drainage des urines rénales). La pyélonéphrite aigüe obstructive est par définition une pyélonéphrite aigüe grave. Elle est aussi appelée colique néphrétique fébrile (si douleur).",True
+●     La [[Septicémie/Bactériémie/Fongémie de l'adulte et de l'enfant|gravité clinique 157]] et [[Sepsis et choc septique de l’enfant et de l’adulte|158]] étant défini par les critères précédemment décrits (obstacle, sepsis, choc septique, qSOFA 2 ou 3, nécessité d'un drainage des urines rénales). La pyélonéphrite aigüe obstructive est par définition une pyélonéphrite aigüe grave. Elle est aussi appelée colique néphrétique fébrile (si douleur).",False
 1316,OIC-161-10-A,Quel est le mécanisme d'action principal des statines?,Ils augmentent la synthèse hépatique du cholestérol,Ils inhibent l'activité des récepteurs LDL hépatiques,Ils diminuent la synthèse hépatique du cholestérol et augmentent le renouvellement des récepteurs LDL,Ils empêchent l'absorption des acides biliaires,c,"{{objectif de connaissance
 |Identifiant=OIC-161-10-A
 |Item_parent=Infections urinaires de l’enfant et de l’adulte
@@ -51645,7 +51645,7 @@ La diarrhée est définie par l'émission trop fréquente et trop abondante de s
 
 La définition d’une diarrhée est quantitative : chez l’adulte il s’agit d’une fréquence de selles non moulées > 3 fois par 24h et/ou une quantité de selles > 250g/24H.
 
-La diarrhée est qualifiée d’aigue si son évolution est < à 2 semaines, chronique si > à 4 semaines, en prolongée si entre 2 et 4 semaines.",True
+La diarrhée est qualifiée d’aigue si son évolution est < à 2 semaines, chronique si > à 4 semaines, en prolongée si entre 2 et 4 semaines.",False
 1421,OIC-176-02-A,Comment les discriminations peuvent-elles contribuer au non-recours aux services de santé?,En augmentant l'accès aux soins grâce à des politiques publiques efficaces,En simplifiant les démarches administratives pour les patients,"En provoquant des anticipations de rejet, des stigmatisations ou des frais élevés qui font renoncer certaines personnes à se soigner",En rendant les soins plus accessibles pour tous les groupes sociaux,c,"{{objectif de connaissance
 |Identifiant=OIC-176-02-A
 |Item_parent=Diarrhées infectieuses de l’adulte et de l’enfant
@@ -58712,7 +58712,7 @@ Il s’agit rarement d'une grosse jambe rouge aiguë. Certains prodromes comme d
 
 - absorption de certaines boissons (alcool, bière et soda),
 
-- aliments trop caloriques ou riche en protéines animales.",True
+- aliments trop caloriques ou riche en protéines animales.",False
 1647,OIC-198-10-A,À quel âge en moyenne apparaît la ménarche chez la fille?,9 ans,10 ans,"12,5 ans",14 ans,c,"{{objectif de connaissance
 |Identifiant=OIC-198-10-A
 |Item_parent=Arthropathies microcristallines
@@ -60418,7 +60418,7 @@ Fichier:Mediastpedia2.jpg|'''Figure 2. Signe de la silhouette.''' Masse thymique
 Fichier:Mediastpedia3.JPG|'''Figure 3. Lymphome chez un enfant de 9 ans.''' Elargissement des bords supérieurs du médiastin en rapport avec un syndrome de masse du médiastin antérieur.
 Fichier:Mediastpedia4.JPG|'''Figure 4. Signe cervico-thoracique.''' Masse médiastinale supérieure droite (flèche) non silhouettée par le bord droit du médiastin et dont la limite externe reste visible au-dessus de la clavicule, permettant d’affirmer sa localisation postérieure (tumeur neurogène).
 Fichier:Mediastpedia5.JPG|'''Figure 5. Signe de l’iceberg.''' Les bords externes de la masse (flèches) restent visibles au travers de l’opacité abdominale ce qui traduit une localisation intrathoracique pure, en arrière de la coupole gauche comme démontré par le scanner. Il s’agissait d’un neuroblastome chez une petite fille de 2 ans. 
-</gallery>",True
+</gallery>",False
 1700,OIC-207-11-B,Quel est le remboursement des psychothérapies pour un psychologue librement exercant hors parcours de soin?,Remboursement complet via la Sécurité Sociale,Remboursement partiel selon la réforme du parcours de soin,Non remboursement ou remboursement partiel via mutuelles,Remboursement gratuit dans tous les établissements publics,c,"{{objectif de connaissance
 |Identifiant=OIC-207-11-B
 |Item_parent=Opacités et masses intra-thoraciques chez l’enfant et chez l’adulte
@@ -61233,7 +61233,7 @@ Un purpura ''fulminans'' doit être évoqué devant:
 
 -      Signes neurologiques (obnubilation, coma, syndrome méningé). Attention, le syndrome méningé peut être absent.
 
--       Purpura nécrotique et/ou ecchymotique et/ou extensif (examen physique à réaliser chez un patient en sous-vêtements).",False
+-       Purpura nécrotique et/ou ecchymotique et/ou extensif (examen physique à réaliser chez un patient en sous-vêtements).",True
 1732,OIC-215-06-A,À quel âge les jeunes passent-ils généralement à la consommation quotidienne de cigarettes?,13 ans,14 ans,15 ans,16 ans,c,"{{objectif de connaissance
 |Identifiant=OIC-215-06-A
 |Item_parent=Purpuras chez l’adulte et l’enfant
@@ -63968,7 +63968,7 @@ La '''scintigraphie de ventilation-perfusion'''
 
 - permet d'éliminer les principaux diagnostics différentiels (choc cardiogénique d’autre origine, dissection aortique). 
 
-- Une échographie cardiaque normale ne permet néanmoins pas, à elle seule, d’éliminer un diagnostic d’EP.",True
+- Une échographie cardiaque normale ne permet néanmoins pas, à elle seule, d’éliminer un diagnostic d’EP.",False
 1804,OIC-226-09-A,Quelle est la proportion de femmes affectées par la migraine entre 35 et 39 ans?,10%,15%,30%,50%,c,"{{objectif de connaissance
 |Identifiant=OIC-226-09-A
 |Item_parent=Thrombose veineuse profonde et embolie pulmonaire (voir item 330)
@@ -65797,7 +65797,7 @@ Attention, l’élévation de la troponine ne suffit pas à elle seule à faire 
 
 - CRP (protéine C réactive) : témoin de syndrome inflammatoire, intérêt surtout pour péricardite mais non spécifique '''(élévation de la protéine C-réactive, CRP)'''
 
-- <u>Gaz du sang</u> '''(analyse d'un résultat de gaz du sang)''' : surtout si détresse respiratoire, effet shunt évoquant EP",True
+- <u>Gaz du sang</u> '''(analyse d'un résultat de gaz du sang)''' : surtout si détresse respiratoire, effet shunt évoquant EP",False
 1865,OIC-230-09-A,Quel dispositif peut être mis en place pour soutenir les aidants dans des cas de perte d'autonomie et de refus de soins?,Allocation de protection sociale,Service de long séjour,MAIA,EHPAD,c,"{{objectif de connaissance
 |Identifiant=OIC-230-09-A
 |Item_parent=Douleur thoracique aiguë
@@ -65960,7 +65960,7 @@ Elle permet d’identifier la lésion coronaire coupable et de décider de son t
 
 - anémie
 
-- hyperthyroïdie",True
+- hyperthyroïdie",False
 1871,OIC-230-13-A,Quel type d'examen est inclus dans l'évaluation neurologique des troubles de la marche?,Évaluation de la fréquence cardiaque,"Recherche d'un déficit moteur, des réflexes et des troubles sensoriels",Évaluation de la capacité de mémoire à long terme,Analyse de la composition sanguine,b,"{{objectif de connaissance
 |Identifiant=OIC-230-13-A
 |Item_parent=Douleur thoracique aiguë
@@ -66656,7 +66656,7 @@ Cette définition a des implications thérapeutiques car l’essentiel des possi
 
 
 [[Fichier:Figure 1.png|centré|vignette|600x600px|calcul de la FEVG : En  haut : formule de la FEVG et les 3 limites retenues pour les types d’IC. En bas : calcul de la FEVG par détour des contours endocardiques en télédiastole à gauche et télésystolique à droite |alt=]]
-<br />",False
+<br />",True
 1894,OIC-234-02-A,Quel facteur indique une bouffée de chaleur atypique?,Elle apparaît plusieurs mois avant la ménopause,Elle est causée par une carence en œstrogènes,Elle réapparaît après l'arrêt d'un traitement hormonal adapté,Elle est toujours diurne et sans facteur déclenchant,c,"{{objectif de connaissance
 |Identifiant=OIC-234-02-A
 |Item_parent=Insuffisance cardiaque de l’adulte
@@ -67373,7 +67373,7 @@ o  Evaluation du péricarde
 D’autres examens seront proposés en fonction du contexte clinique : IRM cardiaque, scintigraphie osseuse (amylose), enquête génétique, cathétérisme droit …
 <br />
 [[Fichier:Exemples de différents types d’imagerie cardiaque .png|vignette|482x482px|exemples de différents types d’imagerie cardiaque réalisables devant une IC : coronarographie (A), scintigraphie de perfusion au thallium couplée à une épreuve d’effort (B), IRM cardiaque (C), coroscanner (D), scintigraphie aux biphosphonates]]
-<br />",True
+<br />",False
 1910,OIC-234-11-A,Quelle complication de l'hypertrophie bénigne de la prostate peut entraîner une dilatation bilatérale des cavités pyélo-calicielles et une élévation de la créatininémie?,Dysurie,Lithiase de stase,Insuffisance rénale obstructive,Rétention chronique d'urine,c,"{{objectif de connaissance
 |Identifiant=OIC-234-11-A
 |Item_parent=Insuffisance cardiaque de l’adulte
@@ -69705,7 +69705,7 @@ En cas de PR, l’étape majeure consiste à savoir reconnaitre un PR secondaire
 |Contributeurs= Sophie Blaise, Luc Bressollette, Claire Le Hello
 |Ordre=9}}
 
-En cas de PR, l’étape majeure consiste à savoir reconnaitre un PR secondaire. L’interrogatoire et l’examen clinique fournissent des arguments importants et doivent être complétés par la recherche d’anticorps antinucléaires et la réalisation d’une capillaroscopie en cas de PR supposée secondaire, ou un PR d’apparition récente ou d’aggravation récentes ('''''SD-178 : [[Demande/prescription raisonnée et choix d'un examen diagnostique SD-178|demande/prescription raisonnée et choix d'un examen diagnostique]]'')'''",True
+En cas de PR, l’étape majeure consiste à savoir reconnaitre un PR secondaire. L’interrogatoire et l’examen clinique fournissent des arguments importants et doivent être complétés par la recherche d’anticorps antinucléaires et la réalisation d’une capillaroscopie en cas de PR supposée secondaire, ou un PR d’apparition récente ou d’aggravation récentes ('''''SD-178 : [[Demande/prescription raisonnée et choix d'un examen diagnostique SD-178|demande/prescription raisonnée et choix d'un examen diagnostique]]'')'''",False
 1987,OIC-242-01-A,Où se localise généralement l'ostéomyélite aiguë chez l'enfant?,Aux os courts du membre supérieur,Dans le bassin chez les patients diabétiques,Aux métaphyses les plus vascularisées des os longs,Dans les os de la colonne vertébrale,c,"{{objectif de connaissance
 |Identifiant=OIC-242-01-A
 |Item_parent=Hyperthyroïdie
@@ -70655,7 +70655,7 @@ Contexte : états de choc, syndrome des  anti-phospholipides, grossesse, méning
 |Infection par VIH à un stade avancé :  localisation surrénalienne d’une infection opportuniste
 |
 |}
-<br />",True
+<br />",False
 2022,OIC-245-09-A,Quel facteur favorise particulièrement les infections urinaires chez les jeunes garçons?,Prépuce,Mauvaise hygiène,Alimentation déséquilibrée,Manque de sommeil,a,"{{objectif de connaissance
 |Identifiant=OIC-245-09-A
 |Item_parent=Insuffisance surrénale chez l’adulte et l’enfant
@@ -74168,7 +74168,7 @@ Une attention toute particulière sera portée au développement de troubles du 
 
 Attention également à veiller aux besoins fondamentaux des enfants et adolescents sportifs et de veiller à l'équilibre entre loisir et contrainte. Certaines situations d'entrainement excessif peuvent faire l'objet d'information préoccupante.
 
-https://www.nutritiondusport.fr/alimentation-type-de-enfant-sportif/",True
+https://www.nutritiondusport.fr/alimentation-type-de-enfant-sportif/",False
 2133,OIC-256-10-B,Quel produit chimique utilisé par les coiffeurs peut provoquer des allergies respiratoires?,Isocyanates,Aldéhydes,Persulfates,Ammoniums,c,"{{objectif de connaissance
 |Identifiant=OIC-256-10-B
 |Item_parent=Aptitude au sport chez l’adulte et l’enfant ; besoins nutritionnels chez le sportif (voir item 80)
@@ -79121,7 +79121,7 @@ Au total, les causes les plus fréquentes d’hyperkaliémie restent iatrogènes
 *Troubles musculaires aigues ou chroniques (crampes, myalgies)
 *Syndrome polyuro-polydipsique
 *Troubles du rythme cardiaque
-*Perte de connaissance",True
+*Perte de connaissance",False
 2264,OIC-267-18-A,Quel examen est recommandé chez la femme lors d’un bilan pour une MTEV en l’absence d’orientation clinique?,Dosage du PSA,Échographie abdominale,Bilan gynécologique,Analyse de la glycémie,c,"{{objectif de connaissance
 |Identifiant=OIC-267-18-A
 |Item_parent=Troubles de l’équilibre acido-basique et désordres hydro-électrolytiques
@@ -79682,7 +79682,7 @@ antidépresseurs tricycliques,  IMAO, drogues (amphétamines ou ectasy)
 **Un relais peut alors être pris par du NaCl 9 ‰ (si la volémie est diminuée et l’osmolalité urinaire inférieure 300-350 mOsm/Kg) avec l’objectif de ne pas dépasser +10 mmol/L de natrémie dans les 24 premières heures et 8 mmol/L durant les 24 h suivantes (soit ≤ 18 mmol/L sur 48 h) jusqu’à atteindre 130 mmol/L.
 **Une surveillance en unité de soins intensifs s’impose de même que la correction de toute hypoxie.
 **Dans un second temps, le traitement redevient celui d’une hyponatrémie asymptomatique.
-**La correction d’une hypokaliémie associée doit être réalisée (apports de KCl). Elle augmente le risque de correction rapide de la natrémie notamment chez les patients avec déplétion volémique initiale (traitement par thiazidiques).",False
+**La correction d’une hypokaliémie associée doit être réalisée (apports de KCl). Elle augmente le risque de correction rapide de la natrémie notamment chez les patients avec déplétion volémique initiale (traitement par thiazidiques).",True
 2279,OIC-267-28-A,Dans quelle situation l'antibiothérapie est-elle étendue aux bacilles Gram négatifs?,En cas de fièvre légère sans signes généraux,Lorsque le cathéter est fonctionnel et sans signes d'infection,En cas d'immunodépression ou de neutropénie,Quand la fièvre est due à une maladie virale,c,"{{objectif de connaissance
 |Identifiant=OIC-267-28-A
 |Item_parent=Troubles de l’équilibre acido-basique et désordres hydro-électrolytiques
@@ -82759,7 +82759,7 @@ o  Action rapide mais limitée dans le temps
 
 ·        '''Pas''' de traitement '''préventif''' '''en l’absence de crise''' préalable
 
-·        Privilégier les molécules de nouvelle génération, efficaces contre les crises focales / partielles et non-inductrices enzymatiques (lévétiracétam, lacosamide).",True
+·        Privilégier les molécules de nouvelle génération, efficaces contre les crises focales / partielles et non-inductrices enzymatiques (lévétiracétam, lacosamide).",False
 2380,OIC-299-09-B,Quelle est une population cible du dépistage du diabète de type 2 chez les patients asymptomatiques?,Patients âgés de moins de 45 ans,Patients âgés de plus de 45 ans sans facteurs de risque,Patients âgés de plus de 45 ans tous les 3 ans sans facteurs de risque,Patients avec symptômes uniquement,c,"{{objectif de connaissance
 |Identifiant=OIC-299-09-B
 |Item_parent=Tumeurs intracrâniennes
@@ -84931,7 +84931,7 @@ Certains facteurs exposent à un risque accru de LAM :
 
 • évolution d'un syndrome myéloprolifératif chronique ou d'un syndrome myélodysplasique
 
-De manière similaire, certains facteurs exposent à un risque accru de LAL, toxiques (pesticides et solvants), anomalies génétiques constitutionnelles, évolution d'une leucémie myéloïde chronique, et enfin agents viraux (EBV, HTLV1 et VIH) qui exposent à des sous-types rares de LAL.",True
+De manière similaire, certains facteurs exposent à un risque accru de LAL, toxiques (pesticides et solvants), anomalies génétiques constitutionnelles, évolution d'une leucémie myéloïde chronique, et enfin agents viraux (EBV, HTLV1 et VIH) qui exposent à des sous-types rares de LAL.",False
 2446,OIC-315-04-A,Quelle caractéristique histologique est un facteur de mauvais pronostic dans la néphropathie à IgA?,présence de lymphocytes,sclérose glomérulaire et fibrose interstitielle,réduction de la prolifération,présence de néphropathie à IgM,b,"{{objectif de connaissance
 |Identifiant=OIC-315-04-A
 |Item_parent=Leucémies aiguës
@@ -88793,7 +88793,7 @@ Clinique",False
 * Chez les patients dont la fonction rénale dépend majoritairement de l’activité du système rénine- angiotensine-aldostérone, il existe un risque d’hypotension artérielle sévère et d’insuffisance rénale aiguë : les situations classiques sont l’insuffisance cardiaque congestive sévère, une atteinte rénale sous-jacente ou la rare sténose bilatérale des artères rénales.
 * La majorité de ces médicaments est éliminée de façon prédominante par excrétion rénale : par conséquent, en cas d’insuffisance rénale, la posologie sera adaptée à la fonction glomérulaire et la surveillance biologique (kaliémie, créatininémie) sera rapprochée.
 * Anesthésie : l’interruption du traitement est recommandée la veille de l’intervention, du fait du risque de majoration du risque d’hypotension artérielle.
-* L’injection de produits de contraste iodés majore le risque d’insuffisance rénale aiguë et il est conseillé d’interrompre le traitement 24 heures avant.",True
+* L’injection de produits de contraste iodés majore le risque d’insuffisance rénale aiguë et il est conseillé d’interrompre le traitement 24 heures avant.",False
 2528,OIC-330-05-A,Pourquoi l’anémie ferriprive par saignement chronique est-elle rare dans les hémorroïdes?,Parce que les hémorroïdes ne causent pas d’anémie,Parce que les hémorroïdes sont une cause fréquente d’anémie,Parce qu’une autre cause de saignement doit d’abord être éliminée,Parce que les hémorroïdes ne saignent pas régulièrement,c,"{{objectif de connaissance
 |Identifiant=OIC-330-05-A
 |Item_parent=Prescription et surveillance des classes de médicaments les plus courantes chez l’adulte et chez l’enfant, hors anti-infectieux (voir item 177). Connaître le bon usage des principales classes thérapeutiques
@@ -89622,7 +89622,7 @@ Par ordre de fréquence décroissante, facteur influençant la récidive ou la s
 *Thrombopénie induite par l’héparine
 *Inadéquation entre la galénique/posologie et les poids extrêmes
 *Inobservance, notamment en cas d’intolérance aux injections
-*Erreur diagnostique : imagerie thoracique (HTAP post-embolique, tumeur intravasculaire, embol non cruorique…), échographie (hématome, structure nerveuse…)",True
+*Erreur diagnostique : imagerie thoracique (HTAP post-embolique, tumeur intravasculaire, embol non cruorique…), échographie (hématome, structure nerveuse…)",False
 2533,OIC-330-07-A,Quel type de traitement est généralement réservé aux hémorroïdes symptomatiques aigus?,Les procédés chirurgicaux,Les traitements de fond à long terme,Les traitements médicamenteux en cure courte,Les thérapies physiques sans médicaments,c,"{{objectif de connaissance
 |Identifiant=OIC-330-07-A
 |Item_parent=Prescription et surveillance des classes de médicaments les plus courantes chez l’adulte et chez l’enfant, hors anti-infectieux (voir item 177). Connaître le bon usage des principales classes thérapeutiques
@@ -91172,7 +91172,7 @@ Gabapentinoïdes : aggravation risque dépression respiratoire si associé aux o
 
 === '''Principales causes d'échec''' ===
 Doses faibles (pas de titration) ou effets indésirables ++ si augmentation rapide des doses 
-<br />",True
+<br />",False
 2548,OIC-330-17-A,Quelle lésion précancéreuse est mentionnée dans la prévention des carcinomes épidermoïdes et basocellulaires?,Lésions dues à l'infection par le virus de l'hépatite B,Kératoses actiniques,Lésions de type psoriasique,Lésions dues à l'herpès zoster,b,"{{objectif de connaissance
 |Identifiant=OIC-330-17-A
 |Item_parent=Prescription et surveillance des classes de médicaments les plus courantes chez l’adulte et chez l’enfant, hors anti-infectieux (voir item 177). Connaître le bon usage des principales classes thérapeutiques
@@ -91569,7 +91569,7 @@ Dans le choc septique en phase initiale le débit cardiaque peut être élevé d
 
 Dans le choc obstructif secondaire à une embolie pulmonaire, c’est la postcharge du cœur droit qui est augmentée. La précharge baisse par diminution du retour veineux dans la tamponnade péricardique et le pneumothorax compressif. On parle alors de « désamorçage de la pompe ».
 
-On peut comprendre une augmentation des résistances vasculaires systémiques comme une vasoconstriction, et une baisse des résistances vasculaires systémiques comme une vasodilatation.",False
+On peut comprendre une augmentation des résistances vasculaires systémiques comme une vasoconstriction, et une baisse des résistances vasculaires systémiques comme une vasodilatation.",True
 2555,OIC-332-04-A,Quelle est la caractéristique d'un carcinome basocellulaire nodulaire?,Plaque érythématosquameuse,Éruption douloureuse avec inflammation,Nodule translucide recouvert de télangiectasies,Tumeur nodulaire avec bordure irregulière,c,"{{objectif de connaissance
 |Identifiant=OIC-332-04-A
 |Item_parent=État de choc. Principales étiologies : hypovolémique, septique (voir item 158), cardio-génique, anaphylactique
@@ -93104,7 +93104,7 @@ o   HTIC
 
 NB : parfois un coma traumatique peut prendre l’apparence d’un coma non traumatique (pas de notion évidente de trauma) donc méfiance !
 
-NB : un bas débit sanguin cérébral d’origine systémique (état de choc) peut se révéler par un coma non traumatique",False
+NB : un bas débit sanguin cérébral d’origine systémique (état de choc) peut se révéler par un coma non traumatique",True
 2597,OIC-336-13-A,À qui doit-on déclarer un effet indésirable suspecté d'être dû à un biomatériel si le témoin ne travaille pas en établissement de santé?,Au directeur de l'établissement de santé,Au correspondant local de matériovigilance,Directement à l'ANSM via le portail ou par courrier avec le formulaire Cerfa,À un médecin généraliste du lieu,c,"{{objectif de connaissance
 |Identifiant=OIC-336-13-A
 |Item_parent=Coma non traumatique chez l’adulte et chez l’enfant
@@ -93524,7 +93524,7 @@ HAS
 
 ""Malaise sans perte de connaissance"" : chutes, catalepsie, drops attacks, pseudo syncope psychogène
 
-""Malaise avec perte de connaissance partielle ou totale: troubles métaboliques dont hypoglycémie, hypoxie, intoxications",False
+""Malaise avec perte de connaissance partielle ou totale: troubles métaboliques dont hypoglycémie, hypoxie, intoxications",True
 2614,OIC-342-10-A,Quel type de chaussage est indiqué pour un déficit neurologique sensitif ou moteur?,Chaussures thérapeutiques de série CHUP,Orthèses plantaires,Chaussures orthopédiques sur mesure,Orthoplastie de série,c,"{{objectif de connaissance
 |Identifiant=OIC-342-10-A
 |Item_parent=Malaise, perte de connaissance, crise comitiale chez l’adulte (voir item 105)
@@ -94075,7 +94075,7 @@ La rétention aigue d’urine ne doit pas être confondue avec l’anurie qui co
 |Ordre=7}}
 
 * Aucun examen complémentaire n’est requis en urgence.
-* En cas de doute diagnostique, une échographie sus pubienne peut être réalisée pour évaluer la réplétion vésicale.",True
+* En cas de doute diagnostique, une échographie sus pubienne peut être réalisée pour évaluer la réplétion vésicale.",False
 2645,OIC-347-09-A,Quel traitement est recommandé en urgence pour une hypoglycémie avec troubles de la conscience?,Administration de jus d'orange par voie orale,Injection de glucagon,Resucrage avec sérum glucosé en IV direct (G30% 1 ampoule),Administration de sucre en morceau,c,"{{objectif de connaissance
 |Identifiant=OIC-347-09-A
 |Item_parent=Rétention aiguë d’urine

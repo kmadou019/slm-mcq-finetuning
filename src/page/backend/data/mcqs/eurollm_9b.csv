@@ -128,7 +128,7 @@ Dans la situation de tutelle, en principe, le dossier médical ne peut pas être
 
 [[Principes et finalités des mesures de protection des personnes OIC-009-10-B#sdfootnote1anc|1]]	Ce texte emprunte à plusieurs	documents publiés par le Ministère de la Justice, le Ministère	des Solidarités, de l’Autonomie et des Personnes handicapées et	le Ministère de la Santé et de la Prévention, et des	consultations sur justice.fr, solidarités-santé.gouv.fr,	service-public.fr.
 
-[[Principes et finalités des mesures de protection des personnes OIC-009-10-B#sdfootnote2anc|2]]	Pour aller plus loin, consulter la ''Charte	des droits et libertés de la personne majeure protégée''.",False
+[[Principes et finalités des mesures de protection des personnes OIC-009-10-B#sdfootnote2anc|2]]	Pour aller plus loin, consulter la ''Charte	des droits et libertés de la personne majeure protégée''.",True
 2,OIC-009-17-A,Quelle est la différence entre la population cible et la population source?,"La population cible est celle à laquelle on souhaite extrapoler les résultats de l'étude, tandis que la population source est celle à partir de laquelle l'étude se déroule.","La population cible est celle à laquelle on souhaite adapter sa prise en charge, tandis que la population source est celle à partir de laquelle l'étude se déroule.","La population cible est celle à laquelle on souhaite adapter sa prise en charge, tandis que la population source est celle à laquelle on souhaite extrapoler les résultats de l'étude.","La population cible est celle à laquelle on souhaite adapter sa prise en charge, tandis que la population source est celle à partir de laquelle l'étude se déroule.",a,"{{objectif de connaissance
 |Identifiant=OIC-009-17-A
 |Item_parent=Introduction à l’éthique médicale
@@ -301,7 +301,7 @@ Le nouveau-né est infecté ''in utero'' à la suite d'une bactériémie de la m
 
 On estime que ce pathogène serait responsable d'environ 1 % des méningites bactériennes du nouveau-né et de moins de 0,15 % de la mortalité périnatale. Après E. coli K1 et SGB, ''L. monocytogenes'' reste la 3e cause de méningite néonatale. La gravité de la listériose est donc due au tropisme de la bactérie pour le placenta et le système nerveux central.
 
-L'infection se manifeste dès la naissance avec une cyanose, une apnée, une détresse respiratoire et des troubles de la conscience. Dans ces formes graves, évoluant depuis plusieurs jours, la mortalité est élevée (de 50 à 75 %). Dans près de 95 % des cas, il s'agit d'une méningite purulente avec de la [[Fièvre aiguë chez l'enfant et l'adulte|fièvre]], une insomnie, une irritabilité, des troubles de la conscience.",False
+L'infection se manifeste dès la naissance avec une cyanose, une apnée, une détresse respiratoire et des troubles de la conscience. Dans ces formes graves, évoluant depuis plusieurs jours, la mortalité est élevée (de 50 à 75 %). Dans près de 95 % des cas, il s'agit d'une méningite purulente avec de la [[Fièvre aiguë chez l'enfant et l'adulte|fièvre]], une insomnie, une irritabilité, des troubles de la conscience.",True
 6,OIC-027-19-B,Quelles sont les données de l'interrogatoire qui peuvent aider à diagnostiquer un retard pubertaire?,"Âges pubertaires des parents et de la fratrie, âge de la ménarche de la mère, tailles parentales avec calcul de la taille cible génétique, antécédent familial d'infertilité, de trouble de l'odorat (anosmie), antécédent personnel de maladie chronique, de cryptorchidie ou micropénis (reflet de l'expression congénitale), signes visuels ou signes d'HTIC, ralentissement/cassure staturale (courbe), anosmie, signes digestifs.","Âges pubertaires des parents et de la fratrie, âge de la ménarche de la mère, tailles parentales avec calcul de la taille cible génétique, antécédent familial d'infertilité, de trouble de l'odorat (anosmie), antécédent personnel de maladie chronique, de cryptorchidie ou micropénis (reflet de l'expression congénitale), signes visuels ou signes d'HTIC, ralentissement/cassure staturale (courbe), anosmie, signes digestifs.","Âges pubertaires des parents et de la fratrie, âge de la ménarche de la mère, tailles parentales avec calcul de la taille cible génétique, antécédent familial d'infertilité, de trouble de l'odorat (anosmie), antécédent personnel de maladie chronique, de cryptorchidie ou micropénis (reflet de l'expression congénitale), signes visuels ou signes d'HTIC, ralentissement/cassure staturale (courbe), anosmie, signes digestifs.","Âges pubertaires des parents et de la fratrie, âge de la ménarche de la mère, tailles parentales avec calcul de la taille cible génétique, antécédent familial d'infertilité, de trouble de l'odorat (anosmie), antécédent personnel de maladie chronique, de cryptorchidie ou micropénis (reflet de l'expression congénitale), signes visuels ou signes d'HTIC, ralentissement/cassure staturale (courbe), anosmie, signes digestifs.",a,"{{objectif de connaissance
 |Identifiant=OIC-027-19-B
 |Item_parent=Prévention des risques fœtaux : infection, médicaments, toxiques, irradiation
@@ -719,7 +719,7 @@ Trouble de l'articulé = conflit entre les 2 arcades dentaires
 
 Se manifestant par : une béance, une déviation latérale de mandibule, une prognathie, des incisives bout à bout, un chevauchement, une proalévolie maxillaire
 
-Traitement orthodontiste avant 16 ans",True
+Traitement orthodontiste avant 16 ans",False
 18,OIC-048-04-A,Quelles sont les autres étiologies des maladies bulleuses?,toxicodermie bulleuse,érythème polymorphe bulleux,bulles d’origine thermique,phytophotodermatose,a,"{{objectif de connaissance
 |Identifiant=OIC-048-04-A
 |Item_parent=Alimentation et besoins nutritionnels du nourrisson et de l’enfant
@@ -1397,7 +1397,7 @@ vie personnelle :
 
 interactions sociales et familiales
 |}
-<br />",False
+<br />",True
 41,OIC-153-04-A,Quelles sont les principales familles de tumeurs cutanées?,"Basocellulaire, épidermoïde, mélanome, tumeurs induites par HPV","Basocellulaire, épidermoïde, mélanome, tumeurs induites par HPV","Basocellulaire, épidermoïde, mélanome, tumeurs induites par HPV","Basocellulaire, épidermoïde, mélanome, tumeurs induites par HPV",a,"{{objectif de connaissance
 |Identifiant=OIC-153-04-A
 |Item_parent=Surveillance des porteurs de prothèses valvulaires
@@ -1937,7 +1937,7 @@ D'autres mesures pharmacologiques et non pharmacologiques peuvent être associé
 
 - médicaments antalgiques selon l’évaluation de la douleur.
 
-<br />",True
+<br />",False
 57,OIC-201-10-A,"En cas de troubles mictionnels, il faut rechercher des troubles associés comme des :",Troubles psychiques chez l’enfant,Troubles psychiatriques,Troubles du sommeil à type d’apnées du sommeil et parasomnies,Troubles respiratoires nocturnes,c,"{{objectif de connaissance
 |Identifiant=OIC-201-10-A
 |Item_parent=Transplantation d’organes : aspects épidémiologiques et immunologiques ; principes de traitement et surveillance ; complications et pronostic ; aspects éthiques et légaux. Prélèvements d’organes et législation
@@ -2755,7 +2755,7 @@ Ne pas dramatiser la situation et les patients doivent se sentir libre d’expri
 |Rubrique=Examens complémentaires
 |Contributeurs=
 |Ordre=7}}
-Savoir demander une radiographie de face et de profil adaptée à la région anatomique où la lésion a été localisée. Il n'y a pas d'indication à réaliser une radiographie comparative sauf exceptionnellement en cas de doute persistant et après avis spécialisé sur une lésion osseuse sur le cliché initial homolatéral à la lésion. Savoir que les épiphyses sont cartilagineuse chez l'enfant et que l'échographie ou l'IRM peuvent participer au diagnostic lésionnel.",False
+Savoir demander une radiographie de face et de profil adaptée à la région anatomique où la lésion a été localisée. Il n'y a pas d'indication à réaliser une radiographie comparative sauf exceptionnellement en cas de doute persistant et après avis spécialisé sur une lésion osseuse sur le cliché initial homolatéral à la lésion. Savoir que les épiphyses sont cartilagineuse chez l'enfant et que l'échographie ou l'IRM peuvent participer au diagnostic lésionnel.",True
 80,OIC-364-11-A,Quelle est la première mesure à prendre en cas de syndrome compartimental de l'avant-bras?,Continuer l'immobilisation plâtrée,Ouvrir l'immobilisation plâtrée,Administrer des antalgiques,Effectuer une radiographie,b,"{{objectif de connaissance
 |Identifiant=OIC-364-11-A
 |Item_parent=Fractures chez l’enfant : particularités épidémiologiques, diagnostiques et thérapeutiques

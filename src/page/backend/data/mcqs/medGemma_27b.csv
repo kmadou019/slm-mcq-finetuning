@@ -5580,7 +5580,7 @@ Organisation en France autour de trois niveaux :
 
 *'''décision''' (ministères de la santé et ministère de la recherche, leurs intitulés exacts pouvant varier selon les gouvernements) pour définir les grandes orientations stratégiques, l’organisation et l’allocation des moyens macroscopiques ;
 *'''programmation''' pour répartir les moyens (agences généralistes comme l’Agence Nationale de la Recherche ANR, ou spécifiques comme l’Institut National du Cancer INCa, ou l’Agence Nationale de Recherche sur le sida et les hépatites virales | maladies infectieuses émergentes ANRS-MIE, par exemple)
-*'''opérateurs''' pour gérer les laboratoires et organiser les recherches (les organismes nationaux de recherche comme l'INSERM et le CNRS par exemple, les universités, les CHU, etc.)",True
+*'''opérateurs''' pour gérer les laboratoires et organiser les recherches (les organismes nationaux de recherche comme l'INSERM et le CNRS par exemple, les universités, les CHU, etc.)",False
 132,OIC-020-01-A,"En France, quel niveau définit les grandes orientations stratégiques de la recherche en santé?",Les opérateurs de recherche.,La programmation de la recherche.,La décision politique.,Les laboratoires de recherche.,c,"{{objectif de connaissance
 |Identifiant=OIC-020-01-A
 |Item_parent=La méthodologie de la recherche en santé
@@ -6727,7 +6727,7 @@ Modalités de '''recrutement''' : guidées par la nécessité d’avoir l<u>a me
 ** Un schéma '''d’étude ici-ailleurs''' où on compare des prévalences ou des taux d’incidence de l’évènement d’intérêt (par enquêtes transversales uniques ou répétées, ou dans le cadre d’enquêtes de cohorte) entre des régions géographiques dont certaines sont choisies (mais non tirées au sort) pour recevoir une intervention à titre expérimentale en population ;
 ** Un schéma '''d’enquête de cohorte''' où une partie des sujets (non tirés au sort) sont sélectionnés pour recevoir une intervention à titre expérimental
 
-'''Étude sur données groupées (=agrégées)''' : on ne connaît pas le statut individuel pour le phénomène de santé d’intérêt mais on peut estimer sa « fréquence » au niveau d’un groupe de sujets (défini par exemple sur un critère géographique : région, pays…). C’est le cas lorsqu’on dispose d’un système d’enregistrement qui recense tous les sujets ayant développé l’événement d’intérêt pendant une période donnée dans une population donnée (Ex. registre des cancers, maladies à déclaration obligatoires, etc. cf. [[Recueil des données 2C-020-DE-B05]]). Pour estimer la fréquence de l’événement d’intérêt dans cette population, on peut par exemple utiliser les données du recensement qui nous donnera la taille totale de la population sur la période pour le dénominateur. Ces fréquences peuvent être comparées entre plusieurs populations ou dans le temps. Lorsqu’on dispose de différents systèmes d’enregistrement permettant d’estimer la fréquence de l’événement d’intérêt et celle de facteurs d’exposition dans des groupes de sujets, il est aussi possible de comparer les évolutions conjointes de ces fréquences dans le temps ou dans l’espace. Exemple : estimer l’évolution du taux d’incidence des cancers standardisé sur l’âge et le sexe en France entre 1990 et 2020 à partir des registres de cancers, comparer ces taux d’incidence entre les différentes régions, étudier la corrélation entre l’évolution de ces taux d’incidence et l’évolution de la consommation de tabac et d’alcool sur la même période.",False
+'''Étude sur données groupées (=agrégées)''' : on ne connaît pas le statut individuel pour le phénomène de santé d’intérêt mais on peut estimer sa « fréquence » au niveau d’un groupe de sujets (défini par exemple sur un critère géographique : région, pays…). C’est le cas lorsqu’on dispose d’un système d’enregistrement qui recense tous les sujets ayant développé l’événement d’intérêt pendant une période donnée dans une population donnée (Ex. registre des cancers, maladies à déclaration obligatoires, etc. cf. [[Recueil des données 2C-020-DE-B05]]). Pour estimer la fréquence de l’événement d’intérêt dans cette population, on peut par exemple utiliser les données du recensement qui nous donnera la taille totale de la population sur la période pour le dénominateur. Ces fréquences peuvent être comparées entre plusieurs populations ou dans le temps. Lorsqu’on dispose de différents systèmes d’enregistrement permettant d’estimer la fréquence de l’événement d’intérêt et celle de facteurs d’exposition dans des groupes de sujets, il est aussi possible de comparer les évolutions conjointes de ces fréquences dans le temps ou dans l’espace. Exemple : estimer l’évolution du taux d’incidence des cancers standardisé sur l’âge et le sexe en France entre 1990 et 2020 à partir des registres de cancers, comparer ces taux d’incidence entre les différentes régions, étudier la corrélation entre l’évolution de ces taux d’incidence et l’évolution de la consommation de tabac et d’alcool sur la même période.",True
 167,OIC-020-19-B,Qu'est-ce qui caractérise une étude quasi-expérimentale par rapport à un essai randomisé?,Elle implique toujours un groupe contrôle sélectionné aléatoirement.,"Elle évalue l'effet d'une intervention expérimentale à l'échelle individuelle, mais sans groupe contrôle.","Elle évalue l'effet d'une intervention expérimentale, mais elle n'utilise pas de randomisation pour assigner l'intervention ou pour former le groupe contrôle.",Elle utilise des données groupées pour évaluer l'effet d'une intervention expérimentale.,c,"{{objectif de connaissance
 |Identifiant=OIC-020-19-B
 |Item_parent=La méthodologie de la recherche en santé
@@ -8695,7 +8695,7 @@ On peut utiliser :
 
 –      les alphabloquants (urapidil),
 
-–      les alpha et bêtabloquants (labétalol, présentant moins d'effets secondaires que les bêtabloquants et le plus souvent associé en cas de nécessité d'une bithérapie).",False
+–      les alpha et bêtabloquants (labétalol, présentant moins d'effets secondaires que les bêtabloquants et le plus souvent associé en cas de nécessité d'une bithérapie).",True
 227,OIC-024-14-B,Quel outil est recommandé pour optimiser la coordination des soins pour une grossesse suivie pour HTAg?,Un plan de naissance détaillé,Un suivi psychologique intensif,Un carnet de suivi « Grossesse et HTA »,Une application de suivi de poids,c,"{{objectif de connaissance
 |Identifiant=OIC-024-14-B
 |Item_parent=Principales complications de la grossesse.
@@ -13564,7 +13564,7 @@ Quelle que soit la pathologie psychique maternelle, la prise en charge de l’en
 
 * Surveillance néonatale spécifique selon les traitements maternels pris pendant la grossesse ;
 * Evaluation de la situation familiale (état de santé des 2 parents, entourage familial) ;
-* Prise en charge au cas par cas après la naissance (mesures d’étayage, accompagnement à la parentalité, proposition de structures avec accueil de jour ou hospitalisation mère-bébé, rédaction d’une information préoccupante / signalement à la cellule de recueil des informations préoccupantes et éventuelle séparation de la mère et de l’enfant en cas de danger possible pour l’enfant). <br />",True
+* Prise en charge au cas par cas après la naissance (mesures d’étayage, accompagnement à la parentalité, proposition de structures avec accueil de jour ou hospitalisation mère-bébé, rédaction d’une information préoccupante / signalement à la cellule de recueil des informations préoccupantes et éventuelle séparation de la mère et de l’enfant en cas de danger possible pour l’enfant). <br />",False
 353,OIC-032-07-B,Quelles complications possibles chez l'enfant sont mentionnées dans le texte concernant le RCIU (Retard de croissance intra-utérin)?,Maladie des membranes hyalines,Syndrome d'alcoolisation fœtale,Anomalies du développement neurologique,Polyhydramnios,c,"{{objectif de connaissance
 |Identifiant=OIC-032-07-B
 |Item_parent=Évaluation et soins du nouveau-né à terme
@@ -14003,7 +14003,7 @@ A noter qu’il n’y a pas de délai obligatoire entre les deux premières cons
 La troisième étape consiste à la réalisation de l’IVG.
 
 
-Une consultation de contrôle doit être réalisée entre 14 et 21 Jours après l’IVG et ce quelque soit la technique. Elle permet de s’assurer de l’absence de complications. Le soignant se doit également de s’assurer que la patiente ait bien eu contraception adaptée à sa situation. Un entretien psycho-social peut également être proposée.  Elle n'est obligatoire qu'en cas d'IVG '''médicamenteuse.''' Cependant, une visite ou contrôle postopératoire est fortement conseillée, pour vérifier l’absence de grossesse évolutive dans le cas d’une IVG '''chirurgicale''' et l’absence de complications quel que soit le type d’IVG.  '''[[Prescrire une contraception et contraception d'urgence SD-257|Prescrire une contraception et contraception d’urgence]].'''",False
+Une consultation de contrôle doit être réalisée entre 14 et 21 Jours après l’IVG et ce quelque soit la technique. Elle permet de s’assurer de l’absence de complications. Le soignant se doit également de s’assurer que la patiente ait bien eu contraception adaptée à sa situation. Un entretien psycho-social peut également être proposée.  Elle n'est obligatoire qu'en cas d'IVG '''médicamenteuse.''' Cependant, une visite ou contrôle postopératoire est fortement conseillée, pour vérifier l’absence de grossesse évolutive dans le cas d’une IVG '''chirurgicale''' et l’absence de complications quel que soit le type d’IVG.  '''[[Prescrire une contraception et contraception d'urgence SD-257|Prescrire une contraception et contraception d’urgence]].'''",True
 367,OIC-037-08-B,Quel est le délai légal maximal pour réaliser une IVG médicamenteuse selon le texte?,Jusqu'à 16 SA,Jusqu'à 12 SA,Jusqu'à 9 SA,Jusqu'à 7 SA,c,"{{objectif de connaissance
 |Identifiant=OIC-037-08-B
 |Item_parent=Interruption volontaire de grossesse
@@ -14059,7 +14059,7 @@ Ou
 |-
 | colspan=""3"" |
 |}
-Tableau : principales différences entre les deux techniques d’IVG",False
+Tableau : principales différences entre les deux techniques d’IVG",True
 368,OIC-037-08-B,Quelle est la première étape du schéma thérapeutique pour une IVG médicamenteuse entre 7 et 9 SA?,Prise de misoprostol per os,Prise de mifépristone per os suivi de misoprostol,Prise de mifépristone per os,Prise de misoprostol per os suivi de mifépristone,c,"{{objectif de connaissance
 |Identifiant=OIC-037-08-B
 |Item_parent=Interruption volontaire de grossesse
@@ -17177,7 +17177,7 @@ L’augmentation du risque de récurrence après la naissance d’un enfant tris
 
 Si les parents ne souhaitent pas prendre le risque d’une fausse couche, un DPNI peut être proposé.
 
-Les hommes porteurs de trisomie 21 ont une fertilité réduite. Quelques grossesses ont pu être initiées par des hommes porteurs de trisomie 21. Les enfants n’avaient pas de trisomie 21. La fertilité chez les femmes porteuses de trisomie 21 est réduite mais des grossesses sont possibles. Le risque de trisomie 21 est de l'ordre de 30% chez les femmes atteintes de trisomie 21.",True
+Les hommes porteurs de trisomie 21 ont une fertilité réduite. Quelques grossesses ont pu être initiées par des hommes porteurs de trisomie 21. Les enfants n’avaient pas de trisomie 21. La fertilité chez les femmes porteuses de trisomie 21 est réduite mais des grossesses sont possibles. Le risque de trisomie 21 est de l'ordre de 30% chez les femmes atteintes de trisomie 21.",False
 434,OIC-045-08-B,Quel type de résultat de caryotype est le plus fréquemment observé chez les personnes atteintes de trisomie 21?,Trisomie 21 complète par translocation robertsonienne.,Trisomie 21 libre complète en mosaïque.,Trisomie 21 libre complète et homogène.,Trisomie 21 partielle par translocation déséquilibrée.,c,"{{objectif de connaissance
 |Identifiant=OIC-045-08-B
 |Item_parent=Spécificités des maladies génétiques. (voir item 9)
@@ -18680,7 +18680,7 @@ Tests pour la confirmation diagnostique par un ORL
 |Ordre=16}}
 
 [[Fichier:Dentition enfant.png|néant|vignette|Dentition de l'enfant]]
-[[Fichier:Dentition adulte.png|néant|vignette]]",True
+[[Fichier:Dentition adulte.png|néant|vignette]]",False
 485,OIC-047-16-A,Le contenu fourni mentionne la numérotation dentaire internationale. Quel est le sujet principal abordé par cet élément?,La mortalité infantile.,Les examens de santé obligatoires.,La définition et la connaissance du système de numérotation des dents.,Le dépistage des troubles auditifs.,c,"{{objectif de connaissance
 |Identifiant=OIC-047-16-A
 |Item_parent=Suivi d’un nourrisson, d’un enfant et d’un adolescent normal. Dépistage des anomalies orthopédiques, des troubles visuels, auditifs et dentaires. Examens de santé obligatoires. Médecine scolaire. Mortalité et morbidité infantiles
@@ -20865,7 +20865,7 @@ La radio du poignet a pour objectif de mesurer l'âge osseux
 *La présence de [[Troubles de la miction et incontinence urinaire de l'adulte et du sujet âgé|signes urinaires (125)]] (brulures mictionnelles, dysurie, pollakiurie) avec fièvre élevée, sueurs, frissons doit faire rechercher une [[Infections urinaires de l'enfant et de l'adulte|prostatite aigue (161)]] associée. Un toucher rectal révèlera une prostate augmentée de volume, tendue, régulière et très douloureuse.
 *L’orchi-épididymite est une entité rare chez l’enfant qui imposera, à distance de l’épisode aigu et notamment en cas de récidive, la recherche d’une uropathie associée.
 
-<br />",True
+<br />",False
 590,OIC-050-05-B,Quel examen est recommandé chez un homme jeune pour rechercher les causes bactériennes courantes d'orchi-épididymite?,Hémocultures,Échographie scrotale,PCR pour Chlamydia trachomatis et gonocoque sur le premier jet urinaire,ECBU avec antibiogramme,c,"{{objectif de connaissance
 |Identifiant=OIC-050-05-B
 |Item_parent=Pathologie génito-scrotale chez le garçon et chez l’homme
@@ -23571,7 +23571,7 @@ Il existe des '''contre-indications relatives''' nécessitant des '''précaution
 *Insuffisance cardiaque, respiratoire, hépatique ou rénale
 *Grossesse et allaitement
 *Diabète ou intolérance au glucose
-*Sevrage d’alcool, aux barbituriques et aux benzodiazépines",False
+*Sevrage d’alcool, aux barbituriques et aux benzodiazépines",True
 684,OIC-074-05-B,Quel est un élément clé du bilan pré-thérapeutique avant de commencer un traitement antipsychotique?,Évaluation de la réponse aux traitements antérieurs.,Dépistage d'un trouble métabolique.,Choix de la molécule en fonction des préférences du patient.,Recherche de la monothérapie et de la posologie minimale efficace.,b,"{{objectif de connaissance
 |Identifiant=OIC-074-05-B
 |Item_parent=Prescription et surveillance des psychotropes (voir item 330)
@@ -26351,7 +26351,7 @@ La fumée de tabac (diamètre médian des particules = 0,3 microns)
 **augmentation du tabagisme occasionnel (2017 : 4,9% / 2018 : 6,6%)
 *'''Selon la classe d'âge'''
 **diminution parmi les hommes dans toutes les classes d’âges
-**diminution parmi les femmes de moins de 55 ans / augmentation parmi les femmes de 55-75 ans",False
+**diminution parmi les femmes de moins de 55 ans / augmentation parmi les femmes de 55-75 ans",True
 734,OIC-075-08-A,"En 2019, quel était le pourcentage de femmes âgées de 18 à 75 ans déclarant fumer du tabac?","34,6%","30,4%","26,5%","40,2%",c,"{{objectif de connaissance
 |Identifiant=OIC-075-08-A
 |Item_parent=Addiction au tabac
@@ -26491,7 +26491,7 @@ Age de la première cigarette
 **Tabac 1<sup>ère</sup> cause de mortalité cardiovasculaire évitable
 **1<sup>er</sup> FDR cardiovasculaire de la femme non ménopausée
 **Mort foetale in utero
-**Mortalité par cancers (poumons > autres cancers) > maladies cardiovasculaires > maladies respiratoires",True
+**Mortalité par cancers (poumons > autres cancers) > maladies cardiovasculaires > maladies respiratoires",False
 742,OIC-075-14-A,Quelle est la principale cause de décès évitable en France selon le texte?,Les maladies cardiovasculaires,Le cancer du poumon,Le tabagisme actif,Les accidents de la route,c,"{{objectif de connaissance
 |Identifiant=OIC-075-14-A
 |Item_parent=Addiction au tabac
@@ -26652,7 +26652,7 @@ Complications médicales non psychiatriques liées à l'<nowiki/>'''intoxication
 
 * '''Tabac et inégalités sociales'''
 ** depuis 2000 diminution du tabagisme quotidien parmi les fumeurs les plus défavorisés :  de 38,8% en 2016 à 33,0% en 2018 (personnes aux revenus les plus faibles), de 49,7% à 40% (personnes au chômage)
-** tabac puissant « marqueur » social : en 2018 plus le revenu augmente, moins la prévalence du tabagisme quotidien est élevée.",False
+** tabac puissant « marqueur » social : en 2018 plus le revenu augmente, moins la prévalence du tabagisme quotidien est élevée.",True
 750,OIC-075-19-A,Quel est le but principal du dépistage de la consommation de tabac chez un patient?,Déterminer le type de tabac utilisé.,Évaluer le niveau de dépendance.,Identifier les patients qui fument et les orienter vers l'arrêt.,Calculer le risque de maladies cardiovasculaires.,c,"{{objectif de connaissance
 |Identifiant=OIC-075-19-A
 |Item_parent=Addiction au tabac
@@ -27571,7 +27571,7 @@ Consommations qui restent inférieures aux repères proposés par Santé Publiqu
 6. poursuite de la consommation de la substance malgré la survenue de conséquences manifestement nocives (le sujet étant au courant du lien entre conséquence et consommation).
 
 
-Usage nocif et dépendance sont deux diagnostics qui s'excluent l'un l'autre par convention.",True
+Usage nocif et dépendance sont deux diagnostics qui s'excluent l'un l'autre par convention.",False
 782,OIC-076-06-A,"Quel est le principal outil recommandé pour le dépistage systématique du mésusage d'alcool, selon le texte?",L'interrogatoire seul.,L'évaluation de la consommation déclarée en verres standard.,Le questionnaire AUDIT-C.,L'évaluation de l'alcoolisation ponctuelle importante (API).,c,"{{objectif de connaissance
 |Identifiant=OIC-076-06-A
 |Item_parent=Addiction à l’alcool
@@ -28953,7 +28953,7 @@ Lors d'une '''mydriase paralytique''' (mydriase par paralysie du Ill) :
 Un patient avec un trouble du réflexe photomoteur se présente avec une '''Anisocorie''' (asymétrie de la taille des pupilles). 
 
 *Lorsque l'anisocorie est plus marquée à l'obscurité, l'oeil pathologique est celui qui a la pupille la plus serrée (myosis)
-*Lorsque l'anisocorie est plus marquée à la lumière, l'oeil pathologique est celui qui a la pupille la plus grande (mydriase).",True
+*Lorsque l'anisocorie est plus marquée à la lumière, l'oeil pathologique est celui qui a la pupille la plus grande (mydriase).",False
 817,OIC-082-04-A,Quel est le but de l'interprétation du réflexe photomoteur direct et consensuel?,Évaluer la fonction motrice de l'œil.,Déterminer la sensibilité de la rétine.,Évaluer la réactivité de la pupille à la lumière.,Mesurer la pression intraoculaire.,c,"{{objectif de connaissance
 |Identifiant=OIC-082-04-A
 |Item_parent=Altération aiguë de la vision
@@ -29216,7 +29216,7 @@ Les principales causes des hémorragies intravitréennes sont les suivantes :
 '''3. Fond d'œil visible et normal:''' 
 
 *Névrite optique rétrobulbaire (NORB)
-*Atteintes des voies optiques chiasmatiques et rétrochiasmatiques: une installation brutale doit faire évoquer une cause vasculaire.",True
+*Atteintes des voies optiques chiasmatiques et rétrochiasmatiques: une installation brutale doit faire évoquer une cause vasculaire.",False
 823,OIC-082-08-B,"Quel examen est principalement indiqué pour évaluer la longueur du globe oculaire, notamment en prévision d'une chirurgie de la cataracte chez les patients ayant une cataracte dense?",Tomographie en cohérence optique (OCT),Angiographie à la fluorescéine,Échographie oculaire en mode A,Périmétrie statique automatisée,c,"{{objectif de connaissance
 |Identifiant=OIC-082-08-B
 |Item_parent=Altération aiguë de la vision
@@ -30807,7 +30807,7 @@ o   Incitatifs financiers
 
 o   Manque de contact avec le milieu de travail
 
-o   Durée de l’arrêt de travail : après de 2 ans d’arrêt de travail, la probabilité d’un retour au travail est de 0%",False
+o   Durée de l’arrêt de travail : après de 2 ans d’arrêt de travail, la probabilité d’un retour au travail est de 0%",True
 877,OIC-094-09-A,Quelle est une cause principale de rachialgie secondaire mentionnée dans le texte?,Hernie discale,Scoliose idiopathique,Fracture vertébrale ostéoporotique,Lombalgie mécanique,c,"{{objectif de connaissance
 |Identifiant=OIC-094-09-A
 |Item_parent=Rachialgie
@@ -32730,7 +32730,7 @@ o  Fractures : en post-traumatique, limitation douloureuse de l’ouverture buc
 
 o  Luxation
 
-·       '''Douleurs chroniques de l’ATM secondaires :''' douleurs péri-articulaires, latéro-faciales, pré-auriculaires et rétro-orbitaires, avec myalgies temporales et des masseters irradiant volontiers vers les secteurs molaires supérieurs et inférieurs. Examen : la douleur temporo-mandibulaire à la pression du conduit auditif externe et à la palpation endobuccale des muscles masticateurs. Ressaut et un claquement lors de l’ouverture buccale, qui est habituellement en baïonnette. Le plus souvent du à une anomalie de l’articulé dentaire.",True
+·       '''Douleurs chroniques de l’ATM secondaires :''' douleurs péri-articulaires, latéro-faciales, pré-auriculaires et rétro-orbitaires, avec myalgies temporales et des masseters irradiant volontiers vers les secteurs molaires supérieurs et inférieurs. Examen : la douleur temporo-mandibulaire à la pression du conduit auditif externe et à la palpation endobuccale des muscles masticateurs. Ressaut et un claquement lors de l’ouverture buccale, qui est habituellement en baïonnette. Le plus souvent du à une anomalie de l’articulé dentaire.",False
 907,OIC-099-10-A,Quelle est la définition de l'otalgie?,Une céphalée associée à une douleur auriculaire.,Une douleur projetée révélatrice d'un cancer ORL.,Une douleur de l'oreille.,Une pathologie de l'oreille externe ou moyenne.,c,"{{objectif de connaissance
 |Identifiant=OIC-099-10-A
 |Item_parent=Migraine, névralgie du trijumeau et algies de la face
@@ -35269,7 +35269,7 @@ La distinction entre paralysie faciale centrale et périphérique repose d’abo
 
 ·        Autres symptômes et signes : réflexe cornéen aboli (atteinte du muscle orbiculaire, innervé par le nerf facial), hypoesthésie cutanée dans la zone de Ramsay-Hunt, hyperacousie douloureuse (atteinte du muscle stapédien), agueusie des deux tiers antérieurs de l’hémi-langue, tarissement des sécrétions lacrymales.  
 
-<br />",True
+<br />",False
 941,OIC-101-02-A,Lequel des signes suivants est typiquement associé à une paralysie faciale périphérique (PFP) et non à une paralysie faciale centrale?,Hémiplégie homolatérale.,Dissociation automatico-volontaire.,Signe de Charles Bell (découverte de la bascule du globe oculaire).,Attraction de la bouche du côté sain lors du sourire.,c,"{{objectif de connaissance
 |Identifiant=OIC-101-02-A
 |Item_parent=Paralysie faciale
@@ -35415,7 +35415,7 @@ Les causes de PFP sont nombreuses ([[Paralysie faciale SDD-127|paralysie faciale
 
 -    Syndrome de Melkerson-Rosenthal : tableau de PFP récidivantes, avec infiltration cutanéomuqueuse de la face, langue plicaturée et antécédents familiaux.
 
-* Tumeurs : installation progressive, atteinte généralement d’autres nerfs crâniens (tumeur de l’angle ponto-cérébelleux, gliome du tronc, métastase de la base du crâne, méningoradiculite carcinomateuse). En cas de tuméfaction parotidienne, la survenue d’une paralysie faciale fait craindre une tumeur maligne.",False
+* Tumeurs : installation progressive, atteinte généralement d’autres nerfs crâniens (tumeur de l’angle ponto-cérébelleux, gliome du tronc, métastase de la base du crâne, méningoradiculite carcinomateuse). En cas de tuméfaction parotidienne, la survenue d’une paralysie faciale fait craindre une tumeur maligne.",True
 945,OIC-101-06-A,Quel est le mode d'installation typique d'une paralysie faciale à frigore?,Progressif sur plusieurs jours,"Soudain, souvent le matin ou après exposition au froid",Lié à une douleur intense et persistante,Accompagné de troubles de la sensibilité des membres,b,"{{objectif de connaissance
 |Identifiant=OIC-101-06-A
 |Item_parent=Paralysie faciale
@@ -38145,7 +38145,7 @@ La démarche dandinante est consécutive à un déficit moteur des muscles des r
 |Rubrique=Étiologies
 |Contributeurs=
 |Ordre=8}}
-La démarche dandinante est consécutive à un déficit moteur des muscles des racines des membres inférieurs et de la ceinture pelvienne, elle peut être associée à une hyperlordose avec bascule du bassin en avant, tronc et tête rejetés en arrière. Elle est caractéristique des démarches myopathiques. Elle peut être précédée ou associée à des myalgies, des crampes musculaires lorsque la myopathie est de type métabolique ou inflammatoire.",False
+La démarche dandinante est consécutive à un déficit moteur des muscles des racines des membres inférieurs et de la ceinture pelvienne, elle peut être associée à une hyperlordose avec bascule du bassin en avant, tronc et tête rejetés en arrière. Elle est caractéristique des démarches myopathiques. Elle peut être précédée ou associée à des myalgies, des crampes musculaires lorsque la myopathie est de type métabolique ou inflammatoire.",True
 1045,OIC-109-09-A,Quelle est la composante motrice caractéristique du syndrome post-chute au fauteuil?,Tendance à l'antépulsion,Marche talonnante,Tendance à la rétropulsion,Élargissement du polygone de sustentation,c,"{{objectif de connaissance
 |Identifiant=OIC-109-09-A
 |Item_parent=Troubles de la marche et de l’équilibre
@@ -41002,7 +41002,7 @@ Selon le contexte
 -       Vitamines B12, B9
 
 
-Lorsque l'évolution des troubles neuro cognitifs est rapide ou que le tableau clinique est atypique, une ponction lombaire peut être réalisée (biomarqueurs de la maladie d'Alzheimer, anticorps anti-neuronaux, protéine 14 3 3, microbiologie ou virologie selon le contexte...)",True
+Lorsque l'évolution des troubles neuro cognitifs est rapide ou que le tableau clinique est atypique, une ponction lombaire peut être réalisée (biomarqueurs de la maladie d'Alzheimer, anticorps anti-neuronaux, protéine 14 3 3, microbiologie ou virologie selon le contexte...)",False
 1146,OIC-132-08-A,Lequel des examens biologiques suivants est recommandé en première intention selon les critères HAS 2011?,SGOT/SGPT,Sérologies TPHA-VDRL,TSH,Ponction lombaire,c,"{{objectif de connaissance
 |Identifiant=OIC-132-08-A
 |Item_parent=Troubles cognitifs du sujet âgé. (voir item 108)
@@ -41318,7 +41318,7 @@ Rechercher un facteur déclenchant ou aggravant des troubles du comportement (IN
 
 5.     '''Réévaluation de la pertinence''' des approches médicamenteuses et non médicamenteuses mises en place
 
-6.     '''Éducation thérapeutique''' des aidants",True
+6.     '''Éducation thérapeutique''' des aidants",False
 1155,OIC-132-13-B,Quelles sont les deux principales lésions cérébrales caractéristiques de la maladie d'Alzheimer?,Plaques séniles et neuroinflammation,Plaques amyloïdes et dégénérescences neurofibrillaires,Micro-hémorragies et lésions vasculaires,Perte neuronale et plaques séniles,b,"{{objectif de connaissance
 |Identifiant=OIC-132-13-B
 |Item_parent=Troubles cognitifs du sujet âgé. (voir item 108)
@@ -41758,7 +41758,7 @@ Les principales causes de dépendance iatrogène liée à l’hospitalisation so
 
 Ces causes interagissent entre elles et ont des facteurs de risque commun.
 
-Les mêmes causes peuvent se retrouver lors d’une prise en charge à domicile notamment pour les causes 3, 4 et 6 pouvant créer une iatrogénie liée aux soins.",False
+Les mêmes causes peuvent se retrouver lors d’une prise en charge à domicile notamment pour les causes 3, 4 et 6 pouvant créer une iatrogénie liée aux soins.",True
 1172,OIC-133-06-B,"Quelle est la conséquence principale de la dépendance pour l'aidant, selon le texte?",Isolement social du patient,Diminution des capacités cognitives du patient,Épuisement de l'aidant,Modification du statut social du patient,c,"{{objectif de connaissance
 |Identifiant=OIC-133-06-B
 |Item_parent=Autonomie et dépendance chez le sujet âgé
@@ -47083,7 +47083,7 @@ Chez l’adulte, en cas de streptocoque : amoxicilline IV pendant 2 semaines, pu
 
 Chez l’enfant : relais per os possible après 3 à 5 jours en cas d’évolution favorable (disparition de la fièvre et des douleurs). En l’absence de documentation, un relais oral par amoxicilline-acide clavulanique peut être pris (efficace sur ''S. aureus'' et ''K. kingae'')
 
-Durée totale de traitement antibiotique : 4 à 6 semaines chez l’adulte, 2 semaines chez l’enfant.",False
+Durée totale de traitement antibiotique : 4 à 6 semaines chez l’adulte, 2 semaines chez l’enfant.",True
 1281,OIC-156-12-B,Quelle est la durée typique du traitement antibiotique pour une arthrite septique chez l'adulte?,2 semaines,3 à 5 jours,4 à 6 semaines,Variable selon l'âge de l'enfant,c,"{{objectif de connaissance
 |Identifiant=OIC-156-12-B
 |Item_parent=Infections ostéo articulaires (IOA) de l’enfant et de l’adulte
@@ -49056,7 +49056,7 @@ Infections urinaires nosocomiales cf Connaître les règles de prévention des i
 
 <br />
 
-*De même, les populations (diabétique, patients âgés…) à risque de colonisation urinaire (ou bactériurie asymptomatique) auront fréquemment une BU positive qui ne doit pas orienter vers une IU en dehors d’un contexte clinique évocateur.",False
+*De même, les populations (diabétique, patients âgés…) à risque de colonisation urinaire (ou bactériurie asymptomatique) auront fréquemment une BU positive qui ne doit pas orienter vers une IU en dehors d’un contexte clinique évocateur.",True
 1333,OIC-161-06-A,Quel est le seuil de bactériurie significative chez la femme pour les espèces *E. coli* et *S. saprophyticus*?,10⁵ UFC/mL,10⁴ UFC/mL,10³ UFC/mL,10² UFC/mL,c,"{{objectif de connaissance
 |Identifiant=OIC-161-06-A
 |Item_parent=Infections urinaires de l’enfant et de l’adulte
@@ -50457,7 +50457,7 @@ Fichier:Syphilis chancre LISA.jpg|alt=La description : unique, à fond propre, i
 |Ordre=7}}
 <gallery>
 Fichier:Syphilis chancre LISA.jpg|alt=La description : unique, à fond propre, indolore et indurée n'est pas toujours de rigueur. Ici le fond est fibrineux. Toute ulcération des parties génitales est une syphilis jusqu'à preuve du contraire.|Chancre syphilitique : ulcération non douloureuse en regard du frein de la verge. 
-</gallery>",False
+</gallery>",True
 1375,OIC-162-08-A,Quels sont les symptômes courants de l'urétrite masculine mentionnés?,"Fièvre, maux de tête, fatigue","Ecoulement urétral, dysurie, douleurs urétrales","Perte de poids, perte d'appétit, nausées","Toux, éternuements, congestion nasale",b,"{{objectif de connaissance
 |Identifiant=OIC-162-08-A
 |Item_parent=Infections sexuellement transmissibles (IST) : gonococcies, chlamydioses, syphilis, papillomavirus humain (HPV), trichomonose
@@ -50859,7 +50859,7 @@ Bilan IST :
 
 - Infection haute de la femme : CRP, NFS, prélèvement avec pose de speculum pour examen direct + culture standard + PCR, prélèvement chirurgicaux ou radioguidés si infection compliquée pour culture + PCR + rechercher de mycoplasmes
 
-- Examen du col de l’utérus si condylome chez la patiente ou son conjoint",True
+- Examen du col de l’utérus si condylome chez la patiente ou son conjoint",False
 1387,OIC-162-16-B,Quelle est une mesure systématique proposée pour la prise en charge de toute IST selon le texte?,Traitement probabiliste par Doxycycline et Ceftriaxone.,Vaccination contre l'Hépatite A uniquement.,"Proposer systématiquement une sérologie VIH, un test tréponémique, une sérologie d'hépatite B et des PCR pour gonocoque/chlamydia.",Recommandation d'abstinence sexuelle définitive.,c,"{{objectif de connaissance
 |Identifiant=OIC-162-16-B
 |Item_parent=Infections sexuellement transmissibles (IST) : gonococcies, chlamydioses, syphilis, papillomavirus humain (HPV), trichomonose
@@ -53071,7 +53071,7 @@ La diarrhée est qualifiée d’aigue si son évolution est < à 2 semaines, chr
 '''Les mécanismes des diarrhées d’origine infectieuse (et donc des TIAC), se répartissent en 2 types''' :
 
 *mécanisme sécrétoire (perte d’eau et d’électrolytes), par production d’une toxine par l’agent pathogène ou par un mécanisme perturbant la réabsorption d’eau et d’électrolytes
-*mécanisme invasif (invasion de la muqueuse), avec destruction cellulaire (syndrome dysentérique), ou sans destruction cellulaire (syndrome gastroentéritique), par les agents pathogènes",True
+*mécanisme invasif (invasion de la muqueuse), avec destruction cellulaire (syndrome dysentérique), ou sans destruction cellulaire (syndrome gastroentéritique), par les agents pathogènes",False
 1448,OIC-176-02-A,Comment les agents infectieux responsables des diarrhées et des TIAC sont-ils principalement transmis?,Par voie aérienne,Par contact direct avec des animaux,Par transmission manuportée et ingestion d'aliments/eau contaminés,Par piqûres d'insectes,c,"{{objectif de connaissance
 |Identifiant=OIC-176-02-A
 |Item_parent=Diarrhées infectieuses de l’adulte et de l’enfant
@@ -54735,7 +54735,7 @@ On suspectera une TIAC devant la survenue de cas groupés de troubles gastro-int
 
 La TIAC est une maladie à déclaration obligatoire.
 
-Le signalement se fait auprès de l’ARS par l’intermédiaire d’une fiche spécifique sans attendre l’enquête ni la documentation.",False
+Le signalement se fait auprès de l’ARS par l’intermédiaire d’une fiche spécifique sans attendre l’enquête ni la documentation.",True
 1494,OIC-179-10-B,Quelle est la première étape à suivre lors d'une suspicion de TIAC (Toxi-infection Alimentaire Collective) selon le texte?,Effectuer des prélèvements de selles chez les malades.,Préparer une liste des menus des trois derniers jours.,Prévenir le médecin responsable ou l'équipe opérationnelle d'hygiène.,Conserver les restes des denrées servies.,c,"{{objectif de connaissance
 |Identifiant=OIC-179-10-B
 |Item_parent=Risques sanitaires liés à l’eau et à l’alimentation. Toxi-infections alimentaires
@@ -55123,7 +55123,7 @@ Parfois, la consultation aboutit à une inaptitude au travail. Elle impose à l�
 
 '''Fiche d’aptitude / inaptitude :'''
 
-*Fiche transmise à l’employeur, éventuellement accompagnée de préconisations sur l’adaptation du poste de travail, mais sans information sur la pathologie du salarié.",False
+*Fiche transmise à l’employeur, éventuellement accompagnée de préconisations sur l’adaptation du poste de travail, mais sans information sur la pathologie du salarié.",True
 1506,OIC-183-06-A,Quel est l'objectif principal de la prévention primaire en matière de risques professionnels?,Détecter précocement les pathologies liées au travail.,Maintenir les employés atteints de pathologies dans leur emploi.,Éviter l'apparition d'effets délétères liés aux risques professionnels.,Adapter le poste de travail pour les employés handicapés.,c,"{{objectif de connaissance
 |Identifiant=OIC-183-06-A
 |Item_parent=Organisation de la médecine du travail. Prévention des risques professionnels
@@ -58071,7 +58071,7 @@ L’objectif pour le patient est d’acquérir les compétences suivantes :
 * '''Animaux domestiques :''' les animaux doivent rester à l’extérieur et ne pas accéder à la chambre à coucher. Les allergènes de chat peuvent persister pendant plusieurs mois dans l’habitat après le départ de l’animal.
 * '''Moisissures :''' nettoyage à l’eau de javel ; ventilation et exposition solaire importante ; éviter les plantes vertes en intérieur.
 * '''Pollens :''' difficilement évitable ; ne pas sécher le linge en extérieur et de limiter les sorties en périodes de pics polliniques, adaptation du poste de travail
-* '''Asthme professionnel :''' Plusieurs tableaux permettent la reconnaissance des asthmes en MP. La mise en place de protection, un aménagement de poste ou un reclassement professionnel devront être discutés en concertation avec     la médecine du travail.",True
+* '''Asthme professionnel :''' Plusieurs tableaux permettent la reconnaissance des asthmes en MP. La mise en place de protection, un aménagement de poste ou un reclassement professionnel devront être discutés en concertation avec     la médecine du travail.",False
 1612,OIC-188-23-B,"Quelles sont les conséquences possibles d'un asthme mal contrôlé, selon le contenu fourni?",Amélioration des performances scolaires,Augmentation de l'activité physique,Absentéisme scolaire ou professionnel,Diminution des symptômes respiratoires,c,"{{objectif de connaissance
 |Identifiant=OIC-188-23-B
 |Item_parent=Hypersensibilité et allergies respiratoires chez l’enfant et chez l’adulte. Asthme, rhinite
@@ -59703,7 +59703,7 @@ Ces maladies se retrouvent dans le concept des spondyloarthrites. Les patients p
 |Contributeurs=
 |Ordre=9}}
 
-[[Fichier:Dactylite.jpg|vignette|'''Dactylite du 2<sup>ème</sup> orteil''' ]]",True
+[[Fichier:Dactylite.jpg|vignette|'''Dactylite du 2<sup>ème</sup> orteil''' ]]",False
 1664,OIC-197-09-A,La dactylite est une manifestation fréquente de quelle pathologie?,Lupus érythémateux disséminé,Polyarthrite rhumatoïde,Spondyloarthrite,Goutte,c,"{{objectif de connaissance
 |Identifiant=OIC-197-09-A
 |Item_parent=Spondyloarthrite
@@ -60115,7 +60115,7 @@ Une goutte survenant avant 35 ans est possibles chez 10 à 15 %. Elle doit faire
 
 <gallery widths=""400"" heights=""400"">
 Fichier:Radiographies de poignets calcification du ligament triangulaire du carpe.PNG
-</gallery>[https://videotheque.uness.fr/w/bEMzk6YJWVC9Z9EV7RoEkZ 4mn vidéo Imagerie Rhumatismes Microcristallins CERF]",False
+</gallery>[https://videotheque.uness.fr/w/bEMzk6YJWVC9Z9EV7RoEkZ 4mn vidéo Imagerie Rhumatismes Microcristallins CERF]",True
 1679,OIC-198-05-B,À quelle catégorie d'affections appartient ce type de calcification radiographique?,Arthrose,Fractures osseuses,Arthropathies microcristallines,Infections articulaires,c,"{{objectif de connaissance
 |Identifiant=OIC-198-05-B
 |Item_parent=Arthropathies microcristallines
@@ -60154,7 +60154,7 @@ C’est donc le rhumatisme inflammatoire intermittent le plus fréquent dans les
 |Ordre=7}}
 La prévalence de la goutte en France est de 0,9 % chez les adultes.
 
-C’est donc le rhumatisme inflammatoire intermittent le plus fréquent dans les pays industrialisés.",False
+C’est donc le rhumatisme inflammatoire intermittent le plus fréquent dans les pays industrialisés.",True
 1682,OIC-198-08-A,Quelle est la caractéristique principale d'un accès aigu microcristallin selon le texte?,Douleur légère et progressive.,Début brutal et forte intensité de la douleur.,Résolution lente en plusieurs mois.,Absence de rougeur locale.,b,"{{objectif de connaissance
 |Identifiant=OIC-198-08-A
 |Item_parent=Arthropathies microcristallines
@@ -61704,7 +61704,7 @@ Fichier:Plevre8.JPG|'''Figure 8.''' Epanchement pleural liquidien droit libre et
 Fichier:Plevre9.JPG|'''Figure 9.''' Epanchement pleural liquidien et gazeux droit en rapport avec un hydropneumothorax en scanner (A). En TEP-TDM (B), fixation de la plèvre viscérale (flèche bleue) et pariétale (flèche blanche) en rapport avec une inflammation. Il s'agissait d'une pleurésie tuberculeuse.
 Fichier:Plevre10.JPG|'''Figure 10.''' Calcifications pleurales épaisses, séquelles d’une pleurésie tuberculeuse (flèche).
 Fichier:Plevre11.JPG|'''Figure 11.''' Epaississement circonférentiel et nodulaire de plus d’un centimètre de la plèvre gauche atteignant aussi la plèvre scissurale (flèche blanche) en rapport avec une plèvre tumorale.
-</gallery>",True
+</gallery>",False
 1734,OIC-207-03-A,"Quel type d'épanchement pleural est caractérisé par un épaississement pleural souvent calcifié, pouvant entraîner une insuffisance respiratoire restrictive?",Hémothorax,Hydropneumothorax,Pachypleurite (ou fibrothorax),Empyème,c,"{{objectif de connaissance
 |Identifiant=OIC-207-03-A
 |Item_parent=Opacités et masses intra-thoraciques chez l’enfant et chez l’adulte
@@ -63325,7 +63325,7 @@ En dehors de l'urgence, on prescrit devant un purpura vasculaire
 
 ·      Anticorps anti-cytoplasme des polynucléaires neutrophiles (ANCA) (qui peuvent être obtenus en moins de 24 heures) (voir chapitres [[Pathologies auto-immunes : aspects épidémiologiques, diagnostiques et principes de traitement|maladies auto-immunes]] et [[Connaître les principaux types de vascularite systémique, les organes cibles, les outils diagnostiques et les moyens thérapeutiques|vascularites]])
 
-·      Cryoglobulinémie",False
+·      Cryoglobulinémie",True
 1790,OIC-215-08-A,"Selon le texte, quelle est une cause de purpura vasculaire associée aux ANCA?",Purpura fulminans,Purpura sénile de Bateman,Granulomatose avec polyangéite,Purpura thrombopénique immunologique (PTI),c,"{{objectif de connaissance
 |Identifiant=OIC-215-08-A
 |Item_parent=Purpuras chez l’adulte et l’enfant
@@ -64600,7 +64600,7 @@ Les explorations suivantes ne sont pas des examens de première intention:
 *'''L'[[Explication pré-opératoire et recueil de consentement d'un geste invasif diagnostique ou thérapeutique SDD-239|artériographie des membres inférieurs]]'''
 
 ===2/ Bilan étiologique===
-Un bilan des facteurs de risque cardiovasculaires vient en complément du bilan lésionnel avec une biologie de première intention à la recherche d'une dyslipidémie, d'un diabète, d'une insuffisance rénale chronique.",False
+Un bilan des facteurs de risque cardiovasculaires vient en complément du bilan lésionnel avec une biologie de première intention à la recherche d'une dyslipidémie, d'un diabète, d'une insuffisance rénale chronique.",True
 1827,OIC-225-04-A,Quel test est utilisé pour confirmer l'origine artérielle de la claudication et mesurer la distance de marche en cas de symptômes liés à l'effort?,Mesure des pressions de cheville au repos,Mesure de la TcPO2,Épreuve de marche sur tapis roulant avec mesure des pressions de cheville,Angioscanner de l'aorte,c,"{{objectif de connaissance
 |Identifiant=OIC-225-04-A
 |Item_parent=Artériopathie de l’aorte, des artères viscérales et des membres inférieurs ; anévrysmes
@@ -65617,7 +65617,7 @@ Déficit en Antithrombine
 |Age (risque croissant), obésité : IMC ≥ 30 kg/m²
 |}
 <br />
-----<br />",True
+----<br />",False
 1856,OIC-226-03-B,"Selon la triade de Virchow, quel est l'un des trois facteurs principaux contribuant à la formation d'une thrombose veineuse profonde (TVP) ou d'une embolie pulmonaire (EP)?",Hypotension artérielle,Stase veineuse,Augmentation du rythme cardiaque,Diminution de la température corporelle,b,"{{objectif de connaissance
 |Identifiant=OIC-226-03-B
 |Item_parent=Thrombose veineuse profonde et embolie pulmonaire (voir item 330)
@@ -66319,7 +66319,7 @@ En cas d’antécédent de MVTE:
 
 - toute forme de contraception contenant des œstrogènes est contre-indiquée 
 
-- Un autre moyen de contraception doit être proposé, principalement une pilule micro-progestative ou dispositif intra-utérin.",True
+- Un autre moyen de contraception doit être proposé, principalement une pilule micro-progestative ou dispositif intra-utérin.",False
 1876,OIC-226-13-A,Quelle est la principale indication pour une évaluation systématique du risque thrombo-embolique veineux (MTEV)?,Chez les patients actifs et ambulatoires.,"Chez les patients alités, en milieu médical ou chirurgical.",Uniquement chez les patients hospitalisés en unité de soins intensifs.,Uniquement chez les patients présentant des antécédents familiaux de MTEV.,b,"{{objectif de connaissance
 |Identifiant=OIC-226-13-A
 |Item_parent=Thrombose veineuse profonde et embolie pulmonaire (voir item 330)
@@ -73892,7 +73892,7 @@ Résultats :
 *Diagnostic positif : cortisolémie basse ou effondrée,
 *Diagnostic étiologique :
 **ACTH élevée : insuffisance surrénale primitive,
-**ACTH normal ou basse : insuffisance corticotrope.",False
+**ACTH normal ou basse : insuffisance corticotrope.",True
 2126,OIC-245-17-B,Quels résultats de cortisolémie et d'ACTH permettent de distinguer une insuffisance surrénale primitive d'une insuffisance corticotrope?,"Cortisol bas, ACTH bas.","Cortisol élevé, ACTH élevé.","Cortisol bas, ACTH élevé.","Cortisol élevé, ACTH normal.",c,"{{objectif de connaissance
 |Identifiant=OIC-245-17-B
 |Item_parent=Insuffisance surrénale chez l’adulte et l’enfant
@@ -74100,7 +74100,7 @@ Selon l'étiologie de l'insuffisance surrénale, la physiopathologie est différ
 
 '''- dans le cadre du bloc en 21 hydroxylase''' (enzyme responsable de la transformation de la progestérone en 11 desoxycorticostérone (DOC) qui est le précurseur de l'aldostérone et de la 17 hydroxyprogestérone en 11 desoxycortisol (composé S) qui est le précurseur du cortisol) : l'absence d'activité de l'enzyme conduit à un déficit en cortisol (qui conduit à l'insuffisance surrénale) et en aldostérone (qui conduit à une perte de sel et déshydratation). De plus, il y a une accumulation des précurseurs en amont du bloc : élévation des androgènes (17 OH progestérone)  d’où l’hyperandrogénie avec virilisation chez la petit fille. 
 
-'''-dans le cadre de l'adrénoleucodystrophie''': la mutation d'un gène codant un transporteur des acides gras à très longues chaînes dans le peroxysome conduit à une accumulation de ces molécules dans les cellules.",True
+'''-dans le cadre de l'adrénoleucodystrophie''': la mutation d'un gène codant un transporteur des acides gras à très longues chaînes dans le peroxysome conduit à une accumulation de ces molécules dans les cellules.",False
 2136,OIC-245-22-B,Quelle est la cause de l'adrénoleucodystrophie?,Un bloc enzymatique dans la synthèse du cortisol,Une accumulation de précurseurs androgéniques,Une mutation affectant un transporteur d'acides gras à très longues chaînes,Un déficit en aldostérone entraînant une perte de sel,c,"{{objectif de connaissance
 |Identifiant=OIC-245-22-B
 |Item_parent=Insuffisance surrénale chez l’adulte et l’enfant
@@ -75028,7 +75028,7 @@ Il est à noter que la ponction-biopsie rénale n’est pas systématique.<ref>P
 
 *Interrogatoire à la recherche d’une  symptomatologie de [[Claudication intermittente d'un membre SD-069]] , inspection     des pieds, recherche des pouls, auscultation des trajets artériels;
 *mesure de l'indice de pression systolique     (IPS)
-*échographie-doppler des artères des     membres inférieurs (à partir de l'aorte abdominale) seulement si une     anomalie clinique patente est observée (pas d'échographie-doppler     systématique)",True
+*échographie-doppler des artères des     membres inférieurs (à partir de l'aorte abdominale) seulement si une     anomalie clinique patente est observée (pas d'échographie-doppler     systématique)",False
 2166,OIC-247-14-B,Dans quelle situation l'échographie-doppler des artères des membres inférieurs est-elle indiquée selon le texte?,Systématiquement tous les 2 à 5 ans si le risque cardiovasculaire est élevé.,En cas de symptomatologie évocatrice d'AIT.,Uniquement si une anomalie clinique patente est observée.,Systématiquement tous les ans pour tous les patients diabétiques.,c,"{{objectif de connaissance
 |Identifiant=OIC-247-14-B
 |Item_parent=Diabète sucré de type 1 et 2 de l’enfant et de l’adulte. Complications
@@ -76144,7 +76144,7 @@ La prévention de l'hypoglycémie nécessite une bonne adéquation du traitement
 
 5.     Soins généraux : antibiothérapie probabiliste si signes généraux, sinon attendre une preuve bactériologique, anticoagulation préventive, équilibration du diabète, prise en charge des autres FDR cardiovasculaires, traitement antalgique, vaccination antitétanique 
 
-6.     Education pour la prévention d’autres lésions, soins de pédicurie",False
+6.     Education pour la prévention d’autres lésions, soins de pédicurie",True
 2195,OIC-247-29-B,Quel est le premier geste essentiel dans la prise en charge de la céto-acidose diabétique?,Administration immédiate d'insuline.,Mise en place d'une voie veineuse périphérique.,Réalisation d'un ECG.,Recherche d'un foyer infectieux.,b,"{{objectif de connaissance
 |Identifiant=OIC-247-29-B
 |Item_parent=Diabète sucré de type 1 et 2 de l’enfant et de l’adulte. Complications
@@ -77587,7 +77587,7 @@ Selon le contexte pour diagnostiquer une affection responsable :
 *insuffisance hépato-cellulaire (TP et facteur V) ;
 *diarrhées exsudatives avec perte de protéines d’origine digestive ;
 
-<br />",False
+<br />",True
 2243,OIC-257-06-A,"Dans le contexte des œdèmes, comment les épanchements des séreuses sont-ils caractérisés biologiquement?",Ils sont des exsudats avec une concentration élevée en protéines.,Ils sont des transudats avec une concentration élevée en protéines.,Ils sont des transudats avec une concentration faible en protéines (inférieure à 20 g/L).,Ils sont des exsudats avec une concentration faible en protéines (inférieure à 20 g/L).,c,"{{objectif de connaissance
 |Identifiant=OIC-257-06-A
 |Item_parent=Œdèmes des membres inférieurs localisés ou généralisés
@@ -78130,7 +78130,7 @@ glomérulaire  ou encore en cas d’hématurie macroscopique récidivante sans �
 
 <br />
 
-*En l’absence d’étiologie retrouvée sur ce bilan (< 10% des situations cliniques, plutôt en cas d’hématurie microscopique), il faut réitérer le bilan en cas de persistance ou de récidive de l’hématurie, surtout chez les patients fumeurs et > 40 ans.",True
+*En l’absence d’étiologie retrouvée sur ce bilan (< 10% des situations cliniques, plutôt en cas d’hématurie microscopique), il faut réitérer le bilan en cas de persistance ou de récidive de l’hématurie, surtout chez les patients fumeurs et > 40 ans.",False
 2256,OIC-260-05-B,Quel examen d'imagerie est en première intention pour évaluer l'arbre urinaire devant une hématurie?,Fibroscopie urétro-vésicale,Uro-IRM,Échographie réno-vésicale,Artériographie,c,"{{objectif de connaissance
 |Identifiant=OIC-260-05-B
 |Item_parent=Hématurie
@@ -78518,7 +78518,7 @@ calculs ou une infection de kyste. Evolution vers l’insuffisance rénale chron
 
 *En cas d’échec des manœuvres de décaillotage manuel, de mauvais rendement transfusionnel ou de mauvaise tolérance clinique, un décaillotage endoscopique chirurgical doit être envisagé au bloc opératoire ; il permet éventuellement de traiter/réséquer une lésion vésicale dans le même temps.
 
-*En cas d’hématurie macroscopique provenant des voies excrétrices supérieure, le caillotage peut entraîner un tableau de colique néphrétique habituellement spontanément résolutif. Il peut être parfois nécessaire de mettre en place une endoprothèse urétérale en cas de pyélonéphrite obstructive, d’insuffisance rénale ou de douleur rénale résistante.",True
+*En cas d’hématurie macroscopique provenant des voies excrétrices supérieure, le caillotage peut entraîner un tableau de colique néphrétique habituellement spontanément résolutif. Il peut être parfois nécessaire de mettre en place une endoprothèse urétérale en cas de pyélonéphrite obstructive, d’insuffisance rénale ou de douleur rénale résistante.",False
 2269,OIC-261-01-A,"Quel est le principal signe clinique évoquant une néphropathie glomérulaire, selon le texte?",Hématurie microscopique seule,Protéinurie glomérulaire confirmée,Œdèmes périphériques,Hypertension artérielle,b,"{{objectif de connaissance
 |Identifiant=OIC-261-01-A
 |Item_parent=Néphropathie glomérulaire
@@ -78544,7 +78544,7 @@ calculs ou une infection de kyste. Evolution vers l’insuffisance rénale chron
 **Trois autres signes peuvent être associés :
 *HTA ;
 *Œdèmes périphériques ;
-*insuffisance rénale aiguë ou chronique.",True
+*insuffisance rénale aiguë ou chronique.",False
 2270,OIC-261-01-A,Quelle caractéristique est essentielle pour confirmer une protéinurie comme étant glomérulaire?,Détection par bandelette urinaire,Présence d'hématies déformées,Composition majoritaire d'albumine (≥ 60%),Quantification en g/24 heures,c,"{{objectif de connaissance
 |Identifiant=OIC-261-01-A
 |Item_parent=Néphropathie glomérulaire
@@ -79532,7 +79532,7 @@ Mésangiaux  ± capillaires ± extramembraneux selon la classe de la néphropath
 * corticodépendance : rechute après corticosensibilité survenant lors de la diminution de la corticothérapie ou rapidement après son arrêt. Nécessite souvent l’adjonction d’un immunosuppresseur ou immunomodulateur.
 * corticorésistance : non réponse, (10 % des cas), risque (50 %) d’insuffisance rénale chronique terminale à 5 ans.
 
-<br />",False
+<br />",True
 2288,OIC-261-10-B,Quelle est la principale caractéristique de la corticorésistance dans le SNLGM?,Disparition de la protéinurie après traitement par corticothérapie.,"Rechute après arrêt de la corticothérapie, nécessitant une reprise.",Absence de réponse à la corticothérapie.,Rechute lors de la diminution de la corticothérapie.,c,"{{objectif de connaissance
 |Identifiant=OIC-261-10-B
 |Item_parent=Néphropathie glomérulaire
@@ -80526,7 +80526,7 @@ Intérêt diagnostic et thérapeutique.
 
 Emboles de cristaux de cholestérol.
 |}
-<br />",False
+<br />",True
 2315,OIC-263-08-B,"Lequel des examens suivants présente l'avantage de ne pas utiliser de produits de contraste iodés, évitant ainsi une potentielle toxicité rénale?",Tomodensitométrie spiralée,Doppler des artères rénales,Angio-IRM,Artériographie rénale,c,"{{objectif de connaissance
 |Identifiant=OIC-263-08-B
 |Item_parent=Néphropathies vasculaires
@@ -81096,7 +81096,7 @@ La colique néphrétique est dite « simple » lorsqu’elle survient :
 * sans insuffisance rénale biologique ni oligo-anurie
 * et qu’elle cède avec un traitement antalgique par AINS.
 
-<br />",False
+<br />",True
 2333,OIC-265-07-A,Quel est le critère de réponse thérapeutique pour définir une colique néphrétique simple?,Nécessité d'une hospitalisation.,Résistance aux traitements antalgiques.,Cession de la douleur avec un traitement antalgique par AINS.,Absence de réponse à tout traitement antalgique.,c,"{{objectif de connaissance
 |Identifiant=OIC-265-07-A
 |Item_parent=Lithiase urinaire
@@ -84137,7 +84137,7 @@ L'examen neurologique élimine une radiculalgie ou une atteinte de la queue de c
 **Colique néphrétique hyperalgique résistant au traitement médical bien conduit (restriction hydrique, AINS, morphine) 
 
 *Identifier une [[2C-161|pyélonéphrite aigüe 161]] compliquée ou à risque de complication
-*Identifier une [[2C-050|torsion du cordon spermatique 50]]",False
+*Identifier une [[2C-050|torsion du cordon spermatique 50]]",True
 2423,OIC-270-03-A,"Qu'est-ce qui doit être identifié comme une cause potentielle d'une lombalgie aiguë, selon le texte?",Une simple tension musculaire.,Une colique néphrétique résistante au traitement médical.,Une colique néphrétique hyperalgique résistante au traitement médical.,Une légère fièvre sans autres symptômes.,c,"{{objectif de connaissance
 |Identifiant=OIC-270-03-A
 |Item_parent=Douleurs lombaires aiguës
@@ -87482,7 +87482,7 @@ Par ailleurs pour les mélanomes de Dubreuilh non invasifs, une marge de 1 cm es
 
 
 
-Connaitre les modalités de prévention du mélanome",False
+Connaitre les modalités de prévention du mélanome",True
 2518,OIC-302-05-A,Quelle est la caractéristique clinique la plus fréquente du carcinome basocellulaire (CBC) selon le texte?,Apparition sur des lésions précancéreuses.,Présence de télangiectasies et de papules perlées translucides.,Évolution rapide avec métastases fréquentes.,Présentation unique sous forme de plaque érythémateuse bien limitée.,b,"{{objectif de connaissance
 |Identifiant=OIC-302-05-A
 |Item_parent=Tumeurs cutanées, épithéliales et mélaniques
@@ -87813,7 +87813,7 @@ Le risque de transformation d’un naevus congénital de petite taille est compa
 
 Concernant les nævus congénitaux géants le risque de transformation dépend de la taille (plus il est grand, plus le risque s'accroît), de la présence de lésions satellites et de la topographie médiane.
 
-Les microtraumatismes répétés n'induisent pas la transformation des nævus en mélanome.",True
+Les microtraumatismes répétés n'induisent pas la transformation des nævus en mélanome.",False
 2529,OIC-302-11-A,"Selon le texte, quelle règle est utilisée pour identifier les caractéristiques suspectes d'une lésion mélanomique?","La règle des 5 P (Pigmentation, Point, Poussée, Prurit, Propagation)",La règle ABCDE,"La règle des 3 C (Couleur, Contour, Consistance)","La règle des 4 S (Symétrie, Surface, Structure, Saignement)",b,"{{objectif de connaissance
 |Identifiant=OIC-302-11-A
 |Item_parent=Tumeurs cutanées, épithéliales et mélaniques
@@ -97487,7 +97487,7 @@ o  Plasma frais congelé/fibrinogène en fonction des troubles de la coagulatio
 
 <gallery widths=""300"" heights=""300"">
 Fichier:Algorithme choc septique.pdf
-</gallery>",True
+</gallery>",False
 2716,OIC-332-10-B,Quel est le sujet principal abordé dans le contenu fourni?,Les causes de l'hypotension artérielle.,Les différents types de chocs et leurs traitements.,Les principes de prise en charge du choc septique.,La physiopathologie de l'état de choc.,c,"{{objectif de connaissance
 |Identifiant=OIC-332-10-B
 |Item_parent=État de choc. Principales étiologies : hypovolémique, septique (voir item 158), cardio-génique, anaphylactique
@@ -98081,7 +98081,7 @@ o    séringues vides, traces de piqures
 
 o    ordonnances avec antidiabétiques oraux ou insuline
 
-o    vétusté du logement, modalités de chauffage (CO …)",True
+o    vétusté du logement, modalités de chauffage (CO …)",False
 2732,OIC-336-05-A,"Parmi les éléments contextuels suivants, lequel suggère une intoxication chronique comme cause possible d'un coma non traumatique?",Présence d'une lettre d'adieu,Troubles oculomoteurs,Vétusté du logement et modalités de chauffage,Présence de purpura,c,"{{objectif de connaissance
 |Identifiant=OIC-336-05-A
 |Item_parent=Coma non traumatique chez l’adulte et chez l’enfant
@@ -99165,7 +99165,7 @@ Gravité liée à l'étiologie en particulier les causes cardiaques - hospitalis
 |Ordre=10}}
 Gravité liée à l'étiologie en particulier les causes cardiaques - hospitalisation avec surveillance continue du rythme cardiaque
 
-<br />",True
+<br />",False
 2770,OIC-342-11-A,Quel est l'objectif principal de l'ECG dans le contexte d'une syncope ou lipothymie?,Diagnostiquer la cause exacte de la syncope.,Identifier les anomalies ECG ayant une valeur diagnostique immédiate.,Prédire le risque futur de syncope.,Évaluer la fonction cardiaque globale.,b,"{{objectif de connaissance
 |Identifiant=OIC-342-11-A
 |Item_parent=Malaise, perte de connaissance, crise comitiale chez l’adulte (voir item 105)
@@ -100438,7 +100438,7 @@ Croyance du patient en ses idées délirantes, fluctuante et dynamique.
 
 * Anxiété, colère, tristesse
 * risque de passage à l'acte auto ou hétéro-agressif
-* modification de mode de vie",False
+* modification de mode de vie",True
 2821,OIC-351-07-A,Quel aspect de l'analyse sémiologique d'un syndrome délirant décrit la croyance du patient en ses propres idées délirantes?,Thème,Mécanisme,Adhésion,Systématisation,c,"{{objectif de connaissance
 |Identifiant=OIC-351-07-A
 |Item_parent=Agitation et délire aigu

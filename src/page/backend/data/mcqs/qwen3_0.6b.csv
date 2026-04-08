@@ -2783,7 +2783,7 @@ Une '''franchise''' est déduite des remboursements au patient et s'applique sur
 
 La franchise est plafonnée à 50 euros par an au total et ne peut pas dépasser 2 euros par jour pour les actes paramédicaux et 4 euros par jour pour les transports sanitaires. Sont dispensés de la franchise médicale les patients âgés de moins de 18 ans, les bénéficiaires de la complémentaire santé solidaire, les bénéficiaires de l'AME, les femmes enceintes à partir du sixième mois de grossesse. Elle ne peut pas être prise en charge par un organisme complémentaire d'assurance maladie.
 
-Le '''dispositif de tiers payant''' dispense l'assuré de l'avance des frais pris en charge par l'assurance maladie. Ce dernier ne paie que le ticket modérateur, l'assurance maladie versant directement aux structures de soins et aux professionnels de santé les sommes qui leur sont dues. Si l'assuré dispose d'une couverture complémentaire (mutuelle, assurance, institution de prévoyance, complémentaire santé solidaire), il peut bénéficier du tiers payant en présentant sa carte vitale et son attestation de complémentaire. Le dispositif de tiers payant s'applique également dans le cadre d'un accident du travail ou d'une maladie professionnelle, ainsi qu'aux bénéficiaires de la complémentaire santé solidaire et de l'AME",True
+Le '''dispositif de tiers payant''' dispense l'assuré de l'avance des frais pris en charge par l'assurance maladie. Ce dernier ne paie que le ticket modérateur, l'assurance maladie versant directement aux structures de soins et aux professionnels de santé les sommes qui leur sont dues. Si l'assuré dispose d'une couverture complémentaire (mutuelle, assurance, institution de prévoyance, complémentaire santé solidaire), il peut bénéficier du tiers payant en présentant sa carte vitale et son attestation de complémentaire. Le dispositif de tiers payant s'applique également dans le cadre d'un accident du travail ou d'une maladie professionnelle, ainsi qu'aux bénéficiaires de la complémentaire santé solidaire et de l'AME",False
 66,OIC-019-11-A,Quelle est la cause principale de la douleur abdominale aiguë chez une femme enceinte?,Hématome rétroplacentaire,Rupture utérine,Chorio-amniotite,HELLP syndrome,a,"{{objectif de connaissance
 |Identifiant=OIC-019-11-A
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -3884,7 +3884,7 @@ Ainsi les différents types d’études n’ont pas la même valeur démonstrati
 ** le Système National d’Information Inter Régimes de l’Assurance Maladie (SNIIRAM) qui comporte toutes les données de remboursement de soins ambulatoires
 ** les données des hôpitaux et autres établissements de santé (PMSI)
 ** les données statistiques relatives aux causes de décès (CépiDC)
-** les données relatives au handicap",False
+** les données relatives au handicap",True
 96,OIC-020-31-B,Les femmes âgées de 20-24 ans sont les plus concernées par l’IVG.,a,b,c,d,a,"{{objectif de connaissance
 |Identifiant=OIC-020-31-B
 |Item_parent=La méthodologie de la recherche en santé
@@ -4866,7 +4866,7 @@ Examen
 
 –      spéculum : rupture des membranes, leucorrhées, vésicules herpétiques
 
-–      toucher vaginal éventuel : modifications cervicales.",True
+–      toucher vaginal éventuel : modifications cervicales.",False
 127,OIC-024-25-A,Quelle condition indique l'urgence d'adresser l'enfant à un ORL?,Antécédents familiaux de surdité,Inquiétude parentale sur l'audition,Anomalie à un test de dépistage,Signes d'appels,c,"{{objectif de connaissance
 |Identifiant=OIC-024-25-A
 |Item_parent=Principales complications de la grossesse.
@@ -6960,7 +6960,7 @@ La maturation du nouveau-né s’évalue cliniquement par des critères morpholo
 ## Tonus actif :  - manœuvre du tiré-assis ;  - redressement complet.
 # '''Automatismes primaires (ou réflexes archaïques)'''   Présents chez le nouveau-né à terme : succion, points cardinaux, agrippement, réflexe de moro, allongement croisé, marche automatique.  Absence toujours pathologique. Disparition entre 2 et 4 mois de vie.
 
-<br />",True
+<br />",False
 182,OIC-032-02-B,Quelle option correspond à un effet indésirable grave lié au syndrome malin des neuroleptiques?,Dystonies,"Syndrome hyperkinétique, akathisie",Risque d’accident vasculaire cérébral,Prise de poids,c,"{{objectif de connaissance
 |Identifiant=OIC-032-02-B
 |Item_parent=Évaluation et soins du nouveau-né à terme
@@ -9514,7 +9514,7 @@ Maladie génétique de transmission liée au chromosome X. Pénétrance incompl�
 *  50 % ont des difficultés cognitives de sévérité très variable, habituellement moins prononcées que chez les garçons (QI entre 50 et 70) ([[Anomalie du développement psychomoteur SD-115|anomalie du développement psychomoteur]])
 *  50 % ont un QI dans la partie basse de la distribution normale
 *  Troubles relationnels (timidité, difficulté à se lier) ou anxiété fréquents ([[Anxiété SD-116|anxiété]], [[Troubles des interactions sociales/difficultés de socialisation SD-349|troubles des interactions sociales]] / difficultés de socialisation)
-*  Pas ou peu d’éléments dysmorphiques",False
+*  Pas ou peu d’éléments dysmorphiques",True
 234,OIC-045-18-A,Quelle est une description correcte des douleurs associées à une coccygodynie?,"Douleur localisée à l’aire coccygienne, sans irradiation significative",Reproduite à la palpation/mobilisation du coccyx ou sacro-coccygienne,Exacerbée à la station assise et/ou au relever de la station assise,"Gêne fonctionnelle : station assise (en voiture, au travail…)",a,"{{objectif de connaissance
 |Identifiant=OIC-045-18-A
 |Item_parent=Spécificités des maladies génétiques. (voir item 9)
@@ -10982,7 +10982,7 @@ Le retard pubertaire est défini par l’absence de développement mammaire apr�
 |Ordre=20}}
 <gallery>
 Fichier:Multimedia puberté.jpg|Développement mammaire et accélération de la vitesse de croissance à l’âge de 7 ans, patiente P2S2R0 Suspiçion de puberté précoce
-</gallery>",True
+</gallery>",False
 300,OIC-049-21-B,Quelle est la cause principale d'un trouble neurocognitif selon le DSM 5?,Maladie d'Alzheimer,Dégénérescence fronto-temporale,Maladie à prions,Encéphalopathie neurovasculaire,a,"{{objectif de connaissance
 |Identifiant=OIC-049-21-B
 |Item_parent=Puberté normale et pathologique
@@ -11149,7 +11149,7 @@ La radio du poignet a pour objectif de mesurer l'âge osseux
 *S’il ne s‘agit pas d’une infection sexuellement transmissible, le traitement antibiotique est celle d’une infection urinaire masculine ciblant les entérobactéries et repose sur une une fluoroquinolone (ciprofloxacine ou lévofloxacine) ou céphalosporine de 3ème génération secondairement adapté à l’antibiogramme.
 *Chez l’enfant le traitement antibiotique de première intention repose sur le cotrimoxazole
 *La durée du traitement chez l’adulte et chez l’enfant est le même que les infections urinaires masculines 14 jours.
-*Le port d’un suspensoir (ou slip serré) et la prescription d’antalgique sont recommandés",False
+*Le port d’un suspensoir (ou slip serré) et la prescription d’antalgique sont recommandés",True
 309,OIC-050-06-A,Quelle est l’option correct pour évaluer l’intensité de la douleur à l’aide de l’échelle EVA?,a,b,c,d,a,"{{objectif de connaissance
 |Identifiant=OIC-050-06-A
 |Item_parent=Pathologie génito-scrotale chez le garçon et chez l’homme
@@ -12495,7 +12495,7 @@ Traitement : transfert en réanimation, arrêt du médicament, ré-équilibratio
 Les principales interactions médicamenteuses sont :
 
 *ISRS : potentialisation des AVK (risque hémorragique) ;
-*Risque de syndrome sérotoninergique (en particulier avec les IMAO) en cas d’association de plusieurs antidépresseurs ou d’antidépresseurs et de lithium ou d’antidépresseurs et de triptans.",False
+*Risque de syndrome sérotoninergique (en particulier avec les IMAO) en cas d’association de plusieurs antidépresseurs ou d’antidépresseurs et de lithium ou d’antidépresseurs et de triptans.",True
 351,OIC-074-12-A,Quelle est la cause principale de l'infection génitale chez la femme selon le contenu éducatif?,a,b,c,d,a,"{{objectif de connaissance
 |Identifiant=OIC-074-12-A
 |Item_parent=Prescription et surveillance des psychotropes (voir item 330)
@@ -13608,7 +13608,7 @@ Coronaropathie
 Otite, Asthme de l’enfant
 
 Bronchite
-|}",False
+|}",True
 383,OIC-075-23-B,Quelle est la prévalence de l’allergie aux venins d’hyménoptères?,10 à 40 % de la population,"0,3 à 7,5 % de la population générale","0,03 à 0,45/million d’habitants/an",Aucune des options,b,"{{objectif de connaissance
 |Identifiant=OIC-075-23-B
 |Item_parent=Addiction au tabac
@@ -13755,7 +13755,7 @@ Les facteurs les plus prédictifs d’arrêt du tabac sont
 |Ordre=27}}
 Accompagnement téléphonique : ligne Tabac Info Service (3989)
 
-* Ne pas hésiter à orienter les patients vers les sites <nowiki>http://www.tabac-info-service.fr</nowiki> et ligne téléphonique gratuite 3989 qui proposent des accompagnements personnalisés (''coaching'').",True
+* Ne pas hésiter à orienter les patients vers les sites <nowiki>http://www.tabac-info-service.fr</nowiki> et ligne téléphonique gratuite 3989 qui proposent des accompagnements personnalisés (''coaching'').",False
 388,OIC-075-30-B,Quel est le type de traitement local utilisé pour la conjonctivite allergique?,Lavages oculaires fréquents et applications de compresses humides froides.,Antihistaminiques H1 en collyre.,Inhibiteurs de la dégranulation des mastocytes en collyre (cromoglicate de sodium).,Antihistaminiques H2 en collyre.,c,"{{objectif de connaissance
 |Identifiant=OIC-075-30-B
 |Item_parent=Addiction au tabac
@@ -14385,7 +14385,7 @@ o   Un peu plus sensible que la GGT
 
 o   très spécifique
 
-o   se normalise en quelques semaines après arrêt de la consommation",False
+o   se normalise en quelques semaines après arrêt de la consommation",True
 408,OIC-076-15-A,Quels professionnels sont concernés par l'hypersensibilité et l'asthme selon l'objectif?,Édouard,Médecin,Étudiant,Chef d'entreprise,b,"{{objectif de connaissance
 |Identifiant=OIC-076-15-A
 |Item_parent=Addiction à l’alcool
@@ -14973,7 +14973,7 @@ Les principales '''causes''' des hémorragies intravitréennes sont les suivante
 
 '''Complications :''' exposition cornéenne, larmoiement (bascule du point lacrymal inférieur), insuffisance d’occlusion palpébrale.
 
-<br />",False
+<br />",True
 426,OIC-086-02-A,"La prévalence de la goutte en France est de 0,9 %, ce qui correspond à une valeur supérieure à celle des rhumatismes inflammatoires courants. Quelle est la bonne option pour cette information?",a,b,c,d,a,"{{objectif de connaissance
 |Identifiant=OIC-086-02-A
 |Item_parent=Pathologie des paupières
@@ -15311,7 +15311,7 @@ o   traumatique : fracture vertébrale et luxation traumatique (clichés dynami
 
 o   fracture vertébrale ostéoporotique '''[[Déformation rachidienne SDD-065|(déformation rachidienne)]]'''
 
-o   viscérales : si dorsalgies",False
+o   viscérales : si dorsalgies",True
 440,OIC-094-10-B,"La présence d’une toux avec expectorations chroniques est en faveur d’une IRC obstructive (BPCO, dilatation des bronches).",a,b,c,d,a,"{{objectif de connaissance
 |Identifiant=OIC-094-10-B
 |Item_parent=Rachialgie
@@ -16265,7 +16265,7 @@ Faibles revenus du foyer
 
 *·     '''La fréquence élevée des céphalées à la base : à surveiller par l’agenda des crises'''
 *·     '''La dépression :''' à dépister par l’échelle HAD (Hospital Anxiety and Depression).
-*·     '''La surconsommation de traitement de crise''' : à monitorer par l’agenda",True
+*·     '''La surconsommation de traitement de crise''' : à monitorer par l’agenda",False
 454,OIC-099-14-A,Quelle mesure est utilisée pour déterminer la localisation des lésions artérielles et leur retentissement hémodynamique?,L'angio-IRM,L'angioscanner de l'aorte et des artères des membres inférieurs,L'écho-doppler de l'aorte et des artères des membres inférieurs,L'explication pré-opératoire et recueil de consentement d'un geste invasif diagnostique ou thérapeutique SDD-239,c,"{{objectif de connaissance
 |Identifiant=OIC-099-14-A
 |Item_parent=Migraine, névralgie du trijumeau et algies de la face
@@ -16361,7 +16361,7 @@ o  Destruction de la voie trigéminée par diverses techniques : radiochirurgie
 
 o  Chirurgie de décompression d’un conflit vasculo-nerveux : elle nécessite la démonstration d’un conflit vasculonerveux (critères IRM stricts).
 
-·    '''Neuropathie trigéminale douloureuse (dont la douleur postzostérienne)''' Elle se traite comme les autres douleurs neuropathiques focales, en associant un traitement local et un traitement général (cf item spécifique). En cas d’échec des traitements de première ligne, un avis algologique est recommandé.",False
+·    '''Neuropathie trigéminale douloureuse (dont la douleur postzostérienne)''' Elle se traite comme les autres douleurs neuropathiques focales, en associant un traitement local et un traitement général (cf item spécifique). En cas d’échec des traitements de première ligne, un avis algologique est recommandé.",True
 455,OIC-099-15-B,Quelle combination de traitements est mentionnée dans le texte pour les patients symptomatiques?,A,B,C,D,c,"{{objectif de connaissance
 |Identifiant=OIC-099-15-B
 |Item_parent=Migraine, névralgie du trijumeau et algies de la face
@@ -17248,7 +17248,7 @@ o  Hypothyroïdie ('''<u>item 243</u>''')
 
 Les tumeurs du jeune enfant sont plus souvent cérébelleuses que sus tentorielles – bien examiner la marche et l’équilibre - les céphalées sont tardives ou l’enfant s’y habitue et ne se plaint plus
 
-L'HTIC idiopathique existe chez l’enfant",False
+L'HTIC idiopathique existe chez l’enfant",True
 464,OIC-100-06-A,Quel des signes suivants est une caractéristique de la MTEV?,Douleur d'un membre inférieur,Douleur thoracique SD-161,Douleur basi- ou latéro-thoracique,Tachycardie SD-166,a,"{{objectif de connaissance
 |Identifiant=OIC-100-06-A
 |Item_parent=Céphalée inhabituelle aiguë et chronique chez l’adulte et l’enfant
@@ -17878,7 +17878,7 @@ Le FLM, situé en paramédian sur le plancher du 4<sup>ème</sup> ventricule (Fi
 
 '''5. Test de Hess-Lancaster ou test de Lancaster''' : ce test permet de faire le diagnostic de la paralysie oculomotrice, de déterminer le côté de cette paralysie, d'objectiver le ou les muscles paralysés. C'est de plus un examen qui permet de suivre l'évolution de la paralysie par des relevés successifs. Un verre de couleur différente est placé devant chaque œil du patient, verre rouge sur un œil, vert sur l'autre. Le patient doit déplacer sur un écran une flèche lumineuse, vue rouge, et la superposer à une flèche lumineuse, vue verte, déplacée par l'examinateur. On obtient un relevé graphique de l'oculomotricité dans les différentes positions du regard.
 
-'''6. Exploration de la motricité intrinsèque :''' l'inspection doit rechercher une inégalité pupillaire (= anisocorie). Le réflexe photomoteur (RPM) ou réponse pupillaire à la lumière. L'éclairement d'un œil entraîne un myosis de l'œil éclairé (RFM direct) et un myosis simultané de l'œil controlatéral (RFM consensuel).",True
+'''6. Exploration de la motricité intrinsèque :''' l'inspection doit rechercher une inégalité pupillaire (= anisocorie). Le réflexe photomoteur (RPM) ou réponse pupillaire à la lumière. L'éclairement d'un œil entraîne un myosis de l'œil éclairé (RFM direct) et un myosis simultané de l'œil controlatéral (RFM consensuel).",False
 477,OIC-102-06-A,Quelle est la définition de l’insuffisance mitrale (IM)?,Dysfonctionnement de la valve mitrale avec défaut de fermeture systolique ayant pour conséquence une régurgitation de sang du ventricule gauche (VG) vers l’oreillette gauche (OG) en systole,Dysfonctionnement de la valve aortique avec limitation d’ouverture ayant pour conséquence un obstacle à l’éjection systolique du VG,Dysfonctionnement de la valve aortique avec défaut de fermeture en diastole ayant pour conséquence une régurgitation de sang de l’aorte vers le VG en diastole,Dysfonctionnement de la valve mitrale avec limitation d’ouverture en diastole ayant pour conséquence un obstacle à l’écoulement du sang de l’OG vers le VG au moment du remplissage cardiaque,a,"{{objectif de connaissance
 |Identifiant=OIC-102-06-A
 |Item_parent=Diplopie
@@ -17956,7 +17956,7 @@ La paralysie totale du Ill provoque du côté pathologique :
 |Ordre=8}}
 
 [[Fichier:III-bis.jpg|vignette]]
-[[Fichier:III.jpg|gauche|vignette]]",True
+[[Fichier:III.jpg|gauche|vignette]]",False
 481,OIC-102-09-B,Quelle option correspond à une intervention chirurgicale pour les insuffisances mitrales en première intention?,a,b,c,d,a,"{{objectif de connaissance
 |Identifiant=OIC-102-09-B
 |Item_parent=Diplopie
@@ -18453,7 +18453,7 @@ o  Carences vitaminiques : en thiamine (Gayet-Wernicke) et/ou en PP (pellagre) 
 
 –       Causes infectieuses : toute cause de fièvre (infections urinaires, pulmonaires), d'autant plus qu'il existe un trouble neurocognitif sous-jacent '''([[Analyse de la bandelette urinaire SDD-182|analyse de la bandelette urinaire]] ; [[Analyse d'un examen cytobactériologiques des urines (ecbu) SDD-189|analyse d’un ECBU]] ; [[Syndrome inflammatoire aigu ou chronique SDD-186|syndrome inflammatoire aigu ou chronique]] ; [[Elévation de la protéine c-réactive (cr) SD-203|élévation de la protéine C-réactive (CRP)]] ; [[Anomalie leucocytes SDD-216|anomalie leucocytes]])'''
 
-–       Autres causes (fécalome, rétention aiguë d’urines, douleur) ('''[[Constipation SDD-001|constipation]] ; [[Rétention aigue d'urines SDD-097|rétention aiguë d’urines]] ; [[Evaluation et prise en charge de la douleur aiguë SD-259|évaluation et prise en charge de la douleur aiguë]]''')",False
+–       Autres causes (fécalome, rétention aiguë d’urines, douleur) ('''[[Constipation SDD-001|constipation]] ; [[Rétention aigue d'urines SDD-097|rétention aiguë d’urines]] ; [[Evaluation et prise en charge de la douleur aiguë SD-259|évaluation et prise en charge de la douleur aiguë]]''')",True
 497,OIC-108-06-A,Quelle est l'option correct pour décrire l'étiologie de la forme clinique usuelle de la péricardite aiguë virale?,Etiologie virale,Bénigne dans 90% des cas,Correspond généralement à un épanchement lympocytaire non purulent,Tableau clinique typique : épisode pseudo-grippal récent,a,"{{objectif de connaissance
 |Identifiant=OIC-108-06-A
 |Item_parent=Confusion, démences. (voir item 132)
@@ -18505,7 +18505,7 @@ Comme l’immense majorité des maladies neurodégénératives, la MA est caract
 
 –       '''d’une perte des neurones''' affectés par les DNF. Cette perte cellulaire, lorsqu'elle est massive, conduit à l'atrophie des régions affectées.
 
-Connaître ces éléments de neuropathologie de la maladie d’Alzheimer permet de comprendre les biomarqueurs du liquide cérébro-spinal '''([[Analyse du liquide cérébro-spinal (lcs) SD-183|analyse du liquide cérébro-spinal (LCS)]])''' et la sémiologie IRM (cf. item 343 Connaitre les indications et les objectifs d'imagerie devant une démence ou une confusion ; cf. item 132 Diagnostic positif de la maladie d’Alzheimer).",False
+Connaître ces éléments de neuropathologie de la maladie d’Alzheimer permet de comprendre les biomarqueurs du liquide cérébro-spinal '''([[Analyse du liquide cérébro-spinal (lcs) SD-183|analyse du liquide cérébro-spinal (LCS)]])''' et la sémiologie IRM (cf. item 343 Connaitre les indications et les objectifs d'imagerie devant une démence ou une confusion ; cf. item 132 Diagnostic positif de la maladie d’Alzheimer).",True
 499,OIC-108-09-A,Les causes les plus fréquentes de tamponnade sont :,Purulente,Néoplasique,Tuberculeuse,Traumatique (car installation brutale),b,"{{objectif de connaissance
 |Identifiant=OIC-108-09-A
 |Item_parent=Confusion, démences. (voir item 132)
@@ -19020,7 +19020,7 @@ Les différentes étiologies sont évoquées à l’issue de l’anamnèse et de
 |Rubrique=Définition
 |Contributeurs=
 |Ordre=6}}
-ASTASIE ABASIE : peur panique de marcher ; si le patient est poussé à faire quelques pas, il s'agrippe à l'examinateur ou à des meubles, aux murs, au prix de postures hasardeuses à haut risque de chutes. Toute tentative de lâcher le sujet s'accompagne de réactions anxieuses majeures.",True
+ASTASIE ABASIE : peur panique de marcher ; si le patient est poussé à faire quelques pas, il s'agrippe à l'examinateur ou à des meubles, aux murs, au prix de postures hasardeuses à haut risque de chutes. Toute tentative de lâcher le sujet s'accompagne de réactions anxieuses majeures.",False
 514,OIC-109-08-B,Quelle des options ci-dessous correspond à une situation urgent nécessitant une prise en charge immédiate?,Crise aigue thyrotoxique,Cardiothyréose,Orbitopathie maligne,Forme cachectique,a,"{{objectif de connaissance
 |Identifiant=OIC-109-08-B
 |Item_parent=Troubles de la marche et de l’équilibre
@@ -19987,7 +19987,7 @@ Histoire naturelle de l’hypertrophie bénigne de la prostate : l’HBP est fr�
 
 *Le diagnostic d’[[Insuffisance rénale chronique chez l'adulte et l'enfant|'''insuffisance rénale obstructive''' 264]] compliquant l’HBP repose sur l’échographie réno-vésico-prostatique mettant en évidence une dilatation bilatérale des cavités pyélo-calicielles, avec une altération du parenchyme rénal, en amont de l’obstacle sous-vésical ainsi qu’une élévation de la créatininémie  sur le bilan biologique. Il peut exister des signes cliniques d’insuffisance rénale (œdèmes, prise de poids, HTA, nausées…)
 
-*La [[Troubles de la miction et incontinence urinaire de l'adulte et du sujet âgé|dysurie 125]] liée au symptôme de vidange vésicale s’associe à des efforts de poussées abdominales chroniques pouvant se compliquer d’une '''hernie de l’aine'''. La prise en charge est chirurgicale et doit se faire après la prise en charge de l’HBP (désobstruction).",True
+*La [[Troubles de la miction et incontinence urinaire de l'adulte et du sujet âgé|dysurie 125]] liée au symptôme de vidange vésicale s’associe à des efforts de poussées abdominales chroniques pouvant se compliquer d’une '''hernie de l’aine'''. La prise en charge est chirurgicale et doit se faire après la prise en charge de l’HBP (désobstruction).",False
 552,OIC-127-04-B,Quelle est la définition de la hématurie?,a,b,c,d,a,"{{objectif de connaissance
 |Identifiant=OIC-127-04-B
 |Item_parent=Hypertrophie bénigne de la prostate
@@ -20218,7 +20218,7 @@ Pour les patients ayant  une HBP compliquée (rétention aigue d’urine, lithi
 *Rapport AFU 2018 : hypertrophie bénigne de la prostate, G. Robert, A. De La Taille, A. Descazeau, Prog Urol  2018 28, 803—812
 *Guide de prise en charge en médecine générale des symptômes du bas appareil urinaire de l’homme liés à une hyperplasie bénigne de la prostate, A Descazeaud, N Barry
 
-Delongchamps, J-N Cornu , A R Azzouzi , D Buchon , A Benchikh , et al. Prog Urol 2015 Jun;25(7):404-12",False
+Delongchamps, J-N Cornu , A R Azzouzi , D Buchon , A Benchikh , et al. Prog Urol 2015 Jun;25(7):404-12",True
 559,OIC-132-03-A,Quelle est la fréquence principale du syndrome néphrotique à lésions glomérulaires minimes (SNLGM) chez l'enfant?,90 %,50 %,10 %,30 %,a,"{{objectif de connaissance
 |Identifiant=OIC-132-03-A
 |Item_parent=Troubles cognitifs du sujet âgé. (voir item 108)
@@ -20279,7 +20279,7 @@ mais également
 *Apathie
 *Hallucinations auditives, somesthésiques…
 *Hyposmie
-*Anxiété - dépression",False
+*Anxiété - dépression",True
 561,OIC-132-04-B,Quelle technique d'étude est utilisée pour observer la prolifération cellulaire des glomérules?,a,b,c,d,a,"{{objectif de connaissance
 |Identifiant=OIC-132-04-B
 |Item_parent=Troubles cognitifs du sujet âgé. (voir item 108)
@@ -22227,7 +22227,7 @@ Les CNR ont pour mission :
 *La contribution à '''la surveillance épidémiologique''' :
 **Par l’'''animation d’un réseau''' de laboratoires auxquels peuvent être confiés la réalisation d’examens et qui en transmettent ensuite les résultats au CNR concerné ;
 **Par la '''réalisation des analyses''' nécessaires à la surveillance des agents pathogènes ;
-*'''L’alerte''' immédiate de Santé Publique France, du ministère chargé de la santé et, le cas échéant, de l’Agence Régionale de Santé de toute constatation de nature à présenter un risque ou une menace sur l’état de santé de la population.",False
+*'''L’alerte''' immédiate de Santé Publique France, du ministère chargé de la santé et, le cas échéant, de l’Agence Régionale de Santé de toute constatation de nature à présenter un risque ou une menace sur l’état de santé de la population.",True
 604,OIC-145-14-B,Quelle est la description correcte de la méningiome?,"Souvent bénin, grade 1 OMS",Développement à partir des cellules arachnoïdiennes,Possibilité de localisations multiples (méningiomatose),Sémiologie IRM : tumeur extra parenchymateuse,a,"{{objectif de connaissance
 |Identifiant=OIC-145-14-B
 |Item_parent=Surveillance des maladies infectieuses transmissibles
@@ -24188,7 +24188,7 @@ Rechercher les facteurs favorisants
 *L’infection urinaire est parmi les infections bactériennes les plus fréquentes chez l’enfant
 *Favorisée par : immaturité avec anomalie de la vidange vésicale (rôle favorisant de la constipation) et réservoir bactérien (prépuce chez le jeune garçon)
 *Dans les premiers mois de la vie, les infections urinaires sont plus fréquentes chez les garçons (jusqu'à 20% des nourrissons de moins de 3 mois avec une fièvre isolée) que chez les filles. 
-*Souvent associée à un RVU (fonctionnel ou malformatif)",True
+*Souvent associée à un RVU (fonctionnel ou malformatif)",False
 660,OIC-162-01-A,Quelle affirmation est correcte concernant l'IRM?,L'IRM est plus sensible que le scanner,A prioriser l'IRM en cas de suspicion d'AVC ischémique,Ne pas hésiter à s'aider de l'appel à un service de neurologie vasculaire,L'IRM est plus sensible que le scanner,a,"{{objectif de connaissance
 |Identifiant=OIC-162-01-A
 |Item_parent=Infections sexuellement transmissibles (IST) : gonococcies, chlamydioses, syphilis, papillomavirus humain (HPV), trichomonose
@@ -24714,7 +24714,7 @@ Syphilis précoce : Benzathine pénicilline G dose unique IM 2,4 millions d’un
 ·      Réaction d’Herxheimer : possible pour la syphilis primaire ou secondaire, lyse des tréponèmes
 
 
-Patient VIH+ (syphilis primaire ou secondaire) : Benzathine pénicilline G dose unique IM 2,4 millions d’unités",True
+Patient VIH+ (syphilis primaire ou secondaire) : Benzathine pénicilline G dose unique IM 2,4 millions d’unités",False
 680,OIC-162-29-B,Quelle mesure est principalement liée à l'identification des sujets en crise suicidaire?,Identifier précocement et traiter,Rechercher à l'identité des personnes à risque,Présenter aux professionnels,Rechercher à l'identité des personnes à risque,a,"{{objectif de connaissance
 |Identifiant=OIC-162-29-B
 |Item_parent=Infections sexuellement transmissibles (IST) : gonococcies, chlamydioses, syphilis, papillomavirus humain (HPV), trichomonose
@@ -25380,7 +25380,7 @@ Voir [[Connaître les principes de prescription d’une réhydratation orale et 
 |Rubrique=Identification de l’urgence
 |Contributeurs=
 |Ordre=17}}
-Voir [[Connaître les principes de prescription d’une réhydratation orale et intraveineuse. Connaître les traitements symptomatiques de la diarrhée aiguë 2C-176-PC-A01]]",False
+Voir [[Connaître les principes de prescription d’une réhydratation orale et intraveineuse. Connaître les traitements symptomatiques de la diarrhée aiguë 2C-176-PC-A01]]",True
 702,OIC-179-01-B,Quelle est la logique de protection sociale mentionnée dans le contenu éducatif?,La logique d'assurance sociale obligatoire,La logique d'assistance sociale,La logique de protection universelle,La logique de prévoyance individuelle,c,"{{objectif de connaissance
 |Identifiant=OIC-179-01-B
 |Item_parent=Risques sanitaires liés à l’eau et à l’alimentation. Toxi-infections alimentaires
@@ -25675,7 +25675,7 @@ Les deux missions principales des SPST sont :
 *le '''conseil aux salariés et aux employeurs''' sur l’évaluation et la gestion des risques professionnels
 *et le '''suivi de santé des salariés'''.
 
-Ils ont aussi un rôle de '''promotion de la santé'''.",True
+Ils ont aussi un rôle de '''promotion de la santé'''.",False
 709,OIC-183-04-A,Quel terme désigne un facteur de risque dans une étude pronostique?,facteur d’exposition,facteur étiologique,facteur pronostique,facteur de risque,c,"{{objectif de connaissance
 |Identifiant=OIC-183-04-A
 |Item_parent=Organisation de la médecine du travail. Prévention des risques professionnels
@@ -26797,7 +26797,7 @@ Chez un patient immunodéprimé la fièvre est toujours une urgence et doit fair
 
 *Phase précoce (< 1 mois) infections sont le plus souvent nosocomiales (pneumopathies, infections urinaires, toxoplasmose acquise via le greffon...)
 *Phase intermédiaire (1 à 6 mois) : déficit cellulaire majeur : CMV, Pneumocystis jirovecii +++, toxoplasmose (réactivation)
-*Phase tardive (>6 mois) : déficit cellulaire persistant mais moins profond",True
+*Phase tardive (>6 mois) : déficit cellulaire persistant mais moins profond",False
 753,OIC-191-08-B,Quel est le risque de transmettre la maladie à la descendance si le conjoint est hétérozygote?,a,b,c,d,c,"{{objectif de connaissance
 |Identifiant=OIC-191-08-B
 |Item_parent=Fièvre chez un patient immunodéprimé
@@ -27389,7 +27389,7 @@ Le traitement comprend : repos, glaçage, AINS, voire corticothérapie orale (30
 |Rubrique=Prise en charge
 |Contributeurs=
 |Ordre=23}}
-Le traitement comprend : repos, glaçage, AINS, voire corticothérapie orale (30 mg par jour) en cure courte de 3 à 5 jours. Les injections cortisoniques locales sont efficaces mais doivent être réalisées en seconde intention puisque l'évolution spontanée favorable est la règle.",True
+Le traitement comprend : repos, glaçage, AINS, voire corticothérapie orale (30 mg par jour) en cure courte de 3 à 5 jours. Les injections cortisoniques locales sont efficaces mais doivent être réalisées en seconde intention puisque l'évolution spontanée favorable est la règle.",False
 778,OIC-201-05-A,Quelle est la recommandation pour l'adulte en cas de testicule non palpé?,car il n'y a pas de place pour les examens complémentaires,car il n'y a pas de place pour les examens complémentaires,car la cryptorchidie est un facteur de risque important,car il n'y a pas de place pour les examens complémentaires,c,"{{objectif de connaissance
 |Identifiant=OIC-201-05-A
 |Item_parent=Transplantation d’organes : aspects épidémiologiques et immunologiques ; principes de traitement et surveillance ; complications et pronostic ; aspects éthiques et légaux. Prélèvements d’organes et législation
@@ -27922,7 +27922,7 @@ Les principales causes de masse médiastinale chez l'enfant sont listées selon 
 |-
 |Méningocèles
 |}
- ",False
+ ",True
 792,OIC-208-02-A,Quelle est l'une des indications principales de la thérapie familiale / systémique?,Troubles liés à l’usage de substances,Programmes d’entraînement des habiletés parentales et familiales,Troubles du comportement alimentaire,Éducation thérapeutique,c,"{{objectif de connaissance
 |Identifiant=OIC-208-02-A
 |Item_parent=Insuffisance respiratoire chronique
@@ -28453,7 +28453,7 @@ La stratégie thérapeutique de l’ischémie aiguë vise à :
 **Ne pas oublier de prendre en charge un bas débit cardiaque, une hypovolémie, des troubles du rythme.
 *'''prévenir et traiter les conséquences générales de l’ischémie et de la revascularisation''' La lyse cellulaire induite par l’ischémie, entraine lors de la revascularisation le rejet dans la circulation sanguine de potassium et de myoglobine. Elle entraine une acidose métabolique, une insuffisance rénale aiguë, un syndrome de détresse respiratoire, des troubles du rythme cardiaque favorisés par l’hyperkaliémie et l’acidose pouvant aboutir à un arrêt cardiaque.
 *'''lutter contre la douleur :''' les antalgiques de niveau 3 sont nécessaires d’emblée, et doivent être adaptés à la douleur après la revascularisation.
-*'''protéger le membre ischémique :''' le risque de survenue très rapide d’escarres et de lésions cutanées impose un nursing immédiat, prolongé jusqu’à la revascularisation. Il est important de protéger le membre, d’éviter tout point de compression et de proscrire tout adhésif sur la peau ischémique.",False
+*'''protéger le membre ischémique :''' le risque de survenue très rapide d’escarres et de lésions cutanées impose un nursing immédiat, prolongé jusqu’à la revascularisation. Il est important de protéger le membre, d’éviter tout point de compression et de proscrire tout adhésif sur la peau ischémique.",True
 812,OIC-225-12-A,Quelle est une complication de l'entropion?,c,a,b,d,c,"{{objectif de connaissance
 |Identifiant=OIC-225-12-A
 |Item_parent=Artériopathie de l’aorte, des artères viscérales et des membres inférieurs ; anévrysmes
@@ -31597,7 +31597,7 @@ Les classes de traitements antidiabétiques actuellement en vente en France sont
 
 - éviter les AINS [[Principe du bon usage du médicament et des thérapeutiques non médicamenteuses]] 
 
-- limiter les injections de produits de contraste iodés",True
+- limiter les injections de produits de contraste iodés",False
 914,OIC-254-01-B,Quel est le type de test utilisé pour détecter une allergie respiratoire?,Tests avec mélanges de pneumallergènes,Tests avec mélanges de trophallergènes,Tests avec mélanges de allergènes,Tests avec mélanges de toxines,a,"{{objectif de connaissance
 |Identifiant=OIC-254-01-B
 |Item_parent=Besoins nutritionnels de la femme enceinte
@@ -32310,7 +32310,7 @@ Mésangiaux  ± capillaires ± extramembraneux selon la classe de la néphropath
 ±  extracapillaire
 |C3  en « ciel étoilé »,  +/- Ig, humps
 |}
-<br />",True
+<br />",False
 931,OIC-261-08-A,Quelles formes sont possibles pour la goutteux?,Aucune forme polyarticulaire ou oligoarticulaire,Une forme polyarticulaire ou oligoarticulaire,Une forme polyarticulaire ou oligoarticulaire,Aucune forme polyarticulaire ou oligoarticulaire,b,"{{objectif de connaissance
 |Identifiant=OIC-261-08-A
 |Item_parent=Néphropathie glomérulaire
@@ -35652,7 +35652,7 @@ Une erreur médicamenteuse peut avoir pour conséquence :
 
 *Un événement indésirable entraînant un dommage pour le patient
 *Un presque accident, au cours duquel le patient a failli subir un dommage
-*Aucun dommage ni risque de dommage",True
+*Aucun dommage ni risque de dommage",False
 1032,OIC-325-15-A,Une hyperkaliémie peut être liée (tableau 4) :,à un excès d’apport en cas d’insuffisance rénale ,à un transfert exagéré du compartiment intracellulaire vers le compartiment extracellulaire ,à une diminution de la capacité d’excrétion rénale ,à une insuffisance surrénalienne ,a,"{{objectif de connaissance
 |Identifiant=OIC-325-15-A
 |Item_parent=Identification et gestion des risques liés aux médicaments et aux biomatériaux, risque iatrogène, erreur médicamenteuse (voir items 4 et 5)
@@ -36129,7 +36129,7 @@ Dans les trois premières situations, la balance bénéfice risque est évaluée
 
 Une nouvelle règlementation européenne (règlement UE 2017/745) datant de mai 2021 vise à en uniformiser au sein de l’Union Européenne la mise sur le marché et la mise en service des dispositifs médicaux (sans en règlementer les prix et les remboursements par les organismes sociaux).
 
-<br />",False
+<br />",True
 1042,OIC-328-03-B,Quels examens sont requis pour les causes urologiques et rénales?,Un scanner abdomino-rénal non injecté,Une échographie abdominale et pelvienne,Un scanner thoraco-abdomino-pelvien ou à défaut,Aucun examen complémentaire,b,"{{objectif de connaissance
 |Identifiant=OIC-328-03-B
 |Item_parent=Thérapeutiques non médicamenteuses et dispositifs médicaux
@@ -36232,7 +36232,7 @@ Peut être du petit ou du grand appareillage.
 |Contributeurs=Bisseriex Hélène,De Boissezon Xavier
 |Ordre=7}}
 
--       '''cf « Petit et grand appareillage »'''",False
+-       '''cf « Petit et grand appareillage »'''",True
 1046,OIC-328-08-A,Quelle des mesures mentionnées est associée à la prise en charge psychologique?,PEG (dès 6 mois),Diet hygiéno-diététique,Psychologique,Vérification de la reconstitution des biberons,c,"{{objectif de connaissance
 |Identifiant=OIC-328-08-A
 |Item_parent=Thérapeutiques non médicamenteuses et dispositifs médicaux
@@ -36928,7 +36928,7 @@ o  Evaluation spécialisée en secteur de réanimation, comportant notamment l�
 
 <gallery widths=""300"" heights=""300"">
 Fichier:Algorithme choc septique.pdf
-</gallery>",False
+</gallery>",True
 1055,OIC-332-11-B,Quand est recommandé un dépistage individuel adapté à leur niveau de risque?,A. Tous les ans dès l’âge de 25 ans,B. À 100 % par l'assurance maladie,C. En absence de signe clinique déjà identifié,D. À 100 % par l'assurance maladie,c,"{{objectif de connaissance
 |Identifiant=OIC-332-11-B
 |Item_parent=État de choc. Principales étiologies : hypovolémique, septique (voir item 158), cardio-génique, anaphylactique
@@ -37779,7 +37779,7 @@ Cf item 2C-015",False
 
 * Suicidant : individu survivant à sa TS
 * Suicidaire : individu ayant des idées suicidaires exprimées ou non
-* Suicidé : l’individu qui s’est donné la mort volontairement.",False
+* Suicidé : l’individu qui s’est donné la mort volontairement.",True
 1087,OIC-353-02-A,Quelle est l'anomalie de contraction détrusorienne ou sphinctérienne?,Vessie claquée,Déficit moteur et/ou sensitif des membres,Compression médullaire non traumatique et syndrome de la queue de cheval,Iatrogène : analgésie péridurale,c,"{{objectif de connaissance
 |Identifiant=OIC-353-02-A
 |Item_parent=Risque et conduite suicidaires chez l’enfant, l’adolescent et l’adulte : identification et prise en charge

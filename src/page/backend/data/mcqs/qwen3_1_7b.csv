@@ -341,7 +341,7 @@ Le fait générateur de responsabilité doit donc être une faute prouvée. Cett
 
 - la violation d’un devoir d’humanisme, qui renvoie à la dimension « humaine » de la pratique médicale, et peut notamment résulter de l’atteinte au secret professionnel ou d’un défaut d’information ne permettant pas un consentement libre et éclairé.
 
-Dans certains cas, le fait générateur peut prendre d’autres formes : il peut s’agir du défaut d’un produit de santé, le produit étant considéré comme défectueux lorsqu’il n’offre pas la sécurité à laquelle on peut légitimement s’attendre.",True
+Dans certains cas, le fait générateur peut prendre d’autres formes : il peut s’agir du défaut d’un produit de santé, le produit étant considéré comme défectueux lorsqu’il n’offre pas la sécurité à laquelle on peut légitimement s’attendre.",False
 10,OIC-005-09-A,Quelle est la définition du parcours de soins?,Le parcours de soins est la suite de soins administrés à un patient sans coordination.,Le parcours de soins est la coordination des compétences professionnelles tout au long de la prise en charge d'un patient.,Le parcours de soins est la liste des médicaments prescrits à un patient.,Le parcours de soins est la durée de traitement d'un patient.,b,"{{objectif de connaissance
 |Identifiant=OIC-005-09-A
 |Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
@@ -1826,7 +1826,7 @@ Au plan éthique, un refus de traitement ne saurait être considéré comme un r
 
 [[Refus de soin OIC-009-07-A#sdfootnote6anc|6]]	La fin de vie est définie par la loi n° 2005-370 du 22 avril 2005	comme « la phase avancée ou terminale d’une affection grave	et incurable quelle qu’en soit la cause ».
 
-[[Refus de soin OIC-009-07-A#sdfootnote7anc|7]]	Voir P. Ricoeur, « Accompagner la vie jusqu’à la mort »	rééd. dans ''Esprit'',	n° 323, mars-avril 2006, p. 316-321.",True
+[[Refus de soin OIC-009-07-A#sdfootnote7anc|7]]	Voir P. Ricoeur, « Accompagner la vie jusqu’à la mort »	rééd. dans ''Esprit'',	n° 323, mars-avril 2006, p. 316-321.",False
 44,OIC-009-08-A,Qui est le pivot du parcours de soins coordonnés?,Le médecin généraliste,Le médecin spécialiste,Le médecin traitant,Le médecin hospitalier,c,"{{objectif de connaissance
 |Identifiant=OIC-009-08-A
 |Item_parent=Introduction à l’éthique médicale
@@ -2166,7 +2166,7 @@ De même, la clause de conscience que peuvent faire valoir les professionnels de
 
 Certaines personnes et organisations se sont donné pour but d’entraver par différents moyens l’accès à l’IVG, par exemple en diffusant des fausses informations, en intimidant les professionnels de santé et en faisant pression sur les établissements de santé. Le « délit d’entrave à l’IVG » qui existait depuis 1993 a été précisé et élargi en 2017, et ces actes sont passibles de lourdes sanctions. En parallèle, des initiatives ont été prises par les pouvoirs publics pour permettre l’accès à des informations fiables (numéro vert 0800 08 11 11 ; Site officiel <nowiki>https://ivg.gouv.fr/</nowiki>). 
 
-Il reste que l’accès ''effectif'' à l'IVG, pour toutes les femmes qui le souhaitent, où qu’elles soient, reste fragile. D’autant que le principe même de ce droit est loin d'être reconnu partout, et même remis en question dans des pays où il semblait pourtant acquis (comme l’a montré l’exemple récent des États-Unis).",True
+Il reste que l’accès ''effectif'' à l'IVG, pour toutes les femmes qui le souhaitent, où qu’elles soient, reste fragile. D’autant que le principe même de ce droit est loin d'être reconnu partout, et même remis en question dans des pays où il semblait pourtant acquis (comme l’a montré l’exemple récent des États-Unis).",False
 52,OIC-009-14-B,Quelle est la définition d'une variable aléatoire?,Une fonction qui attribue un nombre à toutes les issues possibles d'un événement.,"Une fonction qui attribue un nombre à toutes les issues possibles d'un événement, mais qui ne peut pas être déterminée.","Une fonction qui attribue un nombre à toutes les issues possibles d'un événement, mais qui est toujours continue.","Une fonction qui attribue un nombre à toutes les issues possibles d'un événement, mais qui est toujours discrète.",a,"{{objectif de connaissance
 |Identifiant=OIC-009-14-B
 |Item_parent=Introduction à l’éthique médicale
@@ -2798,7 +2798,7 @@ Bien des questions demeurent encore, malgré toute l'attention portée aux sujet
 *Depuis	2012, il existe un cadre législatif unique pour toutes les	recherches impliquant la personne. Les recherches sont classées en	trois types selon le caractère interventionnel ou non de cette	recherche et selon le risque encouru.
 *Le	rôle des acteurs impliqués dans un protocole de recherche est bien	défini (investigateur, promoteur).
 *Les	Comités de protection des personnes ont un rôle important et	rendent un avis décisionnel.
-*L'autorité	compétente est l'Agence nationale de sécurité du médicament.",False
+*L'autorité	compétente est l'Agence nationale de sécurité du médicament.",True
 64,OIC-009-23-A,Quelle est la définition d'interaction dans le contexte de la recherche en santé?,Un facteur qui ne modifie pas l'association entre une exposition et un phénomène de santé,Une variation de l'effet d'une exposition en fonction d'un autre facteur,Un facteur qui est un confondu,Un facteur qui est un médiateur,b,"{{objectif de connaissance
 |Identifiant=OIC-009-23-A
 |Item_parent=Introduction à l’éthique médicale
@@ -3378,7 +3378,7 @@ Lorsqu’il est question du corps humain, les sciences humaines distinguent le p
 
 '''Les risques sociaux''' sont des situations susceptibles de compromettre la sécurité financière d'un individu ou de sa famille en provoquant une baisse de ses ressources ou une hausse des dépenses (vieillesse, maladie, chômage, charges de famille, etc.).
 
-'''Quatre logiques de protection sociale coexistent :''' la '''logique d'assurance sociale obligatoire''' vise à prémunir les assurés contre une perte de revenus liée aux risques sociaux. L'assurance sociale repose sur des mécanismes de transfert de type contribution/prestations : les prestations sociales sont financées par des cotisations sociales prélevées sur les revenus et sont réservées à ceux qui cotisent ou à leurs ayants droit. La '''logique d'assistance sociale''' permet d'instaurer une solidarité entre les individus pour lutter contre la pauvreté et l'exclusion. La prestation assure un revenu minimum et ne couvre pas forcément un risque spécifique (par exemple, dans le cadre de ce qui est appelé les minima sociaux comme le revenu de solidarité active [RSA], l’allocation adulte handicapé [AAH] ou le fonds de solidarité vieillesse [FSV]). '''La logique de protection universelle''' couvre certaines catégories de dépenses pour tous les individus. Les prestations sont accordées sans condition de ressources et sont identiques pour tous (cas des prestations familiales). La '''logique de prévoyance individuelle''' repose sur l'épargne (par exemple décision d'achat d'implants dentaires) et l'assurance privée, tandis que '''la prévoyance collective''' repose sur la mutualisation des risques.",False
+'''Quatre logiques de protection sociale coexistent :''' la '''logique d'assurance sociale obligatoire''' vise à prémunir les assurés contre une perte de revenus liée aux risques sociaux. L'assurance sociale repose sur des mécanismes de transfert de type contribution/prestations : les prestations sociales sont financées par des cotisations sociales prélevées sur les revenus et sont réservées à ceux qui cotisent ou à leurs ayants droit. La '''logique d'assistance sociale''' permet d'instaurer une solidarité entre les individus pour lutter contre la pauvreté et l'exclusion. La prestation assure un revenu minimum et ne couvre pas forcément un risque spécifique (par exemple, dans le cadre de ce qui est appelé les minima sociaux comme le revenu de solidarité active [RSA], l’allocation adulte handicapé [AAH] ou le fonds de solidarité vieillesse [FSV]). '''La logique de protection universelle''' couvre certaines catégories de dépenses pour tous les individus. Les prestations sont accordées sans condition de ressources et sont identiques pour tous (cas des prestations familiales). La '''logique de prévoyance individuelle''' repose sur l'épargne (par exemple décision d'achat d'implants dentaires) et l'assurance privée, tandis que '''la prévoyance collective''' repose sur la mutualisation des risques.",True
 78,OIC-019-02-A,Quelle est la dose recommandée d'oxytocine (APO) administrée lors de la délivrance dirigée?,10 UI IVL,5 UI IVL,20 UI IVL,15 UI IVL,b,"{{objectif de connaissance
 |Identifiant=OIC-019-02-A
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -3683,7 +3683,7 @@ La LFSS est votée par le Parlement tous les ans, en même temps que la loi de f
 Depuis 1996, le Parlement a donc un droit de regard sur l’équilibre financier de la sécurité sociale. Il peut se prononcer sur les grandes orientations des politiques de santé et de sécurité sociale, ainsi que sur leur mode de financement.
 
 Pour donner des exemples, on peut citer comme nouvelles mesures l’allongement du congé paternité avec 28 jours au lieu de 14 jours et est obligatoire pour 7 jours ; la revalorisation des salaires des personnels hospitaliers et des Etablissements d’hébergement pour les personnes âgées dépendantes (EHPAD) ;  le financement des dépenses de tests, vaccins et masques pour répondre à la crise sanitaire et la creation d’une 5ème branche de la sécurité sociale pour le soutien à l’autonomie.
-----[1] <nowiki>https://www.gouvernement.fr/presentation-du-projet-de-loi-de-financement-de-la-securite-sociale-2022</nowiki>",False
+----[1] <nowiki>https://www.gouvernement.fr/presentation-du-projet-de-loi-de-financement-de-la-securite-sociale-2022</nowiki>",True
 86,OIC-019-07-B,Quelle est la définition de la menace d'accouchement prématuré (MAP)?,Association de modifications cervicales et de contractions utérines régulières et douloureuses avant 37 SA,Modifications cervicales et contractions utérines régulières et douloureuses avant 22 SA,Contractions utérines et modifications cervicales avant 36 SA + 6 jours,Modifications cervicales et contractions utérines avant 37 SA,a,"{{objectif de connaissance
 |Identifiant=OIC-019-07-B
 |Item_parent=La sécurité sociale. L’assurance maladie. Les assurances complémentaires. La complémentaire santé solidaire (CSS). La consommation médicale. Protection sociale. Consommation médicale et économie de la santé
@@ -4833,7 +4833,7 @@ Modalités de '''recrutement''' : guidées par la nécessité d’avoir l<u>a me
 
 '''Taux d’incidence''' : nombre de nouveaux cas pendant une certaine période, au sein d’une population, rapporté à la somme des personnes-temps (temps de suivi de chaque individu de la population susceptible de tomber malade pendant la période observée, le suivi étant comptabilisé jusqu’à l’apparition de la maladie, la fin de la période d’observation, le décès ou perdu de vue).
 
-Les estimations de ces paramètres à partir d’un échantillon doivent s’accompagner de leur '''intervalle de confiance'''.",True
+Les estimations de ces paramètres à partir d’un échantillon doivent s’accompagner de leur '''intervalle de confiance'''.",False
 117,OIC-020-21-B,Quel est le principal moyen de repérer les conduites addictives pendant la grossesse?,L'analyse des résultats des tests sanguins,L'observation des comportements pendant les soirées,Les entretiens réalisés pendant la grossesse,L'examen médical régulier,c,"{{objectif de connaissance
 |Identifiant=OIC-020-21-B
 |Item_parent=La méthodologie de la recherche en santé
@@ -5037,7 +5037,7 @@ Le Risque Relatif (RR) et l’Odds Ratio (OR) mesurent l’intensité du lien en
 
 '''OR''' : rapport de cotes d’être ou non malade selon l’existence ou l’absence d’exposition. Il peut être interprété comme un risque relatif lorsque le critère de jugement étudié est rare dans la population cible.  Un OR peut être estimé quel que soit le schéma d’étude, <u>dont les études cas-témoins.</u>
 
-Comme toujours, les estimations de ces paramètres à partir d’un échantillon doivent s’accompagner de leur '''intervalle de confiance'''.",True
+Comme toujours, les estimations de ces paramètres à partir d’un échantillon doivent s’accompagner de leur '''intervalle de confiance'''.",False
 122,OIC-020-24-A,Quel est un facteur de risque d'infection néonatale bactérienne précoce (INBP)?,Colonisation maternelle à SGB,Antécédent d'infection néonatale à SGB,Fièvre maternelle > 38.0°C en per-partum ou dans les 2 heures suivant l'accouchement,Rupture des membranes > 12h,a,"{{objectif de connaissance
 |Identifiant=OIC-020-24-A
 |Item_parent=La méthodologie de la recherche en santé
@@ -6373,7 +6373,7 @@ Penser également à +++ :
 
 •       surveillance clinique (pas de nouvelle échographie du col nécessaire)
 
-•       ''Pas d’hospitalisation prolongée'' mais suivi à domicile possible (SF libérale ou HAD)",False
+•       ''Pas d’hospitalisation prolongée'' mais suivi à domicile possible (SF libérale ou HAD)",True
 167,OIC-024-21-B,Quelle est l'urgence associée à la leucocorie dans les premiers mois de vie?,Urgence immédiate,Urgence retardée,Aucune urgence,Urgence uniquement chez les enfants âgés,a,"{{objectif de connaissance
 |Identifiant=OIC-024-21-B
 |Item_parent=Principales complications de la grossesse.
@@ -6549,7 +6549,7 @@ Dans tous les cas, on réalisera :
 
 - Listériose : '''''En cas de confirmation d’infection à Listeria'' ''monocytogenes : amoxicilline 6 g/j par voie IV, si allergie : érythromycine per os ou vancomycine IV''''' 
 
-<br />",True
+<br />",False
 172,OIC-026-01-B,Quelle méthode est considérée comme subjective dans le dépistage de l'audition chez l'enfant?,Audiométrie tonale,Potentiels évoqués auditifs (PEAA),Test de l'oeil,Examen physique,a,"{{objectif de connaissance
 |Identifiant=OIC-026-01-B
 |Item_parent=Douleur abdominale aiguë chez une femme enceinte
@@ -8020,7 +8020,7 @@ En cas d'oubli d'administration des immunoglobulines dans les premières 72 heur
 
 En cas d'injection systématique d'immunoglobulines anti-D chez la mère à 28 SA, le test de Coombs peut être positif chez le nouveau-né RhD + (près de 10 % des cas). En l'absence de symptomatologie associée (ictère, anémie), aucune exploration complémentaire n'est à prévoir (élution, identification des anticorps fixés). Un contact avec le néonatalogiste est utile.
 
-'''312. [[Prévention des risques fœtaux SD-312|Prévention des risques foetaux]]'''",False
+'''312. [[Prévention des risques fœtaux SD-312|Prévention des risques foetaux]]'''",True
 218,OIC-027-30-A,Quel est le âge minimal recommandé pour opérer de la cryptorchidie?,1 an,2 ans,3 ans,4 ans,a,"{{objectif de connaissance
 |Identifiant=OIC-027-30-A
 |Item_parent=Prévention des risques fœtaux : infection, médicaments, toxiques, irradiation
@@ -9279,7 +9279,7 @@ La maturation du nouveau-né s’évalue cliniquement par des critères morpholo
 ## Tonus actif :  - manœuvre du tiré-assis ;  - redressement complet.
 # '''Automatismes primaires (ou réflexes archaïques)'''   Présents chez le nouveau-né à terme : succion, points cardinaux, agrippement, réflexe de moro, allongement croisé, marche automatique.  Absence toujours pathologique. Disparition entre 2 et 4 mois de vie.
 
-<br />",True
+<br />",False
 247,OIC-032-02-B,Quel effet indésirable est le plus fréquent chez les patients pris des antipsychotiques?,Sédation,Confusion,Hyperleucocytose,Crise d’épilepsie,a,"{{objectif de connaissance
 |Identifiant=OIC-032-02-B
 |Item_parent=Évaluation et soins du nouveau-né à terme
@@ -9451,7 +9451,7 @@ Un strabisme intermittent et alternant peut témoigner d’un retard de l’acqu
 # '''Conseils pratiques aux parents'''  -Conseils de base de puériculture ;  - Suivi médical régulier (14 examens médicaux au cours des 3 premières années dont 1 la première semaine, 1 la deuxième semaine et un par mois jusqu’à 6 mois) ;  - Mesures de prévention (mort inattendue du nourrisson, transmission des infections, accidents domestiques) '''(Prévention de la [[Mort inattendue du nourrisson : définitions 2C-345-DE-A01|mort]] inexpliquée du nourrisson, [[Prévention des accidents domestiques SD-325|Prévention des accidents domestiques]])''' ;  - Risques liés au tabagisme passif ;  - Consultation médicale rapide en cas de fièvre avant 3 mois, difficultés alimentaires, gêne respiratoire, diarrhées, vomissements, comportement inhabituel ('''[[Détresse respiratoire aiguë SD-160|Détresse respiratoire aiguë]]''') ;  - Vaccinations : vérifier la vaccination anti coqueluche des parents et informer du calendrier vaccinal de l’enfant ('''[[Vaccinations de l'adulte et de l'enfant SD-322|Vaccinations]] de l'adulte et de l'enfant)''' ;  - Protection du soleil ;  - Information sur le syndrome du bébé secoué ('''Suspicion [[Maltraitance et enfants en danger. Protection maternelle et infantile|maltraitance]] et enfance en danger)'''
 # '''Sortie de la maternité'''  - Mise à jour du carnet de santé (l’examen clinique, la date de réalisation des dépistages obligatoires, le régime choisi et le poids de sortie doivent être consignés) ;  - Ordonnance de sortie : Supplémentation vitaminique (vitamine D+/- vitamine K), soins du cordon ombilical jusqu’à sa chute, régime alimentaire ;  - Consultation par un pédiatre recommandée la deuxième semaine de vie ;  - Pesée hebdomadaire le premier mois.
 
-<br />",False
+<br />",True
 253,OIC-032-08-B,Quelle classe de hypnotiques est mentionnée comme étant proche des anxiolytiques?,Les benzodiazépines,Les antihistaminiques,Les z-drugs,Les antipsychotiques,a,"{{objectif de connaissance
 |Identifiant=OIC-032-08-B
 |Item_parent=Évaluation et soins du nouveau-né à terme
@@ -9563,7 +9563,7 @@ Il faut savoir que 2/3 des femmes ayant recours à une IVG avaient une contracep
 |Contributeurs=Arthur Foulon,Philippe Deruelle,Aubert Agostini
 |Ordre=3}}
 
-Globalement le nombre d’IVG varie entre 200 000 et 250 000 par an en France. Ce chiffre est stable depuis 2006. En moyenne, 2 femmes sur 5 sont concernées au cours de leur vie.",True
+Globalement le nombre d’IVG varie entre 200 000 et 250 000 par an en France. Ce chiffre est stable depuis 2006. En moyenne, 2 femmes sur 5 sont concernées au cours de leur vie.",False
 259,OIC-037-03-B,Quelles sont les deux substances de la classe des psychostimulants non amphétamines utilisées en thérapeutique en France?,Méthylphénidate et modafinil,Amphetamine et clonidine,Dextromethorphan et pseudoephédrine,Benzodiazépines et barbiturates,a,"{{objectif de connaissance
 |Identifiant=OIC-037-03-B
 |Item_parent=Interruption volontaire de grossesse
@@ -9599,7 +9599,7 @@ Ce sont les femmes âgées de 20-29 ans qui ont le plus souvent accès à l’IV
 |Contributeurs=Arthur Foulon,Philippe Deruelle,Aubert Agostini
 |Ordre=4}}
 
-Ce sont les femmes âgées de 20-29 ans qui ont le plus souvent accès à l’IVG. En France, le taux de recours à l’IVG dans cette tranche d’âge est de 27,9 IVG pour 1000 femmes. A noter que le nombre d’IVG chez les personnes mineures n’augmente pas depuis 2005.",True
+Ce sont les femmes âgées de 20-29 ans qui ont le plus souvent accès à l’IVG. En France, le taux de recours à l’IVG dans cette tranche d’âge est de 27,9 IVG pour 1000 femmes. A noter que le nombre d’IVG chez les personnes mineures n’augmente pas depuis 2005.",False
 262,OIC-037-05-A,Quel pourcentage des cancers est attribué au tabac?,25 %,50 %,75 %,100 %,a,"{{objectif de connaissance
 |Identifiant=OIC-037-05-A
 |Item_parent=Interruption volontaire de grossesse
@@ -10026,7 +10026,7 @@ Les facteurs de risque d’IVG itératives sont :
 
 Les méthodes contraceptives réversibles à longue durée d'action, dispositifs intra-utérins et implant pourraient mieux prévenir la répétition des IVG. Il faut également s’atteler à dépister les violences passées ou en cours.
 
-<br />",False
+<br />",True
 272,OIC-038-01-A,Quelle est la corrélation entre le revenu et la prévalence du tabagisme quotidien en France selon le texte?,"Plus le revenu augmente, plus la prévalence du tabagisme quotidien est élevée","Plus le revenu augmente, plus la prévalence du tabagisme quotidien est faible",Le revenu n'a pas d'impact sur la prévalence du tabagisme quotidien,Le tabac est un marqueur social mais pas un indicateur de revenu,b,"{{objectif de connaissance
 |Identifiant=OIC-038-01-A
 |Item_parent=Infertilité du couple : conduite de la première consultation
@@ -10748,7 +10748,7 @@ Spz typiques ≥ 23% (selon classification de  David modifiée)
 |Leucocytes
 |N < 1 million/mL
 |↑ Leucospermie
-|}",True
+|}",False
 281,OIC-038-08-B,Quel est l'élément clé de la technique des 5A en consultation de tabacologie?,Demander si la personne fume,Évaluer son tabagisme,Conseiller à chaque fumeur d'arrêter de fumer,Proposer un support écrit d'information,c,"{{objectif de connaissance
 |Identifiant=OIC-038-08-B
 |Item_parent=Infertilité du couple : conduite de la première consultation
@@ -12032,7 +12032,7 @@ Le parent atteint de mucoviscidose transmettra obligatoirement une des deux muta
 |Contributeurs=Claude Férec,Elise Launay,Caroline Schluth-Bolard
 |Ordre=13}}
 [[Fichier:Depistage muco.png|vignette|548x548px|Organisation du dépistage néonatal de la mucoviscidose]]
-Le dépistage de la mucoviscidose est réalisé au troisième jour de vie à partir d’un prélèvement d’une tâche de sang au talon du nouveau-né ([[Dépistage néonatal systématique SD-308|dépistage néonatal systématique]]). Ce test associe un dosage biochimique de la trypsine immuno-réactive (TIR) (marqueur sensible de l’atteinte pancréatique mais peu spécifique) à la recherche des mutations les plus fréquentes du gène ''CFTR''. L’association d’une TIR élevée et de deux mutations causales chez le nouveau-né signe le diagnostic. Le dépistage de la maladie permet la prise en charge précoce dans des centres spécialisés (CRCM) et un conseil génétique éclairé.",True
+Le dépistage de la mucoviscidose est réalisé au troisième jour de vie à partir d’un prélèvement d’une tâche de sang au talon du nouveau-né ([[Dépistage néonatal systématique SD-308|dépistage néonatal systématique]]). Ce test associe un dosage biochimique de la trypsine immuno-réactive (TIR) (marqueur sensible de l’atteinte pancréatique mais peu spécifique) à la recherche des mutations les plus fréquentes du gène ''CFTR''. L’association d’une TIR élevée et de deux mutations causales chez le nouveau-né signe le diagnostic. Le dépistage de la maladie permet la prise en charge précoce dans des centres spécialisés (CRCM) et un conseil génétique éclairé.",False
 314,OIC-045-15-A,Quelle est l'étiologie principale des rachialgies secondaires?,Tumorales (métastases),Infectieuses (spondylodiscite),Inflammatoires (spondylarthrite ankylosante),Traumatiques (fracture vertébrale),a,"{{objectif de connaissance
 |Identifiant=OIC-045-15-A
 |Item_parent=Spécificités des maladies génétiques. (voir item 9)
@@ -12975,7 +12975,7 @@ Dentition adulte
 * Incisive centrale et première molaire vers 6 ans
 * Première pré-molaire vers 10-11 ans
 * Canine vers 11-12 ans
-* 3ème molaire vers 18 ans",True
+* 3ème molaire vers 18 ans",False
 349,OIC-047-20-B,Quelle est la définition de l'exotropie?,déviation vers l’intérieur,déviation vers l’extérieur,déviation vers le haut,déviation vers le bas,b,"{{objectif de connaissance
 |Identifiant=OIC-047-20-B
 |Item_parent=Suivi d’un nourrisson, d’un enfant et d’un adolescent normal. Dépistage des anomalies orthopédiques, des troubles visuels, auditifs et dentaires. Examens de santé obligatoires. Médecine scolaire. Mortalité et morbidité infantiles
@@ -13795,7 +13795,7 @@ Dessins Tanner Filles et Garçons",False
 |Rubrique=Physiopathologie
 |Contributeurs=
 |Ordre=5}}
-L'accélération de la vitesse de croissance staturale débute dès les premiers signes pubertaires chez la fille (S2), de façon décalée chez le garçon (G3). Le pic de croissance pubertaire moyen est de 20-25 cm chez les filles et 25-30 cm chez les garçons.",False
+L'accélération de la vitesse de croissance staturale débute dès les premiers signes pubertaires chez la fille (S2), de façon décalée chez le garçon (G3). Le pic de croissance pubertaire moyen est de 20-25 cm chez les filles et 25-30 cm chez les garçons.",True
 392,OIC-049-05-B,Quel est l'âge médian de la ménopause naturelle dans la population européenne?,50 ans,51 ans et demi,45 ans,52 ans,a,"{{objectif de connaissance
 |Identifiant=OIC-049-05-B
 |Item_parent=Puberté normale et pathologique
@@ -13980,7 +13980,7 @@ La puberté précoce est une situation pathologique, définie par un développem
 
 '''Examen clinique''' : Examen complet, stade pubertaire (Tanner), taches cutanées, signes d’hyperandrogénie (acné, hirsutisme, hyperséborrhée, hypertrophie clitoridienne). 
 
-<br />",False
+<br />",True
 403,OIC-049-11-A,Quelle affirmation est correcte concernant les saignements utérins anormaux (SUA) chez les femmes ménopausées?,Tout saignement utérin anormal (SUA) doit être exploré afin d'éliminer un cancer endométrial.,Les SUA sont un phénomène fréquent chez les femmes ménopausées.,Les SUA sont généralement liés à des phénomènes de reprise de l'activité ovarienne.,Les SUA sont uniquement liés à des phénomènes de surdosage.,a,"{{objectif de connaissance
 |Identifiant=OIC-049-11-A
 |Item_parent=Puberté normale et pathologique
@@ -14375,7 +14375,7 @@ La radio du poignet a pour objectif de mesurer l'âge osseux
 
 
 
-<br />",True
+<br />",False
 421,OIC-049-25-A,Quel est le symptôme clinique initialement observé dans les DFT?,TROUBLES DU COMPORTEMENT,Syndrome dysexécutif,Examen neurologique initialement normal puis apparition de reflexes archaïques,ATROPHIE FRONTALE et TEMPORALE antérieure bilatérale,a,"{{objectif de connaissance
 |Identifiant=OIC-049-25-A
 |Item_parent=Puberté normale et pathologique
@@ -16120,7 +16120,7 @@ o  Méthode émotionnelle
 
 * Engagement en lien avec ses valeurs
 
--       Nombreuses thérapies validées : ACT (''Acceptation and Commitment Therapy''), DBT (''Dialectical and Behavioral Therapy)'', MBCT (''Mindfulness Based Cognitive Therapy'')",True
+-       Nombreuses thérapies validées : ACT (''Acceptation and Commitment Therapy''), DBT (''Dialectical and Behavioral Therapy)'', MBCT (''Mindfulness Based Cognitive Therapy'')",False
 484,OIC-073-08-B,Quelle est la présentation clinique la plus caractéristique d'une pyélonéphrite aiguë obstructive en l'absence de symptômes urinaires?,Fièvre aiguë avec douleur lombaire unilatérale et nausées,Fièvre aiguë avec douleur lombaire unilatérale et vomissements,Fièvre aiguë avec douleur lombaire unilatérale et constipation,Fièvre aiguë avec douleur lombaire unilatérale et insuffisance rénale,a,"{{objectif de connaissance
 |Identifiant=OIC-073-08-B
 |Item_parent=Différents types de techniques psychothérapeutiques
@@ -17903,7 +17903,7 @@ Les principaux psychostimulants utilisés en thérapeutique en France sont des '
 
 
 <br />
-|}",True
+|}",False
 518,OIC-074-26-B,Quelle est la valeur de R0 du virus de la rougeole?,R0=15 à 20,R0=1,R0=5,R0=10,a,"{{objectif de connaissance
 |Identifiant=OIC-074-26-B
 |Item_parent=Prescription et surveillance des psychotropes (voir item 330)
@@ -18523,7 +18523,7 @@ La fumée de tabac (diamètre médian des particules = 0,3 microns)
 
 *'''30,4% des personnes (18 à 75 ans) déclarent fumer du tabac (2019)'''
 **hommes 34,6%
-**femmes 26,5%",True
+**femmes 26,5%",False
 531,OIC-075-08-A,Quels examens sont utilisés pour évaluer la déshydratation liée aux diarrhées infectieuses?,"Ionogramme sanguin, créatininémie, NFS",Évaluation des dysfonctionnements organiques,Gaz du sang avec lactates,Analyse des protéines sanguines,a,"{{objectif de connaissance
 |Identifiant=OIC-075-08-A
 |Item_parent=Addiction au tabac
@@ -20328,7 +20328,7 @@ Une disparition totale de la vision, d'apparition aiguë, d'une durée de quelqu
 
 C'est une '''urgence''' diagnostique en raison du risque de survenue d'une occlusion '''artérielle rétinienne constituée ou d'un AVC ischémique'''.
 
-Elle doit faire rechercher avant tout un athérome carotidien ou une cardiopathie emboligène. Une maladie de Horton doit aussi être systématiquement évoquée.",False
+Elle doit faire rechercher avant tout un athérome carotidien ou une cardiopathie emboligène. Une maladie de Horton doit aussi être systématiquement évoquée.",True
 591,OIC-082-04-A,Quel est un facteur de risque principal pour la candidémie chez un patient immunodéprimé?,"Neutropénie (PNN <0,5 G/L) > 7 jours",Cathéter vasculaire central,Colonisation préalable,Antibiothérapie antérieure,a,"{{objectif de connaissance
 |Identifiant=OIC-082-04-A
 |Item_parent=Altération aiguë de la vision
@@ -21117,7 +21117,7 @@ Les principales '''causes''' des hémorragies intravitréennes sont les suivante
 
 Le ptosis est à différencier du '''dermachalasis''' (excès de peau de la paupière), très fréquent chez les personnes âgées. Dans ce cas c'est le repli cutané qui recouvre l'axe visuel, alors que le bord libre de la paupière supérieure est lui bien positionné.
 
-<br />",True
+<br />",False
 616,OIC-086-04-A,Quel est le critère le plus contributif au diagnostic de la goutte microcristalline?,La présence de microcristaux d'UMS dans le liquide articulaire,L'uricémie supérieure à 360 μmol/l,La présence de tophus visibles et palpables,L'absence de signes généraux,a,"{{objectif de connaissance
 |Identifiant=OIC-086-04-A
 |Item_parent=Pathologie des paupières
@@ -21282,7 +21282,7 @@ Si ce traitement n’est pas efficace et si le chalazion évolue vers l’enkyst
 |Rubrique=Prise en charge
 |Contributeurs=
 |Ordre=11}}
-Le traitement consiste en un collyre ou une pommade antibiotique pendant 8 jours. Dans les cas résistant au traitement ou dans les formes enkystées, l’incision au niveau du bord libre peut être nécessaire. Elle se pratique sous anesthésie locale en consultation externe.",False
+Le traitement consiste en un collyre ou une pommade antibiotique pendant 8 jours. Dans les cas résistant au traitement ou dans les formes enkystées, l’incision au niveau du bord libre peut être nécessaire. Elle se pratique sous anesthésie locale en consultation externe.",True
 625,OIC-086-11-A,Quels organes sont transplantés?,Rein,Foie,Cœur,Pancréas,a,"{{objectif de connaissance
 |Identifiant=OIC-086-11-A
 |Item_parent=Pathologie des paupières
@@ -21545,7 +21545,7 @@ Classement selon l’'''évolution''' : nouvelle classification
 
 -       '''lombalgie chronique''' : > 3 mois '''[[Évaluation et prise en charge de la douleur chronique SDD-260|(douleur chronique)]]'''
 
--       '''lombalgie récidivante''' : récidive dans les 12 mois",False
+-       '''lombalgie récidivante''' : récidive dans les 12 mois",True
 632,OIC-094-02-B,Quelles sont les particularités diagnostiques de la mort encéphalique?,Absence totale de conscience et d’activité motrice spontanée ; abolition de tous les réflexes du tronc cérébral ; absence totale de ventilation spontanée vérifiée par une épreuve d’hypercapnie,2 électro-encéphalogrammes nuls et aréactifs pendant 30 minutes réalisés à 4 heures d’intervalle ; angiographie cérébrale objectivant l’arrêt de la circulation encéphalique,Absence totale de conscience et d’activité motrice spontanée ; abolition de tous les réflexes du tronc cérébral ; absence totale de ventilation spontanée vérifiée par une épreuve d’hypercapnie,2 électro-encéphalogrammes nuls et aréactifs pendant 30 minutes réalisés à 4 heures d’intervalle ; angiographie cérébrale objectivant l’arrêt de la circulation encéphalique,a,"{{objectif de connaissance
 |Identifiant=OIC-094-02-B
 |Item_parent=Rachialgie
@@ -23560,7 +23560,7 @@ Faibles revenus du foyer
 
 *·     '''La fréquence élevée des céphalées à la base : à surveiller par l’agenda des crises'''
 *·     '''La dépression :''' à dépister par l’échelle HAD (Hospital Anxiety and Depression).
-*·     '''La surconsommation de traitement de crise''' : à monitorer par l’agenda",True
+*·     '''La surconsommation de traitement de crise''' : à monitorer par l’agenda",False
 670,OIC-099-13-A,Quelle est l'expression locale d'une maladie systémique?,L'expression locale d'une maladie systémique,Une maladie cardiaque,Une maladie vasculaire,Une maladie cérébro-vasculaire,a,"{{objectif de connaissance
 |Identifiant=OIC-099-13-A
 |Item_parent=Migraine, névralgie du trijumeau et algies de la face
@@ -25641,7 +25641,7 @@ o  Scanner cérébral : en contexte traumatique (fracture du rocher) ([[Traumat
 |Rubrique=Contenu multimédia
 |Contributeurs=
 |Ordre=11}}
-Se reporter au site du CEN : www.cen-neurologie.fr sur lequel des vidéos sont disponibles",True
+Se reporter au site du CEN : www.cen-neurologie.fr sur lequel des vidéos sont disponibles",False
 703,OIC-101-11-A,Quelle mesure est essentielle lors du retrait d'une voie veineuse pour limiter l'hématome?,Aucune compression,Compression du point d'insertion,Utilisation d'un dispositif de compression,Aucune des réponses ci-dessus,b,"{{objectif de connaissance
 |Identifiant=OIC-101-11-A
 |Item_parent=Paralysie faciale
@@ -25890,7 +25890,7 @@ La paralysie totale du Ill provoque du côté pathologique :
 |Contributeurs=
 |Ordre=7}}
 
-[[Fichier:VI.jpg|gauche|vignette|666x666px|Paralysie du VI droit: abolition de l'abduction de l'oeil droit]]",True
+[[Fichier:VI.jpg|gauche|vignette|666x666px|Paralysie du VI droit: abolition de l'abduction de l'oeil droit]]",False
 709,OIC-102-08-A,Quelle est l'examens clef dans l'évaluation des valvulopathies?,L'échographie trans-oesophagienne (ETO),L'échographie cardiaque transthoracique (ETT),L'angiographie coronarienne,L'IRM du cœur,b,"{{objectif de connaissance
 |Identifiant=OIC-102-08-A
 |Item_parent=Diplopie
@@ -26211,7 +26211,7 @@ Le tic peut être simple et ne toucher que quelques muscles (clignement des yeux
 Les tics moteurs s'opposent aux tics vocaux (cri, reniflement, raclement de gorge, expiration forcée…) qui peuvent, rarement, correspondre à des obscénités appelées coprolalie.
 
 ==F. Dyskinésies==
-Littéralement, il s'agit d'un mouvement anormal, sans plus de précision (cf ci-dessous).",False
+Littéralement, il s'agit d'un mouvement anormal, sans plus de précision (cf ci-dessous).",True
 720,OIC-107-03-A,Quel est un limite de l'interprétation du BNP pour le diagnostic de l'insuffisance cardiaque?,Il est diagnostique dans la plupart des cas d'insuffisance cardiaque,Il est indépendant de l'âge et de la sexe,"Il augmente avec l'âge, chez la femme",Il est toujours normal en cas de dyspnée aiguë,c,"{{objectif de connaissance
 |Identifiant=OIC-107-03-A
 |Item_parent=Mouvements anormaux
@@ -26295,7 +26295,7 @@ Le syndrome confusionnel est déterminé par des facteurs de risque et par un fa
 
 –       pathologie chronique préexistante ('''[[Consultation de suivi d'un patient polymédiqué SD-266|consultation de suivi d'un patient polymédiqué]] ; [[Consultation de suivi d'un patient polymorbide SD-267|consultation de suivi d'un patient polymorbide]] ; [[Consultation de suivi d'une pathologie chronique SDD-279|consultation de suivi d'une pathologie chronique]] ; [[Consultation de suivi gériatrique SD-295|consultation de suivi gériatrique]]''')
 
-–       trouble neurocognitif sous-jacent +++ : il est justifié de réévaluer l'état cognitif des patients à distance (à 6 mois) de l'épisode confusionnel '''([[Troubles de mémoire/déclin cognitif SD-131|troubles de mémoire/déclin cognitif]] ; [[Consultation et suivi d'un patient ayant des troubles cognitifs SD-298|consultation et suivi d'un patient ayant des troubles cognitifs]])'''",True
+–       trouble neurocognitif sous-jacent +++ : il est justifié de réévaluer l'état cognitif des patients à distance (à 6 mois) de l'épisode confusionnel '''([[Troubles de mémoire/déclin cognitif SD-131|troubles de mémoire/déclin cognitif]] ; [[Consultation et suivi d'un patient ayant des troubles cognitifs SD-298|consultation et suivi d'un patient ayant des troubles cognitifs]])'''",False
 724,OIC-108-01-B,Le diagnostic de choc cardiogénique est évoqué lorsqu'il existe,Des signes d'insuffisance cardiaque,une hypotension artérielle,"associées à des signes d'hypoperfusion périphérique : oligurie, marbrures cutanées, extrémités froides, cyanose, troubles de conscience",tous les éléments ci-dessus,d,"{{objectif de connaissance
 |Identifiant=OIC-108-01-B
 |Item_parent=Confusion, démences. (voir item 132)
@@ -26654,7 +26654,7 @@ o  '''Les autres démences dégénératives'''
 
 § '''Démence frontotemporale (ou dégénérescence lobaire frontotemporale, DLFT)''' (cf item 132 question Dégénérescence lobaire fronto-temporale)
 
-§ '''Maladie à corps de Lewy diffus''' (cf item 132 question Maladie à corps de Lewy)",False
+§ '''Maladie à corps de Lewy diffus''' (cf item 132 question Maladie à corps de Lewy)",True
 734,OIC-108-11-A,Quand est-il nécessaire d'effectuer un ECG percritique?,Lors de l'admission aux urgences,Lorsqu'il est transitoire,Lorsqu'il est obtenu lors de la prise en charge initiale,Lorsqu'il est normal,a,"{{objectif de connaissance
 |Identifiant=OIC-108-11-A
 |Item_parent=Confusion, démences. (voir item 132)
@@ -26922,7 +26922,7 @@ Hydrocéphalie chronique de l’adulte '''([[Découverte d'une anomalie du cerve
 
 ·        Suffusion de liquide dans le parenchyme périventriculaire ('''résorption transépendymaire''') entraînant des anomalies radiologiques de la substance blanche périventriculaire (hypodensité au scanner ou hypersignal en pondération T2 en IRM).
 
-<br />",True
+<br />",False
 740,OIC-108-17-B,Quel est le symptôme principal de la phase syncopale de la phénomène de Raynaud?,La rougeur des doigts,L'engelure des doigts,La perte de chaleur des doigts,L'agitation des doigts,c,"{{objectif de connaissance
 |Identifiant=OIC-108-17-B
 |Item_parent=Confusion, démences. (voir item 132)
@@ -27055,7 +27055,7 @@ Examen ostéoarticulaire : recherche de douleurs, limitations de mobilité́ ou 
 
 Examen cardio-vasculaire : recherche d’une hypotension artérielle orthostatique, de troubles du rythme ou de la conduction cardiaque, d’une artériopathie.
 
-Examen ophtalmologique : recherche d’une baisse d’acuité́ visuelle.",False
+Examen ophtalmologique : recherche d’une baisse d’acuité́ visuelle.",True
 745,OIC-109-02-A,Quelle est la prévalence de l'hyperthyroïdie toutes causes confondues?,"0,2 à 1,9 %","1,9 à 2,5 %","2,5 à 3,5 %","3,5 à 4,5 %",a,"{{objectif de connaissance
 |Identifiant=OIC-109-02-A
 |Item_parent=Troubles de la marche et de l’équilibre
@@ -27150,7 +27150,7 @@ Examen ophtalmologique : recherche d’une baisse d’acuité́ visuelle.",False
 
 .        Functional ambulation classification (FAC)
 
-.        Echelle d'équilibre de Berg",True
+.        Echelle d'équilibre de Berg",False
 748,OIC-109-04-A,Quelle complication est principalement liée à l'exophthalmie importante en ophtalmopathie basedowienne?,Les anomalies palpébrales SD-139,Les altérations du champ visuel SD-138,La diplopie SD-143,Les atteintes cornéennes de sévérité variable,d,"{{objectif de connaissance
 |Identifiant=OIC-109-04-A
 |Item_parent=Troubles de la marche et de l’équilibre
@@ -27280,7 +27280,7 @@ de la marche d’origine neurologique
 
 ·        réponse au placebo, à la suggestion ou la psychothérapie
 
-Les incongruences qui peuvent être relevées au cours de l’examen clinique et le cours évolutif permettent d’évoquer le diagnostic en évitant de considérer comme psychogène un trouble somatique dont l’origine est considérée comme « organique ».",False
+Les incongruences qui peuvent être relevées au cours de l’examen clinique et le cours évolutif permettent d’évoquer le diagnostic en évitant de considérer comme psychogène un trouble somatique dont l’origine est considérée comme « organique ».",True
 756,OIC-109-10-B,Quelle est la valeur limite de la cortisolémie à 8h qui indique une insuffisance surrénale?,< 50 ng/ml (138 nmol/l),> 180 ng/ml (500 nmol/l),Entre 50 et 180 ng/ml (138 et 500 nmol/l),180 ng/ml (500 nmol/l),a,"{{objectif de connaissance
 |Identifiant=OIC-109-10-B
 |Item_parent=Troubles de la marche et de l’équilibre
@@ -27420,7 +27420,7 @@ La confirmation diagnostique passe par la réalisation de deux biopsies cutanée
 
 L’analyse histologique permet de distinguer le lieu de formation de la bulle dans la peau (intra épidermique ou sous épidermique)  mais ne précise pas le mécanisme de formation de la bulle.
 
-'''''C’est la positivité de l’immunofluorescence directe lorsqu’elle met en évidence la présence d’auto anticorps au sein des lésions qui permet d’affirmer la nature auto immune d’une dermatose bulleuse. Dans le cas où l’immunofluorescence directe est négative, le diagnostic de dermatose bulleuse auto immune est écarté .'''''",True
+'''''C’est la positivité de l’immunofluorescence directe lorsqu’elle met en évidence la présence d’auto anticorps au sein des lésions qui permet d’affirmer la nature auto immune d’une dermatose bulleuse. Dans le cas où l’immunofluorescence directe est négative, le diagnostic de dermatose bulleuse auto immune est écarté .'''''",False
 764,OIC-112-02-A,Quand doit-on commencer le traitement de l'insuffisance surrénale aiguë?,Seulement après confirmation du diagnostic,"Aucun délai, même sans certitude diagnostique",Seulement après réalisation des tests hormonaux,Seulement si les tests hormonaux sont prélevés avant le traitement,b,"{{objectif de connaissance
 |Identifiant=OIC-112-02-A
 |Item_parent=Dermatose bulleuse touchant la peau et/ou les muqueuses externes
@@ -31905,7 +31905,7 @@ Insuline ultra-rapides : adaptation
 
 + opothérapie substitutive
 |}
-<br />",True
+<br />",False
 874,OIC-136-05-A,Quel est l'abréviation de l'intervalle Q-T dans l'ECG en situation d'hypocalcémie?,Q-T,QT,EKG,ECG,b,"{{objectif de connaissance
 |Identifiant=OIC-136-05-A
 |Item_parent=Anesthésie locale, locorégionale et générale
@@ -32288,7 +32288,7 @@ En France, la surveillance des maladies infectieuses est principalement assurée
 *[[Savoir les 4 principales missions de Santé Publique France en matière de maladies infectieuses 2C-145-DE-B05|Santé Publique France]] : agence nationale de santé publique, placée sous la tutelle du ministère chargé de la santé. C’est un centre de référence et d’expertise en santé publique qui s’appuie sur le Réseau National de Santé Publique (RNSP) et les [[Savoir les 4 principales missions de Santé Publique France en matière de maladies infectieuses 2C-145-DE-B05|Cellules InterRégionales d’Epidémiologie (CIRE)]].
 *Les Agences Régionales de Santé (ARS) au travers notamment du système de déclaration obligatoire des maladies (Maladies à Déclaration Obligatoire).
 *[[Connaitre les définitions des centres nationaux de référence 2C-145-DE-B06|Les Centres Nationaux de Référence (CNR)]] : laboratoires et services cliniques (localisés au sein d’établissements publics ou privés de santé, d’enseignement ou de recherche) dont l'une des missions est la surveillance épidémiologique.
-*Les réseaux de surveillance nationaux : [[Définition d'un réseau ""sentinelle"" 2C-145-DE-B07|réseaux Sentinelles]], RéPIAS ([[Qualité et sécurité des soins. La sécurité du patient. La gestion des risques. Les événements indésirables associés aux soins (EIAS). Démarche qualité et évaluation des pratiques professionnelles|Réseau de Prévention des Infections Associées aux Soins]]), ...",False
+*Les réseaux de surveillance nationaux : [[Définition d'un réseau ""sentinelle"" 2C-145-DE-B07|réseaux Sentinelles]], RéPIAS ([[Qualité et sécurité des soins. La sécurité du patient. La gestion des risques. Les événements indésirables associés aux soins (EIAS). Démarche qualité et évaluation des pratiques professionnelles|Réseau de Prévention des Infections Associées aux Soins]]), ...",True
 891,OIC-145-04-B,Quel test permet d'éliminer une anémie dans le SII?,NFS,CRP,TSH,Examen parasitologique des selles,a,"{{objectif de connaissance
 |Identifiant=OIC-145-04-B
 |Item_parent=Surveillance des maladies infectieuses transmissibles
@@ -32966,7 +32966,7 @@ Elles concernent les porteurs de valves mécaniques, mais aussi les porteurs de 
 Les manifestations sont variables, hémorragie cérébrale, digestive, hématurie, gingivorragie etc. L’examen clinique approfondi avec la recherche de tout signe de gravité est fondamental.
 
 La prise en charge est celui d’un surdosage en AVK (Cf. Item 183).
-<br />",True
+<br />",False
 906,OIC-153-03-A,Quels sont les symptômes associés à une hypertension intracrânienne (HTIC) en cas de tumeur volumineuse?,Poussées de headache,"Somnolence, troubles de la vigilance, coma",Douleurs au dos,Toux persistante,b,"{{objectif de connaissance
 |Identifiant=OIC-153-03-A
 |Item_parent=Surveillance des porteurs de prothèses valvulaires
@@ -34820,7 +34820,7 @@ Le contrôle chirurgical ou radio-interventionnel de la source infectieuse est i
 
 ·        Mise à plat ou drainage radiologique d’un abcès
 
-·        Fasciite nécrosante",False
+·        Fasciite nécrosante",True
 962,OIC-157-16-B,La prescription d’une thérapeutique non-médicamenteuse intervient après un ''bilan initial'' qui en pose l’indication en fonctions des : ,déficiences,limitations d’activité,restrictions de participation,facteurs environnementaux,a,"{{objectif de connaissance
 |Identifiant=OIC-157-16-B
 |Item_parent=Bactériémie/Fongémie de l’adulte et de l’enfant
@@ -34837,7 +34837,7 @@ Le contrôle chirurgical ou radio-interventionnel de la source infectieuse est i
 *Surveillance : hémocultures à 48h d’antibiothérapie.  Si positives : rechercher foyer endovasculaire
 *Association à une endocardite dans 10% des cas = Echocardiographie systématique
 *En cas de bactériémie liée au cathéter :  rechercher une thrombose associée par écho-Doppler, en cas d’évolution clinique microbiologique défavorable (persistance des hémocultures positives)
-*Durée de traitement = 14 jours par voie parentérale IV en cas de bactériémie non compliquée, sans endocardite, sans localisation septique secondaire, avec stérilisation précoce des hémocultures.  Sinon, durée de traitement = 4 à 6 semaines.",False
+*Durée de traitement = 14 jours par voie parentérale IV en cas de bactériémie non compliquée, sans endocardite, sans localisation septique secondaire, avec stérilisation précoce des hémocultures.  Sinon, durée de traitement = 4 à 6 semaines.",True
 963,OIC-157-16-B,Quel est le critère principal pour définir un dispositif médical selon la réglementation ANSM?,Un instrument utilisé seul ou en association pour des fins médicales,Un produit d'origine humaine,Un appareil qui agit par des moyens pharmacologiques,Un dispositif qui est réglementé par les organismes sociaux,a,"{{objectif de connaissance
 |Identifiant=OIC-157-16-B
 |Item_parent=Bactériémie/Fongémie de l’adulte et de l’enfant
@@ -34976,7 +34976,7 @@ C'est une infection fréquente chez l'enfant (1% des enfants avant 2 ans), 11% a
 On ne fait pas la distinction IU chez la fille et chez le garçon sur le plan de la sévérité mais la prévalence est cependant différente avec une fréquence plus important chez le garçon avant 6 mois puis la prévalence devient plus importante chez la petite fille
 
 Elles sont favorisées par les malformations notamment le reflux vésico-urétéral
-<br />",True
+<br />",False
 968,OIC-161-02-A,Quel est le terme correct pour désigner les chaussures orthopédiques sur mesure?,Chaussures de sport,Grand appareillage,Chaussures thérapeutiques de série,Orthèses plantaires,b,"{{objectif de connaissance
 |Identifiant=OIC-161-02-A
 |Item_parent=Infections urinaires de l’enfant et de l’adulte
@@ -36210,7 +36210,7 @@ Rechercher les facteurs favorisants
 *ou prise uniquement en période péri-coïtale lorsque les rapports sexuels sont le facteur déclenchants (sans dépasser les doses usuelles = pas de prise à chaque rapport si activité sexuelle importante)
 *Il faut régulièrement réévaluer l’intérêt de cette antibioprophylaxie au long cours
 
-<br />",False
+<br />",True
 995,OIC-161-22-B,Quel est le signe clinique principal d'une hypoglycémie chez l'adulte et l'enfant?,Coma ou tout trouble neurologique,"Évoqué à la glycémie capillaire, confirmé avec la glycémie sanguine (glycémie < 3 mmol/L)",Resucrage en urgence avec sérum glucosé en IV direct (G30% 1 ampoule) si troubles de la conscience,"Par voie orale si la conscience le permet : sucre en morceau, jus d’orange",a,"{{objectif de connaissance
 |Identifiant=OIC-161-22-B
 |Item_parent=Infections urinaires de l’enfant et de l’adulte
@@ -38782,7 +38782,7 @@ En cas de diarrhée au retour d’un voyage en zone tropicale, en cas d’immuno
 *La recherche de giardiase peut  être demandée en cas de troubles digestifs persistants (douleurs, ballonnement, selles mousseuses) chez l'enfant ou l'adulte
 *La recherche d'amoebose intestinale est indiquée en cas de selles glairo-sanglantes au retour d'un voyage en zone endémique
 *La recherche de cryptosporidiose doit être spécifiée (situation d'immunodépression ou enfant)
-*La recherche d'anguillulose est indiquée en cas de séjour prolongé en zone d'endémie (migration) en cas d'hyperéosinophilie ou en prévision d'un traitement immunosuppresseur",True
+*La recherche d'anguillulose est indiquée en cas de séjour prolongé en zone d'endémie (migration) en cas d'hyperéosinophilie ou en prévision d'un traitement immunosuppresseur",False
 1063,OIC-176-09-A,Quel est le compromis principal entre différentes conceptions morales concernant l'IVG?,Reconnaître le fœtus comme une personne humaine dès la naissance,Préserver la vie du fœtus à tout moment de la grossesse,Équilibrer la protection de la vie humaine avec la liberté de la femme,Interdire toute intervention médicale en cas de réflexion de 7 jours,c,"{{objectif de connaissance
 |Identifiant=OIC-176-09-A
 |Item_parent=Diarrhées infectieuses de l’adulte et de l’enfant
@@ -38963,7 +38963,7 @@ Voir [[Risques sanitaires liés à l'eau et à l'alimentation. Toxi-infections a
 |Rubrique=Identification de l’urgence
 |Contributeurs=
 |Ordre=17}}
-Voir [[Connaître les principes de prescription d’une réhydratation orale et intraveineuse. Connaître les traitements symptomatiques de la diarrhée aiguë 2C-176-PC-A01]]",True
+Voir [[Connaître les principes de prescription d’une réhydratation orale et intraveineuse. Connaître les traitements symptomatiques de la diarrhée aiguë 2C-176-PC-A01]]",False
 1071,OIC-179-02-B,Pourquoi les dépenses de santé ont-elles augmenté en 2020?,Grâce aux mesures de réforme de l'assurance maladie,En raison de la baisse des consultations médicales,Par l'augmentation des indemnités journalières,Grâce aux réformes de la retraite,c,"{{objectif de connaissance
 |Identifiant=OIC-179-02-B
 |Item_parent=Risques sanitaires liés à l’eau et à l’alimentation. Toxi-infections alimentaires
@@ -41637,7 +41637,7 @@ L’objectif pour le patient est d’acquérir les compétences suivantes :
 
 -       Mettre en place le plan d’action
 
--       Contrôler l’environnement en évitant les facteurs favorisants",True
+-       Contrôler l’environnement en évitant les facteurs favorisants",False
 1150,OIC-188-23-B,Quelle étape est incontournable lors de l'examen clinique chez l'homme?,L'examen mammaire,L'examen général,L'examen génital bilatéral,L'examen rectal systématique,c,"{{objectif de connaissance
 |Identifiant=OIC-188-23-B
 |Item_parent=Hypersensibilité et allergies respiratoires chez l’enfant et chez l’adulte. Asthme, rhinite
@@ -41669,7 +41669,7 @@ Définition de la fièvre prolongée ""classique"" '''([[Hyperthermie/fièvre SD
 *     Sans cause identifiée après investigations appropriées menées durant trois jours d’hospitalisation ou après trois consultations. Il n’y a pas de liste pré-établie et définitive de ces investigations qui varient selon le contexte clinique de chaque patient.
 
 
-A noter : pas de liste pré-établie et définitive des investigations appropriées (variables selon le patient) avant de porter le diagnostic de fièvre prolongée",False
+A noter : pas de liste pré-établie et définitive des investigations appropriées (variables selon le patient) avant de porter le diagnostic de fièvre prolongée",True
 1152,OIC-190-02-A,Quelle est la cause la plus courante d'infertilité tubaire?,L'endométriose,L'hyperprolactinémie,L'obstruction tubaire distale ou proximale,Les troubles sexologiques,c,"{{objectif de connaissance
 |Identifiant=OIC-190-02-A
 |Item_parent=Fièvre prolongée
@@ -41928,7 +41928,7 @@ o Biopsie de l’artère temporale si > 50 ans
 
 La persistance de la fièvre au delà sans explication évidente justifie un avis spécialisé pédiatrique (= pour le 3ème cycle)
 
-pour approfondir chez l'enfant : https://pap-pediatrie.fr/files/fievre_prolongee.pdf",True
+pour approfondir chez l'enfant : https://pap-pediatrie.fr/files/fievre_prolongee.pdf",False
 1157,OIC-191-02-B,Quels sont les types de diagnostics prénatals proposés?,"Caryotype fœtal, analyses Chromosomique sur Puce à ADN (ACPA ou CGH array), séquençage/analyse ciblé, exome","Ultrasound, tests sanguins, analyses de sang","Caryotype fœtal, tests sanguins, analyses de sang, tests génétiques","Caryotype fœtal, analyses Chromosomique sur Puce à ADN (ACPA ou CGH array), tests sanguins, exome",a,"{{objectif de connaissance
 |Identifiant=OIC-191-02-B
 |Item_parent=Fièvre chez un patient immunodéprimé
@@ -42083,7 +42083,7 @@ Bactéries encapsulées  (méningocoque, pneumocoque, Haemophilus influenzae)
 
 <big>·      '''Tube Digestif''' (de la bouche à l’anus)</big>
 
-<big>·      '''Peau favorisée par les abords veineux''' (cathéter veineux périphérique et central)</big>",False
+<big>·      '''Peau favorisée par les abords veineux''' (cathéter veineux périphérique et central)</big>",True
 1161,OIC-191-05-A,Quelle situation exige une réalisation du caryotype des parents pour une trisomie 21?,Trisomie 21 libre,Trisomie 21 en mosaïque,Trisomie 21 par translocation robertsonienne (14;21),Trisomie 21 en mosaïque,c,"{{objectif de connaissance
 |Identifiant=OIC-191-05-A
 |Item_parent=Fièvre chez un patient immunodéprimé
@@ -46669,7 +46669,7 @@ Caractéristiques variables : intensité, localisation, irradiation, durée, fac
 
 - détresse hémodynamique : '''signes de choc'''
 
-- détresse neurologique '''(coma et troubles de conscience)'''",False
+- détresse neurologique '''(coma et troubles de conscience)'''",True
 1311,OIC-230-02-A,Quel facteur peut causer une dystonie musculaire?,Infection virale,Tension musculaire excessive,Dysfonction neurologique,Exposition au soleil,c,"{{objectif de connaissance
 |Identifiant=OIC-230-02-A
 |Item_parent=Douleur thoracique aiguë
@@ -46785,7 +46785,7 @@ Parfois : malaise/perte de connaissance (syncope), troubles neurologiques (obnub
 
 - '''réalisation et interprétation de l’ECG'''
 
-- puis bilan biologique et d’imagerie orientés par les observations précédentes",False
+- puis bilan biologique et d’imagerie orientés par les observations précédentes",True
 1317,OIC-230-07-A,Quel médicament est recommandé pour le traitement des troubles anxieux en cas de confusion?,Benzodiazépines anxiolytiques,Neuroleptiques,Anticholinergiques,Hypnotiques,a,"{{objectif de connaissance
 |Identifiant=OIC-230-07-A
 |Item_parent=Douleur thoracique aiguë
@@ -46923,7 +46923,7 @@ Elle permet d’identifier la lésion coronaire coupable et de décider de son t
 ** Attention, l’ETO en cas de suspicion de dissection aortique doit être réalisée sous couverture anesthésique idéalement au bloc opératoire (pour éviter pic tensionnel d’une ETO en vigile très à risque dans ce contexte).
 
 [[Fichier:Coupe en ETO montrant une image de flap (flèche) au niveau de l’aorte ascendante initiale, peu après la valve aortique.jpg|vignette|coupe en ETO montrant une image de flap (flèche) au niveau de l’aorte ascendante initiale, peu après la valve aortique|alt=|centré]]
-<br />",True
+<br />",False
 1321,OIC-230-11-B,Quel type de densité est observé dans les zones spontanément hyperdenses au sein de l'hématome sous-dural chronique?,Hypo-dense,Hyperdense,Normale,Aucune,b,"{{objectif de connaissance
 |Identifiant=OIC-230-11-B
 |Item_parent=Douleur thoracique aiguë
@@ -49976,7 +49976,7 @@ Le bloc enzymatique (hyperplasie congénitale des surrénales) est la cause la p
 La deuxième cause est l’''Adrénoleucodystrophie :''
 
 * maladie récessive liée à l'X
-* touche les garçons dans l'enfance ou au début de l'âge adulte",False
+* touche les garçons dans l'enfance ou au début de l'âge adulte",True
 1421,OIC-247-01-A,Quelle complication est la plus grave des IGH chez la femme?,Stérilité tubaire,Algies pelviennes inflammatoires,Grossesse extra-utérine,Inflammation pelvienne chronique,c,"{{objectif de connaissance
 |Identifiant=OIC-247-01-A
 |Item_parent=Diabète sucré de type 1 et 2 de l’enfant et de l’adulte. Complications
@@ -50283,7 +50283,7 @@ La présence du syndrome métabolique et de l’obésité androïde majorent le 
 
 FDR de plaie de pieds : AOMI, neuropathie avec troubles de la statique/déformations du pied, ATCD d’ulcération, précarité sociale 
 
-Gradation : 0 : absence de neuropathie sentitive et d’artériopathie 1 : présence d’une neuropathie sensitive isolée 2 : association de la neuropathie à l’artériopathie ou aux déformations des pieds/orteils 3 : antécédénts d’ulcération ou d’amputation",False
+Gradation : 0 : absence de neuropathie sentitive et d’artériopathie 1 : présence d’une neuropathie sensitive isolée 2 : association de la neuropathie à l’artériopathie ou aux déformations des pieds/orteils 3 : antécédénts d’ulcération ou d’amputation",True
 1431,OIC-247-10-B,Quand est-il inutile de faire une recherche de Clostridium difficile chez l'enfant?,Après 4 ans,Avant 4 ans,Chez tous les enfants,Chez tous les enfants de plus de 4 ans,b,"{{objectif de connaissance
 |Identifiant=OIC-247-10-B
 |Item_parent=Diabète sucré de type 1 et 2 de l’enfant et de l’adulte. Complications
@@ -50746,7 +50746,7 @@ L'acidocétose est la cause la plus fréquente de mortalité chez l’enfant dia
 - si glucagon non disponible : sérum G30 % en IV 10 mL/20 kg de poids, puis relais par G10 % 
 
 
-'''Éducation thérapeutique nécessaire :''' moyens d'autosurveillance de glycémie, prévention d'hypoglycémie",True
+'''Éducation thérapeutique nécessaire :''' moyens d'autosurveillance de glycémie, prévention d'hypoglycémie",False
 1440,OIC-247-18-A,Quel est un exemple de source de pollution chimique?,La pollution thermique,La pollution radioactive,Les phosphates des activités agricoles et rejets urbains,Les métaux lourds,c,"{{objectif de connaissance
 |Identifiant=OIC-247-18-A
 |Item_parent=Diabète sucré de type 1 et 2 de l’enfant et de l’adulte. Complications
@@ -50828,7 +50828,7 @@ L'acidocétose est la cause la plus fréquente de mortalité chez l’enfant dia
 - si glucagon non disponible : sérum G30 % en IV 10 mL/20 kg de poids, puis relais par G10 % 
 
 
-'''Éducation thérapeutique nécessaire :''' moyens d'autosurveillance de glycémie, prévention d'hypoglycémie",True
+'''Éducation thérapeutique nécessaire :''' moyens d'autosurveillance de glycémie, prévention d'hypoglycémie",False
 1441,OIC-247-19-A,Quelles sont les mesures de prévention des risques sanitaires liés à l’eau qui sont appliquées pour contrôler les activités génératrices de pollution?,Zones de production des coquillages,"Filtration et traitement de l’eau, physique ou chimique",Contrôle des activités génératrices de pollution : zones de production des coquillages etc.,Entretien du réseau de distribution,c,"{{objectif de connaissance
 |Identifiant=OIC-247-19-A
 |Item_parent=Diabète sucré de type 1 et 2 de l’enfant et de l’adulte. Complications
@@ -51601,7 +51601,7 @@ Après l’âge de 35 ans, le risque coronarien augmente et un ECG tous les 1 à
 *Un dépistage de l’acuité visuelle
 
 
-Enfin il faut avoir à l’esprit que pour de nombreux patients jeunes et sans pathologies chroniques cette consultation médicale est parfois leur seule consultation annuelle. Il faut donc en profiter pour réaliser des actes de prévention : mise à jour des vaccinations, sensibilisation à l’hygiène de vie (alimentation, sommeil, suivi dentaire, suivi gynécologique…)",True
+Enfin il faut avoir à l’esprit que pour de nombreux patients jeunes et sans pathologies chroniques cette consultation médicale est parfois leur seule consultation annuelle. Il faut donc en profiter pour réaliser des actes de prévention : mise à jour des vaccinations, sensibilisation à l’hygiène de vie (alimentation, sommeil, suivi dentaire, suivi gynécologique…)",False
 1468,OIC-256-04-B,Quelle phase est caractérisée par l'eczéma clinique et l'infiltrat lymphocytaire?,Phase de sensibilisation asymptomatique,Phase de révélation,Phase de l'eczéma de contact,Phase de sensibilisation,c,"{{objectif de connaissance
 |Identifiant=OIC-256-04-B
 |Item_parent=Aptitude au sport chez l’adulte et l’enfant ; besoins nutritionnels chez le sportif (voir item 80)
@@ -53838,7 +53838,7 @@ oligo-anurie < 500cc / 24h
 |'''Colique néphrétique hyperalgique'''
 |Colique néphrétique résistant à l’administration de d’AINS et morphiniques
 |}
-<br />",True
+<br />",False
 1524,OIC-265-10-B,Quel est le virus responsable du syndrome mononucléosique?,Virus de la grippe,Virus de la varicelle,Virus Epstein-Barr,Virus de la rougeole,c,"{{objectif de connaissance
 |Identifiant=OIC-265-10-B
 |Item_parent=Lithiase urinaire
@@ -54133,7 +54133,7 @@ Les complications de l’urétéroscopie sont :
 *l’hématurie
 *douleur de colique néphrétique par caillotage urétéral
 *sténose urétérale, traumatisme urétéral, avulsion de l’uretère, hématome sous-capsulaire du rein
-*infection urinaire, sepsis sévère voire choc septique.",True
+*infection urinaire, sepsis sévère voire choc septique.",False
 1529,OIC-267-01-A,Quelle fonction est principalement évaluée par la phosphatase alcaline?,L'activité thyroïdienne,La fonction rénale,L'activité hépatique,L'activité osseuse,d,"{{objectif de connaissance
 |Identifiant=OIC-267-01-A
 |Item_parent=Troubles de l’équilibre acido-basique et désordres hydro-électrolytiques
@@ -55102,7 +55102,7 @@ Tableau 7 : Symptômes d’hyponatrémie (classification ERBP 2014)
 **fièvre d’origine centrale,
 **crise convulsive,
 **coma,
-**hémorragies cérébro-méningées hématomes sous-duraux (nourrisons, sujets âgés ), thromboses veineuses cérébrales.",False
+**hémorragies cérébro-méningées hématomes sous-duraux (nourrisons, sujets âgés ), thromboses veineuses cérébrales.",True
 1556,OIC-267-32-A,Quelle anomaly est associée à la péricardite avec tamponnade,Élargissement du médiastin,Hyperclarté pulmonaire,Cardiomégalie avec cœur en carafe,Pneumothorax,c,"{{objectif de connaissance
 |Identifiant=OIC-267-32-A
 |Item_parent=Troubles de l’équilibre acido-basique et désordres hydro-électrolytiques
@@ -55440,7 +55440,7 @@ Voici les règles générales :
 * devant un simple lumbago ou une récidive de lombalgies connues et déjà explorées, il n'y a pas lieu de réaliser d'imagerie ;
 * devant des douleurs rebelles au traitement symptomatique ou évoluant vers l'aggravation ou en cas de signe de gravité (fièvre, déficit neurologique...), les examens d’imagerie doivent être demandés en urgence : (1) devant une cause secondaire d'origine rachidienne ou neurologique, l'examen clé est l'IRM qui sera réalisée après des radiographies standards, (2) devant une cause secondaire d'origine viscérale, l'examen clé est le scanner thoraco-abdomino-pelvien ou à défaut, l’échographie abdominale et pelvienne. 
 
-Pour les causes urologiques et rénales, les examens d’imagerie complémentaire sont : référence  scanner abdomino-rénal non injecté puis éventuellement injecté si doute diagnostic ou absence d’obstacle ou couple ASP/échographie si scanner non disponible et en l'absence de critère ou signe de gravité ou de complication. Pour la torsion du cordon il n’y a pas d’imagerie complémentaire à réaliser.",True
+Pour les causes urologiques et rénales, les examens d’imagerie complémentaire sont : référence  scanner abdomino-rénal non injecté puis éventuellement injecté si doute diagnostic ou absence d’obstacle ou couple ASP/échographie si scanner non disponible et en l'absence de critère ou signe de gravité ou de complication. Pour la torsion du cordon il n’y a pas d’imagerie complémentaire à réaliser.",False
 1569,OIC-270-05-A,Quel type d'insuffisance cardiaque est ciblé par la majorité des traitements actuels?,Preservée,Modérément altérée,Réduite,Toutes,c,"{{objectif de connaissance
 |Identifiant=OIC-270-05-A
 |Item_parent=Douleurs lombaires aiguës
@@ -58032,7 +58032,7 @@ L‘examen clinique comporte :
 |Ordre=7}}
 
 [[Fichier:Diapositive 2.jpg|vignette|Asymétrie mammaire, sein gauche inflammatoire et œdématié, aspect de peau d’orange.]]
-[[Fichier:Diapositive 3.jpg|vignette|Rétraction mammaire (« en coup de hache ») en regard du rayon de 3 h du sein gauche]]",False
+[[Fichier:Diapositive 3.jpg|vignette|Rétraction mammaire (« en coup de hache ») en regard du rayon de 3 h du sein gauche]]",True
 1642,OIC-312-08-A,Quelle est la cause la plus fréquente d’hématurie microscopique?,Tumeurs de l’arbre urinaire,Infections urinaires,Maladie lithiasique,Autres étiologies moins fréquentes,b,"{{objectif de connaissance
 |Identifiant=OIC-312-08-A
 |Item_parent=Tumeurs du sein
@@ -58049,7 +58049,7 @@ L‘examen clinique comporte :
 * Elle peut être réalisée dans le cadre du dépistage ou en cas de symptôme, à visée diagnostique.
 * Une mammographie bilatérale et une échographie mammaire bilatérale et des aires ganglionnaires sont réalisées systématiquement devant '''toute anomalie de l’examen clinique mammaire.'''
 * La mammographie permet de préciser la localisation, la taille et les caractéristiques de l'anomalie (opacités avec contours flous, pouvant donner une image stellaire comportant des spicules courts), l'existence éventuelle de microcalcifications en foyer.
-* La mammographie permet de guider les biopsies ou le repérage avant exérèse des lésions non palpables.",False
+* La mammographie permet de guider les biopsies ou le repérage avant exérèse des lésions non palpables.",True
 1643,OIC-312-10-B,Quelle est la condition nécessaire pour qualifier une protéinurie glomérulaire comme diag. positif?,Une protéinurie < 60% d'albumine,Une protéinurie > 60% d'albumine,Une hématurie macroscopique,Une créatininurie normale,b,"{{objectif de connaissance
 |Identifiant=OIC-312-10-B
 |Item_parent=Tumeurs du sein
@@ -60826,7 +60826,7 @@ L’échec du traitement relève de '''plusieurs facteurs''' :
 * '''Prescription médicamenteuse inappropriée''' en raison d’une '''erreur de diagnostic''' syndromique.
 * '''Défaut d’observance''' qui peut être réduit par l’'''éducation thérapeutique''' du patient et de son entourage dans le contexte d’une pathologie chronique complexe.
 * '''Survenue d’effets indésirables''' dont l’impact peut être en partie limité par la '''titration progressive''' (réduction des effets indésirables dose-dépendants) et surtout par l’information préalable du patient et un suivi rapproché.
-* '''Pharmaco-résistance''' qui concerne potentiellement 20% des patients et requière une prise en charge en centre expert.",False
+* '''Pharmaco-résistance''' qui concerne potentiellement 20% des patients et requière une prise en charge en centre expert.",True
 1699,OIC-330-12-A,Quelle méthode d'imagerie est recommandée pour la recherche systématique de cancer primitif?,Scanner thoraco-abdomino-pelvien avec contraste,PET scanner au fluorodéoxyglucose,Mammographie chez la femme,Imagerie cérébrale par TEP,a,"{{objectif de connaissance
 |Identifiant=OIC-330-12-A
 |Item_parent=Prescription et surveillance des classes de médicaments les plus courantes chez l’adulte et chez l’enfant, hors anti-infectieux (voir item 177). Connaître le bon usage des principales classes thérapeutiques
@@ -62747,7 +62747,7 @@ Diagnostic d’hypoglycémie ('''[[Convulsion SDD-120]], [[Coma et troubles de l
 * d’une glycémie veineuse basse (<0,5 g/l chez les non diabétiques - < 0,60 g/l chez les diabétiques)
 * et sur la correction rapide (10-15 min) des symptômes lors de la normalisation de la glycémie. 
 
-Dosage systématique de la glycémie chez tout patient présentant des troubles de la conscience de quelque profondeur que ce soit.",False
+Dosage systématique de la glycémie chez tout patient présentant des troubles de la conscience de quelque profondeur que ce soit.",True
 1740,OIC-342-06-A,Quelle est l'objectif de la règlementation UE 2017/745 concernant les dispositifs médicaux?,Fixer les prix des dispositifs médicaux,Réglementer les remboursements par les organismes sociaux,Uniformiser la mise sur le marché et la mise en service des dispositifs médicaux,Établir des normes pour les produits d'origine humaine,c,"{{objectif de connaissance
 |Identifiant=OIC-342-06-A
 |Item_parent=Malaise, perte de connaissance, crise comitiale chez l’adulte (voir item 105)
@@ -64072,7 +64072,7 @@ Chez le petit enfant les fractures à faible énergie conduisent à des fracture
 
 Chez l'enfant les fractures les plus fréquentes sont les décollements épiphysaires, les fractures en bois vert, les fractures métaphysaires.
 
-Chez l'adolescent, les fractures rencontrés sont les décollements épiphysaires de type III ou IV, les fractures-avulsions apophysaires et les fractures complètes.",True
+Chez l'adolescent, les fractures rencontrés sont les décollements épiphysaires de type III ou IV, les fractures-avulsions apophysaires et les fractures complètes.",False
 1789,OIC-364-03-B,Quel est le facteur de protection majeur de la crise suicidaire chez l'enfant?,L'isolement affectif,Les antécédents personnels de TS,Le soutien familial,Les troubles psychiatriques,c,"{{objectif de connaissance
 |Identifiant=OIC-364-03-B
 |Item_parent=Fractures chez l’enfant : particularités épidémiologiques, diagnostiques et thérapeutiques
@@ -64202,7 +64202,7 @@ Savoir qu'une fracture supracondylienne peut se compliquer de lésions vasculair
 |Rubrique=Diagnostic positif
 |Contributeurs=
 |Ordre=10}}
-Savoir qu'une fracture du condyle latéral est un décollement épiphysaire de type III ou IV. Savoir que les insertions musculaires entraînent presque toujours un déplacement initial ou secondaire. Savoir que cette fracture est articulaire. Savoir que son traitement est essentiellement chirurgical.",True
+Savoir qu'une fracture du condyle latéral est un décollement épiphysaire de type III ou IV. Savoir que les insertions musculaires entraînent presque toujours un déplacement initial ou secondaire. Savoir que cette fracture est articulaire. Savoir que son traitement est essentiellement chirurgical.",False
 1800,OIC-364-10-B,Quelle affirmation est correcte concernant l'immobilisation plâtrée chez l'enfant?,Elle est utilisée uniquement avant la chirurgie,Elle nécessite une kinésithérapie postopératoire,Elle est bien tolérée et utilisée après la chirurgie,Elle est indiquée uniquement pour les fractures de la tête du fémur,c,"{{objectif de connaissance
 |Identifiant=OIC-364-10-B
 |Item_parent=Fractures chez l’enfant : particularités épidémiologiques, diagnostiques et thérapeutiques

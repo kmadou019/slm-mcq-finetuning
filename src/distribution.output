@@ -1,0 +1,66 @@
+
+llama3_1_8b.csv quality distribution:
+distractor_quality
+False    91.650672
+True      8.349328
+Name: proportion, dtype: float64
+
+openbiollm_8b.csv quality distribution:
+
+gemma2_9b.csv quality distribution:
+distractor_quality
+False    100.0
+Name: proportion, dtype: float64
+
+medGemma_4b.csv quality distribution:
+distractor_quality
+False    100.0
+Name: proportion, dtype: float64
+
+medGemma_27b.csv quality distribution:
+distractor_quality
+False    96.727019
+True      3.272981
+Name: proportion, dtype: float64
+
+qwen3_8b.csv quality distribution:
+distractor_quality
+False    91.97684
+True      8.02316
+Name: proportion, dtype: float64
+
+mistral_7b.csv quality distribution:
+
+eurollm_9b.csv quality distribution:
+distractor_quality
+False    82.716049
+True     17.283951
+Name: proportion, dtype: float64
+
+apertus_8B.csv quality distribution:
+distractor_quality
+False    87.775203
+True     12.224797
+Name: proportion, dtype: float64
+
+qwen3_0.6b.csv quality distribution:
+distractor_quality
+False    91.165756
+True      8.834244
+Name: proportion, dtype: float64
+
+qwen3_1_7b.csv quality distribution:
+distractor_quality
+False    91.075388
+True      8.924612
+Name: proportion, dtype: float64
+
+qwen3_4b.csv quality distribution:
+distractor_quality
+False    97.930525
+True      2.069475
+Name: proportion, dtype: float64
+
+qwen3_8b_pdapt_slerp.csv quality distribution:
+
+qwen3_4b_pdapt_slerp.csv quality distribution:
