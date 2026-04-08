@@ -633,19 +633,19 @@ def correctness(df, save_name, file):
 # # MCQs Generation
 
 models = {
-    #"qwen3_0.6b_pdapt_slerp": "PARTAGES-dev/Qwen3-0.6B-PDAPT-SLERP",
-    #"qwen3_1_7b_pdapt_slerp": "PARTAGES-dev/Qwen3-1.7B-PDAPT-SLERP",
-    #"qwen3_4b_pdapt_slerp": "PARTAGES-dev/Qwen3-4B-PDAPT-SLERP",
-    #"qwen3_8b_pdapt_slerp": "PARTAGES-dev/Qwen3-8B-PDAPT-SLERP",
+    "qwen3_0.6b_pdapt_slerp": "PARTAGES-dev/Qwen3-0.6B-PDAPT-SLERP",
+    "qwen3_1_7b_pdapt_slerp": "PARTAGES-dev/Qwen3-1.7B-PDAPT-SLERP",
+    "qwen3_4b_pdapt_slerp": "PARTAGES-dev/Qwen3-4B-PDAPT-SLERP",
+    "qwen3_8b_pdapt_slerp": "PARTAGES-dev/Qwen3-8B-PDAPT-SLERP",
     "llama3_1_8b": "meta-llama/Llama-3.1-8B-Instruct",
-    #"gemma2_9b": "google/gemma-2-9b-it",
-    #"medGemma_4b": "google/medgemma-4b-it",
-    #"medGemma_27b": "google/medgemma-27b-it",
-    #"openbiollm_8b": "hf.co/mradermacher/Llama3-Instruct-OpenBioLLM-8B-merged-i1-GGUF:latest",
-    #"qwen3_0.6b": "Qwen/Qwen3-0.6B",
-    #"mistral_7b": "mistralai/Mistral-7B-Instruct-v0.3",
-    #"eurollm_9b": "utter-project/EuroLLM-9B-Instruct",
-    #"apertus_8b": "swiss-ai/Apertus-8B-Instruct-2509",
+    "gemma2_9b": "google/gemma-2-9b-it",
+    "medGemma_4b": "google/medgemma-4b-it",
+    "medGemma_27b": "google/medgemma-27b-it",
+    "openbiollm_8b": "hf.co/mradermacher/Llama3-Instruct-OpenBioLLM-8B-merged-i1-GGUF:latest",
+    "qwen3_0.6b": "Qwen/Qwen3-0.6B",
+    "mistral_7b": "mistralai/Mistral-7B-Instruct-v0.3",
+    "eurollm_9b": "utter-project/EuroLLM-9B-Instruct",
+    "apertus_8b": "swiss-ai/Apertus-8B-Instruct-2509",
 }
 
 if len(argv) < 2 or argv[1] not in models:

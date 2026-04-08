@@ -126,7 +126,8 @@ def main():
     # df_mcq = df_mcq[common_ids].iloc[:60]
     #df_mcq_ids = [idx[:12] for idx in df_mcq['id']]
     df_mcq["id"] = df_mcq["id"].map(lambda idx : idx[:12])
-    df_lisa_sheets = df_lisa_sheets[df_lisa_sheets['id'].isin(df_mcq["id"])]
+    df_lisa_sheets = df_lisa_sheets[df_lisa_sheets['id'].isin(df_mcq["id"])].iloc[:1]
+    df_mcq = df_mcq[df_mcq["id"].isin(df_lisa_sheets["id"])]
 
     df_eval = eval_dataframe_parallel(df_mcqs=df_mcq,
                                       df_lisa_sheets=df_lisa_sheets,
@@ -156,7 +157,12 @@ def main():
 
     with open("distribution.output", "a") as f:
         print(f"\n{generated_qcm_file} quality distribution:", file=f)
-        print(df_eval['distractor_quality'].round(0).value_counts(normalize=True, sort=True) * 100, file=f)
+        total = len(df_eval)
+        counts = df_eval['distractor_quality'].round(0).value_counts(sort=True)
+        for val, count in counts.items():
+            pct = count / total * 100
+            label = "Bonne qualité" if val else "Mauvaise qualité"
+            print(f"  {label} ({val}): {pct:.2f}% (n={count}/{total})", file=f)
 
 
 if __name__ == '__main__':
