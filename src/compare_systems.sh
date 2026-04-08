@@ -1,9 +1,16 @@
 #!/usr/bin/env bash
-# Usage: ./compare_systems.sh [model1 model2 ...]
-# Sans argument : utilise tous les modèles de main.sh
+# Usage: ./compare_systems.sh [model1 model2 ...] [index_or_range ...]
+#   - Sans argument          : tous les modèles, toutes les sheets
+#   - Avec modèles seulement : modèles spécifiés, toutes les sheets
+#   - Avec index/ranges      : les args numériques (ex: 0 1-4) filtrent les lisa sheets
+#
+# Exemples :
+#   ./compare_systems.sh qwen3_0.6b 0-4      # 1 modèle, 5 sheets
+#   ./compare_systems.sh qwen3_0.6b qwen3_1_7b 0 1 2
+#   ./compare_systems.sh                      # run complet
 #
 # Lance le pipeline génération+évaluation pour deux systèmes de prompt :
-#   - old : prompt fallback générique (sans GRAPHDB)
+#   - old : prompt simple (commit ba23972)
 #   - new : prompt enrichi via retrieval GraphDB
 # Les données sont effacées entre les deux runs pour éviter toute contamination.
 
@@ -49,10 +56,23 @@ ALL_MODELS=(
     "qwen3_0.6b_pdapt_slerp"
 )
 
-if [ $# -gt 0 ]; then
-    MODELS=("$@")
-else
+# Séparer les modèles (non-numériques) des index/ranges (numériques ou X-Y)
+MODELS=()
+INDEX_ARGS=()
+for arg in "$@"; do
+    if [[ "$arg" =~ ^[0-9]+(-[0-9]+)?$ ]]; then
+        INDEX_ARGS+=("$arg")
+    else
+        MODELS+=("$arg")
+    fi
+done
+
+if [ ${#MODELS[@]} -eq 0 ]; then
     MODELS=("${ALL_MODELS[@]}")
+fi
+
+if [ ${#INDEX_ARGS[@]} -gt 0 ]; then
+    echo "✓ Subset de sheets : ${INDEX_ARGS[*]}"
 fi
 
 mkdir -p "$RESULTS_DIR"
@@ -82,7 +102,7 @@ run_system() {
     for model in "${MODELS[@]}"; do
         echo ""
         echo "--- [$system_name] Génération : $model ---"
-        "$ROOT_DIR/notebooks/generate_mcq.py" "$model" || {
+        "$ROOT_DIR/notebooks/generate_mcq.py" "$model" "${INDEX_ARGS[@]}" || {
             echo "[WARN] Génération échouée pour $model, on continue."
             continue
         }
@@ -101,22 +121,15 @@ run_system() {
 }
 
 # =============================================
-# Système ANCIEN — fallback (sans GraphDB)
+# Système ANCIEN — prompt simple (ba23972)
 # =============================================
-export GRAPHDB_MCP_URL=""
-export GRAPHDB_BEARER_TOKEN=""
+export PROMPT_SYSTEM="old"
 run_system "old"
 
 # =============================================
 # Système NOUVEAU — retrieval via GraphDB
 # =============================================
-# Recharger les credentials GraphDB depuis .env
-if [ -f "$ENV_FILE" ]; then
-    set -a
-    # shellcheck disable=SC1090
-    source "$ENV_FILE"
-    set +a
-fi
+export PROMPT_SYSTEM="new"
 run_system "new"
 
 # =============================================

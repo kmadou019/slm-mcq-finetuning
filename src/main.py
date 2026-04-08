@@ -126,8 +126,7 @@ def main():
     # df_mcq = df_mcq[common_ids].iloc[:60]
     #df_mcq_ids = [idx[:12] for idx in df_mcq['id']]
     df_mcq["id"] = df_mcq["id"].map(lambda idx : idx[:12])
-    df_lisa_sheets = df_lisa_sheets[df_lisa_sheets['id'].isin(df_mcq["id"])].iloc[:1]
-    df_mcq = df_mcq[df_mcq["id"].isin(df_lisa_sheets["id"])]
+    df_lisa_sheets = df_lisa_sheets[df_lisa_sheets['id'].isin(df_mcq["id"])]
 
     df_eval = eval_dataframe_parallel(df_mcqs=df_mcq,
                                       df_lisa_sheets=df_lisa_sheets,

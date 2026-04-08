@@ -331,7 +331,85 @@ def _build_fallback_prompt():
     )
 
 
-def _build_prompt(content):
+def _build_old_prompt_ollama(content):
+    """Ancien système de prompt (commit ba23972) — utilisé via Ollama."""
+    return f"""
+        À partir du contenu éducatif suivant, générez une question à choix multiple avec quatre options de réponse dont une seule est correcte.
+        La question doit évaluer la compréhension des idées principales, et les options doivent être claires, informatives et pertinentes.
+        Assurez-vous que les distracteurs (options incorrectes) suivent une interprétation logique mais incorrecte, basée sur des idées reçues ou des incompréhensions courantes du sujet.
+        Les options de réponse doivent être aussi courtes que possible.
+
+        IMPORTANT — FORMAT ABSOLU POUR LE CHAMP 'correct_option' :
+        - Ce champ doit contenir exactement **une seule lettre minuscule** parmi : a, b, c ou d.
+        - **Exemples valides** : "a", "b", "c", "d".
+        - **Interdits** : "a)", "A", "a.", "a )", "le texte de la réponse correcte", 1, true, etc.
+        - La sortie JSON doit conserver ce champ comme chaîne (`"correct_option": "a"`).
+
+        Fournissez la sortie strictement au format JSON correspondant au schéma demandé (ne pas produire de texte hors-du-JSON).
+        **Contenu éducatif :**
+        {content}
+    """
+
+
+def _build_old_prompt_hf(content):
+    """Ancien système de prompt (commit ba23972) — utilisé via HuggingFace."""
+    return f"""
+     À partir du contenu éducatif suivant, générez exactement une question à choix multiple avec quatre options de réponse (a, b, c, d), dont une seule est correcte.
+
+    OBJECTIFS :
+    - La question doit évaluer la compréhension des idées principales.
+    - Les distracteurs doivent être plausibles mais incorrects.
+    - Les options doivent être courtes.
+    - Fournir une justification pédagogique pour chaque option.
+    - Fournir un commentaire global pour la question.
+
+    CONTRAINTES STRICTES DE SORTIE :
+    1. La sortie doit être STRICTEMENT un unique objet JSON valide.
+    2. Interdiction ABSOLUE d'ajouter :
+    - des blocs ```json
+    - du texte avant ou après le JSON
+    - des explications hors champs JSON
+    3. Le champ "correct_option" doit contenir EXACTEMENT une lettre minuscule parmi : "a", "b", "c", "d".
+    4. Utiliser uniquement des doubles quotes : "..."
+    5. Le JSON doit contenir EXACTEMENT les 11 champs suivants :
+
+    {{
+    "question": "...",
+    "question_comment": "...",
+    "option_a": "...",
+    "option_a_comment": "...",
+    "option_b": "...",
+    "option_b_comment": "...",
+    "option_c": "...",
+    "option_c_comment": "...",
+    "option_d": "...",
+    "option_d_comment": "...",
+    "correct_option": "a"
+    }}
+
+    RÈGLES POUR LES COMMENTAIRES :
+    - Chaque commentaire d'option doit expliquer brièvement pourquoi l'option est correcte ou incorrecte.
+    - Le commentaire global de la question doit expliquer ce que la question évalue ou signaler un piège courant.
+    - Les commentaires doivent être factuels, concis et pédagogiques.
+
+    CONTENU ÉDUCATIF :
+    {content}
+    """
+
+
+def _build_prompt(content, hf=False):
+    """
+    Sélectionne le système de prompt via la variable d'env PROMPT_SYSTEM :
+      - "old" : ancien prompt simple (commit ba23972)
+      - "new" (défaut) : prompt enrichi via retrieval GraphDB, fallback générique si indisponible
+    """
+    prompt_system = os.getenv("PROMPT_SYSTEM", "new").lower()
+
+    if prompt_system == "old":
+        print("[prompt_builder] PROMPT_SYSTEM=old → ancien prompt")
+        return _build_old_prompt_hf(content) if hf else _build_old_prompt_ollama(content)
+
+    # Système nouveau (retrieval GraphDB)
     mcp_url, _, _ = _cfg()
     if not mcp_url:
         print("[prompt_builder] GRAPHDB_MCP_URL not set → fallback prompt")
@@ -436,7 +514,7 @@ def generate_mcq(content, model_name, temperature):
 
 
 def generate_mcq_hf(content, model_name, tokenizer, temperature):
-    full_prompt = _build_prompt(content)
+    full_prompt = _build_prompt(content, hf=True)
     print(full_prompt)
 
     pipe = pipeline(
@@ -653,12 +731,26 @@ models = {
 }
 
 if len(argv) < 2 or argv[1] not in models:
-    print("Usage: generate_mcq.py <save_name>")
+    print("Usage: generate_mcq.py <save_name> [index1] [index2] [start-end] ...")
     print("Valid save names:", list(models.keys()))
     exit(1)
 
 save_name = argv[1]
 model_name = models[save_name]
+
+# Parsing des index (même logique que main.py)
+indexes = []
+if len(argv) >= 3:
+    for arg in argv[2:]:
+        if '-' in arg:
+            parts = arg.split('-')
+            indexes.extend(range(int(parts[0]), int(parts[1]) + 1))
+        else:
+            indexes.append(int(arg))
+
+if indexes:
+    df_test = df_test.iloc[indexes].reset_index(drop=True)
+    print(f"✓ Subset : {len(df_test)} lisa sheets (indexes: {argv[2:]})")
 
 with open("correctness.output", mode="a") as f:
     df = for_a_model(df_test, model_name, save_name)

@@ -1,0 +1,4 @@
+
+qwen3_0.6b.csv quality distribution:
+  Mauvaise qualité (False): 60.00% (n=3/5)
+  Bonne qualité (True): 40.00% (n=2/5)
