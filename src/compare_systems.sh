@@ -29,7 +29,7 @@ if [ -f "$ENV_FILE" ]; then
     set +a
 fi
 
-source ~/Documents/partages/.venv/bin/activate
+source ~/Documents/.venv/bin/activate
 
 # Démarrer ollama s'il ne tourne pas déjà
 if ! pgrep -x ollama > /dev/null; then
