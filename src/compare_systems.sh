@@ -16,6 +16,11 @@
 
 set -euo pipefail
 
+# ─── PARAMÈTRE DE TEST ───────────────────────────────────────────────────────
+# Mettre un range ici pour limiter les sheets (ex: "0-9"), laisser vide pour tout
+TEST_RANGE="0-9"
+# ─────────────────────────────────────────────────────────────────────────────
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(dirname "$SCRIPT_DIR")"
 ENV_FILE="$ROOT_DIR/.env"
@@ -66,6 +71,11 @@ for arg in "$@"; do
         MODELS+=("$arg")
     fi
 done
+
+# TEST_RANGE injecté si aucun index passé en argument
+if [ ${#INDEX_ARGS[@]} -eq 0 ] && [ -n "$TEST_RANGE" ]; then
+    INDEX_ARGS=("$TEST_RANGE")
+fi
 
 if [ ${#MODELS[@]} -eq 0 ]; then
     MODELS=("${ALL_MODELS[@]}")
