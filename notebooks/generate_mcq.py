@@ -515,7 +515,6 @@ def generate_mcq(content, model_name, temperature):
 
 def generate_mcq_hf(content, model_name, tokenizer, temperature):
     full_prompt = _build_prompt(content, hf=True)
-    print(full_prompt)
 
     pipe = pipeline(
         "text-generation",

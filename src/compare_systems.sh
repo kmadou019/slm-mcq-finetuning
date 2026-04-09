@@ -18,7 +18,7 @@ set -euo pipefail
 
 # ─── PARAMÈTRE DE TEST ───────────────────────────────────────────────────────
 # Mettre un range ici pour limiter les sheets (ex: "0-9"), laisser vide pour tout
-TEST_RANGE="0-9"
+TEST_RANGE=""
 # ─────────────────────────────────────────────────────────────────────────────
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -44,20 +44,20 @@ fi
 
 ALL_MODELS=(
     "llama3_1_8b"
-    "openbiollm_8b"
-    "gemma2_9b"
-    "medGemma_4b"
-    "medGemma_27b"
-    "qwen3_8b"
-    "mistral_7b"
-    "eurollm_9b"
-    "apertus_8B"
+    #"openbiollm_8b"
+    #"gemma2_9b"
+    #"medGemma_4b"
+    #"medGemma_27b"
+    #"qwen3_8b"
+    #"mistral_7b"
+    #"eurollm_9b"
+    #"apertus_8B"
     "qwen3_0.6b"
     "qwen3_1_7b"
-    "qwen3_4b"
-    "qwen3_8b_pdapt_slerp"
-    "qwen3_4b_pdapt_slerp"
-    "qwen3_1_7b_pdapt_slerp"
+    #"qwen3_4b"
+    #"qwen3_8b_pdapt_slerp"
+    #"qwen3_4b_pdapt_slerp"
+    #"qwen3_1_7b_pdapt_slerp"
     "qwen3_0.6b_pdapt_slerp"
 )
 
@@ -89,27 +89,42 @@ mkdir -p "$RESULTS_DIR"
 
 run_system() {
     local system_name="$1"
+    local state_file="$RESULTS_DIR/state_${system_name}.txt"
 
     echo ""
     echo "========================================"
     echo "  Système : $system_name"
     echo "========================================"
 
-    # Réinitialiser distribution.output pour ce run
-    > "$SCRIPT_DIR/distribution.output"
+    # Charger les modèles déjà complétés
+    local done_models=()
+    if [ -f "$state_file" ]; then
+        mapfile -t done_models < "$state_file"
+        echo "[resume] ${#done_models[@]} modèles déjà complétés pour '$system_name' : ${done_models[*]}"
+    fi
 
-    # Supprimer les CSVs des modèles testés pour forcer la régénération
+    # Vider distribution.output seulement si on repart de zéro
+    if [ ${#done_models[@]} -eq 0 ]; then
+        > "$SCRIPT_DIR/distribution.output"
+    fi
+
+    # Supprimer les CSVs uniquement des modèles non encore complétés
     for model in "${MODELS[@]}"; do
-        if [ -n "${MODEL_MCQ_PATH:-}" ]; then
-            rm -f "${MODEL_MCQ_PATH}/${model}.csv"
+        if printf '%s\n' "${done_models[@]}" | grep -qx "$model"; then
+            continue
         fi
-        if [ -n "${MODEL_MCQ_EVAL_EXPORT_PATH:-}" ]; then
-            rm -f "${MODEL_MCQ_EVAL_EXPORT_PATH}/${model}.csv"
-        fi
+        [ -n "${MODEL_MCQ_PATH:-}" ]      && rm -f "${MODEL_MCQ_PATH}/${model}.csv"
+        [ -n "${MODEL_MCQ_EVAL_EXPORT_PATH:-}" ] && rm -f "${MODEL_MCQ_EVAL_EXPORT_PATH}/${model}.csv"
     done
 
     # Générer puis évaluer chaque modèle
     for model in "${MODELS[@]}"; do
+        # Skip si déjà complété
+        if printf '%s\n' "${done_models[@]}" | grep -qx "$model"; then
+            echo "[skip] $model déjà complété"
+            continue
+        fi
+
         echo ""
         echo "--- [$system_name] Génération : $model ---"
         "$ROOT_DIR/notebooks/generate_mcq.py" "$model" "${INDEX_ARGS[@]}" || {
@@ -123,6 +138,10 @@ run_system() {
             echo "[WARN] Évaluation échouée pour $model, on continue."
             continue
         }
+
+        # Marquer comme complété
+        echo "$model" >> "$state_file"
+        done_models+=("$model")
     done
 
     cp "$SCRIPT_DIR/distribution.output" "$RESULTS_DIR/distribution_${system_name}.output"

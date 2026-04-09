@@ -1,0 +1,292 @@
+Unnamed: 0,id,question,question_comment,option_a,option_a_comment,option_b,option_b_comment,option_c,option_c_comment,option_d,option_d_comment,correct_option,content_raw,distractor_quality
+0,OIC-005-01-A,La responsabilité d'un professionnel ou d'un établissement de santé peut être recherchée à quelles deux fins principales?,"La question porte sur les deux objectifs principaux de la recherche de responsabilité en matière de santé, conformément à l'objectif de connaissance OIC-005-01-A (Rang A).",Sanction et indemnisation,"Cette option correspond à la définition donnée dans le texte : 'La responsabilité d’un professionnel de santé ou d’un établissement de santé peut être recherchée à deux fins : soit la sanction du professionnel ou de l’établissement, soit l’indemnisation de l’usager victime...'. C'est la bonne réponse.",Pénalité et réparation,"Bien que 'pénalité' puisse être associé à la sanction et 'réparation' à l'indemnisation, les termes'sanction' et 'indemnisation' sont plus précis et directement utilisés dans le texte pour décrire les deux objectifs distincts.",Punition et compensation,"Similaire à l'option b, 'punition' est synonyme de sanction et 'compensation' d'indemnisation, mais les termes spécifiques du texte sont'sanction' et 'indemnisation'.",Rétribution et dédommagement,"Ces termes ne sont pas utilisés dans le contexte juridique de la responsabilité médicale. 'Rétribution' n'a pas de sens ici, et 'dédommagement' est un synonyme d'indemnisation, mais l'option ne couvre pas l'objectif de sanction.",a,"{{objectif de connaissance
+|Identifiant=OIC-005-01-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité sanction/indemnisation
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=1}}
+
+La responsabilité d’un professionnel de santé ou d’un établissement de santé peut être recherchée à deux fins : soit la sanction du professionnel ou de l’établissement, soit l’indemnisation de l’usager victime des conséquences d’un événement indésirable associé aux soins. La sanction peut être de nature pénale ou disciplinaire. L’indemnisation incombe au responsable (exercice libéral) ou à son employeur s’il est salarié (public ou privé). Elle peut également être obtenue via la procédure amiable devant les commissions de conciliation et d’indemnisation. L’indemnisation des victimes est assurée par l’obligation de souscription pour les médecins et les établissements de santé (public ou privé) d’une assurance de responsabilité civile professionnelle. En plus d’assurer l’indemnisation des victimes, cette assurance permet de couvrir les médecins salariés lorsque la faute est détachable du service ou lorsque la mission qui leur a été confiée est outrepassée.
+
+L’indemnisation de l’usager s’estimant victime des conséquences dommageables d’un acte médical suppose qu’il apporte la preuve d’un dommage, d’un fait générateur de responsabilité et d’un lien de causalité entre le fait générateur et le dommage.
+
+En matière de responsabilité des professionnels et des établissements de santé, le dommage peut prendre plusieurs formes. Il peut s’agir :
+
+- d’une atteinte à l’intégrité physique ou psychique ;
+
+- d’une perte de chance de survie ou de guérison ;
+
+- d’une perte de chance d’avoir échappé à un risque qui s’est finalement réalisé (en cas de défaut d’information).
+
+Le dommage doit être actuel et certain. Il peut être futur dès lors qu’il est certain (par exemple, la stérilité d’une enfant du fait d’une irradiation fautive).
+
+Le lien de causalité entre le fait générateur de responsabilité (en règle générale, la faute) et le dommage doit être certain. Il n’a pas à être direct ni exclusif.
+
+Parmi les éléments du triptyque fondant l’engagement de la responsabilité, le lien de causalité est habituellement le plus difficile à prouver par le patient. En effet, il est souvent complexe de distinguer les conséquences de la faute de celles de l’évolution spontanée de l’état de santé pathologique. Le juge admet que l’on puisse indemniser la perte de chance de survie ou de guérison. Dans ce cas, l’indemnisation est accordée à proportion de la probabilité de survie ou de guérison perdue du fait de la faute.
+
+Le même raisonnement est appliqué en cas de défaut d’information. Dans cette hypothèse, le patient a perdu une chance de s’échapper au risque qui s’est finalement réalisé. En d’autres termes, s’il avait été informé du risque, il aurait pu choisir de le courir ou de renoncer à l’acte médical. L’indemnisation est accordée à proportion de la probabilité qu’il aurait eu de renoncer à l’acte s’il avait été informé du risque. Il en résulte que si l’acte était indispensable, le juge en déduit que même informé du risque, le patient n’aurait pas renoncé à l’acte. La perte de chance est donc nulle.
+
+Le juge judiciaire comme le juge administratif admettent également qu’un défaut d’information ouvre droit à une indemnisation au titre du préjudice d’impréparation, distinct de la perte de chance. Cette indemnisation répare, lorsque le risque dont le patient n’a pas été informé s’est réalisé, les troubles qu’il a pu subir du fait qu’il n’a pas pu se préparer à cette éventualité, notamment en prenant certaines dispositions personnelles.",False
+1,OIC-005-02-A,"Quelle est la définition de la responsabilité pénale, selon le texte fourni?","La question évalue la compréhension de la définition de la responsabilité pénale, un objectif de Rang A.","Une fonction répressive visant à sanctionner des comportements répréhensibles par la société, pouvant concerner des individus et des personnes morales.","Cette définition correspond à la description donnée dans le texte, soulignant la fonction répressive, la sanction, la nature répréhensible du comportement et l'application aux personnes physiques et morales.","Une obligation d'indemniser une victime pour un dommage subi, souvent liée à une faute.","Cette définition correspond à la responsabilité civile, et non pénale.",Une sanction administrative imposée par l'administration publique pour non-respect de règles spécifiques.,"Cette définition correspond à la responsabilité administrative, et non pénale.",Une sanction disciplinaire infligée par un ordre professionnel pour manquement à ses règles déontologiques.,"Cette définition correspond à la responsabilité disciplinaire, et non pénale.",a,"{{objectif de connaissance
+|Identifiant=OIC-005-02-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité pénale
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=2}}
+
+La responsabilité pénale a une fonction répressive ayant pour vocation de sanctionner des individus dont le comportement est réprouvé dans notre société. Elle est toujours personnelle, concernant à l’identique tous les médecins (y compris les internes), quel que soit le cadre de leur exercice. Elle peut également concerner les établissements de santé, en leur qualité de personnes morales.
+
+Les comportements que la société définit comme répréhensibles sont appelés infractions. Celle-ci sont énumérées dans le Code pénal et classées en trois catégories par ordre de gravité : contraventions, délits, crimes.
+
+'''Infractions'''
+
+En dehors de certaines dispositions particulières liées au non-respect des conditions spécifiques à certaines actions de soins (actes d’assistance médicale à la procréation, activités de recherche biomédicale, etc.), les infractions qui peuvent être reprochées à un médecin peuvent également l’être à tout citoyen. Toutefois, les médecins sont exposés à commettre certaines infractions plus que d’autres. On peut en citer trois grands types du fait de l’exercice de soin : celles qui résultent de la violation d’un devoir d’humanisme, les blessures et l’homicide involontaires et les blessures et l’homicide volontaire.
+
+'''Violation d’un devoir d’humanisme'''
+
+La violation d’un devoir d’humanisme concerne principalement 1/ la rédaction de faux certificats (article 441-7 du Code pénal), 2/ la violation du secret professionnel (article 226-13 du Code pénal) et 3/ la non-assistance à personne en péril (article 226-3 du Code pénal, encadré 5.1). Il faut noter que le défaut d’information au patient ne constitue pas une infraction pénale. Ce défaut est par contre une cause potentielle de responsabilité civile.
+
+'''Homicide et blessures involontaires'''
+
+L’homicide et les blessures involontaires recouvrent la majeure partie des infractions reprochées à un médecin (articles 221-6, 222-19 et 222-20 du Code pénal). La mort d’un patient ou ses blessures sont supposées résulter d’une faute par maladresse, imprudence, inattention, négligence ou manquement à une obligation de sécurité. Le médecin mis en cause n’a potentiellement pas respecté les données acquises de la science ou a commis une faute « banale » dans l’élaboration d’un diagnostic, dans la prescription ou la réalisation d’un traitement. Pour que l’infraction existe, il faut que le dommage et le lien de causalité certain avec la faute soient établis. Le lien de causalité peut être soit direct, soit indirect, à condition que la faute commise soit dite qualifiée, c’est-à-dire ayant créé ou contribué à créer la situation qui a contribué au dommage, ou n’ayant pas pris les mesures nécessaires pour l’éviter. On distingue deux types de fautes qualifiées :
+
+- la faute délibérée : il s’agit d’une violation d’une obligation particulière de prudence ou de sécurité prévue par la loi ou le règlement. Elle nécessite de violer délibérément (donc de façon consciente) une règle de prudence ou de sécurité.
+
+- la faute caractérisée : il s’agit d’une faute d’imprudence, de négligence, un manquement à une obligation de prudence ou de sécurité qui expose le patient à un risque d’une particulière gravité, que le médecin ne peut ignorer.
+
+'''Homicide et blessures volontaires'''
+
+Cela reste des infractions rares en responsabilité médicale. Elle se résument pour l’essentiel à la question de :
+
+- l’euthanasie ;
+
+- l’absence d’obtention d’un consentement d’un patient à un acte médical ;
+
+- le non-respect des conditions de licéité de certains actes médicaux, encadrés par des lois spécifiques : interruption de grossesse, stérilisation à but contraceptif, prélèvements d’organes, expérimentation chez l’homme, etc.
+
+'''Mise en œuvre de la responsabilité pénale'''
+
+'''Poursuites'''
+
+L’initiative des poursuites appartient au procureur de la République, qui décide des suites à donner aux plaintes, dénonciations et enquêtes de police. Il peut classer l’affaire sans suite, renvoyer directement l’auteur devant la juridiction de jugement ou requérir l’ouverture d’une information judiciaire.
+
+Si l’affaire n’est pas classée sans suite, l’étape de l’information judiciaire est la règle en matière médicale, compte tenu de la complexité fréquente des dossiers.
+
+'''Jugement'''
+
+Les contraventions sont jugées par le tribunal de police et passibles d’amendes, les délits par le tribunal correctionnel et passibles de peines d’emprisonnement et les crimes par la cour d’assises et passibles de peines de réclusion criminelle.
+
+Les infractions reprochées aux médecins relèvent habituellement du tribunal correctionnel, constituant pour l’essentiel des délits exposant à des peines d’emprisonnement, pouvant être assorties du sursis, et à des amendes.
+
+Le patient victime peut demander en parallèle de la sanction pénale l’indemnisation de son dommage, au cours du même procès, en se constituant partie civile.
+
+<br />",False
+2,OIC-005-03-A,Quelle est la juridiction compétente pour juger des actions en responsabilité civile engagées contre les professionnels exerçant à titre libéral et les établissements de santé privés?,"La question évalue la connaissance de la définition de la responsabilité civile et des juridictions compétentes pour la traiter, spécifiquement pour les professionnels libéraux et les établissements privés.","Tribunal de grande instance, cour d’appel, cour de cassation","Correct. Ce sont les juridictions de l'ordre judiciaire compétentes pour les affaires relevant de la responsabilité civile, y compris celles des professionnels libéraux et des établissements privés.",Conseil d'État et tribunaux administratifs,"Incorrect. Ces juridictions sont compétentes pour les litiges relevant de la responsabilité administrative, notamment concernant les établissements publics de santé ou les agents de l'État.",Conseil national de l'ordre des médecins et chambres disciplinaires,"Incorrect. Ces instances sont compétentes pour les questions de responsabilité disciplinaire, pas civile.",Tribunaux paritaires de baux ruraux,Incorrect. Ces tribunaux sont spécialisés dans les litiges relatifs aux baux ruraux et n'ont aucune compétence en matière de responsabilité médicale civile.,a,"{{objectif de connaissance
+|Identifiant=OIC-005-03-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité civile
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=3}}
+
+Les professionnels exerçant à titre libéral et les établissements de santé privés engagent leur responsabilité civile devant les juridictions de l’ordre judiciaire : tribunal de grande instance, cour d’appel, cour de cassation.
+
+S’agissant des médecins salariés d’établissements, services ou organismes privés, ils n’engagent pas leur responsabilité civile personnelle du fait des dommages causés à un patient dès lors qu’ils n’outrepassent pas la mission qui leur a été confiée par leur employeur. C’est l’application du régime de responsabilité du commettant (l’employeur) du fait de son proposé (le médecin), lequel n’est pas incompatible avec le principe d’indépendance professionnelle du médecin dans l’exercice de son art.
+
+Les praticiens hospitaliers engagent leur responsabilité civile professionnelle à raison des dommages survenus dans le cadre de leur secteur d’activité libérale au sein d’un établissement public de santé.",False
+3,OIC-005-04-A,"Quelle est la principale caractéristique de la responsabilité administrative dans le contexte hospitalier, selon le texte fourni?","La question évalue la compréhension de la définition et du fonctionnement de la responsabilité administrative dans le secteur public hospitalier, en particulier la relation juridique entre le patient, le médecin et l'établissement.","La responsabilité incombe à l'établissement public de santé, car il n'y a pas de lien juridique direct entre le patient et le médecin hospitalier.",Cette proposition résume correctement le principe clé de la responsabilité administrative en milieu hospitalier : l'établissement public est responsable des actes de ses agents (médecins) envers les patients.,"La responsabilité incombe directement au médecin hospitalier, en tant qu'agent du service public.","Cette proposition est incorrecte. Bien que le médecin puisse être responsable civilement ou disciplinairement, la responsabilité administrative principale incombe à l'établissement.","La responsabilité incombe au patient, s'il a contribué à son propre dommage.","Cette proposition est incorrecte. La responsabilité du patient peut être engagée dans certains cas (faute contributive), mais elle ne constitue pas la base de la responsabilité administrative du service public.","La responsabilité incombe à l'État, quel que soit l'établissement public de santé concerné.","Cette proposition est incorrecte. La responsabilité incombe spécifiquement à l'établissement public de santé (hôpital) où l'acte a été commis, et non directement à l'État en tant qu'entité générale.",a,"{{objectif de connaissance
+|Identifiant=OIC-005-04-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité administrative
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=4}}
+
+Il n’existe pas de relation juridique entre le médecin, agent du service public hospitalier, et son patient. Les deux ne sont en effet liés juridiquement qu’à l’établissement public de santé. S’agissant des actes réalisés par les médecins hospitaliers, c’est la responsabilité de l’établissement public de santé qui est engagée devant les juridictions de l’ordre administratif : tribunal administratif, cour administrative d’appel, Conseil d’Etat.
+
+La jurisprudence administrative a défini une typologie des fautes susceptibles d’engager la responsabilité du service public :
+
+- la faute de service : c’est la faute commise par un agent public dans l’exercice de ses fonctions, c’est-à-dire pendant le service, avec les moyens du service et en dehors de tout intérêt personnel ;
+
+- la faute dans l’organisation et le fonctionnement du service : ont pu être qualifiés ainsi une insuffisance dans la surveillance des patients ou des locaux, le mauvais entretien des locaux et du matériel, la mauvaise coordination entre médecins, etc.
+
+Doit être distinguée la faute personnelle ou détachable du service, qui engage la responsabilité civile personnelle de son auteur. Deux cas de figure peuvent être envisagées :
+
+- soit elle a été commise en dehors du service et n’a aucun lien avec le service (exemple de la faute commise par un médecin dans des soins dispensés dans un cadre privé) ;
+
+- soit elle a été commise dans le service mais elle s’en détache en raison de l’intention de nuire de son auteur ou de son exceptionnelle gravité (exemple du refus du chirurgien de garde de se déplacer pour un blessé par balle alors qu’il avait été averti par l’interne de la gravité de son état).",False
+4,OIC-005-05-A,Quelle est la définition de la responsabilité disciplinaire dans le contexte médical?,"La question évalue la compréhension de la définition de la responsabilité disciplinaire, un objectif de Rang A.","La responsabilité encourue devant les instances de l'Ordre des médecins, indépendante des actions civiles ou pénales.",Cette définition correspond exactement à la description fournie dans le texte source concernant la responsabilité disciplinaire.,"La responsabilité financière engagée suite à une faute médicale, visant à indemniser la victime.","Cette définition correspond à la responsabilité civile, et non disciplinaire.",La responsabilité encourue devant les tribunaux pénaux pour des actes médicaux constitutifs d'infractions.,"Cette définition correspond à la responsabilité pénale, et non disciplinaire.",La responsabilité administrative liée à la gestion des établissements de santé et à l'organisation des soins.,"Cette définition correspond à la responsabilité administrative, et non disciplinaire.",a,"{{objectif de connaissance
+|Identifiant=OIC-005-05-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité disciplinaire
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=5}}
+
+La responsabilité disciplinaire est celle qui est encourue devant les instances de l’Ordre des médecins. L’action disciplinaire est indépendante des autres actions qui peuvent être engagées contre un médecin (civiles ou pénales).
+
+'''Fautes et sanctions disciplinaires'''
+
+'''Fautes disciplinaires'''
+
+Est une faute disciplinaire tout manquement aux règles de déontologie médicale. C’est une violation d’une règle morale plus qu’une règle proprement juridique, qu’elle soit inscrite dans un texte, le Code de la déontologie médicale par exemple, ou non. Ces fautes ont en principe un rapport avec l’activité professionnelle, mais pas exclusivement. Un acte de la vie privée peut porter atteinte à l’honneur ou à la moralité de la profession. Les règles de la déontologie médicale sont rassemblées dans le Code de déontologie médicale (article R.4127-1 à R.4127-112 du Code de la santé publique). Les principes fondamentaux qu’il renferme s’imposent à tous les médecins inscrits au tableau de l’Ordre des médecins, ainsi qu’aux internes en médecine effectuant des remplacements.
+
+Ce Code se différencie du Code pénal qui lui n’énonce pas de principes mais liste des comportements prohibés par notre société (infractions pénales). Il est élaboré par le Conseil national de l’Ordre des médecins, investi à cet effet d’un pouvoir réglementaire soumis au Conseil d’Etat. Il est périodiquement révisé, étant donné qu’il doit être conforme à la loi.
+
+'''Sanctions disciplinaires'''
+
+Les sanctions encourues sont l’avertissement, le blâme, l’interdiction temporaire d’exercer des fonctions rémunérées par l’Etat ou les collectivités publiques, l’interdiction temporaire d’exercice (pour trois ans au maximum) ou la radiation du tableau de l’Ordre.
+
+Les interdictions d’exercice temporaires peuvent être assorties d’un sursis (partiel ou total), révocable en cas de commission d’une nouvelle faute disciplinaire dans les cinq ans qui suivent. En cas de radiation, l’intéressé peut demander son relèvement au bout de trois ans. En cas de refus, il doit attendre trois ans pour en faire éventuellement à nouveau la demande.
+
+'''Mise en œuvre de la responsabilité disciplinaire'''
+
+'''Juridictions'''
+
+Les juridictions compétentes sont la chambre disciplinaire du conseil régional de l’Ordre et la chambre disciplinaire du conseil national de l’Ordre en appel. Un pouvoir en cassation peut être formé devant le Conseil d’Etat.
+
+'''Saisine'''
+
+Peuvent saisir la chambre disciplinaire du conseil régional de l’Ordre pour les médecins libéraux un conseil départemental de l’Ordre, le conseil national de l’Ordre, un médecin, un syndicat de médecins, le directeur de l’Agence régionale de la santé, le préfet, le procureur de la République et le ministre en charge de la santé.
+
+Pour les médecins du secteur public hospitalier, le pouvoir de saisine est limité au conseil départemental de l’Ordre, au conseil national de l’Ordre, au directeur de l’Agence régionale de la santé, au préfet, au procureur de la République et au ministre en charge de la santé.
+
+Une plainte contre un médecin libéral ou hospitalier émanant d’un patient doit être transmise au conseil départemental de l’Ordre, qui a l’obligation de tenter une conciliation.
+
+En cas d’échec, le conseil départemental de l’Ordre a l’obligation de transmettre la plainte à la chambre disciplinaire du conseil régional de l’Ordre.
+
+'''Procédure'''
+
+Le patient est l’une des parties à l’instance, il peut donc exercer des voies de recours (appel, pourvoi en cassation) et peut être accompagné d’un avocat. Le médecin, quant à lui, peut être assisté devant la juridiction par un avocat du barreau ou un confrère. La procédure devant les juridictions de l’Ordre est contradictoire ; l’audience est publique",False
+5,OIC-005-06-A,Quelle est la définition de la responsabilité sans faute dans le domaine médical?,"La question évalue la compréhension de la définition de la responsabilité sans faute, un concept clé dans le cadre des responsabilités médicales.","Une responsabilité engagée pour un dommage lié aux soins, même en l'absence de faute, d'erreur ou de manquement aux règles professionnelles.",Cette définition correspond exactement à la description fournie dans le contenu source pour la responsabilité sans faute.,Une responsabilité qui ne peut être engagée que si une faute professionnelle a été clairement démontrée.,"Cette définition correspond à la responsabilité traditionnelle basée sur la faute, et non à la responsabilité sans faute.",Une responsabilité limitée aux seuls cas d'infections nosocomiales contractées pendant l'hospitalisation.,"Bien que l'infection nosocomiale soit un exemple de situation pouvant relever de la responsabilité sans faute, cette définition est trop restrictive et ne couvre pas tous les cas.","Une responsabilité disciplinaire sanctionnant les manquements aux règles déontologiques, indépendamment de la survenance d'un dommage.","Cette définition correspond à la responsabilité disciplinaire, qui concerne le respect des règles professionnelles et déontologiques, et non la responsabilité civile ou administrative liée à un dommage.",a,"{{objectif de connaissance
+|Identifiant=OIC-005-06-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité sans faute
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=6}}
+
+Dans le cas d'un dommage lié au soins mais survenu sans manquement aux règles professionnelles ou scientifiques, ni erreur, on parle de responsabilité sans faute.
+
+Le législateur a reconnu des systèmes d’indemnisation pour lesquels la responsabilité peut être engagée à partir d’un autre fait générateur que la faute prouvée. C’est le cas de la survenue d’une infection nosocomiale.",False
+6,OIC-005-07-A,"Selon le Code de la santé publique, les professionnels et établissements de santé ne sont responsables des conséquences dommageables d’actes de prévention, de prévention ou de soins, uniquement :","La question évalue la compréhension de la condition de responsabilité des professionnels de santé en France, spécifiquement la nécessité de prouver une faute, conformément à l'article L.1142-1 du Code de la santé publique.",en cas de faute,"Cette proposition reprend directement l'information clé tirée de l'article L.1142-1 du Code de la santé publique, qui stipule que la responsabilité n'est engagée qu'en cas de faute.",en cas d'erreur médicale,"L'erreur médicale est une notion distincte de la faute. Toutes les erreurs médicales ne constituent pas une faute, et toutes les fautes ne sont pas nécessairement des erreurs médicales. La loi exige la preuve de la faute, pas seulement l'existence d'une erreur.",en cas d'aléa thérapeutique,"L'aléa thérapeutique est un risque inhérent à tout acte médical, même pratiqué correctement et sans faute. La loi protège les professionnels de santé contre la responsabilité en cas d'aléa thérapeutique, sauf s'il y a faute.",en cas d'accident médical,"Un accident médical est un événement indésirable survenu pendant un acte médical. Il peut être dû à une faute, à un aléa thérapeutique, ou à d'autres causes. La loi exige la preuve de la faute pour engager la responsabilité, pas seulement la survenue d'un accident médical.",a,"{{objectif de connaissance
+|Identifiant=OIC-005-07-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la faute
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=7}}
+
+Depuis la loi du 4 mars 2002 ont été substitués aux obligations professionnelles du médecin les droits du patient légalement consacrés. Un patient peut se prévaloir d’une atteinte à l’un de ses droits pour rechercher la responsabilité d’un médecin ou d’un établissement de santé. Il lui incombe cependant de prouver la faute. L’article L.1142-1 du Code de la santé publique stipule que les professionnels et établissements de santé ne sont responsables des conséquences dommageables d’actes de prévention, de prévention ou de soins qu’en cas de faute.
+
+'''Droits du patient'''
+
+L’atteinte de l’un de ces droits peut constituer un fait générateur de responsabilité médicale pour faute :
+
+- droit à la protection de la santé ;
+
+- droit au respect de la dignité ;
+
+- droit à ne pas subir de discrimination dans l’accès à la prévention ou aux soins ;
+
+- droit au respect de la vie privée et au secret des informations ;
+
+- droit de recevoir les traitements et les soins les plus appropriés et de bénéficier des thérapeutiques dont l’efficacité est reconnue et qui garantissent la meilleure sécurité sanitaire et le meilleur apaisement possible de la souffrance au regard des connaissances médicales avérées ;
+
+- droit de ne pas subir des actes témoignant d’une obstination déraisonnable ;
+
+- droit à une sédation profonde et continue provoquant une altération de la conscience maintenue jusqu’au décès ;
+
+- droit de recevoir des traitements et des soins visant à soulager la souffrance ;
+
+- droit d’accéder à des soins palliatifs et à un accompagnement ;
+
+- droit d’être informé sur son état de santé ;
+
+-droit à une information sur les frais auxquels l’usager pourrait être exposé à l’occasion d’activités de prévention, de diagnostic et de soins ;
+
+- droit de refuser ou de ne pas recevoir un traitement
+
+
+Le fait générateur de responsabilité doit donc être une faute prouvée. Cette faute peut revêtir différentes formes et l’on distingue habituellement :
+
+- la faute technique, qui consiste en une violation des connaissances médicales avérées ou des données acquises de la science. Ces connaissances médicales avérées constituent un standard technique auquel le juge se réfère, et peuvent être définies en référence à la littérature scientifique médicale ainsi qu’aux recommandations de bonnes pratiques. Le juge devra se référer aux connaissances médicales avérées au moment de l’acte médical litigieux ;
+
+- la violation d’un devoir d’humanisme, qui renvoie à la dimension « humaine » de la pratique médicale, et peut notamment résulter de l’atteinte au secret professionnel ou d’un défaut d’information ne permettant pas un consentement libre et éclairé.
+
+Dans certains cas, le fait générateur peut prendre d’autres formes : il peut s’agir du défaut d’un produit de santé, le produit étant considéré comme défectueux lorsqu’il n’offre pas la sécurité à laquelle on peut légitimement s’attendre.",True
+7,OIC-005-08-A,Quelle est la définition de l'erreur médicale selon le texte fourni?,"La question évalue la compréhension de la définition de l'erreur médicale, en se basant sur le texte source fourni.","Une action involontaire et évitable pouvant concerner la prévention, le diagnostic ou le traitement, pouvant ou non entraîner un dommage.",Cette définition correspond à la description donnée dans le texte concernant les erreurs médicales.,"Un événement indésirable grave (EIG) entraînant un décès, une complication grave ou une prolongation d'hospitalisation d'au moins un jour.","Cette définition correspond à celle d'un EIG, et non pas de l'erreur médicale en général. Une erreur médicale peut ou non entraîner un EIG.",Une action qui a été faite mais qui n'était pas utile.,"Cette définition correspond à l'erreur par commission, qui est un type d'erreur médicale, mais pas la définition générale.",Le non-respect d'une recommandation ou d'une règle professionnelle.,"Cette définition correspond à une violation (ou non-conformité), qui est un type d'erreur médicale, mais pas la définition générale.",a,"{{objectif de connaissance
+|Identifiant=OIC-005-08-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de l’erreur médicale
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=8}}
+
+<br />L’être humain est faillible et il est dans sa nature de faire des erreurs. Reconnaitre qu’on peut faire des erreurs est un préalable à l’adoption de comportement de prévention des erreurs. Reconnaître qu’on a fait une erreur est une occasion d’apprendre et de progresser. C’est vrai au niveau des individus mais c’est vrai aussi au niveau des organisations. Quand une organisation met en place des dispositifs d’identification, d’analyse et de prévention des erreurs on parle « d’organisation apprenante ».
+
+On parle d’erreur par omission quand une action nécessaire n’a pas été faite. L’erreur par commission désigne une action qui a été faite mais qui n’était pas utile. L’erreur d’exécution désigne une action mal réalisée.
+
+On parle de violation (ou de non-conformité) en cas de non-respect d’une recommandation ou d’une règle professionnelle. Ce non-respect peut être routinier (mauvaise habitude), issu d’une priorisation personnelle (pour gagner du temps par exemple) ou induite par le contexte (suractivité, urgence, etc.).
+
+Les erreurs dans le domaine des soins peuvent concerner les actions de prévention, de diagnostic ou de traitement. Elles peuvent ou non avoir entraîné un dommage pour le patient. Elles sont involontaires et évitables. On parle d’événement indésirable grave (EIG) lorsque le dommage est un décès, ou une complication grave ou, au minimum, une prolongation d’hospitalisation d’un jour.
+
+L’être humain est faillible et il est dans sa nature de faire des erreurs. Reconnaitre qu’on peut faire des erreurs est un préalable à l’adoption de comportement de prévention des erreurs. Reconnaître qu’on a fait une erreur est une occasion d’apprendre et de progresser. C’est vrai au niveau des individus mais c’est vrai aussi au niveau des organisations. Quand une organisation met en place des dispositifs d’identification, d’analyse et de prévention des erreurs on parle « d’organisation apprenante ».
+
+'''Les types d’erreur : omission, commission, exécution, violation''' 
+
+On parle d’erreur par omission quand une action nécessaire n’a pas été faite. L’erreur par commission désigne une action qui a été faite mais qui n’était pas utile. L’erreur d’exécution désigne une action mal réalisée.
+
+On parle de violation (ou de non-conformité) en cas de non-respect d’une recommandation ou d’une règle professionnelle. Ce non-respect peut être routinier (mauvaise habitude), issu d’une priorisation personnelle (pour gagner du temps par exemple) ou induite par le contexte (suractivité, urgence, etc.).",False
+8,OIC-005-09-A,Quelle est la définition correcte de l'affection iatrogène?,"La question évalue la compréhension de la définition de l'affection iatrogène, en la distinguant de l'accident médical et de l'erreur médicale.","Un effet néfaste provoqué par un traitement ou un acte médical, distinct des symptômes initialement visés.",Cette définition correspond à la description donnée dans le texte source pour une affection iatrogène.,"Un événement indésirable survenu au cours d'un acte de soin, entraînant un dommage anormal.","Cette définition correspond à celle de l'accident médical, telle que donnée dans le texte source.",Un dommage résultant d'une erreur d'un professionnel de santé lors d'un acte médical.,"Cette définition décrit une conséquence possible d'une erreur médicale, mais ne définit pas l'affection iatrogène, qui peut survenir même sans faute.",Un événement imprévisible résultant de soins conformes aux bonnes pratiques.,"Cette définition correspond à celle de l'aléa thérapeutique, une sous-catégorie de l'accident médical, telle que donnée dans le texte source.",a,"{{objectif de connaissance
+|Identifiant=OIC-005-09-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de l’accident médical et de l’affection iatrogène
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Patrice François
+|Ordre=9}}
+
+L’accident médical désigne un événement indésirable survenu au cours d’un acte de soin, de prévention ou de diagnostic. Cet accident entraîne un dommage anormal au regard de l’évolution prévisible de l'état de santé. Il peut s’être produit dans n’importe quel lieu de soins : un établissement de santé, public ou privé, un cabinet d’un professionnel de santé exerçant en libéral, un laboratoire d’analyses médicales, de radiologie, une pharmacie, etc. Un accident médical peut être causé par une erreur d’un professionnel de santé ou découler de soins conformes aux bonnes pratiques et s'appelle alors « l’aléa thérapeutique ».
+
+Les affections iatrogènes désignent l’ensemble des effets néfastes qui peuvent être provoqués par un traitement ou un acte médical. On parle d’effets iatrogènes lorsque le traitement déclenche de nouveaux symptômes, distincts de ceux qu’il est censé soigner. L’effet iatrogène peut intervenir avec ou sans mauvais usage du médicament, que ce mauvais usage soit le fait d’un professionnel de santé ou du malade lui-même. Il ne faut donc pas confondre affection iatrogène et erreur médicale. L’affection iatrogène est une conséquence de la prise d’un médicament même si l’indication était correcte et la posologie bonne. Il est donc possible d’être victime d’une affection iatrogène en dehors de toute erreur ou faute du professionnel de santé.",False
+9,OIC-005-10-A,Quelle est la définition d'une infection nosocomiale?,"La question évalue la connaissance de la définition précise d'une infection nosocomiale, conformément à l'objectif de Rang A spécifié.","Une infection contractée pendant un séjour dans un établissement de santé, absente à l'admission.","Cette définition correspond à la description standard d'une infection nosocomiale, également appelée infection associée aux soins. Elle est contractée dans l'établissement et n'était pas présente à l'admission.",Une infection contractée avant l'admission dans un établissement de santé.,Cette définition est incorrecte. Une infection présente à l'admission n'est pas considérée comme nosocomiale.,"Une infection contractée dans la communauté, avant l'hospitalisation.",Cette définition est incorrecte. Les infections communautaires sont contractées en dehors des établissements de santé.,Une infection qui apparaît plus de 72 heures après l'admission dans un établissement de santé.,"Cette définition est incorrecte. Le délai généralement utilisé pour considérer une infection comme nosocomiale est de 48 heures après l'admission, si l'état infectieux initial est inconnu ou absent.",a,"{{objectif de connaissance
+|Identifiant=OIC-005-10-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de l’infection nosocomiale
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=10}}
+
+Les infections nosocomiales sont les infections contractées au cours d’un séjour dans un établissement de santé (hôpital, clinique…). Elle est aussi appelée infection associée aux soins. Ceci veut dire que ces infections sont absentes au moment de l’admission du patient dans l’établissement. Cependant, si l’état infectieux du patient à l’admission est inconnu, l’infection est généralement considérée comme nosocomiale si elle apparaît après 48 heures d’hospitalisation. Si elle apparaît avant un tel délai, on considère en général qu’elle était en incubation lors de l’entrée dans l’établissement.",False
