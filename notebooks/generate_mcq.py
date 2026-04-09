@@ -544,7 +544,7 @@ def get_checkpoint():
         with open("../data/checkpoints/start_", "r") as start:
             start = start.readline()
             df_in_construction = pd.read_csv("../data/checkpoints/df_in_construction_.csv")
-    except FileNotFoundError:
+    except (FileNotFoundError, pd.errors.EmptyDataError):
         df_in_construction = pd.DataFrame()
         start = 0
     return int(start), df_in_construction
