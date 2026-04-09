@@ -551,6 +551,7 @@ def get_checkpoint():
 
 
 def save_checkpoint(start, df_in_construction):
+    os.makedirs("../data/checkpoints", exist_ok=True)
     with open("../data/checkpoints/start_", "w") as fic:
         fic.write(str(start))
     df_in_construction.to_csv("../data/checkpoints/df_in_construction_.csv", index=False)
