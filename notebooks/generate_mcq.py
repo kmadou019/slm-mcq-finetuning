@@ -568,7 +568,7 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
     else:
         pipe = None
 
-    start, df_in_construction = get_checkpoint(model_name)
+    start, df_in_construction = get_checkpoint(save_name)
     pas = 400
 
     for idx in range(start, len(df_test)):
@@ -591,14 +591,14 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
                     break
 
         if idx % pas == 0:
-            save_checkpoint(idx, df_in_construction, model_name)
+            save_checkpoint(idx, df_in_construction, save_name)
 
     df_test[save_name] = df_in_construction[f'generated_{save_name}'].apply(validate_mcq)
     df = flatten(df_test, save_name)
 
     # Clean checkpoint for this model
-    for f in [f"../data/checkpoints/df_in_construction_{model_name}.csv",
-              f"../data/checkpoints/start_{model_name}"]:
+    for f in [f"../data/checkpoints/df_in_construction_{save_name}.csv",
+              f"../data/checkpoints/start_{save_name}"]:
         if os.path.exists(f):
             os.remove(f)
 
