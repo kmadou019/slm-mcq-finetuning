@@ -77,6 +77,43 @@ python benchmark_nemotron_vs_magistral.py
 
 ---
 
+## GPU Pipeline — Fixes et Améliorations (2026-04-10)
+
+Corrections apportées lors du run de comparaison `compare_systems.sh` sur GPU (OAR job) :
+
+| # | Problème | Fix | Fichier |
+|---|----------|-----|---------|
+| 1 | `AttributeError: 'float' has no attribute 'question'` dans `flatten()` — NaN passe `if mcq` | `hasattr(mcq, 'question')` | `notebooks/generate_mcq.py` |
+| 2 | `TypeError: Expected numeric dtype` sur `distractor_quality.round(0)` — GPT-4o renvoie parfois des strings | `pd.to_numeric(..., errors='coerce')` | `src/main.py` |
+| 3 | `OSError: Repo id must be in the form 'repo_name/...'` pour openbiollm | Supprimé `hf.co/` et `:latest` | `notebooks/generate_mcq.py` |
+| 4 | Pipeline HF rechargé à chaque sheet (1592 chargements GPU par modèle) | `pipeline()` créé une fois dans `for_a_model()`, passé en paramètre | `notebooks/generate_mcq.py` |
+| 5 | Checkpoint global (`start_`, `df_in_construction_.csv`) — un modèle peut hériter du checkpoint d'un autre | Checkpoints nommés par modèle (`start_{model}`, `df_in_construction_{model}.csv`) | `notebooks/generate_mcq.py` |
+| 6 | `compare_systems.sh` faisait tous-old puis tous-new — si crash, reprise difficile | Boucle par modèle : old puis new pour chaque modèle. Backup CSVs dans `csv_mcq_{old,new}/` | `src/compare_systems.sh` |
+
+### Structure de `comparison_results/` après un run complet
+
+```
+comparison_results/
+  state_old.txt / state_new.txt    ← modèles complétés (reprise automatique)
+  distribution_old.output          ← résultats agrégés système old
+  distribution_new.output          ← résultats agrégés système new
+  csv_mcq_old/ csv_mcq_new/        ← backups CSVs générés
+  csv_eval_old/ csv_eval_new/      ← backups CSVs évalués
+```
+
+### Reset partiel
+
+```bash
+# Reset un modèle sur les deux systèmes
+sed -i '/^gemma2_9b$/d' comparison_results/state_old.txt
+sed -i '/^gemma2_9b$/d' comparison_results/state_new.txt
+
+# Reset complet
+rm comparison_results/state_*.txt
+```
+
+---
+
 ## Open Questions
 
 - [ ] Does the reasoning trace improve distractor quality vs. non-reasoning models on LISA content?

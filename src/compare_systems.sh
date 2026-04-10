@@ -9,10 +9,9 @@
 #   ./compare_systems.sh qwen3_0.6b qwen3_1_7b 0 1 2
 #   ./compare_systems.sh                      # run complet
 #
-# Lance le pipeline génération+évaluation pour deux systèmes de prompt :
-#   - old : prompt simple (commit ba23972)
-#   - new : prompt enrichi via retrieval GraphDB
-# Les données sont effacées entre les deux runs pour éviter toute contamination.
+# Pour chaque modèle, lance old puis new (isolation garantie).
+# Les CSVs sont sauvegardés dans comparison_results/csv_mcq_old/ etc.
+# Reprise automatique : les modèles déjà complétés sont sautés.
 
 set -euo pipefail
 
@@ -34,7 +33,14 @@ if [ -f "$ENV_FILE" ]; then
     set +a
 fi
 
-source ~/Documents/partages/.venv/bin/activate
+# Auto-détection du venv
+if [ -f ~/Documents/partages/.venv/bin/activate ]; then
+    source ~/Documents/partages/.venv/bin/activate
+elif [ -f ~/Documents/.venv/bin/activate ]; then
+    source ~/Documents/.venv/bin/activate
+else
+    echo "[WARN] Aucun venv trouvé, on continue sans activation"
+fi
 
 # Démarrer ollama s'il ne tourne pas déjà
 if ! pgrep -x ollama > /dev/null; then
@@ -43,21 +49,21 @@ if ! pgrep -x ollama > /dev/null; then
 fi
 
 ALL_MODELS=(
+    "medGemma_27b"
     "llama3_1_8b"
-    #"openbiollm_8b"
-    #"gemma2_9b"
-    #"medGemma_4b"
-    #"medGemma_27b"
-    #"qwen3_8b"
-    #"mistral_7b"
-    #"eurollm_9b"
-    #"apertus_8B"
+    "openbiollm_8b"
+    "gemma2_9b"
+    "medGemma_4b"
+    "qwen3_8b"
+    "mistral_7b"
+    "eurollm_9b"
+    "apertus_8B"
     "qwen3_0.6b"
     "qwen3_1_7b"
-    #"qwen3_4b"
-    #"qwen3_8b_pdapt_slerp"
-    #"qwen3_4b_pdapt_slerp"
-    #"qwen3_1_7b_pdapt_slerp"
+    "qwen3_4b"
+    "qwen3_8b_pdapt_slerp"
+    "qwen3_4b_pdapt_slerp"
+    "qwen3_1_7b_pdapt_slerp"
     "qwen3_0.6b_pdapt_slerp"
 )
 
@@ -87,79 +93,79 @@ fi
 
 mkdir -p "$RESULTS_DIR"
 
-run_system() {
+# ─── run_one_model(system_name, model) ───────────────────────────────────────
+# Génère + évalue un modèle avec un système de prompt donné.
+# - Skip si déjà marqué complété dans le state file
+# - Checkpoints par modèle (start_{model} / df_in_construction_{model}.csv)
+# - Sauvegarde les CSVs dans csv_mcq_{system} / csv_eval_{system}
+# ─────────────────────────────────────────────────────────────────────────────
+run_one_model() {
     local system_name="$1"
+    local model="$2"
     local state_file="$RESULTS_DIR/state_${system_name}.txt"
+    local dist_file="$RESULTS_DIR/distribution_${system_name}.output"
 
-    echo ""
-    echo "========================================"
-    echo "  Système : $system_name"
-    echo "========================================"
-
-    # Charger les modèles déjà complétés
-    local done_models=()
-    if [ -f "$state_file" ]; then
-        mapfile -t done_models < "$state_file"
-        echo "[resume] ${#done_models[@]} modèles déjà complétés pour '$system_name' : ${done_models[*]}"
+    # Skip si déjà complété
+    if [ -f "$state_file" ] && grep -qx "$model" "$state_file"; then
+        echo "[skip] $model/$system_name déjà complété"
+        return 0
     fi
 
-    # Vider distribution.output seulement si on repart de zéro
-    if [ ${#done_models[@]} -eq 0 ]; then
-        > "$SCRIPT_DIR/distribution.output"
-    fi
-
-    # Supprimer les CSVs uniquement des modèles non encore complétés
-    for model in "${MODELS[@]}"; do
-        if printf '%s\n' "${done_models[@]}" | grep -qx "$model"; then
-            continue
-        fi
-        [ -n "${MODEL_MCQ_PATH:-}" ]      && rm -f "${MODEL_MCQ_PATH}/${model}.csv"
-        [ -n "${MODEL_MCQ_EVAL_EXPORT_PATH:-}" ] && rm -f "${MODEL_MCQ_EVAL_EXPORT_PATH}/${model}.csv"
-    done
-
-    # Générer puis évaluer chaque modèle
-    for model in "${MODELS[@]}"; do
-        # Skip si déjà complété
-        if printf '%s\n' "${done_models[@]}" | grep -qx "$model"; then
-            echo "[skip] $model déjà complété"
-            continue
-        fi
-
-        echo ""
-        echo "--- [$system_name] Génération : $model ---"
-        "$ROOT_DIR/notebooks/generate_mcq.py" "$model" "${INDEX_ARGS[@]}" || {
-            echo "[WARN] Génération échouée pour $model, on continue."
-            continue
-        }
-
-        echo "--- [$system_name] Évaluation : $model ---"
-        cd "$SCRIPT_DIR"
-        ./main.py "$model" || {
-            echo "[WARN] Évaluation échouée pour $model, on continue."
-            continue
-        }
-
-        # Marquer comme complété
-        echo "$model" >> "$state_file"
-        done_models+=("$model")
-    done
-
-    cp "$SCRIPT_DIR/distribution.output" "$RESULTS_DIR/distribution_${system_name}.output"
     echo ""
-    echo "Résultats sauvegardés : $RESULTS_DIR/distribution_${system_name}.output"
+    echo "--- [$system_name] Modèle : $model ---"
+
+    # Supprimer les CSVs de travail pour forcer la régénération
+    [ -n "${MODEL_MCQ_PATH:-}" ]             && rm -f "${MODEL_MCQ_PATH}/${model}.csv"
+    [ -n "${MODEL_MCQ_EVAL_EXPORT_PATH:-}" ] && rm -f "${MODEL_MCQ_EVAL_EXPORT_PATH}/${model}.csv"
+
+    # Générer
+    export PROMPT_SYSTEM="$system_name"
+    echo "  → Génération..."
+    "$ROOT_DIR/notebooks/generate_mcq.py" "$model" "${INDEX_ARGS[@]}" || {
+        echo "[WARN] Génération échouée pour $model/$system_name, on continue."
+        return 0
+    }
+
+    # Évaluer — sortie directement dans le fichier distribution du bon système
+    export DISTRIBUTION_OUTPUT="$dist_file"
+    echo "  → Évaluation..."
+    cd "$SCRIPT_DIR"
+    ./main.py "$model" || {
+        echo "[WARN] Évaluation échouée pour $model/$system_name, on continue."
+        return 0
+    }
+
+    # Sauvegarder les CSVs dans les dossiers de backup
+    local mcq_bak="$RESULTS_DIR/csv_mcq_${system_name}"
+    local eval_bak="$RESULTS_DIR/csv_eval_${system_name}"
+    mkdir -p "$mcq_bak" "$eval_bak"
+    [ -f "${MODEL_MCQ_PATH}/${model}.csv" ] && \
+        cp "${MODEL_MCQ_PATH}/${model}.csv" "$mcq_bak/${model}.csv"
+    [ -f "${MODEL_MCQ_EVAL_EXPORT_PATH}/${model}.csv" ] && \
+        cp "${MODEL_MCQ_EVAL_EXPORT_PATH}/${model}.csv" "$eval_bak/${model}.csv"
+
+    # Marquer comme complété
+    echo "$model" >> "$state_file"
+    echo "  ✓ $model/$system_name terminé"
 }
 
 # =============================================
-# Système ANCIEN — prompt simple (ba23972)
+# Boucle principale : par modèle, old puis new
 # =============================================
-export PROMPT_SYSTEM="old"
-run_system "old"
+echo ""
+echo "========================================"
+echo "  Modèles : ${MODELS[*]}"
+echo "========================================"
 
-# =============================================
-# Système NOUVEAU — retrieval via GraphDB
-# =============================================
-export PROMPT_SYSTEM="new"
-run_system "new"
+for model in "${MODELS[@]}"; do
+    echo ""
+    echo "════════════════════════════════════════"
+    echo "  Modèle : $model"
+    echo "════════════════════════════════════════"
+
+    run_one_model "old" "$model"
+    run_one_model "new" "$model"
+done
 
 # =============================================
 # Affichage comparatif
@@ -168,6 +174,14 @@ echo ""
 echo "========================================"
 echo "  Résultats comparatifs"
 echo "========================================"
-python3 "$SCRIPT_DIR/compare_results.py" \
-    "$RESULTS_DIR/distribution_old.output" \
-    "$RESULTS_DIR/distribution_new.output"
+
+OLD_DIST="$RESULTS_DIR/distribution_old.output"
+NEW_DIST="$RESULTS_DIR/distribution_new.output"
+
+if [ -f "$OLD_DIST" ] && [ -f "$NEW_DIST" ]; then
+    python3 "$SCRIPT_DIR/compare_results.py" "$OLD_DIST" "$NEW_DIST"
+else
+    echo "[WARN] Fichiers de distribution manquants, pas de comparaison possible."
+    [ -f "$OLD_DIST" ] && echo "  old : OK" || echo "  old : manquant"
+    [ -f "$NEW_DIST" ] && echo "  new : OK" || echo "  new : manquant"
+fi

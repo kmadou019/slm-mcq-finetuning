@@ -154,10 +154,11 @@ def main():
 
     df_eval.to_csv(os.environ.get('MODEL_MCQ_EVAL_EXPORT_PATH') + "/" +  generated_qcm_file, index=False)
 
-    with open("distribution.output", "a") as f:
+    dist_file = os.environ.get("DISTRIBUTION_OUTPUT", "distribution.output")
+    with open(dist_file, "a") as f:
         print(f"\n{generated_qcm_file} quality distribution:", file=f)
         total = len(df_eval)
-        counts = df_eval['distractor_quality'].round(0).value_counts(sort=True)
+        counts = pd.to_numeric(df_eval['distractor_quality'], errors='coerce').round(0).value_counts(sort=True)
         for val, count in counts.items():
             pct = count / total * 100
             label = "Bonne qualité" if val else "Mauvaise qualité"

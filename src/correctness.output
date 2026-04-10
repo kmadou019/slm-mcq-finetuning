@@ -1,0 +1,4 @@
+Incorrect output for gemma2_9b: 75.38%
+Number of correct MCQs for gemma2_9b 321 / 392
+Incorrect output for medGemma_4b: 1.76%
+Number of correct MCQs for medGemma_4b 1126 / 1564

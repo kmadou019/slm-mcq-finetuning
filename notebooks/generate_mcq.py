@@ -464,17 +464,18 @@ def flatten(df: DataFrame, mcq_column_name: str):
         mcq = row[mcq_column_name]
 
         ids.append(row["id"])
-        questions.append(mcq.question if mcq else "")
-        q_comments.append(mcq.question_comment if mcq else "")
-        option_as.append(mcq.option_a if mcq else "")
-        a_comments.append(mcq.option_a_comment if mcq else "")
-        option_bs.append(mcq.option_b if mcq else "")
-        b_comments.append(mcq.option_b_comment if mcq else "")
-        option_cs.append(mcq.option_c if mcq else "")
-        c_comments.append(mcq.option_c_comment if mcq else "")
-        option_ds.append(mcq.option_d if mcq else "")
-        d_comments.append(mcq.option_d_comment if mcq else "")
-        correct_options.append(mcq.correct_option if mcq else "")
+        has_mcq = hasattr(mcq, 'question')
+        questions.append(mcq.question if has_mcq else "")
+        q_comments.append(mcq.question_comment if has_mcq else "")
+        option_as.append(mcq.option_a if has_mcq else "")
+        a_comments.append(mcq.option_a_comment if has_mcq else "")
+        option_bs.append(mcq.option_b if has_mcq else "")
+        b_comments.append(mcq.option_b_comment if has_mcq else "")
+        option_cs.append(mcq.option_c if has_mcq else "")
+        c_comments.append(mcq.option_c_comment if has_mcq else "")
+        option_ds.append(mcq.option_d if has_mcq else "")
+        d_comments.append(mcq.option_d_comment if has_mcq else "")
+        correct_options.append(mcq.correct_option if has_mcq else "")
 
     return pd.DataFrame({
         "id": ids,
@@ -513,16 +514,8 @@ def generate_mcq(content, model_name, temperature):
     return response['response']
 
 
-def generate_mcq_hf(content, model_name, tokenizer, temperature):
+def generate_mcq_hf(content, pipe, temperature):
     full_prompt = _build_prompt(content, hf=True)
-
-    pipe = pipeline(
-        "text-generation",
-        model=model_name,
-        tokenizer=tokenizer,
-        device_map="cuda",
-        dtype="bfloat16"
-    )
 
     messages = [{"role": "user", "content": full_prompt}]
 
@@ -538,22 +531,24 @@ def generate_mcq_hf(content, model_name, tokenizer, temperature):
     return extract_json(response[0]['generated_text'])
 
 
-def get_checkpoint():
+def get_checkpoint(model_name):
+    start_path = f"../data/checkpoints/start_{model_name}"
+    df_path = f"../data/checkpoints/df_in_construction_{model_name}.csv"
     try:
-        with open("../data/checkpoints/start_", "r") as start:
+        with open(start_path, "r") as start:
             start = start.readline()
-            df_in_construction = pd.read_csv("../data/checkpoints/df_in_construction_.csv")
+            df_in_construction = pd.read_csv(df_path)
     except (FileNotFoundError, pd.errors.EmptyDataError):
         df_in_construction = pd.DataFrame()
         start = 0
     return int(start), df_in_construction
 
 
-def save_checkpoint(start, df_in_construction):
+def save_checkpoint(start, df_in_construction, model_name):
     os.makedirs("../data/checkpoints", exist_ok=True)
-    with open("../data/checkpoints/start_", "w") as fic:
+    with open(f"../data/checkpoints/start_{model_name}", "w") as fic:
         fic.write(str(start))
-    df_in_construction.to_csv("../data/checkpoints/df_in_construction_.csv", index=False)
+    df_in_construction.to_csv(f"../data/checkpoints/df_in_construction_{model_name}.csv", index=False)
 
 
 def for_a_model(df_test, model_name, save_name, use_ollama=False):
@@ -563,10 +558,17 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
             use_fast=True,
             trust_remote_code=True
         )
+        pipe = pipeline(
+            "text-generation",
+            model=model_name,
+            tokenizer=tokenizer,
+            device_map="cuda",
+            dtype="bfloat16"
+        )
     else:
-        tokenizer = None
+        pipe = None
 
-    start, df_in_construction = get_checkpoint()
+    start, df_in_construction = get_checkpoint(model_name)
     pas = 400
 
     for idx in range(start, len(df_test)):
@@ -575,7 +577,7 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
         while True:
             try:
                 generated = (
-                    generate_mcq_hf(content, model_name, tokenizer, temperature=0.1)
+                    generate_mcq_hf(content, pipe, temperature=0.1)
                     if not use_ollama
                     else generate_mcq(content, model_name, temperature=0.1)
                 )
@@ -589,14 +591,16 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
                     break
 
         if idx % pas == 0:
-            save_checkpoint(idx, df_in_construction)
+            save_checkpoint(idx, df_in_construction, model_name)
 
     df_test[save_name] = df_in_construction[f'generated_{save_name}'].apply(validate_mcq)
     df = flatten(df_test, save_name)
 
-    # Clean for other model
-    os.remove("../data/checkpoints/df_in_construction_.csv")
-    os.remove("../data/checkpoints/start_")
+    # Clean checkpoint for this model
+    for f in [f"../data/checkpoints/df_in_construction_{model_name}.csv",
+              f"../data/checkpoints/start_{model_name}"]:
+        if os.path.exists(f):
+            os.remove(f)
 
     return df
 
@@ -723,7 +727,7 @@ models = {
     "gemma2_9b": "google/gemma-2-9b-it",
     "medGemma_4b": "google/medgemma-4b-it",
     "medGemma_27b": "google/medgemma-27b-it",
-    "openbiollm_8b": "hf.co/mradermacher/Llama3-Instruct-OpenBioLLM-8B-merged-i1-GGUF:latest",
+    "openbiollm_8b": "mradermacher/Llama3-Instruct-OpenBioLLM-8B-merged-i1-GGUF",
     "qwen3_0.6b": "Qwen/Qwen3-0.6B",
     "mistral_7b": "mistralai/Mistral-7B-Instruct-v0.3",
     "eurollm_9b": "utter-project/EuroLLM-9B-Instruct",
