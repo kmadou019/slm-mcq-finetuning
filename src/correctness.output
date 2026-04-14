@@ -2,3 +2,13 @@ Incorrect output for gemma2_9b: 75.38%
 Number of correct MCQs for gemma2_9b 321 / 392
 Incorrect output for medGemma_4b: 1.76%
 Number of correct MCQs for medGemma_4b 1126 / 1564
+Incorrect output for medGemma_27b: 25.06%
+Number of correct MCQs for medGemma_27b 1077 / 1193
+Incorrect output for medGemma_27b: 0.0%
+Number of correct MCQs for medGemma_27b 1443 / 1592
+Incorrect output for llama3_1_8b: 0.69%
+Number of correct MCQs for llama3_1_8b 1222 / 1581
+Incorrect output for llama3_1_8b: 0.06%
+Number of correct MCQs for llama3_1_8b 1016 / 1591
+Incorrect output for gemma2_9b: 0.0%
+Number of correct MCQs for gemma2_9b 1312 / 1592

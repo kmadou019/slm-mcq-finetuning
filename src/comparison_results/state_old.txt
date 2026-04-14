@@ -1,2 +1,2 @@
-medGemma_4b
 gemma2_9b
+medGemma_4b
