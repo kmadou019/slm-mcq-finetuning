@@ -126,6 +126,13 @@ run_one_model() {
         return 0
     }
 
+    # Sauvegarder le CSV généré immédiatement (avant eval, pour éviter écrasement)
+    local mcq_bak="$RESULTS_DIR/csv_mcq_${system_name}"
+    local eval_bak="$RESULTS_DIR/csv_eval_${system_name}"
+    mkdir -p "$mcq_bak" "$eval_bak"
+    [ -f "${MODEL_MCQ_PATH}/${model}.csv" ] && \
+        cp "${MODEL_MCQ_PATH}/${model}.csv" "$mcq_bak/${model}.csv"
+
     # Évaluer — sortie directement dans le fichier distribution du bon système
     export DISTRIBUTION_OUTPUT="$dist_file"
     echo "  → Évaluation..."
@@ -135,12 +142,7 @@ run_one_model() {
         return 0
     }
 
-    # Sauvegarder les CSVs dans les dossiers de backup
-    local mcq_bak="$RESULTS_DIR/csv_mcq_${system_name}"
-    local eval_bak="$RESULTS_DIR/csv_eval_${system_name}"
-    mkdir -p "$mcq_bak" "$eval_bak"
-    [ -f "${MODEL_MCQ_PATH}/${model}.csv" ] && \
-        cp "${MODEL_MCQ_PATH}/${model}.csv" "$mcq_bak/${model}.csv"
+    # Sauvegarder le CSV évalué
     [ -f "${MODEL_MCQ_EVAL_EXPORT_PATH}/${model}.csv" ] && \
         cp "${MODEL_MCQ_EVAL_EXPORT_PATH}/${model}.csv" "$eval_bak/${model}.csv"
 

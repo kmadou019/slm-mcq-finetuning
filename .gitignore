@@ -17,6 +17,8 @@ pip-delete-this-directory.txt
 
 # Logs and temp files
 *.log
+OAR.*.stdout
+OAR.*.stderr
 *.tmp
 *.swp
 *.swo

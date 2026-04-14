@@ -186,7 +186,13 @@ def _remove_accents(text):
     return "".join(c for c in unicodedata.normalize("NFD", text) if unicodedata.category(c) != "Mn")
 
 
+_objectives_cache = {}
+
+
 def _fetch_objectives(search_term):
+    if search_term in _objectives_cache:
+        return _objectives_cache[search_term]
+
     try:
         session_id = _mcp_init_session()
     except Exception as e:
@@ -238,7 +244,9 @@ def _fetch_objectives(search_term):
             objectives.append({"label": attrs["label"], "rank": attrs.get("rank", "B"),
                                 "order": attrs.get("order", 999)})
     objectives.sort(key=lambda x: x["order"])
-    return item_ref, item_label, objectives
+    result = item_ref, item_label, objectives
+    _objectives_cache[search_term] = result
+    return result
 
 
 def _extract_via_regex(content):
