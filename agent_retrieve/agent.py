@@ -1,7 +1,9 @@
+#!/usr/bin/env python3
+
 """
 LangGraph SPARQL Query Agent — ReAct style
-LLM: qwen3.5:3b via Ollama
-Triplestore: GraphDB at http://localhost:7200/repositories/lisa
+LLM: via Ollama (OLLAMA_MODEL env var)
+Triplestore: GraphDB distant via MCP (GRAPHDB_MCP_URL + GRAPHDB_BEARER_TOKEN env vars)
 
 Each iteration the LLM either:
   {"action": "query", "sparql": "..."}   → run one focused query, loop back
@@ -18,10 +20,61 @@ from langgraph.graph import StateGraph, START, END
 
 load_dotenv()
 
-SPARQL_ENDPOINT  = os.getenv("GRAPHDB_ENDPOINT",  "http://localhost:7200/repositories/lisa")
+MCP_URL          = os.getenv("GRAPHDB_MCP_URL",   "")
+MCP_BEARER       = os.getenv("GRAPHDB_BEARER_TOKEN", "")
 OLLAMA_CHAT_URL  = os.getenv("OLLAMA_CHAT_URL",   "http://localhost:11434/api/chat")
-OLLAMA_MODEL     = os.getenv("OLLAMA_MODEL",      "qwen3.5:35b")
+OLLAMA_MODEL     = os.getenv("OLLAMA_MODEL",      "llama3.1:8b")
 MAX_ATTEMPTS     = 8
+
+
+# ---------------------------------------------------------------------------
+# MCP helpers (même logique que generate_mcq.py)
+# ---------------------------------------------------------------------------
+
+def _mcp_headers(session_id=""):
+    h = {
+        "Authorization": f"Bearer {MCP_BEARER}",
+        "Content-Type": "application/json",
+        "Accept": "application/json, text/event-stream",
+    }
+    if session_id:
+        h["mcp-session-id"] = session_id
+    return h
+
+
+def _parse_sse_data(text):
+    for line in text.splitlines():
+        if line.startswith("data: "):
+            try:
+                return json.loads(line[6:])
+            except json.JSONDecodeError:
+                pass
+    return {}
+
+
+def _mcp_init_session():
+    payload = {
+        "jsonrpc": "2.0", "id": 1, "method": "initialize",
+        "params": {
+            "protocolVersion": "2024-11-05", "capabilities": {},
+            "clientInfo": {"name": "sparql-agent", "version": "1.0"},
+        },
+    }
+    resp = requests.post(MCP_URL, json=payload, headers=_mcp_headers(), timeout=10, verify=False)
+    resp.raise_for_status()
+    return resp.headers.get("mcp-session-id", "")
+
+
+def _mcp_sparql(sparql: str, session_id: str) -> list:
+    payload = {
+        "jsonrpc": "2.0", "id": 2, "method": "tools/call",
+        "params": {"name": "sparqlQuery", "arguments": {"query": sparql, "format": "json"}},
+    }
+    resp = requests.post(MCP_URL, json=payload, headers=_mcp_headers(session_id), timeout=30, verify=False)
+    resp.raise_for_status()
+    data = _parse_sse_data(resp.text)
+    text_content = data.get("result", {}).get("content", [{}])[0].get("text", "{}")
+    return json.loads(text_content).get("results", {}).get("bindings", [])
 
 SYSTEM_PROMPT = """\
 Tu es un assistant expert GraphDB et SPARQL qui répond aux questions en interrogeant \
@@ -161,10 +214,20 @@ def _parse_action(text: str) -> dict:
     # Find first {...}
     match = re.search(r'\{.*\}', text, re.DOTALL)
     if match:
+        raw = match.group()
+        # Try strict parse first
         try:
-            return json.loads(match.group())
+            return json.loads(raw)
         except json.JSONDecodeError:
             pass
+        # Fallback: extract action and sparql with regex (handles bad escaping)
+        action_m = re.search(r'"action"\s*:\s*"(\w+)"', raw)
+        sparql_m = re.search(r'"sparql"\s*:\s*"(.*?)(?<!\\)"(?:\s*[,}])', raw, re.DOTALL)
+        if action_m:
+            result = {"action": action_m.group(1)}
+            if sparql_m:
+                result["sparql"] = sparql_m.group(1).replace('\\"', '"').replace('\\n', '\n')
+            return result
     return {"action": "error", "raw": text}
 
 
@@ -224,14 +287,10 @@ def reasoner(state: AgentState) -> dict:
 def executor(state: AgentState) -> dict:
     _log("EXECUTOR", state["current_query"])
     try:
-        resp = requests.post(
-            SPARQL_ENDPOINT,
-            data={"query": state["current_query"]},
-            headers={"Accept": "application/sparql-results+json"},
-            timeout=30,
-        )
-        resp.raise_for_status()
-        bindings = resp.json().get("results", {}).get("bindings", [])
+        if not MCP_URL:
+            raise ValueError("GRAPHDB_MCP_URL not set in .env")
+        session_id = _mcp_init_session()
+        bindings = _mcp_sparql(state["current_query"], session_id)
         if not bindings:
             result_str = "(no results)"
         else:

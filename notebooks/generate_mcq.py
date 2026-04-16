@@ -726,24 +726,8 @@ def correctness(df, save_name, file):
 
 # # MCQs Generation
 
-models = {
-    "qwen3_0.6b_pdapt_slerp": "PARTAGES-dev/Qwen3-0.6B-PDAPT-SLERP",
-    "qwen3_1_7b_pdapt_slerp": "PARTAGES-dev/Qwen3-1.7B-PDAPT-SLERP",
-    "qwen3_4b_pdapt_slerp": "PARTAGES-dev/Qwen3-4B-PDAPT-SLERP",
-    "qwen3_8b_pdapt_slerp": "PARTAGES-dev/Qwen3-8B-PDAPT-SLERP",
-    "llama3_1_8b": "meta-llama/Llama-3.1-8B-Instruct",
-    "gemma2_9b": "google/gemma-2-9b-it",
-    "medGemma_4b": "google/medgemma-4b-it",
-    "medGemma_27b": "google/medgemma-27b-it",
-    "openbiollm_8b": "antonkirk/Llama3-Instruct-OpenBioLLM-8B-merged",
-    "qwen3_0.6b": "Qwen/Qwen3-0.6B",
-    "qwen3_1_7b": "Qwen/Qwen3-1.7B",
-    "qwen3_4b": "Qwen/Qwen3-4B",
-    "qwen3_8b": "Qwen/Qwen3-8B",
-    "mistral_7b": "mistralai/Mistral-7B-Instruct-v0.3",
-    "eurollm_9b": "utter-project/EuroLLM-9B-Instruct",
-    "apertus_8B": "swiss-ai/Apertus-8B-Instruct-2509",
-}
+with open("../data/models.json", encoding="utf-8") as _f:
+    models = json.load(_f)
 
 if len(argv) < 2 or argv[1] not in models:
     print("Usage: generate_mcq.py <save_name> [index1] [index2] [start-end] ...")
