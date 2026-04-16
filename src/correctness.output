@@ -12,3 +12,21 @@ Incorrect output for llama3_1_8b: 0.06%
 Number of correct MCQs for llama3_1_8b 1016 / 1591
 Incorrect output for gemma2_9b: 0.0%
 Number of correct MCQs for gemma2_9b 1312 / 1592
+Incorrect output for medGemma_27b: 0.13%
+Number of correct MCQs for medGemma_27b 1438 / 1590
+Incorrect output for llama3_1_8b: 0.5%
+Number of correct MCQs for llama3_1_8b 1239 / 1584
+Incorrect output for qwen3_8b: 30.4%
+Number of correct MCQs for qwen3_8b 908 / 1108
+Incorrect output for qwen3_8b: 70.41%
+Number of correct MCQs for qwen3_8b 398 / 471
+Incorrect output for mistral_7b: 3.08%
+Number of correct MCQs for mistral_7b 1037 / 1543
+Incorrect output for mistral_7b: 15.77%
+Number of correct MCQs for mistral_7b 939 / 1341
+Incorrect output for eurollm_9b: 11.68%
+Number of correct MCQs for eurollm_9b 874 / 1406
+Incorrect output for eurollm_9b: 6.72%
+Number of correct MCQs for eurollm_9b 965 / 1485
+Incorrect output for apertus_8B: 0.06%
+Number of correct MCQs for apertus_8B 1096 / 1591

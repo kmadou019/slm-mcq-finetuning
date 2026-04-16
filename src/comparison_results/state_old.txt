@@ -1,2 +1,8 @@
 gemma2_9b
 medGemma_4b
+medGemma_27b
+llama3_1_8b
+qwen3_8b
+mistral_7b
+eurollm_9b
+apertus_8B

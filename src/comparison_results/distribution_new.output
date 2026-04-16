@@ -1,0 +1,28 @@
+
+gemma2_9b.csv quality distribution:
+  Mauvaise qualité (0.0): 83.92% (n=1101/1312)
+  Bonne qualité (1.0): 6.02% (n=79/1312)
+
+llama3_1_8b.csv quality distribution:
+  Mauvaise qualité (False): 89.76% (n=912/1016)
+  Bonne qualité (True): 10.24% (n=104/1016)
+
+medGemma_27b.csv quality distribution:
+  Mauvaise qualité (False): 93.62% (n=1351/1443)
+  Bonne qualité (True): 6.38% (n=92/1443)
+
+medGemma_4b.csv quality distribution:
+  Mauvaise qualité (0.0): 84.19% (n=948/1126)
+  Bonne qualité (1.0): 5.77% (n=65/1126)
+
+qwen3_8b.csv quality distribution:
+  Mauvaise qualité (False): 95.48% (n=380/398)
+  Bonne qualité (True): 4.52% (n=18/398)
+
+mistral_7b.csv quality distribution:
+  Mauvaise qualité (False): 89.46% (n=840/939)
+  Bonne qualité (True): 10.54% (n=99/939)
+
+eurollm_9b.csv quality distribution:
+  Mauvaise qualité (False): 87.36% (n=843/965)
+  Bonne qualité (True): 12.64% (n=122/965)
