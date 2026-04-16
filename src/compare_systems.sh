@@ -48,24 +48,7 @@ if ! pgrep -x ollama > /dev/null; then
     sleep 3
 fi
 
-ALL_MODELS=(
-    "medGemma_27b"
-    "llama3_1_8b"
-    "openbiollm_8b"
-    "gemma2_9b"
-    "medGemma_4b"
-    "qwen3_8b"
-    "mistral_7b"
-    "eurollm_9b"
-    "apertus_8B"
-    "qwen3_0.6b"
-    "qwen3_1_7b"
-    "qwen3_4b"
-    "qwen3_8b_pdapt_slerp"
-    "qwen3_4b_pdapt_slerp"
-    "qwen3_1_7b_pdapt_slerp"
-    "qwen3_0.6b_pdapt_slerp"
-)
+mapfile -t ALL_MODELS < <(jq -r 'keys[]' "$ROOT_DIR/data/models.json")
 
 # Séparer les modèles (non-numériques) des index/ranges (numériques ou X-Y)
 MODELS=()

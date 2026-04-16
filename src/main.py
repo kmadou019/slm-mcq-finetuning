@@ -1,16 +1,11 @@
 #!/usr/bin/env python3
 from sys import argv
 
+import json as _json
+with open("../data/models.json", encoding="utf-8") as _f:
+    valid_models = list(_json.load(_f).keys())
+
 if len(argv) >= 2:
-    # Vérifier le modèle (premier paramètre)
-    valid_models = [
-        "llama3_1_8b", "openbiollm_8b", "gemma2_9b", 
-        "medGemma_4b", "medGemma_27b", "qwen3_8b", 
-        "mistral_7b", "eurollm_9b", "apertus_8B", 
-        "qwen3_0.6b", "qwen3_1_7b", "qwen3_4b",
-        "qwen3_8b_pdapt_slerp","qwen3_4b_pdapt_slerp",
-        "qwen3_1_7b_pdapt_slerp","qwen3_0.6b_pdapt_slerp"
-    ]
     
     if argv[1] not in valid_models:
         print(f"Error: Please provide a valid model name:")
@@ -67,12 +62,6 @@ else:
     print("Error: Missing model name")
     print("\nUsage: ./code.py <model> [index1] [index2] [start-end] ...")
     print("\nValid models:")
-    valid_models = [
-        "llama3_1_8b", "openbiollm_8b", "gemma2_9b",
-        "medGemma_4b", "medGemma_27b", "qwen3_8b",
-        "mistral_7b", "eurollm_9b", "apertus_8B",
-        "qwen3_0.6b", "qwen3_1_7b", "qwen3_4b"
-    ]
     for model in valid_models:
         print(f"  - {model}")
     print("\nExamples:")

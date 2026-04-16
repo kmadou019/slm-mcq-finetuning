@@ -1,0 +1,6 @@
+{
+  "gemma4_31b":             "google/gemma-4-31B-it",
+  "qwen3_5_35b_a3b":        "Qwen/Qwen3.5-35B-A3B",
+  "magistral_small":        "mistralai/Magistral-Small-2509",
+  "nemotron_nano_30b":      "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16"
+}

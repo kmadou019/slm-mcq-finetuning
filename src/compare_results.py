@@ -31,7 +31,7 @@ def parse_distribution_file(path: str) -> dict:
 
     model_re = re.compile(r"^(\S+?)\.csv quality distribution:")
     new_line_re = re.compile(
-        r"^\s+(Bonne qualité|Mauvaise qualité) \((True|False)\): ([\d.]+)% \(n=(\d+)/(\d+)\)"
+        r"^\s+(Bonne qualité|Mauvaise qualité) \((True|False|1\.0|0\.0)\): ([\d.]+)% \(n=(\d+)/(\d+)\)"
     )
     old_bool_re = re.compile(r"^\s*(True|False)\s+([\d.]+)")
 
@@ -53,7 +53,7 @@ def parse_distribution_file(path: str) -> dict:
         # Nouveau format
         m = new_line_re.match(line)
         if m:
-            is_true = m.group(2) == "True"
+            is_true = m.group(2) in ("True", "1.0")
             pct = float(m.group(3))
             count = int(m.group(4))
             total = int(m.group(5))
