@@ -1,0 +1,41 @@
+Unnamed: 0,id,question,question_comment,option_a,option_a_comment,option_b,option_b_comment,option_c,option_c_comment,option_d,option_d_comment,correct_option,content_raw,distractor_quality
+0,OIC-005-03-A,Dans quel cas un médecin salarié d'un établissement privé engage-t-il sa responsabilité civile personnelle?,Cette question évalue la compréhension du régime de responsabilité du commettant et l'exception liée à l'outrepassement de mission.,Lorsqu'il exerce son art indépendamment,Incorrect. L'indépendance professionnelle est compatible avec le régime de responsabilité de l'employeur.,S'il outrepasse sa mission confiée,Correct. Le médecin salarié n'est protégé par la responsabilité de l'employeur que s'il ne dépasse pas le cadre de sa mission.,Systématiquement pour tout dommage,Incorrect. C'est l'employeur (le commettant) qui est responsable des dommages causés par son salarié.,Uniquement en cas d'erreur médicale,Incorrect. L'erreur médicale classique dans le cadre de la mission relève de la responsabilité de l'employeur.,b,"{{objectif de connaissance
+|Identifiant=OIC-005-03-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité civile
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=3}}
+
+Les professionnels exerçant à titre libéral et les établissements de santé privés engagent leur responsabilité civile devant les juridictions de l’ordre judiciaire : tribunal de grande instance, cour d’appel, cour de cassation.
+
+S’agissant des médecins salariés d’établissements, services ou organismes privés, ils n’engagent pas leur responsabilité civile personnelle du fait des dommages causés à un patient dès lors qu’ils n’outrepassent pas la mission qui leur a été confiée par leur employeur. C’est l’application du régime de responsabilité du commettant (l’employeur) du fait de son proposé (le médecin), lequel n’est pas incompatible avec le principe d’indépendance professionnelle du médecin dans l’exercice de son art.
+
+Les praticiens hospitaliers engagent leur responsabilité civile professionnelle à raison des dommages survenus dans le cadre de leur secteur d’activité libérale au sein d’un établissement public de santé.",False
+1,OIC-005-04-A,"Dans le cadre d'un établissement public de santé, quelle situation engage la responsabilité administrative de l'établissement?",Cette question évalue la capacité à distinguer la faute de service (responsabilité administrative) de la faute personnelle (responsabilité civile).,Une faute commise en dehors du service,Incorrect. Une faute sans lien avec le service engage la responsabilité civile personnelle du médecin.,Une faute commise avec intention de nuire,"Incorrect. L'intention de nuire rend la faute détachable du service, engageant la responsabilité civile personnelle.",Une faute commise dans l'exercice des fonctions,"Correct. La faute de service, commise pendant le service et sans intérêt personnel, engage la responsabilité de l'établissement.",Une faute d'une gravité exceptionnelle,Incorrect. Une gravité exceptionnelle peut détacher la faute du service et engager la responsabilité civile personnelle.,c,"{{objectif de connaissance
+|Identifiant=OIC-005-04-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité administrative
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=4}}
+
+Il n’existe pas de relation juridique entre le médecin, agent du service public hospitalier, et son patient. Les deux ne sont en effet liés juridiquement qu’à l’établissement public de santé. S’agissant des actes réalisés par les médecins hospitaliers, c’est la responsabilité de l’établissement public de santé qui est engagée devant les juridictions de l’ordre administratif : tribunal administratif, cour administrative d’appel, Conseil d’Etat.
+
+La jurisprudence administrative a défini une typologie des fautes susceptibles d’engager la responsabilité du service public :
+
+- la faute de service : c’est la faute commise par un agent public dans l’exercice de ses fonctions, c’est-à-dire pendant le service, avec les moyens du service et en dehors de tout intérêt personnel ;
+
+- la faute dans l’organisation et le fonctionnement du service : ont pu être qualifiés ainsi une insuffisance dans la surveillance des patients ou des locaux, le mauvais entretien des locaux et du matériel, la mauvaise coordination entre médecins, etc.
+
+Doit être distinguée la faute personnelle ou détachable du service, qui engage la responsabilité civile personnelle de son auteur. Deux cas de figure peuvent être envisagées :
+
+- soit elle a été commise en dehors du service et n’a aucun lien avec le service (exemple de la faute commise par un médecin dans des soins dispensés dans un cadre privé) ;
+
+- soit elle a été commise dans le service mais elle s’en détache en raison de l’intention de nuire de son auteur ou de son exceptionnelle gravité (exemple du refus du chirurgien de garde de se déplacer pour un blessé par balle alors qu’il avait été averti par l’interne de la gravité de son état).",False

@@ -30,3 +30,13 @@ Incorrect output for eurollm_9b: 6.72%
 Number of correct MCQs for eurollm_9b 965 / 1485
 Incorrect output for apertus_8B: 0.06%
 Number of correct MCQs for apertus_8B 1096 / 1591
+Incorrect output for nemotron_nano_30b: 100.0%
+Number of correct MCQs for nemotron_nano_30b 0 / 0
+Incorrect output for gemma4_31b: 33.33%
+Number of correct MCQs for gemma4_31b 2 / 2
+Incorrect output for gemma4_31b: 33.33%
+Number of correct MCQs for gemma4_31b 2 / 2
+Incorrect output for nemotron_nano_30b: 100.0%
+Number of correct MCQs for nemotron_nano_30b 0 / 0
+Incorrect output for nemotron_nano_30b: 100.0%
+Number of correct MCQs for nemotron_nano_30b 0 / 0

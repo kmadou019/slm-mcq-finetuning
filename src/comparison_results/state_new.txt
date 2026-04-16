@@ -5,3 +5,4 @@ medGemma_4b
 qwen3_8b
 mistral_7b
 eurollm_9b
+gemma4_31b

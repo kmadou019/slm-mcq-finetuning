@@ -17,7 +17,7 @@ set -euo pipefail
 
 # ─── PARAMÈTRE DE TEST ───────────────────────────────────────────────────────
 # Mettre un range ici pour limiter les sheets (ex: "0-9"), laisser vide pour tout
-TEST_RANGE=""
+TEST_RANGE="1-3"
 # ─────────────────────────────────────────────────────────────────────────────
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
