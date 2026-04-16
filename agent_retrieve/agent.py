@@ -23,7 +23,7 @@ load_dotenv()
 MCP_URL          = os.getenv("GRAPHDB_MCP_URL",   "")
 MCP_BEARER       = os.getenv("GRAPHDB_BEARER_TOKEN", "")
 OLLAMA_CHAT_URL  = os.getenv("OLLAMA_CHAT_URL",   "http://localhost:11434/api/chat")
-OLLAMA_MODEL     = os.getenv("OLLAMA_MODEL",      "llama3.1:8b")
+OLLAMA_MODEL     = os.getenv("OLLAMA_MODEL",      "qwen3.5:35b")
 MAX_ATTEMPTS     = 8
 
 

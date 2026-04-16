@@ -595,7 +595,7 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
                     if not use_ollama
                     else generate_mcq(content, model_name, temperature=0.1)
                 )
-		print("raw answer : ",generated)
+                print("raw answer : ",generated)
                 df_in_construction.loc[idx, f"generated_{save_name}"] = generated
                 break
             except (ValueError, SyntaxError, KeyError, IndexError) as e:
