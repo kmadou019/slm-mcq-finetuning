@@ -566,13 +566,20 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
             use_fast=True,
             trust_remote_code=True
         )
-        pipe = pipeline(
-            "text-generation",
-            model=model_name,
-            tokenizer=tokenizer,
-            device_map="cuda",
-            dtype="bfloat16"
-        )
+        try:
+            pipe = pipeline(
+                "text-generation",
+                model=model_name,
+                tokenizer=tokenizer,
+                device_map="cuda",
+                dtype="bfloat16"
+            )
+        except (ValueError, OSError):
+            from transformers import AutoModelForCausalLM
+            model_obj = AutoModelForCausalLM.from_pretrained(
+                model_name, device_map="cuda", torch_dtype="auto", trust_remote_code=True
+            )
+            pipe = pipeline("text-generation", model=model_obj, tokenizer=tokenizer)
     else:
         pipe = None
 
@@ -601,7 +608,11 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
         if idx % pas == 0:
             save_checkpoint(idx, df_in_construction, save_name)
 
-    df_test[save_name] = df_in_construction[f'generated_{save_name}'].apply(validate_mcq)
+    col = f'generated_{save_name}'
+    if col not in df_in_construction.columns:
+        print(f"[WARN] Aucune génération réussie pour {save_name}, CSV vide.")
+        return pd.DataFrame()
+    df_test[save_name] = df_in_construction[col].apply(validate_mcq)
     df = flatten(df_test, save_name)
 
     # Clean checkpoint for this model
@@ -753,5 +764,8 @@ if indexes:
 
 with open("correctness.output", mode="a") as f:
     df = for_a_model(df_test, model_name, save_name)
+    if df.empty:
+        print(f"[WARN] Aucun MCQ généré pour {save_name}, on arrête.")
+        exit(1)
     df = correct_output(df, save_name, f)
     df = correctness(df, save_name, f)

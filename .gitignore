@@ -71,3 +71,4 @@ data/lisa_sheets.csv
 .claude
 .ssh
 node_modules/
+.webui_secret_key
