@@ -522,21 +522,27 @@ def generate_mcq(content, model_name, temperature):
     return response['response']
 
 
-def generate_mcq_hf(content, pipe, temperature):
+def generate_mcq_hf(content, pipe, temperature, disable_thinking=False):
     full_prompt = _build_prompt(content, hf=True)
 
     messages = [{"role": "user", "content": full_prompt}]
 
-    response = pipe(
-        messages,
+    kwargs = dict(
         max_new_tokens=2048,
         temperature=temperature,
         top_p=1.0,
         do_sample=True,
-        return_full_text=False
+        return_full_text=False,
     )
+    if disable_thinking:
+        kwargs["tokenize_kwargs"] = {"enable_thinking": False}
 
-    return extract_json(response[0]['generated_text'])
+    response = pipe(messages, **kwargs)
+
+    raw = response[0]['generated_text']
+    # Strip any <think>...</think> blocks before JSON extraction
+    raw = re.sub(r'<think>.*?</think>', '', raw, flags=re.DOTALL).strip()
+    return extract_json(raw)
 
 
 def get_checkpoint(model_name):
@@ -559,7 +565,11 @@ def save_checkpoint(start, df_in_construction, model_name):
     df_in_construction.to_csv(f"../data/checkpoints/df_in_construction_{model_name}.csv", index=False)
 
 
+_THINKING_MODELS = {"nemotron_nano_30b", "qwen3_5_35b_a3b"}
+
+
 def for_a_model(df_test, model_name, save_name, use_ollama=False):
+    disable_thinking = save_name in _THINKING_MODELS
     if not use_ollama:
         tokenizer = AutoTokenizer.from_pretrained(
             model_name,
@@ -592,7 +602,7 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
         while True:
             try:
                 generated = (
-                    generate_mcq_hf(content, pipe, temperature=0.1)
+                    generate_mcq_hf(content, pipe, temperature=0.1, disable_thinking=disable_thinking)
                     if not use_ollama
                     else generate_mcq(content, model_name, temperature=0.1)
                 )
