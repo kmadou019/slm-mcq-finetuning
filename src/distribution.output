@@ -1,8 +1,0 @@
-
-gemma2_9b.csv quality distribution:
-  Mauvaise qualité (False): 82.24% (n=264/321)
-  Bonne qualité (True): 7.48% (n=24/321)
-
-medGemma_4b.csv quality distribution:
-  Mauvaise qualité (False): 92.63% (n=1043/1126)
-  Bonne qualité (True): 7.37% (n=83/1126)
