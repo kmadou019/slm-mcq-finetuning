@@ -1,0 +1,99 @@
+Unnamed: 0,id,question,question_comment,option_a,option_a_comment,option_b,option_b_comment,option_c,option_c_comment,option_d,option_d_comment,correct_option,content_raw,distractor_quality
+0,OIC-005-02-A,Quelle catégorie d'infractions constitue la majeure partie des poursuites pénales contre les médecins?,Cette question vise à vérifier la compréhension de la répartition des infractions médicales selon le texte.,Violation du secret professionnel,"Incorrect. Il s'agit d'une violation du devoir d'humanisme, moins fréquente que les fautes involontaires.",Homicide et blessures involontaires,Correct. Le texte précise que ces infractions recouvrent la majeure partie des cas reprochés aux médecins.,Non-assistance à personne en péril,"Incorrect. Comme le secret professionnel, c'est une infraction du devoir d'humanisme, moins courante.",Homicide et blessures volontaires,Incorrect. Le texte indique que ces infractions restent rares en responsabilité médicale.,b,"{{objectif de connaissance
+|Identifiant=OIC-005-02-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité pénale
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=2}}
+
+La responsabilité pénale a une fonction répressive ayant pour vocation de sanctionner des individus dont le comportement est réprouvé dans notre société. Elle est toujours personnelle, concernant à l’identique tous les médecins (y compris les internes), quel que soit le cadre de leur exercice. Elle peut également concerner les établissements de santé, en leur qualité de personnes morales.
+
+Les comportements que la société définit comme répréhensibles sont appelés infractions. Celle-ci sont énumérées dans le Code pénal et classées en trois catégories par ordre de gravité : contraventions, délits, crimes.
+
+'''Infractions'''
+
+En dehors de certaines dispositions particulières liées au non-respect des conditions spécifiques à certaines actions de soins (actes d’assistance médicale à la procréation, activités de recherche biomédicale, etc.), les infractions qui peuvent être reprochées à un médecin peuvent également l’être à tout citoyen. Toutefois, les médecins sont exposés à commettre certaines infractions plus que d’autres. On peut en citer trois grands types du fait de l’exercice de soin : celles qui résultent de la violation d’un devoir d’humanisme, les blessures et l’homicide involontaires et les blessures et l’homicide volontaire.
+
+'''Violation d’un devoir d’humanisme'''
+
+La violation d’un devoir d’humanisme concerne principalement 1/ la rédaction de faux certificats (article 441-7 du Code pénal), 2/ la violation du secret professionnel (article 226-13 du Code pénal) et 3/ la non-assistance à personne en péril (article 226-3 du Code pénal, encadré 5.1). Il faut noter que le défaut d’information au patient ne constitue pas une infraction pénale. Ce défaut est par contre une cause potentielle de responsabilité civile.
+
+'''Homicide et blessures involontaires'''
+
+L’homicide et les blessures involontaires recouvrent la majeure partie des infractions reprochées à un médecin (articles 221-6, 222-19 et 222-20 du Code pénal). La mort d’un patient ou ses blessures sont supposées résulter d’une faute par maladresse, imprudence, inattention, négligence ou manquement à une obligation de sécurité. Le médecin mis en cause n’a potentiellement pas respecté les données acquises de la science ou a commis une faute « banale » dans l’élaboration d’un diagnostic, dans la prescription ou la réalisation d’un traitement. Pour que l’infraction existe, il faut que le dommage et le lien de causalité certain avec la faute soient établis. Le lien de causalité peut être soit direct, soit indirect, à condition que la faute commise soit dite qualifiée, c’est-à-dire ayant créé ou contribué à créer la situation qui a contribué au dommage, ou n’ayant pas pris les mesures nécessaires pour l’éviter. On distingue deux types de fautes qualifiées :
+
+- la faute délibérée : il s’agit d’une violation d’une obligation particulière de prudence ou de sécurité prévue par la loi ou le règlement. Elle nécessite de violer délibérément (donc de façon consciente) une règle de prudence ou de sécurité.
+
+- la faute caractérisée : il s’agit d’une faute d’imprudence, de négligence, un manquement à une obligation de prudence ou de sécurité qui expose le patient à un risque d’une particulière gravité, que le médecin ne peut ignorer.
+
+'''Homicide et blessures volontaires'''
+
+Cela reste des infractions rares en responsabilité médicale. Elle se résument pour l’essentiel à la question de :
+
+- l’euthanasie ;
+
+- l’absence d’obtention d’un consentement d’un patient à un acte médical ;
+
+- le non-respect des conditions de licéité de certains actes médicaux, encadrés par des lois spécifiques : interruption de grossesse, stérilisation à but contraceptif, prélèvements d’organes, expérimentation chez l’homme, etc.
+
+'''Mise en œuvre de la responsabilité pénale'''
+
+'''Poursuites'''
+
+L’initiative des poursuites appartient au procureur de la République, qui décide des suites à donner aux plaintes, dénonciations et enquêtes de police. Il peut classer l’affaire sans suite, renvoyer directement l’auteur devant la juridiction de jugement ou requérir l’ouverture d’une information judiciaire.
+
+Si l’affaire n’est pas classée sans suite, l’étape de l’information judiciaire est la règle en matière médicale, compte tenu de la complexité fréquente des dossiers.
+
+'''Jugement'''
+
+Les contraventions sont jugées par le tribunal de police et passibles d’amendes, les délits par le tribunal correctionnel et passibles de peines d’emprisonnement et les crimes par la cour d’assises et passibles de peines de réclusion criminelle.
+
+Les infractions reprochées aux médecins relèvent habituellement du tribunal correctionnel, constituant pour l’essentiel des délits exposant à des peines d’emprisonnement, pouvant être assorties du sursis, et à des amendes.
+
+Le patient victime peut demander en parallèle de la sanction pénale l’indemnisation de son dommage, au cours du même procès, en se constituant partie civile.
+
+<br />",False
+1,OIC-005-03-A,"Dans le cas d'un médecin salarié d'un établissement privé, qui engage la responsabilité civile en cas de dommage?",Cette question teste la connaissance du régime de responsabilité spécifique aux médecins salariés du secteur privé.,Le médecin personnellement,Incorrect. Le médecin salarié ne s'engage pas personnellement s'il respecte sa mission.,L'employeur,Correct. C'est le régime de responsabilité du commettant (employeur) qui s'applique.,L'assurance maladie,Incorrect. L'assurance maladie ne supporte pas la responsabilité civile directe.,L'État,Incorrect. L'État n'est pas l'employeur dans le secteur privé.,b,"{{objectif de connaissance
+|Identifiant=OIC-005-03-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité civile
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=3}}
+
+Les professionnels exerçant à titre libéral et les établissements de santé privés engagent leur responsabilité civile devant les juridictions de l’ordre judiciaire : tribunal de grande instance, cour d’appel, cour de cassation.
+
+S’agissant des médecins salariés d’établissements, services ou organismes privés, ils n’engagent pas leur responsabilité civile personnelle du fait des dommages causés à un patient dès lors qu’ils n’outrepassent pas la mission qui leur a été confiée par leur employeur. C’est l’application du régime de responsabilité du commettant (l’employeur) du fait de son proposé (le médecin), lequel n’est pas incompatible avec le principe d’indépendance professionnelle du médecin dans l’exercice de son art.
+
+Les praticiens hospitaliers engagent leur responsabilité civile professionnelle à raison des dommages survenus dans le cadre de leur secteur d’activité libérale au sein d’un établissement public de santé.",False
+2,OIC-005-04-A,Quelle faute engage la responsabilité civile personnelle de son auteur?,Cette question teste la distinction entre la responsabilité de l'établissement et la responsabilité personnelle du médecin.,La faute de service,"Engage la responsabilité de l'établissement, pas du médecin.",La faute d'organisation,Engage la responsabilité de l'établissement public.,La faute personnelle détachable,"Correcte selon le texte, distincte de la faute de service.",L'aléa thérapeutique,"Relève d'un régime d'indemnisation spécifique, non d'une faute.",c,"{{objectif de connaissance
+|Identifiant=OIC-005-04-A
+|Item_parent=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Item_parent_short=Responsabilités médicale pénale, civile, administrative et disciplinaire. La gestion des erreurs et des plaintes ; l’aléa thérapeutique
+|Rang=A
+|Intitulé=Connaître la définition de la responsabilité administrative
+|Description=None
+|Rubrique=Définition
+|Contributeurs=Bastien Boussat
+|Ordre=4}}
+
+Il n’existe pas de relation juridique entre le médecin, agent du service public hospitalier, et son patient. Les deux ne sont en effet liés juridiquement qu’à l’établissement public de santé. S’agissant des actes réalisés par les médecins hospitaliers, c’est la responsabilité de l’établissement public de santé qui est engagée devant les juridictions de l’ordre administratif : tribunal administratif, cour administrative d’appel, Conseil d’Etat.
+
+La jurisprudence administrative a défini une typologie des fautes susceptibles d’engager la responsabilité du service public :
+
+- la faute de service : c’est la faute commise par un agent public dans l’exercice de ses fonctions, c’est-à-dire pendant le service, avec les moyens du service et en dehors de tout intérêt personnel ;
+
+- la faute dans l’organisation et le fonctionnement du service : ont pu être qualifiés ainsi une insuffisance dans la surveillance des patients ou des locaux, le mauvais entretien des locaux et du matériel, la mauvaise coordination entre médecins, etc.
+
+Doit être distinguée la faute personnelle ou détachable du service, qui engage la responsabilité civile personnelle de son auteur. Deux cas de figure peuvent être envisagées :
+
+- soit elle a été commise en dehors du service et n’a aucun lien avec le service (exemple de la faute commise par un médecin dans des soins dispensés dans un cadre privé) ;
+
+- soit elle a été commise dans le service mais elle s’en détache en raison de l’intention de nuire de son auteur ou de son exceptionnelle gravité (exemple du refus du chirurgien de garde de se déplacer pour un blessé par balle alors qu’il avait été averti par l’interne de la gravité de son état).",False

@@ -6,4 +6,3 @@ qwen3_8b
 mistral_7b
 eurollm_9b
 apertus_8B
-gemma4_31b

@@ -502,7 +502,6 @@ def flatten(df: DataFrame, mcq_column_name: str):
 
 
 def extract_json(text):
-    print("raw : ", text)
     start = text.find("{")
     end = text.rfind("}")
     text = text[start:end+1]
@@ -540,7 +539,7 @@ def generate_mcq_hf(content, pipe, temperature, disable_thinking=False):
     response = pipe(messages, **kwargs)
 
     raw = response[0]['generated_text']
-    # Strip any <think>...</think> blocks before JSON extraction
+# Strip any <think>...</think> blocks before JSON extraction
     raw = re.sub(r'<think>.*?</think>', '', raw, flags=re.DOTALL).strip()
     return extract_json(raw)
 

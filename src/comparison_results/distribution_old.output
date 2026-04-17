@@ -31,5 +31,3 @@ apertus_8B.csv quality distribution:
   Mauvaise qualité (False): 87.32% (n=957/1096)
   Bonne qualité (True): 12.68% (n=139/1096)
 
-gemma4_31b.csv quality distribution:
-  Mauvaise qualité (False): 100.00% (n=2/2)
