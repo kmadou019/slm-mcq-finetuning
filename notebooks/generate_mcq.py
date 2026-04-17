@@ -502,6 +502,7 @@ def flatten(df: DataFrame, mcq_column_name: str):
 
 
 def extract_json(text):
+    print("raw : ", text)
     start = text.find("{")
     end = text.rfind("}")
     text = text[start:end+1]
@@ -595,7 +596,6 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
                     if not use_ollama
                     else generate_mcq(content, model_name, temperature=0.1)
                 )
-                print("raw answer : ",generated)
                 df_in_construction.loc[idx, f"generated_{save_name}"] = generated
                 break
             except (ValueError, SyntaxError, KeyError, IndexError) as e:
