@@ -193,6 +193,7 @@ def _fetch_objectives(search_term):
     if search_term in _objectives_cache:
         return _objectives_cache[search_term]
 
+    print(f"[prompt_builder] searching GraphDB for: '{search_term}'")
     try:
         session_id = _mcp_init_session()
     except Exception as e:
@@ -426,7 +427,6 @@ def _build_prompt(content, hf=False):
     search_term = _extract_via_regex(content)
     item_ref, item_label, objectives = (None, None, [])
     if search_term:
-        print(f"[prompt_builder] searching GraphDB for: '{search_term}'")
         item_ref, item_label, objectives = _fetch_objectives(search_term)
     if not objectives:
         for candidate in _extract_via_ollama(content):
@@ -691,90 +691,88 @@ def call_openai_api(client, system_prompt, mcq_text, temp=0.5, max_completion_to
         return None
 
 
-load_dotenv()
-HF_TOKEN = os.getenv("HF_TOKEN")
-OPENAI_KEY = os.environ.get("OPENAI_API_KEY")
-login(token=HF_TOKEN)
+if __name__ == "__main__":
+    load_dotenv()
+    HF_TOKEN = os.getenv("HF_TOKEN")
+    OPENAI_KEY = os.environ.get("OPENAI_API_KEY")
+    login(token=HF_TOKEN)
 
-df = pd.read_csv("../data/lisa_sheets.csv")
+    df = pd.read_csv("../data/lisa_sheets.csv")
 
-file_path = "../data/train_test_split/test_folders.json"
+    file_path = "../data/train_test_split/test_folders.json"
 
-with open(file_path, "r", encoding="utf-8") as file:
-    test_folders = json.load(file)
+    with open(file_path, "r", encoding="utf-8") as file:
+        test_folders = json.load(file)
 
-df_test = df[df.folder.isin(test_folders)].reset_index(drop=True)
-print("Number of lisa sheets :", len(df_test))
+    df_test = df[df.folder.isin(test_folders)].reset_index(drop=True)
+    print("Number of lisa sheets :", len(df_test))
 
-# # How many output are incorrect
+    # # How many output are incorrect
 
-def correct_output(df, save_name, file):
-    initial_len = len(df)
-    df = df[df["correct_option"].astype(str).str.lower().isin(list("abcd"))]
+    def correct_output(df, save_name, file):
+        initial_len = len(df)
+        df = df[df["correct_option"].astype(str).str.lower().isin(list("abcd"))]
 
-    incorrect_output = initial_len - len(df)
-    print(initial_len - incorrect_output)
-    print(f"Incorrect output for {save_name}: {round((incorrect_output/initial_len)*100,2)}%", file=file)
-    return df
+        incorrect_output = initial_len - len(df)
+        print(initial_len - incorrect_output)
+        print(f"Incorrect output for {save_name}: {round((incorrect_output/initial_len)*100,2)}%", file=file)
+        return df
 
+    # ## Correctness
 
-# ## Correctness
+    system_prompt = "Tu es un expert dans le domaine médical"
+    client = OpenAI(api_key=OPENAI_KEY)
 
-system_prompt = "Tu es un expert dans le domaine médical"
-client = OpenAI(api_key=OPENAI_KEY)
+    def correctness(df, save_name, file):
+        initial_len = len(df)
+        indices_to_drop = []
+        for idx, row in df.iterrows():
+            mcq_text = create_mcq_text(row)
+            correct_option = row["correct_option"]
+            correct_reeval = call_openai_api(client=client, system_prompt=system_prompt, mcq_text=mcq_text)
+            if not isinstance(correct_option, str):
+                continue
+            if correct_reeval is None:
+                continue
+            if correct_option.lower() != correct_reeval.lower():
+                indices_to_drop.append(idx)
 
+        df = df.drop(indices_to_drop).reset_index(drop=True)
+        df.to_csv("../data/correct_mcqs_dataset/" + save_name + ".csv")
+        print(f"Number of correct MCQs for {save_name} {len(df)} / {initial_len}", file=file)
+        return df
 
-def correctness(df, save_name, file):
-    initial_len = len(df)
-    indices_to_drop = []
-    for idx, row in df.iterrows():
-        mcq_text = create_mcq_text(row)
-        correct_option = row["correct_option"]
-        correct_reeval = call_openai_api(client=client, system_prompt=system_prompt, mcq_text=mcq_text)
-        if not isinstance(correct_option, str):
-            continue
-        if correct_reeval is None:
-            continue
-        if correct_option.lower() != correct_reeval.lower():
-            indices_to_drop.append(idx)
+    # # MCQs Generation
 
-    df = df.drop(indices_to_drop).reset_index(drop=True)
-    df.to_csv("../data/correct_mcqs_dataset/" + save_name + ".csv")
-    print(f"Number of correct MCQs for {save_name} {len(df)} / {initial_len}", file=file)
-    return df
+    with open("../data/models.json", encoding="utf-8") as _f:
+        models = json.load(_f)
 
-
-# # MCQs Generation
-
-with open("../data/models.json", encoding="utf-8") as _f:
-    models = json.load(_f)
-
-if len(argv) < 2 or argv[1] not in models:
-    print("Usage: generate_mcq.py <save_name> [index1] [index2] [start-end] ...")
-    print("Valid save names:", list(models.keys()))
-    exit(1)
-
-save_name = argv[1]
-model_name = models[save_name]
-
-# Parsing des index (même logique que main.py)
-indexes = []
-if len(argv) >= 3:
-    for arg in argv[2:]:
-        if '-' in arg:
-            parts = arg.split('-')
-            indexes.extend(range(int(parts[0]), int(parts[1]) + 1))
-        else:
-            indexes.append(int(arg))
-
-if indexes:
-    df_test = df_test.iloc[indexes].reset_index(drop=True)
-    print(f"✓ Subset : {len(df_test)} lisa sheets (indexes: {argv[2:]})")
-
-with open("correctness.output", mode="a") as f:
-    df = for_a_model(df_test, model_name, save_name)
-    if df.empty:
-        print(f"[WARN] Aucun MCQ généré pour {save_name}, on arrête.")
+    if len(argv) < 2 or argv[1] not in models:
+        print("Usage: generate_mcq.py <save_name> [index1] [index2] [start-end] ...")
+        print("Valid save names:", list(models.keys()))
         exit(1)
-    df = correct_output(df, save_name, f)
-    df = correctness(df, save_name, f)
+
+    save_name = argv[1]
+    model_name = models[save_name]
+
+    # Parsing des index (même logique que main.py)
+    indexes = []
+    if len(argv) >= 3:
+        for arg in argv[2:]:
+            if '-' in arg:
+                parts = arg.split('-')
+                indexes.extend(range(int(parts[0]), int(parts[1]) + 1))
+            else:
+                indexes.append(int(arg))
+
+    if indexes:
+        df_test = df_test.iloc[indexes].reset_index(drop=True)
+        print(f"✓ Subset : {len(df_test)} lisa sheets (indexes: {argv[2:]})")
+
+    with open("correctness.output", mode="a") as f:
+        df = for_a_model(df_test, model_name, save_name)
+        if df.empty:
+            print(f"[WARN] Aucun MCQ généré pour {save_name}, on arrête.")
+            exit(1)
+        df = correct_output(df, save_name, f)
+        df = correctness(df, save_name, f)
