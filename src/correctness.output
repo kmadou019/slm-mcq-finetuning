@@ -48,3 +48,11 @@ Incorrect output for qwen3_5_35b_a3b: 66.67%
 Number of correct MCQs for qwen3_5_35b_a3b 1 / 1
 Incorrect output for nemotron_nano_30b: 100.0%
 Number of correct MCQs for nemotron_nano_30b 0 / 0
+Incorrect output for gemma4_31b: 7.47%
+Number of correct MCQs for gemma4_31b 1385 / 1473
+Incorrect output for gemma4_31b: 11.62%
+Number of correct MCQs for gemma4_31b 1302 / 1407
+Incorrect output for mixtral_8x7b: 1.19%
+Number of correct MCQs for mixtral_8x7b 1197 / 1573
+Incorrect output for mixtral_8x7b: 1.44%
+Number of correct MCQs for mixtral_8x7b 1194 / 1569

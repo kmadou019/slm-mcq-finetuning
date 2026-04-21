@@ -26,3 +26,11 @@ mistral_7b.csv quality distribution:
 eurollm_9b.csv quality distribution:
   Mauvaise qualité (False): 87.36% (n=843/965)
   Bonne qualité (True): 12.64% (n=122/965)
+
+gemma4_31b.csv quality distribution:
+  Mauvaise qualité (False): 97.16% (n=1265/1302)
+  Bonne qualité (True): 2.84% (n=37/1302)
+
+mixtral_8x7b.csv quality distribution:
+  Mauvaise qualité (False): 87.35% (n=1043/1194)
+  Bonne qualité (True): 12.65% (n=151/1194)
