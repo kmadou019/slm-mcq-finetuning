@@ -1,5 +1,6 @@
 {
-  "gemma4_31b":             "google/gemma-4-31B-it",
-  "qwen3_5_35b_a3b":        "Qwen/Qwen3.5-35B-A3B",
-  "mixtral_8x7b":           "mistralai/Mixtral-8x7B-Instruct-v0.1"
+  "qwen3_0.6b_pdapt_slerp": "PARTAGES-dev/Qwen3-0.6B-PDAPT-SLERP",
+  "qwen3_1_7b_pdapt_slerp": "PARTAGES-dev/Qwen3-1.7B-PDAPT-SLERP",
+  "qwen3_4b_pdapt_slerp":   "PARTAGES-dev/Qwen3-4B-PDAPT-SLERP",
+  "qwen3_8b_pdapt_slerp":   "PARTAGES-dev/Qwen3-8B-PDAPT-SLERP"
 }

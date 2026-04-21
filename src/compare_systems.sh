@@ -48,7 +48,7 @@ if ! pgrep -x ollama > /dev/null; then
     sleep 3
 fi
 
-mapfile -t ALL_MODELS < <(jq -r 'keys[]' "$ROOT_DIR/data/models.json")
+mapfile -t ALL_MODELS < <(python3 -c "import json,sys; d=json.load(open(sys.argv[1])); print('\n'.join(d.keys()))" "$ROOT_DIR/data/models.json")
 
 # Séparer les modèles (non-numériques) des index/ranges (numériques ou X-Y)
 MODELS=()

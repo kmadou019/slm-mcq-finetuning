@@ -17,6 +17,7 @@ from sqlalchemy.orm import Session
 
 from ..utils.dependencies import get_current_user
 from ..utils.generate_mcq_GPU import generate_mcq, validate_mcq, shuffle_distractors, MCQQuestion
+from ..utils.lisa_retriever import retrieve_lisa_objectives_safe
 from ..models.auth import User
 from ..models.db_models import MCQAssignment as DBMCQAssignment
 from database import get_db, SessionLocal
@@ -279,7 +280,20 @@ def _evaluate_mcqs(mcq_cards: list, content: str) -> list:
 async def _run_generation(job_id: str, user_id: int, content: str, model_save_name: str, prompt_template: str | None = None):
     """Background task: call Ollama on remote GPU, evaluate MCQs, then create assignments."""
     try:
-        full_prompt = (prompt_template or "").replace("{content}", content)
+        print(f"[generation] Retrieving LISA objectives for job {job_id}...")
+        lisa_context = await asyncio.to_thread(retrieve_lisa_objectives_safe, content)
+        if lisa_context:
+            print(f"[generation] LISA context retrieved ({len(lisa_context)} chars)")
+            enriched_content = (
+                f"{content}\n\n"
+                "--- Objectifs de connaissance LISA pertinents ---\n"
+                f"{lisa_context}"
+            )
+        else:
+            print(f"[generation] No LISA context, using raw content")
+            enriched_content = content
+
+        full_prompt = (prompt_template or "").replace("{content}", enriched_content)
         raw_response = await asyncio.to_thread(generate_mcq, full_prompt, model_name=model_save_name)
         mcq = validate_mcq(raw_response)
         if mcq is None:

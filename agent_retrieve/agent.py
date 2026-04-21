@@ -402,6 +402,23 @@ def run(question: str) -> str:
     return result["final_answer"]
 
 
+def retrieve_lisa_objectives(content: str, max_content_chars: int = 1500) -> str:
+    """Retrieve relevant LISA KnowledgeObjectives/Items for the given educational content.
+
+    Passes the content to the ReAct agent which autonomously queries GraphDB
+    to find matching objectives, items, and learning outcomes.
+    Returns the agent's structured final answer (text).
+    """
+    question = (
+        "Recherche dans la base de connaissances LISA les objectifs de connaissance "
+        "(KnowledgeObjective), items de connaissance (KnowledgeItem) et résultats "
+        "d'apprentissage (LearningOutcome) pertinents pour ce contenu médical. "
+        "Retourne leurs labels, descriptions et rangs.\n\n"
+        f"Contenu :\n{content[:max_content_chars]}"
+    )
+    return run(question)
+
+
 if __name__ == "__main__":
     import sys
     q = " ".join(sys.argv[1:]) or "List all knowledge items and their labels."
