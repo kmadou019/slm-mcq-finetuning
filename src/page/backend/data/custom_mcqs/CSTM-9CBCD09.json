@@ -1,0 +1,130 @@
+[
+  {
+    "item_id": "CSTM-9CBCD09-1",
+    "source_material": "CSTM-9CBCD09",
+    "generator_info": "hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0",
+    "output_format": "JSON",
+    "mcq_question": "Which of the following is NOT a typical symptom of heart failure?",
+    "question_comment": "Assesses recognition of core symptoms; common trap is mistaking non‑cardiac signs for heart failure.",
+    "options": {
+      "A": "Swelling of ankles and legs",
+      "B": "Increased appetite",
+      "C": "Rapid weight gain due to fluid retention",
+      "D": "Dyspnea at rest"
+    },
+    "option_comments": {
+      "A": "Typical symptom: swelling of ankles and legs.",
+      "B": "Not typical; appetite changes are not characteristic of heart failure.",
+      "C": "Typical symptom: rapid weight gain from fluid retention.",
+      "D": "Typical symptom: dyspnea at rest."
+    },
+    "correct_option": "B",
+    "section_a_checks": [
+      {
+        "check_id": "A1",
+        "description": "Is a question",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": "True",
+        "notes": "Yes"
+      },
+      {
+        "check_id": "A2",
+        "description": "No leading negation",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": "False",
+        "notes": "Negation: False"
+      },
+      {
+        "check_id": "A3",
+        "description": "Originality",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": ">= 0.75",
+        "notes": "Score: 1.0"
+      },
+      {
+        "check_id": "A4",
+        "description": "Readability (FK grade)",
+        "result": "FAIL",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": ">= 12",
+        "notes": "Score: 7.8"
+      }
+    ],
+    "section_b_checks": [
+      {
+        "check_id": "B1",
+        "description": "Disclosure (answer leakage)",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "True/False",
+        "notes": "Score: False"
+      },
+      {
+        "check_id": "B2",
+        "description": "Relevance to material",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "0-1",
+        "notes": "Score: 0.905"
+      },
+      {
+        "check_id": "B3",
+        "description": "Distractor plausibility",
+        "result": "FAIL",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "majority ≥ threshold & min ≥ 2",
+        "notes": "Rang B | avg=3.00 | scores=[4, 1, 4]"
+      },
+      {
+        "check_id": "B4",
+        "description": "Difficulty appropriateness",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "low/med/high",
+        "notes": "Judge: 5"
+      },
+      {
+        "check_id": "B5",
+        "description": "Answerability (expert + context)",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "correct/incorrect",
+        "notes": "GPT-4o answered 'B', correct is 'B'"
+      },
+      {
+        "check_id": "B6",
+        "description": "Ambiguity",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "0-1 (≥ 0.3 = plausible)",
+        "notes": "Score: 0.971"
+      }
+    ],
+    "decision_policy": "Accept if all hard constraints pass and no critical AI-judge dimension fails.",
+    "final_decision": "REJECT",
+    "audit_trail": "Généré depuis contenu personnalisé. Modèle : hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0. Job : CSTM-9CBCD09.",
+    "lisa_texte_brut": "Insuffisance Cardiaque\n Description générale de la maladie\nDéfinition\nL'insuffisance cardiaque est une maladie chronique dans laquelle le cœur n'est plus\ncapable d'assurer un débit sanguin suffisant pour répondre aux besoins de l'organisme.\nLe cœur, affaibli ou rigide, pompe moins efficacement le sang, ce qui entraîne une\naccumulation de liquide dans les poumons, les jambes et d'autres organes. C'est l'une\ndes maladies cardiovasculaires les plus fréquentes dans le monde, touchant environ 64\nmillions de personnes.\nCauses\nL'insuffisance cardiaque peut résulter de nombreuses affections qui endommagent ou\nsurchargent le muscle cardiaque. Les causes les plus fréquentes sont la maladie\ncoronarienne (obstruction des artères du cœur) et l'hypertension artérielle chronique, qui\nobligent le cœur à travailler de façon excessive sur de longues années. D'autres causes\nincluent les valvulopathies (anomalies des valves cardiaques), les cardiomyopathies\n(maladies du muscle cardiaque lui-même), certaines infections virales, l'abus d'alcool, et\nplus rarement des traitements médicamenteux toxiques pour le cœur.\nSymptômes\nLes symptômes de l'insuffisance cardiaque apparaissent progressivement et peuvent\nvarier selon la sévérité de la maladie. Le signe le plus caractéristique est la dyspnée,\nc'est-à-dire une difficulté à respirer, d'abord à l'effort puis au repos dans les formes\navancées. La personne peut également ressentir une fatigue intense et persistante, un\ngonflement des chevilles et des jambes (œdèmes), une prise de poids rapide liée à la\nrétention d'eau, des palpitations, et parfois une toux sèche nocturne. Dans les cas\ngraves, une orthopnée peut apparaître : le patient ne peut dormir qu'en position\nsemi-assise.\nDiagnostic\nLe diagnostic repose sur un ensemble d'examens complémentaires.\nL'électrocardiogramme (ECG) permet de détecter des anomalies du rythme ou de la\nstructure cardiaque. L'échocardiographie est l'examen clé : elle mesure la fraction\nd'éjection du ventricule gauche, indicateur essentiel de la fonction pompe du cœur. Un\ndosage sanguin du BNP (ou NT-proBNP), biomarqueur de souffrance cardiaque,\ncomplète le bilan. La radiographie thoracique peut montrer une augmentation du volume\n\ncardiaque ou un œdème pulmonaire.\nTraitement\nLa prise en charge de l'insuffisance cardiaque associe des mesures hygiéno-diététiques\net un traitement médicamenteux. Sur le plan du mode de vie, il est recommandé de\nréduire la consommation de sel, de surveiller son poids quotidiennement, de pratiquer\nune activité physique adaptée, et d'arrêter le tabac et l'alcool. Sur le plan\nmédicamenteux, les inhibiteurs de l'enzyme de conversion (IEC) ou les antagonistes des\nrécepteurs de l'angiotensine II (ARA II) réduisent la surcharge cardiaque. Les\nbêtabloquants ralentissent le cœur et améliorent sa fonction. Les diurétiques éliminent\nl'excès de liquide. Dans certains cas, un défibrillateur implantable ou une\nresynchronisation cardiaque peut être proposée.\nÉvolution et pronostic\nL'insuffisance cardiaque est une maladie chronique et évolutive qui ne se guérit pas,\nmais peut être stabilisée et contrôlée grâce à un traitement bien conduit. Sans prise en\ncharge, elle tend à s'aggraver avec le temps et peut conduire à des hospitalisations\nrépétées. Le pronostic dépend de la cause sous-jacente, de la sévérité de l'atteinte et de\nl'adhésion du patient au traitement. Une éducation thérapeutique du patient est\nessentielle pour lui apprendre à reconnaître les signes d'alerte et à adapter son\ntraitement en conséquence.\n Document à visée informative et pédagogique — Ne remplace pas un avis médical.",
+    "lisa_metadata": {
+      "identifiant": "CSTM-9CBCD09",
+      "rang": "B",
+      "rubrique": "Contenu personnalisé",
+      "intitule": "Question générée depuis votre contenu",
+      "item_parent": "Contenu évaluateur",
+      "description": "MCQ généré automatiquement depuis le matériel pédagogique fourni par l'évaluateur.",
+      "contenu": "Insuffisance Cardiaque\n Description générale de la maladie\nDéfinition\nL'insuffisance cardiaque est une maladie chronique dans laquelle le cœur n'est plus\ncapable d'assurer un débit sanguin suffisant pour répondre aux besoins de l'organisme.\nLe cœur, affaibli ou rigide, pompe moins efficacement le sang, ce qui entraîne une\naccumulation de liquide dans les poumons, les jambes et d'autres organes. C'est l'une\ndes maladies cardiovasculaires les plus fréquentes dans le monde, touchant environ 64\nmillions de personnes.\nCauses\nL'insuffisance cardiaque peut résulter de nombreuses affections qui endommagent ou\nsurchargent le muscle cardiaque. Les causes les plus fréquentes sont la maladie\ncoronarienne (obstruction des artères du cœur) et l'hypertension artérielle chronique, qui\nobligent le cœur à travailler de façon excessive sur de longues années. D'autres causes\nincluent les valvulopathies (anomalies des valves cardiaques), les cardiomyopathies\n(maladies du muscle cardiaque lui-même), certaines infections virales, l'abus d'alcool, et\nplus rarement des traitements médicamenteux toxiques pour le cœur.\nSymptômes\nLes symptômes de l'insuffisance cardiaque apparaissent progressivement et peuvent\nvarier selon la sévérité de la maladie. Le signe le plus caractéristique est la dyspnée,\nc'est-à-dire une difficulté à respirer, d'abord à l'effort puis au repos dans les formes\navancées. La personne peut également ressentir une fatigue intense et persistante, un\ngonflement des chevilles et des jambes (œdèmes), une prise de poids rapide liée à la\nrétention d'eau, des palpitations, et parfois une toux sèche nocturne. Dans les cas\ngraves, une orthopnée peut apparaître : le patient ne peut dormir qu'en position\nsemi-assise.\nDiagnostic\nLe diagnostic repose sur un ensemble d'examens complémentaires.\nL'électrocardiogramme (ECG) permet de détecter des anomalies du rythme ou de la\nstructure cardiaque. L'échocardiographie est l'examen clé : elle mesure la fraction\nd'éjection du ventricule gauche, indicateur essentiel de la fonction pompe du cœur. Un\ndosage sanguin du BNP (ou NT-proBNP), biomarqueur de souffrance cardiaque,\ncomplète le bilan. La radiographie thoracique peut montrer une augmentation du volume\n\ncardiaque ou un œdème pulmonaire.\nTraitement\nLa prise en charge de l'insuffisance cardiaque associe des mesures hygiéno-diététiques\net un traitement médicamenteux. Sur le plan du mode de vie, il est recommandé de\nréduire la consommation de sel, de surveiller son poids quotidiennement, de pratiquer\nune activité physique adaptée, et d'arrêter le tabac et l'alcool. Sur le plan\nmédicamenteux, les inhibiteurs de l'enzyme de conversion (IEC) ou les antagonistes des\nrécepteurs de l'angiotensine II (ARA II) réduisent la surcharge cardiaque. Les\nbêtabloquants ralentissent le cœur et améliorent sa fonction. Les diurétiques éliminent\nl'excès de liquide. Dans certains cas, un défibrillateur implantable ou une\nresynchronisation cardiaque peut être proposée.\nÉvolution et pronostic\nL'insuffisance cardiaque est une maladie chronique et évolutive qui ne se guérit pas,\nmais peut être stabilisée et contrôlée grâce à un traitement bien conduit. Sans prise en\ncharge, elle tend à s'aggraver avec le temps et peut conduire à des hospitalisations\nrépétées. Le pronostic dépend de la cause sous-jacente, de la sévérité de l'atteinte et de\nl'adhésion du patient au traitement. Une éducation thérapeutique du patient est\nessentielle pour lui apprendre à reconnaître les signes d'alerte et à adapter son\ntraitement en conséquence.\n Document à visée informative et pédagogique — Ne remplace pas un avis médical."
+    }
+  }
+]
