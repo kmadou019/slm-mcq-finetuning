@@ -1,0 +1,130 @@
+[
+  {
+    "item_id": "CSTM-F6BE896-1",
+    "source_material": "CSTM-F6BE896",
+    "generator_info": "hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0",
+    "output_format": "JSON",
+    "mcq_question": "Which statement correctly describes the primary cause of Type 2 diabetes?",
+    "question_comment": "Assesses understanding of the main cause of Type 2 diabetes; a common misconception is confusing it with Type 1.",
+    "options": {
+      "A": "Diabetes is caused by a viral infection that destroys beta cells.",
+      "B": "Excessive consumption of sugar directly destroys the pancreas.",
+      "C": "The body's cells become resistant to insulin or the pancreas doesn't produce enough insulin.",
+      "D": "The pancreas stops producing insulin due to autoimmune destruction."
+    },
+    "option_comments": {
+      "A": "Incorrect; viral infection is not the main cause of Type 2 diabetes.",
+      "B": "Incorrect; sugar intake influences risk but does not directly destroy the pancreas.",
+      "C": "Correct; Type 2 diabetes results from insulin resistance or insufficient insulin production.",
+      "D": "Incorrect; this describes Type 1 diabetes, not Type 2."
+    },
+    "correct_option": "C",
+    "section_a_checks": [
+      {
+        "check_id": "A1",
+        "description": "Is a question",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": "True",
+        "notes": "Yes"
+      },
+      {
+        "check_id": "A2",
+        "description": "No leading negation",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": "False",
+        "notes": "Negation: False"
+      },
+      {
+        "check_id": "A3",
+        "description": "Originality",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": ">= 0.75",
+        "notes": "Score: 1.0"
+      },
+      {
+        "check_id": "A4",
+        "description": "Readability (FK grade)",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "threshold": ">= 12",
+        "notes": "Score: 13.4"
+      }
+    ],
+    "section_b_checks": [
+      {
+        "check_id": "B1",
+        "description": "Disclosure (answer leakage)",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "True/False",
+        "notes": "Score: False"
+      },
+      {
+        "check_id": "B2",
+        "description": "Relevance to material",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "0-1",
+        "notes": "Score: 0.923"
+      },
+      {
+        "check_id": "B3",
+        "description": "Distractor plausibility",
+        "result": "FAIL",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "majority ≥ threshold & min ≥ 2",
+        "notes": "Rang B | avg=1.33 | scores=[1, 2, 1]"
+      },
+      {
+        "check_id": "B4",
+        "description": "Difficulty appropriateness",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "low/med/high",
+        "notes": "Judge: 4"
+      },
+      {
+        "check_id": "B5",
+        "description": "Answerability (expert + context)",
+        "result": "PASS",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "correct/incorrect",
+        "notes": "GPT-4o answered 'C', correct is 'C'"
+      },
+      {
+        "check_id": "B6",
+        "description": "Ambiguity",
+        "result": "N/A",
+        "status": "not_checked",
+        "confidence": null,
+        "score": "informative — calibration pending",
+        "notes": "Score: 0.975 (window [0.3–0.75] not yet calibrated on French medical corpus)"
+      }
+    ],
+    "decision_policy": "Accept if all hard constraints pass and no critical AI-judge dimension fails.",
+    "final_decision": "ACCEPT",
+    "audit_trail": "Généré depuis contenu personnalisé. Modèle : hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0. Job : CSTM-F6BE896.",
+    "lisa_texte_brut": "Le diabète est une maladie chronique caractérisée par un excès de sucre (glucose) dans le sang, appelé hyperglycémie. Il existe deux formes principales :\n\nType 1 : le pancréas ne produit plus d'insuline, souvent d'origine auto-immune. Il touche surtout les jeunes.\nType 2 : le corps résiste à l'insuline ou n'en produit pas suffisamment, lié principalement au mode de vie (alimentation, sédentarité). C'est la forme la plus répandue (90% des cas).\n\nLes principaux symptômes sont la fatigue, la soif intense, les urines fréquentes et une cicatrisation lente. Sans traitement, il peut entraîner des complications graves (maladies cardiaques, cécité, insuffisance rénale). Il se gère par l'alimentation, l'activité physique et/ou des médicaments comme l'insuline.",
+    "lisa_metadata": {
+      "identifiant": "CSTM-F6BE896",
+      "rang": "B",
+      "rubrique": "Contenu personnalisé",
+      "intitule": "Question générée depuis votre contenu",
+      "item_parent": "Contenu évaluateur",
+      "description": "MCQ généré automatiquement depuis le matériel pédagogique fourni par l'évaluateur.",
+      "contenu": "Le diabète est une maladie chronique caractérisée par un excès de sucre (glucose) dans le sang, appelé hyperglycémie. Il existe deux formes principales :\n\nType 1 : le pancréas ne produit plus d'insuline, souvent d'origine auto-immune. Il touche surtout les jeunes.\nType 2 : le corps résiste à l'insuline ou n'en produit pas suffisamment, lié principalement au mode de vie (alimentation, sédentarité). C'est la forme la plus répandue (90% des cas).\n\nLes principaux symptômes sont la fatigue, la soif intense, les urines fréquentes et une cicatrisation lente. Sans traitement, il peut entraîner des complications graves (maladies cardiaques, cécité, insuffisance rénale). Il se gère par l'alimentation, l'activité physique et/ou des médicaments comme l'insuline."
+    }
+  }
+]

@@ -577,10 +577,17 @@ async def get_assigned_mcqs(
         else:
             # Les MCQ custom (générés par l'utilisateur) passent en tête de file
             db_assignments.sort(key=lambda a: (0 if a.model == "custom" else 1, a.id))
-            assignments_list = [
-                {"mcq_id": a.mcq_id, "model": a.model}
-                for a in db_assignments
-            ]
+            custom_mcqs_dir = BACKEND_DATA_DIR / "custom_mcqs"
+            assignments_list = []
+            for a in db_assignments:
+                if a.model == "custom":
+                    parts = a.mcq_id.rsplit("-", 1)
+                    if len(parts) != 2:
+                        continue
+                    job_file = custom_mcqs_dir / f"{parts[0]}.json"
+                    if not job_file.exists():
+                        continue
+                assignments_list.append({"mcq_id": a.mcq_id, "model": a.model})
 
         return {
             "assignments": assignments_list,

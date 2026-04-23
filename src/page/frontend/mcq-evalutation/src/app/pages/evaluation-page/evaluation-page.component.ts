@@ -1,12 +1,12 @@
 import { Component, inject, OnInit, OnDestroy, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Router, NavigationEnd, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { McqService, AssignedMCQ } from '../../services/mcq.service';
 import { ValidationService } from '../../services/validation.service';
 import { MCQCard, SectionCheck } from '../../models';
-import { filter, Subscription } from 'rxjs';
+import { Subscription } from 'rxjs';
 
 interface SessionSummary {
   total: number;
@@ -66,14 +66,6 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
     } else {
       this.initializeEvaluation();
     }
-
-    this.routerSubscription = this.router.events.pipe(
-      filter(event => event instanceof NavigationEnd)
-    ).subscribe((event: any) => {
-      if (event.url === '/evaluation') {
-        this.initializeEvaluation();
-      }
-    });
   }
 
   ngOnDestroy(): void {
@@ -187,7 +179,12 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
       },
       error: (error) => {
         console.error('Erreur chargement MCQ:', error);
-        this.loading.set(false);
+        // MCQ introuvable (fichier supprimé) : passer au suivant
+        if (error.status === 404 && index + 1 < this.mcqList().length) {
+          this.loadMCQ(index + 1);
+        } else {
+          this.loading.set(false);
+        }
       }
     });
   }
