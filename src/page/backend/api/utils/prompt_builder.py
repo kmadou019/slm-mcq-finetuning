@@ -401,20 +401,35 @@ def _build_enriched_prompt(item_ref: str, item_label: str, objectives: list[dict
     item_line = item_ref + (f" — {item_label}" if item_label else "")
 
     rang_a = [o for o in objectives if o.get("rank", "").upper() == "A"]
-    rang_a_str = "\n".join(f"- {o['label']} [Rang A]" for o in rang_a) or objectives_str
+    has_mixed_ranks = len(rang_a) < len(objectives)
+
+    if has_mixed_ranks:
+        objectives_header = (
+            "La question doit évaluer l'un des objectifs officiels de cet item.\n"
+            "Priorité absolue aux objectifs de Rang A.\n\n"
+        )
+        rang_a_str = "\n".join(f"- {o['label']} [Rang A]" for o in rang_a) or objectives_str
+        targeted_section = (
+            f"### OBJECTIF CIBLÉ\n\n"
+            f"Sélectionner l'objectif de Rang A le plus pertinent au regard du contenu fourni.\n"
+            f"La question doit évaluer exclusivement cet objectif — toute information hors périmètre est à écarter.\n\n"
+            f"Objectifs Rang A disponibles :\n"
+            f"{rang_a_str}\n\n"
+        )
+    else:
+        objectives_header = (
+            "Sélectionner l'objectif le plus pertinent au regard du contenu fourni.\n"
+            "La question doit évaluer exclusivement cet objectif — toute information hors périmètre est à écarter.\n\n"
+        )
+        targeted_section = ""
 
     return (
         f"### ITEM ET RÉFÉRENCE\n\n"
         f"{item_line}\n\n"
         f"### OBJECTIFS DE CONNAISSANCE\n\n"
-        f"La question doit évaluer l'un des objectifs officiels de cet item.\n"
-        f"Priorité absolue aux objectifs de Rang A.\n\n"
+        f"{objectives_header}"
         f"{objectives_str}\n\n"
-        f"### OBJECTIF CIBLÉ\n\n"
-        f"Sélectionner l'objectif de Rang A le plus pertinent au regard du contenu fourni.\n"
-        f"La question doit évaluer exclusivement cet objectif — toute information hors périmètre est à écarter.\n\n"
-        f"Objectifs Rang A disponibles :\n"
-        f"{rang_a_str}\n\n"
+        f"{targeted_section}"
         f"### CONSIGNES DE RÉDACTION\n\n"
         f"Respecter exclusivement les informations et objectifs présents dans le contenu fourni.\n"
         f"Rédiger en français clair, précis et sans ambiguïté.\n"
