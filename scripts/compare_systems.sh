@@ -120,7 +120,7 @@ run_one_model() {
     export DISTRIBUTION_OUTPUT="$dist_file"
     echo "  → Évaluation..."
     cd "$SCRIPT_DIR"
-    ./main.py "$model" || {
+    ../src/main.py "$model" || {
         echo "[WARN] Évaluation échouée pour $model/$system_name, on continue."
         return 0
     }
@@ -164,7 +164,7 @@ OLD_DIST="$RESULTS_DIR/distribution_old.output"
 NEW_DIST="$RESULTS_DIR/distribution_new.output"
 
 if [ -f "$OLD_DIST" ] && [ -f "$NEW_DIST" ]; then
-    python3 "$SCRIPT_DIR/compare_results.py" "$OLD_DIST" "$NEW_DIST"
+    python3 "$ROOT_DIR/src/compare_results.py" "$OLD_DIST" "$NEW_DIST"
 else
     echo "[WARN] Fichiers de distribution manquants, pas de comparaison possible."
     [ -f "$OLD_DIST" ] && echo "  old : OK" || echo "  old : manquant"

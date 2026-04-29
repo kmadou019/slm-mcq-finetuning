@@ -83,7 +83,7 @@ for model in "${MODELS[@]}"; do
 
     echo "  → Évaluation..."
     cd "$SCRIPT_DIR"
-    ./main.py "$model" || {
+    ../src/main.py "$model" || {
         echo "[WARN] Évaluation échouée pour $model, on continue."
         continue
     }

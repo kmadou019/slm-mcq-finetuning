@@ -3,7 +3,7 @@ set -e
 source /home/daisy/konema/Documents/partages/.venv/bin/activate
 cd "$(dirname "$0")"
 
-N_GPU=8
+N_GPU=1
 
 # Format : "hf_model_id|output_dir|batch_size|grad_acc|lr"
 
@@ -49,7 +49,7 @@ finetune() {
     echo "  Output     : $outdir"
     echo "  Batch/GPU  : $batch   Grad acc : $grad_acc   LR : $lr"
     echo "════════════════════════════════════════"
-    accelerate launch --num_processes=$N_GPU kto_training.py \
+    accelerate launch --num_processes=$N_GPU ../notebooks/kto_training.py \
         --model      "$model"    \
         --output-dir "$outdir"   \
         --batch-size "$batch"    \
