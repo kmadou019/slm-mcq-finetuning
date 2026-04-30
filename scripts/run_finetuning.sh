@@ -43,6 +43,12 @@ MODELS_LARGE=(
 
 finetune() {
     IFS='|' read -r model outdir batch grad_acc lr <<< "$1"
+
+    if [ -f "$outdir/model.safetensors" ]; then
+        echo "⏭  Skip : $outdir (model.safetensors déjà présent)"
+        return 0
+    fi
+
     echo ""
     echo "════════════════════════════════════════"
     echo "  Modèle     : $model"

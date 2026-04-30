@@ -114,6 +114,57 @@ rm comparison_results/state_*.txt
 
 ---
 
+## Prompt Auto-Optimization (2026-04-30)
+
+**Hypothesis:** the current prompt produces poor distractor quality not because the model lacks capability,
+but because the prompt is not optimally formulated for each model. Better prompt → better training data
+→ better finetuned model.
+
+**Approach:** iterative feedback loop per model, using Claude (API) as the prompt optimizer.
+
+### Algorithm (per model)
+
+```
+prompt = prompt_initial (enrichi GraphDB, actuel)
+
+POUR chaque fiche LISA s dans k_fiches:
+    POUR tentative in 1..max_attempts:
+        mcq   = model.generate(prompt, s)
+        b3    = GPT-4o.eval_distractor_quality(mcq, s)
+        SI b3.passe (≥2/3 distracteurs avec score ≥4):
+            break → fiche suivante
+        SINON:
+            prompt = Claude.improve(prompt, {mcq, b3_scores, b3_justifications})
+
+SAUVEGARDER prompt final pour ce modèle
+```
+
+### Modèles ciblés (depuis `scripts/run_finetuning.sh`)
+
+| Phase | Modèles |
+|-------|---------|
+| Large (27B+) — tous | medgemma-27b, gemma-4-31B, mixtral-8x7b, magistral-small, nemotron-30B, qwen3.5-35B |
+| Medium (7-9B) — tous | mistral-7b, llama3-8b, openbiollm-8b, apertus-8b, gemma2-9b, eurollm-9b |
+| Small — un seul | `Qwen/Qwen3-0.6B` |
+
+### Paramètres
+
+| Param | Valeur défaut |
+|-------|--------------|
+| k (fiches LISA) | 20 |
+| max_attempts / fiche | 5 |
+| Signal d'échec | B3 : < 2/3 distracteurs avec score ≥ 4 |
+| Optimiseur | Claude (`claude-opus-4-7`) via API Anthropic |
+
+### Implémentation prévue
+
+- **Script** : `scripts/optimize_prompt.py`
+- **Réutilise** : `notebooks/generate_mcq.py` (génération), `src/eval/distractors_quality.py` (B3),
+  `src/eval/prompts.json` (system prompt GPT-4o)
+- **Output** : `data/optimized_prompts/{model_name}/final_prompt.txt` + log JSON par itération
+
+---
+
 ## Open Questions
 
 - [ ] Does the reasoning trace improve distractor quality vs. non-reasoning models on LISA content?
@@ -121,6 +172,8 @@ rm comparison_results/state_*.txt
 - [ ] Is 80B Qwen3 fast enough for interactive generation, or only for batch jobs?
 - [ ] Can the thinking trace be used as a quality signal to auto-filter bad MCQs?
 - [ ] What are the empirical bounds for the ambiguity window on this French medical corpus?
+- [ ] Does prompt optimization generalize across LISA sheets (held-out test set)?
+- [ ] How many iterations does Claude need on average to pass B3 per model size?
 
 ---
 
@@ -132,6 +185,7 @@ rm comparison_results/state_*.txt
 4. Implement ambiguity window `[0.3 – 0.75]` once calibration data is available
 5. Benchmark latency: magistral 24B vs Nemotron 30B
 6. Decide whether to store `thinking` trace in the custom MCQ JSON schema
+7. **Implémenter `scripts/optimize_prompt.py`** — boucle d'optimisation par feedback B3 via Claude
 
 ---
 
