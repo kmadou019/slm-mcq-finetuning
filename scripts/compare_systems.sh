@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+#OAR -n compare_systems
+#OAR -p host='lig-gpu10.imag.fr'
+#OAR -l /gpu=1,walltime=20:0:0
+#OAR -O /home/daisy/konema/Documents/partages/slm-mcq-finetuning/logs/oar_compare.%jobid%.stdout
+#OAR -E /home/daisy/konema/Documents/partages/slm-mcq-finetuning/logs/oar_compare.%jobid%.stderr
 # Usage: ./compare_systems.sh [model1 model2 ...] [index_or_range ...]
 #   - Sans argument          : tous les modèles, toutes les sheets
 #   - Avec modèles seulement : modèles spécifiés, toutes les sheets

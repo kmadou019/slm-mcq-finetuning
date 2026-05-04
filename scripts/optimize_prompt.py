@@ -380,16 +380,26 @@ def evaluate_b3(
 
 _IMPROVE_SYSTEM = (
     "Tu es un expert en ingénierie de prompts pour la génération de QCM médicaux en français.\n"
-    "Tu reçois un prompt de génération contenant le placeholder {content} et un exemple de QCM "
-    "dont les distracteurs ont été jugés de mauvaise qualité (score GPT-4o < 4/5).\n\n"
-    "Ton rôle : modifier les règles de rédaction des propositions et distracteurs du prompt "
-    "pour que le modèle génère des distracteurs plus plausibles, ancrés dans des idées reçues "
-    "médicales réelles, sans être trivialement éliminables.\n\n"
+    "Tu reçois un prompt de génération et un exemple de QCM dont les distracteurs ont été "
+    "jugés de mauvaise qualité (score GPT-4o < 4/5).\n\n"
+    "DÉMARCHE EN DEUX TEMPS :\n\n"
+    "1. DIAGNOSTIC — Identifie la cause racine dans le prompt lui-même :\n"
+    "   Pourquoi le prompt pousse-t-il le modèle à produire ce type d'erreur ? "
+    "   Est-ce une règle absente, une instruction ambiguë, un manque de structure cognitive, "
+    "   un exemple contre-productif ? Ne te contente pas de corriger le symptôme visible.\n\n"
+    "2. GÉNÉRALISATION — Tire une leçon transférable :\n"
+    "   La modification que tu apportes doit améliorer la génération sur N'IMPORTE QUELLE "
+    "   fiche LISA médicale future, pas seulement sur le contenu de cet exemple. "
+    "   Pense à ce que le modèle doit faire différemment structurellement.\n\n"
     "CONTRAINTES ABSOLUES :\n"
     "- Conserver le placeholder {content} exactement à sa place\n"
     "- Conserver les CONTRAINTES STRICTES DE SORTIE (format JSON) inchangées\n"
-    "- Modifier UNIQUEMENT les règles relatives aux propositions et distracteurs\n"
-    "- Retourner UNIQUEMENT le prompt complet modifié, sans explication ni commentaire"
+    "- Retourner UNIQUEMENT le prompt complet modifié, sans explication ni commentaire\n"
+    "- Ne jamais injecter de contenu spécifique à l'exemple fourni (valeurs chiffrées, "
+    "pathologies, médicaments, mécanismes précis) dans les règles du prompt. "
+    "Les règles doivent être génériques. Si tu illustres une règle par un exemple, "
+    "utilise des placeholders abstraits : '[valeur correcte]', '[contre-indication]', "
+    "'[mécanisme principal]' — jamais du contenu issu de la fiche évaluée."
 )
 
 
@@ -418,12 +428,18 @@ def improve_prompt(
     )
     result = subprocess.run(
         ["claude", "-p", full_prompt],
-        capture_output=True, text=True, timeout=120,
+        capture_output=True, text=True, timeout=600,
     )
-    improved = result.stdout.strip()
-    if not improved:
+    raw = result.stdout.strip()
+    if not raw:
         print(f"    [Claude] ⚠ réponse vide (stderr: {result.stderr[:100]}), prompt conservé")
         return prompt_template
+
+    # Extract prompt from fenced code block if Claude wrapped it
+    import re
+    code_block = re.search(r"```(?:\w*\n)?(.*?)```", raw, re.DOTALL)
+    improved = code_block.group(1).strip() if code_block else raw
+
     if "{content}" not in improved:
         print("    [Claude] ⚠ placeholder {content} absent, prompt conservé")
         return prompt_template
@@ -567,8 +583,17 @@ def main() -> None:
     b3_prompt = _load_b3_prompt()
 
     df = pd.read_csv(args.lisa_csv)
-    sheets = df.sample(n=min(args.k, len(df)), random_state=args.seed).to_dict("records")
-    print(f"✓ {len(sheets)} fiches LISA chargées depuis {args.lisa_csv}")
+    # One sheet per parent item (IC-XXX) for thematic diversity
+    df["_item_parent"] = df["id"].str.extract(r"^([A-Z]+-\d+)")
+    one_per_parent = (
+        df.groupby("_item_parent", group_keys=False)
+        .apply(lambda g: g.sample(1, random_state=args.seed))
+        .reset_index(drop=True)
+    )
+    sheets = one_per_parent.sample(
+        n=min(args.k, len(one_per_parent)), random_state=args.seed
+    ).drop(columns=["_item_parent"]).to_dict("records")
+    print(f"✓ {len(sheets)} fiches LISA chargées (1 par item parent) depuis {args.lisa_csv}")
 
     initial_prompt = _build_initial_prompt()
     args.output_dir.mkdir(parents=True, exist_ok=True)

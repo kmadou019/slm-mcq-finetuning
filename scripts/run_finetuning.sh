@@ -1,9 +1,19 @@
 #!/usr/bin/env bash
+#OAR -n run_finetuning
+#OAR -p host='lig-gpu10.imag.fr'
+#OAR -l /gpu=1,walltime=100:0:0
+#OAR -O /home/daisy/konema/Documents/partages/slm-mcq-finetuning/logs/oar_finetune.%jobid%.stdout
+#OAR -E /home/daisy/konema/Documents/partages/slm-mcq-finetuning/logs/oar_finetune.%jobid%.stderr
+
 set -e
+export PATH="$HOME/.local/bin:$PATH"
 source /home/daisy/konema/Documents/partages/.venv/bin/activate
 cd "$(dirname "$0")"
 
+# Nombre de GPUs à utiliser (restreint via CUDA_VISIBLE_DEVICES)
 N_GPU=1
+CUDA_VISIBLE_DEVICES=$(seq -s, 0 $((N_GPU-1)))
+export CUDA_VISIBLE_DEVICES
 
 # Format : "hf_model_id|output_dir|batch_size|grad_acc|lr"
 
