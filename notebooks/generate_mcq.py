@@ -753,7 +753,15 @@ if __name__ == "__main__":
         exit(1)
 
     save_name = argv[1]
-    model_name = models[save_name]
+    _raw_path = models[save_name]
+    # Resolve relative local paths via PROJECT_ROOT env var (set by scripts/env.sh).
+    # HuggingFace IDs (e.g. "google/medgemma-4b-it") are left untouched.
+    if not os.path.isabs(_raw_path):
+        _project_root = os.environ.get("PROJECT_ROOT", os.path.join(os.path.dirname(__file__), ".."))
+        _candidate = os.path.join(_project_root, _raw_path)
+        if os.path.isdir(_candidate):
+            _raw_path = _candidate
+    model_name = _raw_path
 
     # Parsing des index (même logique que main.py)
     indexes = []

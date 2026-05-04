@@ -28,14 +28,7 @@ if [ -f "$ENV_FILE" ]; then
     set +a
 fi
 
-# Auto-détection du venv
-if [ -f ~/Documents/partages/.venv/bin/activate ]; then
-    source ~/Documents/partages/.venv/bin/activate
-elif [ -f ~/Documents/.venv/bin/activate ]; then
-    source ~/Documents/.venv/bin/activate
-else
-    echo "[WARN] Aucun venv trouvé, on continue sans activation"
-fi
+source "$(dirname "$0")/env.sh"
 
 mkdir -p "$EVAL_BAK_DIR"
 

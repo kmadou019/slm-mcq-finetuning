@@ -7,8 +7,7 @@
 
 set -e
 
-export PATH="$HOME/.local/bin:$PATH"
-source /home/daisy/konema/Documents/partages/.venv/bin/activate
+source "$(dirname "$0")/env.sh"
 cd "$(dirname "$0")/.."
 
 echo "════════════════════════════════════════"

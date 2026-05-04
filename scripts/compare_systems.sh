@@ -38,14 +38,7 @@ if [ -f "$ENV_FILE" ]; then
     set +a
 fi
 
-# Auto-détection du venv
-if [ -f ~/Documents/partages/.venv/bin/activate ]; then
-    source ~/Documents/partages/.venv/bin/activate
-elif [ -f ~/Documents/.venv/bin/activate ]; then
-    source ~/Documents/.venv/bin/activate
-else
-    echo "[WARN] Aucun venv trouvé, on continue sans activation"
-fi
+source "$(dirname "$0")/env.sh"
 
 # Démarrer ollama s'il ne tourne pas déjà
 if ! pgrep -x ollama > /dev/null; then

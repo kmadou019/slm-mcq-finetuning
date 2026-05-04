@@ -1,5 +1,5 @@
 {
-  "qwen3_4b_KTO":           "/home/daisy/konema/Documents/partages/slm-mcq-finetuning/scripts/finetuned_models/qwen3-4b-KTO",
-  "qwen3_0.6b_KTO":         "/home/daisy/konema/Documents/partages/slm-mcq-finetuning/scripts/finetuned_models/qwen3-0.6b-KTO",
-  "qwen3_1_7b_KTO":         "/home/daisy/konema/Documents/partages/slm-mcq-finetuning/scripts/finetuned_models/qwen3-1.7b-KTO"
+  "qwen3_4b_KTO":   "scripts/finetuned_models/qwen3-4b-KTO",
+  "qwen3_0.6b_KTO": "scripts/finetuned_models/qwen3-0.6b-KTO",
+  "qwen3_1_7b_KTO": "scripts/finetuned_models/qwen3-1.7b-KTO"
 }

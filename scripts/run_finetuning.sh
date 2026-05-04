@@ -6,8 +6,7 @@
 #OAR -E /home/daisy/konema/Documents/partages/slm-mcq-finetuning/logs/oar_finetune.%jobid%.stderr
 
 set -e
-export PATH="$HOME/.local/bin:$PATH"
-source /home/daisy/konema/Documents/partages/.venv/bin/activate
+source "$(dirname "$0")/env.sh"
 cd "$(dirname "$0")"
 
 # Nombre de GPUs à utiliser (restreint via CUDA_VISIBLE_DEVICES)

@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-source ~/Documents/.venv/bin/activate
+source "$(dirname "$0")/env.sh"
 ollama serve &
 mapfile -t models < <(jq -r 'keys[]' ../data/models.json)
 

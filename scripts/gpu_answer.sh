@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-source /home/daisy/konema/Documents/partages/.venv/bin/activate
+source "$(dirname "$0")/env.sh"
 
 ../src/eval/answerability.py
