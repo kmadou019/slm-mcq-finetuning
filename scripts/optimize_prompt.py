@@ -484,10 +484,6 @@ def optimize_model(
             for attempt in range(max_attempts):
                 print(f"    [{_ts()}] tentative {attempt+1}/{max_attempts}", end="", flush=True)
 
-                (model_dir / f"sheet_{sheet_idx:02d}_attempt_{attempt}_prompt.txt").write_text(
-                    prompt, encoding="utf-8"
-                )
-
                 t_gen = time.monotonic()
                 mcq = generate_with_template(content, prompt, pipe, save_name)
                 tracer.generation_done(save_name, sheet_idx, attempt,
@@ -501,14 +497,6 @@ def optimize_model(
                 tracer.b3_result(save_name, sheet_idx, attempt,
                                  time.monotonic() - t_b3,
                                  b3["passes"], b3["scores"], b3["justifs"])
-
-                (model_dir / f"sheet_{sheet_idx:02d}_attempt_{attempt}_result.json").write_text(
-                    json.dumps({
-                        "sheet_id": sheet_id, "attempt": attempt,
-                        "b3_passes": b3["passes"], "b3_scores": b3["scores"],
-                        "b3_justifs": b3["justifs"], "mcq": mcq.model_dump(),
-                    }, ensure_ascii=False, indent=2), encoding="utf-8"
-                )
 
                 if b3["passes"]:
                     passed = True
@@ -600,28 +588,56 @@ def main() -> None:
     tracer = Tracer(args.output_dir)
     per_model: list[dict] = []
 
+    failed_models: list[str] = []
+
     try:
         for save_name in args.models:
-            optimize_model(
-                save_name=save_name,
-                model_id=TARGET_MODELS[save_name],
-                sheets=sheets,
-                initial_prompt=initial_prompt,
-                openai_client=openai_client,
-                b3_system_prompt=b3_prompt,
-                max_attempts=args.max_attempts,
-                output_dir=args.output_dir,
-                tracer=tracer,
-            )
-            log = json.loads(
-                (args.output_dir / save_name / "optimization_log.json").read_text()
-            )
-            per_model.append({
-                "save_name": save_name,
-                "passed": sum(1 for e in log if e["passed"]),
-                "total": len(log),
-            })
+            final_prompt_path = args.output_dir / save_name / "final_prompt.txt"
+            if final_prompt_path.exists():
+                print(f"\n  [{_ts()}] ⏭  {save_name} — déjà terminé, skip")
+                tracer.log("model_skipped", save_name=save_name,
+                           reason="final_prompt.txt already exists")
+                log_path = args.output_dir / save_name / "optimization_log.json"
+                if log_path.exists():
+                    log = json.loads(log_path.read_text())
+                    per_model.append({
+                        "save_name": save_name,
+                        "passed": sum(1 for e in log if e["passed"]),
+                        "total": len(log),
+                    })
+                continue
+
+            try:
+                optimize_model(
+                    save_name=save_name,
+                    model_id=TARGET_MODELS[save_name],
+                    sheets=sheets,
+                    initial_prompt=initial_prompt,
+                    openai_client=openai_client,
+                    b3_system_prompt=b3_prompt,
+                    max_attempts=args.max_attempts,
+                    output_dir=args.output_dir,
+                    tracer=tracer,
+                )
+                log = json.loads(
+                    (args.output_dir / save_name / "optimization_log.json").read_text()
+                )
+                per_model.append({
+                    "save_name": save_name,
+                    "passed": sum(1 for e in log if e["passed"]),
+                    "total": len(log),
+                })
+            except Exception as exc:
+                failed_models.append(save_name)
+                tracer.log("model_error", save_name=save_name, error=str(exc))
+                print(f"\n  [{_ts()}] ✗ {save_name} — ERREUR : {exc}")
+                print(f"  Passage au modèle suivant...")
+
         tracer.global_summary(per_model)
+
+        if failed_models:
+            print(f"\n  ⚠ Modèles en erreur : {', '.join(failed_models)}")
+
     finally:
         tracer.close()
         from render_trace import render
