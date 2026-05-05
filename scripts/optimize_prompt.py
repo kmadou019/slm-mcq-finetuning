@@ -327,7 +327,6 @@ def generate_with_template(
     kwargs: dict = dict(
         max_new_tokens=2048, temperature=temperature, top_p=1.0,
         do_sample=True, return_full_text=False,
-        max_length=None,
     )
     if save_name in _THINKING_SAVE_NAMES:
         kwargs["tokenize_kwargs"] = {"enable_thinking": False}
@@ -592,7 +591,7 @@ def main() -> None:
     )
     sheets = one_per_parent.sample(
         n=min(args.k, len(one_per_parent)), random_state=args.seed
-    ).drop(columns=["_item_parent"]).to_dict("records")
+    ).drop(columns=["_item_parent"], errors="ignore").to_dict("records")
     print(f"✓ {len(sheets)} fiches LISA chargées (1 par item parent) depuis {args.lisa_csv}")
 
     initial_prompt = _build_initial_prompt()
