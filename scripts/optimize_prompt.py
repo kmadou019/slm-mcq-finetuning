@@ -189,6 +189,10 @@ _THINKING_SAVE_NAMES = {"nemotron_30b", "qwen3_5_35b"}
 # Inlined from notebooks/generate_mcq.py to avoid ollama import
 # ─────────────────────────────────────────────────────────────────
 
+# Sentinel that Claude won't confuse with a Python format variable.
+# Using {content} caused Claude to fill it in or drop it during improve_prompt.
+_SENTINEL = "<<<CONTENU_EDUCATIF>>>"
+
 _QCM_GUIDELINES = """\
 Règles pour la question (stem) :
 - La question doit être compréhensible sans lire les propositions
@@ -252,7 +256,7 @@ def _build_initial_prompt() -> str:
         f"CONSIGNES DE RÉDACTION :\n"
         f"La question doit évaluer la compréhension des idées principales du contenu fourni.\n\n"
         f"{_QCM_GUIDELINES}\n\n{_JSON_OUTPUT_BLOCK}\n\n"
-        f"CONTENU ÉDUCATIF :\n{{content}}\n\n"
+        f"CONTENU ÉDUCATIF :\n{_SENTINEL}\n\n"
         f"INSTRUCTION FINALE :\nRépondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors."
     )
 
@@ -322,7 +326,7 @@ def _unload_pipeline(pipe) -> None:
 def generate_with_template(
     content: str, prompt_template: str, pipe, save_name: str, temperature: float = 0.7
 ) -> MCQQuestion | None:
-    full_prompt = prompt_template.replace("{content}", content)
+    full_prompt = prompt_template.replace(_SENTINEL, content)
     messages = [{"role": "user", "content": full_prompt}]
     kwargs: dict = dict(
         max_new_tokens=2048, temperature=temperature, top_p=1.0,
@@ -391,7 +395,8 @@ _IMPROVE_SYSTEM = (
     "   fiche LISA médicale future, pas seulement sur le contenu de cet exemple. "
     "   Pense à ce que le modèle doit faire différemment structurellement.\n\n"
     "CONTRAINTES ABSOLUES :\n"
-    "- Conserver le placeholder {content} exactement à sa place\n"
+    f"- Conserver la balise {_SENTINEL} exactement à sa place — c'est un marqueur technique, "
+    "ne le modifie pas, ne le supprime pas, ne le commente pas\n"
     "- Conserver les CONTRAINTES STRICTES DE SORTIE (format JSON) inchangées\n"
     "- Retourner UNIQUEMENT le prompt complet modifié, sans explication ni commentaire\n"
     "- Ne jamais injecter de contenu spécifique à l'exemple fourni (valeurs chiffrées, "
@@ -439,8 +444,8 @@ def improve_prompt(
     code_block = re.search(r"```(?:\w*\n)?(.*?)```", raw, re.DOTALL)
     improved = code_block.group(1).strip() if code_block else raw
 
-    if "{content}" not in improved:
-        print("    [Claude] ⚠ placeholder {content} absent, prompt conservé")
+    if _SENTINEL not in improved:
+        print(f"    [Claude] ⚠ balise {_SENTINEL} absente, prompt conservé")
         return prompt_template
     return improved
 

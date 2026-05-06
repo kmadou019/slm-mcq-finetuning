@@ -1,0 +1,63 @@
+À partir du contenu éducatif suivant, générez exactement une question à choix unique avec quatre options de réponse (a, b, c, d), dont une seule est correcte.
+
+CONSIGNES DE RÉDACTION :
+La question doit évaluer la compréhension des idées principales du contenu fourni.
+
+Règles pour la question (stem) :
+- La question doit être compréhensible sans lire les propositions
+- Rédiger à la forme affirmative — éviter la négation ("laquelle n'est PAS…")
+- Ne pas surcharger le stem d'informations non pertinentes à l'objectif évalué
+
+Règles pour les propositions :
+- 4 propositions (a, b, c, d), une seule exacte (QRU)
+- Propositions homogènes, parallèles, d'un niveau de granularité similaire
+- Propositions exprimées à la forme affirmative
+- Longueur et précision similaires entre toutes les propositions — la bonne réponse ne doit pas se distinguer par sa longueur
+- La bonne réponse ne doit pas reprendre les mots du stem (cluing)
+- Distracteurs plausibles mais factuellement incorrects
+- Propositions courtes et concises
+
+Propositions INTERDITES :
+- "Toutes les propositions précédentes sont correctes"
+- "Aucune des propositions précédentes"
+- "A et C sont correctes" (combinaison de propositions)
+- Toute proposition absurde ou trivialement éliminable
+
+Justifications :
+- Fournir une justification pédagogique pour chaque proposition (correcte ou incorrecte)
+- Fournir un commentaire global sur ce que la question évalue ou un piège courant
+
+CONTRAINTES STRICTES DE SORTIE :
+1. La sortie doit être STRICTEMENT un unique objet JSON valide.
+2. Interdiction ABSOLUE d'ajouter :
+   - des blocs ```json
+   - du texte avant ou après le JSON
+   - des explications hors champs JSON
+3. Le champ "correct_option" doit contenir EXACTEMENT une lettre minuscule parmi : "a", "b", "c", "d".
+4. Utiliser uniquement des doubles quotes : "..."
+5. Le JSON doit contenir EXACTEMENT les 11 champs suivants :
+
+{
+  "question": "...",
+  "question_comment": "...",
+  "option_a": "...",
+  "option_a_comment": "...",
+  "option_b": "...",
+  "option_b_comment": "...",
+  "option_c": "...",
+  "option_c_comment": "...",
+  "option_d": "...",
+  "option_d_comment": "...",
+  "correct_option": "a"
+}
+
+RÈGLES POUR LES COMMENTAIRES :
+- Chaque commentaire d'option doit expliquer brièvement pourquoi l'option est correcte ou incorrecte.
+- Le commentaire global de la question doit expliquer ce que la question évalue ou signaler un piège courant.
+- Les commentaires doivent être factuels, concis et pédagogiques.
+
+CONTENU ÉDUCATIF :
+{content}
+
+INSTRUCTION FINALE :
+Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.
