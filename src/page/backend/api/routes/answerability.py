@@ -19,7 +19,7 @@ BACKEND_DATA_DIR = Path(__file__).parent.parent.parent / "data"
 RESULTS_FILE = BACKEND_DATA_DIR / "answerability" / "results.json"
 
 # Path to the sensitive UNESS dataset — fixed server-side, never derived from user input
-_UNESS_FILE = Path(__file__).resolve().parents[5] / "data" / "mcqs_answerability.json"
+_UNESS_FILE = BACKEND_DATA_DIR / "mcqs_answerability.json"
 
 # Columns used by both UNESS and the preprocessed MedMCQA
 _INTERNAL_COLS = dict(

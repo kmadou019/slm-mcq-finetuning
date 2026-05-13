@@ -1,3 +1,4 @@
+import { environment } from '../../environments/environment';
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
@@ -13,7 +14,7 @@ import { tap, catchError } from 'rxjs/operators';
 })
 export class ValidationService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:8000/api';
+  private apiUrl = environment.apiUrl;
 
   private getStorageKey(): string {
     const userJson = sessionStorage.getItem('mcq_current_user');

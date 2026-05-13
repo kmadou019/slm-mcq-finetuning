@@ -18,6 +18,9 @@ ollama>=0.6.0
 pypdf>=4.0.0
 pydantic>=2.9.0
 
+# HTTP client
+requests>=2.31.0
+
 # Eval pipeline
 openai>=2.0.0
 torch>=2.0.0

@@ -1,3 +1,4 @@
+import { environment } from '../../environments/environment';
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -57,7 +58,7 @@ export interface ModelCardInfo {
 @Injectable({ providedIn: 'root' })
 export class AnswerabilityService {
   private http = inject(HttpClient);
-  private apiUrl = 'http://localhost:8000/api';
+  private apiUrl = environment.apiUrl;
 
   getOllamaModels(): Observable<{ models: string[]; error?: string }> {
     return this.http.get<{ models: string[]; error?: string }>(

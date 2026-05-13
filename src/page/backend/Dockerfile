@@ -13,6 +13,9 @@ COPY requirements.txt .
 RUN grep -v '^torch' requirements.txt > /tmp/req.txt \
     && pip install --no-cache-dir -r /tmp/req.txt
 
+# Download NLTK data for French stopwords
+RUN python3 -c "import nltk; nltk.download('stopwords', quiet=True); nltk.download('wordnet', quiet=True); nltk.download('punkt_tab', quiet=True)"
+
 COPY . .
 
 EXPOSE 8000
