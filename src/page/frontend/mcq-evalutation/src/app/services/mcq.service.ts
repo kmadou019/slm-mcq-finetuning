@@ -49,6 +49,18 @@ export class McqService {
   }
 
   /**
+   * Get generation models from Ollama and OpenAI-compatible endpoints
+   */
+  getGenerationModels(): Observable<{
+    models: { label: string, value: string, source: string }[],
+    errors: string[] | null
+  }> {
+    return this.http.get<{ models: { label: string, value: string, source: string }[], errors: string[] | null }>(
+      `${this.apiUrl}/generation/models`
+    );
+  }
+
+  /**
    * Get available models with their MCQ counts
    */
   getAvailableModels(): Observable<{ model: string, count: number, available: number }[]> {

@@ -66,6 +66,12 @@ export class AnswerabilityService {
     );
   }
 
+  getOpenAICompatModels(): Observable<{ models: string[]; error?: string; base_url?: string }> {
+    return this.http.get<{ models: string[]; error?: string; base_url?: string }>(
+      `${this.apiUrl}/answerability/models/openai-compat`
+    );
+  }
+
   runEvaluation(req: AnswerabilityRequest): Observable<{ job_id: string }> {
     return this.http.post<{ job_id: string }>(`${this.apiUrl}/answerability/run`, req);
   }

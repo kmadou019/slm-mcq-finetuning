@@ -68,4 +68,5 @@ lisa_sheets/
 data/lisa_sheets.csv
 .claude
 .ssh
-node_modules/
+node_modules/credentials*
+credentials.txt

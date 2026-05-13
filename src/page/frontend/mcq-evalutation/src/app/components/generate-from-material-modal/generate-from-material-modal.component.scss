@@ -187,6 +187,25 @@ $generate-border: #ddd6fe;
     border-color: $generate;
     box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
   }
+
+  &:disabled {
+    background: $gray-100;
+    cursor: not-allowed;
+  }
+}
+
+.loading-badge {
+  font-size: 11px;
+  color: $generate;
+  font-weight: 500;
+  margin-left: 8px;
+}
+
+.models-error {
+  display: block;
+  margin-top: 6px;
+  font-size: 12px;
+  color: $danger;
 }
 
 

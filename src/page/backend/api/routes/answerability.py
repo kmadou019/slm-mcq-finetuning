@@ -322,6 +322,71 @@ async def list_ollama_models(current_user: User = Depends(get_current_user)):
         return {"models": [], "error": str(e)}
 
 
+@router.get("/answerability/models/openai-compat")
+async def list_openai_compat_models(current_user: User = Depends(get_current_user)):
+    """
+    List available models from an OpenAI-compatible endpoint.
+    Auto-detects models via /v1/models endpoint.
+    
+    Configure via OPENAI_COMPATIBLE_URL and OPENAI_COMPATIBLE_KEY in .env
+    """
+    import os
+    import requests as _requests
+    
+    base_url = os.getenv("OPENAI_COMPATIBLE_URL", "").rstrip("/")
+    api_key = os.getenv("OPENAI_COMPATIBLE_KEY", "")
+    
+    if not base_url:
+        return {"models": [], "error": "OPENAI_COMPATIBLE_URL not configured"}
+    
+    headers = {}
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
+    
+    # Try OpenAI /v1/models endpoint first
+    try:
+        response = _requests.get(
+            f"{base_url}/models",
+            headers=headers,
+            timeout=10
+        )
+        if response.status_code == 200:
+            data = response.json()
+            # Handle both OpenAI format {"data": [...]} and simple list
+            if isinstance(data, list):
+                models = data
+            elif isinstance(data, dict) and "data" in data:
+                models = [m["id"] for m in data["data"]]
+            elif isinstance(data, dict) and "models" in data:
+                models = data["models"]
+            else:
+                models = []
+            return {"models": models, "base_url": base_url}
+    except Exception as e:
+        pass
+    
+    # Fallback: try /v1/models directly
+    try:
+        response = _requests.get(
+            f"{base_url}/models",
+            headers=headers,
+            timeout=10
+        )
+        if response.status_code == 200:
+            data = response.json()
+            if isinstance(data, list):
+                models = data
+            elif isinstance(data, dict) and "data" in data:
+                models = [m["id"] for m in data["data"]]
+            else:
+                models = []
+            return {"models": models, "base_url": base_url}
+    except Exception as e:
+        return {"models": [], "error": f"Failed to connect: {str(e)}", "base_url": base_url}
+    
+    return {"models": [], "error": "Could not detect models", "base_url": base_url}
+
+
 @router.get("/answerability/results")
 async def get_results(current_user: User = Depends(get_current_user)):
     """Return the latest answerability result per (model, dataset)."""

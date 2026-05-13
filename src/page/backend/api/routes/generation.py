@@ -333,6 +333,91 @@ async def _run_generation(job_id: str, user_id: int, content: str, model_save_na
 
 
 # ============================================================================
+# MODELS ENDPOINT
+# ============================================================================
+
+@router.get("/generation/models")
+async def list_generation_models(current_user: User = Depends(get_current_user)):
+    """
+    List available models for MCQ generation from:
+    1. Ollama (local models via OLLAMA_HOST)
+    2. OpenAI-compatible endpoints (OPENAI_COMPATIBLE_URL)
+    
+    Returns models with their source (ollama/openai) for frontend display.
+    """
+    import requests as _requests
+    models = []
+    errors = []
+    
+    # 1. Try Ollama
+    try:
+        import ollama as _ollama
+        ollama_host = os.getenv("OLLAMA_HOST", "http://localhost:11434")
+        result = _ollama.list()
+        for m in result.get("models", []):
+            model_name = m["model"]
+            models.append({
+                "label": model_name,
+                "value": model_name,
+                "source": "ollama"
+            })
+    except Exception as e:
+        errors.append(f"Ollama: {str(e)}")
+    
+    # 2. Try OpenAI-compatible endpoint
+    try:
+        openai_url = os.getenv("OPENAI_COMPATIBLE_URL", "").rstrip("/")
+        openai_key = os.getenv("OPENAI_COMPATIBLE_KEY", "")
+        
+        if openai_url:
+            headers = {}
+            if openai_key:
+                headers["Authorization"] = f"Bearer {openai_key}"
+            
+            response = _requests.get(
+                f"{openai_url}/models",
+                headers=headers,
+                timeout=10
+            )
+            
+            if response.status_code == 200:
+                data = response.json()
+                model_list = []
+                
+                if isinstance(data, list):
+                    model_list = data
+                elif isinstance(data, dict):
+                    if "data" in data:
+                        # OpenAI format: {"data": [{"id": "..."}, ...]}
+                        model_list = [m["id"] for m in data["data"]]
+                    elif "models" in data:
+                        model_list = data["models"]
+                
+                for model_name in model_list:
+                    # Skip if already in list (from Ollama)
+                    if not any(m["value"] == model_name for m in models):
+                        models.append({
+                            "label": model_name,
+                            "value": model_name,
+                            "source": "openai"
+                        })
+    except Exception as e:
+        errors.append(f"OpenAI-compat: {str(e)}")
+    
+    # If no models found, return defaults as fallback
+    if not models:
+        models = [
+            {"label": "Nemotron 30B (Q8)", "value": "hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0", "source": "default"},
+            {"label": "Qwen 3.5 35B", "value": "qwen3.5:35b", "source": "default"},
+        ]
+    
+    return {
+        "models": models,
+        "errors": errors if errors else None
+    }
+
+
+# ============================================================================
 # ROUTES
 # ============================================================================
 

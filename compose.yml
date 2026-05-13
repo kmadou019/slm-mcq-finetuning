@@ -7,6 +7,8 @@ services:
     environment:
       # Autoriser les requêtes venant du frontend nginx
       ALLOWED_ORIGINS: http://localhost
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
     volumes:
       # Persistance : base SQLite + CSVs MCQs + custom_mcqs + users.json
       - ./src/page/backend/data:/app/data

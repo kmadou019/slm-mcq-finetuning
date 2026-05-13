@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, inject, OnDestroy, ChangeDetectorRef } from '@angular/core';
+import { Component, EventEmitter, Output, inject, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { McqService } from '../../services/mcq.service';
@@ -56,20 +56,17 @@ Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehor
   templateUrl: './generate-from-material-modal.component.html',
   styleUrl: './generate-from-material-modal.component.scss'
 })
-export class GenerateFromMaterialModalComponent implements OnDestroy {
+export class GenerateFromMaterialModalComponent implements OnInit, OnDestroy {
   private readonly mcqService = inject(McqService);
   private readonly cdr = inject(ChangeDetectorRef);
 
   @Output() close = new EventEmitter<void>();
   @Output() confirm = new EventEmitter<void>();
 
-  // Modèles disponibles pour la génération depuis contenu personnalisé
-  readonly generationModels = [
-    { label: 'Nemotron 30B (Q8)', value: 'hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0' },
-    { label: 'Qwen 3.5 35B', value: 'qwen3.5:35b' },
-    { label: 'Qwcen3 80B Thinking (UD-Q4_K_XL)', value: 'hf.co/unsloth/Qwen3-Next-80B-A3B-Thinking-GGUF:UD-Q4_K_XL' },
-
-  ];
+  // Modèles disponibles pour la génération (chargés dynamiquement depuis le backend)
+  generationModels: { label: string, value: string, source: string }[] = [];
+  modelsLoading = true;
+  modelsError: string | null = null;
 
   // Champs du formulaire (propriétés simples pour ngModel)
   content = '';
@@ -88,6 +85,38 @@ export class GenerateFromMaterialModalComponent implements OnDestroy {
   view: ModalView = 'form';
   errorMessage = '';
   mcqCount = 0;
+
+  ngOnInit(): void {
+    this.loadGenerationModels();
+  }
+
+  private loadGenerationModels(): void {
+    this.modelsLoading = true;
+    this.modelsError = null;
+    this.mcqService.getGenerationModels().subscribe({
+      next: (response) => {
+        this.generationModels = response.models;
+        this.modelsLoading = false;
+        // Auto-select first model if current selection is not available
+        if (this.generationModels.length > 0 && !this.generationModels.some(m => m.value === this.selectedModel)) {
+          this.selectedModel = this.generationModels[0].value;
+        }
+        if (response.errors && response.errors.length > 0) {
+          console.warn('Model loading warnings:', response.errors);
+        }
+      },
+      error: (err) => {
+        console.error('Failed to load generation models:', err);
+        this.modelsError = 'Impossible de charger les modèles';
+        this.modelsLoading = false;
+        // Fallback to defaults
+        this.generationModels = [
+          { label: 'Nemotron 30B (Q8)', value: 'hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0', source: 'default' },
+          { label: 'Qwen 3.5 35B', value: 'qwen3.5:35b', source: 'default' },
+        ];
+      }
+    });
+  }
 
   private jobId: string | null = null;
   private pollingIntervalId: any = null;
