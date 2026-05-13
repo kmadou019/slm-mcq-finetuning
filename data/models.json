@@ -1,5 +1,6 @@
 {
-  "qwen3_4b_KTO":   "scripts/finetuned_models/qwen3-4b-KTO",
-  "qwen3_0.6b_KTO": "scripts/finetuned_models/qwen3-0.6b-KTO",
-  "qwen3_1_7b_KTO": "scripts/finetuned_models/qwen3-1.7b-KTO"
+  "qwen3_0_6b":     "Qwen/Qwen3-0.6B",
+  "llama3_8b":      "meta-llama/Llama-3.1-8B-Instruct",
+  "medgemma_27b":   "google/medgemma-27b-it",
+  "gemma4_31b":     "google/gemma-4-31B-it"
 }

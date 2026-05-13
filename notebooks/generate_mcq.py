@@ -406,17 +406,59 @@ def _build_old_prompt_hf(content):
     """
 
 
+_SENTINEL = "<<<CONTENU_EDUCATIF>>>"
+_QWEN_OPTIMIZED_PROMPT_PATH = os.path.join(
+    os.path.dirname(__file__), "..", "data", "optimized_prompts", "qwen3_0_6b", "final_prompt.txt"
+)
+
+
+def _load_optimized_prompt(save_name: str) -> str | None:
+    project_root = os.environ.get("PROJECT_ROOT", os.path.join(os.path.dirname(__file__), ".."))
+    path = os.path.join(project_root, "data", "optimized_prompts", save_name, "final_prompt.txt")
+    if not os.path.exists(path):
+        print(f"[prompt_builder] prompt optimisé introuvable : {path}")
+        return None
+    with open(path, encoding="utf-8") as f:
+        return f.read()
+
+
 def _build_prompt(content, hf=False):
     """
     Sélectionne le système de prompt via la variable d'env PROMPT_SYSTEM :
-      - "old" : ancien prompt simple (commit ba23972)
-      - "new" (défaut) : prompt enrichi via retrieval GraphDB, fallback générique si indisponible
+      - "old"                : ancien prompt simple (commit ba23972)
+      - "new" (défaut)       : prompt enrichi via retrieval GraphDB, fallback générique si indisponible
+      - "optimized"          : prompt optimisé du modèle courant (OPTIMIZED_PROMPT_SAVE_NAME)
+      - "optimized_enriched" : idem + objectifs LISA injectés dans le contenu
+      - "transfer_qwen"      : prompt optimisé de qwen3_0_6b appliqué à n'importe quel modèle
     """
     prompt_system = os.getenv("PROMPT_SYSTEM", "new").lower()
 
     if prompt_system == "old":
         print("[prompt_builder] PROMPT_SYSTEM=old → ancien prompt")
         return _build_old_prompt_hf(content) if hf else _build_old_prompt_ollama(content)
+
+    if prompt_system in ("optimized", "optimized_enriched", "transfer_qwen"):
+        if prompt_system == "transfer_qwen":
+            save_name = "qwen3_0_6b"
+        else:
+            save_name = os.getenv("OPTIMIZED_PROMPT_SAVE_NAME", "")
+            if not save_name:
+                print("[prompt_builder] OPTIMIZED_PROMPT_SAVE_NAME non défini → fallback prompt")
+                return _build_fallback_prompt().replace("{content}", content)
+
+        template = _load_optimized_prompt(save_name)
+        if template is None or _SENTINEL not in template:
+            print(f"[prompt_builder] prompt optimisé invalide pour {save_name} → fallback")
+            return _build_fallback_prompt().replace("{content}", content)
+
+        if prompt_system == "optimized_enriched":
+            # Enrichir le contenu avec les objectifs LISA avant injection
+            enriched_content = _build_lisa_enrichment(content)
+            print(f"[prompt_builder] {prompt_system} → {save_name} + enrichissement LISA")
+            return template.replace(_SENTINEL, enriched_content)
+
+        print(f"[prompt_builder] {prompt_system} → prompt optimisé {save_name}")
+        return template.replace(_SENTINEL, content)
 
     # Système nouveau (retrieval GraphDB)
     mcp_url, _, _ = _cfg()
@@ -439,6 +481,36 @@ def _build_prompt(content, hf=False):
         return _build_enriched_prompt(item_ref, item_label, objectives).replace("{content}", content)
     print("[prompt_builder] no objectives found → fallback prompt")
     return _build_fallback_prompt().replace("{content}", content)
+
+
+def _build_lisa_enrichment(content: str) -> str:
+    """
+    Construit un contenu enrichi : objectifs LISA officiels préfixés au contenu brut.
+    Fallback vers le contenu brut si GraphDB/Ollama indisponible.
+    """
+    search_term = _extract_via_regex(content)
+    item_ref, item_label, objectives = (None, None, [])
+    if search_term:
+        item_ref, item_label, objectives = _fetch_objectives(search_term)
+    if not objectives:
+        for candidate in _extract_via_ollama(content):
+            item_ref, item_label, objectives = _fetch_objectives(candidate)
+            if objectives:
+                break
+
+    if not objectives:
+        print("[prompt_builder] enrichissement LISA : aucun objectif trouvé → contenu brut")
+        return content
+
+    obj_lines = "\n".join(f"- {o['label']} [Rang {o['rank'].upper()}]" for o in objectives)
+    item_line = item_ref + (f" — {item_label}" if item_label else "")
+    prefix = (
+        f"### ITEM ET RÉFÉRENCE\n{item_line}\n\n"
+        f"### OBJECTIFS DE CONNAISSANCE\n{obj_lines}\n\n"
+        f"### CONTENU SOURCE\n"
+    )
+    print(f"[prompt_builder] enrichissement LISA → {item_ref} ({len(objectives)} objectifs)")
+    return prefix + content
 
 
 class MCQQuestion(BaseModel):

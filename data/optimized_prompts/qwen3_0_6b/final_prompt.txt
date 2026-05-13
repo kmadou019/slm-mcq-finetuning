@@ -14,17 +14,138 @@ Règles pour les propositions :
 - Propositions exprimées à la forme affirmative
 - Longueur et précision similaires entre toutes les propositions — la bonne réponse ne doit pas se distinguer par sa longueur
 - La bonne réponse ne doit pas reprendre les mots du stem (cluing)
-- Distracteurs plausibles mais factuellement incorrects
 - Propositions courtes et concises
+
+RÈGLES IMPÉRATIVES POUR LES DISTRACTEURS (à vérifier AVANT de finaliser) :
+
+0. INTERDICTION ABSOLUE DES STEMS GÉNÉRIQUES (règle structurelle de premier rang) — Les stems de forme « Quelle affirmation est correcte concernant [sujet] ? », « Que peut-on dire de [sujet] ? », « Lequel des éléments suivants concerne [sujet] ? », « Laquelle est vraie à propos de [sujet] ? » sont STRICTEMENT INTERDITS, même si une seule option est techniquement correcte.
+   - Raison : ce type de stem ouvre un champ trop vaste, conduit à des distracteurs hétérogènes (axes différents, granularités différentes) et rend plusieurs options défendables. Il produit systématiquement des distracteurs faibles.
+   - Procédure obligatoire de reformulation : remplacez TOUJOURS un stem générique par un stem qui pose UNE question PRÉCISE sur UN aspect UNIQUE. Patrons à privilégier :
+       • « Quel est [le critère / le mécanisme principal / l'élément pathognomonique / la première étape / la contre-indication] de [sujet] ? »
+       • « Parmi les [items d'une nomenclature fermée], lequel correspond à [critère discriminant explicite] ? »
+       • « Dans le cadre de [situation clinique précise], quel est [élément discriminant unique] ? »
+   - Test obligatoire : si le stem peut accepter mentalement plusieurs réponses VRAIES tirées de la fiche, il est INVALIDE → reformulez avant d'écrire les options.
+
+1. VÉRIFICATION PRÉALABLE DE LA BONNE RÉPONSE — Avant même de construire les distracteurs, relisez le contenu éducatif et identifiez la phrase EXACTE qui justifie la bonne réponse. Si vous ne trouvez pas une affirmation explicite et univoque dans la fiche, REFORMULEZ la question. Ne marquez JAMAIS comme « correcte » une option qui contredit le contenu éducatif ou qui n'y est pas explicitement soutenue. Cette vérification doit précéder toute écriture de distracteur.
+
+2. INTERDICTION ABSOLUE DE DUPLICATION (règle critique numéro 1, à vérifier en priorité) — Aucun distracteur ne peut reprendre, copier, paraphraser ou reformuler la bonne réponse. Cette règle est la plus fréquemment violée et doit faire l'objet d'une vérification SYSTÉMATIQUE avant tout autre contrôle.
+   - Avant d'écrire chaque distracteur, NOTEZ MENTALEMENT le texte exact de la bonne réponse, puis vérifiez que le distracteur ne contient PAS ce texte ni un texte sémantiquement équivalent.
+   - Si vous remarquez que vous êtes en train d'écrire un distracteur dont le contenu est identique ou très proche de la bonne réponse (par exemple parce que le contenu éducatif n'offre que peu de matière), ARRÊTEZ et générez une affirmation factuellement DIFFÉRENTE et FAUSSE — ne recopiez jamais la bonne réponse par défaut.
+   - Procédure obligatoire : après avoir rédigé les 4 options, comparez le texte de chaque distracteur (b, c, d si la bonne est a ; ou autre selon la position) avec celui de la bonne réponse :
+       • si deux options ont une intersection lexicale supérieure à 50 %, RÉÉCRIVEZ le distracteur,
+       • si deux options expriment la même idée même formulée différemment, RÉÉCRIVEZ le distracteur,
+       • si vous n'arrivez pas à produire trois affirmations DIFFÉRENTES et FAUSSES, REFORMULEZ entièrement la question pour viser un autre point du contenu.
+   - INTERDICTION explicite de produire un JSON dans lequel deux options auraient un libellé identique ou quasi-identique (différences de ponctuation, casse, accents, espaces non significatives).
+
+3. UNICITÉ DE LA BONNE RÉPONSE (règle prioritaire, deuxième vérification critique) — Garantissez qu'UNE SEULE option est défendable comme correcte au regard du contenu éducatif.
+   - Test de double-validité OBLIGATOIRE : pour CHAQUE distracteur, posez explicitement la question « cette affirmation est-elle elle aussi vraie selon le contenu éducatif ? ». Si la réponse est OUI ou MÊME PARTIELLEMENT OUI, le distracteur est INVALIDE et doit être remplacé. Un distracteur qui est une affirmation factuellement vraie tirée de la fiche est la cause d'échec la plus fréquente.
+   - Si plusieurs options peuvent être considérées comme « vraies » ou « également valables » dans le cadre du stem, la question est INVALIDE : reformulez le stem pour le rendre plus discriminant, OU remplacez les distracteurs ambigus.
+   - Test obligatoire : pour chaque distracteur, formulez la phrase « ce distracteur est FAUX parce que … » en pointant un élément précis du contenu éducatif. Si vous écrivez « il est moins central », « il décrit une partie du processus », « il est secondaire » ou « il n'est pas explicitement listé », ce n'est PAS suffisant : le distracteur doit être réellement erroné dans le cadre posé par le stem, pas simplement secondaire ou complémentaire à la bonne réponse.
+   - INTERDICTION : poser un stem du type « quel élément fait partie de … » et fournir comme distracteurs d'autres éléments qui font ÉGALEMENT partie de la même liste/catégorie. Dans ce cas, transformez le stem (ex. introduire un critère discriminant : phase, mécanisme, contre-indication, exclusivité) ou changez radicalement les distracteurs.
+   - INTERDICTION : utiliser comme distracteur une affirmation qui décrit un AUTRE aspect VRAI de la même prise en charge / pathologie / mécanisme que la bonne réponse (ex. la bonne réponse cible un volet « décisionnel » et un distracteur cible un volet « technique » du même processus, les deux étant vrais). Le distracteur doit être FAUX, pas COMPLÉMENTAIRE.
+
+4. INTERDICTION DES STEMS AUTORÉFÉRENTIELS OU SOUS-DÉTERMINÉS — Le stem ne doit JAMAIS renvoyer à un objet externe non décrit dans la question elle-même : tournures comme « décrit dans la description », « dans le texte ci-dessus », « selon le contenu », « cas présenté » sont INTERDITES si elles ne sont pas accompagnées des éléments cliniques/structuraux discriminants directement intégrés au stem.
+   - Si la bonne réponse appartient à une nomenclature fermée (typologie, classification, catégorie nosologique, classe thérapeutique…), le stem DOIT contenir au moins UN élément distinctif qui rend la bonne réponse identifiable sans ambiguïté.
+
+5. UNICITÉ STRICTE DES 4 LIBELLÉS — Les 4 propositions doivent être SÉMANTIQUEMENT DISTINCTES.
+   - Aucun distracteur ne peut être identique, quasi-identique ou une simple reformulation de la bonne réponse (cf. règle 2).
+   - Aucun distracteur ne peut être identique ou quasi-identique à un autre distracteur.
+   - Avant de produire le JSON, comparez mentalement chaque paire (a/b, a/c, a/d, b/c, b/d, c/d) : si deux options expriment le même contenu, RÉÉCRIVEZ-en une.
+   - Les différences typographiques (ponctuation, casse, espaces, accents) ne suffisent PAS à distinguer deux propositions.
+
+6. PARALLÉLISME GRAMMATICAL ET LEXICAL — Les 4 propositions doivent partager une STRUCTURE syntaxique identique.
+   - Même catégorie grammaticale en tête (toutes des syntagmes nominaux, ou toutes des verbes à l'infinitif…).
+   - Si un mot-racine introduit la catégorie (ex. « [racine commune]… »), il doit être présent OU absent uniformément dans les 4 options.
+   - INTERDICTION de mélanger des verbes d'action OPPOSÉS ou DIFFÉRENTS entre les options : si la bonne réponse commence par un verbe ou une action (ex. « [action principale] »), TOUS les distracteurs doivent commencer par le MÊME verbe ou une action de la MÊME nature. Mélanger des verbes comme « distinguer », « éviter », « inclure », « exclure », « rechercher », « surveiller » entre les options crée un désaxage qui rend certains distracteurs trivialement éliminables (ex. « éviter » est immédiatement reconnu comme contraire au sens médical attendu).
+   - Vérifiez la cohérence lexicale : pas de redondance ni de juxtaposition maladroite ; chaque proposition doit être lisible isolément.
+
+7. COHÉRENCE D'AXE DE CLASSIFICATION (règle critique) — Quand la bonne réponse est un item d'une typologie, les 4 propositions DOIVENT toutes appartenir au MÊME axe de classification que la bonne réponse, et être MUTUELLEMENT EXCLUSIVES sur cet axe.
+   - Identifiez explicitement l'axe avant d'écrire les options : axe par mécanisme, axe par voie d'abord, axe par localisation, axe par durée d'action, axe par sévérité, axe par mécanisme physiopathologique, etc.
+   - INTERDICTION de mélanger des items issus d'axes différents : par exemple, mêler un type défini par sa nature/composition avec un type défini par sa voie d'implantation, ou mêler un médicament défini par sa classe pharmacologique avec un médicament défini par son indication.
+   - INTERDICTION d'inclure une catégorie « parapluie » qui englobe la bonne réponse et un autre distracteur (terme générique vs. termes spécifiques) : toutes les options doivent être au MÊME niveau de spécificité taxonomique.
+   - Test obligatoire : « si je place la bonne réponse et chaque distracteur sur le même axe, sont-ils tous au même grain et mutuellement exclusifs ? » → si NON, reformulez.
+   - PIÈGE FRÉQUENT À ÉVITER : si la bonne réponse porte sur un AXE de raisonnement (ex. « distinguer [critère X] et [critère Y] »), les distracteurs ne doivent PAS porter sur un AUTRE axe (ex. systèmes anatomiques touchés, outils diagnostiques, attitudes thérapeutiques) : ils doivent rester sur le MÊME axe et proposer des dichotomies/critères ALTERNATIFS faux ou non pertinents pour la situation.
+
+7bis. RÈGLE DE « MÊME VERBE D'ACTION + MÊME OBJET CONCEPTUEL » (renforcement critique applicable aux questions sur démarches, procédures, conduites à tenir, raisonnements cliniques) — Quand la bonne réponse décrit une ACTION (ex. « [verbe principal] [objet conceptuel A] selon [critère B] »), les 3 distracteurs doivent IMPÉRATIVEMENT respecter le triple ancrage suivant :
+   - MÊME VERBE D'ACTION (ou un verbe strictement de la même famille fonctionnelle) que la bonne réponse,
+   - MÊME TYPE D'OBJET CONCEPTUEL manipulé (si la bonne réponse manipule [un type d'objet], les distracteurs doivent manipuler le MÊME type d'objet — pas un objet d'une catégorie voisine),
+   - MÊME STRUCTURE DE CRITÈRE d'évaluation/classement.
+   - Construction recommandée : copiez d'abord le SQUELETTE de la bonne réponse (verbe + objet + critère), puis substituez UNIQUEMENT un sous-élément (ex. la nature de l'objet, le critère, ou la finalité) par une variante FAUSSE mais qui reste sur le même squelette.
+   - INTERDICTION : produire un distracteur qui change SIMULTANÉMENT le verbe, l'objet ET le critère par rapport à la bonne réponse — un tel distracteur sort de l'axe et devient soit trivialement éliminable, soit défendable indépendamment.
+   - INTERDICTION : produire un distracteur qui décrit une action ENTIÈREMENT DIFFÉRENTE (ex. « réaliser [examen] », « prescrire [traitement] », « relier [A] et [B] ») alors que la bonne réponse décrit une action de NATURE DIFFÉRENTE (ex. « isoler [éléments] et évaluer [paramètre] »). Tous les distracteurs doivent être des variantes de la MÊME action.
+   - Test final : masquez mentalement les détails et ne gardez que la structure syntaxique de chaque option. Les 4 structures doivent être SUPERPOSABLES. Si l'une diffère, RÉÉCRIVEZ-la.
+
+8. ANCRAGE CONTEXTUEL OBLIGATOIRE — Avant d'écrire chaque distracteur, identifiez explicitement :
+   a) la CATÉGORIE conceptuelle exacte de la bonne réponse (ex. : signe clinique surveillé, examen complémentaire, traitement de première intention, mécanisme physiopathologique, complication précoce…),
+   b) le CADRE clinique précis posé par le stem (population, phase, situation).
+   Tous les distracteurs DOIVENT appartenir à la même catégorie ET être évoqués ou évocables dans ce cadre clinique précis. Un élément générique, hors-cadre ou tiré d'une liste/glossaire externe sans rapport direct avec la situation est INTERDIT, même s'il est médicalement réel.
+   - Attention au piège « cadre voisin mais distinct » : un distracteur valable en dehors du cadre précis du stem (ex. forme étiologique différente, phase différente, sous-population différente) NE DOIT PAS être traité comme « plausible mais faux » s'il pourrait égarer en suggérant qu'il est correct dans le cadre du stem. Précisez le cadre dans le stem pour éviter cette ambiguïté, ou choisissez un distracteur clairement faux DANS LE CADRE posé.
+
+9. PLAUSIBILITÉ MÉDICALE CIBLÉE MAIS FAUSSETÉ DÉMONTRABLE — Chaque distracteur doit être :
+   - factuellement INCORRECT au regard du contenu éducatif fourni (et démontrable comme tel par une donnée précise de la fiche),
+   - mais représenter une CONFUSION DOCUMENTÉE qu'un étudiant pourrait commettre dans CE contexte précis (notion voisine effectivement enseignée, item proche cité dans la fiche, piège classique de la pathologie/situation traitée).
+   - Pour chaque distracteur, vous devez pouvoir formuler mentalement DEUX phrases : (i) « un étudiant le choisirait parce qu'il confond X avec Y dans le cadre de [situation du stem] » ; (ii) « il est faux parce que [élément précis du contenu éducatif] ». Si l'une des deux manque, le distracteur est invalide : remplacez-le.
+   - Évitez les distracteurs absurdes, hors-sujet, trivialement éliminables, ou simplement « possibles en médecine générale » sans lien spécifique avec la situation.
+   - Évitez les distracteurs qui contiennent un mot ou un verbe contraire au sens médical attendu (ex. « éviter [élément utile] », « ignorer [examen pertinent] ») et qui peuvent donc être éliminés par simple bon sens : le distracteur doit être plausible, pas absurde.
+   - Évitez les distracteurs qui ne sont PAS un terme reconnu de la nomenclature de l'axe choisi (catégorie inventée ou imprécise) : un étudiant les éliminerait par simple non-reconnaissance.
+   - Évitez les distracteurs qui sont en réalité des affirmations VRAIES mais incomplètes ou partielles par rapport à la bonne réponse : un distracteur « partiellement vrai » est aussi mauvais qu'un distracteur « totalement vrai » car il rend la question ambiguë.
+
+10. INTERDICTION DES « DÉFINITIONS CANONIQUES D'UNE AUTRE CATÉGORIE » (règle anti-élimination triviale) — Lorsque la bonne réponse décrit une caractéristique d'un sous-type X au sein d'une typologie connue (types A/B/C…), un distracteur ne doit JAMAIS être la description prototypique/canonique d'un AUTRE sous-type de la même typologie SI cet autre sous-type est trivialement reconnaissable et écarté par simple lecture du libellé.
+    - À la place, construisez le distracteur EN RESTANT DANS LE CADRE du sous-type X, mais en introduisant une erreur subtile : [élément voisin mais incorrect], [proportion ou composition erronée], [propriété attribuée à tort], [caractéristique partiellement vraie mais incomplète].
+    - Reformulation du test de validité : « si je masque la mention du sous-type dans le distracteur, ressemble-t-il à une affirmation possible sur le sous-type X ? » → si NON, REMPLACEZ-le.
+
+11. CONSTRUCTION DE LA VARIATION PAR SUBSTITUTION CIBLÉE — Pour fabriquer un distracteur, partez du SQUELETTE de la bonne réponse et appliquez UNE SEULE transformation ciblée (jamais plusieurs simultanément, sinon le distracteur dérive hors axe) :
+    - remplacer UN élément (et un seul) par un élément voisin de la MÊME catégorie mais erroné dans ce contexte,
+    - inverser une relation (cause/conséquence, indication/contre-indication, signe précoce/tardif),
+    - substituer [valeur correcte] par [valeur proche mais fausse],
+    - confondre [mécanisme principal] avec un mécanisme apparenté évoqué dans la fiche,
+    - intervertir le critère d'évaluation tout en gardant le même verbe et le même objet.
+    Chaque distracteur doit utiliser une transformation DIFFÉRENTE des autres, mais toutes les transformations doivent préserver : (i) le verbe d'action principal, (ii) le type d'objet manipulé, (iii) le cadre clinique du stem. Le résultat doit rester LEXICALEMENT DIFFÉRENT de la bonne réponse ET FACTUELLEMENT FAUX dans le cadre du stem.
+
+12. CAS DES RÉPONSES SOUS FORME DE LISTE, DE TYPOLOGIE OU D'ITEMS CODIFIÉS — Si la bonne réponse est une énumération, un item issu d'une nomenclature ou un type au sein d'une typologie :
+    - le stem DOIT introduire un critère discriminant qui rend UN seul item correct (ex. « le plus précoce », « le plus spécifique », « contre-indiqué dans », « pathognomonique de »…),
+    - tous les distracteurs DOIVENT être d'autres items REELS et RECONNUS de la même typologie, sur le même axe que la bonne réponse (cf. règle 7),
+    - chaque distracteur doit être effectivement faux dans le cadre discriminant posé par le stem,
+    - il est INTERDIT de recopier la liste correcte à l'identique dans un distracteur,
+    - il est INTERDIT de piocher au hasard un autre item qui serait également défendable comme bonne réponse,
+    - il est INTERDIT d'inventer un item qui n'existe pas dans la nomenclature ou de proposer un terme générique englobant.
+
+13. PROCÉDURE DE GÉNÉRATION ÉTAPE PAR ÉTAPE (à suivre dans cet ordre exact) :
+    Étape 1 — Identifiez la bonne réponse et écrivez son libellé exact.
+    Étape 2 — Identifiez l'axe et la catégorie de la bonne réponse (sur quel critère porte-t-elle : mécanisme, classification, valeur, attitude, étape, etc. ?). EXTRAYEZ explicitement : (i) le verbe d'action, (ii) l'objet conceptuel manipulé, (iii) le critère d'évaluation. Ces trois éléments forment le SQUELETTE qui devra être conservé dans les distracteurs.
+    Étape 3 — Vérifiez que le stem est suffisamment discriminant ET NON GÉNÉRIQUE (cf. règle 0) : si plusieurs aspects de la fiche pourraient rendre plusieurs options vraies, REFORMULEZ le stem avec un critère restrictif explicite avant de poursuivre.
+    Étape 4 — Listez mentalement 3 affirmations FAUSSES, chacune DIFFÉRENTE du libellé de la bonne réponse, différente entre elles, et toutes situées sur le MÊME axe que la bonne réponse (même verbe d'action, même type d'objet, même registre de critère).
+    Étape 5 — Vérifiez que chacune de ces 3 affirmations : (a) n'est PAS la bonne réponse, (b) n'est PAS un synonyme de la bonne réponse, (c) n'est PAS identique à une autre, (d) reste plausible dans le cadre du stem, (e) n'est PAS elle aussi une affirmation vraie ou complémentaire à la bonne réponse selon la fiche, (f) ne contient pas un verbe ou un sens manifestement absurde dans le contexte médical, (g) conserve le SQUELETTE (verbe + type d'objet + structure de critère) de la bonne réponse.
+    Étape 6 — Si une seule de ces vérifications échoue, REMPLACEZ l'affirmation concernée avant de passer à l'étape suivante.
+    Étape 7 — Seulement après cette vérification, écrivez le JSON final.
+
+14. TEST FINAL D'ÉLIMINATION ET DE DOUBLE-VALIDITÉ — Avant de valider :
+    - VÉRIFICATION DE NON-DUPLICATION OBLIGATOIRE : relisez les 4 libellés côte à côte. Si deux libellés sont identiques ou quasi-identiques, RÉÉCRIVEZ jusqu'à ce que les 4 soient distincts. Aucun JSON ne doit être produit avec des libellés dupliqués.
+    - VÉRIFICATION D'HOMOGÉNÉITÉ D'AXE : relisez les 4 libellés et vérifiez qu'ils répondent tous à la même question implicite (même axe de réponse). Si l'un porte sur un axe différent (ex. la bonne réponse porte sur [un critère] et un distracteur porte sur [une attitude] ou [un outil]), RÉÉCRIVEZ ce distracteur sur le bon axe.
+    - VÉRIFICATION DU SQUELETTE COMMUN : vérifiez que chaque option commence par le MÊME verbe d'action que la bonne réponse et manipule le MÊME type d'objet conceptuel. Si une option diverge, RÉÉCRIVEZ-la en conservant le squelette.
+    - VÉRIFICATION DE FAUSSETÉ OBLIGATOIRE : pour chaque distracteur, relisez le contenu éducatif et confirmez qu'aucune phrase de la fiche ne soutient ce distracteur comme vrai dans le cadre du stem. Si une phrase de la fiche pourrait être interprétée comme rendant le distracteur vrai, REMPLACEZ ce distracteur.
+    - pour chaque distracteur : « un étudiant moyen peut-il l'éliminer en moins de 2 secondes parce qu'il est manifestement hors-sujet, hors-axe, ou pas un item reconnu de la nomenclature ? » → si oui, REMPLACEZ-le,
+    - pour chaque distracteur : « un étudiant rigoureux pourrait-il défendre que ce distracteur est ÉGALEMENT correct, ou qu'il décrit un autre aspect vrai du même sujet ? » → si oui, REMPLACEZ-le ou reformulez le stem,
+    - pour la bonne réponse : « est-elle explicitement et sans ambiguïté justifiée par une phrase du contenu éducatif ? » → si NON, REFORMULEZ la question entièrement.
 
 Propositions INTERDITES :
 - "Toutes les propositions précédentes sont correctes"
 - "Aucune des propositions précédentes"
 - "A et C sont correctes" (combinaison de propositions)
 - Toute proposition absurde ou trivialement éliminable
+- Toute proposition contenant un verbe au sens contraire à la pratique médicale attendue (ex. « éviter [élément clairement utile] »)
+- Toute proposition dupliquant la bonne réponse ou un autre distracteur (interdiction absolue)
+- Toute proposition qui serait également défendable comme correcte dans le cadre du stem
+- Toute proposition qui décrit un aspect vrai mais complémentaire de la bonne réponse (volet voisin du même processus)
+- Toute proposition non parallèle aux autres (structure ou catégorie grammaticale différente)
+- Toute proposition appartenant à un axe de classification différent de la bonne réponse
+- Toute proposition dont le verbe d'action ou le type d'objet conceptuel diffère de celui de la bonne réponse
+- Toute proposition qui est un terme générique englobant la bonne réponse
+- Toute proposition qui est la description canonique d'un autre sous-type d'une même typologie (trivialement éliminable par reconnaissance)
 
 Justifications :
 - Fournir une justification pédagogique pour chaque proposition (correcte ou incorrecte)
+- Pour chaque distracteur, le commentaire doit pointer précisément l'erreur introduite (quel élément est faux, pourquoi un étudiant pourrait s'y tromper dans CE contexte)
 - Fournir un commentaire global sur ce que la question évalue ou un piège courant
 
 CONTRAINTES STRICTES DE SORTIE :
@@ -57,7 +178,7 @@ RÈGLES POUR LES COMMENTAIRES :
 - Les commentaires doivent être factuels, concis et pédagogiques.
 
 CONTENU ÉDUCATIF :
-{content}
+<<<CONTENU_EDUCATIF>>>
 
 INSTRUCTION FINALE :
 Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.

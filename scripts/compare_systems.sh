@@ -146,8 +146,9 @@ for model in "${MODELS[@]}"; do
     echo "  Modèle : $model"
     echo "════════════════════════════════════════"
 
-    run_one_model "old" "$model"
-    run_one_model "new" "$model"
+    export OPTIMIZED_PROMPT_SAVE_NAME="$model"
+    run_one_model "optimized" "$model"
+    run_one_model "optimized_enriched" "$model"
 done
 
 # =============================================
@@ -158,13 +159,13 @@ echo "========================================"
 echo "  Résultats comparatifs"
 echo "========================================"
 
-OLD_DIST="$RESULTS_DIR/distribution_old.output"
-NEW_DIST="$RESULTS_DIR/distribution_new.output"
+OPT_DIST="$RESULTS_DIR/distribution_optimized.output"
+OPT_ENR_DIST="$RESULTS_DIR/distribution_optimized_enriched.output"
 
-if [ -f "$OLD_DIST" ] && [ -f "$NEW_DIST" ]; then
-    python3 "$SCRIPT_DIR/compare_results.py" "$OLD_DIST" "$NEW_DIST"
+if [ -f "$OPT_DIST" ] && [ -f "$OPT_ENR_DIST" ]; then
+    python3 "$SCRIPT_DIR/compare_results.py" "$OPT_DIST" "$OPT_ENR_DIST"
 else
     echo "[WARN] Fichiers de distribution manquants, pas de comparaison possible."
-    [ -f "$OLD_DIST" ] && echo "  old : OK" || echo "  old : manquant"
-    [ -f "$NEW_DIST" ] && echo "  new : OK" || echo "  new : manquant"
+    [ -f "$OPT_DIST" ]     && echo "  optimized          : OK" || echo "  optimized          : manquant"
+    [ -f "$OPT_ENR_DIST" ] && echo "  optimized_enriched : OK" || echo "  optimized_enriched : manquant"
 fi

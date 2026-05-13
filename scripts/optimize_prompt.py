@@ -162,22 +162,22 @@ def _ts() -> str:
 # ─────────────────────────────────────────────────────────────────
 
 TARGET_MODELS: dict[str, str] = {
-    # Large (27B+)
-    "medgemma_27b":    "google/medgemma-27b-it",
-    "gemma4_31b":      "google/gemma-4-31B-it",
-    "mixtral_8x7b":    "mistralai/Mixtral-8x7B-Instruct-v0.1",
-    "magistral_small": "mistralai/Magistral-Small-2509",
-    "nemotron_30b":    "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
-    "qwen3_5_35b":     "Qwen/Qwen3.5-35B-A3B",
-    # Medium (7-9B)
-    "mistral_7b":      "mistralai/Mistral-7B-Instruct-v0.3",
-    "llama3_8b":       "meta-llama/Llama-3.1-8B-Instruct",
-    "openbiollm_8b":   "antonkirk/Llama3-Instruct-OpenBioLLM-8B-merged",
-    "apertus_8b":      "swiss-ai/Apertus-8B-Instruct-2509",
-    "gemma2_9b":       "google/gemma-2-9b-it",
-    "eurollm_9b":      "utter-project/EuroLLM-9B-Instruct",
-    # Small — one only
-    "qwen3_0_6b":      "Qwen/Qwen3-0.6B",
+    # Small
+    "qwen3_0_6b":      "Qwen/Qwen3-0.6B",                                    # 0.6B
+    # Medium (7–9B)
+    "mistral_7b":      "mistralai/Mistral-7B-Instruct-v0.3",                  # 7B
+    "llama3_8b":       "meta-llama/Llama-3.1-8B-Instruct",                    # 8B
+    "openbiollm_8b":   "antonkirk/Llama3-Instruct-OpenBioLLM-8B-merged",      # 8B
+    "apertus_8b":      "swiss-ai/Apertus-8B-Instruct-2509",                   # 8B
+    "gemma2_9b":       "google/gemma-2-9b-it",                                # 9B
+    "eurollm_9b":      "utter-project/EuroLLM-9B-Instruct",                   # 9B
+    # Large (24B+)
+    "magistral_small": "mistralai/Magistral-Small-2509",                       # ~24B
+    "medgemma_27b":    "google/medgemma-27b-it",                               # 27B
+    "nemotron_30b":    "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",          # 30B total (3B active, MoE)
+    "gemma4_31b":      "google/gemma-4-31B-it",                                # 31B
+    "qwen3_5_35b":     "Qwen/Qwen3.5-35B-A3B",                                # 35B total (3B active, MoE)
+    "mixtral_8x7b":    "mistralai/Mixtral-8x7B-Instruct-v0.1",                # ~47B total (14B active, MoE)
 }
 
 # Models that require thinking to be disabled
@@ -192,6 +192,10 @@ _THINKING_SAVE_NAMES = {"nemotron_30b", "qwen3_5_35b"}
 # Sentinel that Claude won't confuse with a Python format variable.
 # Using {content} caused Claude to fill it in or drop it during improve_prompt.
 _SENTINEL = "<<<CONTENU_EDUCATIF>>>"
+
+# Delimiters Claude must wrap its output in, so we can extract the prompt cleanly.
+_PROMPT_START = "<<<PROMPT_DEBUT>>>"
+_PROMPT_END   = "<<<PROMPT_FIN>>>"
 
 _QCM_GUIDELINES = """\
 Règles pour la question (stem) :
@@ -398,7 +402,13 @@ _IMPROVE_SYSTEM = (
     f"- Conserver la balise {_SENTINEL} exactement à sa place — c'est un marqueur technique, "
     "ne le modifie pas, ne le supprime pas, ne le commente pas\n"
     "- Conserver les CONTRAINTES STRICTES DE SORTIE (format JSON) inchangées\n"
-    "- Retourner UNIQUEMENT le prompt complet modifié, sans explication ni commentaire\n"
+    "- Modifier UNIQUEMENT la section relative aux règles des distracteurs (plausibilité, "
+    "construction, pièges pédagogiques). Toutes les autres sections du prompt — structure de "
+    "la question, format de sortie, instructions générales — doivent rester STRICTEMENT "
+    "identiques, mot pour mot.\n"
+    f"- Encadrer le prompt complet modifié EXACTEMENT entre {_PROMPT_START} et {_PROMPT_END} "
+    f"— aucun texte, explication, commentaire ou résumé en dehors de ces deux balises. "
+    f"Format de sortie attendu :\n{_PROMPT_START}\n[prompt modifié]\n{_PROMPT_END}\n"
     "- Ne jamais injecter de contenu spécifique à l'exemple fourni (valeurs chiffrées, "
     "pathologies, médicaments, mécanismes précis) dans les règles du prompt. "
     "Les règles doivent être génériques. Si tu illustres une règle par un exemple, "
@@ -406,12 +416,37 @@ _IMPROVE_SYSTEM = (
     "'[mécanisme principal]' — jamais du contenu issu de la fiche évaluée."
 )
 
+from openai import OpenAI
+
+def claude(full_prompt):
+    OPENROUTER_API_KEY = os.environ.get("OPENROUTER_API_KEY")
+    client = OpenAI(
+                  base_url="https://openrouter.ai/api/v1",
+                  api_key=OPENROUTER_API_KEY,
+            )
+
+    response = client.chat.completions.create(
+    model="anthropic/claude-opus-4.7",
+    messages=[
+            {
+                "role": "user",
+                "content": full_prompt
+            }
+            ],
+    extra_body={"reasoning": {"enabled": True}}
+    )
+
+    # Extract the assistant message with reasoning_details
+    response = response.choices[0].message
+    return response
+  
+
+
 
 def improve_prompt(
     prompt_template: str,
     mcq: MCQQuestion,
     b3: dict,
-    content: str,
     model_name: str,
 ) -> str:
     distractors = [o for o in ("a", "b", "c", "d") if o != mcq.correct_option]
@@ -419,34 +454,57 @@ def improve_prompt(
     for opt, score, justif in zip(distractors, b3.get("scores", []), b3.get("justifs", [])):
         score_lines += f"  - Option {opt}) « {getattr(mcq, f'option_{opt}')} » → {score}/5 — {justif}\n"
 
+    len_before = len(prompt_template)
+    min_len = int(0.7 * len_before)
+    max_len = int(1.5 * len_before)
+
     full_prompt = (
         f"{_IMPROVE_SYSTEM}\n\n"
         f"Modèle cible : {model_name}\n\n"
+        f"CONTRAINTE DE TAILLE : Le prompt modifié doit contenir entre {min_len} et {max_len} "
+        f"caractères (actuellement {len_before}). Ne supprime pas de sections entières existantes.\n\n"
         f"Prompt actuel :\n{prompt_template}\n\n"
         f"QCM ayant échoué (distracteurs de mauvaise qualité) :\n"
         f"Question : {mcq.question}\n"
         f"Réponse correcte ({mcq.correct_option}) : {getattr(mcq, f'option_{mcq.correct_option}')}\n"
         f"Scores distracteurs :\n{score_lines}"
-        f"Extrait du contenu source :\n{content[:600]}\n\n"
         f"→ Améliore le prompt pour que ce modèle génère de meilleurs distracteurs."
     )
-    result = subprocess.run(
-        ["claude", "-p", full_prompt],
-        capture_output=True, text=True, timeout=600,
-    )
-    raw = result.stdout.strip()
+    result = claude(full_prompt)
+    raw = result.content.strip()
     if not raw:
         print(f"    [Claude] ⚠ réponse vide (stderr: {result.stderr[:100]}), prompt conservé")
         return prompt_template
 
-    # Extract prompt from fenced code block if Claude wrapped it
-    import re
-    code_block = re.search(r"```(?:\w*\n)?(.*?)```", raw, re.DOTALL)
-    improved = code_block.group(1).strip() if code_block else raw
+    # Extract prompt between mandatory delimiters
+    m = re.search(
+        re.escape(_PROMPT_START) + r"(.*?)" + re.escape(_PROMPT_END),
+        raw, re.DOTALL,
+    )
+    if m:
+        improved = m.group(1).strip()
+    else:
+        # Fallback: try fenced code block
+        code_block = re.search(r"```(?:\w*\n)?(.*?)```", raw, re.DOTALL)
+        if code_block:
+            improved = code_block.group(1).strip()
+        else:
+            improved = raw
+            print(f"    [Claude] ⚠ balises {_PROMPT_START}/{_PROMPT_END} absentes, extraction brute")
 
     if _SENTINEL not in improved:
         print(f"    [Claude] ⚠ balise {_SENTINEL} absente, prompt conservé")
         return prompt_template
+
+    # Guard: reject if Claude made the prompt too short (destructive rewrite)
+    ratio = len(improved) / len_before
+    if ratio < 0.7:
+        print(
+            f"    [Claude] ⚠ réduction trop agressive ({len_before}→{len(improved)} chars, "
+            f"{100*(1-ratio):.0f}% supprimé) — prompt conservé"
+        )
+        return prompt_template
+
     return improved
 
 
@@ -485,6 +543,7 @@ def optimize_model(
             tracer.sheet_start(save_name, sheet_idx, sheet_id, len(sheets))
             passed = False
             attempt = 0
+            prompt_entree = prompt  # snapshot avant la fiche
 
             for attempt in range(max_attempts):
                 print(f"    [{_ts()}] tentative {attempt+1}/{max_attempts}", end="", flush=True)
@@ -510,10 +569,15 @@ def optimize_model(
                 if attempt < max_attempts - 1:
                     prev_prompt = prompt
                     t_claude = time.monotonic()
-                    prompt = improve_prompt(prompt, mcq, b3, content, model_id)
+                    prompt = improve_prompt(prompt, mcq, b3, model_id)
                     tracer.claude_improve(save_name, sheet_idx, attempt,
                                           time.monotonic() - t_claude,
                                           prev_prompt, prompt)
+
+            if not passed:
+                prompt = prompt_entree  # rollback : aucune modification sans preuve B3
+                tracer.log("prompt_rollback", save_name=save_name, sheet_idx=sheet_idx)
+                print(f"    [{_ts()}] prompt rollback → état avant fiche {sheet_idx}")
 
             tracer.sheet_done(save_name, sheet_idx, sheet_id, passed, attempt + 1)
             log.append({

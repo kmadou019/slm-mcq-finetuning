@@ -114,18 +114,17 @@ rm comparison_results/state_*.txt
 
 ---
 
-## Prompt Auto-Optimization (2026-04-30)
+## Prompt Auto-Optimization (2026-04-30 → en cours)
 
-**Hypothesis:** the current prompt produces poor distractor quality not because the model lacks capability,
-but because the prompt is not optimally formulated for each model. Better prompt → better training data
-→ better finetuned model.
+**Hypothèse :** la qualité médiocre des distracteurs n'est pas une limite du modèle mais du prompt.
+Un prompt mieux formulé → meilleures données d'entraînement → meilleur modèle finetuné.
 
-**Approach:** iterative feedback loop per model, using Claude (API) as the prompt optimizer.
+**Approche :** boucle de feedback itérative par modèle, Claude (API) comme optimiseur de prompt.
 
-### Algorithm (per model)
+### Algorithme v1 (implémenté)
 
 ```
-prompt = prompt_initial (enrichi GraphDB, actuel)
+prompt = prompt_initial
 
 POUR chaque fiche LISA s dans k_fiches:
     POUR tentative in 1..max_attempts:
@@ -133,19 +132,57 @@ POUR chaque fiche LISA s dans k_fiches:
         b3    = GPT-4o.eval_distractor_quality(mcq, s)
         SI b3.passe (≥2/3 distracteurs avec score ≥4):
             break → fiche suivante
-        SINON:
+        SINON si tentative < max_attempts:
             prompt = Claude.improve(prompt, {mcq, b3_scores, b3_justifications})
 
 SAUVEGARDER prompt final pour ce modèle
 ```
 
-### Modèles ciblés (depuis `scripts/run_finetuning.sh`)
+### Algorithme v2 — Rollback (décision prise, à implémenter)
 
-| Phase | Modèles |
-|-------|---------|
-| Large (27B+) — tous | medgemma-27b, gemma-4-31B, mixtral-8x7b, magistral-small, nemotron-30B, qwen3.5-35B |
-| Medium (7-9B) — tous | mistral-7b, llama3-8b, openbiollm-8b, apertus-8b, gemma2-9b, eurollm-9b |
-| Small — un seul | `Qwen/Qwen3-0.6B` |
+Problème de v1 : le prompt est toujours mis à jour même quand la fiche échoue toutes ses tentatives,
+accumulant des modifications contradictoires qui dégradent les fiches suivantes.
+
+```
+prompt_actif = prompt_initial
+
+POUR chaque fiche LISA s dans k_fiches:
+    prompt_entree = prompt_actif          ← snapshot avant la fiche
+
+    POUR tentative in 1..max_attempts:
+        mcq = model.generate(prompt_actif, s)
+        b3  = GPT-4o.eval_distractor_quality(mcq, s)
+        SI b3.passe:
+            prompt_actif = prompt_actif   ← conservé (c'est lui qui a produit le pass)
+            break → fiche suivante
+        SINON si tentative < max_attempts:
+            prompt_actif = Claude.improve(prompt_actif, {mcq, b3_scores, b3_justifications})
+
+    SI fiche non passée (toutes tentatives épuisées):
+        prompt_actif = prompt_entree      ← rollback : aucune modification commitée
+
+SAUVEGARDER prompt_actif final
+```
+
+**Propriété clé :** le prompt ne progresse que si B3 est passé. Pas de commit sans preuve de fonctionnement.
+
+### Modèles ciblés — ordre du plus petit au plus grand
+
+| # | Save name | Modèle HuggingFace | Taille |
+|---|-----------|-------------------|--------|
+| 1 | qwen3_0_6b | Qwen/Qwen3-0.6B | 0.6B |
+| 2 | mistral_7b | mistralai/Mistral-7B-Instruct-v0.3 | 7B |
+| 3 | llama3_8b | meta-llama/Llama-3.1-8B-Instruct | 8B |
+| 4 | openbiollm_8b | antonkirk/Llama3-Instruct-OpenBioLLM-8B-merged | 8B |
+| 5 | apertus_8b | swiss-ai/Apertus-8B-Instruct-2509 | 8B |
+| 6 | gemma2_9b | google/gemma-2-9b-it | 9B |
+| 7 | eurollm_9b | utter-project/EuroLLM-9B-Instruct | 9B |
+| 8 | magistral_small | mistralai/Magistral-Small-2509 | ~24B |
+| 9 | medgemma_27b | google/medgemma-27b-it | 27B |
+| 10 | nemotron_30b | nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16 | 30B total (3B actifs, MoE) |
+| 11 | gemma4_31b | google/gemma-4-31B-it | 31B |
+| 12 | qwen3_5_35b | Qwen/Qwen3.5-35B-A3B | 35B total (3B actifs, MoE) |
+| 13 | mixtral_8x7b | mistralai/Mixtral-8x7B-Instruct-v0.1 | ~47B total (14B actifs, MoE) |
 
 ### Paramètres
 
@@ -153,15 +190,46 @@ SAUVEGARDER prompt final pour ce modèle
 |-------|--------------|
 | k (fiches LISA) | 20 |
 | max_attempts / fiche | 5 |
-| Signal d'échec | B3 : < 2/3 distracteurs avec score ≥ 4 |
-| Optimiseur | Claude (`claude-opus-4-7`) via API Anthropic |
+| Critère B3 | ≥ 2 distracteurs sur 3 avec score ≥ 4/5 |
+| Optimiseur | Claude Opus (`claude-opus-4-7`) via OpenRouter |
 
-### Implémentation prévue
+### Implémentation
 
 - **Script** : `scripts/optimize_prompt.py`
-- **Réutilise** : `notebooks/generate_mcq.py` (génération), `src/eval/distractors_quality.py` (B3),
-  `src/eval/prompts.json` (system prompt GPT-4o)
-- **Output** : `data/optimized_prompts/{model_name}/final_prompt.txt` + log JSON par itération
+- **Réutilise** : pipeline HuggingFace (génération), `src/eval/distractors_quality.py` (B3), `src/eval/prompts.json`
+- **Output** : `data/optimized_prompts/{model_name}/final_prompt.txt` + `optimization_log.json`
+- **Trace** : `data/optimized_prompts/trace.jsonl` (événement par événement, streamable avec `tail -f`)
+- **Visualisation** : `scripts/plot_optimization.py` → `data/optimized_prompts/plot_b3.png`
+
+### Bugs détectés et corrigés (runs OAR 123947 & 123975)
+
+| # | Problème | Cause | Fix |
+|---|----------|-------|-----|
+| 1 | `+0 chars` sur ~90% des modifications (job 123947) | Claude ne respectait pas les balises `<<<PROMPT_DEBUT>>>` / `<<<PROMPT_FIN>>>` quand l'historique s'allongeait — prompt extrait brut, sentinel absent → prompt conservé inchangé | Corrigé entre jobs : balises présentes dans job 123975 |
+| 2 | Coupures massives du prompt par Claude (-27k, -46k, -32k chars) | Aucune contrainte de taille dans le message à Claude — il réécrit depuis zéro sur les fiches difficiles | Ajout d'une contrainte dynamique `[70%–150%]` de la longueur courante dans chaque appel |
+| 3 | Modifications en dehors de la section distracteurs | Pas de scope défini — Claude modifiait aussi le stem, le JSON, les instructions générales | Ajout dans `_IMPROVE_SYSTEM` : « modifier UNIQUEMENT la section relative aux règles des distracteurs » |
+| 4 | Pas de garde-fou post-extraction | Claude ignore parfois les contraintes — coupures > 30% passaient quand même | Guard dans `improve_prompt()` : si `len(improved) / len(before) < 0.7` → rollback silencieux |
+
+### Résultats observés (medgemma_27b, 20 fiches)
+
+| Job OAR | Taux de réussite B3 | Notes |
+|---------|---------------------|-------|
+| 123947 | 5/20 (25%) | Modifications Claude silencieuses (+0 chars) dès fiche 3 |
+| 123975 | 3/15 vues (20%, en cours) | Modifications effectives mais oscillations violentes |
+
+**Observation clé :** la boucle actuelle (v1) ne converge pas — le score moyen des distracteurs
+n'augmente pas entre les tentatives sur les fiches difficiles, et les modifications successives se
+contredisent.
+
+### Visualisation de la convergence
+
+`scripts/plot_optimization.py` génère une courbe par modèle :
+- **X** : index de tentative cumulatif (toutes fiches confondues, dans l'ordre)
+- **Y** : score moyen des 3 distracteurs (1–5)
+- Points verts = B3 passé, points rouges = B3 échoué
+- Ligne bleue = moyenne glissante (fenêtre 5)
+- Tirets gris = séparations de fiches
+- Annotations orange = coupures Claude > 5 000 chars
 
 ---
 
@@ -174,6 +242,38 @@ SAUVEGARDER prompt final pour ce modèle
 - [ ] What are the empirical bounds for the ambiguity window on this French medical corpus?
 - [ ] Does prompt optimization generalize across LISA sheets (held-out test set)?
 - [ ] How many iterations does Claude need on average to pass B3 per model size?
+- [ ] Le rollback améliore-t-il le taux de réussite B3 par rapport à v1 ?
+- [ ] La courbe de score moyen des distracteurs converge-t-elle vers le haut avec suffisamment de fiches ?
+
+---
+
+## Perspectives futures — Architecture alternative (non prioritaire)
+
+### Architecture 2 : question gelée, distracteurs itérés séparément
+
+Au lieu de régénérer le QCM complet à chaque tentative, séparer les deux problèmes :
+
+**Étape 1 — Évaluation de la question**
+Générer une question, la valider sur les métriques question-only :
+A1 (is question), A2 (no negation), A3 (originality), A4 (readability),
+B1 (relevance), B4 (disclosure), B5 (difficulty), B6 (answerability).
+Si la question passe → la geler.
+
+**Étape 2 — Optimisation des distracteurs**
+Avec la question gelée, régénérer **uniquement les distracteurs** (pas le stem) jusqu'à B2 + B3 passés.
+Chaque distracteur défaillant est retravaillé individuellement.
+
+**Avantage :** espace d'optimisation réduit — on cherche seulement dans l'espace des distracteurs d'une question fixée.
+
+**Prérequis technique :** la génération doit être découplée en deux appels distincts —
+actuellement tout est généré en une seule passe (un seul JSON). Il faudrait un second prompt
+qui reçoit `{question, bonne_réponse, fiche_LISA}` et retourne uniquement les 3 distracteurs.
+
+**Cohérence avec l'optimisation du prompt :** les deux métriques à optimiser sont indépendantes.
+On pourrait avoir un prompt-question et un prompt-distracteurs, chacun optimisé séparément par
+Claude avec le signal de sa métrique propre.
+
+**Pourquoi ne pas la prioriser maintenant :** nécessite un refactoring de la génération (deux appels au lieu d'un) et un prompt de génération de distracteurs autonome à construire de zéro. L'approche rollback apporte déjà une amélioration sans toucher à l'architecture de génération.
 
 ---
 
@@ -181,11 +281,14 @@ SAUVEGARDER prompt final pour ce modèle
 
 1. ~~Run both models on a real LISA sheet prompt and compare MCQ output quality~~ → benchmark script done
 2. ~~Fix evaluation pipeline issues (embedding model, context, position bias, raw scores)~~ → done
-3. Run reliability tests (`reliability_test.py`) before interpreting benchmark results
-4. Implement ambiguity window `[0.3 – 0.75]` once calibration data is available
-5. Benchmark latency: magistral 24B vs Nemotron 30B
-6. Decide whether to store `thinking` trace in the custom MCQ JSON schema
-7. **Implémenter `scripts/optimize_prompt.py`** — boucle d'optimisation par feedback B3 via Claude
+3. ~~Implémenter `scripts/optimize_prompt.py`~~ → done (v1)
+4. **Implémenter le rollback dans `optimize_model()`** (algorithme v2 ci-dessus)
+5. Lancer un run complet sur les 13 modèles (petit → grand) avec la v2 et comparer le taux B3 à la v1
+6. Analyser `plot_b3.png` : vérifier que la moyenne glissante monte sur les premiers modèles
+7. Run reliability tests (`reliability_test.py`) avant d'interpréter les résultats de benchmark
+8. Implement ambiguity window `[0.3 – 0.75]` once calibration data is available
+9. Benchmark latency: magistral 24B vs Nemotron 30B
+10. Decide whether to store `thinking` trace in the custom MCQ JSON schema
 
 ---
 

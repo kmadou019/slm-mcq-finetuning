@@ -57,7 +57,7 @@ RÈGLES POUR LES COMMENTAIRES :
 - Les commentaires doivent être factuels, concis et pédagogiques.
 
 CONTENU ÉDUCATIF :
-{content}
+<<<CONTENU_EDUCATIF>>>
 
 INSTRUCTION FINALE :
 Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.

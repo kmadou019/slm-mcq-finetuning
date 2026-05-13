@@ -82,7 +82,6 @@ data/mcqs/
 data/checkpoints/
 data/correct_mcqs_dataset/
 data/train_test_split/
-data/optimized_prompts/
 
 # Evaluation & comparison outputs
 scripts/comparison_results/
