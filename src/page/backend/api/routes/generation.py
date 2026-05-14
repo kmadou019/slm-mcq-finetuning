@@ -348,7 +348,9 @@ async def list_generation_models(current_user: User = Depends(get_current_user))
     import requests as _requests
     models = []
     errors = []
-    
+
+
+
     # 1. Try Ollama (with short timeout to avoid blocking)
     try:
         import ollama as _ollama
@@ -391,7 +393,7 @@ async def list_generation_models(current_user: User = Depends(get_current_user))
                     model_name = item.get("model_name", model_key)
                     if model_key and not any(m["value"] == model_key for m in models):
                         models.append({
-                            "label": model_name,
+                            "label": model_key,
                             "value": model_key,
                             "source": "openai"
                         })

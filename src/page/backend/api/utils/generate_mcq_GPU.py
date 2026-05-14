@@ -27,6 +27,10 @@ from transformers import AutoTokenizer, pipeline
 
 _ollama = Client(host=os.getenv("OLLAMA_HOST", "http://localhost:11434"), timeout=600)
 
+# OpenAI-compatible endpoint for remote GPU models
+_OPENAI_BASE_URL = os.getenv("OPENAI_COMPATIBLE_URL", "http://localhost:4000/v1")
+_OPENAI_API_KEY = os.getenv("OPENAI_COMPATIBLE_KEY", "")
+
 
 # ---------------------------------------------------------------------------
 # Schéma de données
@@ -124,24 +128,65 @@ def extract_json(text: str) -> str:
 # ---------------------------------------------------------------------------
 
 def generate_mcq(full_prompt: str, model_name: str, temperature: float = 0.1) -> str:
-    """Génère un QCM au format JSON structuré via Ollama /api/generate.
+    """Génère un QCM au format JSON structuré.
+
+    Route vers Ollama pour les modèles locaux (ollama/*),
+    et vers l'endpoint OpenAI-compatible pour les modèles distants (openai/*).
 
     Args:
         full_prompt:  Prompt complet envoyé au modèle.
-        model_name:   Nom du modèle Ollama (ex. "llama3.1:70b").
+        model_name:   Nom du modèle (ex. "qwen3:4b" ou "openai/Qwen/Qwen3.6-35B-A3B-FP8").
         temperature:  Température d'échantillonnage (défaut 0.1).
 
     Returns:
         Chaîne JSON brute retournée par le modèle.
     """
-    generate_params = {
-        "model": model_name,
-        "options": {"temperature": temperature, "num_ctx": 8192, "top_p": 1},
-        "prompt": full_prompt,
+    # Route based on model prefix
+    if model_name.startswith("openai/"):
+        # Use OpenAI-compatible endpoint (port 4000 via host.docker.internal)
+        return _generate_openai_compat(full_prompt, model_name, temperature)
+    else:
+        # Use Ollama for local models
+        generate_params = {
+            "model": model_name,
+            "options": {"temperature": temperature, "num_ctx": 8192, "top_p": 1},
+            "prompt": full_prompt,
+        }
+        response = _ollama.generate(**generate_params)
+        print(f"[generate_mcq/ollama] raw response: {response.response}")
+        return extract_json(response.response)
+
+
+def _generate_openai_compat(full_prompt: str, model_name: str, temperature: float = 0.1) -> str:
+    """Generate MCQ via OpenAI-compatible endpoint (port 4000)."""
+    import requests as _requests
+    
+    headers = {
+        "Content-Type": "application/json",
     }
-    response = _ollama.generate(**generate_params)
-    print(f"[generate_mcq] raw response: {response.response}")
-    return extract_json(response.response)
+    if _OPENAI_API_KEY:
+        headers["Authorization"] = f"Bearer {_OPENAI_API_KEY}"
+    
+    payload = {
+        "model": model_name,
+        "messages": [{"role": "user", "content": full_prompt}],
+        "temperature": temperature,
+        "max_tokens": 2048,
+    }
+    
+    print(f"[generate_mcq/openai] calling {model_name} at {_OPENAI_BASE_URL}")
+    response = _requests.post(
+        f"{_OPENAI_BASE_URL}/chat/completions",
+        headers=headers,
+        json=payload,
+        timeout=300,
+    )
+    response.raise_for_status()
+    data = response.json()
+    
+    content = data["choices"][0]["message"]["content"]
+    print(f"[generate_mcq/openai] raw response: {content[:500]}...")
+    return extract_json(content)
 
 
 def generate_mcq_chat(full_prompt: str, model_name: str, think: bool = False,
