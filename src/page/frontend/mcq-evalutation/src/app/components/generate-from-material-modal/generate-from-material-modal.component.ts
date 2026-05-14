@@ -104,6 +104,7 @@ export class GenerateFromMaterialModalComponent implements OnInit, OnDestroy {
         if (response.errors && response.errors.length > 0) {
           console.warn('Model loading warnings:', response.errors);
         }
+        this.cdr.detectChanges();
       },
       error: (err) => {
         console.error('Failed to load generation models:', err);

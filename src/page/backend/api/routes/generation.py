@@ -349,13 +349,16 @@ async def list_generation_models(current_user: User = Depends(get_current_user))
     models = []
     errors = []
     
-    # 1. Try Ollama
+    # 1. Try Ollama (with short timeout to avoid blocking)
     try:
         import ollama as _ollama
         ollama_host = os.getenv("OLLAMA_HOST", "http://localhost:11434")
-        result = _ollama.list()
-        for m in result.get("models", []):
-            model_name = m["model"]
+        # Use requests directly with 3s timeout instead of ollama.list()
+        import requests as _req
+        resp = _req.get(f"{ollama_host}/api/tags", timeout=3)
+        resp.raise_for_status()
+        for m in resp.json().get("models", []):
+            model_name = m["name"]
             models.append({
                 "label": model_name,
                 "value": model_name,
@@ -374,31 +377,22 @@ async def list_generation_models(current_user: User = Depends(get_current_user))
             if openai_key:
                 headers["Authorization"] = f"Bearer {openai_key}"
             
+            # Try /model/info endpoint (returns model_info.key for the model ID)
             response = _requests.get(
-                f"{openai_url}/models",
+                f"{openai_url}/model/info",
                 headers=headers,
                 timeout=10
             )
             
             if response.status_code == 200:
                 data = response.json()
-                model_list = []
-                
-                if isinstance(data, list):
-                    model_list = data
-                elif isinstance(data, dict):
-                    if "data" in data:
-                        # OpenAI format: {"data": [{"id": "..."}, ...]}
-                        model_list = [m["id"] for m in data["data"]]
-                    elif "models" in data:
-                        model_list = data["models"]
-                
-                for model_name in model_list:
-                    # Skip if already in list (from Ollama)
-                    if not any(m["value"] == model_name for m in models):
+                for item in data.get("data", []):
+                    model_key = item.get("model_info", {}).get("key", "")
+                    model_name = item.get("model_name", model_key)
+                    if model_key and not any(m["value"] == model_key for m in models):
                         models.append({
                             "label": model_name,
-                            "value": model_name,
+                            "value": model_key,
                             "source": "openai"
                         })
     except Exception as e:

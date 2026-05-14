@@ -1,6 +1,6 @@
 import { environment } from '../../environments/environment';
 import { Injectable, inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { MCQCard } from '../models/mcq.model';
 
@@ -55,8 +55,10 @@ export class McqService {
     models: { label: string, value: string, source: string }[],
     errors: string[] | null
   }> {
+    const headers = new HttpHeaders({ 'Cache-Control': 'no-cache' });
     return this.http.get<{ models: { label: string, value: string, source: string }[], errors: string[] | null }>(
-      `${this.apiUrl}/generation/models`
+      `${this.apiUrl}/generation/models`,
+      { headers }
     );
   }
 
