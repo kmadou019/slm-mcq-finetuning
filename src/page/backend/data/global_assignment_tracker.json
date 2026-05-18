@@ -1,7 +1,12 @@
 {
   "qwen3_4b_pdapt_slerp": {
-    "last_assigned_index": 19,
+    "last_assigned_index": 79,
     "total_available": 100,
-    "assigned_count": 20
+    "assigned_count": 80
+  },
+  "medGemma_27b": {
+    "last_assigned_index": 9,
+    "total_available": 100,
+    "assigned_count": 10
   }
 }

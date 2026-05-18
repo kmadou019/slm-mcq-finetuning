@@ -105,3 +105,29 @@ async def health_check():
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
+
+# Root endpoint
+@app.get("/")
+async def root():
+    """
+    Root endpoint - Health check
+    """
+    return {
+        "message": "MCQ Evaluation API is running",
+        "version": "1.0.0",
+        "status": "healthy"
+    }
+
+
+# Health check endpoint
+@app.get("/health")
+async def health_check():
+    """
+    Health check endpoint
+    """
+    return {"status": "healthy"}
+
+
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
