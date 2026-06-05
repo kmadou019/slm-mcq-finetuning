@@ -1,13 +1,18 @@
 #!/usr/bin/env bash
+#OAR -n run_finetuning
+#OAR -p host='lig-gpu10.imag.fr'
+#OAR -l /gpu=1,walltime=100:0:0
+#OAR -O /home/daisy/konema/Documents/partages/slm-mcq-finetuning/logs/oar_finetune.%jobid%.stdout
+#OAR -E /home/daisy/konema/Documents/partages/slm-mcq-finetuning/logs/oar_finetune.%jobid%.stderr
+
 set -e
+source "$(dirname "$0")/env.sh"
+cd "$(dirname "$0")"
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ROOT_DIR="$(dirname "$SCRIPT_DIR")"
-
-source /home/daisy/konema/Documents/partages/.venv/bin/activate
-cd "$ROOT_DIR/notebooks"
-
-N_GPU=8
+# Nombre de GPUs à utiliser (restreint via CUDA_VISIBLE_DEVICES)
+N_GPU=1
+CUDA_VISIBLE_DEVICES=$(seq -s, 0 $((N_GPU-1)))
+export CUDA_VISIBLE_DEVICES
 
 # Format : "hf_model_id|output_dir|batch_size|grad_acc|lr"
 
@@ -47,13 +52,19 @@ MODELS_LARGE=(
 
 finetune() {
     IFS='|' read -r model outdir batch grad_acc lr <<< "$1"
+
+    if [ -f "$outdir/model.safetensors" ]; then
+        echo "⏭  Skip : $outdir (model.safetensors déjà présent)"
+        return 0
+    fi
+
     echo ""
     echo "════════════════════════════════════════"
     echo "  Modèle     : $model"
     echo "  Output     : $outdir"
     echo "  Batch/GPU  : $batch   Grad acc : $grad_acc   LR : $lr"
     echo "════════════════════════════════════════"
-    accelerate launch --num_processes=$N_GPU kto_training.py \
+    accelerate launch --num_processes=$N_GPU ../notebooks/kto_training.py \
         --model      "$model"    \
         --output-dir "$outdir"   \
         --batch-size "$batch"    \

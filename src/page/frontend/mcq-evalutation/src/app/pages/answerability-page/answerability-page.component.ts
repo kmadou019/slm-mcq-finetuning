@@ -122,6 +122,27 @@ export class AnswerabilityPageComponent implements OnInit, AfterViewInit, OnDest
       }));
   }
 
+  readonly hfModels = [
+    { label: 'Qwen3-0.6B', value: 'Qwen/Qwen3-0.6B' },
+    { label: 'Llama 3.1 8B Instruct', value: 'meta-llama/Llama-3.1-8B-Instruct' },
+    { label: 'MedGemma 27B', value: 'google/medgemma-27b-it' },
+    { label: 'Gemma 4 31B', value: 'google/gemma-4-31B-it' },
+  ];
+  hfSelectValue = '';
+  hfCustomInput = signal(false);
+  hfCustomText = '';
+
+  onHfSelectChange(val: string): void {
+    if (val === '__custom__') {
+      this.hfCustomInput.set(true);
+      this.hfCustomText = '';
+      this.form.model_name = '';
+    } else {
+      this.hfCustomInput.set(false);
+      this.form.model_name = val;
+    }
+  }
+
   readonly presets = DATASET_PRESETS;
 
   // --- Form ---

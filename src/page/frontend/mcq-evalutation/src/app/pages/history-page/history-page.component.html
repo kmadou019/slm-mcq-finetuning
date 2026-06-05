@@ -17,28 +17,54 @@
       <button class="btn-primary" (click)="onBack()">Retour au dashboard</button>
     </div>
   } @else {
-    <p class="history-count">{{ history().length }} évaluation(s) au total</p>
-    <div class="history-list">
-      @for (entry of history(); track entry.mcq_id + entry.model) {
-        <div class="history-card">
-          <div class="history-card-body">
-            <p class="question-text">{{ truncate(entry.mcq_data?.mcq_question || entry.mcq_id, 120) }}</p>
-            <div class="meta">
-              <span class="meta-model">{{ entry.model }}</span>
-              <span class="meta-date">{{ formatDate(entry.validated_at) }}</span>
-            </div>
-            @if (entry.human_feedback) {
-              <p class="feedback-text">💬 {{ truncate(entry.human_feedback, 80) }}</p>
-            }
+    <div class="filter-bar">
+      <button [class]="filter() === 'all' ? 'filter-btn active' : 'filter-btn'" (click)="setFilter('all')">
+        Toutes ({{ history().length }})
+      </button>
+      <button [class]="filter() === 'accepted' ? 'filter-btn active accepted' : 'filter-btn'" (click)="setFilter('accepted')">
+        Acceptées
+      </button>
+      <button [class]="filter() === 'rejected' ? 'filter-btn active rejected' : 'filter-btn'" (click)="setFilter('rejected')">
+        Refusées
+      </button>
+    </div>
+
+    @if (filteredCount() === 0) {
+      <div class="empty-msg">
+        <p>Aucune évaluation dans cette catégorie.</p>
+      </div>
+    } @else {
+      <p class="history-count">{{ filteredCount() }} évaluation(s)</p>
+      @for (group of groupedHistory(); track group.label) {
+        <div class="session-group">
+          <div class="session-header">
+            <span class="session-label">{{ group.label }}</span>
+            <span class="session-count">{{ group.count }} QCM{{ group.count > 1 ? 's' : '' }}</span>
           </div>
-          <div class="history-card-actions">
-            <span [class]="entry.decision === 'ACCEPT' ? 'badge-accept' : 'badge-reject'">
-              {{ entry.decision === 'ACCEPT' ? 'ACCEPTÉ' : 'REFUSÉ' }}
-            </span>
-            <button class="btn-review" (click)="onReview(entry)">Revoir</button>
+          <div class="history-list">
+            @for (entry of group.entries; track entry.mcq_id + entry.model) {
+              <div class="history-card">
+                <div class="history-card-body">
+                  <p class="question-text">{{ truncate(entry.mcq_data?.mcq_question || entry.mcq_id, 120) }}</p>
+                  <div class="meta">
+                    <span class="meta-model">{{ entry.model }}</span>
+                    <span class="meta-date">{{ formatDate(entry.validated_at) }}</span>
+                  </div>
+                  @if (entry.human_feedback) {
+                    <p class="feedback-text">💬 {{ truncate(entry.human_feedback, 80) }}</p>
+                  }
+                </div>
+                <div class="history-card-actions">
+                  <span [class]="entry.decision === 'ACCEPT' ? 'badge-accept' : 'badge-reject'">
+                    {{ entry.decision === 'ACCEPT' ? 'ACCEPTÉ' : 'REFUSÉ' }}
+                  </span>
+                  <button class="btn-review" (click)="onReview(entry)">Revoir</button>
+                </div>
+              </div>
+            }
           </div>
         </div>
       }
-    </div>
+    }
   }
 </div>

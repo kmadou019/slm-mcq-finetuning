@@ -17,6 +17,8 @@ pip-delete-this-directory.txt
 
 # Logs and temp files
 *.log
+OAR.*.stdout
+OAR.*.stderr
 *.tmp
 *.swp
 *.swo
@@ -61,12 +63,43 @@ __pypackages__/
 poetry.lock
 Pipfile.lock
 
-#ignore the lisa sheets
-
+# Lisa sheets
 lisa_sheets.csv
 lisa_sheets/
 data/lisa_sheets.csv
+
+# Finetuned & base models (heavy binaries)
+scripts/finetuned_models/
+data/models/
+*.safetensors
+*.bin
+*.pt
+*.ckpt
+*.gguf
+
+# Generated MCQ data
+data/mcqs/
+data/checkpoints/
+data/correct_mcqs_dataset/
+data/train_test_split/
+
+# Evaluation & comparison outputs
+scripts/comparison_results/
+scripts/correctness.output
+logs/
+
+# Frontend build
+src/page/frontend/mcq-evalutation/dist/
+src/page/frontend/mcq-evalutation/node_modules/
+src/page/frontend/mcq-evalutation/.angular/
+
+# Backend DB & uploads
+src/page/backend/mcq_evaluation.db
+src/page/backend/data/custom_mcqs/
+
 .claude
 .ssh
 node_modules/credentials*
 credentials.txt
+node_modules/
+.webui_secret_key

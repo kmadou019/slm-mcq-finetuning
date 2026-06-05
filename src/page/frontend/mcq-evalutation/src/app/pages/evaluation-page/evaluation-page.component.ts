@@ -43,6 +43,11 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
   reviewMode = signal(false);
   previousDecision = signal<'ACCEPT' | 'REJECT' | null>(null);
 
+  // Filtre nouveaux QCMs
+  newOnlyMode = signal(false);
+  newMcqIds = signal<string[]>([]);
+  allPendingMcqs = signal<AssignedMCQ[]>([]);
+
   // Session counters (Feature 3)
   private sessionAccepted = 0;
   private sessionRejected = 0;
@@ -59,11 +64,18 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
     // Feature 4 — Check for review mode query params
     const mcqId = this.route.snapshot.queryParamMap.get('mcq_id');
     const model = this.route.snapshot.queryParamMap.get('model');
+    const newOnly = this.route.snapshot.queryParamMap.get('newOnly') === 'true';
+
+    try {
+      const stored = localStorage.getItem('lastAssignedMcqs');
+      this.newMcqIds.set(stored ? JSON.parse(stored) : []);
+    } catch { this.newMcqIds.set([]); }
 
     if (mcqId && model) {
       this.reviewMode.set(true);
       this.loadReviewMode(mcqId, model);
     } else {
+      this.newOnlyMode.set(newOnly && this.newMcqIds().length > 0);
       this.initializeEvaluation();
     }
   }
@@ -111,6 +123,23 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
     });
   }
 
+  switchFilter(newOnly: boolean): void {
+    this.newOnlyMode.set(newOnly);
+    const all = this.allPendingMcqs();
+    if (newOnly) {
+      const ids = new Set(this.newMcqIds());
+      this.mcqList.set(all.filter(a => ids.has(a.mcq_id)));
+    } else {
+      this.mcqList.set(all);
+    }
+    this.sessionAccepted = 0;
+    this.sessionRejected = 0;
+    this.sessionSummary.set(null);
+    if (this.mcqList().length > 0) {
+      this.loadMCQ(0);
+    }
+  }
+
   /**
    * Charger les MCQ assignes depuis le backend, en filtrant ceux deja evalues
    */
@@ -129,7 +158,15 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
 
         console.log(`MCQs assignes: ${response.assignments.length}, en attente: ${pendingMcqs.length}`);
 
-        this.mcqList.set(pendingMcqs);
+        this.allPendingMcqs.set(pendingMcqs);
+
+        let displayList = pendingMcqs;
+        if (this.newOnlyMode() && this.newMcqIds().length > 0) {
+          const ids = new Set(this.newMcqIds());
+          displayList = pendingMcqs.filter(a => ids.has(a.mcq_id));
+        }
+
+        this.mcqList.set(displayList);
 
         if (pendingMcqs.length > 0) {
           const savedProgress = this.mcqService.loadProgress();
@@ -274,6 +311,9 @@ export class EvaluationPageComponent implements OnInit, OnDestroy {
     } else {
       // Feature 3 — show session summary overlay instead of alert
       this.mcqService.clearProgress();
+      // Clear new MCQ IDs once the session (new-only or full) is complete
+      localStorage.removeItem('lastAssignedMcqs');
+      this.newMcqIds.set([]);
       this.sessionSummary.set({
         total: this.sessionAccepted + this.sessionRejected,
         accepted: this.sessionAccepted,

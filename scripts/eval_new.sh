@@ -13,9 +13,8 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(dirname "$SCRIPT_DIR")"
-SRC_DIR="$ROOT_DIR/src"
 ENV_FILE="$ROOT_DIR/.env"
-RESULTS_DIR="$SRC_DIR/comparison_results"
+RESULTS_DIR="$SCRIPT_DIR/comparison_results"
 MCQ_NEW_DIR="$RESULTS_DIR/csv_mcq_new"
 EVAL_BAK_DIR="$RESULTS_DIR/csv_eval_new"
 STATE_FILE="$RESULTS_DIR/state_eval_new.txt"
@@ -29,14 +28,7 @@ if [ -f "$ENV_FILE" ]; then
     set +a
 fi
 
-# Auto-détection du venv
-if [ -f ~/Documents/partages/.venv/bin/activate ]; then
-    source ~/Documents/partages/.venv/bin/activate
-elif [ -f ~/Documents/.venv/bin/activate ]; then
-    source ~/Documents/.venv/bin/activate
-else
-    echo "[WARN] Aucun venv trouvé, on continue sans activation"
-fi
+source "$(dirname "$0")/env.sh"
 
 mkdir -p "$EVAL_BAK_DIR"
 
@@ -78,13 +70,13 @@ for model in "${MODELS[@]}"; do
     # Supprimer l'ancien CSV évalué pour forcer la régénération
     [ -n "${MODEL_MCQ_EVAL_EXPORT_PATH:-}" ] && rm -f "${MODEL_MCQ_EVAL_EXPORT_PATH}/${model}.csv"
 
-    # Évaluer
+    # Évaluer — lire depuis csv_mcq_new, écrire distribution dans distribution_new.output
     export MODEL_MCQ_PATH="$MCQ_NEW_DIR"
     export DISTRIBUTION_OUTPUT="$DIST_FILE"
 
     echo "  → Évaluation..."
-    cd "$SRC_DIR"
-    ./main.py "$model" || {
+    cd "$SCRIPT_DIR"
+    ../src/main.py "$model" || {
         echo "[WARN] Évaluation échouée pour $model, on continue."
         continue
     }

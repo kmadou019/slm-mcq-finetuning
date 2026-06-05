@@ -1,7 +1,8 @@
-import { Component, EventEmitter, Output, inject, OnDestroy, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, EventEmitter, Output, inject, OnInit, OnDestroy, ChangeDetectorRef, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { McqService } from '../../services/mcq.service';
+import { AnswerabilityService } from '../../services/answerability.service';
 
 type ModalView = 'form' | 'generating' | 'done' | 'error';
 
@@ -58,15 +59,19 @@ Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehor
 })
 export class GenerateFromMaterialModalComponent implements OnInit, OnDestroy {
   private readonly mcqService = inject(McqService);
+  private readonly answerabilityService = inject(AnswerabilityService);
   private readonly cdr = inject(ChangeDetectorRef);
 
   @Output() close = new EventEmitter<void>();
   @Output() confirm = new EventEmitter<void>();
 
-  // Modèles disponibles pour la génération (chargés dynamiquement depuis le backend)
-  generationModels: { label: string, value: string, source: string }[] = [];
-  modelsLoading = true;
-  modelsError: string | null = null;
+  private static readonly FALLBACK_MODELS = [
+    { label: 'Nemotron 30B (Q8)', value: 'hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0' },
+    { label: 'Qwen 3.5 35B', value: 'qwen3.5:35b' },
+    { label: 'Qwen3 80B Thinking (UD-Q4_K_XL)', value: 'hf.co/unsloth/Qwen3-Next-80B-A3B-Thinking-GGUF:UD-Q4_K_XL' },
+  ];
+
+  generationModels = signal<{ label: string; value: string }[]>(GenerateFromMaterialModalComponent.FALLBACK_MODELS);
 
   // Champs du formulaire (propriétés simples pour ngModel)
   content = '';
@@ -132,6 +137,18 @@ export class GenerateFromMaterialModalComponent implements OnInit, OnDestroy {
 
   get isPromptModified(): boolean {
     return this.promptState !== 'default';
+  }
+
+  ngOnInit(): void {
+    this.answerabilityService.getOllamaModels().subscribe({
+      next: (res) => {
+        if (res.models?.length) {
+          this.generationModels.set(res.models.map(m => ({ label: m, value: m })));
+          this.selectedModel = res.models[0];
+        }
+      },
+      error: () => {},
+    });
   }
 
   ngOnDestroy(): void {

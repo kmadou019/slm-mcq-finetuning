@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+#OAR -n compare_systems
+#OAR -p host='lig-gpu10.imag.fr'
+#OAR -l /gpu=1,walltime=20:0:0
+#OAR -O /home/daisy/konema/Documents/partages/slm-mcq-finetuning/logs/oar_compare.%jobid%.stdout
+#OAR -E /home/daisy/konema/Documents/partages/slm-mcq-finetuning/logs/oar_compare.%jobid%.stderr
 # Usage: ./compare_systems.sh [model1 model2 ...] [index_or_range ...]
 #   - Sans argument          : tous les modèles, toutes les sheets
 #   - Avec modèles seulement : modèles spécifiés, toutes les sheets
@@ -22,9 +27,8 @@ TEST_RANGE=""
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 ROOT_DIR="$(dirname "$SCRIPT_DIR")"
-SRC_DIR="$ROOT_DIR/src"
 ENV_FILE="$ROOT_DIR/.env"
-RESULTS_DIR="$SRC_DIR/comparison_results"
+RESULTS_DIR="$SCRIPT_DIR/comparison_results"
 
 # Charger les variables d'environnement de base (OPENAI_KEY, paths...)
 if [ -f "$ENV_FILE" ]; then
@@ -34,14 +38,7 @@ if [ -f "$ENV_FILE" ]; then
     set +a
 fi
 
-# Auto-détection du venv
-if [ -f ~/Documents/partages/.venv/bin/activate ]; then
-    source ~/Documents/partages/.venv/bin/activate
-elif [ -f ~/Documents/.venv/bin/activate ]; then
-    source ~/Documents/.venv/bin/activate
-else
-    echo "[WARN] Aucun venv trouvé, on continue sans activation"
-fi
+source "$(dirname "$0")/env.sh"
 
 # Démarrer ollama s'il ne tourne pas déjà
 if ! pgrep -x ollama > /dev/null; then
@@ -78,6 +75,11 @@ fi
 mkdir -p "$RESULTS_DIR"
 
 # ─── run_one_model(system_name, model) ───────────────────────────────────────
+# Génère + évalue un modèle avec un système de prompt donné.
+# - Skip si déjà marqué complété dans le state file
+# - Checkpoints par modèle (start_{model} / df_in_construction_{model}.csv)
+# - Sauvegarde les CSVs dans csv_mcq_{system} / csv_eval_{system}
+# ─────────────────────────────────────────────────────────────────────────────
 run_one_model() {
     local system_name="$1"
     local model="$2"
@@ -105,18 +107,18 @@ run_one_model() {
         return 0
     }
 
-    # Sauvegarder le CSV généré immédiatement
+    # Sauvegarder le CSV généré immédiatement (avant eval, pour éviter écrasement)
     local mcq_bak="$RESULTS_DIR/csv_mcq_${system_name}"
     local eval_bak="$RESULTS_DIR/csv_eval_${system_name}"
     mkdir -p "$mcq_bak" "$eval_bak"
     [ -f "${MODEL_MCQ_PATH}/${model}.csv" ] && \
         cp "${MODEL_MCQ_PATH}/${model}.csv" "$mcq_bak/${model}.csv"
 
-    # Évaluer
+    # Évaluer — sortie directement dans le fichier distribution du bon système
     export DISTRIBUTION_OUTPUT="$dist_file"
     echo "  → Évaluation..."
-    cd "$SRC_DIR"
-    ./main.py "$model" || {
+    cd "$SCRIPT_DIR"
+    ../src/main.py "$model" || {
         echo "[WARN] Évaluation échouée pour $model/$system_name, on continue."
         return 0
     }
@@ -144,8 +146,9 @@ for model in "${MODELS[@]}"; do
     echo "  Modèle : $model"
     echo "════════════════════════════════════════"
 
-    run_one_model "old" "$model"
-    run_one_model "new" "$model"
+    export OPTIMIZED_PROMPT_SAVE_NAME="$model"
+    run_one_model "optimized" "$model"
+    run_one_model "optimized_enriched" "$model"
 done
 
 # =============================================
@@ -156,13 +159,13 @@ echo "========================================"
 echo "  Résultats comparatifs"
 echo "========================================"
 
-OLD_DIST="$RESULTS_DIR/distribution_old.output"
-NEW_DIST="$RESULTS_DIR/distribution_new.output"
+OPT_DIST="$RESULTS_DIR/distribution_optimized.output"
+OPT_ENR_DIST="$RESULTS_DIR/distribution_optimized_enriched.output"
 
-if [ -f "$OLD_DIST" ] && [ -f "$NEW_DIST" ]; then
-    python3 "$SRC_DIR/compare_results.py" "$OLD_DIST" "$NEW_DIST"
+if [ -f "$OPT_DIST" ] && [ -f "$OPT_ENR_DIST" ]; then
+    python3 "$SCRIPT_DIR/compare_results.py" "$OPT_DIST" "$OPT_ENR_DIST"
 else
     echo "[WARN] Fichiers de distribution manquants, pas de comparaison possible."
-    [ -f "$OLD_DIST" ] && echo "  old : OK" || echo "  old : manquant"
-    [ -f "$NEW_DIST" ] && echo "  new : OK" || echo "  new : manquant"
+    [ -f "$OPT_DIST" ]     && echo "  optimized          : OK" || echo "  optimized          : manquant"
+    [ -f "$OPT_ENR_DIST" ] && echo "  optimized_enriched : OK" || echo "  optimized_enriched : manquant"
 fi

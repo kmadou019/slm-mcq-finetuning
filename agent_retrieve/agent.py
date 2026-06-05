@@ -1,0 +1,425 @@
+#!/usr/bin/env python3
+
+"""
+LangGraph SPARQL Query Agent — ReAct style
+LLM: via Ollama (OLLAMA_MODEL env var)
+Triplestore: GraphDB distant via MCP (GRAPHDB_MCP_URL + GRAPHDB_BEARER_TOKEN env vars)
+
+Each iteration the LLM either:
+  {"action": "query", "sparql": "..."}   → run one focused query, loop back
+  {"action": "answer"}                   → enough info collected, synthesize answer
+"""
+
+import json
+import os
+import re
+import requests
+from typing import TypedDict
+from dotenv import load_dotenv
+from langgraph.graph import StateGraph, START, END
+
+load_dotenv()
+
+MCP_URL          = os.getenv("GRAPHDB_MCP_URL",   "")
+MCP_BEARER       = os.getenv("GRAPHDB_BEARER_TOKEN", "")
+OLLAMA_CHAT_URL  = os.getenv("OLLAMA_CHAT_URL",   "http://localhost:11434/api/chat")
+OLLAMA_MODEL     = os.getenv("OLLAMA_MODEL",      "qwen3.5:35b")
+MAX_ATTEMPTS     = 8
+
+
+# ---------------------------------------------------------------------------
+# MCP helpers (même logique que generate_mcq.py)
+# ---------------------------------------------------------------------------
+
+def _mcp_headers(session_id=""):
+    h = {
+        "Authorization": f"Bearer {MCP_BEARER}",
+        "Content-Type": "application/json",
+        "Accept": "application/json, text/event-stream",
+    }
+    if session_id:
+        h["mcp-session-id"] = session_id
+    return h
+
+
+def _parse_sse_data(text):
+    for line in text.splitlines():
+        if line.startswith("data: "):
+            try:
+                return json.loads(line[6:])
+            except json.JSONDecodeError:
+                pass
+    return {}
+
+
+def _mcp_init_session():
+    payload = {
+        "jsonrpc": "2.0", "id": 1, "method": "initialize",
+        "params": {
+            "protocolVersion": "2024-11-05", "capabilities": {},
+            "clientInfo": {"name": "sparql-agent", "version": "1.0"},
+        },
+    }
+    resp = requests.post(MCP_URL, json=payload, headers=_mcp_headers(), timeout=10, verify=False)
+    resp.raise_for_status()
+    return resp.headers.get("mcp-session-id", "")
+
+
+def _mcp_sparql(sparql: str, session_id: str) -> list:
+    payload = {
+        "jsonrpc": "2.0", "id": 2, "method": "tools/call",
+        "params": {"name": "sparqlQuery", "arguments": {"query": sparql, "format": "json"}},
+    }
+    resp = requests.post(MCP_URL, json=payload, headers=_mcp_headers(session_id), timeout=30, verify=False)
+    resp.raise_for_status()
+    data = _parse_sse_data(resp.text)
+    text_content = data.get("result", {}).get("content", [{}])[0].get("text", "{}")
+    return json.loads(text_content).get("results", {}).get("bindings", [])
+
+SYSTEM_PROMPT = """\
+Tu es un assistant expert GraphDB et SPARQL qui répond aux questions en interrogeant \
+une base de connaissances médicales (ontologie LISA).
+
+RÈGLE ABSOLUE : tu DOIS toujours utiliser des requêtes SPARQL pour répondre. \
+N'utilise JAMAIS tes connaissances internes sans interroger la base.
+
+OUTPUT FORMAT — réponds UNIQUEMENT avec un objet JSON, sans markdown :
+  {"action": "query", "sparql": "..."}   → exécute cette requête SPARQL
+  {"action": "answer"}                   → tu as assez d'informations pour répondre
+
+STRATÉGIE D'EXPLORATION OBLIGATOIRE (5 à 8 requêtes minimum) :
+
+1. PREMIÈRE REQUÊTE — découverte du schéma :
+   SELECT ?class (COUNT(?s) AS ?n) WHERE { ?s a ?class } GROUP BY ?class ORDER BY DESC(?n) LIMIT 20
+
+2. DEUXIÈME REQUÊTE — recherche du terme principal (labels + commentaires) :
+   Utilise FILTER regex insensible à la casse sur rdfs:label et rdfs:comment.
+
+3. TROISIÈME REQUÊTE — variantes orthographiques et synonymes :
+   Essaie des préfixes/suffixes plus larges (ex: "retin" pour rétinopathie, rétine, retinal…).
+
+4. QUATRIÈME REQUÊTE — exploration d'une URI trouvée :
+   SELECT ?p ?o WHERE { <URI_trouvée> ?p ?o } LIMIT 50
+
+5. CINQUIÈME REQUÊTE — relations vers d'autres entités :
+   SELECT ?relation ?related ?relatedLabel WHERE {
+     <URI> ?relation ?related .
+     OPTIONAL { ?related rdfs:label ?relatedLabel }
+   }
+
+6. REQUÊTES SUIVANTES — approfondissement selon les résultats obtenus.
+
+RÈGLES SPARQL CRITIQUES :
+❗ TOUJOURS utiliser une variable comme sujet : `?item a lisa:KnowledgeItem ; rdfs:label ?label .`
+   JAMAIS une URI de classe comme sujet : `lisa:KnowledgeItem rdfs:label ?label` est INCORRECT.
+❗ LIMIT 20 sur toutes les requêtes sauf exploration de propriétés d'une URI (LIMIT 50).
+❗ Pas de UNION ni d'OPTIONAL imbriqués profonds — décompose en plusieurs requêtes successives.
+❗ Ne t'arrête JAMAIS après 1-2 requêtes vides — essaie des variantes.
+❗ Utilise les résultats d'une requête pour guider la suivante.
+❗ Utilise TOUJOURS l'orthographe française accentuée dans les recherches : 'rétinopathie' et non 'retinopathie', 'détresse' et non 'detresse', etc.
+❗ Syntaxe FILTER : le FILTER doit être DANS les accolades du WHERE, jamais après la dernière accolade fermante.
+
+PRÉFIXES :
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX lisa: <https://uness.fr/lisa/ontology/>
+
+CLASSES PRINCIPALES :
+- lisa:KnowledgeObjective  (objectifs de connaissance)
+- lisa:LearningOutcome     (résultats d'apprentissage)
+- lisa:KnowledgeItem       (items de connaissance)
+- lisa:StartingSituation   (situations de départ)
+- lisa:College             (collèges)
+- lisa:Person
+
+PROPRIÉTÉS PRINCIPALES :
+- rdfs:label               (nom/libellé)
+- rdfs:comment             (description détaillée)
+- lisa:rank                (niveau d'importance)
+- lisa:family              (famille thématique)
+- lisa:hasRelatedKnowledgeItems
+- lisa:hasKnowledgeObjective
+- lisa:hasLearningOutcome
+"""
+
+
+# ---------------------------------------------------------------------------
+# State
+# ---------------------------------------------------------------------------
+
+class AgentState(TypedDict):
+    question: str
+    history: list          # [{"query": str, "results": str | "ERROR: ..."}]
+    current_query: str
+    current_results: str
+    error_message: str
+    final_answer: str
+    attempts: int
+    next_action: str       # "query" | "answer" | "error"
+
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+def _llm(prompt: str, think: bool = False) -> str:
+    """Blocking call for the reasoner — needs full response before routing."""
+    payload = {
+        "model": OLLAMA_MODEL,
+        "think": think,
+        "stream": False,
+        "messages": [
+            {"role": "system", "content": SYSTEM_PROMPT},
+            {"role": "user",   "content": prompt},
+        ],
+    }
+    resp = requests.post(OLLAMA_CHAT_URL, json=payload, timeout=300)
+    resp.raise_for_status()
+    msg = resp.json()["message"]
+    if think and msg.get("thinking"):
+        _log("REASONING", msg["thinking"])
+    return msg["content"].strip()
+
+
+def _llm_stream(prompt: str) -> str:
+    """Streaming call for the answer node — prints tokens live."""
+    payload = {
+        "model": OLLAMA_MODEL,
+        "think": False,
+        "stream": True,
+        "messages": [
+            {"role": "user", "content": prompt},
+        ],
+    }
+    resp = requests.post(OLLAMA_CHAT_URL, json=payload, stream=True, timeout=300)
+    resp.raise_for_status()
+    parts = []
+    for line in resp.iter_lines():
+        if not line:
+            continue
+        chunk = json.loads(line)
+        token = chunk.get("message", {}).get("content", "")
+        print(token, end="", flush=True)
+        parts.append(token)
+        if chunk.get("done"):
+            break
+    print()
+    return "".join(parts).strip()
+
+
+def _parse_action(text: str) -> dict:
+    """Extract the JSON action from LLM output."""
+    # Strip markdown fences
+    text = re.sub(r"```(?:json)?\s*", "", text).strip().rstrip("`")
+    # Find first {...}
+    match = re.search(r'\{.*\}', text, re.DOTALL)
+    if match:
+        raw = match.group()
+        # Try strict parse first
+        try:
+            return json.loads(raw)
+        except json.JSONDecodeError:
+            pass
+        # Fallback: extract action and sparql with regex (handles bad escaping)
+        action_m = re.search(r'"action"\s*:\s*"(\w+)"', raw)
+        sparql_m = re.search(r'"sparql"\s*:\s*"(.*?)(?<!\\)"(?:\s*[,}])', raw, re.DOTALL)
+        if action_m:
+            result = {"action": action_m.group(1)}
+            if sparql_m:
+                result["sparql"] = sparql_m.group(1).replace('\\"', '"').replace('\\n', '\n')
+            return result
+    return {"action": "error", "raw": text}
+
+
+def _log(label: str, content: str = "") -> None:
+    sep = "─" * 60
+    print(f"\n{sep}\n[{label}]\n{sep}")
+    if content:
+        print(content)
+
+
+def _build_prompt(state: AgentState) -> str:
+    parts = [f"Question: {state['question']}\n"]
+    for i, step in enumerate(state["history"], 1):
+        parts.append(f"--- Query {i} ---\n{step['query']}\nResults:\n{step['results']}")
+    parts.append("\nWhat do you do next? Output JSON only.")
+    return "\n".join(parts)
+
+
+# ---------------------------------------------------------------------------
+# Nodes
+# ---------------------------------------------------------------------------
+
+def reasoner(state: AgentState) -> dict:
+    """LLM decides: run a new query or stop."""
+    attempt = state["attempts"] + 1
+    _log(f"REASONER  step {attempt}/{MAX_ATTEMPTS}")
+
+    prompt = _build_prompt(state)
+    raw = _llm(prompt, think=True)
+    action = _parse_action(raw)
+
+    _log("LLM DECISION", json.dumps(action, ensure_ascii=False, indent=2))
+
+    if action.get("action") == "query":
+        return {
+            "current_query": action.get("sparql", "").strip(),
+            "attempts": attempt,
+            "error_message": "",
+            "next_action": "query",
+        }
+    elif action.get("action") == "answer":
+        return {
+            "current_query": "",
+            "attempts": attempt,
+            "error_message": "",
+            "next_action": "answer",
+        }
+    else:
+        return {
+            "current_query": "",
+            "attempts": attempt,
+            "error_message": f"Could not parse LLM output: {raw[:200]}",
+            "next_action": "error",
+        }
+
+
+def executor(state: AgentState) -> dict:
+    _log("EXECUTOR", state["current_query"])
+    try:
+        if not MCP_URL:
+            raise ValueError("GRAPHDB_MCP_URL not set in .env")
+        session_id = _mcp_init_session()
+        bindings = _mcp_sparql(state["current_query"], session_id)
+        if not bindings:
+            result_str = "(no results)"
+        else:
+            result_str = json.dumps(bindings, ensure_ascii=False, indent=2)
+        _log("RESULT", result_str)
+        new_step = {"query": state["current_query"], "results": result_str}
+        return {
+            "history": state["history"] + [new_step],
+            "current_results": result_str,
+            "error_message": "",
+        }
+    except requests.HTTPError as e:
+        msg = f"ERROR: HTTP {e.response.status_code}: {e.response.text[:300]}"
+        _log("ERROR", msg)
+        new_step = {"query": state["current_query"], "results": msg}
+        return {
+            "history": state["history"] + [new_step],
+            "current_results": "",
+            "error_message": msg,
+        }
+    except Exception as e:
+        msg = f"ERROR: {e}"
+        _log("ERROR", msg)
+        new_step = {"query": state["current_query"], "results": msg}
+        return {
+            "history": state["history"] + [new_step],
+            "current_results": "",
+            "error_message": msg,
+        }
+
+
+def answer_generator(state: AgentState) -> dict:
+    _log("ANSWER GENERATOR")
+    summary_parts = [f"Question: {state['question']}\n\nDonnées collectées :"]
+    for i, step in enumerate(state["history"], 1):
+        summary_parts.append(f"\nRequête {i}:\n{step['query']}\nRésultats:\n{step['results']}")
+    summary_parts.append(
+        "\nProduis une réponse structurée dans la même langue que la question :\n"
+        "## Résultats de l'exploration\n[résume les découvertes]\n"
+        "## Réponse complète\n[réponse détaillée basée uniquement sur les données trouvées]\n"
+        "## Requêtes SPARQL utilisées\n[liste numérotée]"
+    )
+    prompt = "\n".join(summary_parts)
+    answer = _llm_stream(prompt)
+    return {"final_answer": answer}
+
+
+def fail_node(state: AgentState) -> dict:
+    msg = f"Failed after {state['attempts']} steps. Last error: {state.get('error_message', 'unknown')}"
+    _log("FAILED", msg)
+    return {"final_answer": msg}
+
+
+# ---------------------------------------------------------------------------
+# Routing  (runs after reasoner, before executor or answer)
+# ---------------------------------------------------------------------------
+
+def router(state: AgentState) -> str:
+    if state["next_action"] == "answer":
+        return "answer"
+    if state["next_action"] == "query":
+        if state["attempts"] < MAX_ATTEMPTS:
+            return "executor"
+        # Limit reached but LLM still wants to query — answer with what we have
+        return "answer"
+    # error or unparseable
+    return "fail"
+
+
+# ---------------------------------------------------------------------------
+# Graph
+# ---------------------------------------------------------------------------
+
+workflow = StateGraph(AgentState)
+
+workflow.add_node("reasoner",  reasoner)
+workflow.add_node("executor",  executor)
+workflow.add_node("answer",    answer_generator)
+workflow.add_node("fail",      fail_node)
+
+workflow.add_edge(START, "reasoner")
+workflow.add_conditional_edges(
+    "reasoner",
+    router,
+    {"executor": "executor", "answer": "answer", "fail": "fail", "reasoner": "reasoner"},
+)
+workflow.add_edge("executor", "reasoner")   # always loop back to reason
+workflow.add_edge("answer", END)
+workflow.add_edge("fail", END)
+
+app = workflow.compile()
+
+
+# ---------------------------------------------------------------------------
+# Public API
+# ---------------------------------------------------------------------------
+
+def run(question: str) -> str:
+    result = app.invoke({
+        "question": question,
+        "history": [],
+        "current_query": "",
+        "current_results": "",
+        "error_message": "",
+        "final_answer": "",
+        "attempts": 0,
+        "next_action": "query",
+    })
+    return result["final_answer"]
+
+
+def retrieve_lisa_objectives(content: str, max_content_chars: int = 1500) -> str:
+    """Retrieve relevant LISA KnowledgeObjectives/Items for the given educational content.
+
+    Passes the content to the ReAct agent which autonomously queries GraphDB
+    to find matching objectives, items, and learning outcomes.
+    Returns the agent's structured final answer (text).
+    """
+    question = (
+        "Recherche dans la base de connaissances LISA les objectifs de connaissance "
+        "(KnowledgeObjective), items de connaissance (KnowledgeItem) et résultats "
+        "d'apprentissage (LearningOutcome) pertinents pour ce contenu médical. "
+        "Retourne leurs labels, descriptions et rangs.\n\n"
+        f"Contenu :\n{content[:max_content_chars]}"
+    )
+    return run(question)
+
+
+if __name__ == "__main__":
+    import sys
+    q = " ".join(sys.argv[1:]) or "List all knowledge items and their labels."
+    run(q)  # answer already printed by streaming

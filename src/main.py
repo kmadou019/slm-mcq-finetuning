@@ -1,16 +1,12 @@
 #!/usr/bin/env python3
 from sys import argv
+from pathlib import Path
+
+import json as _json
+with open("../data/models.json", encoding="utf-8") as _f:
+    valid_models = list(_json.load(_f).keys())
 
 if len(argv) >= 2:
-    # Vérifier le modèle (premier paramètre)
-    valid_models = [
-        "llama3_1_8b", "openbiollm_8b", "gemma2_9b", 
-        "medGemma_4b", "medGemma_27b", "qwen3_8b", 
-        "mistral_7b", "eurollm_9b", "apertus_8B", 
-        "qwen3_0.6b", "qwen3_1_7b", "qwen3_4b",
-        "qwen3_8b_pdapt_slerp","qwen3_4b_pdapt_slerp",
-        "qwen3_1_7b_pdapt_slerp","qwen3_0.6b_pdapt_slerp"
-    ]
     
     if argv[1] not in valid_models:
         print(f"Error: Please provide a valid model name:")
@@ -67,12 +63,6 @@ else:
     print("Error: Missing model name")
     print("\nUsage: ./code.py <model> [index1] [index2] [start-end] ...")
     print("\nValid models:")
-    valid_models = [
-        "llama3_1_8b", "openbiollm_8b", "gemma2_9b",
-        "medGemma_4b", "medGemma_27b", "qwen3_8b",
-        "mistral_7b", "eurollm_9b", "apertus_8B",
-        "qwen3_0.6b", "qwen3_1_7b", "qwen3_4b"
-    ]
     for model in valid_models:
         print(f"  - {model}")
     print("\nExamples:")
@@ -111,11 +101,12 @@ def main():
     load_dotenv()
     OPENAI_KEY = os.environ.get("OPENAI_API_KEY")
 
-    with open('eval/prompts.json', 'r') as file:
+    _eval_prompts_path = Path(__file__).parent / 'eval' / 'prompts.json'
+    with open(_eval_prompts_path, 'r') as file:
         # Load the JSON data from the file
         system_prompts = json.load(file)
 
-    df_mcq = pd.read_csv(os.environ.get('MODEL_MCQ_PATH') + "/" + generated_qcm_file)[:100]
+    df_mcq = pd.read_csv(os.environ.get('MODEL_MCQ_PATH') + "/" + generated_qcm_file)
     if indexes:
         df_mcq = df_mcq.loc[indexes]
     df_lisa_sheets = pd.read_csv(os.environ.get('LISA_SHEETS_PATH'))
@@ -134,15 +125,15 @@ def main():
                                       num_workers=10,
                                       lisa_sheet_id_col='id',
                                       lisa_sheet_col='content_raw',
-                                      compute_answerability      =True,
-                                      compute_originality        =True,
-                                      compute_readability        =True,
-                                      compute_negation           =True,
-                                      compute_is_question        =True,
-                                      compute_relevance          =True,
-                                      compute_ambiguity          =True,
-                                      compute_disclosure         =True,
-                                      compute_difficulty         =True,
+                                      compute_answerability      =False,
+                                      compute_originality        =False,
+                                      compute_readability        =False,
+                                      compute_negation           =False,
+                                      compute_is_question        =False,
+                                      compute_relevance          =False,
+                                      compute_ambiguity          =False,
+                                      compute_disclosure         =False,
+                                      compute_difficulty         =False,
                                       compute_distractors_quality=True,
                                       disclosure_system_prompt=system_prompts['disclosure_prompt'],
                                       difficulty_system_prompt=system_prompts['difficulty_prompt'],
@@ -153,6 +144,16 @@ def main():
     
 
     df_eval.to_csv(os.environ.get('MODEL_MCQ_EVAL_EXPORT_PATH') + "/" +  generated_qcm_file, index=False)
+
+    dist_file = os.environ.get("DISTRIBUTION_OUTPUT", "distribution.output")
+    with open(dist_file, "a") as f:
+        print(f"\n{generated_qcm_file} quality distribution:", file=f)
+        total = len(df_eval)
+        counts = pd.to_numeric(df_eval['distractor_quality'], errors='coerce').round(0).value_counts(sort=True)
+        for val, count in counts.items():
+            pct = count / total * 100
+            label = "Bonne qualité" if val else "Mauvaise qualité"
+            print(f"  {label} ({val}): {pct:.2f}% (n={count}/{total})", file=f)
 
 
 if __name__ == '__main__':

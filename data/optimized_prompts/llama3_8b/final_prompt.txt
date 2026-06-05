@@ -1,0 +1,124 @@
+À partir du contenu éducatif suivant, générez exactement une question à choix unique avec quatre options de réponse (a, b, c, d), dont une seule est correcte.
+
+CONSIGNES DE RÉDACTION :
+La question doit évaluer la compréhension des idées principales du contenu fourni.
+
+<<<DEBUT_REGLES_QUESTION>>>
+Règles pour la question (stem) :
+- Rédiger à la forme interrogative directe (se terminer par "?")
+- Rédiger à la forme affirmative — éviter la négation ("laquelle n'est PAS…")
+- La question doit être compréhensible sans contexte supplémentaire
+- INTERDICTION FORMELLE des questions de liste ("Quels sont", "Citez", "Énumérez"). La question ne doit jamais demander une énumération directe du cours.
+- Privilégier une mise en situation clinique concrète ou une relation de cause à effet qui oblige à synthétiser l'information.
+- Exemple positif : "Quel mécanisme explique..." ou "Dans ce contexte, quel signe...". Exemple négatif : "Quels sont les symptômes...".
+- Ne pas paraphraser directement le contenu — évaluer la compréhension, pas la mémorisation. La question doit nécessiter un traitement de l'information.
+- Ne pas surcharger le stem d'informations non pertinentes à l'objectif évalué
+- Employer un registre professionnel clair : privilégier des phrases courtes et une syntaxe directe pour maximiser la lisibilité (éviter les constructions complexes ou passives)
+
+Règles pour la réponse correcte :
+- Courte et concise (une phrase maximum)
+- Factuelle, ancrée dans le contenu fourni
+- Ne pas reprendre les mots exacts de la question (cluing)
+- Reformuler les termes du source pour garantir l'originalité de la formulation
+<<<FIN_REGLES_QUESTION>>>
+
+<<<DEBUT_REGLES_DISTRACTEURS>>>
+Règles pour les distracteurs :
+- Nature de la donnée STRICTEMENT identique à la réponse correcte : si la réponse est une [quantité], le distracteur doit être une [quantité] ; si c'est un [nom propre], le distracteur doit être un [nom propre]. Interdiction formelle de changer de catégorie grammaticale (ex: ne pas répondre par un nom si la réponse est un chiffre). Pour les réponses numériques, les distracteurs doivent être exclusivement numériques. Cette règle est prioritaire : un distracteur qui change la nature de la donnée (ex: phrase au lieu de mot) est automatiquement rejeté.
+- Structure syntaxique parallèle mais sémantiquement indépendante : La structure grammaticale doit être compatible avec la question, mais le distracteur ne doit PAS être un calque mot-à-mot de la réponse correcte. Éviter la répétition des mêmes segments de phrases. Si la réponse correcte est "Action A + Traitement B", le distracteur peut être "Action C + Traitement D" ou "Action A + Traitement E" (si E est une erreur plausible), mais ne doit pas reprendre 80% du texte de la bonne réponse. L'objectif est de tester la connaissance, pas la mémoire textuelle.
+- CRITÈRE DE FORMAT ABSOLU : Si la réponse correcte est un groupe nominal court (ex: "La pathologie X"), le distracteur DOIT être un groupe nominal court. Interdiction absolue de générer une phrase complète (avec verbe conjugué) si la réponse correcte n'en contient pas. Un distracteur sous forme de phrase explicative est invalide. La structure grammaticale doit être calquée sur la réponse correcte pour la cohérence de la liste, mais le vocabulaire doit varier pour éviter le copier-coller. AUCUN VERBE CONJUGUÉ n'est autorisé dans le distracteur si la réponse correcte n'en contient pas.
+- Exprimés à la forme affirmative. Longueur similaire à la réponse correcte (±15%). Si la réponse correcte est très courte (< 10 caractères), les distracteurs ne doivent pas dépasser 2 fois cette longueur. Interdiction des phrases explicatives pour des réponses monosyllabiques. Comptez les caractères espaces inclus : l'écart ne doit pas rendre le distracteur visuellement distinct par sa longueur. Une différence de longueur trop importante est un indice d'élimination pour l'étudiant et doit être évitée.
+- CONTRAINTE DE LONGUEUR STRICTE : Le nombre de caractères du distracteur ne doit jamais dépasser 120% de la longueur de la réponse correcte. Si la réponse correcte fait 50 caractères, le distracteur ne doit pas dépasser 60 caractères. Les distracteurs trop longs (phrases complexes) sont interdits. L'objectif est une homogénéité visuelle parfaite entre la bonne réponse et les distracteurs dans la liste finale. Vérifiez impérativement le comptage avant validation.
+- TAUX DE RECOUPEMENT TEXTUEL LIMITÉ : Aucun distracteur ne doit partager plus de 50% de ses mots avec la réponse correcte. Interdiction de reprendre la majeure partie de la phrase correcte en ne changeant qu'un seul terme à la fin (ex: éviter "Traitement A et B" vs "Traitement A et C" si A représente 80% de la phrase). Chaque distracteur doit pouvoir se lire comme une proposition clinique autonome et distincte, pas comme une variation mineure de la vérité.
+- Médicalement plausibles pour un étudiant de niveau intermédiaire : simuler des erreurs fréquentes explicitement suggérées par le contenu (confusion avec un diagnostic différentiel, mécanisme physiopathologique voisin, cible moléculaire proche mais distincte). Pour les traitements, l'erreur doit porter sur le choix d'une molécule ou d'une technique voisine (ex: [Classe A] vs [Classe B voisine]), jamais sur une classe sans rapport pathologique (ex: [Traitement Spécifique] vs [Traitement Non Pertinent]). Chaque distracteur doit correspondre à une erreur cognitive identifiable (confusion de termes, chevauchement de symptômes, exception à la règle) et non à une simple affirmation vague. Le distracteur doit sembler vrai pour quelqu'un qui a mal appris le cours, mais faux pour quelqu'un qui le maîtrise. INTERDICTION DES ERREURS MAJEURES : Le distracteur ne doit pas représenter une erreur de prise en charge fondamentale (ex: omettre un traitement vital, proposer une [contre-indication majeure]) sauf si c'est le piège exact du cours. Éviter les distracteurs qui seraient éliminés par un bon sens clinique élémentaire sans connaissance du cours spécifique. La proposition entière doit avoir une cohérence clinique globale.
+- Ancrés dans le contenu éducatif : chaque distracteur doit exploiter une nuance critique du cours pour piéger l'étudiant (ex: [sous-type A] vs [sous-type B], [mécanisme X] vs [mécanisme Y]). Le distracteur doit impérativement appartenir au même niveau de granularité clinique que la réponse correcte (ex: ne pas opposer un symptôme spécifique à une catégorie systémique générale). Interdiction absolue d'utiliser des connaissances médicales externes non présentes dans le <<<CONTENU_EDUCATIF>>>. Même si une information est médicalement vraie dans la réalité, si elle n'est pas dans le contenu fourni, elle est interdite.
+- INTERDICTION DE CONNAISSANCES EXTERNES : Aucun terme technique, nom de maladie, ou mécanisme précis (ex: 'linite', 'bague à chaton') ne peut être utilisé s'il n'apparaît pas explicitement dans le <<<CONTENU_EDUCATIF>>>. Le modèle ne doit pas puiser dans sa base de connaissances générale pour enrichir les distracteurs. Tous les concepts doivent être extraits du texte fourni. Un distracteur médicalement vrai mais absent du cours est considéré comme une erreur de génération.
+- Adhérence thérapeutique strict : Si la réponse correcte cite une intervention ou un traitement, les distracteurs doivent proposer des alternatives mentionnées dans le <<<CONTENU_EDUCATIF>>> ou des erreurs classiques de traitement fréquemment rencontrées dans ce contexte. Respecter la hiérarchie des soins : ne pas proposer une option invasive (ex: [Option Invasive]) comme alternative directe à un traitement médical standard sauf si le cours présente ces options comme des choix concurrents équivalents. Interdiction absolue d'inventer des méthodes non citées ou hors contexte (ex: [méthode A citée] vs [méthode B non citée]). Un distracteur ne doit jamais être "vrai dans l'absolu" mais "faux dans le contexte du cours fourni". Tout élément ajouté (ex: hydrothérapie) non présent dans le <<<CONTENU_EDUCATIF>>> est interdit sauf si explicitement cité comme piège.
+- Cohérence de la classe thérapeutique et Hiérarchie des soins : Interdiction formelle de substituer un traitement de première intention par une classe pharmacologique sans lien physiopathologique avec la pathologie. Le distracteur doit appartenir au même arsenal thérapeutique que la réponse correcte (ex: [Traitement de Référence] vs [Classe Sans Rapport]). INTERDICTION DE CHANGER DE NIVEAU D'INTERVENTION : Ne pas opposer un traitement médical standard à une option invasive ou exceptionnelle (ex: [Médicament] vs [Chirurgie]) sauf si le <<<CONTENU_EDUCATIF>>> les présente comme des choix concurrents équivalents. Cette règle vise à éviter les distracteurs trivialement éliminables par un étudiant connaissant les bases de la prise en charge.
+- Variation sémantique significative : Interdiction de modifier uniquement un adverbe temporel, quantitatif mineur ou un détail non discriminant (ex: [premier temps] vs [deuxième temps]) sans altérer la logique médicale sous-jacente. Le distracteur doit refléter une confusion de concept clinique réel, pas une erreur de détail triviale. L'erreur doit porter sur le mécanisme ou la cause, pas sur l'ajout simple d'un élément à une liste. La différence doit être suffisante pour justifier une question, mais pas assez pour être évidente.
+- INTERDICTION DE RECOPIE PARTIELLE RENFORCÉE : Aucun distracteur ne doit contenir la chaîne de caractères exacte de la réponse correcte sur plus de la moitié de sa longueur. Si la réponse est "La maladie X", le distracteur ne peut pas être "La maladie X est grave". Il doit être une alternative distincte (ex: "La maladie Y"). Le chevauchement de texte entre la bonne réponse et le distracteur doit être minimal pour éviter l'ambiguïté. Il est interdit de reprendre le sujet de la réponse correcte pour en faire une phrase explicative. Chaque distracteur doit apporter une sémantique nouvelle.
+- Logique causale cohérente : Si la réponse correcte établit une relation cause-conséquence, le distracteur peut simuler une erreur d'attribution (ex: confondre cause et conséquence, ou attribuer l'effet à un facteur voisin), mais doit rester physiopathologiquement cohérent dans le contexte du cours. Le distracteur ne doit pas briser la logique médicale globale, seulement se tromper sur le point précis évalué.
+- Chaque distracteur doit nécessiter une connaissance précise pour être éliminé (non éliminable par logique générale, bon sens ou analyse grammaticale de la question). Si un distracteur peut être éliminé sans lire le cours, il est invalide.
+- Cohérence syntaxique avec le stem : Le distracteur doit répondre grammaticalement à la question posée (ex: si la question demande "Quel nombre", la réponse ne peut pas être "La branche X"). La lecture de la question suivie du distracteur doit former une phrase grammaticalement correcte.
+- Homogénéité sémantique et contexte clinique : Tous les distracteurs doivent appartenir au même ensemble de réponses possibles que la réponse correcte ET partager le même contexte pathologique. Si la réponse est un élément spécifique d'un syndrome, les distracteurs doivent être d'autres éléments du même syndrome ou de diagnostics différentiels immédiats, jamais des catégories générales hors contexte. Le distracteur doit respecter les contraintes spécifiques du stem (ex: si la question demande "ressemble à X", le distracteur ne doit pas être un élément qui ne ressemble pas à X).
+- Domaine Clinique Identique : Interdiction absolue de changer de domaine clinique majeur (ex: [domaine psychique] vs [domaine moteur], [domaine biologique] vs [domaine clinique]) si la question cible une spécificité au sein d'un domaine unique. Le distracteur doit sembler appartenir à la même famille que la réponse correcte pour être plausible.
+- Niveau de spécificité identique : Interdiction d'utiliser des termes génériques (ex: "Troubles généraux") si la réponse correcte est précise (ex: "Symptôme X spécifique"). La granularité doit être constante entre la bonne réponse et les distracteurs. Si la réponse correcte inclut une précision (ex: entre parenthèses), le distracteur doit inclure une précision équivalente.
+- Interdiction des négations contextuelles : Aucun distracteur ne doit contenir de négation qui contredit directement le contexte de la question (ex: 'non [contexte]', 'absence de [élément]'). Les négations rendent souvent la réponse trop facile à éliminer.
+- Respect des contraintes explicites du stem : Le distracteur ne doit jamais violer une contrainte majeure énoncée dans la question (ex: '[contrainte d'exclusion]', 'contre-indiqué', 'première intention'). Si la question exclut une option (ex: '[condition A]'), le distracteur ne peut pas proposer cette option exclue (ex: '[option incompatible avec condition A]'). Cette règle est prioritaire sur la plausibilité générale. Un distracteur qui ignore une limite posée par le stem est considéré comme trivialement éliminable.
+- Concis et précis, sans ambiguité sémantique, distincts les uns des autres dans l'erreur commise. Chaque distracteur doit tester une erreur différente (ex: l'un teste la cause, l'autre le traitement, le troisième le diagnostic).
+- INDÉPENDANCE DES ERREURS : Les 3 distracteurs ne doivent pas tester la même erreur. Si le distracteur 1 teste une confusion de médicament, le distracteur 2 doit tester une confusion de dosage ou de timing, et le 3 une confusion de contre-indication. Éviter la redondance cognitive.
+
+Distracteurs INTERDITS :
+- "Toutes les propositions précédentes sont correctes"
+- "Aucune des propositions précédentes"
+- Toute combinaison de propositions ("A et C sont correctes")
+- Toute proposition absurde, trivialement éliminable ou erreur de catégorie fondamentale (ex: répondre par un nom quand la question demande un nombre).
+- Modifications trop subtiles rendant la distinction impossible (synonymes quasi-parfaits).
+- Inversion sémantique directe d'un terme clé définissant la pathologie (ex: [terme défini] vs [antonyme direct]).
+- Changements trop grossiers sur le site ou la nature principale si cela rend l'élimination trop facile (ex: [localisation correcte] vs [localisation opposée évidente]).
+- Informations vraies dans l'absolu mais hors sujet par rapport à la question précise posée.
+- Réponses qui changent la nature de l'information demandée (ex: donner un lieu au lieu d'un chiffre).
+- Phrases longues ou explicatives lorsque la réponse correcte est un mot unique ou un chiffre.
+- Mélange de types de données au sein des options (ex: une option chiffre, une option texte).
+- Catégories trop larges par rapport à la précision de la réponse correcte (ex: [système organique] vs [symptôme précis]).
+- Termes génériques sans lien direct avec le contexte spécifique de la question (ex: [syndrome général] vs [composante spécifique]).
+- Généralités abusives : interdire les termes trop larges (ex: 'Troubles généraux') lorsque la réponse correcte est un signe clinique précis.
+- Négations logiques triviales ou contradictions contextuelles (ex: 'Troubles non [syndrome]').
+- Omission de spécificités structurelles : si la réponse correcte contient une précision (ex: parenthèses, sous-titre), le distracteur ne peut pas être une version simplifiée ou générique omettant cette précision.
+- Omission d'une partie structurelle de la réponse correcte (ex: réponse compound vs réponse simple).
+- Changement de domaine clinique majeur (ex: proposer un signe moteur quand la réponse correcte est un signe psychique dans un contexte ciblé).
+- Modifications triviales de détails non discriminants (ex: changement de temps chronologique sans impact clinique).
+- Interventions thérapeutiques non mentionnées dans le contenu éducatif fourni.
+- Ajout d'éléments thérapeutiques ou diagnostiques extérieurs au <<<CONTENU_EDUCATIF>>>.
+- Inversions causales purement logiques sans fondement médical dans le contexte du cours.
+- Explications ou justifications à la place d'une réponse directe (ex: une phrase expliquant pourquoi au lieu du nom de la pathologie).
+- Distracteurs qui violent les contraintes spécifiques du stem (ex: question demande "quel type", distracteur donne "quel lieu").
+- Phrases complètes (Sujet + Verbe) si la réponse correcte est un groupe nominal.
+- Distracteurs contenant la réponse correcte comme sous-chaîne de caractères.
+- Distracteurs dépassant de plus de 20% la longueur en caractères de la réponse correcte.
+- Substitution d'une classe thérapeutique majeure par une classe sans rapport (ex: [Classe Indiquée] vs [Classe Non Indiquée]).
+- Inversion de la hiérarchie des soins (ex: [Option Invasive] vs [Option Médicale]).
+- Proposition d'options incompatibles avec les contraintes du stem (ex: [option exclue] quand le stem impose [condition restrictive]).
+- Distracteurs partageant plus de 50% de vocabulaire identique avec la réponse correcte (risque de copier-coller sémantique).
+- Distracteurs qui ne sont pas cliniquement cohérents dans leur globalité (ex: "sans discuter de traitement" dans un contexte d'urgence vitale).
+
+Commentaires :
+- Fournir pour chaque distracteur une explication concise de pourquoi il est incorrect, en citant l'erreur médicale précise et la notion du cours associée.
+- Le commentaire doit être pédagogique : il doit expliquer pourquoi un étudiant pourrait choisir cette option (le piège) et pourquoi elle est fausse (la correction).
+- Le commentaire ne doit pas dépasser 2 phrases.
+<<<FIN_REGLES_DISTRACTEURS>>>
+
+CONTRAINTES STRICTES DE SORTIE :
+1. La sortie doit être STRICTEMENT un unique objet JSON valide.
+2. Interdiction ABSOLUE d'ajouter :
+   - des blocs ```json
+   - du texte avant ou après le JSON
+   - des explications hors champs JSON
+3. Le champ "correct_option" doit contenir EXACTEMENT une lettre minuscule parmi : "a", "b", "c", "d".
+4. Utiliser uniquement des doubles quotes : "..."
+5. Le JSON doit contenir EXACTEMENT les 11 champs suivants :
+
+{
+  "question": "...",
+  "question_comment": "...",
+  "option_a": "...",
+  "option_a_comment": "...",
+  "option_b": "...",
+  "option_b_comment": "...",
+  "option_c": "...",
+  "option_c_comment": "...",
+  "option_d": "...",
+  "option_d_comment": "...",
+  "correct_option": "a"
+}
+
+RÈGLES POUR LES COMMENTAIRES :
+- Chaque commentaire d'option doit expliquer brièvement pourquoi l'option est correcte ou incorrecte.
+- Le commentaire global de la question doit expliquer ce que la question évalue ou signaler un piège courant.
+- Les commentaires doivent être factuels, concis et pédagogiques.
+
+CONTENU ÉDUCATIF :
+<<<CONTENU_EDUCATIF>>>
+
+INSTRUCTION FINALE :
+Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.

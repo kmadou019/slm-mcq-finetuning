@@ -1,0 +1,85 @@
+À partir du contenu éducatif suivant, générez exactement une question à choix unique avec quatre options de réponse (a, b, c, d), dont une seule est correcte.
+
+CONSIGNES DE RÉDACTION :
+La question doit évaluer la compréhension des idées principales du contenu fourni.
+
+<<<DEBUT_REGLES_QUESTION>>>
+Règles pour la question (stem) :
+- Rédiger à la forme interrogative directe (se terminer par "?")
+- Rédiger à la forme affirmative — éviter la négation ("laquelle n'est PAS…")
+- La question doit être compréhensible sans contexte supplémentaire
+- ORIGINALITÉ RENFORCÉE : Interdiction absolue de copier des phrases du texte source. Chaque concept doit être reformulé avec des synonymes médicaux OU intégré dans un scénario clinique différent de celui du source.
+- Limite de recopiage STRICTE : Aucune suite de 4 mots consécutifs ou plus identique au texte source n'est autorisée dans la question. Vérifiez mot à mot avant validation.
+- STRUCTURE SYNTAXIQUE : Modifiez l'ordre des informations par rapport au source. Évitez la même voix (active/passive) que le texte original.
+- EXEMPLE REFORMULATION : Source "calcifications rénales" → Question "dépôts minéraux dans les reins" OU "patient avec antécédent de lithiase".
+- Ne pas surcharger le stem d'informations non pertinentes à l'objectif évalué
+- Privilégier l'application pratique plutôt que la restitution de définitions brutes.
+- INTERDICTION MÉTA : Ne jamais mentionner le document source (ex: "selon le texte", "dans ce document", "d'après les règles"). La question doit être autonome.
+- CONTEXTE CLINIQUE : Intégrer un scénario patient ou une situation pratique concrète pour contextualiser la notion évaluée.
+- LISIBILITÉ (PRIORITAIRE ABSOLUE) : Phrases très courtes (STRICTEMENT max 12 mots). Syntaxe simple (Sujet-Verbe-Complément). Interdiction formelle des subordonnées ('qui', 'dont', 'où', 'si'). Vocabulaire direct. Éviter les mots de plus de 3 syllabes. Cible Score FK > 12.
+- EXEMPLE DE STRUCTURE : Valide : "Quel traitement initier chez un patient présentant [symptôme] ?" / Invalide : "Quelle est la définition de [maladie] selon le texte ?"
+
+Règles pour la réponse correcte :
+- Courte et concise (une phrase maximum, STRICTEMENT max 15 mots)
+- Factuelle, ancrée dans le contenu fourni
+- Ne pas reprendre les mots exacts de la question (cluing)
+- Reformuler la notion clé avec des synonymes cliniques. Interdiction de reprendre les groupes nominaux exacts du source.
+- STRUCTURE RÉPONSE : Phrase simple. Interdiction des enchaînements de propositions ('qui...', 'et si...'). Une seule idée clé par réponse.
+- CONTRÔLE LONGUEUR : Vérifiez le comptage des mots avant génération. Si > 15 mots, simplifiez.
+- VÉRIFICATION ORIGINALITÉ : Comparez chaque terme technique avec le source. Si identique, trouvez un équivalent sémantique.
+<<<FIN_REGLES_QUESTION>>>
+
+<<<DEBUT_REGLES_DISTRACTEURS>>>
+Règles pour les distracteurs :
+- Homogènes, parallèles à la bonne réponse, d'un niveau de granularité similaire
+- Exprimés à la forme affirmative
+- Longueur et précision similaires à la bonne réponse — ne pas se distinguer par la longueur
+- Médicalement plausibles pour un étudiant avancé, mais factuellement incorrects
+- Doivent cibler la confusion spécifique ou le mécanisme demandé dans la question
+- Concis
+
+Distracteurs INTERDITS :
+- "Toutes les propositions précédentes sont correctes"
+- "Aucune des propositions précédentes"
+- Toute combinaison de propositions ("A et C sont correctes")
+- Toute proposition absurde, trivialement éliminable ou vague sans rapport direct
+- Généralités non spécifiques au contexte pathologique de la question
+
+Commentaires :
+- Fournir pour chaque distracteur une explication concise de pourquoi il est incorrect
+<<<FIN_REGLES_DISTRACTEURS>>>
+
+CONTRAINTES STRICTES DE SORTIE :
+1. La sortie doit être STRICTEMENT un unique objet JSON valide.
+2. Interdiction ABSOLUE d'ajouter :
+   - des blocs ```json
+   - du texte avant ou après le JSON
+   - des explications hors champs JSON
+3. Le champ "correct_option" doit contenir EXACTEMENT une lettre minuscule parmi : "a", "b", "c", "d".
+4. Utiliser uniquement des doubles quotes : "..."
+5. Le JSON doit contenir EXACTEMENT les 11 champs suivants :
+
+{
+  "question": "...",
+  "question_comment": "...",
+  "option_a": "...",
+  "option_a_comment": "...",
+  "option_b": "...",
+  "option_b_comment": "...",
+  "option_c": "...",
+  "option_c_comment": "...",
+  "option_d": "...",
+  "option_d_comment": "...",
+  "correct_option": "a"
+}
+
+RÈGLES POUR LES COMMENTAIRES :
+- Chaque commentaire d'option doit expliquer brièvement pourquoi l'option est correcte ou incorrecte.
+- Le commentaire global de la question doit expliquer ce que la question évalue ou signaler un piège courant.
+- Les commentaires doivent être factuels, concis et pédagogiques.
+
+CONTENU ÉDUCATIF :
+<<<CONTENU_EDUCATIF>>>
+
+INSTRUCTION FINALE :
+Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.

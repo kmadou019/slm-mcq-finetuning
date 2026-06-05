@@ -1,9 +1,4 @@
 #!/usr/bin/env bash
-set -e
+source "$(dirname "$0")/env.sh"
 
-SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-ROOT_DIR="$(dirname "$SCRIPT_DIR")"
-
-source /home/daisy/konema/Documents/partages/.venv/bin/activate
-
-"$ROOT_DIR/notebooks/answerability.py"
+../src/eval/answerability.py

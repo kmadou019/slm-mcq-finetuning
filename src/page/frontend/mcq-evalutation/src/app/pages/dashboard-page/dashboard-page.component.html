@@ -36,7 +36,7 @@
 
     <!-- Statistics Cards -->
     <div class="stats-grid">
-      <div class="stat-card total">
+      <div class="stat-card total" (click)="onStatCardClick()">
         <div class="stat-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M3 3h18v18H3zM9 9h6v6H9z"></path>
@@ -48,7 +48,7 @@
         </div>
       </div>
 
-      <div class="stat-card pending">
+      <div class="stat-card pending" (click)="onStatCardClick('pending')">
         <div class="stat-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10"></circle>
@@ -61,7 +61,7 @@
         </div>
       </div>
 
-      <div class="stat-card completed">
+      <div class="stat-card completed" (click)="onStatCardClick()">
         <div class="stat-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="20 6 9 17 4 12"></polyline>
@@ -73,7 +73,7 @@
         </div>
       </div>
 
-      <div class="stat-card accepted">
+      <div class="stat-card accepted" (click)="onStatCardClick('accepted')">
         <div class="stat-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
@@ -86,7 +86,7 @@
         </div>
       </div>
 
-      <div class="stat-card rejected">
+      <div class="stat-card rejected" (click)="onStatCardClick('rejected')">
         <div class="stat-icon">
           <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="10"></circle>
@@ -112,6 +112,15 @@
           </svg>
           Commencer
         </button>
+        @if (newMcqIds().length > 0) {
+          <button class="btn-new-only" (click)="onStartEvaluationNewOnly()">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            Nouveaux seulement ({{ newMcqIds().length }})
+          </button>
+        }
       </div>
 
       <div class="action-card">
@@ -123,6 +132,14 @@
           </div>
           <p class="progress-text">{{ stats().completed }} / {{ stats().total }} complétées</p>
         </div>
+        <button class="btn-history" (click)="onGoToHistory()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          Voir mes statistiques
+        </button>
       </div>
 
       <div class="action-card">
@@ -197,6 +214,7 @@
       (confirm)="onModalConfirm($event)"
     ></app-mcq-selection-modal>
   }
+
 
   <!-- Generate from Material Modal -->
   @if (showGenerateModal()) {

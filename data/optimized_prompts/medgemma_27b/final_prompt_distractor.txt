@@ -1,0 +1,83 @@
+À partir du contenu éducatif et de la question ci-dessous, générez exactement 3 distracteurs plausibles.
+
+CONTEXTE (NE PAS MODIFIER) :
+Question : <<<QUESTION>>>
+Réponse correcte : <<<REPONSE_CORRECTE>>>
+
+<<<DEBUT_REGLES_DISTRACTEURS>>>
+Règles pour les distracteurs :
+- STRUCTURE PARALLÈLE : Reproduire la syntaxe exacte de la réponse correcte. Substituer uniquement le [terme médical discriminant] par une alternative erronée mais plausible. Conserver identique le contexte englobant (ex : [organisme parent], [niveau hiérarchique], [cadre temporel]) sauf si la distinction entre ces contextes est l'objet exact de la question.
+- COHÉRENCE CONTEXTUELLE STRICTE : Les distracteurs doivent respecter les contraintes implicites de la question (ex : [cadre temporel], [population cible], [setting clinique]). Un distracteur évoquant une période différente (ex : [court terme] vs [long terme]) ou un contexte hors sujet est interdit sauf si c'est l'objet de la confusion testée. Si la question fixe une [étiologie précise] ou un [diagnostic suspecté fort], les distracteurs ne peuvent proposer des interventions liées à un [diagnostic différentiel du syndrome] (ex : [traitement Pneumothorax] si [Embolie] est l'étiologie fixée). Le distracteur doit traiter la pathologie cible, pas une cause concurrente du tableau clinique. Interdiction absolue de proposer des traitements pour des [pathologies exclusives] ou des [diagnostics différentiels] lorsque l'étiologie est fixée dans le scénario. Le distracteur doit partager le même mécanisme physiopathologique principal que la réponse correcte.
+- ALIGNEMENT SUR LE PIÈGE DIAGNOSTIC : Si la question met en avant une difficulté spécifique (ex : [aspect trompeur], [diagnostic différentiel étroit], [présentation atypique]), le distracteur doit être une entité partageant cette même difficulté. Un distracteur appartenant à la bonne catégorie générale mais ne présentant pas la difficulté spécifique est interdit (ex : proposer une pathologie [facilement identifiable] quand la question porte sur les pathologies [à diagnostic ambigu]). Le distracteur doit justifier l'hésitation au même niveau que la réponse correcte face au critère discriminant cité.
+- STATUT THÉRAPEUTIQUE HOMOGÈNE : Les distracteurs doivent appartenir à la même catégorie de décision que la réponse correcte (ex : [traitement de première intention] vs [traitement de première intention]) et viser le même [objectif physiologique immédiat] (ex : [sauvetage hémodynamique] vs [sauvetage hémodynamique]). Interdiction formelle de proposer des options de seconde ligne, d'appoint, de [prévention secondaire] ou de recours si la question porte sur le choix initial ou l'urgence vitale. Si la question porte sur une action thérapeutique, les distracteurs doivent être des actions thérapeutiques ; ne pas proposer d'examen diagnostique comme alternative à un traitement sauf si la confusion diagnostic/thérapeutique est l'objet explicitement testé. Une option de ligne différente n'est acceptable QUE si le scénario décrit explicitement un échec du premier choix ou une contre-indication majeure au traitement standard. Un distracteur ne doit pas être éliminable simplement parce qu'il est réservé à un stade différent de la maladie. Le niveau de sévérité clinique (ex : [stable] vs [choc]) et l'urgence (ex : [immédiat] vs [différé]) doivent être identiques entre la réponse et les distracteurs, sauf si la question teste spécifiquement la recognition de la sévérité. Interdiction de proposer des traitements de maintenance (ex : [anticoagulation]) lorsque la question porte sur le sauvetage immédiat (ex : [thrombolyse]) pour la même pathologie.
+- RESPECT DES CONTRAINTES PATIENT : Les distracteurs ne doivent pas violer les contraintes explicites du scénario (ex : [refus d'intervention], [allergie], [comorbidité], [limites logistiques]). Vérifier la faisabilité technique absolue (ex : [nécessite transport] vs [patient non transportable], [nécessite équipement X] vs [indisponible]). Un distracteur requérant une resource ou une action impossible dans le scénario (ex : [transport impossible]) est interdit. Un distracteur violant une contrainte logistique majeure est interdit. Privilégier des options qui respectent le contexte global mais échouent sur un critère de sélection fin (ex : [efficacité insuffisante pour la sévérité], [contre-indication relative]).
+- INTERDIT DE SIMPLE OMISSION : Ne jamais créer un sous-ensemble de la réponse correcte. Tout élément retiré doit être compensé par un élément erroné de poids et structure équivalents.
+- INTERDIT DE DIFFÉRENCE TRIVIALE : Ne pas proposer de distracteurs qui se distinguent de la réponse correcte par des caractéristiques facilement identifiables sans expertise fine (ex : [marqueurs histologiques distincts], [signes cliniques flagrants]). La distinction doit reposer sur le point précis évalué par la question. **INTERDICTION FORMELLE DE LA NÉGATION GLOBALE :** Un distracteur ne doit pas être l'inverse exact de la réponse correcte sur l'ensemble des descripteurs (ex : si la réponse est [progressif, variable, fatigue], le distracteur ne peut pas être [brutal, constant, pas de fatigue]). La différence doit être localisée sur un seul axe discriminant pour éviter l'élimination immédiate.
+- Exprimés à la forme affirmative
+- Longueur et précision similaires à la bonne réponse — ne pas se distinguer par la longueur ou la exhaustivité apparente
+- PLAUSIBILITÉ ÉLEVÉE (CIBLE SCORE 4/5) : Concevoir pour un étudiant de rang intermédiaire mais viser une discrimination fine. Éviter les erreurs triviales (ex : [classe totalement hors indication]) qui donnent un score < 3. Le mécanisme physiopathologique sous-jacent au distracteur doit être pertinent pour la pathologie (ex : éviter d'invoquer un trouble de la coagulation pour une rupture vasculaire mécanique sauf mention explicite d'une coagulopathie). Éviter les options marginales, obsolètes ou rarement utilisées dans la pratique courante pour cette indication. Viser l'hésitation clinique courante entre options de statut équivalent. Éviter les nuances expertes trop subtiles qui donnent un score > 4. Interdiction formelle des options formellement contre-indiquées dans le contexte décrit (ex : [médicament X] en cas d'[allergie Y] explicite). L'erreur doit provenir d'une confusion sur le critère discriminant précis (ex : [histologie], [imagerie], [évolution]), pas d'une ignorance totale de la pathologie. Le distracteur doit être cliniquement indiscernable de la réponse correcte sur le critère spécifique mentionné dans la question avant confirmation finale. L'option doit être techniquement viable dans le contexte (ex : [disponibilité du matériel], [faisabilité du transport]). **Le distracteur ne doit être éliminable que par la maîtrise du critère discriminant spécifique de la question (ex : [stade de gravité], [contexte logistique]), pas par une connaissance générale de la pathologie.** **STRATÉGIE DE LA VÉRITÉ PARTIELLE :** Privilégier des distracteurs qui conservent 80% des descripteurs de la réponse correcte (ex : [même évolution], [même contexte]) et n'introduisent qu'un seul élément erroné ou exclu (ex : [symptôme associé atypique], [contre-indication spécifique]). Cette approche est préférable à la modification de tous les paramètres cliniques.
+- Cibler une erreur de discrimination fine (ex : sous-type de [marqueur], critère diagnostique voisin, mécanisme pathogène associé). ÉVITER les affirmations médicalement vraies mais non pertinentes pour la question spécifique (vérités secondaires).
+- CRITÈRE DE DISCRIMINATION EXPLICITE : L'erreur doit reposer sur un paramètre clinique différenciant présent dans le scénario (ex : [sévérité des symptômes], [contre-indication spécifique], [objectif thérapeutique prioritaire]). La justification de l'incorrectitude doit être trouvable dans le contenu éducatif.
+- INTERDIT DE SYNONYMIE CORRECTE : Éviter les variations terminologiques qui conservent la justesse médicale (ex : [terme A] vs [synonyme exact de A]). L'erreur doit modifier le sens clinique.
+- INTERDIT de modifier la nature fondamentale de la pathologie (ex : [étiologie principale], [catégorie générale]) sauf si le contenu éducatif oppose explicitement ces catégories. Ne pas introduire de systèmes physiologiques étrangers à la pathologie (ex : [système immunitaire] pour un trouble [mécanique]).
+- Strictement cohérents avec les consensus médicaux et structurels : exclure les affirmations trivialement fausses par culture générale de base (ex : [niveau macro] vs [niveau micro]).
+- La différence avec la réponse correcte doit porter sur un seul élément clé vérifiable dans le contenu éducatif
+- ANCRAGE TEXTUEL STRICT : Tout élément ajouté ou modifié doit trouver un écho dans le contenu éducatif comme distinction explicite. Interdiction d'injecter des connaissances externes plausibles mais absentes du texte (ex : [connaissance générale non citée]). Interdiction d'inventer des molécules spécifiques, des facteurs biologiques ou des protocoles chiffrés non présents dans le texte ou non standards pour cette pathologie.
+- Éviter la confusion avec des syndromes proches non distingués dans le texte
+- INDÉPENDANCE SÉMANTIQUE ET THÉRAPEUTIQUE STRICTE : Chaque distracteur doit explorer une erreur distincte (ex : [confusion A], [confusion B], [confusion C]). Interdiction formelle de répéter une formulation ou un concept central déjà utilisé dans la liste. **INTERDICTION ABSOLUE DE REDONDANCE THÉRAPEUTIQUE :** Il est interdit de générer plusieurs distracteurs appartenant à la même [classe thérapeutique] ou [mécanisme d'action principal] (ex : [anticoagulant] vs [anticoagulant]). Chaque distracteur doit représenter une catégorie d'intervention distincte (ex : [médicamenteux], [chirurgical], [diagnostique]) ou une raison d'exclusion distincte (ex : [contre-indication], [inefficacité sévérité], [indisponibilité]).
+- **DIVERSITÉ DES MÉCANISMES D'ERREUR :** La liste des 3 distracteurs doit couvrir au moins 2 types de raisonnements erronés distincts parmi : [confusion de sévérité], [erreur de priorité thérapeutique], [méconnaissance d'une contre-indication contextuelle], [confusion de procédure alternative], [piège par symptôme associé]. Ne pas concentrer les 3 distracteurs sur le même type d'erreur (ex : 3 options médicamenteuses incorrectes). **OBLIGATION D'INCLURE UN PIÈGE PAR ASSOCIATION :** Au moins un distracteur doit utiliser la stratégie de la vérité partielle (caractéristiques correctes + élément exclu par le texte) pour tester la connaissance des signes d'exclusion.
+- Concis
+
+Distracteurs INTERDITS :
+- "Toutes les propositions précédentes sont correctes"
+- "Aucune des propositions précédentes"
+- Toute combinaison de propositions ("A et C sont correctes")
+- Toute proposition absurde ou trivialement éliminable par un étudiant de niveau intermédiaire
+- Affirmations directement contraires aux faits médicaux établis (ex : confondre [catégorie A] et [catégorie B] sans nuance)
+- Confusion entre entités cliniques associées sauf si le texte distingue explicitement les critères
+- Duplication textuelle ou conceptuelle : aucun distracteur ne doit être identique ou quasi-identique à un autre distracteur de la même liste.
+- Omission d'éléments clés listés dans la réponse correcte sans compensation erronée.
+- Modification du niveau hiérarchique ou organisationnel trivialement identifiable (ex : [niveau national] vs [niveau régional], [direction] vs [agence]).
+- Vérités médicales secondaires : Affirmations vraies dans l'absolu mais ne répondant pas à la contrainte principale de la question (ex : [gestion routine] vs [gestion spécifique]).
+- Options thérapeutiques de seconde intention lorsque la question spécifie un choix initial ou de première ligne, sauf si l'échec du premier choix est décrit.
+- Classes médicamenteuses présentant une contre-indication majeure ignorée dans le scénario (ex : [bêta-bloquants] en cas d'[asthme sévère]).
+- Options thérapeutiques clairement obsolètes ou marginales pour l'indication spécifiée dans le scénario.
+- Pathologies ne partageant pas le même profil de confusion diagnostique que la réponse correcte (ex : [pathologie à signes évidents] vs [pathologie à signes discrets]).
+- Traitements liés à une [pathologie différente] lorsque l'étiologie est fixée dans la question.
+- Options thérapeutiques ne correspondant pas au [niveau de sévérité] décrit (ex : [traitement léger] pour [cas grave]).
+- Interventions nécessitant des ressources indisponibles dans le scénario (ex : [transport impossible] vs [intervention nécessitant transfert]).
+- **NÉGATION SYSTÉMATIQUE :** Interdiction de proposer un distracteur qui inverse simultanément tous les adjectifs qualifiant le symptôme ou la pathologie cible (ex : [progressif] vs [brutal] ET [variable] vs [constant] ET [fatigue] vs [repos]).
+
+Commentaires :
+- Fournir pour chaque distracteur une explication concise de pourquoi il est incorrect
+- Préciser la notion précise que le distracteur vise à tester (ex : distinction entre [concept X] et [concept Y])
+- Justifier la plausibilité pour un étudiant de rang intermédiaire (pourquoi ce n'est pas évident).
+<<<FIN_REGLES_DISTRACTEURS>>>
+
+CONTRAINTES STRICTES DE SORTIE :
+1. La sortie doit être STRICTEMENT un unique objet JSON valide.
+2. Interdiction ABSOLUE d'ajouter :
+   - des blocs ```json
+   - du texte avant ou après le JSON
+   - des explications hors champs JSON
+3. Utiliser uniquement des doubles quotes : "..."
+4. Le JSON doit contenir EXACTEMENT les 6 champs suivants :
+
+{
+  "distractor_1": "...",
+  "distractor_1_comment": "...",
+  "distractor_2": "...",
+  "distractor_2_comment": "...",
+  "distractor_3": "...",
+  "distractor_3_comment": "..."
+}
+
+RÈGLES POUR LES COMMENTAIRES :
+- Chaque commentaire doit expliquer brièvement pourquoi ce distracteur est incorrect.
+- Les commentaires doivent être factuels, concis et pédagogiques.
+
+CONTENU ÉDUCATIF :
+<<<CONTENU_EDUCATIF>>>
+
+INSTRUCTION FINALE :
+Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.

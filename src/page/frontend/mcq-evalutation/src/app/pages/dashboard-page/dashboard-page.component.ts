@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router, NavigationEnd } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { ValidationService } from '../../services/validation.service';
-import { User } from '../../models';
+import { MCQAssignment, User } from '../../models';
 import { McqSelectionModalComponent } from '../../components/mcq-selection-modal/mcq-selection-modal.component';
 import { GenerateFromMaterialModalComponent } from '../../components/generate-from-material-modal/generate-from-material-modal.component';
 import { filter, Subscription } from 'rxjs';
@@ -45,6 +45,9 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
     accepted: 0,
     rejected: 0
   });
+
+  // IDs des derniers QCMs assignés (pour évaluation ciblée)
+  newMcqIds = signal<string[]>(this.loadNewMcqIds());
 
   ngOnInit(): void {
     // Charger l'utilisateur actuel
@@ -131,10 +134,17 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
   }
 
   /**
-   * Commencer l'évaluation
+   * Commencer l'évaluation (tous les en-attente)
    */
   onStartEvaluation(): void {
     this.router.navigate(['/evaluation']);
+  }
+
+  /**
+   * Commencer l'évaluation uniquement sur les nouveaux QCMs assignés
+   */
+  onStartEvaluationNewOnly(): void {
+    this.router.navigate(['/evaluation'], { queryParams: { newOnly: 'true' } });
   }
 
   /**
@@ -175,13 +185,24 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
 
   /**
    * Gérer la confirmation de la modal
-   * Recharger les stats après attribution de nouveaux MCQ
+   * Stocker les IDs assignés pour évaluation ciblée
    */
-  onModalConfirm(count: number): void {
-    console.log('Nouveaux MCQ assignés:', count);
+  onModalConfirm(assignment: MCQAssignment): void {
+    console.log('Nouveaux MCQ assignés:', assignment.mcq_count);
     this.showMcqModal.set(false);
-    // Synchroniser puis recharger les stats pour afficher les nouveaux MCQ
+    if (assignment.assigned_mcq_ids?.length) {
+      localStorage.setItem('lastAssignedMcqs', JSON.stringify(assignment.assigned_mcq_ids));
+      this.newMcqIds.set(assignment.assigned_mcq_ids);
+    }
     this.syncThenLoadStats();
+  }
+
+  private loadNewMcqIds(): string[] {
+    try {
+      return JSON.parse(localStorage.getItem('lastAssignedMcqs') ?? '[]') ?? [];
+    } catch {
+      return [];
+    }
   }
 
   /**
@@ -236,6 +257,16 @@ export class DashboardPageComponent implements OnInit, OnDestroy {
 
   onGoToHistory(): void {
     this.router.navigate(['/history']);
+  }
+
+  onStatCardClick(filter?: string): void {
+    if (filter === 'pending') {
+      this.router.navigate(['/evaluation']);
+    } else if (filter === 'accepted' || filter === 'rejected') {
+      this.router.navigate(['/history'], { queryParams: { filter } });
+    } else {
+      this.router.navigate(['/history']);
+    }
   }
 
   onGoToAnswerability(): void {

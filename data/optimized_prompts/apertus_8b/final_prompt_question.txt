@@ -1,0 +1,54 @@
+À partir du contenu éducatif suivant, générez une question évaluative et sa réponse correcte.
+
+CONSIGNES DE RÉDACTION :
+La question doit évaluer la compréhension des idées principales du contenu fourni.
+
+<<<DEBUT_REGLES_QUESTION>>>
+Règles pour la question (stem) :
+- Forme interrogative directe (se terminer par "?")
+- Forme affirmative uniquement — interdiction des négations ("ne...pas", "sauf")
+- Autonomie : compréhensible sans le texte source
+- Originalité impérative (Critère A3) : Transformation sémantique totale requise. Interdiction absolue de reprendre les titres, sous-titres ou phrases du texte source. La question ne doit jamais commencer par "Quels sont", "Listez", "Citez", "Définissez".
+- Reformulation structurelle : Max 2 mots consécutifs identiques au source autorisés. Paraphraser le contexte intégralement.
+- Contexte clinique : OBLIGATOIRE. Mettre en situation pratique (Patient, symptôme, contexte) plutôt qu'un rappel de cours théorique direct.
+- Simplicité : phrase unique, max 12 mots (impératif pour FK > 12). Compter strictement.
+- Lisibilité : Interdiction des mots de plus de 8 lettres. Termes médicaux longs interdits sauf si aucun synonyme court n'existe.
+- Focus : une seule idée principale évaluée par question. Interdiction des questions plurielles impliquant une énumération en réponse. Si le source liste des éléments, la question doit cibler UN élément via un cas clinique.
+
+Règles pour la réponse correcte :
+- Longueur stricte : maximum 10 mots (priorité absolue, compter strictement). Tout dépassement est interdit.
+- Structure FK : Phrase unique, syntaxe simple (Sujet-Verbe-Complement). Interdiction formelle des pronoms relatifs (qui, que, dont) et des participes présents. Objectif : Score FK > 12.
+- Interdiction des listes : La réponse ne doit jamais être une énumération (virgules multiples). Synthétiser l'idée en un concept unique.
+- Factuelle, vérifiable dans le contenu fourni
+- Zéro recoupement lexical avec la question (éviter le cluing)
+- Synthèse conceptuelle interdite : privilégier l'information clé unique
+- Vocabulary : Utiliser des mots courts (max 8 lettres). Interdiction des mots > 10 lettres même techniques.
+- Singularité : La réponse doit désigner un élément unique, pas une liste de diagnostics. Si le source mentionne plusieurs signes, choisir le plus spécifique.
+- Contrôle FK : Vérifier que la moyenne des lettres par mot est faible pour garantir FK > 12.
+<<<FIN_REGLES_QUESTION>>>
+
+CONTRAINTES STRICTES DE SORTIE :
+1. La sortie doit être STRICTEMENT un unique objet JSON valide.
+2. Interdiction ABSOLUE d'ajouter :
+   - des blocs ```json
+   - du texte avant ou après le JSON
+   - des explications hors champs JSON
+3. Utiliser uniquement des doubles quotes : "..."
+4. Le JSON doit contenir EXACTEMENT les 3 champs suivants :
+
+{
+  "question": "...",
+  "question_comment": "...",
+  "correct_answer": "..."
+}
+
+RÈGLES POUR LES CHAMPS :
+- "question" : forme interrogative directe, se terminant par "?", sans négation
+- "question_comment" : ce que la question évalue ou un piège pédagogique courant
+- "correct_answer" : réponse correcte concise, factuelle, ne reprenant pas les mots de la question
+
+CONTENU ÉDUCATIF :
+<<<CONTENU_EDUCATIF>>>
+
+INSTRUCTION FINALE :
+Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.

@@ -1,0 +1,10 @@
+{
+  "qwen3_0_6b":     "Qwen/Qwen3-0.6B",
+  "mistral_7b":     "mistralai/Mistral-7B-Instruct-v0.3",
+  "llama3_8b":      "meta-llama/Llama-3.1-8B-Instruct",
+  "apertus_8b":     "swiss-ai/Apertus-8B-Instruct-2509",
+  "eurollm_9b":     "utter-project/EuroLLM-9B-Instruct",
+  "gemma2_9b":      "google/gemma-2-9b-it",
+  "medgemma_27b":   "google/medgemma-27b-it",
+  "gemma4_31b":     "google/gemma-4-31B-it"
+}

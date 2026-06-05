@@ -43,20 +43,10 @@
 
         <!-- Sélection du modèle -->
         <div class="form-section">
-          <label for="gen-model-select">
-            Modèle de génération
-            @if (modelsLoading) { <span class="loading-badge">Chargement...</span> }
-          </label>
-          <select id="gen-model-select" class="model-select" [(ngModel)]="selectedModel" [disabled]="modelsLoading">
-            @if (modelsLoading) {
-              <option value="">Chargement des modèles...</option>
-            } @else {
-              @for (m of generationModels; track m.value) {
-                <option [value]="m.value">
-                  {{ m.label }}
-                  @if (m.source !== 'default') { <span class="model-source">({{ m.source }})</span> }
-                </option>
-              }
+          <label for="gen-model-select">Modèle de génération</label>
+          <select id="gen-model-select" class="model-select" [(ngModel)]="selectedModel">
+            @for (m of generationModels(); track m.value) {
+              <option [value]="m.value">{{ m.label }}</option>
             }
           </select>
           @if (modelsError) {

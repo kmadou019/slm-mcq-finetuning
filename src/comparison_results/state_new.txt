@@ -1,0 +1,9 @@
+gemma2_9b
+llama3_1_8b
+medGemma_27b
+medGemma_4b
+qwen3_8b
+mistral_7b
+eurollm_9b
+gemma4_31b
+mixtral_8x7b

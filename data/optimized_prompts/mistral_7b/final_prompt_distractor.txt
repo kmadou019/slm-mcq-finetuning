@@ -1,0 +1,158 @@
+À partir du contenu éducatif et de la question ci-dessous, générez exactement 3 distracteurs plausibles.
+
+CONTEXTE (NE PAS MODIFIER) :
+Question : <<<QUESTION>>>
+Réponse correcte : <<<REPONSE_CORRECTE>>>
+
+<<<DEBUT_REGLES_DISTRACTEURS>>>
+PROTOCOLE DE SÉCURITÉ CRITIQUE (PRIORITÉ ABSOLUE - VÉRIFIER AVANT GÉNÉRATION) :
+Les erreurs suivantes entraînent un rejet immédiat (Score < 2) et doivent être impérativement évitées. Cochez mentalement chaque point avant de valider un distracteur.
+
+1. INTERDICTION DE CONTRADICTION EXPLICITE DES DONNÉES (CRITIQUE) :
+   - Le texte du distracteur ne doit JAMAIS contredire directement une valeur, un signe ou un fait établi dans l'énoncé de la question.
+   - Exemple Interdit : Si l'énoncé dit "inférieur à 50%", le distracteur ne peut pas dire "supérieur à 50%".
+   - Exemple Interdit : Si l'énoncé dit "sans hématurie", le distracteur ne peut pas dire "avec hématurie".
+   - RÈGLE D'INVERSION NUMÉRIQUE : Il est STRICTEMENT INTERDIT d'inverser une inégalité présente dans le vignette (ex: [Valeur] < [Seuil] ne peut pas devenir [Valeur] > [Seuil]). Cette erreur rend le distracteur éliminable par simple lecture sans raisonnement médical (Trop Évident).
+   - RÈGLE DE NON-MODIFICATION DES SEUILS : Ne jamais modifier un seuil chiffré présent dans le vignette pour créer le distracteur (ex: changer "50%" en "60%" dans le texte de l'option). Le distracteur doit être une entité diagnostique ou thérapeutique, pas une variation numérique des données.
+   - Raison : Cela rend le distracteur éliminable par simple lecture sans raisonnement médical (Trop Évident).
+   - Action : Vérifiez chaque chiffre et chaque signe clinique mentionné dans le distracteur par rapport à l'énoncé. Toute inversion directe ou modification de valeur est interdite.
+
+2. INTERDICTION DE RÉPÉTITION DU SCÉNARIO (CRITIQUE) :
+   - Le distracteur ne doit JAMAIS reprendre les éléments descriptifs de la question (ex: 'lors d'un...', 'présentant...', 'qui montre...', 'avec un taux de...').
+   - Le distracteur doit être une option autonome (étiquette diagnostique ou thérapeutique), pas un résumé de l'observation.
+   - INTERDICTION DE LISTE SYMPTOMATIQUE : Ne pas répéter la liste des signes cliniques du vignette dans le texte du distracteur (ex: 'associée à une [Signe A] et [Signe B]').
+   - INTERDICTION DE COPIE DE PHRASE : Il est INTERDIT de copier-coller des segments de phrases du vignette clinique dans le distracteur (ex: si le vignette dit "acidose tubulaire", le distracteur ne doit pas contenir l'expression exacte "acidose tubulaire" sauf si c'est le nom de la pathologie).
+   - Exemple Interdit : "Néphropathie X avec acidose tubulaire et natriurèse" (si ces termes sont dans la question).
+   - Exemple Valide : "Néphropathie X" ou "Insuffisance Rénale Chronique".
+   - Action : Le distracteur doit se limiter à l'option de réponse pure. Toute inclusion du contexte de la question dans le texte du distracteur est interdite car elle crée une asymétrie visuelle évidente et permet l'élimination par simple comparaison textuelle.
+
+3. CONTRAINTE DE BREVETÉ ET FORMAT MIROIR (CRITIQUE) :
+   - La structure grammaticale du distracteur doit calquer EXACTEMENT celle de la réponse correcte.
+   - Si la réponse est un terme nominal court (ex: 2-5 mots), le distracteur DOIT être un terme nominal court.
+   - Interdiction absolue de rédiger une phrase complète (sujet-verbe-complément) si la réponse n'en est pas une.
+   - RÈGLE DES 120% : Le nombre de mots du distracteur ne doit pas dépasser de plus de 20% celui de la réponse correcte.
+   - Exemple Interdit : Réponse = "Diagnostic A" (2 mots) -> Distracteur = "Le diagnostic de B est probable car..." (7 mots).
+   - Exemple Interdit : Réponse = "Traitement X" -> Distracteur = "Il faudrait administrer le traitement Y car..."
+   - Action : Comptez les mots. Si le distracteur est visiblement plus long, réduisez-le. L'objectif est l'indiscernabilité visuelle immédiate.
+
+4. ANCRAGE CONTEXTUEL (CRITIQUE) :
+   - Le distracteur doit être plausible *compte tenu des informations fournies dans la vignette*.
+   - Éviter les étiologies spécifiques non suggérées par aucun signe (ex: proposer une cause précise sans signe d'appel dans l'énoncé).
+   - INTERDICTION DES ÉTIOLOGIES NON SUPPORTÉES : Il est INTERDIT d'affirmer une cause précise (ex: 'due à [Étiologie]') si aucun élément du vignette ne la suggère directement. Un distracteur ne doit pas être une hypothèse étiologique gratuite.
+   - Exemple Interdit : Proposer "Néphropathie due à l'hypercalciurie" si aucune donnée sur le calcium n'est fournie.
+   - Exemple Valide : Proposer une pathologie concurrente qui partage la même sémiologie générale (ex: "Néphropathie interstitielle aiguë" vs "Chronique").
+   - Action : Assurez-vous que le distracteur repose sur une confusion de raisonnement possible avec les données disponibles, pas sur une invention externe. La fausseté doit porter sur le diagnostic ou la stratégie, pas sur une cause inventée.
+
+5. CHECKLIST DE VALIDATION OBLIGATOIRE (NOUVEAU - AVANT GÉNÉRATION) :
+   - Avant de valider chaque distracteur, posez-vous ces 5 questions. Si la réponse est OUI à l'une d'elles, REJETEZ le distracteur :
+   - 1. Est-ce que ce distracteur inverse une valeur numérique ou un signe présent dans le vignette ? (OUI = REJET)
+   - 2. Est-ce que ce distracteur répète la liste des symptômes ou signes cliniques de la question ? (OUI = REJET)
+   - 3. Est-ce que ce distracteur affirme une étiologie précise sans preuve dans l'énoncé ? (OUI = REJET)
+   - 4. Est-ce que ce distracteur est plus long de 20% par rapport à la réponse correcte ? (OUI = REJET)
+   - 5. Est-ce que ce distracteur change la structure grammaticale de la réponse correcte ? (OUI = REJET)
+   - 6. Est-ce que ce distracteur contient des phrases descriptives copiées du vignette (ex: "avec un taux de...", "associée à...") ? (OUI = REJET)
+
+Règles générales pour les distracteurs :
+- Homogènes, parallèles à la bonne réponse, d'un niveau de granularité similaire.
+- Exprimés à la forme affirmative.
+- Longueur et précision similaires à la bonne réponse — ne pas se distinguer par la longueur.
+- Plausibles mais factuellement incorrects, ancrés dans le contenu éducatif.
+- Cohérence interne stricte : tous les éléments d'un distracteur doivent correspondre à l'objectif clinique de la question (ex: si la question cible le bilan d'extension, aucun outil de diagnostic local ne doit apparaître).
+- Vérification de l'indication : chaque terme doit être valide pour la situation clinique précise (ex: bilan d'extension vs diagnostic).
+- Interdiction des distracteurs "partiellement vrais" : éviter d'associer un terme correct à un terme clairement erroné qui rendrait l'ensemble trop facilement éliminable (ex: processus valide + modalité de remboursement impossible).
+- Réutilisation des termes de la réponse correcte : interdite si le terme change d'indication clinique dans le distracteur (ex: un outil de diagnostic local ne peut pas servir de bilan d'extension).
+- Même catégorie médicale que la réponse (ex: imagerie vs imagerie).
+- Plausibilité cognitive : chaque distracteur doit incarner une confusion fréquente (ex: stade précoce vs tardif, diagnostic vs extension) et non une erreur aléatoire. L'erreur doit porter sur le raisonnement clinique (indication, timing, modalité) et non sur un fait anatomique ou physiologique basique. Pour les questions relationnelles, confondre des rôles positifs (ex: Éducateur vs Facilitateur) plutôt qu'un rôle positif vs un comportement négatif.
+- Nuance clinique : privilégier les erreurs subtiles (ex: bonne stratégie appliquée au mauvais moment, confusion entre molécules de même classe) plutôt que les opposés directs. Le distracteur doit représenter une alternative thérapeutique ou diagnostique cohérente dans un autre contexte, mais incorrecte ici. Éviter les recommandations vagues ou non standardisées (ex: 'indéfiniment', 'systématiquement'). INTERDICTION des oppositions binaires classiques dans les questions relationnelles (ex: Expert vs Facilitateur, Paternaliste vs Collaboratif) sauf si la nuance porte sur la méthode d'application. Préférer des rôles voisins (ex: Guide, Conseiller, Partenaire) avec une action légèrement déviante.
+- SPÉCIFICITÉ DES QUESTIONS RELATIONNELLES (CRITIQUE - RENFORCÉ) : Dans les questions portant sur la relation soignant-soigné ou l'alliance thérapeutique, il est STRICTEMENT INTERDIT d'utiliser des rôles représentant un paradigme opposé. LISTE NOIRE DES RÔLES : Si la réponse correcte est 'Facilitateur', 'Partenaire' ou 'Collaboratif', les distracteurs NE DOIVENT PAS contenir les mots-clés : 'Expert', 'Enseignant', 'Autorité', 'Paternaliste', 'Directif' (en tant que rôle principal). Ces termes constituent une opposition binaire de modèle de soins trop évidente (Score < 3). Le distracteur doit rester dans le même paradigme (ex: collaboratif) mais échouer sur la nuance méthodologique. EXEMPLES VALIDES : 'Accompagnateur trop passif', 'Guide trop directif dans l'exécution', 'Partenaire mais prenant la décision finale seul'. L'erreur doit être une déviation de la méthode, pas un changement de philosophie de soins. VÉRIFICATION OBLIGATOIRE : Avant de valider un distracteur, comparez le rôle proposé avec la réponse correcte. Si ils sont opposés théoriquement, REJETEZ et régénérez.
+- Nuance Procédurale et Administrative (CRITIQUE) : INTERDICTION FORMELLE de baser la fausseté principale sur un statut binaire administratif trivial (ex: [achat] vs [location], [remboursé] vs [non], [entente préalable] oui/non) sauf si la question teste EXCLUSIVEMENT ce point binaire. L'erreur doit porter sur la subtilité de la procédure (ex: type de formulaire, ordre des validations, professionnel spécifique). Un distracteur éliminable par un seul mot administratif est INVALIDE. La fausseté doit modifier la logique du parcours (ex: mauvais professionnel, étape inversée, condition préalable incorrecte) et non un statut binaire.
+- Intégrité Éthique et Déontologique (CRITIQUE) : Aucun distracteur ne doit décrire un comportement médicalement ou déontologiquement inacceptable (ex: paternalisme autoritaire, non-respect du consentement, décision imprudente) sauf si la question porte spécifiquement sur l'identification d'une faute. L'erreur doit porter sur la nuance théorique du rôle, non sur la morale de base. Un distracteur éliminable parce qu'il est "immoral" est INVALIDE.
+- Niveau de discrimination élevé (Rang B - OBLIGATOIRE) : Le distracteur doit induire en erreur un étudiant de niveau intermédiaire. CRITÈRE D'INVALIDITÉ : Si la fausseté repose sur un seul mot administratif ou une règle de sécurité basique (ex: 'location' au lieu de 'achat'), le distracteur est REJETÉ. L'erreur doit porter sur la logique du parcours (ex: mauvais professionnel, mauvais timing, étape manquante) et non sur un statut binaire. Un étudiant de rang A doit hésiter. Si l'élimination est immédiate car 'immoral' ou 'absurde', le distracteur est invalide. Un étudiant expert (Rang A) doit nécessiter une réflexion de plus de 10 secondes pour éliminer le distracteur. Si l'élimination est intuitive, le distracteur est trop faible. Pour les questions relationnelles, l'hésitation doit venir d'une conflictualité interne dans la description de l'action (ex: intention correcte mais méthode légèrement inadaptée).
+- Erreur Composite Requise (RENFORCÉ) : L'incorrectitude ne doit pas reposer sur un unique terme isolé. Combinez une erreur de processus avec une nuance contextuelle pour éviter l'élimination rapide par mot-clé. L'erreur doit porter simultanément sur le Nom de Rôle ET sur la description de l'Action/But. Changer uniquement le nom du rôle est insuffisant si l'action reste générique. Dans les questions relationnelles, l'erreur doit combiner un rôle sémantiquement proche (voisin) ET une action légèrement déviante. INTERDICTION : Ne pas changer seulement le nom du rôle (ex: Facilitateur -> Expert) si l'action reste similaire. Il faut que l'action trahisse le rôle. Exemple Valide : 'Guider' (rôle proche) mais 'en imposant le rythme' (action déviante) vs 'en suivant le patient'. Exemple Invalide : 'Expert' (rôle opposé) avec 'donnant des informations' (action générique).
+- Cohérence logique interne : la relation de cause à effet décrite doit être médicalement discutable et non logiquement impossible (ex: ne pas affirmer qu'une [action partielle] équivaut automatiquement à un [objectif total]).
+- Ancrage dans les erreurs fréquentes : le distracteur doit refléter une misconception documentée chez les étudiants ou cliniciens, pas une invention aléatoire ou une stratégie non standardisée.
+- Indépendance sémantique et fluidité : Éviter la répétition littérale de la pathologie ou de l'anatomie spécifique de la question si elle alourdit le distracteur ou crée une incohérence médicale. Privilégier la formulation de l'action clinique (ex: 'Traitement chirurgical' plutôt que 'Chirurgie de [pathologie exacte]'). Le distracteur doit se concentrer sur la décision thérapeutique ou diagnostique abstraite. Toute anatomie citée doit être physiopathologiquement compatible avec le type de lésion décrit.
+- Validité Médicale Intrinsèque : Chaque distracteur doit constituer une affirmation médicalement possible dans un autre contexte clinique. Interdiction des associations anatomiques ou physiopathologiques impossibles (ex: type de lésion incompatible avec le vaisseau cité).
+- Distance Sémantique Minimale : Un distracteur ne doit pas reprendre plus de 60% des mots-clés spécifiques de la réponse correcte. Il doit reformuler la proposition avec une logique différente pour éviter le copier-coller partiel qui rend la distinction trop évidente ou trop subtile.
+- Priorité à l'Erreur Clinique : La fausseté doit porter en priorité sur le raisonnement médical (indication, professionnel compétent, timing, contre-indication relative) plutôt que sur des détails administratifs (remboursement, formulaire, entente). Si une erreur administrative est utilisée, elle doit être couplée à une erreur de parcours clinique.
+- Concis.
+- FORMAT MIRROIR STRICT (CRITIQUE) : La structure grammaticale du distracteur doit calquer EXACTEMENT celle de la réponse correcte. Si la réponse est un terme nominal court (ex: 2-5 mots), le distracteur DOIT être un terme nominal court. Interdiction absolue de rédiger une phrase complète (sujet-verbe-complément) si la réponse n'en est pas une. Exemple : Si la réponse est "[Pathologie X]", le distracteur doit être "[Pathologie Y]", et non "Le diagnostic de [Pathologie Y] est...". Décomposez la réponse correcte en segments syntaxiques (Sujet, Verbe Modal, Nom de Rôle, Proposition Participiale, Finalité). Chaque segment doit avoir un équivalent structurel dans le distracteur.
+- INTERDICTION DE RÉPÉTITION DU SCÉNARIO (CRITIQUE) : Le distracteur ne doit JAMAIS reprendre les éléments descriptifs de la question (ex: 'lors d'un...', 'présentant...', 'qui montre...'). Il doit se limiter à l'option de réponse pure et autonome. Toute inclusion du contexte de la question dans le texte du distracteur est interdite car elle crée une asymétrie visuelle évidente. Exemple interdit : mentionner l'âge du patient, le nom de la pathologie ou des détails spécifiques du vignette clinique dans le distracteur.
+- PLAUSIBILITÉ SÉMIOLOGIQUE RENFORCÉE : Le distracteur doit partager la même signature clinique majeure (ex: mêmes signes iconographiques, même évolution, même profil de risque) que la réponse correcte. Une pathologie rare ou aux signes divergents est INTERDITE. Le distracteur doit être un diagnostic différentiel réaliste devant les mêmes signes cliniques.
+- CONTRAINTE DE BREVETÉ : Le nombre de mots du distracteur ne doit pas dépasser de plus de 20% celui de la réponse correcte. Éviter les phrases complètes si la réponse est un terme. L'objectif est l'indiscernabilité visuelle immédiate.
+- Plausibilité Théorique Alternative (NOUVEAU) : Le distracteur doit être une affirmation valable dans un modèle de soins différent (ex: biomédical pur vs biopsychosocial) mais incorrect dans le contexte spécifique de la question. Cela garantit que l'erreur est conceptuelle et non factuelle. SAUF pour les questions relationnelles où le paradigme est l'objet de la question : dans ce cas, le distracteur doit rester dans le bon paradigme mais échouer sur l'exécution.
+- VÉRIFICATION PRÉ-GÉNÉRATION (OBLIGATOIRE) : Avant de rédiger le distracteur, identifiez le type de question (Factuelle vs Relationnelle). Si Relationnelle, appliquez la LISTE NOIRE des rôles opposés. Si le distracteur semble éliminable par un étudiant connaissant la théorie de base (Rang A), il est INVALIDE.
+
+RÈGLES SPÉCIFIQUES DE PRÉVENTION DES ÉCHECS (CRITIQUE - RENFORCÉ) :
+- INTERDICTION ABSOLUE DE RÉUTILISATION DU DIAGNOSTIC CORRECT : Un distracteur ne doit JAMAIS contenir l'intitulé exact de la pathologie ou de la réponse correcte (ex: si la réponse est '[Diagnostic Correct]', le distracteur ne peut pas être '[Diagnostic Correct] avec...'). Le distracteur doit proposer une entité nosologique DISTINCTE et CONCURRENTE. Utiliser le nom de la bonne réponse comme base du distracteur est une erreur majeure (Score < 3).
+- INTERDICTION DE CONTRADICTION EXPLICITE AVEC LES DONNÉES : Le texte du distracteur ne doit JAMAIS contredire explicitement une valeur ou un signe fourni dans l'énoncé (ex: écrire 'supérieur à 50%' si l'énoncé indique 'inférieur à 50%'). La fausseté doit être implicite dans le choix du diagnostic face aux signes, pas dans une modification textuelle des données du vignette. Un distracteur qui dit 'avec hématurie' alors que l'énoncé dit 'sans hématurie' est INVALIDE (Trop Évident).
+- INTERDICTION DE COPIE DE CONTEXTE : Le distracteur ne doit JAMAIS inclure des segments de texte du vignette clinique (ex: "natriurèse obligatoire", "acidose tubulaire") sauf si ce sont des termes génériques indispensables au nom de la pathologie. Une option qui ressemble à un résumé de l'observation clinique est INTERDITE.
+- NATURE DU DISTRACTEUR : ENTITÉ VS PHRASE : Les distracteurs doivent être des étiquettes diagnostiques, thérapeutiques ou conceptuelles (ex: 'Néphropathie X', 'Traitement Y'), et NON des phrases descriptives récapitulant les symptômes (ex: 'Maladie X avec symptôme A et B'). Une option qui ressemble à un résumé de l'observation clinique est INTERDITE.
+- ÉVITER LES VARIATIONS CHIFFRÉES ARTIFICIELLES : Ne pas créer un distracteur en prenant la bonne réponse et en changeant uniquement un chiffre ou un seuil (ex: '> 1g' vs '< 1g'). Cela crée une opposition binaire trop facile. Préférez un diagnostic alternatif qui impliquerait naturellement un chiffre différent.
+- COHÉRENCE DU NIVEAU DE PREUVE : Si la réponse correcte est un diagnostic de certitude, le distracteur ne doit pas être un diagnostic d'élimination ou une hypothèse faible, sauf si la question porte sur la hiérarchie des hypothèses. Tous les distracteurs doivent avoir le même statut ontologique que la réponse (ex: tous des diagnostics positifs).
+
+Distracteurs INTERDITS :
+- "Toutes les propositions précédentes sont correctes"
+- "Aucune des propositions précédentes"
+- Toute combinaison de propositions ("A et C sont correctes")
+- Toute proposition absurde ou trivialement éliminable
+- Option contenant un terme incompatible avec le stade ou le type de pathologie décrit
+- Association d'un examen pertinent avec un examen inadapté à l'indication précise (ex: mélanger diagnostic local et staging systémique)
+- Action universellement contre-indiquée présentée comme solution valide
+- Statut binaire administratif (ex: [achat] vs [location], [oui] vs [non])
+- Proposition ne différant de la réponse correcte que par un terme administratif binaire (ex: oui/non, achat/location)
+- Copie partielle de la réponse correcte avec une modification mineure non clinique
+- Phrase explicative répétant le contexte de la question (ex: "Le diagnostic de... lors d'un...")
+- Terme médical rare sans lien sémiologique direct avec la question
+- Rôle violant l'éthique médicale de base (ex: paternalisme autoritaire, secret médical violé) sauf si sujet spécifique
+- Répétition des détails patients (âge, pathologie spécifique) dans le texte du distracteur
+- Opposition binaire directe dans les questions relationnelles (ex: Expert vs Facilitateur sans nuance d'action)
+- Rôle représentant un paradigme opposé dans les questions d'alliance thérapeutique (ex: Autorité vs Partenariat)
+- RÉUTILISATION DU NOM DE LA PATHOLOGIE CORRECTE (ex: '[Diagnostic Correct] avec complication')
+- CONTRADICTION TEXTUELLE DIRECTE DES DONNÉES DU VIGNETTE (ex: inverser un signe clinique dans le texte de l'option)
+- PHRASE DESCRIPTIVE LONGUE (ex: plus de 1.5x la longueur de la réponse correcte)
+- INVERSION DE VALEUR NUMÉRIQUE (ex: [Valeur] < [Seuil] devient [Valeur] > [Seuil])
+- ÉTIOLOGIE NON SUPPORTÉE (ex: 'due à [Cause]' sans signe dans l'énoncé)
+- COPIE DE SEGMENTS DU VIGNETTE (ex: répéter "acidose tubulaire" ou "natriurèse obligatoire" dans l'option)
+
+Commentaires :
+- Fournir pour chaque distracteur une explication concise de pourquoi il est incorrect.
+- L'explication doit souligner l'incohérence clinique spécifique (ex: mauvais stade, mauvaise indication).
+- L'explication ne doit pas se baser uniquement sur une règle administrative sauf si c'est l'objet de la question.
+- L'explication doit confirmer que le distracteur respecte le format miroir (pas de phrase complète si la réponse est un terme).
+- L'explication doit préciser pourquoi un étudiant de Rang A pourrait hésiter (nuance subtile).
+- Pour les questions relationnelles, l'explication doit justifier pourquoi le rôle est proche mais la méthode est incorrecte (ex: 'Intention collaborative mais action trop directive').
+- L'explication doit confirmer que le distracteur ne réutilise pas le nom de la pathologie correcte.
+- L'explication doit confirmer que le distracteur ne contredit pas explicitement les données du vignette.
+- L'explication doit confirmer qu'aucune valeur numérique n'a été inversée par rapport au vignette.
+- L'explication doit confirmer qu'aucune étiologie spécifique n'est affirmée sans preuve.
+- L'explication doit confirmer qu'aucun segment de phrase du vignette n'a été copié dans le distracteur.
+<<<FIN_REGLES_DISTRACTEURS>>>
+
+CONTRAINTES STRICTES DE SORTIE :
+1. La sortie doit être STRICTEMENT un unique objet JSON valide.
+2. Interdiction ABSOLUE d'ajouter :
+   - des blocs ```json
+   - du texte avant ou après le JSON
+   - des explications hors champs JSON
+3. Utiliser uniquement des doubles quotes : "..."
+4. Le JSON doit contenir EXACTEMENT les 6 champs suivants :
+
+{
+  "distractor_1": "...",
+  "distractor_1_comment": "...",
+  "distractor_2": "...",
+  "distractor_2_comment": "...",
+  "distractor_3": "...",
+  "distractor_3_comment": "..."
+}
+
+RÈGLES POUR LES COMMENTAIRES :
+- Chaque commentaire doit expliquer brièvement pourquoi ce distracteur est incorrect.
+- Les commentaires doivent être factuels, concis et pédagogiques.
+
+CONTENU ÉDUCATIF :
+<<<CONTENU_EDUCATIF>>>
+
+INSTRUCTION FINALE :
+Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.
