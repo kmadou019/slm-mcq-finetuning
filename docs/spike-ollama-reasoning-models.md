@@ -138,33 +138,76 @@ POUR chaque fiche LISA s dans k_fiches:
 SAUVEGARDER prompt final pour ce modèle
 ```
 
-### Algorithme v2 — Rollback (décision prise, à implémenter)
+### Algorithme v2 — Rollback (implémenté, superseded by v3)
 
 Problème de v1 : le prompt est toujours mis à jour même quand la fiche échoue toutes ses tentatives,
 accumulant des modifications contradictoires qui dégradent les fiches suivantes.
 
+Rollback implémenté mais la boucle restait single-pass (question + distracteurs couplés).
+**Remplacé par l'algorithme v3 deux étapes** qui apporte le même rollback sur deux signaux indépendants.
+
+### Algorithme v3 — Two-stage + Rollback (implémenté 2026-05-19)
+
+Signal mixte de v1/v2 (question + distracteurs dans la même boucle) → oscillations.
+Solution : deux boucles indépendantes avec rollbacks séparés, puis fusion d'un prompt unique final.
+
 ```
-prompt_actif = prompt_initial
+prompt_q = _build_initial_question_prompt()
+prompt_d = _build_initial_distractor_prompt()
 
 POUR chaque fiche LISA s dans k_fiches:
-    prompt_entree = prompt_actif          ← snapshot avant la fiche
+    prompt_q_entree = prompt_q          ← snapshot rollback question
+    prompt_d_entree = prompt_d          ← snapshot rollback distracteurs
 
-    POUR tentative in 1..max_attempts:
-        mcq = model.generate(prompt_actif, s)
-        b3  = GPT-4o.eval_distractor_quality(mcq, s)
-        SI b3.passe:
-            prompt_actif = prompt_actif   ← conservé (c'est lui qui a produit le pass)
-            break → fiche suivante
-        SINON si tentative < max_attempts:
-            prompt_actif = Claude.improve(prompt_actif, {mcq, b3_scores, b3_justifications})
+    # Stage 1 : question
+    question_validated = False
+    POUR q_attempt in 1..max_q_attempts:
+        step1 = generate_question(s, prompt_q, pipe)   ← MCQStep1 (question + correct_answer)
+        qresult = evaluate_question_quality(step1.question, s)
+            # A1 is_question, A2 no_negation, A3 originality≥0.75, A4 FK≥12, B1 cosine≥0.5
+        SI qresult.passes:
+            question_validated = True; break
+        SINON si q_attempt < max_q_attempts:
+            prompt_q = improve_question_prompt(prompt_q, step1, qresult)
+            # Qwen3.5-397B améliore uniquement <<<DEBUT_REGLES_QUESTION>>>…<<<FIN_REGLES_QUESTION>>>
 
-    SI fiche non passée (toutes tentatives épuisées):
-        prompt_actif = prompt_entree      ← rollback : aucune modification commitée
+    SI NOT question_validated:
+        prompt_q = prompt_q_entree      ← rollback Q
+        continue → fiche suivante
 
-SAUVEGARDER prompt_actif final
+    # Stage 2 : distracteurs (question gelée)
+    distractor_passed = False
+    POUR d_attempt in 1..max_d_attempts:
+        step2 = generate_distractors(s, step1.question, step1.correct_answer, prompt_d, pipe)
+        mcq   = assemble_mcq(step1, step2)   ← slots a-d mélangés aléatoirement
+        b3    = GPT-4o.eval_distractor_quality(mcq, s)
+        SI b3.passes (≥2/3 distracteurs score ≥4):
+            distractor_passed = True; break
+        SINON si d_attempt < max_d_attempts:
+            prompt_d = improve_distractor_prompt(prompt_d, step1, step2, b3)
+            # Qwen améliore uniquement <<<DEBUT_REGLES_DISTRACTEURS>>>…<<<FIN_REGLES_DISTRACTEURS>>>
+
+    SI NOT distractor_passed:
+        prompt_d = prompt_d_entree      ← rollback D
+
+# Fusion finale : un seul prompt déployable par modèle
+final_prompt = build_final_prompt(prompt_q, prompt_d)
+    # extrait les deux sections optimisées → prompt single-pass 11 champs
 ```
 
-**Propriété clé :** le prompt ne progresse que si B3 est passé. Pas de commit sans preuve de fonctionnement.
+**Propriétés clés :**
+- `prompt_q` et `prompt_d` évoluent indépendamment — le signal de chaque boucle est propre
+- La question gelée entre Stage 1 et Stage 2 empêche de perdre une bonne question en itérant sur les distracteurs
+- `final_prompt.txt` est un prompt standard 11 champs (déployable comme avant)
+
+**Paramètres CLI :**
+```bash
+python scripts/optimize_prompt.py \
+  --models mistral_7b \
+  --k 20 \
+  --max-q-attempts 3 \
+  --max-d-attempts 5
+```
 
 ### Modèles ciblés — ordre du plus petit au plus grand
 
@@ -247,33 +290,62 @@ contredisent.
 
 ---
 
-## Perspectives futures — Architecture alternative (non prioritaire)
+## Architecture v3 — Two-stage (implémentée 2026-05-19)
 
-### Architecture 2 : question gelée, distracteurs itérés séparément
+Anciennement "Perspectives futures — Architecture alternative". Implémentée dans `scripts/optimize_prompt.py`.
 
-Au lieu de régénérer le QCM complet à chaque tentative, séparer les deux problèmes :
+### Schémas Pydantic (nouveaux)
 
-**Étape 1 — Évaluation de la question**
-Générer une question, la valider sur les métriques question-only :
-A1 (is question), A2 (no negation), A3 (originality), A4 (readability),
-B1 (relevance), B4 (disclosure), B5 (difficulty), B6 (answerability).
-Si la question passe → la geler.
+```python
+class MCQStep1(BaseModel):
+    question: str
+    question_comment: Optional[str] = ""
+    correct_answer: str
 
-**Étape 2 — Optimisation des distracteurs**
-Avec la question gelée, régénérer **uniquement les distracteurs** (pas le stem) jusqu'à B2 + B3 passés.
-Chaque distracteur défaillant est retravaillé individuellement.
+class MCQStep2(BaseModel):
+    distractor_1: str; distractor_1_comment: Optional[str] = ""
+    distractor_2: str; distractor_2_comment: Optional[str] = ""
+    distractor_3: str; distractor_3_comment: Optional[str] = ""
+```
 
-**Avantage :** espace d'optimisation réduit — on cherche seulement dans l'espace des distracteurs d'une question fixée.
+`assemble_mcq(step1, step2) → MCQQuestion` : mélange aléatoire des slots a-d.
 
-**Prérequis technique :** la génération doit être découplée en deux appels distincts —
-actuellement tout est généré en une seule passe (un seul JSON). Il faudrait un second prompt
-qui reçoit `{question, bonne_réponse, fiche_LISA}` et retourne uniquement les 3 distracteurs.
+### Structure des prompts avec balises de section
 
-**Cohérence avec l'optimisation du prompt :** les deux métriques à optimiser sont indépendantes.
-On pourrait avoir un prompt-question et un prompt-distracteurs, chacun optimisé séparément par
-Claude avec le signal de sa métrique propre.
+```
+prompt_q :
+  <<<DEBUT_REGLES_QUESTION>>>
+  [règles question — modifiées par Qwen si A1/A2/A3/A4/B1 échouent]
+  <<<FIN_REGLES_QUESTION>>>
+  → JSON 3 champs : question, question_comment, correct_answer
 
-**Pourquoi ne pas la prioriser maintenant :** nécessite un refactoring de la génération (deux appels au lieu d'un) et un prompt de génération de distracteurs autonome à construire de zéro. L'approche rollback apporte déjà une amélioration sans toucher à l'architecture de génération.
+prompt_d :
+  Question : <<<QUESTION>>>  Réponse : <<<REPONSE_CORRECTE>>>  Contenu : <<<CONTENU_EDUCATIF>>>
+  <<<DEBUT_REGLES_DISTRACTEURS>>>
+  [règles distracteurs — modifiées par Qwen si B3 échoue]
+  <<<FIN_REGLES_DISTRACTEURS>>>
+  → JSON 6 champs : distractor_1/2/3 + comments
+```
+
+`build_final_prompt(prompt_q, prompt_d)` extrait les deux sections et produit un prompt single-pass 11 champs.
+
+### Métriques question (Stage 1) — toutes locales, sans GPT-4o
+
+| Id | Métrique | Seuil | Implémentation |
+|----|----------|-------|----------------|
+| A1 | is_question | True | `eval/question_check.py` |
+| A2 | no negation | True | `eval/negation.py` (anglais uniquement — bug connu) |
+| A3 | originality | ≥ 0.75 | `eval/originality.py` (BGE cosine) |
+| A4 | readability (FK) | ≥ 12 | `eval/readability.py` |
+| B1 | relevance | ≥ 0.5 | `eval/relevance.py` (BGE cosine) |
+
+### Dettes techniques
+
+| # | Problème | Impact | Statut |
+|---|----------|--------|--------|
+| 1 | `starts_with_negation()` en anglais → A2 toujours True sur français | A2 inutile | Non bloquant, documenté |
+| 2 | `render_trace.py` ne parse pas `question_quality` ni `stage` | HTML trace partiel | Non bloquant |
+| 3 | VRAM : BGE (~440 MB) coexiste avec SLM sur GPU | Risque OOM sur 27B+ | À surveiller |
 
 ---
 
@@ -282,8 +354,8 @@ Claude avec le signal de sa métrique propre.
 1. ~~Run both models on a real LISA sheet prompt and compare MCQ output quality~~ → benchmark script done
 2. ~~Fix evaluation pipeline issues (embedding model, context, position bias, raw scores)~~ → done
 3. ~~Implémenter `scripts/optimize_prompt.py`~~ → done (v1)
-4. **Implémenter le rollback dans `optimize_model()`** (algorithme v2 ci-dessus)
-5. Lancer un run complet sur les 13 modèles (petit → grand) avec la v2 et comparer le taux B3 à la v1
+4. ~~Implémenter le rollback + architecture deux étapes (question gelée)~~ → done (v3, 2026-05-19)
+5. **Lancer un run complet sur les 13 modèles** avec la v3 et comparer le taux B3 à la v1
 6. Analyser `plot_b3.png` : vérifier que la moyenne glissante monte sur les premiers modèles
 7. Run reliability tests (`reliability_test.py`) avant d'interpréter les résultats de benchmark
 8. Implement ambiguity window `[0.3 – 0.75]` once calibration data is available

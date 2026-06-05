@@ -1,0 +1,49 @@
+À partir du contenu éducatif suivant, générez une question évaluative et sa réponse correcte.
+
+CONSIGNES DE RÉDACTION :
+La question doit évaluer la compréhension des idées principales du contenu fourni.
+
+<<<DEBUT_REGLES_QUESTION>>>
+Règles impératives pour la question (stem) :
+1. VIGNETTE CLINIQUE OBLIGATOIRE : La question DOIT débuter par un cas patient concret. Exigences minimales : âge chiffré, sexe, motif de consultation, 2 signes cliniques précis. Interdiction absolue des questions théoriques (ex: "Quels sont les signes...", "Définissez...", "Comment est perçue..."). SI LA QUESTION NE CONTIENT PAS D'ÂGE ET DE SEXE, ELLE EST INVALIDE. Même si le texte source est théorique, vous DEVEZ inventer un scénario patient (âge, sexe, contexte) pour contextualiser la question. Les questions débutant par "Quelle posture", "Quels sont", "Définissez" sont INTERDITES.
+2. ORIGINALITÉ TEXTUELLE (CRITIQUE) : Interdiction totale de reproduire la syntaxe du texte source. Aucun enchaînement de 3 mots consécutifs du texte original ne doit apparaître dans la question. LES ÉNUMÉRATIONS DE SIGNES CLINIQUES DOIVENT ÊTRE REFORMULÉES : interdiction de copier la liste des symptômes du texte source mot pour mot. Utilisez des synonymes ou intégrez les signes dans le flux narratif. La question doit tester l'application des connaissances à un cas nouveau, pas la restitution de définitions. La question ne doit jamais ressembler à un titre de chapitre. Transformez les concepts abstraits en situations cliniques concrètes.
+3. FORMULATION : Phrase interrogative directe, affirmative (jamais de négation "sauf", "pas", "non"). Se terminer impérativement par "?".
+4. INDÉPENDANCE : La question doit être compréhensible sans relire le texte source, mais la réponse ne doit pas être devinable par simple recherche de mots-clés (Google-proof).
+5. VOCABULAIRE : Interdiction des termes méta-textuels ("recommandation", "guide", "chapitre", "protocole"). Utiliser des verbes d'action clinique ("Quel traitement initier", "Quelle attitude adopter", "Quel diagnostic évoquer").
+6. LISIBILITÉ OPTIMALE (CRITIQUE) : Viser une simplicité maximale pour un score élevé. Phrases très courtes (maximum 15 mots par phrase). Structure Sujet-Verbe-Complément obligatoire. Interdiction formelle des propositions relatives ("qui", "dont", "où", "lequel") et des participes passés utilisés comme adjectifs complexes. Découper les informations en plusieurs phrases si nécessaire. Une seule idée par phrase. Le vocabulaire doit être courant sauf termes médicaux indispensables. L'objectif est une lecture fluide et rapide.
+7. CONCISION : Une seule idée centrale évaluée. Éviter les ambiguïtés.
+
+Règles impératives pour la réponse correcte :
+1. SYNTHÈSE CLINIQUE : La réponse doit déduire la conclusion à partir du cas, pas copier une phrase du cours. Elle doit résoudre le problème posé dans la vignette.
+2. RÉÉCRITURE PROFONDE : Changer obligatoirement la voix grammaticale (active/passive) et le vocabulaire par rapport au texte source. La similarité lexicale doit être minimale.
+3. FORMAT : Une phrase unique, factuelle, concise (max 20 mots). Structure simple Sujet-Verbe-Complément. Éviter les énumérations longues.
+4. ANCRAGE : La réponse doit être justifiable uniquement par le contenu éducatif fourni, sans connaissance externe.
+5. SÉCURITÉ : Ne jamais inclure d'indices dans la formulation qui rendraient la réponse évidente par élimination linguistique (cluing).
+6. NON-RÉPÉTITION : La réponse ne doit pas reprendre les termes exacts de la question (tautologie interdite). Elle doit apporter une information nouvelle et conclusive.
+<<<FIN_REGLES_QUESTION>>>
+
+CONTRAINTES STRICTES DE SORTIE :
+1. La sortie doit être STRICTEMENT un unique objet JSON valide.
+2. Interdiction ABSOLUE d'ajouter :
+   - des blocs ```json
+   - du texte avant ou après le JSON
+   - des explications hors champs JSON
+3. Utiliser uniquement des doubles quotes : "..."
+4. Le JSON doit contenir EXACTEMENT les 3 champs suivants :
+
+{
+  "question": "...",
+  "question_comment": "...",
+  "correct_answer": "..."
+}
+
+RÈgles POUR LES CHAMPS :
+- "question" : forme interrogative directe, se terminant par "?", sans négation
+- "question_comment" : ce que la question évalue ou un piège pédagogique courant
+- "correct_answer" : réponse correcte concise, factuelle, ne reprenant pas les mots de la question
+
+CONTENU ÉDUCATIF :
+<<<CONTENU_EDUCATIF>>>
+
+INSTRUCTION FINALE :
+Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.

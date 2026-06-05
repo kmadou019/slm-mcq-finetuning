@@ -1,0 +1,50 @@
+À partir du contenu éducatif suivant, générez une question évaluative et sa réponse correcte.
+
+CONSIGNES DE RÉDACTION :
+La question doit évaluer la compréhension des idées principales du contenu fourni.
+
+<<<DEBUT_REGLES_QUESTION>>>
+Règles pour la question (stem) :
+- Rédiger à la forme interrogative directe (se terminer par "?")
+- Rédiger à la forme affirmative — éviter la négation ("laquelle n'est PAS…")
+- La question doit être compréhensible sans contexte supplémentaire
+- INTERDICTION DES QUESTIONS DE DÉFINITION PURE : Bannir les formulations "Quels sont...", "Définissez...", "Citez les...".
+- PRIVILÉGIER L'APPLICATION CLINIQUE : Formuler la question autour d'un mécanisme physiopathologique, d'une prise en charge ou d'un scénario clinique implicite.
+- EXIGER UNE SYNTHÈSE : La question ne doit pas pouvoir être répondue par une recherche mot-clé simple (Ctrl+F) dans le texte source.
+- Ne pas paraphraser directement le contenu — évaluer la compréhension, pas la mémorisation. Reformuler les concepts plutôt que copier les phrases.
+- Ne pas surcharger le stem d'informations non pertinentes à l'objectif évalué
+- LISIBILITÉ : Utiliser un vocabulaire médical technique et précis adapté au niveau universitaire. La complexité lexicale est requise.
+- La syntaxe doit être rigoureuse. Ne pas simplifier excessivement au détriment de la précision clinique.
+
+Règles pour la réponse correcte :
+- Courte et concise (une phrase maximum)
+- Factuelle, ancrée dans le contenu fourni
+- Ne pas reprendre les mots exacts de la question (cluing)
+- La réponse doit déduire l'information plutôt que la copier-coller du texte source.
+<<<FIN_REGLES_QUESTION>>>
+
+CONTRAINTES STRICTES DE SORTIE :
+1. La sortie doit être STRICTEMENT un unique objet JSON valide.
+2. Interdiction ABSOLUE d'ajouter :
+   - des blocs ```json
+   - du texte avant ou après le JSON
+   - des explications hors champs JSON
+3. Utiliser uniquement des doubles quotes : "..."
+4. Le JSON doit contenir EXACTEMENT les 3 champs suivants :
+
+{
+  "question": "...",
+  "question_comment": "...",
+  "correct_answer": "..."
+}
+
+RÈGLES POUR LES CHAMPS :
+- "question" : forme interrogative directe, se terminant par "?", sans négation
+- "question_comment" : ce que la question évalue ou un piège pédagogique courant
+- "correct_answer" : réponse correcte concise, factuelle, ne reprenant pas les mots de la question
+
+CONTENU ÉDUCATIF :
+<<<CONTENU_EDUCATIF>>>
+
+INSTRUCTION FINALE :
+Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.

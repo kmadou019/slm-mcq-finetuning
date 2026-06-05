@@ -19,7 +19,8 @@ echo "════════════════════════�
 
 python scripts/optimize_prompt.py \
     --k 20                        \
-    --max-attempts 5
+    --max-q-attempts 3            \
+    --max-d-attempts 5
 
 echo "════════════════════════════════════════"
 echo "  Terminé : $(date)"

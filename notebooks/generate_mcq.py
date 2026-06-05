@@ -4,11 +4,15 @@
 
 from sys import argv
 from typing import Optional
+from pathlib import Path
 import os
 import re
 import unicodedata
 import ast
 import json
+
+_ROOT = Path(__file__).resolve().parent.parent
+_DATA = _ROOT / "data"
 
 import requests
 import pandas as pd
@@ -617,8 +621,8 @@ def generate_mcq_hf(content, pipe, temperature, disable_thinking=False):
 
 
 def get_checkpoint(model_name):
-    start_path = f"../data/checkpoints/start_{model_name}"
-    df_path = f"../data/checkpoints/df_in_construction_{model_name}.csv"
+    start_path = _DATA / f"checkpoints/start_{model_name}"
+    df_path = _DATA / f"checkpoints/df_in_construction_{model_name}.csv"
     try:
         with open(start_path, "r") as start:
             start = start.readline()
@@ -630,10 +634,10 @@ def get_checkpoint(model_name):
 
 
 def save_checkpoint(start, df_in_construction, model_name):
-    os.makedirs("../data/checkpoints", exist_ok=True)
-    with open(f"../data/checkpoints/start_{model_name}", "w") as fic:
+    os.makedirs(_DATA / "checkpoints", exist_ok=True)
+    with open(_DATA / f"checkpoints/start_{model_name}", "w") as fic:
         fic.write(str(start))
-    df_in_construction.to_csv(f"../data/checkpoints/df_in_construction_{model_name}.csv", index=False)
+    df_in_construction.to_csv(_DATA / f"checkpoints/df_in_construction_{model_name}.csv", index=False)
 
 
 _THINKING_MODELS = {"nemotron_nano_30b", "qwen3_5_35b_a3b"}
@@ -697,8 +701,8 @@ def for_a_model(df_test, model_name, save_name, use_ollama=False):
     df = flatten(df_test, save_name)
 
     # Clean checkpoint for this model
-    for f in [f"../data/checkpoints/df_in_construction_{save_name}.csv",
-              f"../data/checkpoints/start_{save_name}"]:
+    for f in [_DATA / f"checkpoints/df_in_construction_{save_name}.csv",
+              _DATA / f"checkpoints/start_{save_name}"]:
         if os.path.exists(f):
             os.remove(f)
 
@@ -769,11 +773,9 @@ if __name__ == "__main__":
     OPENAI_KEY = os.environ.get("OPENAI_API_KEY")
     login(token=HF_TOKEN)
 
-    df = pd.read_csv("../data/lisa_sheets.csv")
+    df = pd.read_csv(_DATA / "lisa_sheets.csv")
 
-    file_path = "../data/train_test_split/test_folders.json"
-
-    with open(file_path, "r", encoding="utf-8") as file:
+    with open(_DATA / "train_test_split/test_folders.json", "r", encoding="utf-8") as file:
         test_folders = json.load(file)
 
     df_test = df[df.folder.isin(test_folders)].reset_index(drop=True)
@@ -810,13 +812,13 @@ if __name__ == "__main__":
                 indices_to_drop.append(idx)
 
         df = df.drop(indices_to_drop).reset_index(drop=True)
-        df.to_csv("../data/correct_mcqs_dataset/" + save_name + ".csv")
+        df.to_csv(_DATA / "correct_mcqs_dataset" / f"{save_name}.csv")
         print(f"Number of correct MCQs for {save_name} {len(df)} / {initial_len}", file=file)
         return df
 
     # # MCQs Generation
 
-    with open("../data/models.json", encoding="utf-8") as _f:
+    with open(_DATA / "models.json", encoding="utf-8") as _f:
         models = json.load(_f)
 
     if len(argv) < 2 or argv[1] not in models:
@@ -849,7 +851,7 @@ if __name__ == "__main__":
         df_test = df_test.iloc[indexes].reset_index(drop=True)
         print(f"✓ Subset : {len(df_test)} lisa sheets (indexes: {argv[2:]})")
 
-    with open("correctness.output", mode="a") as f:
+    with open(_ROOT / "correctness.output", mode="a") as f:
         df = for_a_model(df_test, model_name, save_name)
         if df.empty:
             print(f"[WARN] Aucun MCQ généré pour {save_name}, on arrête.")

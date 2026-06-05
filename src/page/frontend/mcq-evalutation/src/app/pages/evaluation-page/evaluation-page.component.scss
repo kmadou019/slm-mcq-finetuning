@@ -599,6 +599,40 @@ table {
   flex-wrap: wrap;
 }
 
+.new-mcq-banner {
+  position: sticky;
+  top: 3px;
+  z-index: 98;
+  background: #e8f4fd;
+  border-bottom: 2px solid $primary;
+  padding: 8px 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: $gray-700;
+}
+
+.filter-toggle {
+  background: white;
+  border: 1px solid $gray-300;
+  border-radius: 20px;
+  padding: 4px 16px;
+  cursor: pointer;
+  font-size: 13px;
+  color: $gray-600;
+  transition: all 0.15s;
+
+  &:hover { background: $gray-100; }
+
+  &.active {
+    background: $primary;
+    border-color: $primary;
+    color: white;
+    font-weight: 600;
+  }
+}
+
 .review-icon {
   font-size: 18px;
 }

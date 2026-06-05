@@ -1,0 +1,137 @@
+À partir du contenu éducatif suivant, générez exactement une question à choix unique avec quatre options de réponse (a, b, c, d), dont une seule est correcte.
+
+CONSIGNES DE RÉDACTION :
+La question doit évaluer la compréhension des idées principales du contenu fourni.
+
+<<<DEBUT_REGLES_QUESTION>>>
+Règles pour la question (stem) :
+- Rédiger à la forme interrogative directe (se terminer par "?")
+- Rédiger à la forme affirmative — éviter la négation ("laquelle n'est PAS…")
+- Intégrer OBLIGATOIREMENT un contexte clinique concret (patient, situation) : interdiction des questions théoriques directes
+- Reformuler impérativement les concepts : interdiction de copier les titres ou listes. Transformer la connaissance en application
+- Éviter les formulations de type "Quelles sont les..." qui favorisent le rappel par cœur
+- OPTIMISATION LISIBILITÉ (FK) : Maximum 20 mots par phrase. Une seule proposition principale par phrase.
+- Syntaxe simple stricte (Sujet-Verbe-Complément) : éviter les subordonnées complexes pour maximiser le score FK.
+- Ne pas surcharger le stem d'informations non pertinentes à l'objectif évalué
+- Utiliser un vocabulaire accessible : réserver le jargon technique strict au diagnostic cible uniquement.
+- Si une phrase dépasse 20 mots, la scinder en deux phrases distinctes.
+
+Règles pour la réponse correcte :
+- Courte et concise (une phrase maximum)
+- Factuelle, ancrée dans le contenu fourni
+- Ne pas reprendre les mots exacts de la question (cluing)
+- Employer un vocabulaire médical technique distinct de celui du stem
+<<<FIN_REGLES_QUESTION>>>
+
+<<<DEBUT_REGLES_DISTRACTEURS>>>
+Règles pour les distracteurs :
+1. Homogénéité Sémantique et Cohérence Physiopathologique Stricte : Même catégorie que la [réponse correcte] (ex: si [mécanisme], alors [autre mécanisme]). Interdit : mélanger [symptôme] et [cause]. Le distracteur doit partager la même [intention diagnostique ou thérapeutique] que la bonne réponse. Si la question porte sur l'[étiologie], le distracteur ne peut pas porter sur le [pronostic] ou le [suivi fonctionnel]. Interdit absolu : proposer un [bilan fonctionnel] (ex: [test cognitif], [enregistrement d'activité]) pour une question demandant une [cause structurelle ou biologique]. Si la réponse est un [examen de confirmation], le distracteur doit être un [examen alternatif de confirmation], pas un [examen de dépistage]. L'alignement sur l'objectif clinique (débrouillage, confirmation, étiologie, surveillance) est impératif. Le [Système Organique] impliqué doit être strictement identique à celui de la [réponse correcte]. Interdit de changer d'organe (ex: [Rein] vs [Foie]) sauf si la confusion physiopathologique est une erreur classique documentée pour les [symptômes présentés]. Un changement de système organique sans lien physiopathologique direct est interdit car il crée un distracteur trivialement faux. De plus, le distracteur doit rester compatible avec la [sémiologie décrite] dans la question. Interdit de proposer une [localisation anatomique] qui est physiologiquement incapable de produire les [symptômes observés], car cela rendrait l'élimination immédiate pour un étudiant de rang B. Dans un contexte d'[urgence vitale], le [Système Organique] ciblé doit impérativement expliquer la [détresse présentée] (ex: interdit [Système Nerveux Central] pour un [Choc Circulatoire] sans lien direct documenté). Le distracteur doit appartenir au même [univers clinique] que la question. Si la question décrit un [syndrome A], le distracteur ne peut pas impliquer un [syndrome B] sauf si la confusion entre A et B est une erreur pédagogique documentée. Interdit de sortir du [cadre diagnostique ou thérapeutique] défini par la [sémiologie d'entrée]. En cas de [détresse vitale], toute proposition doit concerner un système capable de générer cette détresse (ex: [Cœur/Poumons] pour [Choc/Dyspnée]).
+
+2. Structure Miroir : Syntaxe et longueur doivent calquer la [réponse correcte]. L'erreur doit être un remplacement de terme, pas une suppression de qualificateur. Conserver les opérateurs logiques de nécessité ([must], [required]) sauf substitution par une alternative équivalente. La structure grammaticale doit être identique pour éviter des indices linguistiques. La longueur de la phrase doit être visuellement équivalente à la bonne réponse pour ne pas créer de biais de longueur. Si la réponse correcte est une phrase imperative courte, le distracteur doit l'être aussi. Éviter les phrases complexes si la réponse est simple. La cohérence visuelle est cruciale pour ne pas donner d'indice par la forme.
+
+3. Précision Terminologique : Interdire l'exagération sémantique (ex: [terme modéré] vs [terme excessif]). Le terme médical doit être exact, seule l'association ou l'attribut change. Interdit de confondre [déficit fonctionnel] et [lésion structurelle]. Interdit formel d'utiliser des qualificatifs subjectifs non définis ([simple], [complexe], [lourd]) sauf si ce sont des termes techniques officiels. Interdit d'inventer des catégories administratives ([ordonnance complexe]) si la dichotomie standard est ([ordonnance simple] vs [autre terme officiel]). Interdit absolu d'utiliser des antonymes linguistiques (ex: [complexe] pour [simple]) si ils ne correspondent pas à des statuts juridiques distincts dans le contexte. Le statut administratif doit être une alternative officielle valide, pas une opposition sémantique inventée. La terminologie doit correspondre au niveau d'enseignement visé (ex: [terminologie exacte du référentiel]).
+
+4. Cible Conceptuelle Identique : Le distracteur doit porter sur la [même entité clinique] que la réponse correcte. Interdit de changer de syndrome ou de pathologie pour créer une fausse réponse. Interdit absolu de proposer une [complication générale du contexte] si la réponse vise un [critère spécifique du syndrome]. Le distracteur doit sembler appartenir au [concept cible] mais en violer une condition définitionnelle. Interdit formel de confondre les conséquences générales du [contexte clinique] avec les critères spécifiques du [concept cible]. Interdit de substituer l'[objet principal de la procédure] par un [objet associé ou secondaire]. Interdit strict de proposer un [examen de séquelle] lorsque la question demande un [examen de cause]. Un [examen de fonction] ne peut jamais remplacer un [examen de cause]. La distinction entre [exploration étiologique] et [évaluation fonctionnelle] doit être respectée. Interdit de proposer un examen diagnostiquant une conséquence (ex: [EEG] pour des convulsions secondaires) lorsque la question porte sur la cause primaire (ex: [hémorragie]). Le focus doit rester sur l'objet exact de la question.
+
+5. Qualificateurs Modaux : Interdire les termes '[toujours]', '[jamais]', '[seulement]', '[sans]' sauf si médicalement incontournable, car ils rendent l'élimination trop facile. L'usage de '[sans]' devant une [étape critique] est spécifiquement interdit car il crée un distracteur trivialement faux (ex: 'sans essai', 'sans validation'). Les modalités de fréquence ou de nécessité doivent être nuancées pour requérir un jugement clinique. Les termes absolus sont des indices de fausseté pour un étudiant attentif. Privilégier des modalisateurs comme '[parfois]', '[souvent]', '[en première intention]' si approprié, mais attention à la véracité.
+
+6. Niveau de Granularité : Parallèles à la bonne réponse. Interdit de proposer une [generalisation excessive] si la réponse est [spécifique]. Le niveau de détail technique doit être équivalent (ex: ne pas opposer un [nom de famille de médicament] à une [classe thérapeutique] sauf si la question le demande). La précision anatomique ou physiopathologique doit être comparable (ex: [lobe cérébral] vs [région cérébrale]). Interdit absolu : Utiliser un terme générique ([Hyperonyme]) si la réponse correcte est spécifique ([Hyponyme]). Ex: Interdit [Fonction Organique Globale] si la réponse est [Structure Spécifique]. Un distracteur techniquement vrai mais trop large (ex: [Organe] vs [Partie de l'Organe]) est interdit car il ne permet pas de discriminer un étudiant de rang B. La précision doit être équivalente pour éviter qu'un distracteur ne soit éliminé par simple manque de spécificité. Un énoncé techniquement vrai mais diagnostiquement imprécis est considéré comme un distracteur faible. Le distracteur doit représenter une [erreur de classification] spécifique, pas une [vérité partielle] englobante. La finesse du détail doit matcher la réponse correcte.
+
+7. Forme Affirmative : Exprimés à la forme affirmative. Éviter les négations qui complexifient la lecture sans ajouter de valeur pédagogique. La forme affirmative est standard pour les propositions de QCM médicaux.
+
+8. Plausibilité Rang B et Hiérarchie des Soins : L'erreur doit porter sur un détail technique spécifique. Le distracteur doit nécessiter une connaissance médicale pour être éliminé. Interdit de supprimer une [étape de validation obligatoire] ou un [prérequis de sécurité] sans le remplacer par une [procédure alternative validée]. L'erreur doit être un changement de paramètre, pas une suppression de processus. Interdit absolu d'utiliser des formulations négatives totales sur les étapes critiques (ex: 'sans [étape critique]', 'absence de [validation]'). Le distracteur doit maintenir l'existence de l'étape mais en altérer la modalité (acteur, timing, condition). Interdit formel de proposer une [modalité d'imagerie obsolète] pour un [tissue cible] donné (ex: [radiographie standard] pour [parenchyme cérébral]). Le distracteur doit être un examen techniquement capable d'explorer la zone, mais incorrect pour la [pathologie spécifique] ou l'[indication précise]. Interdit : proposer un [outil de monitoring] pour un [diagnostic étiologique]. L'examen proposé doit être médicalement réalisable mais contextuellement inapproprié. Le distracteur doit représenter un diagnostic différentiel crédible partageant la même sémiologie initiale. Le distracteur doit être une cause plausible des [symptômes décrits] dans un autre contexte, mais incorrect pour le [mécanisme spécifique] identifié ici. Interdit de proposer une pathologie qui n'explique pas les [signes cliniques] mentionnés. Interdit absolu : Proposer un [examen diagnostique] avant une [mesure de stabilisation vitale] dans un contexte d'[urgence engagée], car cela constitue une erreur de priorité trivialement éliminable pour un étudiant de rang B. Le distracteur doit respecter la hiérarchie [Sauvetage > Diagnostic] sauf si l'erreur visée est spécifiquement le [timing] d'un examen après stabilisation. Dans un contexte de [détresse vitale], les actions de [stabilisation hémodynamique ou respiratoire] priment sur les actions [diagnostiques étiologiques]. Un distracteur proposant un [examen complémentaire] avant la [sécurisation du patient] est interdit car trivialement faux. L'erreur doit porter sur le [choix de l'examen] ou le [traitement spécifique], pas sur l'ordre de priorité ABC. Cette règle vise à éviter les distracteurs de type [Rank F] qui inversent les fondamentaux de la réanimation. Si la réponse correcte est une mesure de [stabilisation générale] (ex: [voies veineuses], [monitoring]), les distracteurs ne peuvent pas être des [traitements étiologiques spécifiques] (ex: [anticoagulant], [antibiotique]) ni des [examens spécialisés] (ex: [échographie], [scanner]) car cela violerait la priorité vitale. Dans une question de 'première action', les distracteurs doivent varier le type d'erreur de priorité : l'un peut privilégier le [diagnostic] avant la [stabilisation], l'autre le [traitement étiologique] avant la [sécurisation], le troisième une [modalité de surveillance] inadéquate. Interdit de générer 3 distracteurs proposant tous un [examen complémentaire] avant la [stabilisation]. La variété des erreurs de priorité est obligatoire.
+
+9. Confusion Commune et Erreur Classique : L'erreur doit refléter une confusion entre concepts voisins (ex: [organisme A] vs [organisme B]), jamais une affirmation trivialement fausse. La confusion doit porter sur la nature d'un élément ([acteur A] vs [acteur B]), pas sur sa présence ou absence ([avec essai] vs [sans essai]). Le [professionnel de santé] ou l'[acteur] cité doit appartenir au [même champ d'intervention] que la bonne réponse. Interdit les professions sans lien fonctionnel direct avec la [procédure cible]. La confusion doit être cliniquement pertinente (ex: [examen de première intention] vs [examen de seconde intention]), pas absurde. La confusion doit reposer sur une ambiguïté clinique classique (ex: [Mécanisme A] vs [Mécanisme B] dans le même contexte) et non sur une erreur grossière de système organique sans lien physiopathologique. Lorsque les [symptômes] pointent vers un [sous-système spécifique], la confusion doit porter sur des [sous-catégories voisines] de ce sous-système, pas sur des [compartiments distincts] facilement différenciables par la sémiologie. Interdit les erreurs de [système organique] majeures sans lien physiopathologique. La confusion doit être cliniquement pertinente et non sur une erreur grossière de système organique sans lien physiopathologique. Les erreurs doivent être celles commises par des étudiants en formation, pas par des laymen. Interdit d'ancrer le distracteur sur une [étiologie spécifique] (ex: [Embolie Pulmonaire]) si le contexte clinique est [non étiologisé] ou [polyvalent], sauf si cette assumption constitue l'erreur pédagogique centrale documentée. Le distracteur ne doit pas requérir la validation d'un diagnostic non établi dans l'énoncé pour être considéré comme plausible.
+
+10. Alignement Contextuel : Respecter les mêmes contraintes cliniques que la question (ex: '[condition restrictive]'). Interdit de proposer une vérité générale hors contexte. Une vérité générale ne doit pas valider le distracteur si elle ignore la [contrainte spécifique du cas]. Si le cas est [urgent], le distracteur ne peut pas être un [examen de routine non urgent] sauf si c'est l'erreur visée (timing). Interdit de proposer une action qui retarderait la prise en charge vitale sans justification clinique forte. Le distracteur doit s'inscrire dans la fenêtre temporelle de l'[urgence décrite]. La chronologie des soins est primordiale : [Sécurisation] avant [Investigation] avant [Traitement de fond]. Toute inversion de cette chronologie dans un contexte d'urgence est un défaut majeur sauf si c'est l'objet précis de la question. Le distracteur doit respecter le contexte de [ressources disponibles] (ex: [urgence préhospitalière] vs [hôpital équipé]).
+
+11. Nuance d'Erreur : Privilégier une inversion de modalité (ex: '[obligatoire]' vs '[possible]') plutôt qu'un changement de thème. L'erreur doit être subtile mais déterminante. Une erreur de nuance est plus pédagogique qu'une erreur de thème.
+
+12. Distinction Comorbidité vs Définition : Ne jamais proposer une [pathologie associée fréquente] comme étant un [critère définitionnel] du syndrome cible. Une [condition associée] ne valide pas le [diagnostic cible] si elle n'en est pas un signe cardinal selon les références. Interdit d'affirmer qu'une [comorbidité plausible] fait partie intégrante de la [définition stricte] du concept cible. La confusion entre [facteur de risque] et [critère diagnostique] est une erreur classique à exploiter, mais la comorbidité ne doit pas être présentée comme le diagnostic lui-même.
+
+13. Exclusion des Vérités Contextuelles : Un distracteur peut être médicalement vrai dans le [contexte général] mais doit être faux pour le [concept spécifique] interrogé. Interdit de générer une affirmation vraie dans l'absolue pour le patient mais hors du périmètre du [concept cible]. L'erreur doit être une attribution fausse au [concept cible], pas une vérité générale du [contexte clinique]. Interdit de valider un [examen de suivi] comme réponse à une question sur l'[examen diagnostique initial]. Le distracteur ne doit jamais contenir de clause concessive qui admet sa propre inadéquation (ex: 'mais il est plus souvent utilisé pour...', 'cependant...', 'bien que...'). Toute phrase contenant une opposition ou une concession est interdite. Le distracteur doit se présenter comme une vérité absolue dans le contexte de la question.
+
+14. Standardisation Terminologique : Utiliser exclusivement la nomenclature officielle des [actes], [prescriptions] et [statuts]. Interdit les approximations sémantiques ([complexe], [spécial]) non présentes dans les textes de loi ou recommandations. Les termes doivent être ceux utilisés dans le [référentiel de formation].
+
+15. Diversité des Distracteurs : Les 3 distracteurs générés doivent explorer des erreurs distinctes. Interdit de répéter le même examen, le même médicament ou le même concept médical sur plusieurs distracteurs (ex: proposer [EEG] deux fois). Chaque distracteur doit cibler une confusion clinique différente (ex: 1. Mauvaise modalité d'imagerie, 2. Mauvais timing, 3. Mauvais objectif clinique). La variété des erreurs permet de tester différentes connaissances. Les 3 distracteurs doivent explorer des catégories d'erreurs distinctes (ex: 1. Erreur de Priorité ABC, 2. Erreur de Spécificité Thérapeutique, 3. Erreur de Modalité Diagnostique). Interdit d'avoir 2 distracteurs appartenant à la même catégorie d'erreur clinique (ex: 2 examens d'imagerie prématurés). La diversité cognitive est impérative.
+
+16. Cohérence Syndromique Stricte : Le distracteur doit appartenir au même [univers clinique] que la question. Si la question décrit un [syndrome A], le distracteur ne peut pas impliquer un [syndrome B] sauf si la confusion entre A et B est une erreur pédagogique documentée. Interdit de sortir du [cadre diagnostique ou thérapeutique] défini par la [sémiologie d'entrée]. Le distracteur doit être une cause plausible des [symptômes décrits] dans un contexte similaire, mais incorrect pour le [mécanisme spécifique] identifié ici. Interdit de proposer une pathologie qui n'explique pas les [signes cliniques] mentionnés. Interdit absolu : Proposer un [examen diagnostique] avant une [mesure de stabilisation vitale] dans un contexte d'[urgence engagée], car cela constitue une erreur de priorité trivialement éliminable pour un étudiant de rang B. En cas de [choc] ou de [détresse respiratoire], la priorité est toujours la [stabilisation hémodynamique/ventilatoire] avant l'[étiologie]. Un distracteur proposant un [acte étiologique] en première intention dans ce contexte est interdit. Le distracteur doit être compatible avec la [gravité du tableau].
+
+Distracteurs INTERDITS :
+- "Toutes les propositions précédentes sont correctes" / "Aucune des propositions précédentes" / Combinaisons ("A et C").
+- Proposition absurde ou trivialement éliminable.
+- Affirmations vraies dans l'absolue mais ne répondant pas à la question.
+- Mélange de catégories (ex: [fait associé] vs [concept central]).
+- Décrire une manifestation clinique si la réponse correcte définit une cause biologique.
+- Terme trop générique facilement éliminable par comparaison de précision.
+- Proposer une [contre-indication] si la question porte sur le [mechanisme principal].
+- Vérité partielle : Correcte si l'on retirait un mot (ex: omettre "[branche spécifique]").
+- Généralisation hiérarchique : Entité englobante au lieu de l'entité cible précise.
+- Vérité Générale Hors Contexte : Vraie mais ignore la contrainte spécifique du cas.
+- Confusion Contexte/Concept : Présenter une conséquence générale du [contexte] comme un critère spécifique du [concept].
+- Exagération Clinique : Utiliser un terme plus grave que la réalité (ex: [pathologie majeure] pour [signe mineur]).
+- Qualificateurs Absolus Faciles : Utilisation de '[seulement]', '[toujours]' permettant une élimination logique sans savoir médical.
+- Exagération de sévérité pathophysiologique : Confondre [atteinte légère] vs [atteinte grave] (ex: faiblesse vs paralysie).
+- Comorbidité fréquente présentée comme critère définitionnel (ex: [pathologie associée] vs [symptôme cible]).
+- Vérité Contextuelle Hors Concept : Affirmation vraie pour le [contexte clinique] mais fausse pour le [concept spécifique] interrogé.
+- Attribution Erronée au Syndrome : Inclure une [condition associée] dans la [définition stricte] du syndrome cible.
+- Substitution d'Objet : Remplacer l'[élément central de la question] par un [élément périphérique] (ex: [accessoire] vs [équipement principal]).
+- Professionnel Inapproprié : Citer un [spécialiste] n'ayant pas la compétence légale ou fonctionnelle pour l'[acte demandé], même s'il est du domaine médical.
+- Suppression d'étape critique : Retirer une [étape obligatoire] sans alternative (ex: [sans essai] vs [avec essai]).
+- Terminologie Administrative Inventée : Utiliser des termes non officiels (ex: [ordonnance complexe]).
+- Négation totale d'une étape critique : Utiliser des formulations comme 'sans [validation]' ou 'absence de [procédure]' sur un prérequis de sécurité.
+- Antonyme administratif non officiel : Utiliser un opposé linguistique (ex: [complexe]) qui n'est pas un statut juridique valide.
+- Examen de Séquelle pour Cause : Proposer un [examen fonctionnel] lorsque la question demande une [exploration étiologique].
+- Modalité Techniquement Inadaptée : Proposer une [technique d'imagerie] incapable de visualiser la [lésion cible] (ex: [radiographie] pour [tissu mou]).
+- Examen de Surveillance pour Diagnostic : Proposer un [outil de monitoring] comme outil de [diagnostic initial].
+- Examen fonctionnel pour question étiologique : Proposer un [test d'activité] pour une recherche de [cause structurelle].
+- Phrase auto-invalidante : Distracteur qui admet dans son texte qu'il ne répond pas parfaitement à la question (ex: utilisation de "mais", "cependant", "plutôt").
+- Répétition Conceptuelle : Proposer le même examen ou la même classe médicamenteuse sur plusieurs distracteurs différents.
+- Hyperonyme générique masquant la précision requise (ex: [Catégorie Large] au lieu de [Élément Précis]).
+- Changement de [Système Organique] sans lien physiopathologique direct.
+- Diagnostic différentiel physiologiquement incompatible avec les signes présentés.
+- Pathologie Incompatible avec le Tableau : Proposer une [étiologie] qui ne peut pas produire les [signes vitaux] décrits (ex: [infection localisée] pour un [choc systémique]).
+- Erreur de Priorité en Urgence : Proposer un [acte secondaire] avant un [acte de sauvetage] dans un contexte de [détresse vitale].
+- Traitement Étiologique avant Stabilisation : Proposer un [médicament ciblé] avant la [mise en sécurité du patient] en contexte d'urgence vitale.
+- Examen Spécialisé avant Accès Veineux : Proposer un [examen d'imagerie avancé] avant la [pose de voies veineuses] en contexte de choc.
+- Pathologie Hors Système Vital : Proposer une [cause neurologique] pour un [choc circulatoire] sans lien direct documenté.
+- Inversion Chronologique des Soins : Proposer le [diagnostic] avant la [stabilisation] dans une question de "première action".
+- Confusion Urgence/Routine : Proposer un [examen de routine] dans un contexte d'[urgence vitale].
+- Assumption Étiologique Non Fondée : Proposer un [traitement spécifique] basé sur une [cause supposée] non confirmée dans l'énoncé.
+- Répétition de Catégorie d'Erreur : Proposer plusieurs distracteurs commettant le même type d'erreur logique (ex: 3 fois [Diagnostic avant Stabilisation]).
+<<<FIN_REGLES_DISTRACTEURS>>>
+
+CONTRAINTES STRICTES DE SORTIE :
+1. La sortie doit être STRICTEMENT un unique objet JSON valide.
+2. Interdiction ABSOLUE d'ajouter :
+   - des blocs ```json
+   - du texte avant ou après le JSON
+   - des explications hors champs JSON
+3. Le champ "correct_option" doit contenir EXACTEMENT une lettre minuscule parmi : "a", "b", "c", "d".
+4. Utiliser uniquement des doubles quotes : "..."
+5. Le JSON doit contenir EXACTEMENT les 11 champs suivants :
+
+{
+  "question": "...",
+  "question_comment": "...",
+  "option_a": "...",
+  "option_a_comment": "...",
+  "option_b": "...",
+  "option_b_comment": "...",
+  "option_c": "...",
+  "option_c_comment": "...",
+  "option_d": "...",
+  "option_d_comment": "...",
+  "correct_option": "a"
+}
+
+RÈGLES POUR LES COMMENTAIRES :
+- Chaque commentaire d'option doit expliquer brièvement pourquoi l'option est correcte ou incorrecte.
+- Le commentaire global de la question doit expliquer ce que la question évalue ou signaler un piège courant.
+- Les commentaires doivent être factuels, concis et pédagogiques.
+
+CONTENU ÉDUCATIF :
+<<<CONTENU_EDUCATIF>>>
+
+INSTRUCTION FINALE :
+Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.

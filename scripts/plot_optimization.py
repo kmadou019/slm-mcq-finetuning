@@ -1,33 +1,31 @@
 #!/usr/bin/env python3
 """
-Plot B3 distractor score evolution over all attempts, per model.
+Plot B3 distractor score evolution — simple view.
 
-X : cumulative attempt index (across all LISA sheets, in order)
-Y : average distractor score (mean of 3 scores, scale 1–5)
-
-Each point = one generation. Green = B3 passed, red = failed.
-Dashed vertical lines mark fiche boundaries.
-Orange annotations mark large prompt cuts by Claude.
+One figure per model: average B3 score vs cumulative distractor attempt.
+Vertical dashed lines mark fiche boundaries, labelled F1 F2 F3…
+Line color: green = fiche passed, red = failed.
 
 Usage:
   python scripts/plot_optimization.py
+  python scripts/plot_optimization.py --model gemma4_31b
   python scripts/plot_optimization.py --trace data/optimized_prompts/trace.jsonl
-  python scripts/plot_optimization.py --out results/b3_plot.png
+  python scripts/plot_optimization.py --out-dir results/
 """
 
 import argparse
 import json
+from collections import OrderedDict
 from pathlib import Path
 
 import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
-import numpy as np
 
 SCRIPT_DIR = Path(__file__).parent
-ROOT_DIR = SCRIPT_DIR.parent
+ROOT_DIR   = SCRIPT_DIR.parent
 
-DEFAULT_TRACE = ROOT_DIR / "data" / "optimized_prompts" / "trace.jsonl"
-DEFAULT_OUT   = ROOT_DIR / "data" / "optimized_prompts" / "plot_b3.png"
+DEFAULT_TRACE   = ROOT_DIR / "data" / "optimized_prompts" / "trace.jsonl"
+DEFAULT_OUT_DIR = ROOT_DIR / "data" / "optimized_prompts"
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -46,153 +44,139 @@ def load_trace(path: Path) -> list[dict]:
 
 def build_model_data(events: list[dict]) -> dict[str, dict]:
     """
-    For each model returns:
-      attempts        — list of {x, sheet_idx, avg_score, min_score, passes}
-      improve_events  — list of {x, chars_diff}  (after corresponding b3_eval)
-      sheet_boundaries — list of x where a new sheet starts (for vertical lines)
-    """
-    models: dict[str, dict] = {}
+    Per model: ordered list of fiches, each with per-attempt avg B3 scores.
 
+    Returns:
+        {model_name: {"fiches": [{"label": "F1", "scores": [float, ...], "passed": bool}]}}
+    """
+    # Pass 1: map (model, sheet_idx) → sheet_id from sheet_start events
+    sheet_ids: dict[tuple, str] = {}
+    for ev in events:
+        if ev.get("event") == "sheet_start":
+            sheet_ids[(ev["save_name"], ev["sheet_idx"])] = ev.get("sheet_id", str(ev["sheet_idx"]))
+
+    # Pass 2: collect b3_eval scores per (model, sheet_idx), preserving order
+    models: dict[str, OrderedDict] = {}
     for ev in events:
         name = ev.get("save_name")
-        if not name:
+        if not name or ev.get("event") != "b3_eval":
             continue
         if name not in models:
-            models[name] = {
-                "attempts": [],
-                "improve_events": [],
-                "sheet_boundaries": [],
-                "_x": 0,
-                "_last_sheet": None,
-            }
-        m = models[name]
+            models[name] = OrderedDict()
 
-        if ev["event"] == "b3_eval":
-            sheet_idx = ev["sheet_idx"]
-            if sheet_idx != m["_last_sheet"]:
-                if m["_last_sheet"] is not None:
-                    m["sheet_boundaries"].append(m["_x"])
-                m["_last_sheet"] = sheet_idx
+        sheet_idx = ev["sheet_idx"]
+        if sheet_idx not in models[name]:
+            models[name][sheet_idx] = {"scores": [], "passed": False}
 
-            scores = ev.get("scores", [])
-            avg = sum(scores) / len(scores) if scores else None
-            mn  = min(scores) if scores else None
-            m["attempts"].append({
-                "x":         m["_x"],
-                "sheet_idx": sheet_idx,
-                "avg_score": avg,
-                "min_score": mn,
-                "passes":    ev["passes"],
+        scores = ev.get("scores", [])
+        avg = sum(scores) / len(scores) if scores else None
+        if avg is not None:
+            models[name][sheet_idx]["scores"].append(avg)
+        if ev.get("passes"):
+            models[name][sheet_idx]["passed"] = True
+
+    # Build result with F1/F2/… labels
+    result: dict[str, dict] = {}
+    for name, sheets in models.items():
+        fiches = []
+        for i, (sheet_idx, sh) in enumerate(sheets.items(), start=1):
+            fiches.append({
+                "label":  f"F{i}",
+                "scores": sh["scores"],
+                "passed": sh["passed"],
             })
-            m["_x"] += 1
-
-        elif ev["event"] == "claude_improve":
-            # attach to the attempt that just failed (x - 1)
-            m["improve_events"].append({
-                "x":          m["_x"] - 1,
-                "chars_diff": ev["chars_diff"],
-            })
-
-    # clean up internal counters
-    for m in models.values():
-        del m["_x"], m["_last_sheet"]
-
-    return models
+        result[name] = {"fiches": fiches}
+    return result
 
 
 # ─────────────────────────────────────────────────────────────────
 # Plotting
 # ─────────────────────────────────────────────────────────────────
 
-def plot(models: dict[str, dict], out_path: Path) -> None:
-    n = len(models)
-    if n == 0:
-        print("Aucun modèle trouvé dans la trace.")
+def _draw_model(ax: plt.Axes, name: str, fiches: list, label_fontsize: int = 7) -> None:
+    """Draw one model's curve onto an existing Axes."""
+    x = 0
+    for idx, fiche in enumerate(fiches):
+        scores = fiche["scores"]
+        xs = list(range(x, x + len(scores)))
+        color = "#27ae60" if fiche["passed"] else "#e74c3c"
+
+        ax.plot(xs, scores, color=color, linewidth=2,
+                marker="o", markersize=4, zorder=3)
+
+        mid = (xs[0] + xs[-1]) / 2
+        ax.text(mid, 5.25, fiche["label"],
+                ha="center", va="bottom", fontsize=label_fontsize, color="#444444")
+
+        x += len(scores)
+
+        if idx < len(fiches) - 1:
+            ax.axvline(x - 0.5, color="#bdc3c7", linewidth=1,
+                       linestyle="--", zorder=1)
+
+    threshold = ax.axhline(4, color="#95a5a6", linewidth=0.8,
+                           linestyle=":", zorder=1, label="Seuil B3 (≥ 4)")
+
+    n_passed = sum(1 for f in fiches if f["passed"])
+    n_total  = len(fiches)
+    ax.set_title(f"{name}  —  {n_passed}/{n_total} fiches passées",
+                 fontsize=10, fontweight="bold")
+    ax.set_xlabel("Tentative (cumulatif)", fontsize=8)
+    ax.set_ylabel("Score moyen B3", fontsize=8)
+    ax.set_ylim(0.5, 5.6)
+    ax.set_yticks([1, 2, 3, 4, 5])
+    ax.tick_params(labelsize=7)
+    ax.grid(axis="y", alpha=0.3, linewidth=0.5)
+
+    pass_patch = mpatches.Patch(color="#27ae60", label="Fiche passée")
+    fail_patch = mpatches.Patch(color="#e74c3c", label="Fiche non passée")
+    ax.legend(handles=[pass_patch, fail_patch, threshold],
+              fontsize=6, loc="upper right")
+
+
+def plot_model(name: str, data: dict, out_path: Path) -> None:
+    fiches = [f for f in data["fiches"] if f["scores"]]
+    if not fiches:
+        print(f"  {name}: aucune donnée b3_eval, ignoré.")
+        return
+
+    fig, ax = plt.subplots(figsize=(12, 4))
+    _draw_model(ax, name, fiches, label_fontsize=7)
+    plt.tight_layout()
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.savefig(out_path, dpi=150, bbox_inches="tight")
+    plt.close(fig)
+    print(f"  ✓ {out_path}")
+
+
+def plot_all(models: dict, out_path: Path) -> None:
+    """One subplot per model, all on the same figure."""
+    names = [n for n, d in models.items() if any(f["scores"] for f in d["fiches"])]
+    if not names:
+        print("  Aucune donnée à tracer.")
         return
 
     ncols = 2
-    nrows = (n + ncols - 1) // ncols
-    fig, axes = plt.subplots(
-        nrows, ncols,
-        figsize=(14, 4 * nrows),
-        squeeze=False,
-    )
-    fig.suptitle(
-        "Évolution du score moyen des distracteurs — toutes tentatives LISA",
-        fontsize=13, fontweight="bold",
-    )
+    nrows = (len(names) + 1) // ncols
+    fig, axes = plt.subplots(nrows, ncols,
+                             figsize=(14, 4 * nrows),
+                             squeeze=False)
+    fig.suptitle("Score moyen B3 — tous les modèles",
+                 fontsize=13, fontweight="bold")
 
-    for i, (name, data) in enumerate(models.items()):
+    for i, name in enumerate(names):
         ax = axes[i // ncols][i % ncols]
-        attempts = data["attempts"]
+        fiches = [f for f in models[name]["fiches"] if f["scores"]]
+        _draw_model(ax, name, fiches, label_fontsize=6)
 
-        if not attempts:
-            ax.set_visible(False)
-            continue
-
-        xs  = [a["x"]         for a in attempts]
-        ys  = [a["avg_score"] for a in attempts]
-        pas = [a["passes"]    for a in attempts]
-
-        # ── scatter: one dot per generation ──────────────────────
-        colors = ["#27ae60" if p else "#e74c3c" for p in pas]
-        ax.scatter(xs, ys, c=colors, s=45, zorder=3, linewidths=0)
-
-        # ── rolling mean (window = 5) ─────────────────────────────
-        window = min(5, len(ys))
-        if len(ys) >= window:
-            kernel  = np.ones(window) / window
-            rolling = np.convolve(ys, kernel, mode="valid")
-            rx = xs[window - 1:]
-            ax.plot(rx, rolling, color="#2980b9", linewidth=1.8,
-                    zorder=2, label=f"moy. glissante ({window})")
-
-        # ── fiche boundaries ──────────────────────────────────────
-        for bx in data["sheet_boundaries"]:
-            ax.axvline(bx - 0.5, color="#bdc3c7", linewidth=0.8,
-                       linestyle="--", zorder=1)
-
-        # ── B3 threshold hint ─────────────────────────────────────
-        ax.axhline(4, color="#95a5a6", linewidth=0.7, linestyle=":",
-                   zorder=1, label="seuil score ≥ 4")
-
-        # ── annotate large Claude prompt cuts ────────────────────
-        for imp in data["improve_events"]:
-            diff = imp["chars_diff"]
-            if diff <= -5000:
-                ax.annotate(
-                    f"{diff:+,}",
-                    xy=(imp["x"] + 0.5, 0.4),
-                    fontsize=6, color="#e67e22", ha="center",
-                    rotation=90,
-                )
-
-        ax.set_ylim(0.5, 5.5)
-        ax.set_xlim(-0.5, max(xs) + 0.5)
-        ax.set_title(name, fontsize=11, fontweight="bold")
-        ax.set_xlabel("Tentative (index cumulatif)", fontsize=9)
-        ax.set_ylabel("Score moyen distracteurs (1–5)", fontsize=9)
-        ax.set_yticks([1, 2, 3, 4, 5])
-        ax.legend(fontsize=7, loc="upper right")
-        ax.grid(axis="y", alpha=0.3, linewidth=0.5)
-
-    # hide unused subplots
-    for i in range(n, nrows * ncols):
+    for i in range(len(names), nrows * ncols):
         axes[i // ncols][i % ncols].set_visible(False)
 
-    # shared legend
-    pass_patch = mpatches.Patch(color="#27ae60", label="B3 passé")
-    fail_patch = mpatches.Patch(color="#e74c3c", label="B3 échoué")
-    fig.legend(
-        handles=[pass_patch, fail_patch],
-        loc="lower center", ncol=2, fontsize=9,
-        bbox_to_anchor=(0.5, 0.01),
-    )
-
-    plt.tight_layout(rect=[0, 0.04, 1, 0.97])
+    plt.tight_layout(rect=[0, 0, 1, 0.96])
     out_path.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(out_path, dpi=150, bbox_inches="tight")
-    print(f"✓ Graphique sauvegardé : {out_path}")
+    plt.close(fig)
+    print(f"  ✓ {out_path}")
 
 
 # ─────────────────────────────────────────────────────────────────
@@ -203,14 +187,12 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Plot B3 score evolution from trace.jsonl"
     )
-    parser.add_argument(
-        "--trace", type=Path, default=DEFAULT_TRACE,
-        help="Chemin vers trace.jsonl",
-    )
-    parser.add_argument(
-        "--out", type=Path, default=DEFAULT_OUT,
-        help="Chemin de sortie du graphique (.png)",
-    )
+    parser.add_argument("--trace", type=Path, default=DEFAULT_TRACE,
+                        help="Chemin vers trace.jsonl")
+    parser.add_argument("--model", type=str, default=None,
+                        help="Filtrer un modèle spécifique (ex: gemma4_31b)")
+    parser.add_argument("--out-dir", type=Path, default=DEFAULT_OUT_DIR,
+                        help="Répertoire de sortie (un PNG par modèle dans out-dir/model/)")
     args = parser.parse_args()
 
     if not args.trace.exists():
@@ -218,13 +200,22 @@ def main() -> None:
 
     events = load_trace(args.trace)
     models = build_model_data(events)
-    print(f"✓ {len(models)} modèle(s) : {list(models.keys())}")
-    for name, data in models.items():
-        n_att = len(data["attempts"])
-        n_ok  = sum(1 for a in data["attempts"] if a["passes"])
-        print(f"  {name:20s}  {n_ok}/{n_att} tentatives passées")
 
-    plot(models, args.out)
+    if args.model:
+        if args.model not in models:
+            raise ValueError(
+                f"Modèle '{args.model}' introuvable dans la trace. "
+                f"Disponibles : {list(models.keys())}"
+            )
+        models = {args.model: models[args.model]}
+
+    print(f"✓ {len(models)} modèle(s) à tracer")
+    for name, data in models.items():
+        out = args.out_dir / name / "plot_simple.png"
+        plot_model(name, data, out)
+
+    if not args.model:
+        plot_all(models, args.out_dir / "plot_all.png")
 
 
 if __name__ == "__main__":

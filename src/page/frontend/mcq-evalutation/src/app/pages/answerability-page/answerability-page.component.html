@@ -59,12 +59,23 @@
       <!-- Modèle HuggingFace -->
       @if (form.model_type === 'hf') {
         <div class="form-group">
-          <label for="hf-model">Modèle HuggingFace</label>
-          <input
-            type="text"
-            id="hf-model"
-            [(ngModel)]="form.model_name"
-            placeholder="ex: Qwen/Qwen3-0.6B" />
+          <label for="hf-model-select">Modèle HuggingFace</label>
+          <select id="hf-model-select" [(ngModel)]="hfSelectValue" (ngModelChange)="onHfSelectChange($event)">
+            <option value="" disabled>-- Choisir un modèle --</option>
+            @for (m of hfModels; track m.value) {
+              <option [value]="m.value">{{ m.label }}</option>
+            }
+            <option value="__custom__">Autre (saisie manuelle)…</option>
+          </select>
+          @if (hfCustomInput()) {
+            <input
+              type="text"
+              class="hf-custom-input"
+              [(ngModel)]="hfCustomText"
+              (ngModelChange)="form.model_name = $event"
+              placeholder="ex: org/model-name"
+              style="margin-top:8px" />
+          }
           <span class="hint">Nécessite un GPU disponible</span>
         </div>
       }

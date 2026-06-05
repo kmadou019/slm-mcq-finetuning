@@ -45,7 +45,7 @@
         <div class="form-section">
           <label for="gen-model-select">Modèle de génération</label>
           <select id="gen-model-select" class="model-select" [(ngModel)]="selectedModel">
-            @for (m of generationModels; track m.value) {
+            @for (m of generationModels(); track m.value) {
               <option [value]="m.value">{{ m.label }}</option>
             }
           </select>

@@ -16,6 +16,18 @@
   </div>
 }
 
+@if (!reviewMode() && newMcqIds().length > 0) {
+  <div class="new-mcq-banner">
+    <span>Filtre :</span>
+    <button [class]="newOnlyMode() ? 'filter-toggle active' : 'filter-toggle'" (click)="switchFilter(true)">
+      Nouveaux seulement ({{ newMcqIds().length }})
+    </button>
+    <button [class]="!newOnlyMode() ? 'filter-toggle active' : 'filter-toggle'" (click)="switchFilter(false)">
+      Tous en attente ({{ allPendingMcqs().length }})
+    </button>
+  </div>
+}
+
 <div class="evaluation-container">
   @if (loading()) {
     <div class="loading">

@@ -1,0 +1,67 @@
+À partir du contenu éducatif et de la question ci-dessous, générez exactement 3 distracteurs plausibles.
+
+CONTEXTE (NE PAS MODIFIER) :
+Question : <<<QUESTION>>>
+Réponse correcte : <<<REPONSE_CORRECTE>>>
+
+<<<DEBUT_REGLES_DISTRACTEURS>>>
+Règles pour les distracteurs :
+- Homogènes, parallèles à la bonne réponse, d'un niveau de granularité similaire
+- Exprimés à la forme affirmative
+- Longueur et précision similaires à la bonne réponse — ne pas se distinguer par la longueur
+- Structure identique : conserver le même nombre d'éléments listés et la même syntaxe que la réponse correcte (éviter les erreurs numériques arbitraires)
+- Validité médicale intrinsèque obligatoire : chaque distracteur doit constituer une affirmation médicalement correcte dans un autre contexte clinique. Si une pathologie alternative est citée, la méthode diagnostique associée doit être valide pour cette pathologie (ex: ne pas associer une lésion profonde à un prélèvement superficiel)
+- Représentent des erreurs fréquentes ou des diagnostics différentiels proches (confusions terminologiques courantes)
+- Interdiction formelle d'utiliser des antonymes directs ou la négation simple d'un terme clé de la réponse correcte (ex: éviter l'opposé sémantique d'un concept clé)
+- Cohérence clinique interne obligatoire : respecter strictement le profil fonctionnel du patient et le contexte physiopathologique (ex: cohérence entre état clinique et capacités motrices)
+- Chaque distracteur doit être discriminant pour un étudiant de niveau intermédiaire : il ne doit être éliminable que par une connaissance précise de la nuance du cours
+- Éviter les pièges techniques évidents : le distracteur ne doit pas contenir d'erreur factuelle sur la pathologie mentionnée qui permettrait son élimination immédiate par un étudiant ayant des bases solides
+- Concis
+- Interdiction stricte de contredire le prérequis clinique de la question (ex: si la question porte sur des troubles, le distracteur ne peut pas décrire une normalité fonctionnelle)
+- Les symptômes doivent appartenir au même champ sémantique que la réponse correcte mais varier sur la nuance clinique (ex: anxiété vs dépression, marche vs préhension) sans tomber dans l'antonymie directe du concept central
+- Vérifier que chaque élément du distracteur (posture, motricité, psychisme) est cohérent avec le tableau clinique global, même si la combinaison est fausse
+- Stratégie de confusion : privilégier des diagnostics différentiels réels qui partagent la même méthode d'investigation mais diffèrent sur l'indication prioritaire, ou des nuances de procédure (ex: type de biopsie, moment de réalisation) souvent confondues
+
+Distracteurs INTERDITS :
+- "Toutes les propositions précédentes sont correctes"
+- "Aucune des propositions précédentes"
+- Toute combinaison de propositions ("A et C sont correctes")
+- Toute proposition absurde, trivialement éliminable ou contradictoire en soi
+- Négation simple de la réponse correcte
+- Symptomes incompatibles avec le statut fonctionnel du patient
+- Description d'une situation normale lorsque la question porte sur une pathologie
+- Modification arbitraire du nombre d'éléments d'une liste sauf si erreur classique documentée
+- Association méthode-pathologie incorrecte dans le distracteur (ex: affirmer qu'une biopsie superficielle diagnostique une tumeur sous-muqueuse)
+
+Commentaires :
+- Fournir pour chaque distracteur une explication concise de pourquoi il est incorrect
+- L'explication doit pointer la nuance précise qui rend le distracteur incorrect dans ce contexte
+<<<FIN_REGLES_DISTRACTEURS>>>
+
+CONTRAINTES STRICTES DE SORTIE :
+1. La sortie doit être STRICTEMENT un unique objet JSON valide.
+2. Interdiction ABSOLUE d'ajouter :
+   - des blocs ```json
+   - du texte avant ou après le JSON
+   - des explications hors champs JSON
+3. Utiliser uniquement des doubles quotes : "..."
+4. Le JSON doit contenir EXACTEMENT les 6 champs suivants :
+
+{
+  "distractor_1": "...",
+  "distractor_1_comment": "...",
+  "distractor_2": "...",
+  "distractor_2_comment": "...",
+  "distractor_3": "...",
+  "distractor_3_comment": "..."
+}
+
+RÈGLES POUR LES COMMENTAIRES :
+- Chaque commentaire doit expliquer brièvement pourquoi ce distracteur est incorrect.
+- Les commentaires doivent être factuels, concis et pédagogiques.
+
+CONTENU ÉDUCATIF :
+<<<CONTENU_EDUCATIF>>>
+
+INSTRUCTION FINALE :
+Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.

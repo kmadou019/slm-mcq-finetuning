@@ -1,0 +1,124 @@
+À partir du contenu éducatif suivant, générez exactement une question à choix unique avec quatre options de réponse (a, b, c, d), dont une seule est correcte.
+
+CONSIGNES DE RÉDACTION :
+La question doit évaluer la compréhension des idées principales du contenu fourni.
+
+<<<DEBUT_REGLES_QUESTION>>>
+Règles pour la question (stem) :
+- Forme interrogative directe (se terminer par "?")
+- Forme affirmative uniquement — interdiction des négations ("ne...pas", "sauf")
+- Autonomie : compréhensible sans le texte source
+- Originalité impérative (Critère A3) : Transformation sémantique totale requise. Interdiction absolue de reprendre les titres, sous-titres ou phrases du texte source. La question ne doit jamais commencer par "Quels sont", "Listez", "Citez", "Définissez".
+- Reformulation structurelle : Max 2 mots consécutifs identiques au source autorisés. Paraphraser le contexte intégralement.
+- Contexte clinique : OBLIGATOIRE. Mettre en situation pratique (Patient, symptôme, contexte) plutôt qu'un rappel de cours théorique direct.
+- Simplicité : phrase unique, max 12 mots (impératif pour FK > 12). Compter strictement.
+- Lisibilité : Interdiction des mots de plus de 8 lettres. Termes médicaux longs interdits sauf si aucun synonyme court n'existe.
+- Focus : une seule idée principale évaluée par question. Interdiction des questions plurielles impliquant une énumération en réponse. Si le source liste des éléments, la question doit cibler UN élément via un cas clinique.
+
+Règles pour la réponse correcte :
+- Longueur stricte : maximum 10 mots (priorité absolue, compter strictement). Tout dépassement est interdit.
+- Structure FK : Phrase unique, syntaxe simple (Sujet-Verbe-Complement). Interdiction formelle des pronoms relatifs (qui, que, dont) et des participes présents. Objectif : Score FK > 12.
+- Interdiction des listes : La réponse ne doit jamais être une énumération (virgules multiples). Synthétiser l'idée en un concept unique.
+- Factuelle, vérifiable dans le contenu fourni
+- Zéro recoupement lexical avec la question (éviter le cluing)
+- Synthèse conceptuelle interdite : privilégier l'information clé unique
+- Vocabulary : Utiliser des mots courts (max 8 lettres). Interdiction des mots > 10 lettres même techniques.
+- Singularité : La réponse doit désigner un élément unique, pas une liste de diagnostics. Si le source mentionne plusieurs signes, choisir le plus spécifique.
+- Contrôle FK : Vérifier que la moyenne des lettres par mot est faible pour garantir FK > 12.
+<<<FIN_REGLES_QUESTION>>>
+
+<<<DEBUT_REGLES_DISTRACTEURS>>>
+Règles pour les distracteurs :
+- Homogènes, parallèles à la bonne réponse, d'un niveau de granularité similaire
+- Exprimés à la forme affirmative
+- Longueur et précision similaires à la bonne réponse — ne pas se distinguer par la longueur
+- VARIATION SYNTAXIQUE OBLIGATOIRE : Il est strictement interdit de commencer le distracteur par la même séquence de mots que la réponse correcte (ex: les 7 premiers mots). Le distracteur doit reformuler le sujet ou l'angle d'attaque pour éviter la reconnaissance immédiate par similarité visuelle. Si la réponse correcte commence par "[Sujet] est...", le distracteur peut commencer par "La définition de [Sujet] implique..." ou "Concernant [Sujet], il s'agit de...". Cette règle vise à empêcher le modèle de simplement copier le début de la phrase correcte et de modifier uniquement la fin.
+- STRUCTURE MIROIR : Si la réponse correcte comporte plusieurs étapes (ex: A puis B), le distracteur doit également comporter plusieurs étapes (ex: A' puis B ou A puis B'). Ne pas réduire une démarche complexe à une action unique. Attention : Cela ne signifie pas copier la liste des éléments identiquement. La structure syntaxique peut être similaire, mais le contenu sémantique doit varier. La complexité logique doit être équivalente, pas la formulation textuelle.
+- INTERDICTION ABSOLUE de copier-coller la réponse correcte. Chaque distracteur doit différer factuellement sur au moins un élément clé (action, cible, condition, timing). Si la réponse correcte est une liste, le distracteur doit substituer au moins un élément de la liste par un concept sémantiquement proche mais incorrect (intrus plausible), plutôt que de modifier uniquement le verbe ou la quantification.
+- INTERDICTION DE NÉGATION DU CŒUR DE DÉFINITION : Pour les questions de définition, il est interdit de nier explicitement le concept central de la réponse correcte (ex: si la réponse dit "partenariat", le distracteur ne doit pas dire "ce n'est pas un partenariat"). L'erreur doit être une restriction abusive, une extension incorrecte, ou une confusion avec un concept voisin (ex: 'complaisance' vs 'alliance'), pas une contradiction frontale qui rend la proposition trivialement fausse.
+- RÉALISME MÉDICAL DES ENTITÉS : La description clinique contenue dans le distracteur doit correspondre à une entité médicale existante et reconnue. Interdiction d'inventer des présentations atypiques ou rares qui seraient immédiatement éliminables par un expert (ex: décrire une tumeur maligne classique comme 'multiple et bénigne' si c'est contradictoire). L'erreur doit porter sur l'association au contexte de la question, pas sur l'existence même du phénomène décrit. Le distracteur doit décrire une situation qui existe ailleurs, mais pas ici.
+- COHÉRENCE SÉMIO-CLINIQUE INTERNE RENFORCÉE : Le tableau clinique décrit dans le distracteur doit être cohérent avec la conclusion proposée dans le distracteur, même si cette conclusion est incorrecte pour la question posée. Exemple : Si le distracteur conclut à [Pathologie B], les symptômes décrits doivent plausiblement évoquer [Pathologie B] dans un autre contexte, et non être incompatibles avec [Pathologie B]. Interdiction d'associer des signes pathognomoniques d'une maladie à une conclusion totalement étrangère (ex: ne pas associer une ptose variable à une paralysie faciale périphérique). Le distracteur doit former un scénario clinique interne cohérent, même si ce scénario est le mauvais pour le patient décrit dans la question.
+- Contiennent une erreur médicale subtile mais directionnellement cohérente. L'action décrite doit être médicalement valide isolément, mais incorrecte dans ce contexte précis (ex: bon traitement pour la mauvaise indication, bon facteur de risque pour la mauvaise pathologie). Éviter les erreurs grossières éliminables sans expertise.
+- GESTION DES SUPERLATIFS ET HIÉRARCHIES : Si la question cible un élément unique ou hiérarchique (ex: 'principal', 'meilleur', 'premier', 'majeur'), le distracteur ne doit pas être un élément faux, mais un élément VRAI mais HIÉRARCHIQUEMENT INFÉRIEUR (ex: un facteur de risque secondaire présenté comme principal) ou un élément principal d'une [pathologie voisine]. Interdiction de proposer un élément qui n'existe pas dans la hiérarchie réelle. Cette règle est cruciale pour les questions demandant "le principal piège" ou "la cause la plus fréquente".
+- Interdiction formelle de proposer un simple sous-ensemble ou une omission de la réponse correcte
+- Chaque distracteur doit représenter une confusion fréquente ou une alternative thérapeutique raisonnable mais incorrecte dans ce contexte précis
+- Concis
+- ERREUR À ÉVITER : Ne jamais utiliser de généralisations absolues ("tous les cas", "sans distinction") qui constituent un signal d'alarme immédiat pour l'étudiant. Cela inclut les négations absolues sur des facteurs connus (ex: "ne joue aucun rôle", "jamais associé").
+- ERREUR À ÉVITER : L'erreur doit porter sur une nuance clinique (indication, timing, modalité) et non sur une absurdité anatomique, physiologique ou organisationnelle flagrante (ex: examen sans indication, inversion des priorités vitales).
+- ERREUR À ÉVITER : Ne pas remettre en cause l'objectif principal de la prise en charge (ex: suggérer qu'un diagnostic étiologique est inutile) sauf si c'est une confusion classique validée par la littérature.
+- Chaque distracteur doit résister à une lecture rapide : un étudiant de niveau intermédiaire doit hésiter avant de l'éliminer.
+- STRATÉGIE DE VARIATION : Pour créer un distracteur, prenez la logique de la bonne réponse et modifiez un paramètre critique (ex: remplacer [examen de référence] par [examen complémentaire inutile mais valide], inverser [priorité A] et [priorité B]). Ne jamais invalider la cohérence médicale globale de la phrase.
+- DISTANCE SÉMANTIQUE MINIMALE RENFORCÉE : Il est interdit de conserver plus de 50% des mots-clés médicaux exacts de la réponse correcte. Vous devez remplacer au moins un concept majeur (ex: [Symptôme], [Mécanisme], [Contexte]) par un concept voisin incorrect. Cette rule vise à éviter les distracteurs "trop proches" qui sont quasi-synonymes de la bonne réponse et créent de l'ambiguïté plutôt que de tester la connaissance. INTERDICTION DE LA CONSERVATION DU TRIPTYQUE CLINIQUE : Si la réponse correcte repose sur une combinaison de 3 éléments clés (ex: [Symptôme A] + [Symptôme B] + [Contexte C]), le distracteur ne doit jamais conserver cette combinaison exacte. Il doit soit modifier un élément (ex: [Symptôme A'] ), soit changer le contexte, soit proposer une pathologie alternative avec des symptômes distincts. Conserver les mêmes symptômes pour une conclusion différente est interdit sauf si c'est une confusion diagnostique classique (ex: [Pathologie X] vs [Pathologie Y] partageant [Symptôme Z]).
+- INTERDICTION DE L'INVERSION BINAIRE : Il est strictement interdit d'inverser la relation causale ou l'effet principal (ex: transformer un facteur qui [favorise] en un facteur qui [diminue]) SUR LA MÊME LISTE D'ÉLÉMENTS. Le distracteur doit maintenir la même valence (positive/négative) que la bonne réponse et modifier uniquement la spécificité, la hiérarchie ou la condition d'application. Cette erreur est trop évidente (score 1/5) car elle repose sur une logique binaire plutôt que sur une connaissance clinique. Cela inclut les opposés conceptuels (ex: 'bidirectionnel' vs 'unidirectionnel' pour une alliance).
+- GESTION DES LISTES ET ÉNUMÉRATIONS : Si la réponse correcte est une liste de facteurs, le distracteur ne doit pas se contenter d'ajouter des quantificateurs vagues ("mais pas les seuls", "principalement"). Il doit inclure des éléments sémantiquement proches mais incorrects (ex: facteur de risque voisin non validé, confusion entre corrélation et causalité). Interdiction d'utiliser des qualificateurs affaiblissants qui rendent la proposition techniquement vraie mais imprécise. Impératif : Remplacez au moins un élément de la liste originale par un intrus plausible pour forcer la discrimination clinique.
+- DIRECTIONNALITÉ CONSTANTE : Le distracteur doit conserver la même directionnalité globale que la réponse correcte. Si la bonne réponse décrit un mécanisme qui [augmente] un risque, le distracteur ne doit pas suggérer qu'il le [diminue], sauf si c'est une nuance de contexte très spécifique. L'erreur doit porter sur la sélection, la hiérarchie ou la condition d'application, jamais sur le sens fondamental du lien clinique.
+- TEST DE L'ÉTUDIANT INTERMÉDIAIRE : Un distracteur valide est celui qu'un étudiant ayant révisé son cours mais manquant d'expérience clinique pourrait sélectionner. Si l'erreur est visible par simple lecture mot-clé, le distracteur est à rejeter.
+- RÈGLE CRITIQUE DE SUBSTITUTION : Pour les listes d'éléments (facteurs, symptômes, traitements), il est interdit de conserver la liste exacte de la réponse correcte en modifiant uniquement le verbe principal (ex: "favorise" vs "diminue") ou en ajoutant une clause d'exception (ex: "mais pas les seuls"). Vous DEVEZ substituer au moins un élément de la liste par un concept voisin incorrect (ex: remplacer [Anxiété] par [Colère] si pertinent, ou [Catastrophisme] par [Rationalisation]).
+- RÈGLE CRITIQUE DE VÉRITÉ FACTUELLE : Un distracteur doit être factuellement FAUX dans le contexte de la question. Interdiction absolue des vérités partielles ou des propositions techniquement vraies mais incomplètes (ex: "X est un facteur, mais pas le seul"). Une proposition partiellement vraie n'est pas un distracteur valide. Le distracteur ne doit pas être une affirmation généralement vraie qui s'applique mal à ce cas précis ; il doit contenir une erreur de fond sur le plan clinique ou décisionnel.
+- RÈGLE CRITIQUE DE NÉGATION : Interdiction formelle d'utiliser des négations absolues sur des concepts cliniquement reconnus (ex: "ne joue aucun rôle", "sans impact", "jamais associé"). L'erreur doit être une substitution ou une mauvaise hiérarchisation, pas une négation totale d'un fait établi.
+- INTERDICTION DU DIAGNOSTIC INCOMPATIBLE : Il est interdit d'associer un cluster de symptômes pathognomoniques d'une [Pathologie A] à une conclusion de [Pathologie B] si [Pathologie B] ne présente jamais ces symptômes dans la littérature médicale. L'erreur doit porter sur la hiérarchie, la priorité, ou une confusion entre pathologies partageant des signes communs, pas sur une association impossible. Le distracteur ne doit pas proposer une pathologie qui est médicalement incompatible avec les signes cliniques décrits, sauf si l'erreur porte sur une confusion classique entre deux pathologies partageant des signes communs (ex: [Pathologie X] vs [Pathologie Y]).
+- GESTION DES SYMPTOMES CLÉS : Si la réponse correcte identifie un signe clinique spécifique (ex: [Signe A]), le distracteur ne doit pas simplement inverser sa présence/absence (ex: 'absence de [Signe A]') sauf si c'est une nuance clinique validée. Preferer une substitution par un signe voisin (ex: [Signe A'] ) ou une interprétation erronée du signe. Cette règle vise à empêcher les distracteurs trop proches qui conservent le même triplet de symptômes clés.
+- SUBSTITUTION OBLIGATOIRE D'UN ÉLÉMENT DISCRIMINANT : Pour éviter les distracteurs "trop proches" (score 3/5), vous devez identifier l'élément le plus discriminant de la réponse correcte (ex: la variabilité dans la myasthénie) et le remplacer dans le distracteur par un élément caractéristique d'un diagnostic différentiel (ex: la douleur ou la fixité dans une paralysie nerveuse). Ne vous contentez pas de reformuler le même concept avec des synonymes.
+
+Distracteurs INTERDITS :
+- "Toutes les propositions précédentes sont correctes"
+- "Aucune des propositions précédentes"
+- Toute combinaison de propositions ("A et C sont correctes")
+- Toute proposition absurde, trivialement éliminable ou incomplète
+- Toute répétition partielle de la réponse correcte sans erreur factuelle ajoutée
+- Toute stratégie contredisant les principes fondamentaux de sécurité ou d'urgence connus à ce niveau
+- Toute formulation utilisant des universalisateurs ("toujours", "jamais", "tous") sauf si médicalement exact.
+- Toute proposition sémantiquement équivalente à la réponse correcte (même avec des mots différents).
+- Toute proposition suggérant une pratique médicalement non recommandée en soi (ex: examen sans hypothèse, traitement sans indication).
+- Toute proposition qui réduit une démarche multidimensionnelle à un acte isolé (ex: proposer un seul examen quand la réponse est une stratégie globale).
+- Toute proposition reposant sur une inversion logique simple du verbe d'action principal (ex: "favorise" vs "n'influence pas") sans mécanisme intermédiaire plausible.
+- Toute proposition utilisant des hedging excessifs ("pe-être", "dans certains cas") qui la rendent invérifiable ou trop vague.
+- Toute proposition conservant la liste exacte de la réponse correcte avec une négation globale ou une inversion d'effet.
+- Toute négation absolue d'un facteur cliniquement reconnu (ex: "aucun rôle", "sans impact").
+- Toute proposition qui conserve la liste correcte en ajoutant une clause restrictive vague (ex: "mais pas les seuls", "principalement").
+- Toute proposition commençant par les mêmes mots que la réponse correcte (copie de début de phrase).
+
+Commentaires :
+- Fournir pour chaque distracteur une explication concise de pourquoi il est incorrect
+- Préciser l'erreur médicale commise dans le distracteur
+- Justifier pourquoi ce distracteur est plausible pour un étudiant de niveau intermédiaire
+- Expliquer quel biais cognitif ou confusion clinique ce distracteur exploite
+- Indiquer explicitement quelle règle de variation syntaxique a été appliquée pour éviter la copie du début de phrase
+- Le commentaire doit explicitement mentionner pourquoi le distracteur ne conserve pas le même triplet de symptômes que la réponse correcte (si applicable).
+- Le commentaire doit vérifier que le diagnostic alternatif proposé est médicalement compatible avec les signes décrits (sauf confusion classique).
+<<<FIN_REGLES_DISTRACTEURS>>>
+
+CONTRAINTES STRICTES DE SORTIE :
+1. La sortie doit être STRICTEMENT un unique objet JSON valide.
+2. Interdiction ABSOLUE d'ajouter :
+   - des blocs ```json
+   - du texte avant ou après le JSON
+   - des explications hors champs JSON
+3. Le champ "correct_option" doit contenir EXACTEMENT une lettre minuscule parmi : "a", "b", "c", "d".
+4. Utiliser uniquement des doubles quotes : "..."
+5. Le JSON doit contenir EXACTEMENT les 11 champs suivants :
+
+{
+  "question": "...",
+  "question_comment": "...",
+  "option_a": "...",
+  "option_a_comment": "...",
+  "option_b": "...",
+  "option_b_comment": "...",
+  "option_c": "...",
+  "option_c_comment": "...",
+  "option_d": "...",
+  "option_d_comment": "...",
+  "correct_option": "a"
+}
+
+RÈGLES POUR LES COMMENTAIRES :
+- Chaque commentaire d'option doit expliquer brièvement pourquoi l'option est correcte ou incorrecte.
+- Le commentaire global de la question doit expliquer ce que la question évalue ou signaler un piège courant.
+- Les commentaires doivent être factuels, concis et pédagogiques.
+
+CONTENU ÉDUCATIF :
+<<<CONTENU_EDUCATIF>>>
+
+INSTRUCTION FINALE :
+Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.

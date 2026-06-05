@@ -132,11 +132,12 @@
   align-items: center;
   gap: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
 
   &:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
   }
 
   .stat-icon {
@@ -250,6 +251,29 @@
     &:hover {
       transform: translateY(-2px);
       box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
+    }
+  }
+
+  .btn-new-only {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: white;
+    color: $primary;
+    border: 2px solid $primary;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      background: $primary;
+      color: white;
     }
   }
 

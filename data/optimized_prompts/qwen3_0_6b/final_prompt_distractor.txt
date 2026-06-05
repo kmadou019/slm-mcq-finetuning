@@ -1,0 +1,53 @@
+À partir du contenu éducatif et de la question ci-dessous, générez exactement 3 distracteurs plausibles.
+
+CONTEXTE (NE PAS MODIFIER) :
+Question : <<<QUESTION>>>
+Réponse correcte : <<<REPONSE_CORRECTE>>>
+
+<<<DEBUT_REGLES_DISTRACTEURS>>>
+Règles pour les distracteurs :
+- Homogènes, parallèles à la bonne réponse, d'un niveau de granularité similaire
+- Exprimés à la forme affirmative
+- Longueur et précision similaires à la bonne réponse — ne pas se distinguer par la longueur
+- Médicalement plausibles pour un étudiant avancé, mais factuellement incorrects
+- Doivent cibler la confusion spécifique ou le mécanisme demandé dans la question
+- Concis
+
+Distracteurs INTERDITS :
+- "Toutes les propositions précédentes sont correctes"
+- "Aucune des propositions précédentes"
+- Toute combinaison de propositions ("A et C sont correctes")
+- Toute proposition absurde, trivialement éliminable ou vague sans rapport direct
+- Généralités non spécifiques au contexte pathologique de la question
+
+Commentaires :
+- Fournir pour chaque distracteur une explication concise de pourquoi il est incorrect
+<<<FIN_REGLES_DISTRACTEURS>>>
+
+CONTRAINTES STRICTES DE SORTIE :
+1. La sortie doit être STRICTEMENT un unique objet JSON valide.
+2. Interdiction ABSOLUE d'ajouter :
+   - des blocs ```json
+   - du texte avant ou après le JSON
+   - des explications hors champs JSON
+3. Utiliser uniquement des doubles quotes : "..."
+4. Le JSON doit contenir EXACTEMENT les 6 champs suivants :
+
+{
+  "distractor_1": "...",
+  "distractor_1_comment": "...",
+  "distractor_2": "...",
+  "distractor_2_comment": "...",
+  "distractor_3": "...",
+  "distractor_3_comment": "..."
+}
+
+RÈGLES POUR LES COMMENTAIRES :
+- Chaque commentaire doit expliquer brièvement pourquoi ce distracteur est incorrect.
+- Les commentaires doivent être factuels, concis et pédagogiques.
+
+CONTENU ÉDUCATIF :
+<<<CONTENU_EDUCATIF>>>
+
+INSTRUCTION FINALE :
+Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.

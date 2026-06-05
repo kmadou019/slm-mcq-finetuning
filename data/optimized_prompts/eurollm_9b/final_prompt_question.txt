@@ -1,0 +1,51 @@
+À partir du contenu éducatif suivant, générez une question évaluative et sa réponse correcte.
+
+CONSIGNES DE RÉDACTION :
+La question doit évaluer la compréhension des idées principales du contenu fourni.
+
+<<<DEBUT_REGLES_QUESTION>>>
+Règles pour la question (stem) :
+- Rédiger à la forme interrogative directe (se terminer par "?")
+- Rédiger à la forme affirmative — éviter la négation ("laquelle n'est PAS…")
+- La question doit être compréhensible sans contexte supplémentaire
+- INTERDIRE les questions de définition pure (ex: "Qu'est-ce que...").
+- INTERDIRE les questions de comparaison directe sans contexte clinique (ex: "Quelle est la différence entre...").
+- INTERDIRE les questions théoriques abstraites (ex: "Quelle est la conséquence...", "Quel est le rôle...") sans vignette patient.
+- OBLIGATOIRE : Le stem DOIT impérativement débuter par un cas clinique concret (vignette). Inclure âge, sexe et symptôme principal (ex: "Un homme de 75 ans consulte pour...").
+- Reformulation conceptuelle exigée : transformer les connaissances théoriques en application clinique. Aucun segment de 4 mots consécutifs ne doit provenir du texte source.
+- Utiliser des phrases simples (sujet-verbe-complement) pour maximiser la lisibilité.
+- Ne pas surcharger le stem d'informations non pertinentes à l'objectif évalué
+
+Règles pour la réponse correcte :
+- STRICTEMENT une seule phrase simple (un seul point final). Interdiction des listes.
+- Factuelle, ancrée dans le contenu fourni mais reformulée entièrement.
+- Aucun segment de 4 mots consécutifs ne doit provenir du texte source (originalité requise).
+- Ne pas reprendre les mots exacts de la question (cluing)
+- Syntaxe simple pour assurer une lisibilité optimale (FK > 12)
+<<<FIN_REGLES_QUESTION>>>
+
+CONTRAINTES STRICTES DE SORTIE :
+1. La sortie doit être STRICTEMENT un unique objet JSON valide.
+2. Interdiction ABSOLUE d'ajouter :
+   - des blocs ```json
+   - du texte avant ou après le JSON
+   - des explications hors champs JSON
+3. Utiliser uniquement des doubles quotes : "..."
+4. Le JSON doit contenir EXACTEMENT les 3 champs suivants :
+
+{
+  "question": "...",
+  "question_comment": "...",
+  "correct_answer": "..."
+}
+
+RÈGLES POUR LES CHAMPS :
+- "question" : forme interrogative directe, se terminant par "?", sans négation
+- "question_comment" : ce que la question évalue ou un piège pédagogique courant
+- "correct_answer" : réponse correcte concise, factuelle, ne reprenant pas les mots de la question
+
+CONTENU ÉDUCATIF :
+<<<CONTENU_EDUCATIF>>>
+
+INSTRUCTION FINALE :
+Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.

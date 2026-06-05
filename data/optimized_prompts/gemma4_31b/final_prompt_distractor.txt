@@ -1,0 +1,74 @@
+À partir du contenu éducatif et de la question ci-dessous, générez exactement 3 distracteurs plausibles.
+
+CONTEXTE (NE PAS MODIFIER) :
+Question : <<<QUESTION>>>
+Réponse correcte : <<<REPONSE_CORRECTE>>>
+
+<<<DEBUT_REGLES_DISTRACTEURS>>>
+Règles pour les distracteurs :
+- Homogènes, parallèles à la bonne réponse, d'un niveau de granularité similaire
+- Exprimés à la forme affirmative
+- Longueur et précision similaires à la bonne réponse — ne pas se distinguer par la longueur
+- Plausibilité élevée : un étudiant hésitant doit pouvoir le considérer comme vrai ; interdiction des erreurs binaires flagrantes (ex: [mode_A] vs [mode_B] sans nuance). Privilégier les erreurs de périmètre ou d'intensité (ex: [portée_excessive]) plutôt que les erreurs de nature.
+- Le sujet du distracteur doit cibler la même question clinique que la réponse correcte (ex: expliquer un résultat négatif) sans dévier vers des aspects secondaires.
+- Représenter des erreurs typiques de niveau intermédiaire : confusion entre mécanismes physiopathologiques proches ([mécanisme_A] vs [mécanisme_B]) ou méconnaissance d'une exception réglementaire.
+- Interdiction stricte : ne pas attribuer une caractéristique propre à une pathologie différente (ex: [pathologie_X]) sauf si la confusion est l'objectif pédagogique principal.
+- Concis
+- Ne pas permettre une élimination par simple correspondance de mots-clés (ex: question cite [organe], distracteur cite [organe différent])
+- Une action correcte pour un [organe connexe] est interdite même si le contexte clinique est identique
+- Structure hybride OBLIGATOIRE : Chaque distracteur doit contenir une prémisse factuellement vraie ([fait_validé]) associée à une conclusion erronée ou une nuance procédurale fausse ([inférence_erronée]). Cela empêche l'élimination rapide par intuition.
+- Éviter les opposés triviales : Ne pas opposer binairement [concept_A] et [concept_B] (ex: [actif] vs [passif]). Le distracteur doit sembler valable dans 80% des contextes mais échouer sur la spécificité de la question. Interdiction de proposer un retour au [modèle_traditionnel] comme distracteur si la réponse correcte définit un [modèle_collaboratif].
+- Diversité des erreurs : chaque distracteur doit exploiter une confusion distincte (ex: [critère_1] vs [critère_2]).
+- Éviter les erreurs techniques générales (ex: [erreur_technique]) si la question porte sur une spécificité physiopathologique.
+- Alignement strict avec la question : Le distracteur doit répondre à la même dimension que la réponse correcte (ex: [impact_rôle]) sans dévier vers des conséquences secondaires (ex: [stabilité_processus]).
+- Nuance de responsabilité : L'erreur doit porter sur la qualité de l'interaction ([collaboration_égale] vs [hiérarchie_masquée]) plutôt que sur l'existence de l'autonomie. Interdiction de confondre [partenariat_actif] avec [délégation_totale] de manière explicite.
+- Cohérence conceptuelle : Le distracteur ne doit pas contredire le principe fondamental du sujet (ex: [nature_dynamic] vs [nature_static]), sauf si la nuance porte sur l'application spécifique.
+- Cohérence Physiopathologique OBLIGATOIRE : Même incorrect, le distracteur doit décrire un scénario médicalement possible dans un contexte différentiel. Interdiction de proposer une impossibilité physiologique flagrante (ex: [symptôme_fatigable] s'améliorant systématiquement à l'effort) sauf si cela correspond à une [pathologie_concurrente] précise.
+- Protection du Critère Discriminant : Identifier le critère clé de la réponse correcte (ex: [aggravation_effort]). Il est interdit de construire un distracteur sur l'inversion directe de ce critère (ex: [amélioration_effort]) sans nuance de contexte ou de sous-type.
+- Source des Erreurs : Les erreurs doivent provenir de confusions avec des [pathologies_différentielles] ou des [exceptions_règles], pas de négations simples de la vérité médicale.
+
+Distracteurs INTERDITS :
+- "Toutes les propositions précédentes sont correctes"
+- "Aucune des propositions précédentes"
+- Toute combinaison de propositions ("A et C sont correctes")
+- Toute proposition absurde ou trivialement éliminable
+- Paramètres de surveillance générale (ex: [paramètres généraux]) si la question exige une évaluation spécifique d'un organe
+- Affirmations factuellement vraies pour un [organe connexe] mais non pertinentes pour [organe cible]
+- Contradictions directes avec les termes clés de la question sans nuance médicale (ex: [processus_simple] vs [processus_complexe])
+- Caractéristiques spécifiques à une pathologie concurrente distincte (ex: [pathologie_concurrente]) sauf si l'objectif est le diagnostic différentiel.
+- Inversion de paradigme simple : Ne pas proposer l'opposé exact du concept clé (ex: [passivité] quand la réponse est [activité]) sans nuance intermédiaire.
+- Négation du Mécanisme Clé : Interdiction de nier le mécanisme physiopathologique central de la question (ex: [fatigabilité]) par une affirmation de stabilité constante sans contexte différentiel explicite.
+
+Commentaires :
+- Fournir pour chaque distracteur une explication concise de pourquoi il est incorrect
+- L'explication doit identifier le point de confusion spécifique que le distracteur exploite
+- Le commentaire doit expliciter pourquoi la prémisse vraie ne suffit pas à valider la proposition entière.
+<<<FIN_REGLES_DISTRACTEURS>>>
+
+CONTRAINTES STRICTES DE SORTIE :
+1. La sortie doit être STRICTEMENT un unique objet JSON valide.
+2. Interdiction ABSOLUE d'ajouter :
+   - des blocs ```json
+   - du texte avant ou après le JSON
+   - des explications hors champs JSON
+3. Utiliser uniquement des doubles quotes : "..."
+4. Le JSON doit contenir EXACTEMENT les 6 champs suivants :
+
+{
+  "distractor_1": "...",
+  "distractor_1_comment": "...",
+  "distractor_2": "...",
+  "distractor_2_comment": "...",
+  "distractor_3": "...",
+  "distractor_3_comment": "..."
+}
+
+RÈGLES POUR LES COMMENTAIRES :
+- Chaque commentaire doit expliquer brièvement pourquoi ce distracteur est incorrect.
+- Les commentaires doivent être factuels, concis et pédagogiques.
+
+CONTENU ÉDUCATIF :
+<<<CONTENU_EDUCATIF>>>
+
+INSTRUCTION FINALE :
+Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehors.

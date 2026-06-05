@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { McqService } from '../../services/mcq.service';
+import { MCQAssignment } from '../../models';
 
 /**
  * MCQSelectionModal Component - Modal pour sélectionner le nombre de MCQ
@@ -19,7 +20,7 @@ export class McqSelectionModalComponent implements OnInit {
   private readonly mcqService = inject(McqService);
 
   @Output() close = new EventEmitter<void>();
-  @Output() confirm = new EventEmitter<number>();
+  @Output() confirm = new EventEmitter<MCQAssignment>();
 
   // Options prédéfinies
   predefinedOptions = [10, 20, 50, 100];
@@ -114,7 +115,7 @@ export class McqSelectionModalComponent implements OnInit {
       next: (assignment) => {
         console.log('MCQ assigned:', assignment);
         this.loading.set(false);
-        this.confirm.emit(count);
+        this.confirm.emit(assignment);
       },
       error: (error) => {
         console.error('Assignment error:', error);

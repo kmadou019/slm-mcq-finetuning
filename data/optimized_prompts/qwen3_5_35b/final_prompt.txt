@@ -3,29 +3,37 @@
 CONSIGNES DE RÉDACTION :
 La question doit évaluer la compréhension des idées principales du contenu fourni.
 
+<<<DEBUT_REGLES_QUESTION>>>
 Règles pour la question (stem) :
-- La question doit être compréhensible sans lire les propositions
+- Rédiger à la forme interrogative directe (se terminer par "?")
 - Rédiger à la forme affirmative — éviter la négation ("laquelle n'est PAS…")
+- La question doit être compréhensible sans contexte supplémentaire
+- Ne pas paraphraser directement le contenu — évaluer la compréhension, pas la mémorisation
 - Ne pas surcharger le stem d'informations non pertinentes à l'objectif évalué
 
-Règles pour les propositions :
-- 4 propositions (a, b, c, d), une seule exacte (QRU)
-- Propositions homogènes, parallèles, d'un niveau de granularité similaire
-- Propositions exprimées à la forme affirmative
-- Longueur et précision similaires entre toutes les propositions — la bonne réponse ne doit pas se distinguer par sa longueur
-- La bonne réponse ne doit pas reprendre les mots du stem (cluing)
-- Distracteurs plausibles mais factuellement incorrects
-- Propositions courtes et concises
+Règles pour la réponse correcte :
+- Courte et concise (une phrase maximum)
+- Factuelle, ancrée dans le contenu fourni
+- Ne pas reprendre les mots exacts de la question (cluing)
+<<<FIN_REGLES_QUESTION>>>
 
-Propositions INTERDITES :
+<<<DEBUT_REGLES_DISTRACTEURS>>>
+Règles pour les distracteurs :
+- Homogènes, parallèles à la bonne réponse, d'un niveau de granularité similaire
+- Exprimés à la forme affirmative
+- Longueur et précision similaires à la bonne réponse — ne pas se distinguer par la longueur
+- Plausibles mais factuellement incorrects, ancrés dans le contenu éducatif
+- Concis
+
+Distracteurs INTERDITS :
 - "Toutes les propositions précédentes sont correctes"
 - "Aucune des propositions précédentes"
-- "A et C sont correctes" (combinaison de propositions)
+- Toute combinaison de propositions ("A et C sont correctes")
 - Toute proposition absurde ou trivialement éliminable
 
-Justifications :
-- Fournir une justification pédagogique pour chaque proposition (correcte ou incorrecte)
-- Fournir un commentaire global sur ce que la question évalue ou un piège courant
+Commentaires :
+- Fournir pour chaque distracteur une explication concise de pourquoi il est incorrect
+<<<FIN_REGLES_DISTRACTEURS>>>
 
 CONTRAINTES STRICTES DE SORTIE :
 1. La sortie doit être STRICTEMENT un unique objet JSON valide.

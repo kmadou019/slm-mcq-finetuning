@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from sys import argv
+from pathlib import Path
 
 import json as _json
 with open("../data/models.json", encoding="utf-8") as _f:
@@ -100,7 +101,8 @@ def main():
     load_dotenv()
     OPENAI_KEY = os.environ.get("OPENAI_API_KEY")
 
-    with open('eval/prompts.json', 'r') as file:
+    _eval_prompts_path = Path(__file__).parent / 'eval' / 'prompts.json'
+    with open(_eval_prompts_path, 'r') as file:
         # Load the JSON data from the file
         system_prompts = json.load(file)
 
