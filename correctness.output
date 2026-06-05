@@ -22,3 +22,5 @@ Incorrect output for apertus_8b: 0.31%
 Number of correct MCQs for apertus_8b 985 / 1587
 Incorrect output for eurollm_9b: 7.54%
 Number of correct MCQs for eurollm_9b 1070 / 1472
+Incorrect output for eurollm_9b: 20.23%
+Number of correct MCQs for eurollm_9b 1270 / 1270
