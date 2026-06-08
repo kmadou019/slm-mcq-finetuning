@@ -2,7 +2,6 @@ import { Component, EventEmitter, Output, inject, OnInit, OnDestroy, ChangeDetec
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { McqService } from '../../services/mcq.service';
-import { AnswerabilityService } from '../../services/answerability.service';
 
 type ModalView = 'form' | 'generating' | 'done' | 'error';
 
@@ -59,7 +58,6 @@ Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehor
 })
 export class GenerateFromMaterialModalComponent implements OnInit, OnDestroy {
   private readonly mcqService = inject(McqService);
-  private readonly answerabilityService = inject(AnswerabilityService);
   private readonly cdr = inject(ChangeDetectorRef);
 
   @Output() close = new EventEmitter<void>();
@@ -71,7 +69,9 @@ export class GenerateFromMaterialModalComponent implements OnInit, OnDestroy {
     { label: 'Qwen3 80B Thinking (UD-Q4_K_XL)', value: 'hf.co/unsloth/Qwen3-Next-80B-A3B-Thinking-GGUF:UD-Q4_K_XL' },
   ];
 
-  generationModels = signal<{ label: string; value: string }[]>(GenerateFromMaterialModalComponent.FALLBACK_MODELS);
+  generationModels = signal<{ label: string; value: string; source?: string }[]>(GenerateFromMaterialModalComponent.FALLBACK_MODELS);
+  modelsLoading = false;
+  modelsError: string | null = null;
 
   // Champs du formulaire (propriétés simples pour ngModel)
   content = '';
@@ -100,11 +100,11 @@ export class GenerateFromMaterialModalComponent implements OnInit, OnDestroy {
     this.modelsError = null;
     this.mcqService.getGenerationModels().subscribe({
       next: (response) => {
-        this.generationModels = response.models;
+        this.generationModels.set(response.models);
         this.modelsLoading = false;
         // Auto-select first model if current selection is not available
-        if (this.generationModels.length > 0 && !this.generationModels.some(m => m.value === this.selectedModel)) {
-          this.selectedModel = this.generationModels[0].value;
+        if (response.models.length > 0 && !response.models.some(m => m.value === this.selectedModel)) {
+          this.selectedModel = response.models[0].value;
         }
         if (response.errors && response.errors.length > 0) {
           console.warn('Model loading warnings:', response.errors);
@@ -116,10 +116,10 @@ export class GenerateFromMaterialModalComponent implements OnInit, OnDestroy {
         this.modelsError = 'Impossible de charger les modèles';
         this.modelsLoading = false;
         // Fallback to defaults
-        this.generationModels = [
+        this.generationModels.set([
           { label: 'Nemotron 30B (Q8)', value: 'hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0', source: 'default' },
           { label: 'Qwen 3.5 35B', value: 'qwen3.5:35b', source: 'default' },
-        ];
+        ]);
       }
     });
   }
@@ -137,18 +137,6 @@ export class GenerateFromMaterialModalComponent implements OnInit, OnDestroy {
 
   get isPromptModified(): boolean {
     return this.promptState !== 'default';
-  }
-
-  ngOnInit(): void {
-    this.answerabilityService.getOllamaModels().subscribe({
-      next: (res) => {
-        if (res.models?.length) {
-          this.generationModels.set(res.models.map(m => ({ label: m, value: m })));
-          this.selectedModel = res.models[0];
-        }
-      },
-      error: () => {},
-    });
   }
 
   ngOnDestroy(): void {
