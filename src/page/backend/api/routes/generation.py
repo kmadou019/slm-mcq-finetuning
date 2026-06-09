@@ -417,6 +417,39 @@ async def list_generation_models(current_user: User = Depends(get_current_user))
     except Exception as e:
         errors.append(f"OpenAI-compat: {str(e)}")
     
+    # 3. Try OpenRouter if configured
+    _openrouter_key = os.getenv("OPENROUTER_API_KEY", "")
+    if _openrouter_key:
+        try:
+            headers = {"Authorization": f"Bearer {_openrouter_key}"}
+            resp = _requests.get(
+                "https://openrouter.ai/api/v1/models",
+                headers=headers,
+                timeout=10
+            )
+            if resp.status_code == 200:
+                data = resp.json().get("data", [])
+                # Filter for the specific models we want to support
+                target_models = [
+                    "deepseek/deepseek-v4-pro",
+                    "qwen/qwen3.6-35b-a3b",
+                    "meta-llama/llama-3-8b-instruct",
+                ]
+                for m in data:
+                    model_id = m.get("id", "")
+                    # Match exact model or partial (e.g. "deepseek/deepseek-v4-pro" matches "deepseek/deepseek-v4-pro:online")
+                    if any(tm in model_id for tm in target_models):
+                        if not any(existing["value"] == model_id for existing in models):
+                            # Use short label for display
+                            short_name = model_id.split("/")[-1]
+                            models.append({
+                                "label": f"{short_name} (OpenRouter)",
+                                "value": model_id,
+                                "source": "openrouter"
+                            })
+        except Exception as e:
+            errors.append(f"OpenRouter: {str(e)}")
+    
     # If no models found, return defaults as fallback
     if not models:
         models = [

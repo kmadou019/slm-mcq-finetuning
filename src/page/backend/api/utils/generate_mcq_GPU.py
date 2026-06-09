@@ -31,6 +31,9 @@ _ollama = Client(host=os.getenv("OLLAMA_HOST", "http://localhost:11434"), timeou
 _OPENAI_BASE_URL = os.getenv("OPENAI_COMPATIBLE_URL", "http://localhost:4000/v1")
 _OPENAI_API_KEY = os.getenv("OPENAI_COMPATIBLE_KEY", "")
 
+# OpenRouter support (uses same API format but requires extra headers)
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
+
 
 # ---------------------------------------------------------------------------
 # Schéma de données
@@ -158,14 +161,22 @@ def generate_mcq(full_prompt: str, model_name: str, temperature: float = 0.1) ->
 
 
 def _generate_openai_compat(full_prompt: str, model_name: str, temperature: float = 0.1) -> str:
-    """Generate MCQ via OpenAI-compatible endpoint (port 4000)."""
+    """Generate MCQ via OpenAI-compatible endpoint (port 4000 or OpenRouter)."""
     import requests as _requests
     
     headers = {
         "Content-Type": "application/json",
     }
-    if _OPENAI_API_KEY:
-        headers["Authorization"] = f"Bearer {_OPENAI_API_KEY}"
+    
+    # Use OpenRouter key if configured, otherwise fall back to OPENAI_COMPATIBLE_KEY
+    api_key = OPENROUTER_API_KEY or _OPENAI_API_KEY
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
+    
+    # OpenRouter requires extra headers
+    if OPENROUTER_API_KEY and "openrouter" in _OPENAI_BASE_URL.lower():
+        headers["HTTP-Referer"] = "https://mcq-evaluation.local"
+        headers["X-Title"] = "MCQ-Evaluation"
     
     payload = {
         "model": model_name,
