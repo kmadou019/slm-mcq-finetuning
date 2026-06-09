@@ -145,8 +145,8 @@ def generate_mcq(full_prompt: str, model_name: str, temperature: float = 0.1) ->
         Chaîne JSON brute retournée par le modèle.
     """
     # Route based on model prefix
-    if model_name.startswith("openai/"):
-        # Use OpenAI-compatible endpoint (port 4000 via host.docker.internal)
+    if model_name.startswith("openai/") or "/" in model_name:
+        # Use OpenAI-compatible endpoint (port 4000 or OpenRouter)
         return _generate_openai_compat(full_prompt, model_name, temperature)
     else:
         # Use Ollama for local models
@@ -168,15 +168,22 @@ def _generate_openai_compat(full_prompt: str, model_name: str, temperature: floa
         "Content-Type": "application/json",
     }
     
-    # Use OpenRouter key if configured, otherwise fall back to OPENAI_COMPATIBLE_KEY
-    api_key = OPENROUTER_API_KEY or _OPENAI_API_KEY
-    if api_key:
-        headers["Authorization"] = f"Bearer {api_key}"
+    # Detect if this is an OpenRouter model (has / but not openai/)
+    is_openrouter = "/" in model_name and not model_name.startswith("openai/")
     
-    # OpenRouter requires extra headers
-    if OPENROUTER_API_KEY and "openrouter" in _OPENAI_BASE_URL.lower():
+    if is_openrouter and OPENROUTER_API_KEY:
+        # Use OpenRouter
+        base_url = "https://openrouter.ai/api/v1"
+        api_key = OPENROUTER_API_KEY
         headers["HTTP-Referer"] = "https://mcq-evaluation.local"
         headers["X-Title"] = "MCQ-Evaluation"
+    else:
+        # Use configured OpenAI-compatible endpoint
+        base_url = _OPENAI_BASE_URL
+        api_key = _OPENAI_API_KEY
+    
+    if api_key:
+        headers["Authorization"] = f"Bearer {api_key}"
     
     payload = {
         "model": model_name,
@@ -185,9 +192,9 @@ def _generate_openai_compat(full_prompt: str, model_name: str, temperature: floa
         "max_tokens": 2048,
     }
     
-    print(f"[generate_mcq/openai] calling {model_name} at {_OPENAI_BASE_URL}")
+    print(f"[generate_mcq/openai] calling {model_name} at {base_url}")
     response = _requests.post(
-        f"{_OPENAI_BASE_URL}/chat/completions",
+        f"{base_url}/chat/completions",
         headers=headers,
         json=payload,
         timeout=300,
