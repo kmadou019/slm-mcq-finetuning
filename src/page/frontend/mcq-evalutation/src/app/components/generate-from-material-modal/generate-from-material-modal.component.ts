@@ -2,7 +2,6 @@ import { Component, EventEmitter, Output, inject, OnInit, OnDestroy, ChangeDetec
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { McqService } from '../../services/mcq.service';
-import { AnswerabilityService } from '../../services/answerability.service';
 
 type ModalView = 'form' | 'generating' | 'done' | 'error';
 
@@ -59,7 +58,6 @@ Répondez UNIQUEMENT avec un unique objet JSON valide, sans aucun texte en dehor
 })
 export class GenerateFromMaterialModalComponent implements OnInit, OnDestroy {
   private readonly mcqService = inject(McqService);
-  private readonly answerabilityService = inject(AnswerabilityService);
   private readonly cdr = inject(ChangeDetectorRef);
 
   @Output() close = new EventEmitter<void>();
@@ -108,11 +106,14 @@ export class GenerateFromMaterialModalComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.answerabilityService.getOllamaModels().subscribe({
+    this.mcqService.getGenerationModels().subscribe({
       next: (res) => {
         if (res.models?.length) {
-          this.generationModels.set(res.models.map(m => ({ label: m, value: m })));
-          this.selectedModel = res.models[0];
+          this.generationModels.set(res.models);
+          // Auto-select first model if current selection is not available
+          if (!res.models.some(m => m.value === this.selectedModel)) {
+            this.selectedModel = res.models[0].value;
+          }
         }
       },
       error: () => {},
