@@ -91,38 +91,6 @@ export class GenerateFromMaterialModalComponent implements OnInit, OnDestroy {
   errorMessage = '';
   mcqCount = 0;
 
-  ngOnInit(): void {
-    this.loadGenerationModels();
-  }
-
-  private loadGenerationModels(): void {
-    this.modelsLoading = true;
-    this.modelsError = null;
-    this.mcqService.getGenerationModels().subscribe({
-      next: (response) => {
-        this.generationModels = response.models;
-        this.modelsLoading = false;
-        // Auto-select first model if current selection is not available
-        if (this.generationModels.length > 0 && !this.generationModels.some(m => m.value === this.selectedModel)) {
-          this.selectedModel = this.generationModels[0].value;
-        }
-        if (response.errors && response.errors.length > 0) {
-          console.warn('Model loading warnings:', response.errors);
-        }
-        this.cdr.detectChanges();
-      },
-      error: (err) => {
-        console.error('Failed to load generation models:', err);
-        this.modelsError = 'Impossible de charger les modèles';
-        this.modelsLoading = false;
-        // Fallback to defaults
-        this.generationModels = [
-          { label: 'Nemotron 30B (Q8)', value: 'hf.co/unsloth/Nemotron-3-Nano-30B-A3B-GGUF:Q8_0', source: 'default' },
-          { label: 'Qwen 3.5 35B', value: 'qwen3.5:35b', source: 'default' },
-        ];
-      }
-    });
-  }
 
   private jobId: string | null = null;
   private pollingIntervalId: any = null;
