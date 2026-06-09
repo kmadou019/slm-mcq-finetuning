@@ -18,7 +18,6 @@ from sqlalchemy.orm import Session
 from ..utils.dependencies import get_current_user
 from ..utils.generate_mcq_GPU import generate_mcq, validate_mcq, shuffle_distractors, MCQQuestion
 from ..utils.prompt_builder import build_prompt as _build_prompt
-from ..utils.lisa_retriever import retrieve_lisa_objectives_safe
 from ..models.auth import User
 from ..models.db_models import MCQAssignment as DBMCQAssignment
 from database import get_db, SessionLocal
@@ -285,7 +284,11 @@ async def _run_generation(job_id: str, user_id: int, content: str, model_save_na
     """Background task: call Ollama on remote GPU, evaluate MCQs, then create assignments."""
     try:
         print(f"[generation] Retrieving LISA objectives for job {job_id}...")
-        lisa_context = await asyncio.to_thread(retrieve_lisa_objectives_safe, content)
+        try:
+            from ..utils.lisa_retriever import retrieve_lisa_objectives_safe
+            lisa_context = await asyncio.to_thread(retrieve_lisa_objectives_safe, content)
+        except ImportError:
+            lisa_context = ""
         if lisa_context:
             print(f"[generation] LISA context retrieved ({len(lisa_context)} chars)")
             enriched_content = (

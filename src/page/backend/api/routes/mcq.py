@@ -48,9 +48,15 @@ def get_lisa_content(mcq_id: str) -> str:
         result = _lisa_sheets_cache.get(mcq_id.rstrip('-'), '')
     return result
 
-_MODELS_JSON = Path(__file__).resolve().parents[5] / "data" / "models.json"
-with open(_MODELS_JSON, encoding="utf-8") as _f:
-    AVAILABLE_MODELS = list(json.load(_f).keys())
+# Modèles disponibles
+AVAILABLE_MODELS = [
+    "llama3_1_8b", "openbiollm_8b", "gemma2_9b",
+    "medGemma_4b", "medGemma_27b", "qwen3_8b",
+    "mistral_7b", "eurollm_9b", "apertus_8B",
+    "qwen3_0.6b", "qwen3_1_7b", "qwen3_4b",
+    "qwen3_8b_pdapt_slerp", "qwen3_4b_pdapt_slerp",
+    "qwen3_1_7b_pdapt_slerp", "qwen3_0.6b_pdapt_slerp"
+]
 
 
 # ============================================================================
