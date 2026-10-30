@@ -2,6 +2,29 @@
 
 Plateforme de génération automatique de QCM médicaux à partir des fiches LISA (référentiel national français), avec évaluation qualité automatisée et validation humaine par des experts.
 
+Projet de recherche mené au Laboratoire d'Informatique de Grenoble (LIG, équipe DAISY) dans le cadre du projet **PARTAGES**, pour aider les enseignants en médecine à évaluer leurs étudiants avec des QCM fiables. Ce dépôt est un fork du dépôt de l'équipe ([Its-OP/slm-mcq-finetuning](https://github.com/Its-OP/slm-mcq-finetuning)).
+
+### En bref
+
+- **Données** : 4 876 fiches LISA (367 items), découpées par item en 256 items d'entraînement et 111 de test (1 592 fiches de test).
+- **Génération** : une quinzaine de LLM open source comparés, de 0,6 à 47 milliards de paramètres (Qwen3, Llama 3.1, Mistral, Mixtral, Gemma, MedGemma, EuroLLM, Apertus…).
+- **Enrichissement par graphe de connaissance** : les objectifs pédagogiques officiels de chaque item (avec leur rang A/B) sont récupérés en SPARQL dans l'ontologie LISA (GraphDB, via un serveur MCP) puis injectés dans le prompt. Voir [`prompt_builder.py`](src/page/backend/api/utils/prompt_builder.py).
+- **Évaluation automatique** : métriques linguistiques, sémantiques (ModernCamemBERT) et LLM-as-a-judge (GPT-4o), plus un filtre de correction où un second modèle doit retrouver la bonne réponse. Fiabilité du juge testée : 88,9 % d'accord quand il note deux fois les mêmes QCM.
+- **Validation humaine** : application FastAPI + Angular où des experts acceptent ou rejettent chaque QCM.
+- **Fine-tuning** : jeux de données de préférences et entraînement KTO (Hugging Face TRL), voir [`notebooks/kto_training.ipynb`](notebooks/kto_training.ipynb).
+
+### Mes contributions (Madou Koné)
+
+Sur ce dépôt, entre novembre 2025 et juillet 2026 :
+
+- génération en lot pour tous les modèles, avec reprise sur incident, et découpage train/test par item ;
+- application web de validation experte complète (backend FastAPI, frontend Angular, tableau de bord admin, génération depuis un document, génération sur GPU distant) ;
+- constructeur de prompts enrichis par le graphe LISA (SPARQL via MCP) et comparaison automatique des systèmes de prompt sur cluster GPU ;
+- métriques d'évaluation (embeddings ModernCamemBERT, seuils adaptés au rang LISA, mélange des options contre le biais de position), tests de fiabilité du juge, benchmark avec ou sans raisonnement ;
+- jeu de données et entraînement KTO, conteneurisation Docker, et l'article de présentation des « MCQ Acceptance Cards » ([`paper/`](paper)).
+
+Le code initial (premiers notebooks DPO/KTO et premières métriques) vient des contributeurs précédents de l'équipe.
+
 ---
 
 ## Table des matières
